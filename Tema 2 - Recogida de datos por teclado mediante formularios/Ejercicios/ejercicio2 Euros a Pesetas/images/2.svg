@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Flowgorithm 3.4.1 (http://flowgorithm.org) -->
+
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="900" height="1400">
+	<rect x="0" y="0" width="900" height="1400" fill="#FFFFFF"/>
+	<g>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="450,200 450,261"/>
+		<polygon fill="#404040" stroke="none" points="450,275 463,250 436,250"/>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="450,1125 450,1186"/>
+		<polygon fill="#404040" stroke="none" points="450,1200 463,1175 436,1175"/>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 350,100 A 50 50, 0, 0 0, 350 200 L 550,200 A 50 50, 0, 0 0, 550 100 Z"/>
+			<text x="450" y="115" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="450" dy="50" unicode-bidi="embed">Principal</tspan>
+			</text>
+		</g>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 350,1200 A 50 50, 0, 0 0, 350 1300 L 550,1300 A 50 50, 0, 0 0, 550 1200 Z"/>
+			<text x="450" y="1215" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="450" dy="50" unicode-bidi="embed">Fin</tspan>
+			</text>
+		</g>
+		<g>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="450,400 450,461"/>
+			<polygon fill="#404040" stroke="none" points="450,475 463,450 436,450"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="450,575 450,636"/>
+			<polygon fill="#404040" stroke="none" points="450,650 463,625 436,625"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="450,775 450,836"/>
+			<polygon fill="#404040" stroke="none" points="450,850 463,825 436,825"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="450,950 450,1011"/>
+			<polygon fill="#404040" stroke="none" points="450,1025 463,1000 436,1000"/>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 275,275 L 275,400 L 625,400 L 625,275 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="275,300 625,300"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="300,275 300,400"/>
+				<text x="462" y="315" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="462" dy="50" unicode-bidi="embed">Entero euros</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#C0E0FF" stroke="#6080A0" stroke-width="3" stroke-dasharray="none" d="M 275,475 L 225,575 L 625,575 L 675,475 Z"/>
+				<text x="450" y="490" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="450" dy="50" unicode-bidi="embed">Entrada euros</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 250,650 L 250,775 L 650,775 L 650,650 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="250,675 650,675"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="275,650 275,775"/>
+				<text x="462" y="690" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="462" dy="50" unicode-bidi="embed">Real resultado</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 200,850 L 200,950 L 700,950 L 700,850 Z"/>
+				<text x="450" y="865" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="450" dy="50" unicode-bidi="embed">resultado = euros*6.96</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 150,1025 L 100,1125 L 750,1125 L 800,1025 Z"/>
+				<text x="450" y="1040" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="450" dy="50" unicode-bidi="embed">Salida tofixed(resultado,3)</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>

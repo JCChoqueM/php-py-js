@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-29 12:46:49 a.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yOTsxMjozNTo1OSBhLsKgbS47Mjk0NQ=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yOTsxMjo0Njo0OSBhLsKgbS47MzszMDU2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hora" type="Integer" array="False" size=""/>
+            <input variable="hora"/>
+            <if expression="hora&gt;=0&amp;&amp;hora&lt;24">
+                <then>
+                    <if expression="hora&gt;=6&amp;&amp;hora&lt;=12">
+                        <then>
+                            <output expression="&quot;Buenos d&#237;as&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="hora&gt;=13&amp;&amp;hora&lt;=20">
+                                <then>
+                                    <output expression="&quot;Buenos tardes&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="hora&gt;=21||hora&lt;=5">
+                                        <then>
+                                            <output expression="&quot;Buenos noches&quot;" newline="True"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Hora incorrecta&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

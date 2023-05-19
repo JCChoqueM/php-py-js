@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>#1</title>
+    <meta charset="UTF-8" />
+    <script src="archives/1.js"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+
+  <body>
+    <div>
+      <h1>Ejercicio 1</h1>
+      <h2>
+        Muestra los números múltiplos de 5 de 0 a 100 utilizando un bucle for
+      </h2>
+      <form id="form">
+        <label for="num1">Ingrese un numero</label>
+        <input
+          type="number"
+          id="num1"
+          name="num1"
+          placeholder="Introduzaca un numero entero"
+          required
+        />
+
+        <div class="otros">
+          <button class="bTodo" type="button" onclick="sumarTodo()">
+            Calcular todo
+          </button>
+          <button class="bLlenar" type="button" onclick="llenarFormulario()">
+            Generar números aleatorios
+          </button>
+        </div>
+      </form>
+      <!-- SECTION inicio contenedor cajas php js py -->
+      <div class="contenedores">
+        <section class="caja cajaPHP">
+          <button class="bPHP" type="button" onclick="sumarPHP()">
+            Calcular con PHP
+          </button>
+          <div class="r" id="resultadoPHP"></div>
+        </section>
+        <section class="caja cajaPY">
+          <button class="bPY" type="button" onclick="sumarPython()">
+            Calcular con Python
+          </button>
+          <div class="r" id="resultadoPython"></div>
+        </section>
+        <section class="caja cajaJS">
+          <button class="bJS" type="button" onclick="sumarJS()">
+            Calcular con JS
+          </button>
+          <div class="r" id="resultadoJavascript"></div>
+        </section>
+      </div>
+      <!-- !SECTION fin contenedor cajas php js py -->
+    </div>
+    <div class="image2">
+      <img src="./images/1.svg" alt="Imagen de ejemplo" />
+    </div>
+    <div id="modal"></div>
+
+    <script>
+      /* SECTION inicio boton PHP */
+      function sumarPHP() {
+        const num1 = document.getElementById("num1").value;
+
+        const formData = new FormData();
+        formData.append("num1", num1);
+
+        fetch("archives/1.php", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.text())
+          .then((text) => {
+            const resultadoDiv = document.getElementById("resultadoPHP");
+            resultadoDiv.innerHTML = text;
+          })
+          .catch((error) => console.error(error));
+      }
+      /* !SECTION fin boton PHP */
+
+      /* SECTION inicio boton Python */
+      function sumarPython() {
+        const num1 = document.getElementById("num1").value;
+
+        // Enviar la solicitud al servidor utilizando fetch
+        fetch("archives/1py.php?num1=" + num1) //+ "&metodo=python" || + "&num2=" + num2
+          .then((response) => response.text())
+          .then((text) => {
+            // Mostrar el resultado en la página
+            const resultadoDiv = document.getElementById("resultadoPython");
+            resultadoDiv.innerHTML = text;
+          })
+          .catch((error) => console.error(error));
+      }
+      /* !SECTION fin boton Python */
+
+      /* SECTION inicio sumar todo */
+      function sumarTodo() {
+        sumarPHP();
+        sumarPython();
+        sumarJS();
+      }
+      /* !SECTION fin sumar todo */
+
+      /* SECTION inicio Numeros random */
+      function generarNumero(max, min) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      function llenarFormulario() {
+        const num1 = document.getElementById("num1");
+
+        num1.value = generarNumero(99999, -99999);
+      }
+
+      /* !SECTION fin Numeros random */
+    </script>
+  </body>
+</html>

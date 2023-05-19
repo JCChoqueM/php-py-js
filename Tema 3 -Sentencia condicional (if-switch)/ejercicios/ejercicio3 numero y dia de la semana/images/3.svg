@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Flowgorithm 3.4.1 (http://flowgorithm.org) -->
+
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="3579" height="2279">
+	<g>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,102 777,163"/>
+		<polygon fill="#404040" stroke="none" points="777,177 790,152 763,152"/>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,2102 777,2163"/>
+		<polygon fill="#404040" stroke="none" points="777,2177 790,2152 763,2152"/>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 677,2 A 50 50, 0, 0 0, 677 102 L 877,102 A 50 50, 0, 0 0, 877 2 Z"/>
+			<text x="777" y="17" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="777" dy="50" unicode-bidi="embed">Principal</tspan>
+			</text>
+		</g>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 677,2177 A 50 50, 0, 0 0, 677 2277 L 877,2277 A 50 50, 0, 0 0, 877 2177 Z"/>
+			<text x="777" y="2192" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="777" dy="50" unicode-bidi="embed">Fin</tspan>
+			</text>
+		</g>
+		<g>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,302 777,363"/>
+			<polygon fill="#404040" stroke="none" points="777,377 790,352 763,352"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,477 777,538"/>
+			<polygon fill="#404040" stroke="none" points="777,552 790,527 763,527"/>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 627,177 L 627,302 L 927,302 L 927,177 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="627,202 927,202"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="652,177 652,302"/>
+				<text x="789" y="217" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="789" dy="50" unicode-bidi="embed">Entero dia</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#C0E0FF" stroke="#6080A0" stroke-width="3" stroke-dasharray="none" d="M 627,377 L 577,477 L 927,477 L 977,377 Z"/>
+				<text x="777" y="392" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="777" dy="50" unicode-bidi="embed">Entrada dia</tspan>
+				</text>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="977,677 2827,677 2827,838"/>
+				<polygon fill="#404040" stroke="none" points="2827,852 2840,827 2813,827"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2827,1977 2827,2077 815,2077"/>
+				<polygon fill="#404040" stroke="none" points="802,2077 826,2090 826,2063"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="577,677 377,677 377,838"/>
+				<polygon fill="#404040" stroke="none" points="377,852 390,827 363,827"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="377,952 377,2077 738,2077"/>
+				<polygon fill="#404040" stroke="none" points="752,2077 727,2063 727,2090"/>
+				<g>
+					<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 777,552 L 552,677 L 777,802 L 1002,677 Z"/>
+					<text x="777" y="642" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="777" dy="50" unicode-bidi="embed">dia&gt;0&amp;&amp;dia&lt;=7</tspan>
+					</text>
+				</g>
+				<g>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2952,927 3227,927 3227,1038"/>
+					<polygon fill="#404040" stroke="none" points="3227,1052 3240,1027 3213,1027"/>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="3227,1202 3227,1952 2865,1952"/>
+					<polygon fill="#404040" stroke="none" points="2852,1952 2876,1965 2876,1938"/>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2702,927 2027,927 2027,1038"/>
+					<polygon fill="#404040" stroke="none" points="2027,1052 2040,1027 2013,1027"/>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2027,1852 2027,1952 2788,1952"/>
+					<polygon fill="#404040" stroke="none" points="2802,1952 2777,1938 2777,1965"/>
+					<g>
+						<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 2827,852 L 2677,927 L 2827,1002 L 2977,927 Z"/>
+						<text x="2827" y="892" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="2827" dy="50" unicode-bidi="embed">dia==1</tspan>
+						</text>
+					</g>
+					<g>
+						<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 2952,1052 L 2877,1202 L 3502,1202 L 3577,1052 Z"/>
+						<text x="3227" y="1067" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="3227" dy="50" unicode-bidi="embed">Salida &quot;Es dia &quot;&amp;dia&amp;&quot; es</tspan>
+							<tspan x="3227" dy="50" unicode-bidi="embed"> lunes&quot;</tspan>
+						</text>
+					</g>
+					<g>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2152,1127 2427,1127 2427,1238"/>
+						<polygon fill="#404040" stroke="none" points="2427,1252 2440,1227 2413,1227"/>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2427,1402 2427,1827 2065,1827"/>
+						<polygon fill="#404040" stroke="none" points="2052,1827 2076,1840 2076,1813"/>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1902,1127 1227,1127 1227,1238"/>
+						<polygon fill="#404040" stroke="none" points="1227,1252 1240,1227 1213,1227"/>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1227,1727 1227,1827 1988,1827"/>
+						<polygon fill="#404040" stroke="none" points="2002,1827 1977,1813 1977,1840"/>
+						<g>
+							<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 2027,1052 L 1877,1127 L 2027,1202 L 2177,1127 Z"/>
+							<text x="2027" y="1092" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="2027" dy="50" unicode-bidi="embed">dia==2</tspan>
+							</text>
+						</g>
+						<g>
+							<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 2152,1252 L 2077,1402 L 2702,1402 L 2777,1252 Z"/>
+							<text x="2427" y="1267" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="2427" dy="50" unicode-bidi="embed">Salida &quot;Es dia &quot;&amp;dia&amp;&quot; es</tspan>
+								<tspan x="2427" dy="50" unicode-bidi="embed"> martes&quot;</tspan>
+							</text>
+						</g>
+						<g>
+							<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1352,1327 1627,1327 1627,1438"/>
+							<polygon fill="#404040" stroke="none" points="1627,1452 1640,1427 1613,1427"/>
+							<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1627,1602 1627,1702 1265,1702"/>
+							<polygon fill="#404040" stroke="none" points="1252,1702 1276,1715 1276,1688"/>
+							<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1102,1327 902,1327 902,1702 1188,1702"/>
+							<polygon fill="#404040" stroke="none" points="1202,1702 1177,1688 1177,1715"/>
+							<g>
+								<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 1227,1252 L 1077,1327 L 1227,1402 L 1377,1327 Z"/>
+								<text x="1227" y="1292" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+									<tspan x="1227" dy="50" unicode-bidi="embed">dia==3</tspan>
+								</text>
+							</g>
+							<g>
+								<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 1352,1452 L 1277,1602 L 1902,1602 L 1977,1452 Z"/>
+								<text x="1627" y="1467" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+									<tspan x="1627" dy="50" unicode-bidi="embed">Salida &quot;Es dia &quot;&amp;dia&amp;&quot; es</tspan>
+									<tspan x="1627" dy="50" unicode-bidi="embed"> miercoles&quot;</tspan>
+								</text>
+							</g>
+							<g>
+							</g>
+							<ellipse cx="1227" cy="1702" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+							<text x="1502" y="1242" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="1502" dy="50" unicode-bidi="embed">Verdadero</tspan>
+							</text>
+							<text x="989" y="1242" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="989" dy="50" unicode-bidi="embed">Falso</tspan>
+							</text>
+						</g>
+						<ellipse cx="2027" cy="1827" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+						<text x="2302" y="1042" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="2302" dy="50" unicode-bidi="embed">Verdadero</tspan>
+						</text>
+						<text x="1789" y="1042" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="1789" dy="50" unicode-bidi="embed">Falso</tspan>
+						</text>
+					</g>
+					<ellipse cx="2827" cy="1952" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+					<text x="3102" y="842" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="3102" dy="50" unicode-bidi="embed">Verdadero</tspan>
+					</text>
+					<text x="2589" y="842" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="2589" dy="50" unicode-bidi="embed">Falso</tspan>
+					</text>
+				</g>
+				<g>
+					<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 77,852 L 27,952 L 677,952 L 727,852 Z"/>
+					<text x="377" y="867" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="377" dy="50" unicode-bidi="embed">Salida &quot;No es un dia valido&quot;</tspan>
+					</text>
+				</g>
+				<ellipse cx="777" cy="2077" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+				<text x="1127" y="592" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="1127" dy="50" unicode-bidi="embed">Verdadero</tspan>
+				</text>
+				<text x="464" y="592" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="464" dy="50" unicode-bidi="embed">Falso</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>

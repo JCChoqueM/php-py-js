@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Flowgorithm 3.4.1 (http://flowgorithm.org) -->
+
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="700" height="1775">
+	<rect x="0" y="0" width="700" height="1775" fill="#FFFFFF"/>
+	<g>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="350,200 350,261"/>
+		<polygon fill="#404040" stroke="none" points="350,275 363,250 336,250"/>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="350,1500 350,1561"/>
+		<polygon fill="#404040" stroke="none" points="350,1575 363,1550 336,1550"/>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 250,100 A 50 50, 0, 0 0, 250 200 L 450,200 A 50 50, 0, 0 0, 450 100 Z"/>
+			<text x="350" y="115" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="350" dy="50" unicode-bidi="embed">Principal</tspan>
+			</text>
+		</g>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 250,1575 A 50 50, 0, 0 0, 250 1675 L 450,1675 A 50 50, 0, 0 0, 450 1575 Z"/>
+			<text x="350" y="1590" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="350" dy="50" unicode-bidi="embed">Fin</tspan>
+			</text>
+		</g>
+		<g>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="350,400 350,461"/>
+			<polygon fill="#404040" stroke="none" points="350,475 363,450 336,450"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="350,600 350,661"/>
+			<polygon fill="#404040" stroke="none" points="350,675 363,650 336,650"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="350,775 350,836"/>
+			<polygon fill="#404040" stroke="none" points="350,850 363,825 336,825"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="350,950 350,1011"/>
+			<polygon fill="#404040" stroke="none" points="350,1025 363,1000 336,1000"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="350,1150 350,1211"/>
+			<polygon fill="#404040" stroke="none" points="350,1225 363,1200 336,1200"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="350,1325 350,1386"/>
+			<polygon fill="#404040" stroke="none" points="350,1400 363,1375 336,1375"/>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 200,275 L 200,400 L 500,400 L 500,275 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="200,300 500,300"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="225,275 225,400"/>
+				<text x="362" y="315" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="362" dy="50" unicode-bidi="embed">Entero x</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 200,475 L 200,600 L 500,600 L 500,475 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="200,500 500,500"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="225,475 225,600"/>
+				<text x="362" y="515" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="362" dy="50" unicode-bidi="embed">Entero y</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#C0E0FF" stroke="#6080A0" stroke-width="3" stroke-dasharray="none" d="M 225,675 L 175,775 L 475,775 L 525,675 Z"/>
+				<text x="350" y="690" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="350" dy="50" unicode-bidi="embed">Entrada x</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#C0E0FF" stroke="#6080A0" stroke-width="3" stroke-dasharray="none" d="M 225,850 L 175,950 L 475,950 L 525,850 Z"/>
+				<text x="350" y="865" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="350" dy="50" unicode-bidi="embed">Entrada y</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 150,1025 L 150,1150 L 550,1150 L 550,1025 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="150,1050 550,1050"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="175,1025 175,1150"/>
+				<text x="362" y="1065" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="362" dy="50" unicode-bidi="embed">Entero resultado</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 175,1225 L 175,1325 L 525,1325 L 525,1225 Z"/>
+				<text x="350" y="1240" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="350" dy="50" unicode-bidi="embed">resultado = x*y</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 150,1400 L 100,1500 L 550,1500 L 600,1400 Z"/>
+				<text x="350" y="1415" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="350" dy="50" unicode-bidi="embed">Salida resultado</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>

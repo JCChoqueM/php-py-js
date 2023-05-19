@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Flowgorithm 3.4.1 (http://flowgorithm.org) -->
+
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="604" height="1579">
+	<g>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,102 302,163"/>
+		<polygon fill="#404040" stroke="none" points="302,177 315,152 288,152"/>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,1402 302,1463"/>
+		<polygon fill="#404040" stroke="none" points="302,1477 315,1452 288,1452"/>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 202,2 A 50 50, 0, 0 0, 202 102 L 402,102 A 50 50, 0, 0 0, 402 2 Z"/>
+			<text x="302" y="17" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="302" dy="50" unicode-bidi="embed">Principal</tspan>
+			</text>
+		</g>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 202,1477 A 50 50, 0, 0 0, 202 1577 L 402,1577 A 50 50, 0, 0 0, 402 1477 Z"/>
+			<text x="302" y="1492" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="302" dy="50" unicode-bidi="embed">Fin</tspan>
+			</text>
+		</g>
+		<g>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,302 302,363"/>
+			<polygon fill="#404040" stroke="none" points="302,377 315,352 288,352"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,502 302,563"/>
+			<polygon fill="#404040" stroke="none" points="302,577 315,552 288,552"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,702 302,763"/>
+			<polygon fill="#404040" stroke="none" points="302,777 315,752 288,752"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,877 302,938"/>
+			<polygon fill="#404040" stroke="none" points="302,952 315,927 288,927"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,1052 302,1113"/>
+			<polygon fill="#404040" stroke="none" points="302,1127 315,1102 288,1102"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,1227 302,1288"/>
+			<polygon fill="#404040" stroke="none" points="302,1302 315,1277 288,1277"/>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 152,177 L 152,302 L 452,302 L 452,177 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="152,202 452,202"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="177,177 177,302"/>
+				<text x="314" y="217" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="314" dy="50" unicode-bidi="embed">Real base</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 152,377 L 152,502 L 452,502 L 452,377 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="152,402 452,402"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="177,377 177,502"/>
+				<text x="314" y="417" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="314" dy="50" unicode-bidi="embed">Real altura</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 152,577 L 152,702 L 452,702 L 452,577 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="152,602 452,602"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="177,577 177,702"/>
+				<text x="314" y="617" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="314" dy="50" unicode-bidi="embed">Real area</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#C0E0FF" stroke="#6080A0" stroke-width="3" stroke-dasharray="none" d="M 127,777 L 77,877 L 477,877 L 527,777 Z"/>
+				<text x="302" y="792" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="302" dy="50" unicode-bidi="embed">Entrada base</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#C0E0FF" stroke="#6080A0" stroke-width="3" stroke-dasharray="none" d="M 127,952 L 77,1052 L 477,1052 L 527,952 Z"/>
+				<text x="302" y="967" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="302" dy="50" unicode-bidi="embed">Entrada altura</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 77,1127 L 77,1227 L 527,1227 L 527,1127 Z"/>
+				<text x="302" y="1142" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="302" dy="50" unicode-bidi="embed">area = base*altura</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 52,1302 L 2,1402 L 552,1402 L 602,1302 Z"/>
+				<text x="302" y="1317" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="302" dy="50" unicode-bidi="embed">Salida tofixed(area,2)</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>

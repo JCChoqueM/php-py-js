@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="variables.js"></script>
+</head>
+
+<body>
+    <div class="salida de datos">
+        <div class="salida de datos JS">
+            <script>
+                mostrarVariables();
+            </script>
+        </div>
+        <div class="salida de datos PHP">
+            <p id="resultadoPHP"></p>
+        </div>
+        <div class="salida de datos python">
+            <p id="resultadopy"></p>
+        </div>
+        <div class="salida de datos python2">
+            <p id="resultadopy2"></p>
+        </div>
+
+
+    </div>
+
+    <script>
+        fetch('variables.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("resultadoPHP").innerHTML = data;
+            })
+            .catch(error => console.error(error));
+    </script>
+    <script>
+        fetch('variablespy.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("resultadopy2").innerHTML = data;
+            })
+            .catch(error => console.error(error));
+    </script>
+    <script>
+        // Se crea una nueva instancia de XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+        // Se define qué hacer cuando se reciba la respuesta
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // Se cambia el contenido del elemento con id="resultadopy" con la respuesta del archivo holaMundopy.php
+                document.getElementById("resultadopy").innerHTML = this.responseText;
+            }
+        };
+        // Se abre una petición GET al archivo vapy.php
+        xhr.open("GET", "variablespy.php", true);
+        // Se envía la petición
+        xhr.send();
+    </script>
+</body>
+
+</html>

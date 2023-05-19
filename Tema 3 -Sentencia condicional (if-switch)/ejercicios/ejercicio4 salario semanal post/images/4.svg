@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Flowgorithm 3.4.1 (http://flowgorithm.org) -->
+
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="3479" height="2929">
+	<g>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2577,102 2577,163"/>
+		<polygon fill="#404040" stroke="none" points="2577,177 2590,152 2563,152"/>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2577,2752 2577,2813"/>
+		<polygon fill="#404040" stroke="none" points="2577,2827 2590,2802 2563,2802"/>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 2477,2 A 50 50, 0, 0 0, 2477 102 L 2677,102 A 50 50, 0, 0 0, 2677 2 Z"/>
+			<text x="2577" y="17" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="2577" dy="50" unicode-bidi="embed">Principal</tspan>
+			</text>
+		</g>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 2477,2827 A 50 50, 0, 0 0, 2477 2927 L 2677,2927 A 50 50, 0, 0 0, 2677 2827 Z"/>
+			<text x="2577" y="2842" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="2577" dy="50" unicode-bidi="embed">Fin</tspan>
+			</text>
+		</g>
+		<g>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2577,302 2577,363"/>
+			<polygon fill="#404040" stroke="none" points="2577,377 2590,352 2563,352"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2577,477 2577,538"/>
+			<polygon fill="#404040" stroke="none" points="2577,552 2590,527 2563,527"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2577,677 2577,738"/>
+			<polygon fill="#404040" stroke="none" points="2577,752 2590,727 2563,727"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2577,877 2577,952"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2577,1102 2577,1163"/>
+			<polygon fill="#404040" stroke="none" points="2577,1177 2590,1152 2563,1152"/>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 2352,177 L 2352,302 L 2802,302 L 2802,177 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="2352,202 2802,202"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="2377,177 2377,302"/>
+				<text x="2589" y="217" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="2589" dy="50" unicode-bidi="embed">Entero hrsTrabajo</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#C0E0FF" stroke="#6080A0" stroke-width="3" stroke-dasharray="none" d="M 2352,377 L 2302,477 L 2802,477 L 2852,377 Z"/>
+				<text x="2577" y="392" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="2577" dy="50" unicode-bidi="embed">Entrada hrsTrabajo</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 2377,552 L 2377,677 L 2777,677 L 2777,552 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="2377,577 2777,577"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="2402,552 2402,677"/>
+				<text x="2589" y="592" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="2589" dy="50" unicode-bidi="embed">Entero hrsExtra</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 2402,752 L 2402,877 L 2752,877 L 2752,752 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="2402,777 2752,777"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="2427,752 2427,877"/>
+				<text x="2589" y="792" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="2589" dy="50" unicode-bidi="embed">Entero salario</tspan>
+				</text>
+			</g>
+			<g>
+				<polygon fill="#FFA0A0" stroke="#A04C4C" stroke-width="3" points="2623,1046 2596,1073 2557,1073 2530,1046 2530,1007 2557,980 2596,980 2623,1007"/>
+				<text x="2764" y="992" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="2764" dy="50" unicode-bidi="embed">Interrumpir</tspan>
+				</text>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2952,1377 3227,1377 3227,1613"/>
+				<polygon fill="#404040" stroke="none" points="3227,1627 3240,1602 3213,1602"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="3227,1902 3227,2727 2615,2727"/>
+				<polygon fill="#404040" stroke="none" points="2602,2727 2626,2740 2626,2713"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2202,1377 1752,1377 1752,1613"/>
+				<polygon fill="#404040" stroke="none" points="1752,1627 1765,1602 1738,1602"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1752,2627 1752,2727 2538,2727"/>
+				<polygon fill="#404040" stroke="none" points="2552,2727 2527,2713 2527,2740"/>
+				<g>
+					<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 2577,1177 L 2177,1377 L 2577,1577 L 2977,1377 Z"/>
+					<text x="2577" y="1317" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="2577" dy="50" unicode-bidi="embed">hrsTrabajo&gt;0&amp;&amp;hrsTrabajo</tspan>
+						<tspan x="2577" dy="50" unicode-bidi="embed">&lt;=40</tspan>
+					</text>
+				</g>
+				<g>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="3227,1727 3227,1788"/>
+					<polygon fill="#404040" stroke="none" points="3227,1802 3240,1777 3213,1777"/>
+					<g>
+						<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 2977,1627 L 2977,1727 L 3477,1727 L 3477,1627 Z"/>
+						<text x="3227" y="1642" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="3227" dy="50" unicode-bidi="embed">salario = hrsTrabajo*12</tspan>
+						</text>
+					</g>
+					<g>
+						<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 3052,1802 L 3002,1902 L 3402,1902 L 3452,1802 Z"/>
+						<text x="3227" y="1817" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="3227" dy="50" unicode-bidi="embed">Salida salario</tspan>
+						</text>
+					</g>
+				</g>
+				<g>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1952,1752 2227,1752 2227,1913"/>
+					<polygon fill="#404040" stroke="none" points="2227,1927 2240,1902 2213,1902"/>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2227,2377 2227,2602 1790,2602"/>
+					<polygon fill="#404040" stroke="none" points="1777,2602 1801,2615 1801,2588"/>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1552,1752 877,1752 877,1913"/>
+					<polygon fill="#404040" stroke="none" points="877,1927 890,1902 863,1902"/>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="877,2502 877,2602 1713,2602"/>
+					<polygon fill="#404040" stroke="none" points="1727,2602 1702,2588 1702,2615"/>
+					<g>
+						<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 1752,1627 L 1527,1752 L 1752,1877 L 1977,1752 Z"/>
+						<text x="1752" y="1717" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="1752" dy="50" unicode-bidi="embed">hrsTrabajo&gt;40</tspan>
+						</text>
+					</g>
+					<g>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2227,2027 2227,2088"/>
+						<polygon fill="#404040" stroke="none" points="2227,2102 2240,2077 2213,2077"/>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2227,2202 2227,2263"/>
+						<polygon fill="#404040" stroke="none" points="2227,2277 2240,2252 2213,2252"/>
+						<g>
+							<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 1952,1927 L 1952,2027 L 2502,2027 L 2502,1927 Z"/>
+							<text x="2227" y="1942" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="2227" dy="50" unicode-bidi="embed">hrsExtra = hrsTrabajo-40</tspan>
+							</text>
+						</g>
+						<g>
+							<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 1927,2102 L 1927,2202 L 2527,2202 L 2527,2102 Z"/>
+							<text x="2227" y="2117" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="2227" dy="50" unicode-bidi="embed">salario = 480+(hrsExtra*16)</tspan>
+							</text>
+						</g>
+						<g>
+							<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 2052,2277 L 2002,2377 L 2402,2377 L 2452,2277 Z"/>
+							<text x="2227" y="2292" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="2227" dy="50" unicode-bidi="embed">Salida salario</tspan>
+							</text>
+						</g>
+					</g>
+					<g>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1077,2052 1352,2052 1352,2213"/>
+						<polygon fill="#404040" stroke="none" points="1352,2227 1365,2202 1338,2202"/>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1352,2377 1352,2477 915,2477"/>
+						<polygon fill="#404040" stroke="none" points="902,2477 926,2490 926,2463"/>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="677,2052 452,2052 452,2213"/>
+						<polygon fill="#404040" stroke="none" points="452,2227 465,2202 438,2202"/>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="452,2377 452,2477 838,2477"/>
+						<polygon fill="#404040" stroke="none" points="852,2477 827,2463 827,2490"/>
+						<g>
+							<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 877,1927 L 652,2052 L 877,2177 L 1102,2052 Z"/>
+							<text x="877" y="2017" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="877" dy="50" unicode-bidi="embed">hrsTrabajo==0</tspan>
+							</text>
+						</g>
+						<g>
+							<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 1077,2227 L 1002,2377 L 1627,2377 L 1702,2227 Z"/>
+							<text x="1352" y="2242" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="1352" dy="50" unicode-bidi="embed">Salida &quot;No trabajaste esta</tspan>
+								<tspan x="1352" dy="50" unicode-bidi="embed"> semana&quot;</tspan>
+							</text>
+						</g>
+						<g>
+							<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 152,2227 L 77,2377 L 752,2377 L 827,2227 Z"/>
+							<text x="452" y="2242" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="452" dy="50" unicode-bidi="embed">Salida &quot;Ingrese un n&#250;mero</tspan>
+								<tspan x="452" dy="50" unicode-bidi="embed"> v&#225;lido de horas trabajadas&quot;</tspan>
+							</text>
+						</g>
+						<ellipse cx="877" cy="2477" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+						<text x="1227" y="1967" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="1227" dy="50" unicode-bidi="embed">Verdadero</tspan>
+						</text>
+						<text x="564" y="1967" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="564" dy="50" unicode-bidi="embed">Falso</tspan>
+						</text>
+					</g>
+					<ellipse cx="1752" cy="2602" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+					<text x="2102" y="1667" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="2102" dy="50" unicode-bidi="embed">Verdadero</tspan>
+					</text>
+					<text x="1439" y="1667" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="1439" dy="50" unicode-bidi="embed">Falso</tspan>
+					</text>
+				</g>
+				<ellipse cx="2577" cy="2727" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+				<text x="3102" y="1292" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="3102" dy="50" unicode-bidi="embed">Verdadero</tspan>
+				</text>
+				<text x="2089" y="1292" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="2089" dy="50" unicode-bidi="embed">Falso</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>

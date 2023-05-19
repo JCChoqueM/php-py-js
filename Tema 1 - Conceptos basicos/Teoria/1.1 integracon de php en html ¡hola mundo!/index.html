@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hola mundo</title>
+    <script defer src="holaMundo.js"></script>
+    <script defer src="holapy.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+
+
+    <fieldset class="holamundo">
+        <legend>Primer "hola mundo"</legend>
+        <div>
+            <!-- Aquí se mostrará el resultado del archivo holaMundo.js -->
+            <p id="saludo"></p>
+            <!-- Aquí se mostrará el resultado del archivo holaMundo.php -->
+            <p id="resultado"></p>
+            <!-- Aquí se mostrará el resultado del archivo holaMundopy.php -->
+            <p id="resultadopy"></p>
+        </div>
+    </fieldset>
+
+    <script>
+        // Se crea una nueva instancia de XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+        // Se define qué hacer cuando se reciba la respuesta
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // Se cambia el contenido del elemento con id="resultado" con la respuesta del archivo holaMundo.php
+                document.getElementById("resultado").innerHTML = this.responseText;
+            }
+        };
+        // Se abre una petición GET al archivo holaMundo.php
+        xhr.open("GET", "holaMundo.php", true);
+        // Se envía la petición
+        xhr.send();
+    </script>
+    <script>
+        // Se crea una nueva instancia de XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+        // Se define qué hacer cuando se reciba la respuesta
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // Se cambia el contenido del elemento con id="resultadopy" con la respuesta del archivo holaMundopy.php
+                document.getElementById("resultadopy").innerHTML = this.responseText;
+            }
+        };
+        // Se abre una petición GET al archivo holaMundopy.php
+        xhr.open("GET", "holaMundopy.php", true);
+        // Se envía la petición
+        xhr.send();
+    </script>
+
+</body>
+
+</html>

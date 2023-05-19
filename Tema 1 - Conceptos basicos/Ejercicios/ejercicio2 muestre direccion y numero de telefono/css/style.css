@@ -1,0 +1,86 @@
+body {
+    background-color: #f6f8f8;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: default;
+}
+
+.pregunta {
+    text-align: center;
+    font-size: 38px;
+}
+
+/* SECTION inicio letras PHP,JavaScript,Python  */
+.sphp {
+    color: #9400d3;
+}
+
+.sjs {
+    color: #0066cc;
+}
+
+.spy {
+    color: #008000;
+}
+
+/* !SECTION fin letras PHP,JavaScript,Python */
+
+.resultado {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    box-sizing: border-box;
+    font-size: 35px;
+}
+
+.resultado h2 {
+    margin-top: 0;
+    text-align: center;
+
+}
+
+.resultado.php {
+    background-color: #f6c;
+    border-color: #ff9900;
+}
+
+.resultado.python {
+    background-color: #6f9;
+    border-color: #008000;
+}
+
+.resultado.javascript {
+    background-color: #9cf;
+    border-color: #0066cc;
+}
+
+.resultado.php h2 {
+    color: #9400d3;
+}
+
+.resultado.python h2 {
+    color: #008000;
+}
+
+.resultado.javascript h2 {
+    color: #0066cc;
+}
+
+.resultado.php p,
+.resultado.python p,
+.resultado.javascript p {
+    color: #000;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}

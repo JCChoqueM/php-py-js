@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Comparación de resultados en PHP, Python y JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
+</head>
+
+<body>
+    <h1>Comparación de resultados en <div>
+            <span class="sphp">PHP</span> , <span class="sjs">JavaScript</span> y <span class="spy">Python</span>
+        </div>
+    </h1>
+
+    <div class="resultado php">
+        <h2>PHP</h2>
+        <p id="php">Resultado: [resultado aquí]</p>
+    </div>
+
+    <div class="resultado javascript">
+        <h2>JavaScript</h2>
+        <p id="js">Resultado: [resultado aquí]</p>
+    </div>
+    <div class="resultado python">
+        <h2>Python</h2>
+        <p id="py">Resultado: [resultado aquí]</p>
+    </div>
+
+    <script>
+        fetch('1.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("php").innerHTML = data;
+                const resultadoPHP = document.querySelector(".resultado.php");
+                gsap.to(resultadoPHP, {
+                    duration: 1, // Duración de la animación en segundos
+                    y: 100, // Desplazamiento vertical en píxeles
+                    opacity: 1, // Opacidad final del elemento (1 significa completamente visible)
+                    ease: "power2.out" // Tipo de animación (puedes ver más opciones en la documentación de TweenMax)
+                });
+            })
+            .catch(error => console.error(error));
+    </script>
+    <script>
+        var resultadoElement = document.getElementById("js");
+        resultadoElement.innerHTML = `Vengo de JavaScript<br><br>${t} ${x} + ${y} = ${x + y} `;
+        const resultadoJS = document.querySelector(".resultado.javascript");
+        gsap.to(resultadoJS, {
+            duration: 1, // Duración de la animación en segundos
+            y: 100, // Desplazamiento vertical en píxeles
+            opacity: 1, // Opacidad final del elemento (1 significa completamente visible)
+            ease: "power2.out" // Tipo de animación (puedes ver más opciones en la documentación de TweenMax)
+        });
+          
+    </script>
+    <script>
+        fetch('1py.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("py").innerHTML = data;
+                const resultadoPY = document.querySelector(".resultado.python");
+                gsap.to(resultadoPY, {
+                    duration: 1, // Duración de la animación en segundos
+                    y: 100, // Desplazamiento vertical en píxeles
+                    opacity: 1, // Opacidad final del elemento (1 significa completamente visible)
+                    ease: "power2.out" // Tipo de animación (puedes ver más opciones en la documentación de TweenMax)
+                });
+            })
+
+            .catch(error => console.error(error));
+    </script>
+
+
+</body>
+
+</html>

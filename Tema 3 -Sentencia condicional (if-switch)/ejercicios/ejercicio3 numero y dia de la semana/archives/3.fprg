@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-30 10:18:13 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0zMDsxMDoxMjowNyBwLsKgbS47MjkzOA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0zMDsxMDoxODoxMyBwLsKgbS47MTszMDQ5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="dia" type="Integer" array="False" size=""/>
+            <input variable="dia"/>
+            <if expression="dia&gt;0&amp;&amp;dia&lt;=7">
+                <then>
+                    <if expression="dia==1">
+                        <then>
+                            <output expression="&quot;Es dia &quot;&amp;dia&amp;&quot; es lunes&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="dia==2">
+                                <then>
+                                    <output expression="&quot;Es dia &quot;&amp;dia&amp;&quot; es martes&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="dia==3">
+                                        <then>
+                                            <output expression="&quot;Es dia &quot;&amp;dia&amp;&quot; es miercoles&quot;" newline="True"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;No es un dia valido&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

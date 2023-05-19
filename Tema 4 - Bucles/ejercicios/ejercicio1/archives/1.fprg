@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-17 07:42:44 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xNzsiMDE6MTg6NDIgIjsyNTQ0"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xNzsiMDc6NDI6NDQgIjsyOzI2NTg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <for variable="contador" start="0" end="100" direction="inc" step="5">
+                <output expression="&quot;Multiplos de 5 son: &quot;&amp;contador" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

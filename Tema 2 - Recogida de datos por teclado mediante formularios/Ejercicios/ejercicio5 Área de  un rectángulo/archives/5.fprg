@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-23 09:30:22 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yMjsxMjozNjo0NSBhLsKgbS47MjkzNA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yMzswOTozMDoyMiBwLsKgbS47ODszMDYw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="base" type="Real" array="False" size=""/>
+            <declare name="altura" type="Real" array="False" size=""/>
+            <declare name="area" type="Real" array="False" size=""/>
+            <input variable="base"/>
+            <input variable="altura"/>
+            <assign variable="area" expression="base*altura"/>
+            <output expression="tofixed(area,2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

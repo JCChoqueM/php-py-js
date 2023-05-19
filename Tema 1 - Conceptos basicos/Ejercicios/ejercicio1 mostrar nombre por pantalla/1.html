@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejercicio #1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="archives/1.js"></script>
+    <script defer src="animation/animacionPHP.js"></script>
+    <script defer src="animation/animacionJS.js"></script>
+    <script defer src="animation/animacionPY.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <div >
+
+        <h1>Comparación de resultados en los lenguajes
+            <div>
+                <span class="sphp">PHP</span> , <span class="sjs">JavaScript</span> y <span class="spy">Python</span>
+            </div>
+        </h1>
+        <h2 class="pregunta">Ejercicio 1.- Escribe un programa que muestre tu nombre por pantalla.</h2>
+        <!-- SECTION inicio cuadros  .PHP .JS .PY -->
+        <div class="resultado php">
+            <h2>PHP</h2>
+            <p id="php">Resultado: [resultado aquí]</p>
+        </div>
+
+        <div class="resultado javascript">
+            <h2>JavaScript</h2>
+            <p id="js">Resultado: [resultado aquí]</p>
+        </div>
+
+        <div class="resultado python">
+            <h2>Python</h2>
+            <p id="py">Resultado: [resultado aquí]</p>
+        </div>
+        <!-- !SECTION fin cuadros  .PHP .JS .PY -->
+        <script>
+            //SECTION - Inicia PHP
+            fetch('archives/1.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("php").innerHTML = data;
+                })
+                .catch(error => console.error(error));
+            //!SECTION - Finaliza .PHP
+        </script>
+
+        <script>
+            //SECTION - Inicia .JS
+            var mensajeElement = document.getElementById("js");
+            mensajeElement.innerHTML = `Vengo de JavaScript<br><br>${mensaje}`;
+            //!SECTION fin .JS
+        </script>
+
+        <script>
+            //SECTION - Inicia .PY
+            fetch('archives/1py.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("py").innerHTML = data;
+                })
+                .catch(error => console.error(error));
+            //!SECTION Final .PY
+        </script>
+
+    </div>
+
+</body>
+
+</html>

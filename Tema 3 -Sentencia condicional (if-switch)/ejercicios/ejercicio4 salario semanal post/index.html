@@ -1,0 +1,55 @@
+<!--Vamos a ampliar uno de los ejercicios de la relación anterior para considerar las horas extras. 
+Escribe un programa que calcule el salario semanal de un trabajador teniendo en cuenta que las horas
+ordinarias (40 primeras horas de trabajo)se pagan a 12 euros la hora. A partir de la hora 41, se
+pagan a 16 euros la hora.-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"  href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+	
+	<title>Salario semanal</title>
+</head>
+<body>
+
+<div class="page-header bg-danger text-white text-center  ">
+    <a class="navbar-brand" href="#">
+          <img src="logos.png"  alt="" class="log-empresa" />
+    </a>
+
+    <span class="h4"> Salario semanal de un empleado </span>
+  </div>
+
+  <form action="#" method="POST" style="width:25%;margin:0 auto;">
+
+    <fieldset>
+      
+      <legend class="text-center header text-danger">CALCULO DEL SALARIO SEMANAL</legend>
+      <div class="form-group">
+
+        <label for="pro1">Introduzca las horas trabajadas:</label>
+        <input type="number" class="form-control" id="n1">
+        
+        <div class="form-group">
+
+      
+      <input type="button"  id="Enviar" class="btn btn-danger text-white form-control" value="Calcular">
+      
+
+    </div>
+    <div class="form-group">
+
+      <div id="resultado" style="background-color:#fffb07f5;width:100%;display:none;font-weight:bold;"></div>
+    </div>
+
+  </fieldset>
+  
+
+</form>
+<script  src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/codigo.js"></script>
+	
+</body>
+</html>

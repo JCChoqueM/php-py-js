@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-03 11:20:49 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wMzswNjozMzo0MyBwLsKgbS47Mjk0Nw=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wMzsxMToyMDo0OSBwLsKgbS47MjszMDU0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Real" array="False" size=""/>
+            <declare name="b" type="Real" array="False" size=""/>
+            <declare name="c" type="Real" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <input variable="c"/>
+            <declare name="nota" type="Real" array="False" size=""/>
+            <if expression="(a&gt;=0&amp;&amp;b&gt;=0&amp;&amp;c&gt;=0)">
+                <then>
+                    <assign variable="nota" expression="(a+b+c)/3"/>
+                    <output expression="tofixed(nota,2)" newline="True"/>
+                    <if expression="nota&lt;51">
+                        <then>
+                            <output expression="&quot;insuficiente&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="nota&gt;=51&amp;&amp;nota&lt;=59">
+                                <then>
+                                    <output expression="&quot;suficiente&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="nota&gt;=51&amp;&amp;nota&lt;=59">
+                                        <then>
+                                            <output expression="&quot;suficiente&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="nota&gt;=60&amp;&amp;nota&lt;=74">
+                                                <then>
+                                                    <output expression="&quot;Bien&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="nota&gt;=75&amp;&amp;nota&lt;=90">
+                                                        <then>
+                                                            <output expression="&quot;Notable&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="nota&gt;90">
+                                                                <then>
+                                                                    <output expression="&quot;Sobresaliente&quot;" newline="True"/>
+                                                                </then>
+                                                                <else/>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Uno o varios datos no son validos&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

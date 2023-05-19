@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-02 09:41:55 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wMjswODowNjoxMiBwLsKgbS47Mjk0NA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wMjswOTo0MTo1NSBwLsKgbS47MjszMDYw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="altura" type="Real" array="False" size=""/>
+            <declare name="tiempo" type="Real" array="False" size=""/>
+            <input variable="altura"/>
+            <if expression="altura&gt;0">
+                <then>
+                    <assign variable="tiempo" expression="sqrt((2*altura)/9.81)"/>
+                    <output expression="tofixed(tiempo,2)" newline="True"/>
+                </then>
+                <else>
+                    <if expression="altura==0">
+                        <then>
+                            <output expression="&quot;El tiempo de caida es 0&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="altura&lt;0">
+                                <then>
+                                    <output expression="&quot;La altura no puede ser negativa&quot;" newline="True"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

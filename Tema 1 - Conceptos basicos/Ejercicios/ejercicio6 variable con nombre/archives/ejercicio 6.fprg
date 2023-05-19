@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-16 08:45:11 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0xNjswODo0Mjo0MSBwLsKgbS47Mjk1MA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0xNjswODo0NToxMCBwLsKgbS47MTszMDU3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x" type="String" array="False" size=""/>
+            <assign variable="x" expression="&quot;Julio Cesar Choque Mamani&quot;"/>
+            <output expression="&quot;Mi nombre es: &quot; &amp;x&amp;&quot; Mucho Gusto&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-12 03:18:37 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xMjsiMDI6MTQ6NDcgIjsyNTQx"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xMjsiMDM6MTg6MzcgIjsyOzI2NTQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Real" array="False" size=""/>
+            <input variable="a"/>
+            <assign variable="a" expression="abs(a)"/>
+            <declare name="primer" type="Integer" array="False" size=""/>
+            <breakpoint expression="" always="True"/>
+            <if expression="(a==int(a))&amp;&amp;(a&gt;=0&amp;&amp;a&lt;=99999)">
+                <then>
+                    <if expression="a&gt;=0&amp;&amp;a&lt;10">
+                        <then>
+                            <assign variable="primer" expression="a"/>
+                        </then>
+                        <else>
+                            <if expression="a&gt;=10&amp;&amp;a&lt;=99">
+                                <then>
+                                    <assign variable="primer" expression="a/10"/>
+                                </then>
+                                <else>
+                                    <if expression="a&gt;=100&amp;&amp;a&lt;=999">
+                                        <then>
+                                            <assign variable="primer" expression="a/100"/>
+                                        </then>
+                                        <else>
+                                            <if expression="a&gt;=1000&amp;&amp;a&lt;=9999">
+                                                <then>
+                                                    <assign variable="primer" expression="a/1000"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="a&gt;=10000&amp;&amp;a&lt;=99999">
+                                                        <then>
+                                                            <assign variable="primer" expression="a/10000"/>
+                                                        </then>
+                                                        <else/>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;Primer digito es : &quot; &amp;(primer)" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Ingrese un numero Entero de hasta 5 cifras&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

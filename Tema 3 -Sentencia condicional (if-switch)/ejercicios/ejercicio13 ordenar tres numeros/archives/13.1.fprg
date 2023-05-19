@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-07 11:01:11 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wNzsxMDowMzo1NyBwLsKgbS47Mjk0OA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wNzsxMTowMToxMSBwLsKgbS47MTszMDQ1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Real" array="False" size=""/>
+            <declare name="b" type="Real" array="False" size=""/>
+            <declare name="c" type="Real" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <input variable="c"/>
+            <declare name="mayor" type="Real" array="False" size=""/>
+            <declare name="medio" type="Real" array="False" size=""/>
+            <declare name="menor" type="Real" array="False" size=""/>
+            <breakpoint expression="" always="True"/>
+            <if expression="a==b&amp;&amp;b==c">
+                <then>
+                    <assign variable="menor" expression="c"/>
+                    <assign variable="medio" expression="b"/>
+                    <assign variable="mayor" expression="a"/>
+                </then>
+                <else>
+                    <if expression="a&gt;b&amp;&amp;a&gt;c">
+                        <then>
+                            <assign variable="mayor" expression="a"/>
+                            <if expression="b&gt;c">
+                                <then>
+                                    <assign variable="medio" expression="b"/>
+                                    <assign variable="menor" expression="c"/>
+                                </then>
+                                <else>
+                                    <assign variable="medio" expression="c"/>
+                                    <assign variable="menor" expression="b"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="b&gt;a&amp;&amp;b&gt;c">
+                                <then>
+                                    <assign variable="mayor" expression="b"/>
+                                    <if expression="a&gt;c">
+                                        <then>
+                                            <assign variable="medio" expression="a"/>
+                                            <assign variable="menor" expression="c"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="medio" expression="c"/>
+                                            <assign variable="menor" expression="a"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="c&gt;a&amp;&amp;c&gt;b">
+                                        <then>
+                                            <assign variable="mayor" expression="c"/>
+                                            <if expression="a&gt;b">
+                                                <then>
+                                                    <assign variable="medio" expression="a"/>
+                                                    <assign variable="menor" expression="b"/>
+                                                </then>
+                                                <else>
+                                                    <assign variable="medio" expression="b"/>
+                                                    <assign variable="menor" expression="a"/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="menor&amp;&quot; , &quot;&amp;medio&amp;&quot; , &quot;&amp;mayor" newline="True"/>
+            <output expression="mayor&amp;&quot; , &quot;&amp;medio&amp;&quot; , &quot;&amp;menor" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

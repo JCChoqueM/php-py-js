@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-09 09:12:07 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wOTsiMDg6NTQ6MTAgIjsyNTQ3"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wOTsiMDk6MTI6MDcgIjsxOzI2NTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <input variable="a"/>
+            <if expression="a%2==0">
+                <then>
+                    <output expression="&quot;Es par&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;No es par&quot;" newline="True"/>
+                </else>
+            </if>
+            <if expression="a%5==0">
+                <then>
+                    <output expression="&quot; y es divisible entre 5&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot; y no  es divisible entre 5&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

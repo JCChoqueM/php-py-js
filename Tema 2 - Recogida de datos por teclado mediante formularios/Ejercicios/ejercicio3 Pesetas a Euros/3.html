@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>#3</title>
+    <meta charset="UTF-8">
+    <script src="archives/3.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div>
+        <h1>Ejercicio 3</h1>
+        <h2>Realiza un conversro de pesetas a euros. Ahora la cantidad de pesetas que se quiere convertir se deberá
+            introducir por teclado.  6.96pesetas=1 euro</h2>
+
+        <form id="form">
+            <label for="num1">Cantidad de Pesetas a convertir:</label>
+            <input type="number" id="num1" name="num1" required>
+
+            <div class="otros">
+                <button class="bTodo" type="button" onclick="sumarTodo()">Calcular todo</button>
+                <button class="bLlenar" type="button" onclick="llenarFormulario()">Generar números aleatorios</button>
+            </div>
+        </form>
+        <!-- SECTION inicio contenedor cajas php js py -->
+        <div class="contenedores">
+            <section class="cajaPHP">
+                <button class="bPHP" type="button" onclick="sumarPHP()">Calcular con PHP</button>
+                <div class="r" id="resultadoPHP"></div>
+            </section>
+            <section class="cajaPy">
+                <button class="bPY" type="button" onclick="sumarPython()">Calcular con Python</button>
+                <div class="r" id="resultadoPython"></div>
+            </section>
+            <section class="cajaJS">
+                <button class="bJS" type="button" onclick="sumarJS()">Calcular con JS</button>
+                <div class="r" id="resultadoJavascript"></div>
+            </section>
+        </div>
+        <!-- !SECTION fin contenedor cajas php js py -->
+    </div>
+    <div class="image2">
+        <img src="./images/3.svg" alt="Imagen de ejemplo" height="600px" width="auto">
+    </div>
+
+
+
+
+    <script>
+        /* SECTION inicio boton PHP */
+        function sumarPHP() {
+            const num1 = document.getElementById("num1").value;
+
+
+            const formData = new FormData();
+            formData.append("num1", num1);
+
+
+            fetch("archives/3.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.text())
+                .then(text => {
+                    const resultadoDiv = document.getElementById("resultadoPHP");
+                    resultadoDiv.innerHTML = text;
+                })
+                .catch(error => console.error(error));
+        }
+        /* !SECTION fin boton PHP */
+
+        /* SECTION inicio boton Python */
+        function sumarPython() {
+            const num1 = document.getElementById("num1").value;
+
+
+            // Enviar la solicitud al servidor utilizando fetch
+            fetch("archives/3py.php?num1=" + num1) //+ "&metodo=python"
+                .then((response) => response.text())
+                .then((text) => {
+                    // Mostrar el resultado en la página
+                    const resultadoDiv = document.getElementById("resultadoPython");
+                    resultadoDiv.innerHTML = text;
+                })
+                .catch((error) => console.error(error));
+        }
+        /* !SECTION fin boton Python */
+
+        /* SECTION inicio sumar todo */
+        function sumarTodo() {
+            sumarPHP();
+            sumarPython();
+            sumarJS();
+        }
+        /* !SECTION fin sumar todo */
+
+        /* SECTION inicio Numeros random */
+        function generarNumero() {
+                // Generar un número aleatorio entre 0 y 20 para el número entero
+                const entero = Math.floor(Math.random() * 21);
+
+                // Generar un número aleatorio entre 1 y 4 para la cantidad de decimales
+                const decimales = Math.floor(Math.random() * 4) + 1;
+
+                // Generar un número aleatorio entre 0 y 9 para cada decimal
+                let decimal = "";
+                for (let i = 0; i < decimales; i++) {
+                    decimal += Math.floor(Math.random() * 10);
+                }
+
+                // Unir el número entero y el número decimal
+                const numero = parseFloat(entero + "." + decimal);
+
+                return numero;
+            }
+    function llenarFormulario() {
+        const num1 = document.getElementById("num1");
+
+        num1.value = generarNumero();
+    }
+
+        /* !SECTION fin Numeros random */
+
+    </script>
+
+
+</body>
+
+</html>

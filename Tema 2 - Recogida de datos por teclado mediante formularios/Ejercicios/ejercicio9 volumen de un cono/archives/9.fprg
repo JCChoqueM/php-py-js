@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-26 12:06:46 a.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yNTsxMTozOTowMSBwLsKgbS47Mjk0Ng=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yNjsxMjowNjo0NiBhLsKgbS47MTszMDQ0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="radio" type="Real" array="False" size=""/>
+            <declare name="altura" type="Real" array="False" size=""/>
+            <input variable="radio"/>
+            <input variable="altura"/>
+            <declare name="resultado" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="(pi*radio^2*altura)/3"/>
+            <output expression="tofixed(resultado,2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

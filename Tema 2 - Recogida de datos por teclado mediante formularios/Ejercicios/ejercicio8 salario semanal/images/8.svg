@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Flowgorithm 3.4.1 (http://flowgorithm.org) -->
+
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="654" height="1254">
+	<g>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,102 327,163"/>
+		<polygon fill="#404040" stroke="none" points="327,177 340,152 313,152"/>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,1077 327,1138"/>
+		<polygon fill="#404040" stroke="none" points="327,1152 340,1127 313,1127"/>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 227,2 A 50 50, 0, 0 0, 227 102 L 427,102 A 50 50, 0, 0 0, 427 2 Z"/>
+			<text x="327" y="17" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="327" dy="50" unicode-bidi="embed">Principal</tspan>
+			</text>
+		</g>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 227,1152 A 50 50, 0, 0 0, 227 1252 L 427,1252 A 50 50, 0, 0 0, 427 1152 Z"/>
+			<text x="327" y="1167" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="327" dy="50" unicode-bidi="embed">Fin</tspan>
+			</text>
+		</g>
+		<g>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,302 327,363"/>
+			<polygon fill="#404040" stroke="none" points="327,377 340,352 313,352"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,477 327,538"/>
+			<polygon fill="#404040" stroke="none" points="327,552 340,527 313,527"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,677 327,738"/>
+			<polygon fill="#404040" stroke="none" points="327,752 340,727 313,727"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,902 327,963"/>
+			<polygon fill="#404040" stroke="none" points="327,977 340,952 313,952"/>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 52,177 L 52,302 L 602,302 L 602,177 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="52,202 602,202"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="77,177 77,302"/>
+				<text x="339" y="217" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Entero horasTrabajadas</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#C0E0FF" stroke="#6080A0" stroke-width="3" stroke-dasharray="none" d="M 52,377 L 2,477 L 602,477 L 652,377 Z"/>
+				<text x="327" y="392" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">Entrada horasTrabajadas</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 152,552 L 152,677 L 502,677 L 502,552 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="152,577 502,577"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="177,552 177,677"/>
+				<text x="339" y="592" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Entero salario</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 52,752 L 52,902 L 602,902 L 602,752 Z"/>
+				<text x="327" y="767" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">salario = horasTrabajadas</tspan>
+					<tspan x="327" dy="50" unicode-bidi="embed">*12</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 152,977 L 102,1077 L 502,1077 L 552,977 Z"/>
+				<text x="327" y="992" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">Salida salario</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>

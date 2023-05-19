@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-15 01:53:06 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xNTsiMDE6MTc6NTIgIjsyNTQy"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xNTsiMDE6NDg6NTcgIjsxO0REcjU7REVTS1RPUC1ERUpMTTcwOzIwMjMtMDUtMTQ7IjExOjM2OjAwICI7NTI1NA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xNTsiMDE6NTM6MDYgIjsxOzI2NDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <declare name="capicua" type="Boolean" array="False" size=""/>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="e" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="o" type="Integer" array="False" size=""/>
+            <declare name="u" type="Integer" array="False" size=""/>
+            <if expression="n&gt;=0&amp;&amp;n&lt;=99999">
+                <then>
+                    <if expression="n&gt;=0&amp;&amp;n&lt;=9">
+                        <then>
+                            <assign variable="capicua" expression="true"/>
+                        </then>
+                        <else>
+                            <if expression="n&gt;=10&amp;&amp;n&lt;=99">
+                                <then>
+                                    <assign variable="a" expression="n/10"/>
+                                    <assign variable="e" expression="n%10"/>
+                                    <if expression="a==e">
+                                        <then>
+                                            <assign variable="capicua" expression="true"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="capicua" expression="false"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="n&gt;=100&amp;&amp;n&lt;=999">
+                                        <then>
+                                            <assign variable="a" expression="n/100"/>
+                                            <assign variable="i" expression="n%10"/>
+                                            <if expression="a==i">
+                                                <then>
+                                                    <assign variable="capicua" expression="true"/>
+                                                </then>
+                                                <else>
+                                                    <assign variable="capicua" expression="false"/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <if expression="capicua">
+                        <then>
+                            <output expression="&quot;El numero &quot;&amp;n&amp;&quot; es Capicua&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;El numero &quot;&amp;n&amp;&quot; NO es Capicua&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;El numero debe ser positivo y de hasta 5 cifras&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

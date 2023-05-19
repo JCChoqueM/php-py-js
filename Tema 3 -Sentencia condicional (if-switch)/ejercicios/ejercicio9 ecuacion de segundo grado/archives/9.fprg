@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-04 10:57:32 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wNDswOTo0NDo0MSBwLsKgbS47Mjk1MQ=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wNDsxMDo1NzozMiBwLsKgbS47MTszMDU1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Real" array="False" size=""/>
+            <declare name="b" type="Real" array="False" size=""/>
+            <declare name="c" type="Real" array="False" size=""/>
+            <declare name="D" type="Real" array="False" size=""/>
+            <declare name="solucion" type="Real" array="False" size=""/>
+            <declare name="solucion2" type="Real" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <input variable="c"/>
+            <if expression="a!=0">
+                <then>
+                    <assign variable="D" expression="(b^2)-(4*a*c)"/>
+                    <if expression="D&gt;0">
+                        <then>
+                            <output expression="&quot;Existen 2 soluciones&quot;" newline="True"/>
+                            <assign variable="solucion" expression="(-b+sqrt(D))/(2*a)"/>
+                            <assign variable="solucion2" expression="(-b-sqrt(D))/(2*a)"/>
+                            <output expression="&quot;x1= &quot;&amp;tofixed(solucion,2)" newline="True"/>
+                            <output expression="&quot;x2= &quot;&amp;tofixed(solucion2,2)" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="D==0">
+                                <then>
+                                    <output expression="&quot;Existe una unica solucion&quot;" newline="True"/>
+                                    <assign variable="solucion" expression="-b/(2*a)"/>
+                                    <output expression="&quot;x= &quot;&amp;tofixed(solucion,2)" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="D&lt;0">
+                                        <then>
+                                            <output expression="&quot;Las soluciones son complejas y no se pueden calcular&quot;" newline="True"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;a debe ser distinto de 0&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

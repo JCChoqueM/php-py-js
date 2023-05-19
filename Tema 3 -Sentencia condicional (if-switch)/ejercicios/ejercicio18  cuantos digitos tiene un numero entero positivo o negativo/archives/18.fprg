@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-15 01:17:50 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xNDsiMTE6MzY6MDAgIjsyNTM2"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xNTsiMDE6MTc6NTAgIjsyOzI2NDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <input variable="a"/>
+            <declare name="dig" type="Integer" array="False" size=""/>
+            <assign variable="a" expression="abs(a)"/>
+            <if expression="a&gt;=0&amp;&amp;a&lt;=99999">
+                <then>
+                    <if expression="a&gt;=0&amp;&amp;a&lt;=9">
+                        <then>
+                            <assign variable="dig" expression="1"/>
+                        </then>
+                        <else>
+                            <if expression="a&gt;=10&amp;&amp;a&lt;=99">
+                                <then>
+                                    <assign variable="dig" expression="2"/>
+                                </then>
+                                <else>
+                                    <if expression="a&gt;=100&amp;&amp;a&lt;=999">
+                                        <then>
+                                            <assign variable="dig" expression="3"/>
+                                        </then>
+                                        <else>
+                                            <if expression="a&gt;=1000&amp;&amp;a&lt;=9999">
+                                                <then>
+                                                    <assign variable="dig" expression="4"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="a&gt;=10000&amp;&amp;a&lt;=99999">
+                                                        <then>
+                                                            <assign variable="dig" expression="5"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;La condicion no se cumple&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <output expression="&quot;El numero &quot; &amp;a&amp; &quot; tiene &quot; &amp;dig&amp;&quot; digitos&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Solo se aceptan numeros de hasta 5 digitos&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

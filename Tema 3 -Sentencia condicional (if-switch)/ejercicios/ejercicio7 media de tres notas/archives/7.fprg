@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-03 06:56:26 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wMzswNjozMzo0MyBwLsKgbS47Mjk0Nw=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wMzswNjo1NjoyNiBwLsKgbS47MTszMDYx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Real" array="False" size=""/>
+            <declare name="b" type="Real" array="False" size=""/>
+            <declare name="c" type="Real" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <input variable="c"/>
+            <declare name="promedio" type="Real" array="False" size=""/>
+            <if expression="(a&gt;=0&amp;&amp;b&gt;=0&amp;&amp;c&gt;=0)">
+                <then>
+                    <assign variable="promedio" expression="(a+b+c)/3"/>
+                    <output expression="tofixed(promedio,2)" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Uno o varios datos no son validos&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

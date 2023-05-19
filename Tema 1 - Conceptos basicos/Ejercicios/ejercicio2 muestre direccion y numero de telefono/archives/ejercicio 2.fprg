@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-15 10:43:54 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0xNTsxMDozMzoyMyBwLsKgbS47Mjk0Mg=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0xNTsxMDo0Mzo1NCBwLsKgbS47MjszMDU2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Mi nombre es julio cesar&quot;" newline="True"/>
+            <output expression="&quot;Direccion: Av. Vasquez y calle 'R' y 'F' #436 &quot;" newline="True"/>
+            <output expression="&quot;Mi numero de telefono es: 52-76303&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-30 11:16:12 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yNTsxMjo1ODo1MyBhLsKgbS47Mjk0MA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0zMDsxMToxNjoxMiBwLsKgbS47MjszMDQ4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="horasTrabajadas" type="Integer" array="False" size=""/>
+            <input variable="horasTrabajadas"/>
+            <declare name="salario" type="Integer" array="False" size=""/>
+            <assign variable="salario" expression="horasTrabajadas*12"/>
+            <output expression="salario" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

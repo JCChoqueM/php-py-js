@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-20 12:11:36 a.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0xOTsxMToyMjowNCBwLsKgbS47Mjk0NA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yMDsxMjoxMTozNiBhLsKgbS47MTszMDMz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <declare name="y" type="Integer" array="False" size=""/>
+            <output expression="&quot;Introduzca el primera valor &quot;" newline="True"/>
+            <input variable="x"/>
+            <output expression="&quot;Introduzca el segundo valor&quot;" newline="True"/>
+            <input variable="y"/>
+            <output expression="&quot;la multiplicacion de &quot;&amp;x&amp;&quot; * &quot;&amp;y&amp;&quot; = &quot;&amp;x*y" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

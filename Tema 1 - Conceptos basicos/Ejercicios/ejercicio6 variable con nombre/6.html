@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejercicio #6</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="archives/6.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
+</head>
+
+<body>
+    <h1>Comparación de resultados en los lenguajes
+        <div>
+            <span class="sphp">PHP</span> , <span class="sjs">JavaScript</span> y <span class="spy">Python</span>
+        </div>
+    </h1>
+    <h2 class="pregunta">Ejercicio 6.- Crea la variable $nombre y asígnale tu nombre completo. Muestra su valor por pantalla de tal forma que el resultado sea el mismo que el ejercicio 1</h2>
+    <!-- SECTION inicio cuadros  .PHP .JS .PY -->
+    <div class="resultado php">
+        <h2>PHP</h2>
+        <p id="php">Resultado: [resultado aquí]</p>
+    </div>
+
+    <div class="resultado javascript">
+        <h2>JavaScript</h2>
+        <p id="js">Resultado: [resultado aquí]</p>
+    </div>
+
+    <div class="resultado python">
+        <h2>Python</h2>
+        <p id="py">Resultado: [resultado aquí]</p>
+    </div>
+    <!-- !SECTION fin cuadros  .PHP .JS .PY -->
+    <script>
+        //SECTION - Inicia PHP
+        fetch('archives/6.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("php").innerHTML = data;
+            })
+            .catch(error => console.error(error));
+        //!SECTION - Finaliza .PHP
+    </script>
+
+    <script>
+        //SECTION - Inicia .JS
+        /*   var mensajeElement = document.getElementById("js");
+          mensajeElement.innerHTML = `La suma de ${x}+${y}=${x+y}`; */
+        /*  var mensaje = `La suma de ${x} + ${y} = ${resultado}`;
+          document.getElementById("js").innerHTML = mensaje; */
+        //!SECTION fin .JS
+    </script>
+
+    <script>
+        //SECTION - Inicia .PY
+        fetch('archives/6py.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("py").innerHTML = data;
+            })
+            .catch(error => console.error(error));
+        //!SECTION Final .PY
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-21 10:31:09 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yMDsxMDowODoxMSBwLsKgbS47MjkzNw=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yMTsxMDozMTowOSBwLsKgbS47MjszMDUw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="euros" type="Integer" array="False" size=""/>
+            <input variable="euros"/>
+            <declare name="resultado" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="euros*6.96"/>
+            <output expression="tofixed(resultado,3)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

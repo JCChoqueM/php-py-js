@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-30 11:56:12 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yNTsxMjo1ODo1MyBhLsKgbS47Mjk0MA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0zMDsxMTo1NjoxMiBwLsKgbS47NDszMDU0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hrsTrabajo" type="Integer" array="False" size=""/>
+            <input variable="hrsTrabajo"/>
+            <declare name="hrsExtra" type="Integer" array="False" size=""/>
+            <declare name="salario" type="Integer" array="False" size=""/>
+            <breakpoint expression="" always="True"/>
+            <if expression="hrsTrabajo&gt;0&amp;&amp;hrsTrabajo&lt;=40">
+                <then>
+                    <assign variable="salario" expression="hrsTrabajo*12"/>
+                    <output expression="salario" newline="True"/>
+                </then>
+                <else>
+                    <if expression="hrsTrabajo&gt;40">
+                        <then>
+                            <assign variable="hrsExtra" expression="hrsTrabajo-40"/>
+                            <assign variable="salario" expression="480+(hrsExtra*16)"/>
+                            <output expression="salario" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="hrsTrabajo==0">
+                                <then>
+                                    <output expression="&quot;No trabajaste esta semana&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Ingrese un n&#250;mero v&#225;lido de horas trabajadas&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

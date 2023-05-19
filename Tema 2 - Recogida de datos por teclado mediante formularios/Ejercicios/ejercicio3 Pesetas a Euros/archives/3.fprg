@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-21 10:38:27 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yMTsxMDozMjozNyBwLsKgbS47Mjk0Mw=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yMTsxMDozODoyNyBwLsKgbS47MTszMDU2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pesetas" type="Real" array="False" size=""/>
+            <declare name="resultado" type="Real" array="False" size=""/>
+            <input variable="pesetas"/>
+            <assign variable="resultado" expression="pesetas/6.96"/>
+            <output expression="tofixed(resultado,2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

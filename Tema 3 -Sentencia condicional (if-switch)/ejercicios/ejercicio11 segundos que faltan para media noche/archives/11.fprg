@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-07 03:39:46 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wNzsxMToxMDozMyBhLsKgbS47MjkyNg=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wNzswMzozOTo0NiBwLsKgbS47MTszMDY1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hora" type="Integer" array="False" size=""/>
+            <declare name="min" type="Integer" array="False" size=""/>
+            <input variable="hora"/>
+            <input variable="min"/>
+            <declare name="segundos" type="Integer" array="False" size=""/>
+            <declare name="total" type="Integer" array="False" size=""/>
+            <if expression="(hora&gt;=0&amp;&amp;hora&lt;=23)&amp;&amp;(min&gt;=0&amp;&amp;min&lt;=59)">
+                <then>
+                    <assign variable="segundos" expression="((hora*60)*60)+(min*60)"/>
+                    <assign variable="total" expression="86400-segundos"/>
+                    <output expression="&quot;faltan &quot;&amp;total&amp;&quot; seg para la media noche&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;verifique la hora y minutos ingresados&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

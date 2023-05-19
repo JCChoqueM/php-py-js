@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-22 12:44:38 a.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yMjsxMjozNjo0NSBhLsKgbS47MjkzNA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yMjsxMjo0NDozOCBhLsKgbS47MTszMDQz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <input variable="x"/>
+            <declare name="y" type="Integer" array="False" size=""/>
+            <input variable="y"/>
+            <declare name="suma" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="x+y"/>
+            <declare name="resta" type="Integer" array="False" size=""/>
+            <assign variable="resta" expression="x-y"/>
+            <declare name="multiplicacion" type="Integer" array="False" size=""/>
+            <assign variable="multiplicacion" expression="x*y"/>
+            <declare name="division" type="Real" array="False" size=""/>
+            <assign variable="division" expression="x/y"/>
+            <output expression="suma" newline="True"/>
+            <output expression="resta" newline="True"/>
+            <output expression="multiplicacion" newline="True"/>
+            <output expression="tofixed(division,2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

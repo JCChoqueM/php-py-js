@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-06 09:14:57 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wNjswNzowMjo1NiBwLsKgbS47Mjk1MQ=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wNjswOToxNDo1NyBwLsKgbS47MzszMDY3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="dia" type="Integer" array="False" size=""/>
+            <declare name="mes" type="Integer" array="False" size=""/>
+            <input variable="dia"/>
+            <input variable="mes"/>
+            <if expression="(dia&gt;0&amp;&amp;dia&lt;=31)&amp;&amp;(mes&gt;0&amp;&amp;mes&lt;=12)">
+                <then>
+                    <if expression="((mes == 2 &amp;&amp; dia &lt;= 29) || ((mes==4 || mes==6 || mes==9 || mes==11) &amp;&amp; dia &lt;=30) || ((mes==1 || mes==3 || mes==5 || mes==7 || mes==8 || mes==10 || mes==12)&amp;&amp;dia&lt;=31) )">
+                        <then>
+                            <output expression="&quot;Su fecha de nacimiento es: &quot;&amp;dia&amp;&quot; de &quot;&amp;mes" newline="True"/>
+                            <if expression="(dia&gt;=21&amp;&amp;mes==3)||(dia&lt;=19&amp;&amp;mes==4)">
+                                <then>
+                                    <output expression="&quot;Su signo es aries&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="(dia&gt;=20&amp;&amp;mes==4)||(dia&lt;=20&amp;&amp;mes==5)">
+                                        <then>
+                                            <output expression="&quot;Su signo es Tauro&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="(dia&gt;=21&amp;&amp;mes==5)||(dia&lt;=20&amp;&amp;mes==6)">
+                                                <then>
+                                                    <output expression="&quot;Su signo es Geminis&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="(dia&gt;=21&amp;&amp;mes==6)||(dia&lt;=22&amp;&amp;mes==7)">
+                                                        <then>
+                                                            <output expression="&quot;Su signo es Cancer&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="(dia&gt;=23&amp;&amp;mes==7)||(dia&lt;=22&amp;&amp;mes==8)">
+                                                                <then>
+                                                                    <output expression="&quot;Su signo es Leo&quot;" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <if expression="(dia&gt;=23&amp;&amp;mes==8)||(dia&lt;=22&amp;&amp;mes==9)">
+                                                                        <then>
+                                                                            <output expression="&quot;Su signo es Virgo&quot;" newline="True"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <if expression="(dia&gt;=23&amp;&amp;mes==9)||(dia&lt;=22&amp;&amp;mes==10)">
+                                                                                <then>
+                                                                                    <output expression="&quot;Su signo es Libra&quot;" newline="True"/>
+                                                                                </then>
+                                                                                <else>
+                                                                                    <if expression="(dia&gt;=23&amp;&amp;mes==10)||(dia&lt;=21&amp;&amp;mes==11)">
+                                                                                        <then>
+                                                                                            <output expression="&quot;Su signo es Escorpio&quot;" newline="True"/>
+                                                                                        </then>
+                                                                                        <else>
+                                                                                            <if expression="(dia&gt;=22&amp;&amp;mes==11)||(dia&lt;=21&amp;&amp;mes==12)">
+                                                                                                <then>
+                                                                                                    <output expression="&quot;Su signo es Sagitario&quot;" newline="True"/>
+                                                                                                </then>
+                                                                                                <else>
+                                                                                                    <if expression="(dia&gt;=22&amp;&amp;mes==12)||(dia&lt;=19&amp;&amp;mes==1)">
+                                                                                                        <then>
+                                                                                                            <output expression="&quot;Su signo es Capricornio&quot;" newline="True"/>
+                                                                                                        </then>
+                                                                                                        <else>
+                                                                                                            <if expression="(dia&gt;=20&amp;&amp;mes==1)||(dia&lt;=18&amp;&amp;mes==2)">
+                                                                                                                <then>
+                                                                                                                    <output expression="&quot;Su signo es Acuario&quot;" newline="True"/>
+                                                                                                                </then>
+                                                                                                                <else>
+                                                                                                                    <if expression="(dia&gt;=19&amp;&amp;mes==2)||(dia&lt;=20&amp;&amp;mes==3)">
+                                                                                                                        <then>
+                                                                                                                            <output expression="&quot;Su Signo es Picis&quot;" newline="True"/>
+                                                                                                                        </then>
+                                                                                                                        <else/>
+                                                                                                                    </if>
+                                                                                                                </else>
+                                                                                                            </if>
+                                                                                                        </else>
+                                                                                                    </if>
+                                                                                                </else>
+                                                                                            </if>
+                                                                                        </else>
+                                                                                    </if>
+                                                                                </else>
+                                                                            </if>
+                                                                        </else>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Verifique la fecha introducida&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Dia o mes incorrectos&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

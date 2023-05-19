@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-28 12:53:15 a.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yODsxMjo0OTo0NCBhLsKgbS47Mjk0Mw=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yODsxMjo1MzoxNSBhLsKgbS47MTszMDQ0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="dia" type="String" array="False" size=""/>
+            <input variable="dia"/>
+            <if expression="dia==&quot;lunes&quot;">
+                <then>
+                    <output expression="&quot;Lunes es dia de matematicas&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="dia==&quot;martes&quot;">
+                        <then>
+                            <output expression="&quot;el dia martes nos toca algebra&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;No es un dia valido&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

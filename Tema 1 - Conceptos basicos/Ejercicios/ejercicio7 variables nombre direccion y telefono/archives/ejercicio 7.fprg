@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-16 08:54:44 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0xNjswODo0Mjo0MSBwLsKgbS47Mjk1MA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0xNjswODo1NDo0NCBwLsKgbS47MjszMDY1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nombre" type="String" array="False" size=""/>
+            <declare name="direccion" type="String" array="False" size=""/>
+            <declare name="telefono" type="Integer" array="False" size=""/>
+            <assign variable="nombre" expression="&quot;Julio Cesar Choque Mamani&quot;"/>
+            <assign variable="direccion" expression="&quot;Av. Vasquez y reynaldo vasquez&quot;"/>
+            <assign variable="telefono" expression="76303"/>
+            <output expression="&quot;Mi nombre es: &quot; &amp;nombre&amp;&quot;&quot;" newline="True"/>
+            <output expression="&quot;Mi Direccion es: &quot; &amp;direccion&amp;&quot;&quot;" newline="True"/>
+            <output expression="&quot;Mi telefono es: &quot; &amp;telefono&amp;&quot;&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-25 12:14:15 a.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yNTsxMjowMzoxOCBhLsKgbS47MjkzMQ=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNC0yNTsxMjoxNDoxNSBhLsKgbS47MTszMDM4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="bImponible" type="Real" array="False" size=""/>
+            <input variable="bImponible"/>
+            <assign variable="bImponible" expression="bImponible+(bImponible*0.1)"/>
+            <output expression="bImponible" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

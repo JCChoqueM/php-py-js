@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-07 11:39:28 p.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wNzsxMDowMzo1NyBwLsKgbS47Mjk0OA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0wNzsxMTozOToyOCBwLsKgbS47NDszMDY3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Real" array="False" size=""/>
+            <declare name="b" type="Real" array="False" size=""/>
+            <declare name="c" type="Real" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <input variable="c"/>
+            <declare name="menor" type="Real" array="False" size=""/>
+            <declare name="medio" type="Real" array="False" size=""/>
+            <declare name="mayor" type="Real" array="False" size=""/>
+            <breakpoint expression="" always="True"/>
+            <if expression="a&gt;=b&amp;&amp;a&gt;=c">
+                <then>
+                    <assign variable="mayor" expression="a"/>
+                    <if expression="b&lt;c">
+                        <then>
+                            <assign variable="menor" expression="b"/>
+                        </then>
+                        <else>
+                            <assign variable="menor" expression="c"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="b&gt;=a&amp;&amp;b&gt;=c">
+                        <then>
+                            <assign variable="mayor" expression="b"/>
+                            <if expression="a&lt;c">
+                                <then>
+                                    <assign variable="menor" expression="a"/>
+                                </then>
+                                <else>
+                                    <assign variable="menor" expression="c"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="c&gt;=a&amp;&amp;c&gt;=b">
+                                <then>
+                                    <assign variable="mayor" expression="c"/>
+                                    <if expression="a&lt;b">
+                                        <then>
+                                            <assign variable="menor" expression="a"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="menor" expression="b"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="medio" expression="a+b+c-mayor-menor"/>
+            <output expression="menor&amp;&quot; , &quot;&amp;medio&amp;&quot; , &quot;&amp;mayor" newline="True"/>
+            <output expression="mayor&amp;&quot; , &quot;&amp;medio&amp;&quot; , &quot;&amp;menor" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

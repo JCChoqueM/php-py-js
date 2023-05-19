@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Flowgorithm 3.4.1 (http://flowgorithm.org) -->
+
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="604" height="829">
+	<g>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,102 302,163"/>
+		<polygon fill="#404040" stroke="none" points="302,177 315,152 288,152"/>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,652 302,713"/>
+		<polygon fill="#404040" stroke="none" points="302,727 315,702 288,702"/>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 202,2 A 50 50, 0, 0 0, 202 102 L 402,102 A 50 50, 0, 0 0, 402 2 Z"/>
+			<text x="302" y="17" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="302" dy="50" unicode-bidi="embed">Principal</tspan>
+			</text>
+		</g>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 202,727 A 50 50, 0, 0 0, 202 827 L 402,827 A 50 50, 0, 0 0, 402 727 Z"/>
+			<text x="302" y="742" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="302" dy="50" unicode-bidi="embed">Fin</tspan>
+			</text>
+		</g>
+		<g>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,302 302,363"/>
+			<polygon fill="#404040" stroke="none" points="302,377 315,352 288,352"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,477 302,538"/>
+			<polygon fill="#404040" stroke="none" points="302,552 315,527 288,527"/>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 152,177 L 152,302 L 452,302 L 452,177 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="152,202 452,202"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="177,177 177,302"/>
+				<text x="314" y="217" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="314" dy="50" unicode-bidi="embed">Real Mb</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#C0E0FF" stroke="#6080A0" stroke-width="3" stroke-dasharray="none" d="M 152,377 L 102,477 L 452,477 L 502,377 Z"/>
+				<text x="302" y="392" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="302" dy="50" unicode-bidi="embed">Entrada Mb</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 52,552 L 2,652 L 552,652 L 602,552 Z"/>
+				<text x="302" y="567" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="302" dy="50" unicode-bidi="embed">Salida Mb*1024 &amp;&quot; Kb&quot;</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>
