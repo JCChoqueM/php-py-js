@@ -2,9 +2,9 @@
 /* SECTION inicio programa */
 $mensaje = "";
 $contador = 320;
-while ($contador >= 160) {
-	$mensaje .= "Los numeros son: $contador <br>";
-}
+do {
+	$mensaje .= "Do-while: $contador <br>";
+	$contador -= 20;
+} while ($contador >= 160);
 /* !SECTION fin programa */
 echo $mensaje;
-
