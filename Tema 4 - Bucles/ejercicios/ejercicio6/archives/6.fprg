@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-18 10:52:34 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xODsiMDk6MTU6MjIgIjsyNTQ4"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xODsiMTA6NTI6MzQgIjsxOzI2NTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="320"/>
+            <do expression="contador&gt;=160">
+                <output expression="&quot;Los numeros son:&quot;&amp;contador" newline="True"/>
+                <assign variable="contador" expression="contador-20"/>
+            </do>
+        </body>
+    </function>
+</flowgorithm>
