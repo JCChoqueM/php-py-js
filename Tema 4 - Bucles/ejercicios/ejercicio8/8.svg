@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Flowgorithm 3.4.1 (http://flowgorithm.org) -->
+
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="1204" height="1779">
+	<g>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,102 302,163"/>
+		<polygon fill="#404040" stroke="none" points="302,177 315,152 288,152"/>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,1077 302,1663"/>
+		<polygon fill="#404040" stroke="none" points="302,1677 315,1652 288,1652"/>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 202,2 A 50 50, 0, 0 0, 202 102 L 402,102 A 50 50, 0, 0 0, 402 2 Z"/>
+			<text x="302" y="17" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="302" dy="50" unicode-bidi="embed">Principal</tspan>
+			</text>
+		</g>
+		<g>
+			<path fill="#F0D0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 202,1677 A 50 50, 0, 0 0, 202 1777 L 402,1777 A 50 50, 0, 0 0, 402 1677 Z"/>
+			<text x="302" y="1692" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="302" dy="50" unicode-bidi="embed">Fin</tspan>
+			</text>
+		</g>
+		<g>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,302 302,363"/>
+			<polygon fill="#404040" stroke="none" points="302,377 315,352 288,352"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,477 302,538"/>
+			<polygon fill="#404040" stroke="none" points="302,552 315,527 288,527"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,677 302,738"/>
+			<polygon fill="#404040" stroke="none" points="302,752 315,727 288,727"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="302,877 302,963"/>
+			<polygon fill="#404040" stroke="none" points="302,977 315,952 288,952"/>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 102,177 L 102,302 L 502,302 L 502,177 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="102,202 502,202"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="127,177 127,302"/>
+				<text x="314" y="217" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="314" dy="50" unicode-bidi="embed">Entero numero</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#C0E0FF" stroke="#6080A0" stroke-width="3" stroke-dasharray="none" d="M 102,377 L 52,477 L 502,477 L 552,377 Z"/>
+				<text x="302" y="392" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="302" dy="50" unicode-bidi="embed">Entrada numero</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 102,552 L 102,677 L 502,677 L 502,552 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="102,577 502,577"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="127,552 127,677"/>
+				<text x="314" y="592" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="314" dy="50" unicode-bidi="embed">Entero resultado</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 102,752 L 102,877 L 502,877 L 502,752 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="102,777 502,777"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="127,752 127,877"/>
+				<text x="314" y="792" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="314" dy="50" unicode-bidi="embed">Entero contador</tspan>
+				</text>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="602,1027 827,1027 827,1113"/>
+				<polygon fill="#404040" stroke="none" points="827,1127 840,1102 813,1102"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="827,1502 827,1577 352,1577 352,1090"/>
+				<polygon fill="#404040" stroke="none" points="352,1077 338,1101 365,1101"/>
+				<g>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="827,1277 827,1338"/>
+					<polygon fill="#404040" stroke="none" points="827,1352 840,1327 813,1327"/>
+					<g>
+						<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 602,1127 L 602,1277 L 1052,1277 L 1052,1127 Z"/>
+						<text x="827" y="1142" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="827" dy="50" unicode-bidi="embed">resultado = numero*</tspan>
+							<tspan x="827" dy="50" unicode-bidi="embed">contador</tspan>
+						</text>
+					</g>
+					<g>
+						<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 527,1352 L 452,1502 L 1127,1502 L 1202,1352 Z"/>
+						<text x="827" y="1367" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="827" dy="50" unicode-bidi="embed">Salida numero &amp;&quot; x &quot; &amp;</tspan>
+							<tspan x="827" dy="50" unicode-bidi="embed"> contador &amp;&quot; = &quot; &amp;resultado</tspan>
+						</text>
+					</g>
+				</g>
+				<g>
+					<path fill="#FFE0A0" stroke="#A08040" stroke-width="3" stroke-dasharray="none" d="M 52,977 L 2,1027 L 52,1077 L 552,1077 L 602,1027 L 552,977 Z"/>
+					<text x="302" y="992" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="302" dy="50" unicode-bidi="embed">contador = 0 hasta 10</tspan>
+					</text>
+				</g>
+				<text x="727" y="942" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="727" dy="50" unicode-bidi="embed">Siguiente</tspan>
+				</text>
+				<text x="214" y="1092" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="214" dy="50" unicode-bidi="embed">Hecho</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>
