@@ -10,7 +10,7 @@ body {
 
 .container {
     display: flex;
-    width: 60%;
+    width: 50%;
     height: 100%;
     flex-direction: column;
     overflow: hidden;
@@ -33,15 +33,17 @@ body {
     position: relative;
 }
 
-.button-container {
-    display: flex;
-    justify-content: flex-start;
-    gap: 7px;
-    margin-bottom: 10px;
-
+.image button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
-
+.image .button-container {
+    align-self: flex-start;
+    margin-top: 10px;
+    margin-left: 10px;
+}
 
 body::after {
     content: "";
@@ -67,35 +69,27 @@ form {
 
 .otros {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: .5rem;
 }
 
-.cajaForm{
-    display: flex;
-    flex-direction: column;
-}
+
 form label {
     display: block;
-
     margin-bottom: 0.5rem;
 }
 
 form input[type="number"] {
-    padding: 1.5rem;
+    padding: 0.5rem;
     border-radius: 0.25rem;
     border: 1px solid #d31b1b;
     margin-bottom: 1rem;
-height: 3px;
 }
 
 .contenedores {
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
+    gap: 2rem;
     margin-bottom: 1rem;
-    width: 800px;
 
 
 }
@@ -117,10 +111,7 @@ button:hover {
 
 .bPHP,
 .bJS,
-.bPY,
-.bfor,
-.bwhile,
-.bdo-while {
+.bPY {
     background-color: #9bc3da;
     color: rgb(30, 3, 63);
     border: 2px solid #2E6DA4;
@@ -133,7 +124,7 @@ button:hover {
 .caja {
     padding: 10px;
     margin-top: 10px;
-    width:10px;
+    width: 100px;
     min-height: 325px;
     flex-grow: 1;
     overflow: auto;

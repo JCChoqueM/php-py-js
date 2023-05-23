@@ -21,23 +21,36 @@
           la caja fuerte.
         </h2>
         <form id="form">
-          <label for="num1">Ingrese un numero</label>
-          <input
-            type="number"
-            id="num1"
-            name="num1"
-            placeholder="Introduzaca un numero entero"
-            required
-          />
-
-          <div class="otros">
-            <button class="bTodo" type="button" onclick="sumarTodo()">
-              Calcular todo
-            </button>
-            <button class="bLlenar" type="button" onclick="llenarFormulario()">
-              Generar números aleatorios
-            </button>
+        <div class="cajaboton">
+          <div class="cajaForm">
+              <label for="num1">Ingrese un numero</label>
+              <input
+                type="number"
+                id="num1"
+                name="num1"
+                placeholder="Introduzaca un numero entero"
+                required
+              />
           </div>
+          
+            <div class="otros">
+              <button class="bTodo" type="button" onclick="sumarTodo()">
+                Calcular todo
+              </button>
+              <button class="bLlenar" type="button" onclick="llenarFormulario()">
+                Generar números aleatorios
+              </button>
+              <button class="bLlenar" type="button" onclick="cicloFor()">
+                Calculo for
+              </button>
+              <button class="bLlenar" type="button" onclick="cicloWhile()">
+                Calculo while
+              </button>
+              <button class="bLlenar" type="button" onclick="cicloDowhile()">
+                Calculo Do-while
+              </button>
+            </div>
+        </div>
         </form>
         <!-- SECTION inicio contenedor cajas php js py -->
         <div class="contenedores">
@@ -65,9 +78,9 @@
     </div>
     <div class="image">
       <div class="button-container">
-        <button id="btn1">Bucle For</button>
-        <button id="btn2">Bucle while</button>
-        <button id="btn3">Bucle do-while</button>
+        <button class="bfor" id="btn1">Bucle For</button>
+        <button class="bwhile" id="btn2">Bucle while</button>
+        <button class="bdo-while" id="btn3">Bucle do-while</button>
       </div>
       <div class="image-container">
         <img src="./images/7.svg" alt="Imagen de ejemplo" />
