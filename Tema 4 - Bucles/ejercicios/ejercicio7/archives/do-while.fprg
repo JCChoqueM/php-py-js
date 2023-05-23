@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-22 11:40:51 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xODsiMTE6MjA6NTAgIjsyNTM4"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0yMjsiMTE6NDA6NTEgIjs0OzI2NDc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="clave" type="Integer" array="False" size=""/>
+            <assign variable="clave" expression="2233"/>
+            <declare name="intentos" type="Integer" array="False" size=""/>
+            <assign variable="intentos" expression="4"/>
+            <declare name="combinacion" type="Integer" array="False" size=""/>
+            <declare name="mensaje" type="Boolean" array="False" size=""/>
+            <assign variable="mensaje" expression="false"/>
+            <breakpoint expression="" always="True"/>
+            <do expression="intentos&gt;0">
+                <input variable="combinacion"/>
+                <if expression="clave==combinacion">
+                    <then>
+                        <assign variable="mensaje" expression="true"/>
+                        <assign variable="intentos" expression="0"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Lo siento, esa no es la combinaci&#243;n &quot;" newline="True"/>
+                        <assign variable="intentos" expression="intentos-1"/>
+                    </else>
+                </if>
+            </do>
+            <if expression="mensaje">
+                <then>
+                    <output expression="&quot;La caja fuerte se ha abierto satisfactoriamente&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;numero de intetos agotados&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

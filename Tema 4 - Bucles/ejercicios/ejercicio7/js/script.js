@@ -61,14 +61,14 @@ const btn3 = document.getElementById("btn3");
 const image = document.querySelector(".image img");
 
 btn1.addEventListener("click", () => {
-  image.src = "./images/7.svg";
+  image.src = "./images/error.webp";
 });
 
 btn2.addEventListener("click", () => {
-  image.src = "./images/7.svg";
+  image.src = "./images/while.svg";
 });
 
 btn3.addEventListener("click", () => {
-  image.src = "./images/7.svg";
+  image.src = "./images/do-while.svg";
 });
 /* !SECTION botonoes de imagen */
