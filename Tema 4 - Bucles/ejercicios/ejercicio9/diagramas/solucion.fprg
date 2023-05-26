@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-25 01:28:06 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0yNDsiMTE6MTY6NTIgIjsyNTQy"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0yNTsiMDE6Mjg6MDYgIjszOzI2NTQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size=""/>
+            <input variable="numero"/>
+            <declare name="Nuevonumero" type="Integer" array="False" size=""/>
+            <assign variable="Nuevonumero" expression="numero"/>
+            <if expression="numero&lt;0">
+                <then>
+                    <assign variable="numero" expression="abs(numero)"/>
+                </then>
+                <else/>
+            </if>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <while expression="numero&gt;0">
+                <assign variable="numero" expression="numero/10"/>
+                <assign variable="contador" expression="contador+1"/>
+            </while>
+            <if expression="contador==0">
+                <then>
+                    <output expression="&quot;El numero &quot;&amp;Nuevonumero&amp;&quot; tiene &quot;&amp;contador+1&amp;&quot; digito&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="contador&gt;=2">
+                        <then>
+                            <output expression="&quot;El numero &quot;&amp;Nuevonumero&amp;&quot; tiene &quot;&amp;contador&amp;&quot; digitos&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;El numero &quot;&amp;Nuevonumero&amp;&quot; tiene &quot;&amp;contador&amp;&quot; digito&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,4 +1,4 @@
-function sumarJS() {
+function calcularJS() {
   /* SECTION inicio: codigo */
   let mensaje = "";
   var contador = 320;

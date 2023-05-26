@@ -1,11 +1,11 @@
 /* SECTION inicio boton PHP */
-function sumarPHP() {
+function calcularPHP() {
   const num1 = document.getElementById("num1").value;
 
   const formData = new FormData();
   formData.append("num1", num1);
 
-  fetch("archives/7.php", {
+  fetch("archives/solucion.php", {
     method: "POST",
     body: formData,
   })
@@ -20,11 +20,11 @@ function sumarPHP() {
 /* !SECTION fin boton PHP */
 
 /* SECTION inicio boton Python */
-function sumarPython() {
+function calcularPython() {
   const num1 = document.getElementById("num1").value;
 
   // Enviar la solicitud al servidor utilizando fetch
-  fetch("archives/7py.php?num1=" + num1) //+ "&metodo=python" || + "&num2=" + num2
+  fetch("archives/solucionPy.php?num1=" + num1) //+ "&metodo=python" || + "&num2=" + num2
     .then((response) => response.text())
     .then((text) => {
       // Mostrar el resultado en la página
@@ -36,10 +36,10 @@ function sumarPython() {
 /* !SECTION fin boton Python */
 
 /* SECTION inicio sumar todo */
-function sumarTodo() {
-  sumarPHP();
-  sumarPython();
-  sumarJS();
+function calcularTodo() {
+  calcularPHP();
+  calcularPython();
+  calcularJS();
 }
 /* !SECTION fin sumar todo */
 
@@ -62,14 +62,14 @@ const btn3 = document.getElementById("btn3");
 const image = document.querySelector(".image img");
 
 btn1.addEventListener("click", () => {
-  image.src = "./images/error.webp";
+  image.src = "./diagramas/error.svg";
 });
 
 btn2.addEventListener("click", () => {
-  image.src = "./images/while.svg";
+  image.src = "./diagramas/while.svg";
 });
 
 btn3.addEventListener("click", () => {
-  image.src = "./images/do-while.svg";
+  image.src = "./diagramas/do-while.svg";
 });
 /* !SECTION botonoes de imagen */

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>#7</title>
+    <title>#9</title>
     <meta charset="UTF-8" />
-    <script src="archives/7.js"></script>
-
+    <script src="archives/solucion.js"></script>
     <script src="js/script.js" defer></script>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
     <div class="container">
       <div class="content">
-        <h1>Ejercicio 7</h1>
+        <h1>Ejercicio 9</h1>
         <h2>
-         Realiza un programa que nos diga cuántos digitos tiene un número introducido por teclado.
+          Realiza un programa que nos diga cuántos digitos tiene un número
+          introducido por teclado.
         </h2>
         <form id="form">
-        <div class="cajaboton">
-          <div class="cajaForm">
+          <div class="cajaboton">
+            <div class="cajaForm">
               <label for="num1">Ingrese un numero</label>
               <input
                 type="number"
@@ -26,13 +26,17 @@
                 placeholder="Introduzaca un numero entero"
                 required
               />
-          </div>
-          
+            </div>
+
             <div class="otros">
-              <button class="bTodo" type="button" onclick="sumarTodo()">
+              <button class="bTodo" type="button" onclick="calcularTodo()">
                 Calcular todo
               </button>
-              <button class="bLlenar" type="button" onclick="llenarFormulario()">
+              <button
+                class="bLlenar"
+                type="button"
+                onclick="llenarFormulario()"
+              >
                 Generar números aleatorios
               </button>
               <button class="bLlenar" type="button" onclick="cicloFor()">
@@ -45,29 +49,33 @@
                 Calculo Do-while
               </button>
             </div>
-        </div>
+          </div>
         </form>
         <!-- SECTION inicio contenedor cajas php js py -->
         <div class="contenedores">
           <section class="caja cajaPHP">
-            <button class="bPHP" type="button" onclick="sumarPHP()">
+            <button class="bPHP" type="button" onclick="calcularPHP()">
               Calcular con PHP
             </button>
             <div class="r" id="resultadoPHP"></div>
           </section>
           <section class="caja cajaPY">
-            <button class="bPY" type="button" onclick="sumarPython()">
+            <button class="bPY" type="button" onclick="calcularPython()">
               Calcular con Python
             </button>
             <div class="r" id="resultadoPython"></div>
           </section>
           <section class="caja cajaJS">
-            <button class="bJS" type="button" onclick="sumarJS()">
+            <button class="bJS" type="button" onclick="calcularJS()">
               Calcular con JS
             </button>
             <div class="r" id="resultadoJavascript"></div>
           </section>
         </div>
+        <footer>
+          <br />Julio Cesar Choque Mamani. <br />
+          <br />Solucionario:Luis José Sánchez-Aprende php con ejercicios.
+        </footer>
         <!-- !SECTION fin contenedor cajas php js py -->
       </div>
     </div>
@@ -78,7 +86,7 @@
         <button class="bdo-while" id="btn3">Bucle do-while</button>
       </div>
       <div class="image-container">
-        <img src="./images/7.svg" alt="Imagen de ejemplo" />
+        <img src="./diagramas/solucion.svg" alt="Imagen de ejemplo" />
       </div>
     </div>
   </body>

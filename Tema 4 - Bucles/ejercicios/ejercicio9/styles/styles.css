@@ -72,10 +72,11 @@ form {
     gap: .5rem;
 }
 
-.cajaForm{
+.cajaForm {
     display: flex;
     flex-direction: column;
 }
+
 form label {
     display: block;
 
@@ -87,7 +88,7 @@ form input[type="number"] {
     border-radius: 0.25rem;
     border: 1px solid #d31b1b;
     margin-bottom: 1rem;
-height: 3px;
+    height: 3px;
 }
 
 .contenedores {
@@ -133,7 +134,7 @@ button:hover {
 .caja {
     padding: 10px;
     margin-top: 10px;
-    width:10px;
+    width: 10px;
     min-height: 325px;
     flex-grow: 1;
     overflow: auto;
@@ -168,5 +169,11 @@ button:hover {
     height: 50px;
     margin-top: 4px;
     background-color: transparent;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: auto;
+    text-transform: uppercase;
     font-weight: bold;
 }
