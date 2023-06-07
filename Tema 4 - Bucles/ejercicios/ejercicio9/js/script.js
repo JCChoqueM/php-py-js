@@ -13,7 +13,7 @@ function calcularPHP() {
     .then((text) => {
       const resultadoDiv = document.getElementById("resultadoPHP");
       resultadoDiv.innerHTML = text;
-      document.getElementById("form").reset();
+ /*            document.getElementById("form").reset(); */
     })
     .catch((error) => console.error(error));
 }
