@@ -1,4 +1,4 @@
-/* SECTION inicio boton PHP */
+/* SECTION inicio For boton PHP */
 function forPHP() {
   const num1 = document.getElementById("num1").value;
 
@@ -13,13 +13,13 @@ function forPHP() {
     .then((text) => {
       const resultadoDiv = document.getElementById("resultadoPHP");
       resultadoDiv.innerHTML = text;
-      document.getElementById("form").reset();
+      /*     document.getElementById("form").reset(); */
     })
     .catch((error) => console.error(error));
 }
-/* !SECTION fin boton PHP */
+/* !SECTION fin For boton PHP */
 
-/* SECTION inicio boton Python */
+/* SECTION inicio For boton Python */
 function forPython() {
   const num1 = document.getElementById("num1").value;
 
@@ -33,7 +33,7 @@ function forPython() {
     })
     .catch((error) => console.error(error));
 }
-/* !SECTION fin boton Python */
+/* !SECTION fin For boton Python */
 
 /* SECTION inicio sumar todo */
 function calculoFor() {
@@ -58,7 +58,7 @@ function whilePHP() {
     .then((text) => {
       const resultadoDiv = document.getElementById("resultadoPHP");
       resultadoDiv.innerHTML = text;
-      document.getElementById("form").reset();
+      /*    document.getElementById("form").reset(); */
     })
     .catch((error) => console.error(error));
 }
@@ -103,7 +103,7 @@ function dowhilePHP() {
     .then((text) => {
       const resultadoDiv = document.getElementById("resultadoPHP");
       resultadoDiv.innerHTML = text;
-      document.getElementById("form").reset();
+      /*       document.getElementById("form").reset(); */
     })
     .catch((error) => console.error(error));
 }
