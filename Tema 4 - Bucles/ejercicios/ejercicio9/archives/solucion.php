@@ -1,28 +1,28 @@
 <?php
-session_start();
+$num1 = ($_POST["num1"]);
 
-$maxIntentos = 4;
-$intentos = isset($_SESSION['intentos']) ? $_SESSION['intentos'] : 0;
-$codigoCorrecto = "1234"; // Código correcto de la caja fuerte (ejemplo)
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['num1'])) {
-  $num1 = $_POST['num1'];
-
-  while ($intentos < $maxIntentos) {
-    if ($num1 === $codigoCorrecto) {
-      echo "¡Caja fuerte abierta!";
-      $_SESSION['intentos'] = 0; // Reiniciar el contador de intentos
-      break;
-    } else {
-      $intentos++;
-      echo "Código incorrecto. Intento $intentos de $maxIntentos";
-      $_SESSION['intentos'] = $intentos; // Actualizar el contador de intentos en la sesión
-      break; // Terminar el bucle while después de cada intento
-    }
+if (
+  isset($num1) &&
+  is_numeric($num1) &&
+  filter_var($num1, FILTER_VALIDATE_INT) !== false
+) {
+  /* SECTION inicio programa */
+  $nuevoNumero = "$num1";
+  if ($num1 < 0) {
+    $num1 = abs($num1);
   }
-
-  if ($intentos >= $maxIntentos) {
-    echo "<br>Has superado el máximo de intentos permitidos.";
-    $_SESSION['intentos'] = 0; // Reiniciar el contador de intentos
+  $contador = 0;
+  while ($num1 > 0) {
+    $num1 = intval($num1 / 10);
+    $contador += 1;
   }
+  if ($contador == 0) {
+    $mensaje = "El numero $nuevoNumero tiene 1 digito";
+  } else {
+    $mensaje = "El numero $nuevoNumero tiene $contador" . ($contador >= 2 ? " digitos" : " digito");
+  }
+  /* !SECTION fin programa */
+} else {
+  $mensaje = "Ingrese datos en el formulario";
 }
+echo $mensaje;
