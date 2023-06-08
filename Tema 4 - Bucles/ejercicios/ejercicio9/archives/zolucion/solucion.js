@@ -20,10 +20,10 @@ function calcularJS() {
       contador += 1;
     }
     if (contador == 0) {
-      mensaje = `El numero ${nuevoNumero} tiene 1 digito`;
+      mensaje = `El numero ${nuevoNumero} tiene 1 Digito`;
     } else {
       mensaje = `El numero ${nuevoNumero} tiene ${contador} ${
-        contador >= 2 ? "digitos" : "digito"
+        contador >= 2 ? "Digitos" : "Digito"
       }`;
 
       // contador >= 2
@@ -37,5 +37,5 @@ function calcularJS() {
     /* !SECTION fin: verifica si el formulario esta vacio */
   }
   const resultadoDiv = document.getElementById("resultadoJavascript");
-  resultadoDiv.innerHTML = `${mensaje} `;
+  resultadoDiv.innerHTML = `Solucion: <br> ${mensaje} `;
 }

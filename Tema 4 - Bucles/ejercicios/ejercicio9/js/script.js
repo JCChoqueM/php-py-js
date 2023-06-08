@@ -12,7 +12,7 @@ function calcularPHP() {
     .then((response) => response.text())
     .then((text) => {
       const resultadoDiv = document.getElementById("resultadoPHP");
-      resultadoDiv.innerHTML = text;
+      resultadoDiv.innerHTML = "Solucion: <br>" + text;
       /*            document.getElementById("form").reset(); */
     })
     .catch((error) => console.error(error));
@@ -29,7 +29,7 @@ function calcularPython() {
     .then((text) => {
       // Mostrar el resultado en la página
       const resultadoDiv = document.getElementById("resultadoPython");
-      resultadoDiv.innerHTML = text;
+      resultadoDiv.innerHTML = "Solucion: <br>" + text;
     })
     .catch((error) => console.error(error));
 }

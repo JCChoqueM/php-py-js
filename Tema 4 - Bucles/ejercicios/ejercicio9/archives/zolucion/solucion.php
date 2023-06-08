@@ -18,9 +18,9 @@ if (
     $contador++;
   }
   if ($contador == 0) {
-    $mensaje = "El numero $nuevoNumero tiene 1 digito";
+    $mensaje = "El numero $nuevoNumero tiene 1 Digito";
   } else {
-    $mensaje = "El numero $nuevoNumero tiene $contador" . ($contador >= 2 ? " digitos" : " digito");
+    $mensaje = "El numero $nuevoNumero tiene $contador" . ($contador >= 2 ? " Digitos" : " Digito");
   }
   /* !SECTION fin programa */
 } else {

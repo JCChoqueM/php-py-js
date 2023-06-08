@@ -13,7 +13,7 @@ while NUM1 > 0:
     NUM1 = NUM1 // 10
     CONTADOR += 1
 if CONTADOR == 0:
-    MENSAJE = f"El numero {NUEVO_NUMERO} tiene 1 digito"
+    MENSAJE = f"El numero {NUEVO_NUMERO} tiene 1 Digito"
 else:
     MENSAJE = f"""
     El numero {NUEVO_NUMERO} tiene {CONTADOR} {"Digitos" if CONTADOR>=2 else "Digito"} """
