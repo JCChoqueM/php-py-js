@@ -5,7 +5,7 @@ function calcularPHP() {
   const formData = new FormData();
   formData.append("num1", num1);
 
-  fetch("archives/solucion.php", {
+  fetch("archives/zolucion/solucion.php", {
     method: "POST",
     body: formData,
   })
@@ -13,7 +13,7 @@ function calcularPHP() {
     .then((text) => {
       const resultadoDiv = document.getElementById("resultadoPHP");
       resultadoDiv.innerHTML = text;
- /*            document.getElementById("form").reset(); */
+      /*            document.getElementById("form").reset(); */
     })
     .catch((error) => console.error(error));
 }
@@ -24,7 +24,7 @@ function calcularPython() {
   const num1 = document.getElementById("num1").value;
 
   // Enviar la solicitud al servidor utilizando fetch
-  fetch("archives/solucionPy.php?num1=" + num1) //+ "&metodo=python" || + "&num2=" + num2
+  fetch("archives/zolucion/solucionPy.php?num1=" + num1) //+ "&metodo=python" || + "&num2=" + num2
     .then((response) => response.text())
     .then((text) => {
       // Mostrar el resultado en la página
