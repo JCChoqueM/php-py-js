@@ -20,11 +20,11 @@ function whileJS() {
       contador += 1;
     }
     if (contador == 0) {
-      mensaje = `El numero ${nuevoNumero} tiene 1 digito`;
+      mensaje = `El numero ${nuevoNumero} tiene 1 Digito`;
     } else {
       contador >= 2
-        ? (mensaje = `El numero ${nuevoNumero} tiene ${contador} digitos`)
-        : (mensaje = `El numero ${nuevoNumero} tiene ${contador} digito`);
+        ? (mensaje = `El numero ${nuevoNumero} tiene ${contador} Digitos`)
+        : (mensaje = `El numero ${nuevoNumero} tiene ${contador} Digito`);
     }
 
     /* !SECTION fin: codigo*/

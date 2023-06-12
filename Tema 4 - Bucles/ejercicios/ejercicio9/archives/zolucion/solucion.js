@@ -21,16 +21,11 @@ function calcularJS() {
     }
     if (contador == 0) {
       mensaje = `El numero ${nuevoNumero} tiene 1 Digito`;
+    } else if (contador >= 2) {
+      mensaje = ` EL numero ${nuevoNumero} tiene ${contador} Digitos`;
     } else {
-      mensaje = `El numero ${nuevoNumero} tiene ${contador} ${
-        contador >= 2 ? "Digitos" : "Digito"
-      }`;
-
-      // contador >= 2
-      //   ? (mensaje = `El numero ${nuevoNumero} tiene ${contador} digitos`)
-      //   : (mensaje = `El numero ${nuevoNumero} tiene ${contador} digito`);
+      mensaje = `El numero ${nuevoNumero} tiene 1 Digito`;
     }
-
     /* !SECTION fin: codigo*/
   } else {
     mensaje = `El formulario esta vacio o no es un Entero`;

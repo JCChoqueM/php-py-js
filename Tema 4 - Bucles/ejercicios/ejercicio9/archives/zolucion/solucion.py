@@ -14,7 +14,10 @@ while NUM1 > 0:
     CONTADOR += 1
 if CONTADOR == 0:
     MENSAJE = f"El numero {NUEVO_NUMERO} tiene 1 Digito"
+elif CONTADOR >= 2:
+    MENSAJE = f"""
+    El numero {NUEVO_NUMERO} tiene {CONTADOR} Digitos """
 else:
     MENSAJE = f"""
-    El numero {NUEVO_NUMERO} tiene {CONTADOR} {"Digitos" if CONTADOR>=2 else "Digito"} """
+    El numero {NUEVO_NUMERO} tiene 1 Digito """
 print(MENSAJE)

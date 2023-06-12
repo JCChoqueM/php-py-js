@@ -17,4 +17,4 @@ if CONTADOR == 0:
 else:
     MENSAJE = f"""
     El numero {NUEVO_NUMERO} tiene {CONTADOR} {"Digitos" if CONTADOR>=2 else "Digito"} """
-print( f"WHILE PY<br> {MENSAJE}")
+print(f"WHILE PY<br> {MENSAJE}")
