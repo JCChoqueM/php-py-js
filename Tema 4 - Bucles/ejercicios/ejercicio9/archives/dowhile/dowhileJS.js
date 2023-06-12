@@ -28,5 +28,5 @@ function dowhileJS() {
     /* !SECTION fin: verifica si el formulario esta vacio */
   }
   const resultadoDiv = document.getElementById("resultadoJavascript");
-  resultadoDiv.innerHTML = `WHILE JS <br>${mensaje} `;
+  resultadoDiv.innerHTML = `Do-WHILE JS <br>${mensaje} `;
 }

@@ -8,7 +8,7 @@ if (
     /*     filter_var($num1, FILTER_VALIDATE_INT) !== false */
 ) {
     /* SECTION inicio programa */
-    $nuevoNumero = "$num1";
+    $nuevoNumero = $num1;
     if ($num1 < 0) {
         $num1 = abs($num1);
     }
@@ -17,10 +17,10 @@ if (
         $num1 = floor($num1 / 10);
         $contador++;
     }
-    if ($contador == 0) {
-        $mensaje = "El numero $nuevoNumero tiene 1 digito";
+    if ($contador == 0 || $contador == 1) {
+        $mensaje = "El numero $nuevoNumero tiene 1 Digito";
     } else {
-        $mensaje = "El numero $nuevoNumero tiene $contador" . ($contador >= 2 ? " digitos" : " digito");
+        $mensaje = "El numero $nuevoNumero tiene $contador Digitos";
     }
     /* !SECTION fin programa */
 } else {
