@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-06-12 10:53:40 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNi0xMjsiMDk6MjI6MzUgIjsyNTQ1"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNi0xMjsiMTA6NTM6NDAgIjs0OzI2NDg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size=""/>
+            <input variable="numero"/>
+            <declare name="cuadrado" type="Integer" array="False" size=""/>
+            <declare name="cubo" type="Integer" array="False" size=""/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <while expression="contador&lt;5">
+                <assign variable="cuadrado" expression="numero^2"/>
+                <assign variable="cubo" expression="numero^3"/>
+                <output expression="&quot;N&#186; &quot;&amp;numero&amp;&quot;: Cuadrado= &quot;&amp;cuadrado&amp; &quot;, Cubo =&quot;&amp;cubo" newline="True"/>
+                <assign variable="contador" expression="contador+1"/>
+                <assign variable="numero" expression="numero+1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
