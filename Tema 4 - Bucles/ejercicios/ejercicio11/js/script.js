@@ -50,7 +50,7 @@ function generarNumero(max, min) {
 function llenarFormulario() {
   const num1 = document.getElementById("num1");
 
-  num1.value = generarNumero(99999, -99999);
+  num1.value = generarNumero(25, -25);
 }
 
 /* !SECTION fin Numeros random */

@@ -1,6 +1,7 @@
 function forJS() {
   var num1 = document.getElementById("num1").value;
   let mensaje = "";
+
   /* SECTION inicio: verifica si el formulario esta vacio */
   // num1 = num1.replace(/^0+/, "");
   if (
@@ -10,20 +11,16 @@ function forJS() {
     Number.isInteger(Number(num1))
   ) {
     /* SECTION inicio: codigo */
-    let nuevoNumero = num1;
-    if (num1 < 0) {
-      num1 = Math.abs(num1);
-    }
+    num1 = parseInt(num1);
+    let cuadrado = 0;
+    let cubo = 0;
     let contador = 0;
-    for (contador = 0; num1 > 0; contador++) {
-      num1 = Math.floor(num1 / 10);
-    }
-    if (contador == 0 || contador == 1) {
-      mensaje = `El numero ${nuevoNumero} tiene 1 Digito`;
-    } else {
-      mensaje = `El numero ${nuevoNumero} tiene ${contador} ${
-        contador >= 2 ? "Digitos" : "Digito"
-      }`;
+    for (; contador < 5; contador++) {
+      cuadrado = Math.pow(num1, 2);
+      cubo = Math.pow(num1, 3);
+      mensaje += `Nº${num1}. Cuadrado= ${cuadrado}. <br>Cubo= ${cubo}<br><br>`;
+      console.log(typeof mensaje);
+      num1 += 1;
     }
 
     /* !SECTION fin: codigo*/

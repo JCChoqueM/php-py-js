@@ -6,19 +6,22 @@ import sys
 
 # Obtener los argumentos de la línea de comandos
 NUM1 = int(sys.argv[1])
-NUEVO_NUMERO = NUM1
-if NUM1 < 0:
-    NUM1 = abs(NUM1)
-CONTADOR = 0
-for _ in range(NUM1):
-    NUM1 = NUM1 // 10
-    CONTADOR += 1
+CUADRADO = 0
+CUBO = 0
+""" CONTADOR = 0 """
+MENSAJE = ""
+for CONTADOR in range(5):
+    CUADRADO = pow(NUM1, 2)
+    CUBO = pow(NUM1, 3)
+    MENSAJE += f"# {NUM1}. Cuadrado= {CUADRADO}. <br>Cubo= {CUBO}<br><br>"
+    NUM1 += 1
 
-    if NUM1 <= 0:
-        break
-if CONTADOR >= 2:
-    MENSAJE = f"El numero {NUEVO_NUMERO} tiene {CONTADOR} Digitos"
-else:
-    MENSAJE = f"""
-    El numero {NUEVO_NUMERO} tiene 1 Digito """
+""" for _ in range(NUM1):
+    CUADRADO = pow(NUM1, 2)
+    CUBO = pow(NUM1, 3)
+    MENSAJE += f"#{NUM1}. Cuadrado= {CUADRADO}. <br>Cubo= {CUBO}<br><br>"
+    CONTADOR += 1
+    NUM1 += 1
+    if CONTADOR == 5:
+        break """
 print(f"FOR PY<br> {MENSAJE}")

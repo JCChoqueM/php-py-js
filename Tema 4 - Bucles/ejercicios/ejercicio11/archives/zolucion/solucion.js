@@ -1,6 +1,7 @@
 function calcularJS() {
   var num1 = document.getElementById("num1").value;
   let mensaje = "";
+
   /* SECTION inicio: verifica si el formulario esta vacio */
   // num1 = num1.replace(/^0+/, "");
   if (
@@ -9,22 +10,17 @@ function calcularJS() {
     Number.isFinite(Number(num1)) &&
     Number.isInteger(Number(num1))
   ) {
-    /* SECTION inicio: codigo */
-    let nuevoNumero = num1;
+    num1 = parseInt(num1);
+    let cuadrado = 0;
+    let cubo = 0;
     let contador = 0;
-    if (num1 < 0) {
-      num1 = Math.abs(num1);
-    }
-    while (num1 > 0) {
-      num1 = Math.trunc(num1 / 10);
+    while (contador < 5) {
+      cuadrado = Math.pow(num1, 2);
+      cubo = Math.pow(num1, 3);
+      mensaje += `Nº${num1}. Cuadrado= ${cuadrado}. <br>Cubo= ${cubo}<br><br>`;
+      console.log(typeof mensaje);
       contador += 1;
-    }
-    if (contador == 0) {
-      mensaje = `El numero ${nuevoNumero} tiene 1 Digito`;
-    } else if (contador >= 2) {
-      mensaje = ` EL numero ${nuevoNumero} tiene ${contador} Digitos`;
-    } else {
-      mensaje = `El numero ${nuevoNumero} tiene 1 Digito`;
+      num1 += 1;
     }
     /* !SECTION fin: codigo*/
   } else {

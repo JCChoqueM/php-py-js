@@ -13,7 +13,6 @@ CONTADOR = 0
 for _ in range(NUM1):
     NUM1 = NUM1 // 10
     CONTADOR += 1
-
     if NUM1 <= 0:
         break
 if CONTADOR >= 2:
