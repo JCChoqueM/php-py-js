@@ -10,23 +10,17 @@ function whileJS() {
     Number.isInteger(Number(num1))
   ) {
     /* SECTION inicio: codigo */
-    let nuevoNumero = num1;
+    num1 = parseInt(num1);
+    let cuadrado = 0;
+    let cubo = 0;
     let contador = 0;
-    if (num1 < 0) {
-      num1 = Math.abs(num1);
-    }
-    while (num1 > 0) {
-      num1 = Math.trunc(num1 / 10);
+    while (contador < 5) {
+      cuadrado = Math.pow(num1, 2);
+      cubo = Math.pow(num1, 3);
+      mensaje += `Nº ${num1}. Cuadrado=${cuadrado}.<br> Cubo=${cubo}<br><br>`;
       contador += 1;
+      num1 += 1;
     }
-    if (contador == 0) {
-      mensaje = `El numero ${nuevoNumero} tiene 1 Digito`;
-    } else {
-      contador >= 2
-        ? (mensaje = `El numero ${nuevoNumero} tiene ${contador} Digitos`)
-        : (mensaje = `El numero ${nuevoNumero} tiene ${contador} Digito`);
-    }
-
     /* !SECTION fin: codigo*/
   } else {
     mensaje = `El formulario esta vacio o no es un Entero`;

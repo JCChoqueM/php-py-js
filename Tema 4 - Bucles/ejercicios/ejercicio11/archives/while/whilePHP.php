@@ -1,6 +1,5 @@
 <?php
 $num1 = ((($_POST["num1"])));
-
 if (
     isset($num1) &&
     trim($num1) !== "" &&
@@ -8,19 +7,17 @@ if (
     /*     filter_var($num1, FILTER_VALIDATE_INT) !== false */
 ) {
     /* SECTION inicio programa */
-    $nuevoNumero = $num1;
-    if ($num1 < 0) {
-        $num1 = abs($num1);
-    }
+    $num1 = intval($num1);
+    $mensaje = "";
+    $cuadrado = 0;
+    $cubo = 0;
     $contador = 0;
-    while ($num1 > 0) {
-        $num1 = floor($num1 / 10);
+    while ($contador < 5) {
+        $cuadrado = pow($num1, 2);
+        $cubo = pow($num1, 3);
+        $mensaje .= "Nº $num1. Cuadrado= $cuadrado.<br> Cubo= $cubo<br><br>";
         $contador++;
-    }
-    if ($contador == 0 || $contador == 1) {
-        $mensaje = "El numero $nuevoNumero tiene 1 Digito";
-    } else {
-        $mensaje = "El numero $nuevoNumero tiene $contador Digitos";
+        $num1++;
     }
     /* !SECTION fin programa */
 } else {

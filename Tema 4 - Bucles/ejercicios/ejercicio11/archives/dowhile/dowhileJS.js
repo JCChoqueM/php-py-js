@@ -10,18 +10,17 @@ function dowhileJS() {
     Number.isInteger(Number(num1))
   ) {
     /* SECTION inicio: codigo */
-    let nuevoNumero = num1;
-    if (num1 < 0) {
-      num1 = Math.abs(num1);
-    }
-    let contador = 0;
+    num1 = parseInt(num1);
+    cuadrado = 0;
+    cubo = 0;
+    contador = 0;
     do {
-      num1 = Math.floor(num1 / 10);
-      contador += 1;
-    } while (num1 > 0);
-    mensaje = `El numero ${nuevoNumero} tiene ${contador} ${
-      contador >= 2 ? "Digitos" : "Digito"
-    }`;
+      cuadrado = Math.pow(num1, 2);
+      cubo = Math.pow(num1, 3);
+      mensaje += `Nº${num1}. Cuadrado= ${cuadrado}. <br> Cubo= ${cubo}<br><br>`;
+      contador++;
+      num1++;
+    } while (contador < 5);
     /* !SECTION fin: codigo*/
   } else {
     mensaje = `El formulario esta vacio o no es un Entero`;

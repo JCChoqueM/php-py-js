@@ -3,7 +3,6 @@ Este módulo muestra un MENSAJE incrementando el valor de i.
 """
 import sys
 
-
 # Obtener los argumentos de la línea de comandos
 NUM1 = int(sys.argv[1])
 CUADRADO = 0

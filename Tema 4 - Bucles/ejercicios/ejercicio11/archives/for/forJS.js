@@ -19,7 +19,6 @@ function forJS() {
       cuadrado = Math.pow(num1, 2);
       cubo = Math.pow(num1, 3);
       mensaje += `Nº${num1}. Cuadrado= ${cuadrado}. <br>Cubo= ${cubo}<br><br>`;
-      console.log(typeof mensaje);
       num1 += 1;
     }
 
