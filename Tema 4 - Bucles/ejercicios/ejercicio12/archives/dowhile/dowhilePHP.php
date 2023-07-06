@@ -9,20 +9,23 @@ if (
     /* SECTION inicio programa */
     $num1 = intval($num1);
     $mensaje = "";
-    $cuadrado = 0;
-    $cubo = 0;
-    $contador = 0;
-    do {
-        $cuadrado = pow($num1, 2);
-        $cubo = pow($num1, 3);
-        $mensaje .= "Nº$num1. Cuadrado= $cuadrado.<br> Cubo= $cubo<br><br>";
-        $contador += 1;
-        $num1 += 1;
-    } while ($contador < 5);
-
+    if ($num1 > 0) {
+        $contador = 0;
+        $suma = 0;
+        $anterior = 1;
+        $nuevo = 0;
+        do {
+            $mensaje .= "$suma, ";
+            $suma = $anterior + $nuevo;
+            $anterior = $nuevo;
+            $nuevo = $suma;
+            $contador++;
+        } while ($contador < $num1);
+    } else {
+        $mensaje = "El número debe ser mayor que 0  ";
+    }
     /* !SECTION fin programa */
 } else {
     $mensaje = "Ingrese datos en el formulario";
 }
-echo "DO-WHILE PHP <br>";
 echo $mensaje;
