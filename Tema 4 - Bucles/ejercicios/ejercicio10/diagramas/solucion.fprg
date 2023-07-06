@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-06 12:11:46 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNS0xOTsiMTE6NDA6NDkgIjsyNTQ5"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0wNjsiMTI6MTE6NDYgIjs0OzI2NTQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size=""/>
+            <declare name="media" type="Real" array="False" size=""/>
+            <assign variable="media" expression="0"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <declare name="suma" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="0"/>
+            <declare name="continuar" type="Boolean" array="False" size=""/>
+            <assign variable="continuar" expression="true"/>
+            <while expression="continuar">
+                <input variable="numero"/>
+                <if expression="numero&gt;=0">
+                    <then>
+                        <assign variable="suma" expression="suma+numero"/>
+                        <assign variable="contador" expression="contador+1"/>
+                        <assign variable="media" expression="suma/contador"/>
+                    </then>
+                    <else>
+                        <assign variable="continuar" expression="false"/>
+                        <output expression="&quot;El conteo a termido la media es: &quot;&amp;media" newline="True"/>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
