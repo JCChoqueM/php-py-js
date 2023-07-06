@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-05 10:29:22 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0wNTsiMDU6NDY6MzQgIjsyNTQ5"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0wNTsiMTA6Mjk6MjIgIjs1OzI2NTU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size=""/>
+            <input variable="numero"/>
+            <if expression="numero&gt;0">
+                <then>
+                    <declare name="contador" type="Integer" array="False" size=""/>
+                    <assign variable="contador" expression="0"/>
+                    <declare name="suma" type="Integer" array="False" size=""/>
+                    <assign variable="suma" expression="0"/>
+                    <declare name="anterior" type="Integer" array="False" size=""/>
+                    <assign variable="anterior" expression="1"/>
+                    <declare name="nuevo" type="Integer" array="False" size=""/>
+                    <assign variable="nuevo" expression="0"/>
+                    <while expression="contador&lt;numero">
+                        <output expression="suma" newline="True"/>
+                        <assign variable="suma" expression="anterior+nuevo"/>
+                        <assign variable="anterior" expression="nuevo"/>
+                        <assign variable="nuevo" expression="suma"/>
+                        <assign variable="contador" expression="contador+1"/>
+                    </while>
+                </then>
+                <else>
+                    <output expression="&quot;El n&#250;mero debe ser mayor que 0&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
