@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-06 12:39:14 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0wNjsiMTI6MjM6NDQgIjsyNTQ0"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0wNjsiMTI6Mzk6MTQgIjs0OzI2NTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size=""/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <declare name="posi" type="Integer" array="False" size=""/>
+            <assign variable="posi" expression="0"/>
+            <declare name="nega" type="Integer" array="False" size=""/>
+            <assign variable="nega" expression="0"/>
+            <while expression="contador&lt;3">
+                <input variable="numero"/>
+                <if expression="numero&gt;=0">
+                    <then>
+                        <assign variable="posi" expression="posi+1"/>
+                    </then>
+                    <else>
+                        <assign variable="nega" expression="nega+1"/>
+                    </else>
+                </if>
+                <assign variable="contador" expression="contador+1"/>
+            </while>
+            <output expression="&quot;En la lista introducida hay &quot; &amp;posi &amp;&quot; numeros positivos&quot;" newline="True"/>
+            <output expression="&quot;y &quot; &amp;nega &amp;&quot; numeros negativos&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
