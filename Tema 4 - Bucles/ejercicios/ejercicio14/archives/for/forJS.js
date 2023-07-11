@@ -1,5 +1,6 @@
 function forJS() {
   var num1 = document.getElementById("num1").value;
+  var num2 = document.getElementById("num2").value;
   let mensaje = "";
 
   /* SECTION inicio: verifica si el formulario esta vacio */
@@ -10,16 +11,33 @@ function forJS() {
     Number.isFinite(Number(num1)) &&
     Number.isInteger(Number(num1))
   ) {
-    /* SECTION inicio: codigo */
     num1 = parseInt(num1);
-    let cuadrado = 0;
-    let cubo = 0;
+    num2 = parseInt(num2);
     let contador = 0;
-    for (; contador < 5; contador++) {
-      cuadrado = Math.pow(num1, 2);
-      cubo = Math.pow(num1, 3);
-      mensaje += `Nº${num1}. Cuadrado= ${cuadrado}. <br>Cubo= ${cubo}<br><br>`;
-      num1 += 1;
+    let potencia = 1;
+    if (num1 == 0 && num2 == 0) {
+      mensaje = `En este caso 0^0 puede tener 2 valores 0 y 1 dependiendo como se lo quiere tratar`;
+    } else if (num1 == 0 && num2 < 0) {
+      mensaje = `El resultado es indefinido `;
+    } else if (num2 == 0) {
+      if (num1 != 0) {
+        potencia = 1;
+        mensaje = `${potencia}`;
+      } else {
+        mensaje = `Dependiendo de como se trabaje el resultado sera 0 o 1`;
+      }
+    } else {
+      if (num2 > 0) {
+        for (contador; contador < num2; contador++) {
+          potencia *= num1;
+        }
+      } else if (num2 < 0) {
+        for (contador; contador < -num2; contador++) {
+          potencia *= num1;
+        }
+        potencia = 1 / potencia;
+      }
+      mensaje = `${potencia}`;
     }
 
     /* !SECTION fin: codigo*/
@@ -28,5 +46,5 @@ function forJS() {
     /* !SECTION fin: verifica si el formulario esta vacio */
   }
   const resultadoDiv = document.getElementById("resultadoJavascript");
-  resultadoDiv.innerHTML = `FOR JS <br>${mensaje} `;
+  resultadoDiv.innerHTML = `FOR JS: <br>${mensaje} `;
 }
