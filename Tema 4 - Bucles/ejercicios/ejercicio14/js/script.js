@@ -1,9 +1,11 @@
 /* SECTION inicio boton PHP */
 function calcularPHP() {
   const num1 = document.getElementById("num1").value;
+  const num2 = document.getElementById("num2").value;
 
   const formData = new FormData();
   formData.append("num1", num1);
+  formData.append("num2", num2);
 
   fetch("archives/zolucion/solucion.php", {
     method: "POST",
@@ -22,9 +24,10 @@ function calcularPHP() {
 /* SECTION inicio boton Python */
 function calcularPython() {
   const num1 = document.getElementById("num1").value;
+  const num2 = document.getElementById("num2").value;
 
   // Enviar la solicitud al servidor utilizando fetch
-  fetch("archives/zolucion/solucionPy.php?num1=" + num1) //+ "&metodo=python" || + "&num2=" + num2
+  fetch("archives/zolucion/solucionPy.php?num1=" + num1 + "&num2=" + num2) //+ "&metodo=python" || + "&num2=" + num2
     .then((response) => response.text())
     .then((text) => {
       // Mostrar el resultado en la página
