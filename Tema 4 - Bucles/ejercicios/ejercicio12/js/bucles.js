@@ -13,7 +13,7 @@ function forPHP() {
     .then((text) => {
       const resultadoDiv = document.getElementById("resultadoPHP");
       const resultado = text.slice(0, -2) + ".";
-      resultadoDiv.innerHTML = "FOR PHP <br>" + resultado;
+      resultadoDiv.innerHTML = "FOR PHP: <br>" + resultado;
       /*     document.getElementById("form").reset(); */
     })
     .catch((error) => console.error(error));
@@ -31,7 +31,7 @@ function forPython() {
       // Mostrar el resultado en la página
       const resultadoDiv = document.getElementById("resultadoPython");
       const resultado = text.slice(0, -3) + ".";
-      resultadoDiv.innerHTML = "FOR PY<br>" + resultado;
+      resultadoDiv.innerHTML = "FOR PY:<br>" + resultado;
     })
     .catch((error) => console.error(error));
 }
@@ -60,7 +60,7 @@ function whilePHP() {
     .then((text) => {
       const resultadoDiv = document.getElementById("resultadoPHP");
       const resultado = text.slice(0, -2) + ".";
-      resultadoDiv.innerHTML = "WHILE PHP <br>" + resultado;
+      resultadoDiv.innerHTML = "WHILE PHP: <br>" + resultado;
       /*    document.getElementById("form").reset(); */
     })
     .catch((error) => console.error(error));
@@ -78,7 +78,7 @@ function whilePython() {
       // Mostrar el resultado en la página
       const resultadoDiv = document.getElementById("resultadoPython");
       const resultado = text.slice(0, -3) + ".";
-      resultadoDiv.innerHTML = "WHILE PY <br>" + resultado;
+      resultadoDiv.innerHTML = "WHILE PY: <br>" + resultado;
     })
     .catch((error) => console.error(error));
 }
@@ -107,7 +107,7 @@ function dowhilePHP() {
     .then((text) => {
       const resultadoDiv = document.getElementById("resultadoPHP");
       const resultado = text.slice(0, -2) + ".";
-      resultadoDiv.innerHTML = "DO-WHILE PHP <br>" + resultado;
+      resultadoDiv.innerHTML = "DO-WHILE PHP: <br>" + resultado;
       /*       document.getElementById("form").reset(); */
     })
     .catch((error) => console.error(error));
@@ -125,7 +125,7 @@ function dowhilePython() {
       // Mostrar el resultado en la página
       const resultadoDiv = document.getElementById("resultadoPython");
       const resultado = text.slice(0, -3) + ".";
-      resultadoDiv.innerHTML = "DO-WHILE PY <br>" + resultado;
+      resultadoDiv.innerHTML = "DO-WHILE PY: <br>" + resultado;
     })
     .catch((error) => console.error(error));
 }
