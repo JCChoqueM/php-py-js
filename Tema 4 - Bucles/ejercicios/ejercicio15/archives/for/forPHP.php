@@ -8,37 +8,28 @@ if (
     /*     filter_var($num1, FILTER_VALIDATE_INT) !== false */
 ) {
     /* SECTION inicio programa */
-    $num1 = intval($num1);
+    $num1 = floatval($num1);
     $num2 = intval($num2);
-    $contador = 0;
-    $potencia = 1;
     $mensaje = "";
+    $contador;
+    $potencia = 1;
     if ($num1 == 0 && $num2 == 0) {
-        $mensaje = "En este caso 0^0 puede tener 2 valores 0 y 1 dependiendo como se lo quiere tratar";
-    } else if ($num1 == 0 && $num2 < 0) {
-        $mensaje = "El resultado es indefinido ";
-    } else if ($num2 == 0) {
-        if ($num1 != 0) {
-            $potencia = 1;
-            $mensaje = "$potencia";
-        } else {
-            $mensaje = "Dependiendo de como se trabaje el resultado sera 0 o 1";
-        }
+        $mensaje = "$num1<sup>$num2</sup>=0  y tb $num1<sup>$num2</sup>=1 ";
+    } elseif ($num2 == 0) {
+        $mensaje = "$num1<sup>$num2</sup>=1";
     } else {
-        if ($num2 > 0) {
-            for ($contador; $contador < $num2; $contador++) {
+        if ($num2 >= 0) {
+            for ($contador = 1; $contador <= $num2; $contador++) {
                 $potencia *= $num1;
+                $mensaje .= "$num1<sup>$contador</sup> = $potencia<br>";
             }
-        } else if ($num2 < 0) {
-            for ($contador; $contador < -$num2; $contador += 1) {
-                $potencia *= $num1;
-            }
-            $potencia = 1 / $potencia;
+        } else {
+            $mensaje = "El exponente debe ser positivo";
         }
-        $mensaje = "$potencia";
     }
+
     /* !SECTION fin programa */
 } else {
     $mensaje = "Ingrese datos en el formulario";
 }
-echo $mensaje;
+echo "<p>$mensaje</p>";

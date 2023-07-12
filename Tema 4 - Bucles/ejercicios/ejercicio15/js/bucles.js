@@ -128,7 +128,7 @@ function dowhilePython() {
     .then((text) => {
       // Mostrar el resultado en la página
       const resultadoDiv = document.getElementById("resultadoPython");
-      resultadoDiv.innerHTML = "Do-WHILE Py:<br>" + text;
+      resultadoDiv.innerHTML = "Do-WHILE PY:<br>" + text;
     })
     .catch((error) => console.error(error));
 }

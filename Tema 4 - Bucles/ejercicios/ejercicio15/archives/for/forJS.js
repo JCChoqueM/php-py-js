@@ -8,36 +8,26 @@ function forJS() {
   if (
     num1 !== undefined &&
     num1.trim() !== "" &&
-    Number.isFinite(Number(num1)) &&
-    Number.isInteger(Number(num1))
+    Number.isFinite(Number(num1)) /* &&
+    Number.isInteger(Number(num1)) */
   ) {
-    num1 = parseInt(num1);
+    num1 = parseFloat(num1);
     num2 = parseInt(num2);
-    let contador = 0;
+    let contador;
     let potencia = 1;
     if (num1 == 0 && num2 == 0) {
-      mensaje = `En este caso 0^0 puede tener 2 valores 0 y 1 dependiendo como se lo quiere tratar`;
-    } else if (num1 == 0 && num2 < 0) {
-      mensaje = `El resultado es indefinido `;
+      mensaje = "0<sup>0</sup>=0 y 0<sup>0</sup>=1 ";
     } else if (num2 == 0) {
-      if (num1 != 0) {
-        potencia = 1;
-        mensaje = `${potencia}`;
-      } else {
-        mensaje = `Dependiendo de como se trabaje el resultado sera 0 o 1`;
-      }
+      mensaje = num1 + "<sup>0</sup>=1";
     } else {
       if (num2 > 0) {
-        for (contador; contador < num2; contador++) {
+        for (contador = 1; contador <= num2; contador++) {
           potencia *= num1;
+          mensaje += `${num1}<sup>${contador}</sup> = ${potencia}<br>`;
         }
-      } else if (num2 < 0) {
-        for (contador; contador < -num2; contador++) {
-          potencia *= num1;
-        }
-        potencia = 1 / potencia;
+      } else {
+        mensaje = "El exponente debe ser positivo";
       }
-      mensaje = `${potencia}`;
     }
 
     /* !SECTION fin: codigo*/
@@ -46,5 +36,5 @@ function forJS() {
     /* !SECTION fin: verifica si el formulario esta vacio */
   }
   const resultadoDiv = document.getElementById("resultadoJavascript");
-  resultadoDiv.innerHTML = `FOR JS: <br>${mensaje} `;
+  resultadoDiv.innerHTML = `<p>FOR JS: <br>${mensaje} </p>`;
 }
