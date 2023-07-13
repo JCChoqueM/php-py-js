@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-12 10:28:48 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xMjsiMTA6MDY6MDcgIjsyNTM5"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xMjsiMTA6Mjg6NDggIjsxOzI2NTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size=""/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="1"/>
+            <input variable="numero"/>
+            <if expression="numero&gt;1">
+                <then>
+                    <while expression="i&lt;=numero">
+                        <if expression="numero%i==0">
+                            <then>
+                                <assign variable="contador" expression="contador+1"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <assign variable="i" expression="i+1"/>
+                    </while>
+                    <if expression="contador&lt;=2">
+                        <then>
+                            <output expression="&quot;Es primo&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;No es primo&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="numero==1">
+                        <then>
+                            <output expression="&quot;El n&#250;mero 1, no es ni primo ni compuesto.&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="numero&lt;=0">
+                                <then>
+                                    <output expression="&quot;El numero debe ser  mayor que 1&quot;" newline="True"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
