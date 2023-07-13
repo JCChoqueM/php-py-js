@@ -1,11 +1,9 @@
 /* SECTION inicio For boton PHP */
 function forPHP() {
   const num1 = document.getElementById("num1").value;
-  const num2 = document.getElementById("num2").value;
 
   const formData = new FormData();
   formData.append("num1", num1);
-  formData.append("num2", num2);
 
   fetch("archives/for/forPHP.php", {
     method: "POST",
@@ -24,10 +22,9 @@ function forPHP() {
 /* SECTION inicio For boton Python */
 function forPython() {
   const num1 = document.getElementById("num1").value;
-  const num2 = document.getElementById("num2").value;
 
   // Enviar la solicitud al servidor utilizando fetch
-  fetch("archives/for/forPY.php?num1=" + num1 + "&num2=" + num2) //+ "&metodo=python" || + "&num2=" + num2
+  fetch("archives/for/forPY.php?num1=" + num1) //+ "&metodo=python" || + "&num2=" + num2
     .then((response) => response.text())
     .then((text) => {
       // Mostrar el resultado en la página
@@ -49,11 +46,9 @@ function calculoFor() {
 /* SECTION inicio boton PHP */
 function whilePHP() {
   const num1 = document.getElementById("num1").value;
-  const num2 = document.getElementById("num2").value;
 
   const formData = new FormData();
   formData.append("num1", num1);
-  formData.append("num2", num2);
 
   fetch("archives/while/whilePHP.php", {
     method: "POST",
@@ -72,10 +67,9 @@ function whilePHP() {
 /* SECTION inicio boton Python */
 function whilePython() {
   const num1 = document.getElementById("num1").value;
-  const num2 = document.getElementById("num2").value;
 
   // Enviar la solicitud al servidor utilizando fetch
-  fetch("archives/while/whilePY.php?num1=" + num1 + "&num2=" + num2) //+ "&metodo=python" || + "&num2=" + num2
+  fetch("archives/while/whilePY.php?num1=" + num1) //+ "&metodo=python" || + "&num2=" + num2
     .then((response) => response.text())
     .then((text) => {
       // Mostrar el resultado en la página
@@ -97,11 +91,9 @@ function calculoWhile() {
 /* SECTION inicio boton PHP */
 function dowhilePHP() {
   const num1 = document.getElementById("num1").value;
-  const num2 = document.getElementById("num2").value;
 
   const formData = new FormData();
   formData.append("num1", num1);
-  formData.append("num2", num2);
 
   fetch("archives/dowhile/dowhilePHP.php", {
     method: "POST",
@@ -120,10 +112,9 @@ function dowhilePHP() {
 /* SECTION inicio boton Python */
 function dowhilePython() {
   const num1 = document.getElementById("num1").value;
-  const num2 = document.getElementById("num2").value;
 
   // Enviar la solicitud al servidor utilizando fetch
-  fetch("archives/dowhile/dowhilePY.php?num1=" + num1 + "&num2=" + num2) //+ "&metodo=python" || + "&num2=" + num2
+  fetch("archives/dowhile/dowhilePY.php?num1=" + num1) //+ "&metodo=python" || + "&num2=" + num2
     .then((response) => response.text())
     .then((text) => {
       // Mostrar el resultado en la página

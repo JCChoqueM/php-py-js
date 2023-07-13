@@ -1,6 +1,5 @@
 <?php
 $num1 = $_GET["num1"];
-$num2 = $_GET["num2"];
 /* $num1 = ltrim($num1, "0"); */
 if (
     isset($num1) &&
@@ -8,7 +7,7 @@ if (
     is_numeric($num1) // &&
     /*     filter_var($num1, FILTER_VALIDATE_INT) !== false */
 ) {
-    $output = shell_exec("python while_py.py " . $num1 . " " . $num2);
+    $output = shell_exec("python while_py.py " . $num1);
     echo $output;
 } else {
     echo "Por favor ingrese un numero valido en el formulario ";
