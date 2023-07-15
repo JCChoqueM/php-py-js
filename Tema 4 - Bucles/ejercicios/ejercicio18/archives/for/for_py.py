@@ -4,20 +4,23 @@ Este módulo muestra un MENSAJE incrementando el valor de i.
 import sys
 
 # Obtener los argumentos de la línea de comandos
-NUM1 = float(sys.argv[1])
+NUM1 = int(sys.argv[1])
 NUM2 = int(sys.argv[2])
 MENSAJE = ""
-CONTADOR = 1
-POTENCIA = 1
-if NUM1 == 0 and NUM2 == 0:
-    MENSAJE = f"{NUM1}<sup>{NUM2}</sup>=0 y {NUM1}<sup>{NUM2}</sup>=1 "
-elif NUM2 == 0:
-    MENSAJE = f"{NUM1}<sup>{NUM2}</sup>=1"
-else:
-    if NUM2 > 0:
-        for CONTADOR in range(1, NUM2 + 1):
-            POTENCIA *= NUM1
-            MENSAJE += f"{NUM1}<sup>{CONTADOR}</sup> = {POTENCIA} <br>"
+MAYOR = None
+MENOR = None
+if NUM1 != NUM2:
+    if NUM1 > NUM2:
+        MAYOR = NUM1
+        MENOR = NUM2
     else:
-        MENSAJE = "El exponente debe ser positivo"
-print(f"<p>{MENSAJE}</p>")
+        MAYOR = NUM2
+        MENOR = NUM1
+    BUCLE = True
+    for _ in range(MENOR, MAYOR + 1, 7):
+        MENSAJE += f"({MENOR})  "
+        MENOR += 7
+else:
+    MENSAJE = "Debe introducir 2 numeros diferentes"
+
+print(f"{MENSAJE}")

@@ -8,28 +8,27 @@ if (
     /*     filter_var($num1, FILTER_VALIDATE_INT) !== false */
 ) {
     /* SECTION inicio programa */
-    $num1 = floatval($num1);
+    $num1 = intval($num1);
     $num2 = intval($num2);
     $mensaje = "";
-    $contador;
-    $potencia = 1;
-    if ($num1 == 0 && $num2 == 0) {
-        $mensaje = "$num1<sup>$num2</sup>=0  y tb $num1<sup>$num2</sup>=1 ";
-    } elseif ($num2 == 0) {
-        $mensaje = "$num1<sup>$num2</sup>=1";
-    } else {
-        if ($num2 >= 0) {
-            for ($contador = 1; $contador <= $num2; $contador++) {
-                $potencia *= $num1;
-                $mensaje .= "$num1<sup>$contador</sup> = $potencia<br>";
-            }
+    $mayor;
+    $menor;
+    if ($num1 != $num2) {
+        if ($num1 > $num2) {
+            $mayor = $num1;
+            $menor = $num2;
         } else {
-            $mensaje = "El exponente debe ser positivo";
+            $mayor = $num2;
+            $menor = $num1;
         }
+        for ($menor; $menor <= $mayor; $menor += 7) {
+            $mensaje .= "($menor)  ";
+        }
+    } else {
+        $mensaje = "Debe introducir 2 numeros diferentes";
     }
-
     /* !SECTION fin programa */
 } else {
     $mensaje = "Ingrese datos en el formulario";
 }
-echo "<p>$mensaje</p>";
+echo "$mensaje";

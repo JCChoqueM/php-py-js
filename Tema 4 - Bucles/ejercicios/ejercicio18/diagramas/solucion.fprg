@@ -4,45 +4,38 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="DDr5"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2023-07-12 10:05:47 "/>
-        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xMTsiMDU6MzY6MDAgIjsyNTM4"/>
-        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xMjsiMTA6MDU6NDcgIjsxMzsyNzAx"/>
+        <attribute name="saved" value="2023-07-14 10:55:57 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xNDsiMTA6Mzc6NTIgIjsyNTQ1"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xNDsiMTA6NTU6NTcgIjs0OzI2NjE="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="base" type="Real" array="False" size=""/>
-            <declare name="expo" type="Integer" array="False" size=""/>
-            <input variable="base"/>
-            <input variable="expo"/>
-            <declare name="contador" type="Integer" array="False" size=""/>
-            <assign variable="contador" expression="1"/>
-            <declare name="potencia" type="Integer" array="False" size=""/>
-            <assign variable="potencia" expression="1"/>
-            <if expression="expo==0&amp;&amp;base==0">
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <declare name="mayor" type="Integer" array="False" size=""/>
+            <declare name="menor" type="Integer" array="False" size=""/>
+            <if expression="a!=b">
                 <then>
-                    <output expression="&quot;0^0=0  tb 0^0=1&quot;" newline="True"/>
-                </then>
-                <else>
-                    <if expression="expo==0">
+                    <if expression="a&gt;b">
                         <then>
-                            <output expression="base&amp;&quot;^0 = 1&quot;" newline="True"/>
+                            <assign variable="mayor" expression="a"/>
+                            <assign variable="menor" expression="b"/>
                         </then>
                         <else>
-                            <if expression="expo&gt;0">
-                                <then>
-                                    <while expression="contador&lt;=expo">
-                                        <assign variable="potencia" expression="potencia*base"/>
-                                        <output expression="base&amp;&quot;^&quot;&amp;contador&amp;&quot; = &quot;&amp;potencia" newline="True"/>
-                                        <assign variable="contador" expression="contador+1"/>
-                                    </while>
-                                </then>
-                                <else>
-                                    <output expression="&quot;El exponente debe ser positivo&quot;" newline="True"/>
-                                </else>
-                            </if>
+                            <assign variable="mayor" expression="b"/>
+                            <assign variable="menor" expression="a"/>
                         </else>
                     </if>
+                    <do expression="menor&lt;=mayor">
+                        <output expression="menor" newline="True"/>
+                        <assign variable="menor" expression="menor+7"/>
+                    </do>
+                </then>
+                <else>
+                    <output expression="&quot;Debe introducir 2 numeros diferentes&quot;" newline="True"/>
                 </else>
             </if>
         </body>

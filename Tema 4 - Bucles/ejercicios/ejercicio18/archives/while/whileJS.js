@@ -11,26 +11,25 @@ function whileJS() {
     Number.isFinite(Number(num1)) /* &&
     Number.isInteger(Number(num1)) */
   ) {
-    num1 = parseFloat(num1);
+    num1 = parseInt(num1);
     num2 = parseInt(num2);
-    let contador = 1;
-    let potencia = 1;
-    if (num1 == 0 && num2 == 0) {
-      mensaje = "0<sup>0</sup>=0 y 0<sup>0</sup>=1 ";
-    } else if (num2 == 0) {
-      mensaje = num1 + "<sup>0</sup>=1";
-    } else {
-      if (num2 > 0) {
-        while (contador <= num2) {
-          potencia *= num1;
-          mensaje += `${num1}<sup>${contador}</sup> = ${potencia}<br>`;
-          contador += 1;
-        }
+    let mayor;
+    let menor;
+    if (num1 != num2) {
+      if (num1 > num2) {
+        mayor = num1;
+        menor = num2;
       } else {
-        mensaje = "El exponente debe ser positivo";
+        mayor = num2;
+        menor = num1;
       }
+      while (menor <= mayor) {
+        mensaje += `(${menor})  `;
+        menor = menor + 7;
+      }
+    } else {
+      mensaje = `Debe introducir 2 numeros diferentes`;
     }
-
     /* !SECTION fin: codigo*/
   } else {
     mensaje = `El formulario esta vacio o no es un Entero`;

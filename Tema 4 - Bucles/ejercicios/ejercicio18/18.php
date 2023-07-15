@@ -22,28 +22,27 @@
 
         <div id="content">
             <?php
-            $base = $_POST['base'];
-            $exponenteFinal = $_POST['exponenteFinal'];
+            $n1 = $_POST['n1'];
+            $n2 = $_POST['n2'];
 
-            if (!isset($base)) {
+            if ((!isset($n1)) || ($n1 == $n2)) {
             ?>
-                Este programa calcula una serie de potencias sucesivas a partir de la base y el exponente.<br>
-                <form action="15.php" method="post">
-                    Base: <input type="number" name="base" autofocus><br>
-                    Exponente: <input type="number" name="exponenteFinal"><br>
+                Por favor, introduzca dos números enteros que no sean iguales.<br>
+                <form action="18.php" method="post">
+                    <input type="number" name="n1" autofocus=""><br>
+                    <input type="number" name="n2"><br>
                     <input type="submit" value="Aceptar">
                 </form>
             <?php
             } else {
-                for ($i = 1; $i <= $exponenteFinal; $i++) {
-                    $potencia = 1;
-                    $exponente = $i;
+                if ($n1 > $n2) {
+                    $aux = $n1;
+                    $n1 = $n2;
+                    $n2 = $aux;
+                }
 
-                    for ($j = 0; $j < $exponente; $j++) {
-                        $potencia *= $base;
-                    }
-
-                    echo "$base<sup>$exponente</sup> = $potencia<br>";
+                for ($i = $n1; $i <= $n2; $i += 7) {
+                    echo "$i  ";
                 }
             }
             ?>
