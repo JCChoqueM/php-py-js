@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-17 12:14:58 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xNzsiMTI6MDM6MjYgIjsyNTQ0"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xNzsiMTI6MTQ6NTggIjsxOzI2NTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="esprimo" type="Boolean" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="n" start="2" end="100" direction="inc" step="1">
+                <assign variable="esprimo" expression="true"/>
+                <for variable="i" start="2" end="n-1" direction="inc" step="1">
+                    <if expression="n%i==0">
+                        <then>
+                            <assign variable="esprimo" expression="false"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+                <if expression="esprimo">
+                    <then>
+                        <output expression="n" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-16 05:30:21 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xNjsiMTE6NTU6MzcgIjsyNTUx"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xNjsiMDU6MzA6MjEgIjsyOzI2NDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size=""/>
+            <declare name="ni" type="Integer" array="False" size=""/>
+            <assign variable="ni" expression="0"/>
+            <declare name="aux" type="Integer" array="False" size=""/>
+            <declare name="mayor" type="Integer" array="False" size=""/>
+            <assign variable="mayor" expression="0"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <declare name="impares" type="Integer" array="False" size=""/>
+            <assign variable="impares" expression="0"/>
+            <declare name="sum" type="Integer" array="False" size=""/>
+            <assign variable="sum" expression="0"/>
+            <do expression="numero&gt;=0">
+                <input variable="numero"/>
+                <assign variable="ni" expression="ni+1"/>
+                <if expression="numero&gt;=0">
+                    <then>
+                        <if expression="numero%2==0">
+                            <then>
+                                <assign variable="aux" expression="numero"/>
+                                <if expression="aux&gt;=mayor">
+                                    <then>
+                                        <assign variable="mayor" expression="aux"/>
+                                        <assign variable="contador" expression="contador+1"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </then>
+                            <else>
+                                <assign variable="sum" expression="sum+numero"/>
+                                <assign variable="impares" expression="impares+1"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+            </do>
+            <output expression="&quot;numeros introducidos =&quot;&amp;ni-1" newline="True"/>
+            <declare name="mimp" type="Real" array="False" size=""/>
+            <if expression="impares&gt;0">
+                <then>
+                    <assign variable="mimp" expression="sum/impares"/>
+                    <output expression="&quot;Media de los impares&quot;&amp;mimp" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;no se an introducido numeros impares&quot;" newline="True"/>
+                </else>
+            </if>
+            <if expression="contador&gt;0">
+                <then>
+                    <output expression="&quot;El mayor de los numeros es pares es: &quot;&amp;mayor" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;No se an introducido numeros pares&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;El programa a finalizado&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

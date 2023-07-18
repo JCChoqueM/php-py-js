@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-13 05:32:02 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xMzsiMTI6NDU6NDYgIjsyNTQ4"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xMzsiMDU6MzI6MDAgIjsxO0REcjU7REVTS1RPUC1ERUpMTTcwOzIwMjMtMDctMTM7IjEyOjQ1OjQ2ICI7Zm9yLmZwcmc7NjExNA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xMzsiMDU6MzI6MDIgIjs1OzI2NTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <input variable="num"/>
+            <assign variable="num" expression="num+1"/>
+            <declare name="suma" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="0"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <if expression="num&gt;=0">
+                <then>
+                    <do expression="contador&lt;100">
+                        <assign variable="suma" expression="suma+num"/>
+                        <assign variable="num" expression="num+1"/>
+                        <assign variable="contador" expression="contador+1"/>
+                    </do>
+                    <output expression="suma" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Debe ingresar un numero mayor o igual a 0&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

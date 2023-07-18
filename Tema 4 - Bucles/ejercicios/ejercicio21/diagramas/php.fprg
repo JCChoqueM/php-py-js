@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-16 06:00:10 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xNjsiMDU6NDI6NDYgIjsyNTUw"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xNjsiMDY6MDA6MTAgIjsxOzI2NDQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <declare name="cuentanumeros" type="Integer" array="False" size=""/>
+            <assign variable="cuentanumeros" expression="0"/>
+            <declare name="sumaimpares" type="Integer" array="False" size=""/>
+            <assign variable="sumaimpares" expression="0"/>
+            <declare name="cuentaimpares" type="Integer" array="False" size=""/>
+            <assign variable="cuentaimpares" expression="0"/>
+            <declare name="mayorpar" type="Integer" array="False" size=""/>
+            <if expression="n&gt;0">
+                <then>
+                    <assign variable="cuentanumeros" expression="cuentanumeros+1"/>
+                    <if expression="n%2==0">
+                        <then>
+                            <if expression="n&gt;mayorpar">
+                                <then>
+                                    <assign variable="mayorpar" expression="n"/>
+                                </then>
+                                <else>
+                                    <assign variable="cuentaimpares" expression="cuentaimpares+1"/>
+                                    <assign variable="sumaimpares" expression="sumaimpares+n"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else/>
+                    </if>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
