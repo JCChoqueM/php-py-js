@@ -6,14 +6,23 @@ import sys
 # Obtener los argumentos de la línea de comandos
 NUM1 = int(sys.argv[1])
 MENSAJE = ""
-SUMA = 0
-CONTADOR = 0
-I = NUM1 + 1
-if NUM1 >= 0:
-    while CONTADOR < 100:
-        SUMA = SUMA + I
-        I += 1
-        CONTADOR += 1
-    MENSAJE = f"La suma de los 100 numeros siguientes a {NUM1} es:<br> {SUMA}"
-
+ORIGINAL = NUM1
+NUM1 = abs(NUM1)
+SIGNO = bool
+DIGITO = None
+if ORIGINAL < 0:
+    SIGNO = True
+else:
+    SIGNO = False
+if NUM1 != 0:
+    while NUM1 > 0:
+        DIGITO = NUM1 % 10
+        NUM1 = int(NUM1 / 10)
+        if SIGNO:
+            MENSAJE += "- "
+            SIGNO = False
+        MENSAJE += f"{DIGITO} "
+else:
+    MENSAJE = "0"
+print(f"El numero volteado de<br> {ORIGINAL} es: <br>")
 print(f"{MENSAJE}")

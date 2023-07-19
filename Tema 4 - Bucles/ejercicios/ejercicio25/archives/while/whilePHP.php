@@ -9,19 +9,31 @@ if (
     /* SECTION inicio programa */
     $num1 = intval($num1);
     $mensaje = "";
-    $suma = 0;
-    $contador = 0;
-    $i = $num1 + 1;
-    if ($num1 >= 0) {
-        while ($contador < 100) {
-            $suma = $suma + $i;
-            $i += 1;
-            $contador++;
+    $original = $num1;
+    $num1 = abs($num1);
+    $signo;
+    $digito;
+    if ($original < 0) {
+        $signo = true;
+    } else {
+        $signo = false;
+    }
+    if ($num1 != 0) {
+        $mensaje .= "El numero volteado de <br> $original es: <br>";
+        while ($num1 > 0) {
+            $digito = $num1 % 10;
+            $num1 = intval($num1 / 10);
+            if ($signo) {
+                $mensaje .= "- ";
+                $signo = false;
+            }
+            $mensaje .= "$digito ";
         }
-        $mensaje = "La suma de los 100 numeros siguientes a $num1 es:<br>$suma";
+    } else {
+        $mensaje = "0";
     }
     /* !SECTION fin programa */
 } else {
     $mensaje = "Ingrese datos en el formulario";
 }
-echo "$mensaje ";
+echo "$mensaje";

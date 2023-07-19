@@ -11,18 +11,7 @@ function forJS() {
     Number.isInteger(Number(num1))
   ) {
     /* SECTION inicio codigo */
-    num1 = parseInt(num1);
-    let suma = 0;
-    let i = num1 + 1;
-    if (num1 >= 0) {
-      for (let contador = 0; contador < 100; contador++) {
-        suma = suma + i;
-        i += 1;
-      }
-      mensaje =
-        `La suma de los 100 numeros siguientes a ${num1} es:<br>` + suma;
-    }
-
+    mensaje = "El ejercicio no tiene una solucion for";
     /* !SECTION fin: codigo*/
   } else {
     mensaje = `El formulario esta vacio o no es un Entero`;

@@ -12,17 +12,28 @@ function calcularJS() {
   ) {
     /* SECTION inicio codigo */
     num1 = parseInt(num1);
-    let suma = 0;
-    let contador = 0;
-    let i = num1 + 1;
-    if (num1 >= 0) {
-      while (contador < 100) {
-        suma = suma + i;
-        i += 1;
-        contador++;
+    var original = num1;
+    num1 = Math.abs(num1);
+    let signo;
+    let digito;
+    if (original < 0) {
+      signo = true;
+    } else {
+      signo = false;
+    }
+    if (num1 != 0) {
+      mensaje += `El numero volteado de <br>${original} es:<br>`;
+      while (num1 > 0) {
+        digito = num1 % 10;
+        num1 = parseInt(num1 / 10);
+        if (signo) {
+          mensaje += `- `;
+          signo = false;
+        }
+        mensaje += `${digito} `;
       }
-      mensaje =
-        `La suma de los 100 numeros siguientes a ${num1} es:<br>` + suma;
+    } else {
+      mensaje = `0`;
     }
 
     /* !SECTION fin: codigo*/

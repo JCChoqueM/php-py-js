@@ -12,17 +12,28 @@ function dowhileJS() {
   ) {
     /* SECTION inicio codigo */
     num1 = parseInt(num1);
-    let suma = 0;
-    let contador = 0;
-    let i = num1 + 1;
-    if (num1 >= 0) {
+    var original = num1;
+    num1 = Math.abs(num1);
+    let signo;
+    let digito;
+    if (original < 0) {
+      signo = true;
+    } else {
+      signo = false;
+    }
+    if (num1 != 0) {
+      mensaje += `El numero volteado de <br>${original} es:<br>`;
       do {
-        suma = suma + i;
-        i += 1;
-        contador++;
-      } while (contador < 100);
-      mensaje =
-        `La suma de los 100 numeros siguientes a ${num1} es:<br>` + suma;
+        digito = num1 % 10;
+        num1 = parseInt(num1 / 10);
+        if (signo) {
+          mensaje += `- `;
+          signo = false;
+        }
+        mensaje += `${digito} `;
+      } while (num1 > 0);
+    } else {
+      mensaje = `0`;
     }
 
     /* !SECTION fin: codigo*/
@@ -31,5 +42,5 @@ function dowhileJS() {
     /*  !SECTION fin: verifica si el formulario esta vacio  */
   }
   const resultadoDiv = document.getElementById("resultadoJavascript");
-  resultadoDiv.innerHTML = `<p>Do-WHILE JS: <br>${mensaje} </p>`;
+  resultadoDiv.innerHTML = `Do-WHILE JS: <br>${mensaje}`;
 }
