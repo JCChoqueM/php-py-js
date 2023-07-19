@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-18 10:54:18 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xODsiMTI6MzM6MDQgIjsyNTQ0"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xODsiMTA6NTQ6MTggIjs0OzI2NjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <declare name="original" type="Integer" array="False" size=""/>
+            <assign variable="original" expression="n"/>
+            <assign variable="n" expression="abs(n)"/>
+            <declare name="signo" type="Boolean" array="False" size=""/>
+            <declare name="digito" type="Integer" array="False" size=""/>
+            <if expression="original&lt;0">
+                <then>
+                    <assign variable="signo" expression="true"/>
+                </then>
+                <else>
+                    <assign variable="signo" expression="false"/>
+                </else>
+            </if>
+            <if expression="n!=0">
+                <then>
+                    <output expression="&quot;El n&#250;mero &quot;&amp;original&amp;&quot; volteado es igual a : &quot;" newline="False"/>
+                    <while expression="n&gt;0">
+                        <assign variable="digito" expression="n%10"/>
+                        <assign variable="n" expression="n/10"/>
+                        <if expression="signo">
+                            <then>
+                                <output expression="&quot;- &quot;" newline="False"/>
+                                <assign variable="signo" expression="false"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <output expression="digito&amp;&quot; &quot;" newline="False"/>
+                    </while>
+                </then>
+                <else>
+                    <output expression="&quot;0&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

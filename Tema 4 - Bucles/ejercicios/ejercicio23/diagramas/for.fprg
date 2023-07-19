@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-18 12:24:57 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xNzsiMTE6MzU6MjggIjsyNTUw"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xODsiMTI6MjQ6NTcgIjsyOzI2NjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="1"/>
+            <declare name="suma" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="0"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <declare name="media" type="Real" array="False" size=""/>
+            <comment text="funciona y no se porque hay que revisar a fondo el codigo"/>
+            <for variable="suma" start="0" end="9" direction="inc" step="1">
+                <input variable="n"/>
+                <assign variable="contador" expression="contador+1"/>
+                <assign variable="suma" expression="suma+n-1"/>
+            </for>
+            <assign variable="media" expression="suma/contador"/>
+            <output expression="&quot;Total acumulado= &quot;&amp;suma" newline="True"/>
+            <output expression="&quot;Se an introducido &quot;&amp;contador&amp;&quot; numeros&quot;" newline="True"/>
+            <output expression="&quot;La media es = &quot;&amp;media" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
