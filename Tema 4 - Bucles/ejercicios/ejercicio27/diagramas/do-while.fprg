@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-23 11:16:22 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0yMzsiMDk6MjY6MzggIjsyNTU1"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0yMzsiMTE6MTY6MjIgIjszOzI2NTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="1"/>
+            <declare name="contadormul" type="Integer" array="False" size=""/>
+            <assign variable="contadormul" expression="0"/>
+            <declare name="suma" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="0"/>
+            <if expression="n&gt;=1">
+                <then>
+                    <output expression="&quot;Los multiplos son : &quot;" newline="False"/>
+                    <do expression="contador&lt;=n">
+                        <if expression="contador%3==0">
+                            <then>
+                                <output expression="&quot;(&quot;&amp;contador&amp;&quot;) &quot;" newline="False"/>
+                                <assign variable="contadormul" expression="contadormul+1"/>
+                                <assign variable="suma" expression="suma+contador"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <assign variable="contador" expression="contador+1"/>
+                    </do>
+                    <if expression="contadormul==0">
+                        <then>
+                            <output expression="&quot;no hay multiplos&quot;" newline="True"/>
+                            <output expression="&quot;la cantidad de multiplos es: (0)&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="ToChar(13)&amp;&quot;la cantidad de multiplos  es: &quot;&amp;&quot;(&quot;&amp;contadormul&amp;&quot;)&quot;" newline="True"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;La suma es : &quot;&amp;&quot;(&quot;&amp;suma&amp;&quot;)&quot;" newline="False"/>
+                </then>
+                <else>
+                    <output expression="&quot;El numero debe ser mayor o igual a 1&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
