@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-21 01:39:55 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0yMTsiMTI6Mjg6NDIgIjsyNTQ0"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0yMTsiMDE6Mzk6NTUgIjszOzI2NTg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <declare name="digito" type="Integer" array="False" size=""/>
+            <input variable="digito"/>
+            <declare name="volteado" type="Integer" array="False" size=""/>
+            <assign variable="volteado" expression="0"/>
+            <declare name="posicion" type="Integer" array="False" size=""/>
+            <assign variable="posicion" expression="0"/>
+            <assign variable="n" expression="abs(n)"/>
+            <declare name="verificar" type="Integer" array="False" size=""/>
+            <assign variable="verificar" expression="0"/>
+            <do expression="n&gt;0">
+                <assign variable="volteado" expression="(volteado*10)+(n%10)"/>
+                <assign variable="n" expression="n/10"/>
+            </do>
+            <do expression="volteado&gt;0">
+                <if expression="(volteado%10)==digito">
+                    <then>
+                        <assign variable="posicion" expression="posicion+1"/>
+                        <assign variable="verificar" expression="verificar+1"/>
+                        <output expression="posicion" newline="True"/>
+                    </then>
+                    <else>
+                        <assign variable="posicion" expression="posicion+1"/>
+                    </else>
+                </if>
+                <assign variable="volteado" expression="volteado/10"/>
+            </do>
+            <if expression="verificar==0">
+                <then>
+                    <output expression="&quot;No se encontro el digito en el numero ingresado&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
