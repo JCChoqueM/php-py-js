@@ -11,12 +11,35 @@ function forJS() {
     Number.isInteger(Number(num1))
   ) {
     /* SECTION inicio codigo */
-    mensaje = "El ejercicio no tiene una solucion for";
+    num1 = parseInt(num1);
+    /* let contador = 1;  */
+    let contadormul = 0;
+    let suma = 0;
+    if (num1 >= 1) {
+      mensaje += `En el rango de 1 a ${num1}.<br>`;
+      mensaje += `Los multiplos de 3 son:<br> `;
+      for (let contador = 1; contador <= num1; contador++) {
+        if (contador % 3 == 0) {
+          mensaje += `(${contador})`;
+          contadormul++;
+          suma += contador;
+        }
+      }
+      if (contadormul == 0) {
+        mensaje += ` no hay multiplos<br> La cantidad de multiplos es (0)`;
+      } else {
+        mensaje += `<br> la cantidad de multiplos es:<br> (${contadormul}) `;
+      }
+      mensaje += `<br>la suma de los multiplos es:<br> (${suma})`;
+    } else {
+      mensaje = `El numero debe ser mayor o igual a 1`;
+    }
+
     /* !SECTION fin: codigo*/
   } else {
     mensaje = `El formulario esta vacio o no es un Entero`;
     /*  !SECTION fin: verifica si el formulario esta vacio  */
   }
   const resultadoDiv = document.getElementById("resultadoJavascript");
-  resultadoDiv.innerHTML = `<p>FOR JS: <br>${mensaje} </p>`;
+  resultadoDiv.innerHTML = `FOR JS: <br>${mensaje} `;
 }

@@ -62,7 +62,7 @@ const btn3 = document.getElementById("btn3");
 const image = document.querySelector(".image img");
 
 btn1.addEventListener("click", () => {
-  image.src = "./diagramas/for.svg";
+  image.src = "./diagramas/error.svg";
 });
 
 btn2.addEventListener("click", () => {

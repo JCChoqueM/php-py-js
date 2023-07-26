@@ -6,25 +6,28 @@ import sys
 # Obtener los argumentos de la línea de comandos
 NUM1 = int(sys.argv[1])
 MENSAJE = ""
-ORIGINAL = NUM1
-NUM1 = abs(NUM1)
-SIGNO = bool
-DIGITO = None
-if ORIGINAL < 0:
-    SIGNO = True
-else:
-    SIGNO = False
-if NUM1 != 0:
+CONTADOR = 1
+CONTADORMUL = 0
+SUMA = 0
+if NUM1 >= 1:
+    MENSAJE += f"En el rango de 1 a {NUM1}.<br>"
+    MENSAJE += "Los multiplos de 3 son:<br> "
     BUCLE = True
     while BUCLE:
-        DIGITO = NUM1 % 10
-        NUM1 = int(NUM1 / 10)
-        if SIGNO:
-            MENSAJE += "- "
-            SIGNO = False
-        MENSAJE += f"{DIGITO} "
-        if NUM1 == 0:
+        if CONTADOR % 3 == 0:
+            MENSAJE += f"({CONTADOR})"
+            CONTADORMUL += 1
+            SUMA += CONTADOR
+        CONTADOR += 1
+        if CONTADOR == NUM1 + 1:
             BUCLE = False
+
+    if CONTADORMUL == 0:
+        MENSAJE += " no hay multiplos<br> La cantidad de multiplos es (0)"
+    else:
+        MENSAJE += f"<br> la cantidad de multiplos es:<br> ({CONTADORMUL})"
+
+    MENSAJE += f"<br>la suma de los multiplos es:<br> ({SUMA})"
 else:
-    MENSAJE = "0"
-print(f"El numero volteado de<br> {ORIGINAL} es: <br> {MENSAJE}")
+    MENSAJE = "El numero debe ser mayor o igual a 1"
+print(f"{MENSAJE}")

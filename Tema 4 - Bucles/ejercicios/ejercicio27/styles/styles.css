@@ -18,8 +18,8 @@ body {
 
 
 .image img {
-    width: 75%;
-    height: 75%;
+    width: 135%;
+    height: 100%;
     object-fit: contain;
 }
 
