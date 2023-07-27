@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-26 12:05:12 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0yNTsiMTE6NDY6NDQgIjsyNTQ5"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0yNjsiMTI6MDU6MTIgIjsyOzI2NTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <declare name="factorial" type="Integer" array="False" size=""/>
+            <assign variable="factorial" expression="1"/>
+            <if expression="n&gt;=0">
+                <then>
+                    <breakpoint expression="" always="True"/>
+                    <while expression="n&gt;1">
+                        <assign variable="factorial" expression="factorial*n"/>
+                        <assign variable="n" expression="n-1"/>
+                    </while>
+                    <output expression="factorial" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;La factorial solo esta comprendida por numeros enteros  positivos&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-07-26 09:48:35 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0yNjsiMDk6MzA6MDAgIjsyNTQy"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0yNjsiMDk6NDg6MzUgIjsyOzI2Njg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <declare name="m" type="Integer" array="False" size=""/>
+            <input variable="m"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="1"/>
+            <if expression="n&gt;=0">
+                <then>
+                    <while expression="contador&lt;n">
+                        <if expression="contador%m!=0">
+                            <then>
+                                <output expression="contador" newline="True"/>
+                            </then>
+                            <else/>
+                        </if>
+                        <assign variable="contador" expression="contador+1"/>
+                    </while>
+                </then>
+                <else>
+                    <output expression="&quot;El n&#250;mero debe ser mayor que 0&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

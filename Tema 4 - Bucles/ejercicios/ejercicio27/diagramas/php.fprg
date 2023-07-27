@@ -4,27 +4,31 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="DDr5"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2023-07-14 01:59:03 "/>
-        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xNDsiMDE6NTI6MTggIjsyNTQ0"/>
-        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0xNDsiMDE6NTk6MDMgIjsxOzI2NTM="/>
+        <attribute name="saved" value="2023-07-26 12:30:31 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0yNjsiMTI6MjA6MzkgIjsyNTQ3"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wNy0yNjsiMTI6MzA6MzEgIjsxOzI2NDg="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <declare name="n" type="Integer" array="False" size=""/>
             <input variable="n"/>
+            <declare name="cuenta" type="Integer" array="False" size=""/>
+            <assign variable="cuenta" expression="0"/>
             <declare name="suma" type="Integer" array="False" size=""/>
             <assign variable="suma" expression="0"/>
             <declare name="i" type="Integer" array="False" size=""/>
-            <if expression="n&gt;=0">
-                <then>
-                    <for variable="i" start="n+1" end="n+100" direction="inc" step="1">
+            <for variable="i" start="1" end="n" direction="inc" step="1">
+                <if expression="i%3==0">
+                    <then>
+                        <output expression="&quot;(&quot;&amp;i&amp;&quot;)&quot;" newline="False"/>
+                        <assign variable="cuenta" expression="cuenta+1"/>
                         <assign variable="suma" expression="suma+i"/>
-                    </for>
-                    <output expression="suma" newline="True"/>
-                </then>
-                <else/>
-            </if>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot; Desde 1 hasta &quot;&amp;n&amp;&quot; hay &quot;&amp;cuenta&amp;&quot; multiplos de 3 y suman &quot;&amp;suma" newline="True"/>
         </body>
     </function>
 </flowgorithm>
