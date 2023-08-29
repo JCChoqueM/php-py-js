@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Números</title>
+    <script>
+        var numeros = [];
+        
+        function agregarNumero() {
+            var inputNumero = document.getElementById("numero");
+            var numero = parseInt(inputNumero.value);
+            
+            if (!isNaN(numero)) {
+                numeros.push(numero);
+                inputNumero.value = "";
+                
+                var resultadosDiv = document.getElementById("resultados");
+                resultadosDiv.innerHTML = "<p>Números ingresados: " + numeros.join(", ") + "</p>";
+                
+                if (numeros.length === 3) {
+                    calcularSuma();
+                }
+            }
+        }
+        
+        function calcularSuma() {
+            var suma = numeros.reduce(function(a, b) {
+                return a + b;
+            }, 0);
+            
+            var resultadosDiv = document.getElementById("resultados");
+            resultadosDiv.innerHTML += "<p>Suma de los números: " + suma + "</p>";
+            
+            numeros = [];
+        }
+    </script>
+</head>
+<body>
+    <h2>Ingrese 3 números y calcule la suma</h2>
+    <input type="number" id="numero" placeholder="Ingrese un número">
+    <button id="agregarBtn" onclick="agregarNumero()">Agregar Número</button>
+    <div id="resultados"></div>
+</body>
+</html>

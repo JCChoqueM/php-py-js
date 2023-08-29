@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulario de Números</title>
+    <script>
+        var numeros = [];
+
+        function agregarNumero() {
+            var inputNumero = document.getElementById("numero");
+            var numero = parseInt(inputNumero.value);
+
+            if (!isNaN(numero)) {
+                numeros.push(numero);
+                inputNumero.value = "";
+
+                var resultadosDiv = document.getElementById("resultados");
+                resultadosDiv.innerHTML = "<p>Números ingresados: " + numeros.join(", ") + "</p>";
+
+                if (numeros.length === 3) {
+                    calcularSuma();
+                }
+            }
+        }
+
+        async function calcularSuma() {
+            try {
+                const response = await fetch("calcular_suma.php?numeros=" + JSON.stringify(numeros));
+                if (response.ok) {
+                    const suma = await response.text();
+                    var resultadosDiv = document.getElementById("resultados");
+                    resultadosDiv.innerHTML += "<p>Suma de los números: " + suma + "</p>";
+                    numeros = [];
+                } else {
+                    console.error("Error en la solicitud:", response.status);
+                }
+            } catch (error) {
+                console.error("Error en la solicitud:", error);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Ingrese 3 números y calcule la suma</h2>
+    <input type="number" id="numero" placeholder="Ingrese un número">
+    <button id="agregarBtn" onclick="agregarNumero()">Agregar Número</button>
+    <div id="resultados"></div>
+</body>
+
+</html>
