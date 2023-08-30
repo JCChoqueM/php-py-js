@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-08-14 02:59:07 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wOC0xNDsiMDI6NTE6NDggIjsyNTQ4"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wOC0xNDsiMDI6NTk6MDcgIjsxOzI2NTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="True" size="20"/>
+            <declare name="cuadrado" type="Integer" array="True" size="20"/>
+            <declare name="cubo" type="Integer" array="True" size="20"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <for variable="contador" start="0" end="19" direction="inc" step="1">
+                <assign variable="numero[contador]" expression="random(100)"/>
+                <assign variable="cuadrado[contador]" expression="numero[contador]^2"/>
+                <assign variable="cubo[contador]" expression="numero[contador]^3"/>
+                <output expression="numero[contador]&amp;&quot;||&quot;&amp;cuadrado[contador]&amp;&quot;||&quot;&amp;cubo[contador]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

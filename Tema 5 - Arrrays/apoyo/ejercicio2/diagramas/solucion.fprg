@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-08-18 09:26:33 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wOC0xODsiMDY6NTU6MjQgIjsyNTU0"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0wOC0xODsiMDk6MjY6MzMgIjsxOzI2NjM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="True" size="5"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <declare name="max" type="Integer" array="False" size=""/>
+            <declare name="min" type="Integer" array="False" size=""/>
+            <for variable="contador" start="0" end="4" direction="inc" step="1">
+                <assign variable="numero[contador]" expression="random(2)"/>
+            </for>
+            <assign variable="max" expression="numero[0]"/>
+            <assign variable="min" expression="numero[0]"/>
+            <for variable="contador" start="0" end="4" direction="inc" step="1">
+                <if expression="numero[contador]&gt;max">
+                    <then>
+                        <assign variable="max" expression="numero[contador]"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="numero[contador]&lt;min">
+                    <then>
+                        <assign variable="min" expression="numero[contador]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <for variable="contador" start="0" end="4" direction="inc" step="1">
+                <if expression="max==min">
+                    <then>
+                        <output expression="numero[contador]&amp;&quot; minimo y maximo&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="numero[contador]==min">
+                            <then>
+                                <output expression="numero[contador]&amp;&quot; minimo&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="numero[contador]==max">
+                                    <then>
+                                        <output expression="numero[contador]&amp;&quot; maximo&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="numero[contador]" newline="True"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
