@@ -1,11 +1,11 @@
 /* SECTION inicio boton PHP */
-function resolverConPHP() {
+function resolverAutomaticamentePHP() {
   /*  const num1 = document.getElementById("num1").value;
 
   const formData = new FormData();
   formData.append("num1", num1); */
 
-  fetch("archives/resolver/resolver.php", {
+  fetch("archives/resolverAutomaticamente/resolverAutomaticamente.php", {
     /*   method: "POST",
     body: formData, */
   })
@@ -20,11 +20,11 @@ function resolverConPHP() {
 /* !SECTION fin boton PHP */
 
 /* SECTION inicio boton Python */
-function resolverConPython() {
+function resolverAutomaticamentePython() {
   /*  const num1 = document.getElementById("num1").value; */
 
   // Enviar la solicitud al servidor utilizando fetch
-  fetch("archives/resolver/resolverPy.php") //.php?num1=" + num1)+ "&metodo=python" || + "&num2=" + num2
+  fetch("archives/resolverAutomaticamente/resolverAutomaticamentePy.php") //.php?num1=" + num1)+ "&metodo=python" || + "&num2=" + num2
     .then((response) => response.text())
     .then((text) => {
       // Mostrar el resultado en la página
@@ -37,8 +37,8 @@ function resolverConPython() {
 
 /* SECTION inicio sumar todo */
 function resolverAutomaticamente() {
-  resolverConPHP();
-  resolverConPython();
-  resolverConJavaScript();
+  resolverAutomaticamentePHP();
+  resolverAutomaticamentePython();
+  resolverAutomaticamenteJavaScript();
 }
 /* !SECTION fin sumar todo */

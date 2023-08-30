@@ -26,7 +26,7 @@ function ingresarDato() {
 async function ingresarPHP() {
   try {
     const response = await fetch(
-      "archives/ingresar/ingresar.php?numeros=" + JSON.stringify(numeros)
+      "archives/ingresarDato/ingresarDato.php?numeros=" + JSON.stringify(numeros)
     );
     if (response.ok) {
       const suma = await response.text();
@@ -44,7 +44,7 @@ async function ingresarPHP() {
 async function ingresarPY() {
   try {
     const response = await fetch(
-      "archives/ingresar/ingresarPY.php", // Cambiar la ruta al archivo PHP que ejecutará el script Python
+      "archives/ingresarDato/ingresarDatoPY.php", // Cambiar la ruta al archivo PHP que ejecutará el script Python
       {
         method: "POST",
         body: JSON.stringify(numeros), // Enviamos el array de números en el cuerpo de la solicitud

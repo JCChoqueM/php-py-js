@@ -1,4 +1,4 @@
-function resolverConJavaScript() {
+function resolverAutomaticamenteJavaScript() {
   let mensaje = "";
   let numero = [];
   let cuadrado = [];
