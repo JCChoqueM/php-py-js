@@ -3,7 +3,7 @@ var numerosPY = [];
 var numerosJS = [];
 
 //SECTION - inicio PHP
-function ingresarDatoPHP() {
+function ingresarNumPHP() {
   var inputNumero = document.getElementById("num1");
   var numero = parseInt(inputNumero.value);
 
@@ -24,7 +24,7 @@ function ingresarDatoPHP() {
 async function ingresarBotonPHP() {
   try {
     const response = await fetch(
-      "archives/ingresarPHPYJS/ingresarBoton.php?numerosPHP=" +
+      "archives/ingresarBotonPHPYJS/ingresarBoton.php?numerosPHP=" +
         JSON.stringify(numerosPHP)
     );
     if (response.ok) {
@@ -42,7 +42,7 @@ async function ingresarBotonPHP() {
 //!SECTION fin PHP
 
 //SECTION - inicio PY
-function ingresarDatoPY() {
+function ingresarNumPY() {
   var inputNumero = document.getElementById("num1");
   var numero = parseInt(inputNumero.value);
 
@@ -63,7 +63,7 @@ function ingresarDatoPY() {
 async function ingresarBotonPY() {
   try {
     const response = await fetch(
-      "archives/ingresarPHPYJS/ingresarBotonPY.php", // Cambiar la ruta al archivo PHP que ejecutará el script Python
+      "archives/ingresarBotonPHPYJS/ingresarBotonPY.php", // Cambiar la ruta al archivo PHP que ejecutará el script Python
       {
         method: "POST",
         body: JSON.stringify(numerosPY), // Enviamos el array de números en el cuerpo de la solicitud
@@ -84,7 +84,7 @@ async function ingresarBotonPY() {
 //!SECTION fin PY
 
 //SECTION - inicio JS
-function ingresarDatoJS() {
+function ingresarNumJS() {
   var inputNumero = document.getElementById("num1");
   var numero = parseInt(inputNumero.value);
 
