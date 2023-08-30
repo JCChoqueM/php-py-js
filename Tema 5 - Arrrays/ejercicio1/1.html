@@ -3,9 +3,11 @@
   <head>
     <title>#1</title>
     <meta charset="UTF-8" />
-    <script src="archives/zolucion/solucion.js"></script>
-    <script src="js/solucion.js" defer></script>
-    <script src="js/agregar.js" defer></script>
+    <script
+      src="archives/resolverAutomaticamente/resolverAutomaticamenteSol.js"
+      defer
+    ></script>
+    <script src="js/resolverAutomaticamente.js" defer></script>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
@@ -34,8 +36,12 @@
               />
             </div> -->
             <div class="otros">
-              <button class="bTodo" type="button" onclick="Solucion()">
-                Resolver
+              <button
+                class="bTodo"
+                type="button"
+                onclick="resolverAutomaticamente()"
+              >
+                Resolver Automaticamente
               </button>
               <!-- <button
                 class="bLlenar"
@@ -53,22 +59,22 @@
         <!-- SECTION inicio contenedor cajas php js py -->
         <div class="contenedores">
           <section class="caja cajaPHP">
-            <button class="bPHP" type="button" onclick="calcularPHP()">
+            <button class="bPHP" type="button" onclick="resolverAutomaticamentePHP()">
               Calcular con PHP
             </button>
             <div class="r" id="resultadoPHP"></div>
           </section>
           <section class="caja cajaPY">
-            <button class="bPY" type="button" onclick="calcularPython()">
+            <button class="bPY" type="button" onclick="resolverAutomaticamentePython()">
               Calcular con Python
             </button>
             <div class="r" id="resultadoPython"></div>
           </section>
           <section class="caja cajaJS">
-            <button class="bJS" type="button" onclick="calcularJS()">
+            <button class="bJS" type="button" onclick="resolverAutomaticamenteJavaScript()">
               Calcular con JS
             </button>
-            <div class="r" id="resultadoJavascript"></div>
+            <div class="r" id="resultadoJavaScript"></div>
           </section>
         </div>
         <footer>

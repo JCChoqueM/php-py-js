@@ -1,4 +1,4 @@
-function calcularJS() {
+function resolverAutomaticamenteJavaScript() {
   let mensaje = "";
   let numero = [];
   let cuadrado = [];
@@ -11,20 +11,20 @@ function calcularJS() {
     numero.push(numeroAleatorio);
   }
   numero.forEach((elemento) => {
-    cuadrado.push (Math.pow(elemento, 2)) ;
+    cuadrado.push(Math.pow(elemento, 2));
     cubo.push(Math.pow(elemento, 3));
   });
 
   mensaje += `<table border='1'><tr><th>Nº</th><th>Numero</th><th>Cuadrado</th><th>Cubo</th></tr>`;
   for (contador = 0; contador < 20; contador++) {
     mensaje += `<tr>
-  <td> ${contador+1} </td>
+  <td> ${contador + 1} </td>
   <td>${numero[contador]}</td>
   <td>${cuadrado[contador]}</td>
   <td>${cubo[contador]}</td>
   </tr>`;
   }
   mensaje += "</table>";
-  const resultadoDiv = document.getElementById("resultadoJavascript");
+  const resultadoDiv = document.getElementById("resultadoJavaScript");
   resultadoDiv.innerHTML = `<br>${mensaje}`;
 }
