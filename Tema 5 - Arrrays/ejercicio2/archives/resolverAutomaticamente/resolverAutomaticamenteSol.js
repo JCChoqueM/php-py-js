@@ -1,29 +1,39 @@
 function resolverAutomaticamenteJavaScript() {
   let mensaje = "";
   let numero = [];
-  let cuadrado = [];
-  let cubo = [];
   let contador = 0;
   const min = 0;
   const max = 100;
-  for (contador = 0; contador < 20; contador++) {
+  for (contador = 0; contador < 10; contador++) {
     const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
     numero.push(numeroAleatorio);
   }
+  let maximo = numero[0];
+  let minimo = numero[0];
   numero.forEach((elemento) => {
-    cuadrado.push(Math.pow(elemento, 2));
-    cubo.push(Math.pow(elemento, 3));
+    if (elemento > maximo) {
+      maximo = elemento;
+    }
+    if (elemento < minimo) {
+      minimo = elemento;
+    }
   });
 
-  mensaje += `<table border='1'><tr><th>Nº</th><th>Numero</th><th>Cuadrado</th><th>Cubo</th></tr>`;
-  for (contador = 0; contador < 20; contador++) {
-    mensaje += `<tr>
-  <td> ${contador + 1} </td>
-  <td>${numero[contador]}</td>
-  <td>${cuadrado[contador]}</td>
-  <td>${cubo[contador]}</td>
-  </tr>`;
-  }
+  mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th></tr>`;
+  contador = 0;
+  numero.forEach((elemento) => {
+    if (maximo == minimo) {
+      mensaje += `<tr> <td> ${contador} </td><td>${elemento} es maximo y minimo</td> </tr>`;
+    } else if (elemento == minimo) {
+      mensaje += `<tr> <td> ${contador} </td><td>${elemento} minimo</td> </tr>`;
+    } else if (elemento == maximo) {
+      mensaje += `<tr> <td> ${contador} </td><td>${elemento} maximo</td> </tr>`;
+    } else {
+      mensaje += `<tr> <td> ${contador} </td><td>${elemento}</td> </tr>`;
+    }
+    contador += 1;
+  });
+
   mensaje += "</table>";
   const resultadoDiv = document.getElementById("resultadoJavaScript");
   resultadoDiv.innerHTML = `<br>${mensaje}`;
