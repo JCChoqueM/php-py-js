@@ -1,4 +1,4 @@
-function resolverAutomaticamenteJavaScript() {
+function solucionJavaScript() {
   let mensaje = "";
   let numero = [];
   let contador = 0;
