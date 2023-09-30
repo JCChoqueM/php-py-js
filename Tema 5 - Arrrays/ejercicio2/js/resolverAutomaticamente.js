@@ -1,3 +1,4 @@
+
 /* SECTION inicio boton PHP */
 function resolverAutomaticamentePHP() {
   /*  const num1 = document.getElementById("num1").value;

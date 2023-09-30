@@ -10,7 +10,7 @@ body {
 
 .container {
     display: flex;
-    width: 60%;
+    width: 65%;
     height: 100%;
     flex-direction: column;
     overflow: hidden;
@@ -101,12 +101,13 @@ form input[type="number"] {
 
 }
 
-button:hover {
+/* button:hover {
     cursor: pointer;
-}
+} */
 
-.bTodo,
-.bLlenar {
+.bResolverAutomaticamente,
+.bGenerarNumeroAletorio,
+.bIngresarDato{
     background-color: #adda9b;
     color: rgb(30, 3, 63);
     border: 2px solid #2E6DA4;
@@ -114,14 +115,12 @@ button:hover {
     padding: 10px 5px;
     font-size: 16px;
     font-weight: bold;
+    cursor: pointer
 }
 
 .bPHP,
 .bJS,
-.bPY,
-.bfor,
-.bwhile,
-.bdo-while {
+.bPY {
     background-color: #9bc3da;
     color: rgb(30, 3, 63);
     border: 2px solid #2E6DA4;
@@ -129,6 +128,8 @@ button:hover {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
+    cursor: pointer
+
 }
 
 .caja {

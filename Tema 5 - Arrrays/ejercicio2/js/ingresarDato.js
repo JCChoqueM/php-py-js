@@ -31,7 +31,7 @@ async function ingresarPHP() {
     if (response.ok) {
       const suma = await response.text();
       var resultadosDiv = document.getElementById("resultadoPHP");
-      resultadosDiv.innerHTML += "<br>Suma de los números: " + suma;
+      resultadosDiv.innerHTML += ` Suma de los números: </p><br>${suma}  `;
       numeros = [];
     } else {
       console.error("Error en la solicitud:", response.status);

@@ -17,7 +17,7 @@ foreach ($numero as $elemento) {
     $min = $elemento;
   }
 }
-$mensaje .= " <table border='1'><tr><th>Indice</th><th>Numero</th></tr>";
+$mensaje = " <table border='1'><tr><th>Indice</th><th>Numero</th></tr>";
 $contador = 0;
 foreach ($numero as $elemento) {
   if ($max == $min) {
