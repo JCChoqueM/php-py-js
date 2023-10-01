@@ -4,10 +4,16 @@
     <title>#1</title>
     <meta charset="UTF-8" />
     <script
-      src="archives/resolverAutomaticamente/resolverAutomaticamenteSol.js"
+      src="archives/solucion/solucion.js"
       defer
     ></script>
-    <script src="js/resolverAutomaticamente.js" defer></script>
+    <script
+      src="archives/automaticamente/automaticamenteSol.js"
+      defer
+    ></script>
+    <script src="./js/generarMatriz.js" defer></script>
+    <script src="./js/solucion.js" defer></script>
+    <script src="./js/resolverAutomaticamente.js" defer></script>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
@@ -59,19 +65,31 @@
         <!-- SECTION inicio contenedor cajas php js py -->
         <div class="contenedores">
           <section class="caja cajaPHP">
-            <button class="bPHP" type="button" onclick="resolverAutomaticamentePHP()">
+            <button
+              class="bPHP"
+              type="button"
+              onclick="solucionPHP()"
+            >
               Calcular con PHP
             </button>
             <div class="r" id="resultadoPHP"></div>
           </section>
           <section class="caja cajaPY">
-            <button class="bPY" type="button" onclick="resolverAutomaticamentePython()">
+            <button
+              class="bPY"
+              type="button"
+              onclick="solucionPython()"
+            >
               Calcular con Python
             </button>
             <div class="r" id="resultadoPython"></div>
           </section>
           <section class="caja cajaJS">
-            <button class="bJS" type="button" onclick="resolverAutomaticamenteJavaScript()">
+            <button
+              class="bJS"
+              type="button"
+              onclick="solucionJavaScript()"
+            >
               Calcular con JS
             </button>
             <div class="r" id="resultadoJavaScript"></div>

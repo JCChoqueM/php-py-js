@@ -1,16 +1,8 @@
-function solucionJavaScript() {
+function automaticoJS() {
   let mensaje = "";
-  let numero = [];
-  let contador = 0;
-  const min = 0;
-  const max = 100;
-  for (contador = 0; contador < 10; contador++) {
-    const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
-    numero.push(numeroAleatorio);
-  }
-  let maximo = numero[0];
-  let minimo = numero[0];
-  numero.forEach((elemento) => {
+  let maximo = numerosAuto[0];
+  let minimo = numerosAuto[0];
+  numerosAuto.forEach((elemento) => {
     if (elemento > maximo) {
       maximo = elemento;
     }
@@ -21,7 +13,7 @@ function solucionJavaScript() {
 
   mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th></tr>`;
   contador = 0;
-  numero.forEach((elemento) => {
+  numerosAuto.forEach((elemento) => {
     if (maximo == minimo) {
       mensaje += `<tr> <td> ${contador} </td><td>${elemento} es maximo y minimo</td> </tr>`;
     } else if (elemento == minimo) {
@@ -36,5 +28,5 @@ function solucionJavaScript() {
 
   mensaje += "</table>";
   const resultadoDiv = document.getElementById("resultadoJavaScript");
-  resultadoDiv.innerHTML = `<br>${mensaje}`;
+  resultadoDiv.innerHTML += `${mensaje}`;
 }

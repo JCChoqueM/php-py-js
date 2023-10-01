@@ -15,7 +15,7 @@ function ingresarDato() {
     resultadosDiv2.innerHTML = "Números ingresados: " + numeros.join(", ") + "";
     resultadosDiv3.innerHTML = "Números ingresados: " + numeros.join(", ") + "";
 
-    if (numeros.length === 3) {
+    if (numeros.length === 5) {
       ingresarPHP();
       ingresarPY();
       ingresarJS();
@@ -26,12 +26,13 @@ function ingresarDato() {
 async function ingresarPHP() {
   try {
     const response = await fetch(
-      "archives/ingresarDato/ingresarDato.php?numeros=" + JSON.stringify(numeros)
+      "archives/ingresarDato/ingresarDato.php?numeros=" +
+        JSON.stringify(numeros)
     );
     if (response.ok) {
       const suma = await response.text();
       var resultadosDiv = document.getElementById("resultadoPHP");
-      resultadosDiv.innerHTML += ` Suma de los números: </p><br>${suma}  `;
+      resultadosDiv.innerHTML += `  </p><br>${suma}  `;
       numeros = [];
     } else {
       console.error("Error en la solicitud:", response.status);
@@ -53,7 +54,7 @@ async function ingresarPY() {
     if (response.ok) {
       const suma = await response.text();
       var resultadosDiv = document.getElementById("resultadoPython");
-      resultadosDiv.innerHTML += "<br>Suma de los números: " + suma;
+      resultadosDiv.innerHTML += "<br> " + suma;
       numeros = [];
     } else {
       console.error("Error en la solicitud:", response.status);
@@ -62,3 +63,5 @@ async function ingresarPY() {
     console.error("Error en la solicitud:", error);
   }
 }
+
+

@@ -6,7 +6,6 @@ import json
 
 if len(sys.argv) > 1:
     NUMERO = json.loads(sys.argv[1])
-
     CONTADOR = 0
     MENSAJE = ""
     MAX = NUMERO[0]

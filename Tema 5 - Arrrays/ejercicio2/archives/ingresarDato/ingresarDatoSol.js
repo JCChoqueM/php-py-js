@@ -1,10 +1,33 @@
-function ingresarJS() {
-  var suma = numeros.reduce(function (a, b) {
-    return a + b;
-  }, 0);
+async function ingresarJS() {
+  let mensaje = "";
 
-  var resultadosDiv = document.getElementById("resultadoJavaScript");
-  resultadosDiv.innerHTML += "<br>Suma de los números: " + suma + "";
+  let maximo = numeros[0];
+  let minimo = numeros[0];
+  numeros.forEach((elemento) => {
+    if (elemento > maximo) {
+      maximo = elemento;
+    }
+    if (elemento < minimo) {
+      minimo = elemento;
+    }
+  });
 
-  numeros = [];
+  mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th></tr>`;
+  contador = 0;
+  numeros.forEach((elemento) => {
+    if (maximo == minimo) {
+      mensaje += `<tr> <td> ${contador} </td><td>${elemento} es maximo y minimo</td> </tr>`;
+    } else if (elemento == minimo) {
+      mensaje += `<tr> <td> ${contador} </td><td>${elemento} minimo</td> </tr>`;
+    } else if (elemento == maximo) {
+      mensaje += `<tr> <td> ${contador} </td><td>${elemento} maximo</td> </tr>`;
+    } else {
+      mensaje += `<tr> <td> ${contador} </td><td>${elemento}</td> </tr>`;
+    }
+    contador += 1;
+  });
+
+  mensaje += "</table>";
+  const resultadoDiv = document.getElementById("resultadoJavaScript");
+  resultadoDiv.innerHTML += `<br>${mensaje}`;
 }

@@ -2,7 +2,7 @@
 if (isset($_GET["numeros"])) {
     $numeros = json_decode($_GET["numeros"]);
     
-    if (count($numeros) === 3) {
+    if (count($numeros) === 5) {
         $mensaje = "";
         $max = $numeros[0];
         $min = $numeros[0];

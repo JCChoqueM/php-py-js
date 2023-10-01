@@ -6,7 +6,7 @@ import random
 NUMERO = []
 CONTADOR = 0
 MENSAJE = ""
-for _ in range(0, 10, 1):
+for _ in range(0, 6, 1):
     ALEATORIO = random.randint(1, 100)
     NUMERO.append(ALEATORIO)
 MAX = NUMERO[0]

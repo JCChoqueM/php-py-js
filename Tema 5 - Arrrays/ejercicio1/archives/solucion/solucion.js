@@ -1,4 +1,4 @@
-function resolverAutomaticamenteJavaScript() {
+function solucionJavaScript() {
   let mensaje = "";
   let numero = [];
   let cuadrado = [];
@@ -6,7 +6,7 @@ function resolverAutomaticamenteJavaScript() {
   let contador = 0;
   const min = 0;
   const max = 100;
-  for (contador = 0; contador < 20; contador++) {
+  for (contador = 0; contador < 6; contador++) {
     const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
     numero.push(numeroAleatorio);
   }
@@ -16,7 +16,7 @@ function resolverAutomaticamenteJavaScript() {
   });
 
   mensaje += `<table border='1'><tr><th>Nº</th><th>Numero</th><th>Cuadrado</th><th>Cubo</th></tr>`;
-  for (contador = 0; contador < 20; contador++) {
+  for (contador = 0; contador < 6; contador++) {
     mensaje += `<tr>
   <td> ${contador + 1} </td>
   <td>${numero[contador]}</td>

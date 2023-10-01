@@ -4,7 +4,7 @@ function solucionJavaScript() {
   let contador = 0;
   const min = 0;
   const max = 100;
-  for (contador = 0; contador < 10; contador++) {
+  for (contador = 0; contador < 6; contador++) {
     const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
     numero.push(numeroAleatorio);
   }

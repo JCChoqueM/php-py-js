@@ -8,7 +8,7 @@ CUADRADO = []
 CUBO = []
 CONTADOR = 0
 MENSAJE =""
-for _ in range(0, 20, 1):
+for _ in range(0, 6, 1):
     ALEATORIO = random.randint(1, 100)
     NUMERO.append(ALEATORIO)
 for elemento in NUMERO:

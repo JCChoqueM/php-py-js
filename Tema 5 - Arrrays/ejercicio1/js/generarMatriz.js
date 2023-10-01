@@ -11,10 +11,7 @@ function generarArray() {
   var resultadosDiv = document.getElementById("resultadoJavaScript");
   var resultadosDiv2 = document.getElementById("resultadoPHP");
   var resultadosDiv3 = document.getElementById("resultadoPython");
-  resultadosDiv.innerHTML =
-    "Números ingresados Automát: " + numerosAuto.join(", ") + "";
-  resultadosDiv2.innerHTML =
-    "Números ingresados Automát: " + numerosAuto.join(", ") + "";
-  resultadosDiv3.innerHTML =
-    "Números ingresados Automát: " + numerosAuto.join(", ") + "";
+  resultadosDiv.innerHTML = "";
+  resultadosDiv2.innerHTML = "";
+  resultadosDiv3.innerHTML = "";
 }

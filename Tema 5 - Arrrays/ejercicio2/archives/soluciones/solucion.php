@@ -3,7 +3,7 @@ $mensaje = "";
 $contador = 0;
 $max;
 $min;
-for ($contador = 0; $contador < 10; $contador++) {
+for ($contador = 0; $contador < 6; $contador++) {
   $numero[$contador] = rand(-2, 10);
 }
 $max = $numero[0];
