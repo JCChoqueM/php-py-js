@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>#3</title>
+    <meta charset="UTF-8" />
+    <script src="archives/soluciones/solucion.js"></script>
+    <script src="js/generarMatriz.js" defer></script>
+    <script src="js/generarNumero.js" defer></script>
+    <script src="js/ingresarDato.js" defer></script>
+    <script src="js/resolverAutomaticamente.js" defer></script>
+    <script src="js/solucion.js" defer></script>
+    <script src="archives/ingresarDato/ingresarDatoSol.js" defer></script>
+    <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Ejercicio 3</h1>
+        <h2>
+         Escribe un programa que lea 15 números por teclado y que los almacene en un array. Rota los elementos de ese array, es decir, el elemento de la posición 0 debe pasar a la posición 1, el de la 1 a la 2, etc. El número que se encuentra en la última posición debe pasar a la posición 0. Finalmente. muestra el contenido del array.
+        </h2>
+        <form id="form">
+          <div class="cajaboton">
+            <div class="cajaForm">
+              <label for="num1">Introduzca un numero entero positivo </label>
+              <input
+                type="number"
+                id="num1"
+                name="num1"
+                placeholder="Introduzaca un numero entero"
+                required
+              />
+            </div>
+            <div class="otros">
+              <button
+                class="bResolverAutomaticamente"
+                type="button"
+                onclick="resolverAutomaticamente()"
+              >
+                Resolver Automaticamente
+              </button>
+              <button
+                class="bGenerarNumeroAletorio"
+                type="button"
+                onclick="generarNumeroAleatorio()"
+              >
+                Generar números aleatorios
+              </button>
+              <button
+                class="bIngresarDato"
+                type="button"
+                onclick="ingresarDato()"
+              >
+                Ingresar dato
+              </button>
+            </div>
+          </div>
+        </form>
+        <!-- SECTION inicio contenedor cajas php js py -->
+        <div class="contenedores">
+          <section class="caja cajaPHP">
+            <button class="bPHP" type="button" onclick="solucionPHP()">
+              Solucion PHP
+            </button>
+
+            <div class="r" id="resultadoPHP"></div>
+          </section>
+          <section class="caja cajaPY">
+            <button class="bPY" type="button" onclick="solucionPython()">
+              Solucion Python
+            </button>
+            <div class="r" id="resultadoPython"></div>
+          </section>
+          <section class="caja cajaJS">
+            <button class="bJS" type="button" onclick="solucionJavaScript()">
+              Solucion JS
+            </button>
+            <div class="r" id="resultadoJavaScript"></div>
+          </section>
+        </div>
+        <footer>
+          <br />Julio Cesar Choque Mamani. <br />
+          <br />Solucionario:Luis José Sánchez-Aprende php con ejercicios.
+        </footer>
+        <!-- !SECTION fin contenedor cajas php js py -->
+      </div>
+    </div>
+    <!-- SECTION inicio botones para imagenes -->
+    <div class="image">
+      <div class="image-container">
+        <img src="./diagramas/solucion.svg" alt="Imagen de ejemplo" />
+      </div>
+    </div>
+    <!-- !SECTION fin botones para imagenes -->
+  </body>
+</html>
