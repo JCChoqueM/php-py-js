@@ -1,29 +1,21 @@
 function automaticoJS() {
   let mensaje = "";
-  let maximo = numerosAuto[0];
-  let minimo = numerosAuto[0];
-  numerosAuto.forEach((elemento) => {
-    if (elemento > maximo) {
-      maximo = elemento;
-    }
-    if (elemento < minimo) {
-      minimo = elemento;
-    }
-  });
-
+  let maximo = Math.max(...numerosAuto);
+  let minimo = Math.min(...numerosAuto);
   mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th></tr>`;
-  contador = 0;
-  numerosAuto.forEach((elemento) => {
-    if (maximo == minimo) {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento} es maximo y minimo</td> </tr>`;
+
+  numerosAuto.forEach((elemento, contador) => {
+    let descripcion = elemento;
+
+    if (elemento == minimo && elemento == maximo) {
+      descripcion = `${elemento} es maximo y minimo`;
     } else if (elemento == minimo) {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento} minimo</td> </tr>`;
+      descripcion = `${elemento} minimo`;
     } else if (elemento == maximo) {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento} maximo</td> </tr>`;
-    } else {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento}</td> </tr>`;
+      descripcion = `${elemento} maximo`;
     }
-    contador += 1;
+
+    mensaje += `<tr><td>${contador}</td><td>${descripcion}</td></tr>`;
   });
 
   mensaje += "</table>";

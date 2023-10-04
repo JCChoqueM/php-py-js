@@ -1,32 +1,23 @@
 async function ingresarJS() {
   let mensaje = "";
 
-  let maximo = numeros[0];
-  let minimo = numeros[0];
-  numeros.forEach((elemento) => {
-    if (elemento > maximo) {
-      maximo = elemento;
-    }
-    if (elemento < minimo) {
-      minimo = elemento;
-    }
-  });
+  let maximo = Math.max(...numeros);
+  let minimo = Math.min(...numeros);
 
   mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th></tr>`;
-  contador = 0;
-  numeros.forEach((elemento) => {
-    if (maximo == minimo) {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento} es maximo y minimo</td> </tr>`;
-    } else if (elemento == minimo) {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento} minimo</td> </tr>`;
-    } else if (elemento == maximo) {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento} maximo</td> </tr>`;
-    } else {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento}</td> </tr>`;
-    }
-    contador += 1;
-  });
+  numeros.forEach((elemento, contador) => {
+    let descripcion = elemento;
 
+    if (elemento == minimo && elemento == maximo) {
+      descripcion = `${elemento} es maximo y minimo`;
+    } else if (elemento == minimo) {
+      descripcion = `${elemento} minimo`;
+    } else if (elemento == maximo) {
+      descripcion = `${elemento} maximo`;
+    }
+
+    mensaje += `<tr><td>${contador}</td><td>${descripcion}</td></tr>`;
+  });
   mensaje += "</table>";
   const resultadoDiv = document.getElementById("resultadoJavaScript");
   resultadoDiv.innerHTML += `<br>${mensaje}`;

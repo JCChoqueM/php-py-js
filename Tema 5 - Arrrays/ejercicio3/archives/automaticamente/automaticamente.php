@@ -1,36 +1,27 @@
 <?php
 if (isset($_GET["numerosAuto"])) {
   $numero = json_decode($_GET["numerosAuto"]);
-  $mensaje = "";
-  $contador = 0;
-  $max;
-  $min;
+  $mensaje = "<table border='1'><tr><th>Indice</th><th>Numero</th></tr>";
 
-  $max = $numero[0];
-  $min = $numero[0];
+  $max = max($numero);
+  $min = min($numero);
 
-  foreach ($numero as $elemento) {
-    if ($elemento > $max) {
-      $max = $elemento;
-    }
-    if ($elemento < $min) {
-      $min = $elemento;
-    }
-  }
-  $mensaje = " <table border='1'><tr><th>Indice</th><th>Numero</th></tr>";
-  $contador = 0;
-  foreach ($numero as $elemento) {
+  foreach ($numero as $indice => $elemento) {
+    $mensaje .= "<tr><td>$indice</td>";
+    
     if ($max == $min) {
-      $mensaje .= "<tr> <td>$contador</td> <td>$elemento es max y min </td> </tr>";
+      $mensaje .= "<td>$elemento es max y min</td>";
     } elseif ($elemento == $min) {
-      $mensaje .= "<tr> <td>$contador</td> <td>$elemento minimo </td> </tr>";
+      $mensaje .= "<td>$elemento mínimo</td>";
     } elseif ($elemento == $max) {
-      $mensaje .= "<tr> <td>$contador</td> <td>$elemento maximo </td> </tr>";
+      $mensaje .= "<td>$elemento máximo</td>";
     } else {
-      $mensaje .= "<tr> <td>$contador</td> <td>$elemento </td> </tr>";
+      $mensaje .= "<td>$elemento</td>";
     }
-    $contador += 1;
+
+    $mensaje .= "</tr>";
   }
+  
   $mensaje .= "</table>";
   echo $mensaje;
 }
