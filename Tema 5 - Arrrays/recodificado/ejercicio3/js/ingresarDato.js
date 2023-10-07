@@ -32,7 +32,7 @@ async function ingresarPHP() {
     if (response.ok) {
       const suma = await response.text();
       var resultadosDiv = document.getElementById("resultadoPHP");
-      resultadosDiv.innerHTML += ` ${suma}  `;
+      resultadosDiv.innerHTML += `  </p><br>${suma}  `;
       numeros = [];
     } else {
       console.error("Error en la solicitud:", response.status);
@@ -63,3 +63,5 @@ async function ingresarPY() {
     console.error("Error en la solicitud:", error);
   }
 }
+
+

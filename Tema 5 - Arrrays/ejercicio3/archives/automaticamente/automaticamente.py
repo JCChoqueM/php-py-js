@@ -6,23 +6,18 @@ import json
 
 if len(sys.argv) > 1:
     NUMERO = json.loads(sys.argv[1])
-    MENSAJE = []
-
-    MAX = max(NUMERO)
-    MIN = min(NUMERO)
-
-    MENSAJE.append("<table border='1'><tr><th>Indice</th><th>Numero</th></tr>")
-    
+    MENSAJE = ""
+    MENSAJE += (
+        "<table border='1'><tr><th>Indice</th><th>Numero</th><th>Rotado</th></tr>"
+    )
+    VOLTEADO = NUMERO.copy()
+    AUX = VOLTEADO.pop()
+    VOLTEADO.insert(0, AUX)
     for contador, valor_numero in enumerate(NUMERO):
-        if MAX == MIN:
-            MENSAJE.append(f"<tr><td>{contador}</td><td>{valor_numero} max y min</td></tr>")
-        elif valor_numero == MAX:
-            MENSAJE.append(f"<tr><td>{contador}</td><td>{valor_numero} maximo</td></tr>")
-        elif valor_numero == MIN:
-            MENSAJE.append(f"<tr><td>{contador}</td><td>{valor_numero} minimo</td></tr>")
-        else:
-            MENSAJE.append(f"<tr><td>{contador}</td><td>{valor_numero}</td></tr>")
-    
-    MENSAJE.append("</table>")
-    
-    print("\n".join(MENSAJE))
+        DESCRIPCION = valor_numero
+        ROTAR = VOLTEADO[contador]
+        MENSAJE += f"<tr><td>{contador}</td><td>{DESCRIPCION}</td><td>{ROTAR}</td></tr>"
+
+    MENSAJE += "</table>"
+
+    print(f"{MENSAJE}")

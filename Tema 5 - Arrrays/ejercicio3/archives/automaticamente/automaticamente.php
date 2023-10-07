@@ -1,27 +1,17 @@
 <?php
 if (isset($_GET["numerosAuto"])) {
   $numero = json_decode($_GET["numerosAuto"]);
-  $mensaje = "<table border='1'><tr><th>Indice</th><th>Numero</th></tr>";
+  $mensaje = "<table border='1'><tr><th>Indice</th><th>Numero</th><th>Rotado</th></tr>";
 
-  $max = max($numero);
-  $min = min($numero);
-
+  $volteado = $numero;
+  $aux = array_pop($volteado);
+  array_unshift($volteado, $aux);
   foreach ($numero as $indice => $elemento) {
-    $mensaje .= "<tr><td>$indice</td>";
-    
-    if ($max == $min) {
-      $mensaje .= "<td>$elemento es max y min</td>";
-    } elseif ($elemento == $min) {
-      $mensaje .= "<td>$elemento mínimo</td>";
-    } elseif ($elemento == $max) {
-      $mensaje .= "<td>$elemento máximo</td>";
-    } else {
-      $mensaje .= "<td>$elemento</td>";
-    }
-
-    $mensaje .= "</tr>";
+    $descripcion = $elemento;
+    $rotar = $volteado[$indice];
+    $mensaje .= "<tr><td>$indice</td><td>$descripcion</td><td>$rotar</td></tr>";
   }
-  
+
   $mensaje .= "</table>";
   echo $mensaje;
 }

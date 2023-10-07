@@ -1,21 +1,13 @@
 function automaticoJS() {
   let mensaje = "";
-  let maximo = Math.max(...numerosAuto);
-  let minimo = Math.min(...numerosAuto);
-  mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th></tr>`;
-
+  mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th><th>Rotado</th></tr>`;
+  voltear = numerosAuto.slice();
+  aux = voltear.pop();
+  voltear.unshift(aux);
   numerosAuto.forEach((elemento, contador) => {
     let descripcion = elemento;
-
-    if (elemento == minimo && elemento == maximo) {
-      descripcion = `${elemento} es maximo y minimo`;
-    } else if (elemento == minimo) {
-      descripcion = `${elemento} minimo`;
-    } else if (elemento == maximo) {
-      descripcion = `${elemento} maximo`;
-    }
-
-    mensaje += `<tr><td>${contador}</td><td>${descripcion}</td></tr>`;
+    rotar = voltear[contador];
+    mensaje += `<tr><td>${contador}</td><td>${descripcion}</td><td>${rotar}</td></tr>`;
   });
 
   mensaje += "</table>";

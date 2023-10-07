@@ -16,7 +16,7 @@ async function automaticoPHP() {
     if (response.ok) {
       const suma = await response.text();
       var resultadosDiv = document.getElementById("resultadoPHP");
-      resultadosDiv.innerHTML += `${suma}  `;
+      resultadosDiv.innerHTML += ` <br>${suma}  `;
       numerosAuto = [];
     } else {
       console.error("Error en la solicitud:", response.status);
