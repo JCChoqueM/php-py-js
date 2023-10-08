@@ -3,21 +3,16 @@ if (isset($_GET["numeros"])) {
     $numeros = json_decode($_GET["numeros"]);
 
     if (is_array($numeros) && count($numeros) === 5) {
-        $max = max($numeros);
-        $min = min($numeros);
 
-        $mensaje = "<table border='1'><tr><th>Índice</th><th>Número</th></tr>";
 
+        $mensaje = "<table border='1'><tr><th>Índice</th><th>Número</th><th>Rotado</th></tr>";
+        $volteado = $numeros;
+        $aux = array_pop($volteado);
+        array_unshift($volteado, $aux);
         foreach ($numeros as $indice => $elemento) {
             $descripcion = $elemento;
-            if ($elemento == $min && $elemento == $max) {
-                $descripcion = "$elemento es max y min";
-            } elseif ($elemento == $min) {
-                $descripcion = "$elemento mínimo";
-            } elseif ($elemento == $max) {
-                $descripcion = "$elemento máximo";
-            }
-            $mensaje .= "<tr><td>$indice</td><td>$descripcion</td></tr>";
+            $rotar = $volteado[$indice];
+            $mensaje .= "<tr><td>$indice</td><td>$descripcion</td><td>$rotar</td></tr>";
         }
 
         $mensaje .= "</table>";

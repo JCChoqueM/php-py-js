@@ -9,26 +9,17 @@ MENSAJE = ""
 for _ in range(0, 6, 1):
     ALEATORIO = random.randint(1, 100)
     NUMERO.append(ALEATORIO)
-MAX = NUMERO[0]
-MIN = NUMERO[0]
-for elemento in NUMERO:
-    if elemento > MAX:
-        MAX = elemento
-    if elemento < MIN:
-        MIN = elemento
-MENSAJE += "<table border='1'><tr><th>Indice</th><th>Numero</th></tr>"
-for contador, valor_numero in enumerate(NUMERO):
-    DESCRIPCION = valor_numero
-    if MAX == MIN:
-        DESCRIPCION = f"{valor_numero} max y min"
-    elif valor_numero == MAX:
-        DESCRIPCION = f"{valor_numero} maximo"
-    elif valor_numero == MIN:
-        DESCRIPCION = f"{valor_numero} minimo"
-
-    MENSAJE += f"<tr><td>{contador}</td><td>{DESCRIPCION}</td></tr>"
+LONGITUD = len(NUMERO)
+AUX = []
+AUX.insert(0, NUMERO[LONGITUD - 1])
+MENSAJE += "<table border='1'><tr><th>Indice</th><th>Numero</th><th>ROTAR</th></tr>"
+for contador in range(LONGITUD - 1):
+    AUX.insert(contador + 1, NUMERO[contador])
+for contador in range(LONGITUD):
+    DESCRIPCION = NUMERO[contador]
+    ROTAR = AUX[contador]
+    MENSAJE += f"<tr><td>{contador}</td><td>{DESCRIPCION}</td><td>{ROTAR}</td></tr>"
 
 MENSAJE += "</table>"
 
 print(f"{MENSAJE}")
-

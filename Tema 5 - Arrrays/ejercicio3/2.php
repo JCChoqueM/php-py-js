@@ -1,34 +1,21 @@
 <?php
-if (!isset($_GET['numeroTexto'])) {
-    // Genera el array aleatorio
-    for ($i = 0; $i < 100; $i++) {
-        $numero[$i] = rand(0, 20);
-        echo $numero[$i] . " ";
-    }
-
-    $numeroTexto = implode(" ", $numero);
+$aux = [];
+$aux[7] = 5;
+$comp=7.5;
+var_dump($aux);
+var_dump($comp);
 ?>
-    <br><br>
-    <form action="2.php" method="get">
-        <input type="hidden" name="ejercicio" value="04">
-        Valor a sustituir: <input type="number" name="viejo" autofocus="" required=""><br>
-        Valor nuevo: <input type="number" name="nuevo" required="">
-        <input type="hidden" name="numeroTexto" value="<?php echo $numeroTexto; ?>">
-        <input type="submit" value="OK">
-    </form>
-<?php
-} else {
-    $numeroTexto = $_GET['numeroTexto'];
-    $viejo = $_GET['viejo'];
-    $nuevo = $_GET['nuevo'];
-
-    $numero = explode(" ", $numeroTexto);
-
-    foreach ($numero as $n) {
-        if ($n == $viejo) {
-            echo "<span style=\"color: green; font-weight: bold;\">$nuevo</span> ";
-        } else {
-            echo  "$n ";
-        }
-    }
-}
+<script>
+    aux = [];
+    aux[1] = [88];
+    completo=4
+    y="dedosr"
+    console.log(typeof(aux));
+    console.log(typeof(completo));
+    console.log(typeof(y));
+    console.log((y));
+    console.log((aux));
+    console.log((completo));
+    console.log((Array.isArray(aux)));
+    console.log((Array.isArray(completo)));
+</script>

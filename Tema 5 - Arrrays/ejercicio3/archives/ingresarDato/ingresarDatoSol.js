@@ -1,24 +1,16 @@
 async function ingresarJS() {
   let mensaje = "";
-
-  let maximo = Math.max(...numeros);
-  let minimo = Math.min(...numeros);
-
-  mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th></tr>`;
+  mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th><th>Rotado</th></tr>`;
+  voltear = numeros.slice();
+  aux = voltear.pop();
+  voltear.unshift(aux);
   numeros.forEach((elemento, contador) => {
     let descripcion = elemento;
-
-    if (elemento == minimo && elemento == maximo) {
-      descripcion = `${elemento} es maximo y minimo`;
-    } else if (elemento == minimo) {
-      descripcion = `${elemento} minimo`;
-    } else if (elemento == maximo) {
-      descripcion = `${elemento} maximo`;
-    }
-
-    mensaje += `<tr><td>${contador}</td><td>${descripcion}</td></tr>`;
+    rotar = voltear[contador];
+    mensaje += `<tr><td>${contador}</td><td>${descripcion}</td><td>${rotar}</td></tr>`;
   });
+
   mensaje += "</table>";
   const resultadoDiv = document.getElementById("resultadoJavaScript");
-  resultadoDiv.innerHTML += `<br>${mensaje}`;
+  resultadoDiv.innerHTML += `${mensaje}`;
 }
