@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-08 11:37:33 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0xMC0wNzsiMDM6MTk6NTEgIjsyNTQy"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0xMC0wODsiMTE6Mzc6MzMgIjsyOzI2NTE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num" type="Integer" array="True" size="7"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <for variable="contador" start="0" end="6" direction="inc" step="1">
+                <assign variable="num[contador]" expression="random(15)"/>
+            </for>
+            <declare name="buscar" type="Integer" array="False" size=""/>
+            <input variable="buscar"/>
+            <declare name="reemplazar" type="Integer" array="False" size=""/>
+            <input variable="reemplazar"/>
+            <declare name="nm" type="Integer" array="True" size="7"/>
+            <for variable="contador" start="0" end="6" direction="inc" step="1">
+                <if expression="num[contador]==buscar">
+                    <then>
+                        <assign variable="nm[contador]" expression="reemplazar"/>
+                    </then>
+                    <else>
+                        <assign variable="nm[contador]" expression="num[contador]"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>#</title>
+    <title>#4</title>
     <meta charset="UTF-8" />
     <script src="archives/soluciones/solucion.js"></script>
     <script src="js/generarMatriz.js" defer></script>
@@ -16,25 +16,63 @@
   <body>
     <div class="container">
       <div class="content">
-        <h1>Ejercicio 3</h1>
+        <h1>Ejercicio 4</h1>
         <h2>
-          Escribe un programa que lea 15 números por teclado y que los almacene
-          en un array. Rota los elementos de ese array, es decir, el elemento de
-          la posición 0 debe pasar a la posición 1, el de la 1 a la 2, etc. El
-          número que se encuentra en la última posición debe pasar a la posición
-          0. Finalmente. muestra el contenido del array.
+          Escribe un programa que genere 100 números aleatorios del 0 al 20 y
+          que los muestre por pantalla separados por espacio. El Programa pedirá
+          entonces por teclado dos valores y a contunuación cambiará todas las
+          ocurrencias del primer valor por el segundo en la lista generada
+          anteriormente. Los números que se han cambiado deven aparecer
+          resaltados de un color diferente.
         </h2>
-        <form id="form">
+        <div class="cajaAleatorios">
+          <p class="texto">Numeros generados automaticamente:</p>
+          <div class="cajayBoton">
+            <section class="numerosAleatorio">
+              <div class="rAleatorio" id="autoAleatorio"></div>
+            </section>
+            <button
+              class="bGenerarNumeroAletorio"
+              type="button"
+              onclick="limpiaryReemplazar()"
+            >
+              Generar números aleatorios
+            </button>
+          </div>
+        </div>
+        <form id="form" >
           <div class="cajaboton">
             <div class="cajaForm">
-              <label for="num1">Introduzca un numero entero positivo </label>
-              <input
-                type="number"
-                id="num1"
-                name="num1"
-                placeholder="Introduzaca un numero entero"
-                required
-              />
+              <div>
+                <label for="num1">Introduzca un numero a buscar:</label>
+                <input
+                  type="number"
+                  id="num1"
+                  name="num1"
+                  placeholder="Introduzca un numero a buscar"
+                  required
+                />
+                <button class="bBuscar" type="button" onclick="buscar()">
+                  Buscar
+                </button>
+              </div>
+              <div>
+                <label for="num2">Introduzca un numero para reemplazar: </label>
+                <input
+                  type="number"
+                  id="num2"
+                  name="num2"
+                  placeholder="Introduzaca un numero para reemplazar"
+                  required
+                />
+                <button
+                  class="bReemplazar"
+                  type="button"
+                  onclick="reemplazar()"
+                >
+                  Reemplazar
+                </button>
+              </div>
             </div>
             <div class="otros">
               <button
@@ -42,21 +80,14 @@
                 type="button"
                 onclick="resolverAutomaticamente()"
               >
-                Resolver Automaticamente
+                Buscar y Reemplazar
               </button>
               <button
                 class="bGenerarNumeroAletorio"
                 type="button"
-                onclick="generarNumeroAleatorio()"
+                onclick="LlenarAutomaticamente()"
               >
-                Generar números aleatorios
-              </button>
-              <button
-                class="bIngresarDato"
-                type="button"
-                onclick="ingresarDato()"
-              >
-                Ingresar dato
+                Llenar Automaticamente
               </button>
             </div>
           </div>
