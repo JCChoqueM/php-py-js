@@ -13,7 +13,7 @@ function generarArray() {
     "Números ingresados Automáticamente: <br>" + numerosAuto.join(", ") + "";
 }
 document.addEventListener("DOMContentLoaded", function () {
-  generarArray();
+  generarArray(),buscar(),reemplazar();
   console.log(numerosAuto);
 });
 
