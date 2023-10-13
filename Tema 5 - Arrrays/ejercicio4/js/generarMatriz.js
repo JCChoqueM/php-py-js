@@ -13,12 +13,19 @@ function generarArray() {
     "Números ingresados Automáticamente: <br>" + numerosAuto.join(", ") + "";
 }
 document.addEventListener("DOMContentLoaded", function () {
-  generarArray(),buscar(),reemplazar();
+  generarArray(), buscar(), reemplazar();
   console.log(numerosAuto);
 });
 
 function limpiaryReemplazar() {
-  numerosAuto=[];
+  let cleanPHP = document.getElementById("resultadoPHP");
+  let cleanPython = document.getElementById("resultadoPython");
+  let cleanresultadoJavaScript = document.getElementById("resultadoJavaScript");
+
+  cleanPHP.innerHTML = "";
+  cleanPython.innerHTML = "";
+  cleanresultadoJavaScript.innerHTML = "";
+  numerosAuto = [];
   generarArray();
   console.log(numerosAuto);
 }
