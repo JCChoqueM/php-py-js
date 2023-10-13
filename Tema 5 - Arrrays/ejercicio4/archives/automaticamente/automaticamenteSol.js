@@ -1,5 +1,6 @@
 function automaticoJS() {
   let mensaje = "";
+
   const num1 = parseInt(document.getElementById("num1").value);
   const num2 = parseInt(document.getElementById("num2").value);
   console.log(num1);
@@ -9,8 +10,16 @@ function automaticoJS() {
     } else {
       colorCambio = "background-color: yellow; color:black";
     }
+    let buscar = numerosAuto.includes(num1);
+    if (buscar) {
+      if (num1 != num2) {
+        mensaje = `<span style='${colorCambio}'>Se a reemplazado ${num1}  por ${num2}</span>`;
+      } else if (num1 == num2) {
+        mensaje = `<span style='${colorCambio}'>No se a realizado cambios:</span>`;
+      }
+    }
     mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th><th>Cambio</th></tr>`;
-    if (numerosAuto.includes(num1)) {
+    if (buscar) {
       numerosAuto.forEach((elemento, contador) => {
         let descripcion = elemento;
         if (elemento == num1) {
@@ -25,7 +34,7 @@ function automaticoJS() {
       mensaje += "<table border='1'><tr><th>Indice</th><th>Numero</th></tr>";
       numerosAuto.forEach((elemento, contador) => {
         descripcion = elemento;
-        mensaje += `<tr><td>${contador}</td><td>${descripcion}</td></tr>`;
+        mensaje += `<tr><td>${contador}</td><td style='background-color: pink; color:black'>${descripcion}</td></tr>`;
       });
     }
   } else {
