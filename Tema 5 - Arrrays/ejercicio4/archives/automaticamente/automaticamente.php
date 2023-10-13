@@ -4,7 +4,11 @@ if (isset($_POST["miArray"]) && ($_POST["num1"] !== "" || $_POST["num1"] === "0"
   $numero = json_decode($_POST["miArray"]);
   $buscar = $_POST["num1"];
   $reemplazar = $_POST["num2"];
-  $colorCambio = 'background-color: yellow; color:black';
+  if($buscar==$reemplazar){
+    $colorCambio = 'background-color: orange; color:black';
+  }else{
+    $colorCambio = 'background-color: yellow; color:black';
+  }
   $mensaje = "<table border='1'><tr><th>Indice</th><th>Numero</th><th>Cambio</th></tr>";
   if (in_array($buscar, $numero)) {
     foreach ($numero as $indice => $elemento) {

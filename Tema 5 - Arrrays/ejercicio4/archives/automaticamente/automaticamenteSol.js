@@ -4,7 +4,11 @@ function automaticoJS() {
   const num2 = parseInt(document.getElementById("num2").value);
   console.log(num1);
   if (!isNaN(num1) && !isNaN(num2)) {
-    colorCambio = "background-color: yellow; color:black";
+    if (num1 == num2) {
+      colorCambio = "background-color: orange; color:black";
+    } else {
+      colorCambio = "background-color: yellow; color:black";
+    }
     mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th><th>Cambio</th></tr>`;
     if (numerosAuto.includes(num1)) {
       numerosAuto.forEach((elemento, contador) => {
@@ -31,11 +35,3 @@ function automaticoJS() {
   const resultadoDiv = document.getElementById("resultadoJavaScript");
   resultadoDiv.innerHTML = `${mensaje}`;
 }
-voltear = numerosAuto.slice();
-aux = voltear.pop();
-voltear.unshift(aux);
-numerosAuto.forEach((elemento, contador) => {
-  let descripcion = elemento;
-  rotar = voltear[contador];
-  mensaje += `<tr><td>${contador}</td><td>${descripcion}</td><td>${rotar}</td></tr>`;
-});
