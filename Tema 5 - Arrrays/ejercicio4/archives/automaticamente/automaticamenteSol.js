@@ -19,6 +19,8 @@ function automaticoJS() {
       }
     }
     mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th><th>Cambio</th></tr>`;
+
+    
     if (buscar) {
       numerosAuto.forEach((elemento, contador) => {
         let descripcion = elemento;

@@ -27,24 +27,28 @@ async function automaticoPHP() {
 }
 
 async function automaticoPY() {
-  try {
-    const response = await fetch(
-      "archives/automaticamente/automaticamentePY.php", // Cambiar la ruta al archivo PHP que ejecutará el script Python
-      {
-        method: "POST",
-        body: JSON.stringify(numerosAuto), // Enviamos el array de números en el cuerpo de la solicitud
-      }
-    );
-    if (response.ok) {
-      const suma = await response.text();
-      var resultadosDiv = document.getElementById("resultadoPython");
-      resultadosDiv.innerHTML = `${suma}`;
-    } else {
-      console.error("Error en la solicitud:", response.status);
-    }
-  } catch (error) {
-    console.error("Error en la solicitud:", error);
-  }
+  const num1 = document.getElementById("num1").value;
+  const num2 = document.getElementById("num2").value;
+
+  const data = {
+    num1,
+    num2,
+    numerosAuto, // Utiliza el array generado en la función generarArray
+  };
+
+  fetch("archives/automaticamente/automaticamentePy.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.text())
+    .then((text) => {
+      const resultadoDiv = document.getElementById("resultadoPython");
+      resultadoDiv.innerHTML = text;
+    })
+    .catch((error) => console.error(error));
 }
 
 /* !SECTION fin sumar todo */
