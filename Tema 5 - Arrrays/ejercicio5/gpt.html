@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gráfica de Temperaturas</title>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+    <h1>Gráfica de Temperaturas para enero, febrero y marzo</h1>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <script>
+        // Datos de temperaturas para enero, febrero y marzo
+        var datosTemperaturas = [
+            { y: -12, label: "Marzo" },
+            { y:-2, label: "Febrero" },
+            { y: 25, label: "Enero" },
+        ];
+
+        // Crear una serie de datos para la gráfica
+        var dataSeries = [
+            {
+                type: "bar",
+                name: "Temperatura (°C)",
+                showInLegend: true,
+                dataPoints: datosTemperaturas,
+                indexLabel: "{label} {y}°C",
+                indexLabelFontSize: 25, // Tamaño de fuente del mes y temperatura
+                indexLabelFontColor: "black", // Color de fuente del mes y temperatura
+                indexLabelPlacement: "inside"
+            }
+        ];
+
+        // Configuración de la gráfica
+        var chart = new CanvasJS.Chart("chartContainer", {
+            title: {
+                text: "Temperaturas de enero, febrero y marzo"
+            },
+            axisY: {
+                title: "Temperatura",
+                intervalType: "1555" // Eliminar el espacio vertical entre las barras
+            },
+            data: dataSeries
+        });
+
+        // Renderizar la gráfica
+        chart.render();
+    </script>
+</body>
+</html>

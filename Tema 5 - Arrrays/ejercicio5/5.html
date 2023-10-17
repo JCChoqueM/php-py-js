@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>#5</title>
+    <meta charset="UTF-8" />
+    <script src="archives/soluciones/solucion.js"></script>
+    <script src="js/generarMatriz.js" defer></script>
+    <script src="js/generarNumero.js" defer></script>
+    <script src="js/ingresarDato.js" defer></script>
+    <script src="js/resolverAutomaticamente.js" defer></script>
+    <script src="js/solucion.js" defer></script>
+    <script src="archives/ingresarDato/ingresarDatoSol.js" defer></script>
+    <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Ejercicio 5</h1>
+        <h2>
+          Realiza un programa que pida la temperatura media que ha echo en cada
+          mes de un determinado año y que muestre a continuación un diagrama de
+          barras horizontales con esos datos. Las barras del diagrama se pueden
+          dibujar a base de la concatenación de una imagen.
+        </h2>
+        <form id="form">
+          <div class="cajaboton">
+            <h3>Ingrese las temperaturas de cada mes:</h3>
+            <div class="cajaForm" id="formulario">
+              <script>
+                // Array de nombres
+                const nombres = [
+                  "Enero",
+                  "Febrero",
+                  "Marzo",
+                  "Abril",
+                  "Mayo",
+                  "Junio",
+                  "Julio",
+                  "Agosto",
+                  "Septiembre",
+                  "Octubre",
+                  "Noviembre",
+                  "Diciembre",
+                ];
+
+                // Referencia al elemento 'formulario' en el DOM
+                const formulario = document.getElementById("formulario");
+
+                // Generar etiquetas y campos de entrada
+                for (let i = 0; i < nombres.length; i++) {
+                  const label = document.createElement("label");
+                  label.setAttribute("for", nombres[i]);
+                  label.textContent = ` ${nombres[i]}: `;
+                  formulario.appendChild(label);
+
+                  const input = document.createElement("input");
+                  input.setAttribute("type", "number");
+                  input.setAttribute("id", nombres[i]);
+                  input.setAttribute("name", nombres[i]);
+                  input.setAttribute("placeholder", nombres[i]);
+                  input.setAttribute("required", true);
+                  formulario.appendChild(input);
+                }
+              </script>
+            </div>
+
+            <div class="otros">
+              <button
+                class="bResolverAutomaticamente"
+                type="button"
+                onclick="resolverAutomaticamente()"
+              >
+                Resolver Automaticamente
+              </button>
+              <button
+                class="bGenerarNumeroAletorio"
+                type="button"
+                onclick="generarNumeroAleatorio()"
+              >
+                Generar números aleatorios
+              </button>
+              <button
+                class="bIngresarDato"
+                type="button"
+                onclick="ingresarDato()"
+              >
+                Ingresar dato
+              </button>
+            </div>
+          </div>
+        </form>
+        <!-- SECTION inicio contenedor cajas php js py -->
+        <div class="contenedores">
+          <section class="caja cajaPHP">
+            <button class="bPHP" type="button" onclick="solucionPHP()">
+              Solucion PHP
+            </button>
+
+            <div class="r" id="resultadoPHP"></div>
+          </section>
+          <section class="caja cajaPY">
+            <button class="bPY" type="button" onclick="solucionPython()">
+              Solucion Python
+            </button>
+            <div class="r" id="resultadoPython"></div>
+          </section>
+          <section class="caja cajaJS">
+            <button class="bJS" type="button" onclick="solucionJavaScript()">
+              Solucion JS
+            </button>
+            <div class="r" id="resultadoJavaScript"></div>
+          </section>
+        </div>
+        <footer>
+          <br />Julio Cesar Choque Mamani. <br />
+          <br />Solucionario:Luis José Sánchez-Aprende php con ejercicios.
+        </footer>
+        <!-- !SECTION fin contenedor cajas php js py -->
+      </div>
+    </div>
+    <!-- SECTION inicio botones para imagenes -->
+    <div class="image">
+      <div class="image-container">
+        <img src="./diagramas/solucion.svg" alt="Imagen de ejemplo" />
+      </div>
+    </div>
+    <!-- !SECTION fin botones para imagenes -->
+  </body>
+</html>

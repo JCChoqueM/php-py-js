@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-17 02:48:52 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0xMC0xNjsiMTE6MjQ6NTYgIjsyNTQy"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0xMC0xNzsiMDI6NDg6NTIgIjszOzI2NTU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="mes" type="String" array="True" size="3"/>
+            <assign variable="mes[0]" expression="&quot;Enero&quot;"/>
+            <assign variable="mes[1]" expression="&quot;Febrero&quot;"/>
+            <assign variable="mes[2]" expression="&quot;marzo&quot;"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <declare name="temp" type="Integer" array="True" size="3"/>
+            <for variable="contador" start="0" end="2" direction="inc" step="1">
+                <output expression="&quot;Ingrese la temperatura del mes de &quot;&amp;mes[contador]&amp;&quot;: &quot;" newline="True"/>
+                <input variable="temp[contador]"/>
+            </for>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <breakpoint expression="" always="True"/>
+            <for variable="contador" start="0" end="2" direction="inc" step="1">
+                <output expression="mes[contador]&amp;&quot;: &quot;" newline="False"/>
+                <if expression="temp[contador]!=0">
+                    <then>
+                        <if expression="temp[contador]&gt;0">
+                            <then>
+                                <for variable="i" start="1" end="temp[contador]" direction="inc" step="1">
+                                    <output expression="&quot;+ &quot;" newline="False"/>
+                                </for>
+                            </then>
+                            <else>
+                                <for variable="i" start="1" end="abs(temp[contador])" direction="inc" step="1">
+                                    <output expression="&quot;- &quot;" newline="False"/>
+                                </for>
+                            </else>
+                        </if>
+                    </then>
+                    <else/>
+                </if>
+                <output expression="&quot;(&quot;&amp;temp[contador]&amp;&quot;&#186;C)&quot;" newline="False"/>
+                <output expression="&quot;&quot;" newline="True"/>
+            </for>
+            <output expression="size(temp)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
