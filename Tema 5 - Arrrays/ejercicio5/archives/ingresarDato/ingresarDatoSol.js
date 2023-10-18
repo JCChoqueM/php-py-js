@@ -12,5 +12,5 @@ async function ingresarJS() {
 
   mensaje += "</table>";
   const resultadoDiv = document.getElementById("resultadoJavaScript");
-  resultadoDiv.innerHTML += `${mensaje}`;
+  resultadoDiv.innerHTML = `${mensaje}`;
 }

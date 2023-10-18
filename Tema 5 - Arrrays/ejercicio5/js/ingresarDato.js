@@ -1,39 +1,50 @@
 var numeros = [];
 
 function ingresarDato() {
-  var inputNumero = document.getElementById("num1");
-  var numero = parseInt(inputNumero.value);
-
-  if (!isNaN(numero)) {
-    numeros.push(numero);
-    inputNumero.value = "";
-
-    var resultadosDiv = document.getElementById("resultadoJavaScript");
-    var resultadosDiv2 = document.getElementById("resultadoPHP");
-    var resultadosDiv3 = document.getElementById("resultadoPython");
-    resultadosDiv.innerHTML = "Números ingresados: " + numeros.join(", ") + "";
-    resultadosDiv2.innerHTML = "Números ingresados: " + numeros.join(", ") + "";
-    resultadosDiv3.innerHTML = "Números ingresados: " + numeros.join(", ") + "";
-
-    if (numeros.length === 5) {
-      ingresarPHP();
-      ingresarPY();
-      ingresarJS();
+  for (let i = 0; i < 12; i++) {
+    var inputNumero = document.getElementById(`${"num" + [i + 1]}`);
+    var numero = parseInt(inputNumero.value);
+    if (!isNaN(numero)) {
+      numeros.push(numero);
+    } else {
+      alert("No se completaron los campos");
+      numeros = [];
+      break;
     }
   }
+if (numeros.length === 12) {
+  ingresarPHP();
+  ingresarPY();
+  ingresarJS();
+}else{
+  numeros=[];
+}
+console.log(numeros)
 }
 
 async function ingresarPHP() {
   try {
-    const response = await fetch(
-      "archives/ingresarDato/ingresarDato.php?numeros=" +
-        JSON.stringify(numeros)
-    );
+    // Crear un objeto que contiene ambos arrays
+    const data = {
+      numeros: numeros,
+      nombres: nombres,
+    };
+
+    // Realizar la solicitud y enviar el objeto como JSON
+    const response = await fetch("archives/ingresarDato/ingresarDato.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
     if (response.ok) {
       const suma = await response.text();
       var resultadosDiv = document.getElementById("resultadoPHP");
-      resultadosDiv.innerHTML += ` ${suma}  `;
+      resultadosDiv.innerHTML = ` ${suma}  `;
       numeros = [];
+      // También podrías limpiar el segundoArray si es necesario
     } else {
       console.error("Error en la solicitud:", response.status);
     }
@@ -44,18 +55,27 @@ async function ingresarPHP() {
 
 async function ingresarPY() {
   try {
-    const response = await fetch(
-      "archives/ingresarDato/ingresarDatoPY.php", // Cambiar la ruta al archivo PHP que ejecutará el script Python
-      {
-        method: "POST",
-        body: JSON.stringify(numeros), // Enviamos el array de números en el cuerpo de la solicitud
-      }
-    );
+    // Crear un objeto que contiene ambos arrays
+    const data = {
+      numeros: numeros,
+      nombres: nombres,
+    };
+
+    // Realizar la solicitud y enviar el objeto como JSON
+    const response = await fetch("archives/ingresarDato/ingresarDatoPY.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
     if (response.ok) {
       const suma = await response.text();
       var resultadosDiv = document.getElementById("resultadoPython");
-      resultadosDiv.innerHTML += "<br> " + suma;
+      resultadosDiv.innerHTML = ` ${suma}  `;
       numeros = [];
+      // También podrías limpiar el segundoArray si es necesario
     } else {
       console.error("Error en la solicitud:", response.status);
     }
@@ -63,5 +83,3 @@ async function ingresarPY() {
     console.error("Error en la solicitud:", error);
   }
 }
-
-

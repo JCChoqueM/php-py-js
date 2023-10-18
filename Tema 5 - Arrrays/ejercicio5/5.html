@@ -29,7 +29,7 @@
             <div class="cajaForm" id="formulario">
               <script>
                 // Array de nombres
-                const nombres = [
+                var nombres = [
                   "Enero",
                   "Febrero",
                   "Marzo",
@@ -50,13 +50,14 @@
                 // Generar etiquetas y campos de entrada
                 for (let i = 0; i < nombres.length; i++) {
                   const label = document.createElement("label");
-                  label.setAttribute("for", nombres[i]);
+                  const inputId = `${"num"+[i+1]}`;
+                  label.setAttribute("for", inputId);
                   label.textContent = ` ${nombres[i]}: `;
                   formulario.appendChild(label);
 
                   const input = document.createElement("input");
                   input.setAttribute("type", "number");
-                  input.setAttribute("id", nombres[i]);
+                  input.setAttribute("id", "num"+[i+1]);
                   input.setAttribute("name", nombres[i]);
                   input.setAttribute("placeholder", nombres[i]);
                   input.setAttribute("required", true);

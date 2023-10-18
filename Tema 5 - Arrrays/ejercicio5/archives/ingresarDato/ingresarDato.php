@@ -1,21 +1,30 @@
 <?php
-if (isset($_GET["numeros"])) {
-    $numeros = json_decode($_GET["numeros"]);
-
-    if (is_array($numeros) && count($numeros) === 5) {
-
-
-        $mensaje = "<table border='1'><tr><th>Índice</th><th>Número</th><th>Rotado</th></tr>";
-        $volteado = $numeros;
-        $aux = array_pop($volteado);
-        array_unshift($volteado, $aux);
-        foreach ($numeros as $indice => $elemento) {
-            $descripcion = $elemento;
-            $rotar = $volteado[$indice];
-            $mensaje .= "<tr><td>$indice</td><td>$descripcion</td><td>$rotar</td></tr>";
+$data = json_decode(file_get_contents('php://input'));
+if (isset($data->numeros) && isset($data->nombres)) {
+    $numeros = $data->numeros;
+    $nombres = $data->nombres;
+    $repetir = "";
+    $mensaje = "";
+    $mensaje = "<table border='1'><tr><th>Índice</th><th>Mes</th><th>Temperatura</th></tr>";
+    foreach ($numeros as $indice => $elemento) {
+        $descripcion = $elemento;
+        $mes = $nombres[$indice];
+        $repetir = "";
+        if ($elemento != 0) {
+            if ($elemento > 0) {
+                $imagen =
+                    '<img src="././images/sol.png">';
+            } else {
+                $imagen =
+                    '<img src="././images/frio.png">';
+            }
         }
-
-        $mensaje .= "</table>";
-        echo $mensaje;
+        for ($i = 0; $i < (abs($numeros[$indice])); $i++) {
+            $repetir .= $imagen;
+        }
+        $mensaje .= "<tr><td>$indice</td><td>$mes</td><td>$repetir <br>$elemento ºC</td></tr>";
     }
+
+    $mensaje .= "</table>";
+    echo $mensaje;
 }
