@@ -18,8 +18,6 @@ function ingresarDato2() {
 
   if (!datosCompletos) {
     alert("No se completaron los campos");
-    var resultadosPHP = document.getElementById("resultadoPHP");
-    resultadosPHP.innerHTML = "";
     console.log(numeros);
   }
 }
@@ -30,8 +28,6 @@ function ingresarDato() {
     ingresarPHP();
     ingresarPY();
     ingresarJS();
-  } else {
-    numeros = [];
   }
 }
 async function ingresarPHP() {
@@ -101,7 +97,8 @@ function solucionPHP() {
   if (numeros.length === 12) {
     ingresarPHP();
   } else {
-    numeros = [];
+    var resultadosPHP = document.getElementById("resultadoPHP");
+    resultadosPHP.innerHTML = "";
   }
 }
 function solucionPython() {
@@ -109,7 +106,8 @@ function solucionPython() {
   if (numeros.length === 12) {
     ingresarPY();
   } else {
-    numeros = [];
+    var resultadosPython = document.getElementById("resultadoPython");
+    resultadosPython.innerHTML = "";
   }
 }
 function solucionJavaScript() {
@@ -117,6 +115,7 @@ function solucionJavaScript() {
   if (numeros.length === 12) {
     ingresarJS();
   } else {
-    numeros = [];
+    var resultadosJavaScript = document.getElementById("resultadoJavaScript");
+    resultadosJavaScript.innerHTML = "";
   }
 }
