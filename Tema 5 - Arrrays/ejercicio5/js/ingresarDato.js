@@ -119,3 +119,14 @@ function solucionJavaScript() {
     resultadosJavaScript.innerHTML = "";
   }
 }
+function cclean() {
+  if (numeros.length === 12) {
+  } else {
+    var resultadosPHP = document.getElementById("resultadoPHP");
+    resultadosPHP.innerHTML = "";
+    var resultadosJavaScript = document.getElementById("resultadoJavaScript");
+    resultadosJavaScript.innerHTML = "";
+    var resultadosPython = document.getElementById("resultadoPython");
+    resultadosPython.innerHTML = "";
+  }
+}
