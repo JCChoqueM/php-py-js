@@ -1,27 +1,39 @@
 var numeros = [];
 
-function ingresarDato() {
+function ingresarDato2() {
+  numeros = [];
+  var datosCompletos = true; // Variable para verificar si hay datos en los inputs
+
   for (let i = 0; i < 12; i++) {
     var inputNumero = document.getElementById(`${"num" + [i + 1]}`);
     var numero = parseInt(inputNumero.value);
     if (!isNaN(numero)) {
       numeros.push(numero);
     } else {
-      alert("No se completaron los campos");
-      numeros = [];
-      break;
+      // Si algún input no tiene datos, marcar que no están completos
+      datosCompletos = false;
+      break; // Salir del bucle si se encuentra un input sin datos
     }
   }
-if (numeros.length === 12) {
-  ingresarPHP();
-  ingresarPY();
-  ingresarJS();
-}else{
-  numeros=[];
-}
-console.log(numeros)
+
+  if (!datosCompletos) {
+    alert("No se completaron los campos");
+    var resultadosPHP = document.getElementById("resultadoPHP");
+    resultadosPHP.innerHTML = "";
+    console.log(numeros);
+  }
 }
 
+function ingresarDato() {
+  ingresarDato2();
+  if (numeros.length === 12) {
+    ingresarPHP();
+    ingresarPY();
+    ingresarJS();
+  } else {
+    numeros = [];
+  }
+}
 async function ingresarPHP() {
   try {
     // Crear un objeto que contiene ambos arrays
@@ -81,5 +93,30 @@ async function ingresarPY() {
     }
   } catch (error) {
     console.error("Error en la solicitud:", error);
+  }
+}
+
+function solucionPHP() {
+  ingresarDato2();
+  if (numeros.length === 12) {
+    ingresarPHP();
+  } else {
+    numeros = [];
+  }
+}
+function solucionPython() {
+  ingresarDato2();
+  if (numeros.length === 12) {
+    ingresarPY();
+  } else {
+    numeros = [];
+  }
+}
+function solucionJavaScript() {
+  ingresarDato2();
+  if (numeros.length === 12) {
+    ingresarJS();
+  } else {
+    numeros = [];
   }
 }

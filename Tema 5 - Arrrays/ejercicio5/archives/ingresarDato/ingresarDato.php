@@ -19,7 +19,7 @@ if (isset($data->numeros) && isset($data->nombres)) {
                     '<img src="././images/frio.png">';
             }
         }
-        for ($i = 0; $i < (abs($numeros[$indice])); $i++) {
+        for ($i = 0; $i < (abs($elemento)); $i++) {
             $repetir .= $imagen;
         }
         $mensaje .= "<tr><td>$indice</td><td>$mes</td><td>$repetir <br>$elemento ºC</td></tr>";
