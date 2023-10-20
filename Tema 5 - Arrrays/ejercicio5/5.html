@@ -6,6 +6,7 @@
     <script src="js/generarNumero.js" defer></script>
     <script src="js/ingresarDato.js" defer></script>
     <script src="js/solucion.js" defer></script>
+    <script src="js/automatico.js" defer></script>
     <script src="archives/ingresarDato/ingresarDatoSol.js" defer></script>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
@@ -63,7 +64,13 @@
             </div>
 
             <div class="otros">
-
+<button
+                class="bResolverAutomaticamente"
+                type="button"
+                onclick="resolverAutomaticamente()"
+              >
+                Resolver Automaticamente
+              </button>
               <button
                 class="bGenerarNumeroAletorio"
                 type="button"
