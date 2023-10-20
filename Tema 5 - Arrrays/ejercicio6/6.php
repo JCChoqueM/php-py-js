@@ -8,7 +8,7 @@ if (!isset($_GET['n'])) {
     $numeroTexto = $_GET['numeroTexto'];
 }
 
-if ($contadorNumeros < 9) {
+if ($contadorNumeros < 4) {
     $contadorNumeros = $_GET['contadorNumeros'];
     $n = $_GET['n'];
     $numeroTexto = $_GET['numeroTexto'];
@@ -40,7 +40,7 @@ if (!isset($_GET['n']) || ($contadorNumeros < 16)) {
 //  El array con los números es $numero
 ////////////////////////////////////////////////////////////////
 
-if ($contadorNumeros == 9) {
+if ($contadorNumeros == 4) {
     $numero = explode(" ", $numeroTexto);
 
     foreach ($numero as $n) {

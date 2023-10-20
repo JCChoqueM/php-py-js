@@ -1,7 +1,7 @@
 async function ingresarJS() {
   let mensaje = "";
   let valor = "";
-  mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th><th>Color</th></tr>`;
+  mensaje += `<table border='1' width='110%'><tr><th>Inidice</th><th>Numero</th><th>Color</th></tr>`;
   numeros.forEach((elemento, contador) => {
     if (Math.abs(elemento % 2 == 0)) {
       colorCambio = "background-color: yellow; color:black";
