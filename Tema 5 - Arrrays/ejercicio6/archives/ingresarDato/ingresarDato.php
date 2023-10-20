@@ -1,33 +1,19 @@
 <?php
 if (isset($_GET["numeros"])) {
     $numeros = json_decode($_GET["numeros"]);
-    
+
     if (count($numeros) === 5) {
         $mensaje = "";
-        $max = $numeros[0];
-        $min = $numeros[0];
-
-        foreach ($numeros as $elemento) {
-            if ($elemento > $max) {
-                $max = $elemento;
-            }
-            if ($elemento < $min) {
-                $min = $elemento;
-            }
-        }
-        $mensaje .= " <table border='1'><tr><th>Indice</th><th>Numero</th></tr>";
-        $contador = 0;
-        foreach ($numeros as $elemento) {
-            if ($max == $min) {
-                $mensaje .= "<tr> <td>$contador</td> <td>$elemento es max y min </td> </tr>";
-            } elseif ($elemento == $min) {
-                $mensaje .= "<tr> <td>$contador</td> <td>$elemento minimo </td> </tr>";
-            } elseif ($elemento == $max) {
-                $mensaje .= "<tr> <td>$contador</td> <td>$elemento maximo </td> </tr>";
+        $mensaje .= " <table border='1'><tr><th>Indice</th><th>Numero</th><th>Color</th></tr>";
+        foreach ($numeros as $indice => $elemento) {
+            if (abs($elemento) % 2 == 0) {
+                $colorCambio = 'background-color: yellow; color:black';
+                $signo = " es par";
             } else {
-                $mensaje .= "<tr> <td>$contador</td> <td>$elemento </td> </tr>";
+                $colorCambio = 'background-color: orange; color:black';
+                $signo = "es impar";
             }
-            $contador += 1;
+            $mensaje .= "<tr><td style='$colorCambio'>$indice</td><td style='$colorCambio'>$elemento</td><td style='$colorCambio'>$elemento $signo</td></tr>";
         }
         $mensaje .= "</table>";
         echo $mensaje;

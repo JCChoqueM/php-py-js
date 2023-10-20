@@ -7,10 +7,10 @@ function ingresarDato() {
   if (!isNaN(numero)) {
     numeros.push(numero);
     inputNumero.value = "";
-
     var resultadosDiv = document.getElementById("resultadoJavaScript");
     var resultadosDiv2 = document.getElementById("resultadoPHP");
     var resultadosDiv3 = document.getElementById("resultadoPython");
+
     resultadosDiv.innerHTML = "Números ingresados: " + numeros.join(", ") + "";
     resultadosDiv2.innerHTML = "Números ingresados: " + numeros.join(", ") + "";
     resultadosDiv3.innerHTML = "Números ingresados: " + numeros.join(", ") + "";
@@ -54,7 +54,7 @@ async function ingresarPY() {
     if (response.ok) {
       const suma = await response.text();
       var resultadosDiv = document.getElementById("resultadoPython");
-      resultadosDiv.innerHTML += "<br> " + suma;
+      resultadosDiv.innerHTML +=  suma;
       numeros = [];
     } else {
       console.error("Error en la solicitud:", response.status);

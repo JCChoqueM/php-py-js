@@ -1,30 +1,20 @@
 function automaticoJS() {
   let mensaje = "";
-  let maximo = numerosAuto[0];
-  let minimo = numerosAuto[0];
-  numerosAuto.forEach((elemento) => {
-    if (elemento > maximo) {
-      maximo = elemento;
+  let valor = "";
+  mensaje += `<table border='1' width='110%'><tr><th>Inidice</th><th>Numero</th><th>Color</th></tr>`;
+  numerosAuto.forEach((elemento, contador) => {
+    if (Math.abs(elemento % 2 == 0)) {
+      colorCambio = "background-color: yellow; color:black";
+      valor = " es par";
+    } else {
+      colorCambio = "background-color: orange; color:black";
+      valor = " es impar";
     }
-    if (elemento < minimo) {
-      minimo = elemento;
-    }
+    mensaje += `<tr><td style='${colorCambio}'>${contador}</td> <td style='${colorCambio}'>${elemento}</td><td style='${colorCambio}'>${
+      elemento + valor
+    }</td></tr>`;
   });
 
-  mensaje += `<table border='1'><tr><th>Inidice</th><th>Numero</th></tr>`;
-  contador = 0;
-  numerosAuto.forEach((elemento) => {
-    if (maximo == minimo) {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento} es maximo y minimo</td> </tr>`;
-    } else if (elemento == minimo) {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento} minimo</td> </tr>`;
-    } else if (elemento == maximo) {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento} maximo</td> </tr>`;
-    } else {
-      mensaje += `<tr> <td> ${contador} </td><td>${elemento}</td> </tr>`;
-    }
-    contador += 1;
-  });
 
   mensaje += "</table>";
   const resultadoDiv = document.getElementById("resultadoJavaScript");

@@ -9,21 +9,14 @@ MENSAJE = ""
 for _ in range(0, 6, 1):
     ALEATORIO = random.randint(1, 100)
     NUMERO.append(ALEATORIO)
-MAX = NUMERO[0]
-MIN = NUMERO[0]
-for elemento in NUMERO:
-    if elemento > MAX:
-        MAX = elemento
-    if elemento < MIN:
-        MIN = elemento
-MENSAJE += "<table border='1'><tr><th>Indice</th><th>Numero</th></tr>"
+
+MENSAJE += "<table border='1'><tr><th>Indice</th><th>Numero</th><th>Color</th></tr>"
 for contador, valor_numero in enumerate(NUMERO):
-    if MAX == MIN:
-        MENSAJE += f"""<tr><td>{contador}</td><td>{valor_numero} max y min</td></tr>"""
-    elif valor_numero == MAX:
-        MENSAJE += f"""<tr><td>{contador}</td><td>{valor_numero} maximo</td></tr>"""
-    elif valor_numero == MIN:
-        MENSAJE += f"""<tr><td>{contador}</td><td>{valor_numero} minimo</td></tr>"""
+    if abs(valor_numero % 2 == 0):
+        colorCambio = "background-color: yellow; color:black"
+        valor = " es par"
     else:
-        MENSAJE += f"""<tr><td>{contador}</td><td>{valor_numero}</td></tr>"""
+        colorCambio = "background-color: orange; color:black"
+        valor = " es impar"
+    MENSAJE += f"<tr><td style='{colorCambio}'>{contador}</td><td style='{colorCambio}'>{valor_numero}</td><td style='{colorCambio}'>{valor_numero} {valor}</td></tr>"
 print(f"{MENSAJE}")
