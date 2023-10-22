@@ -25,12 +25,8 @@ async function automaticoPHP() {
 }
 
 async function automaticoPY() {
-  const num1 = document.getElementById("num1").value;
-  const num2 = document.getElementById("num2").value;
 
   const data = {
-    num1,
-    num2,
     numerosAuto, // Utiliza el array generado en la función generarArray
   };
 

@@ -22,8 +22,12 @@ if (isset($_POST["miArray"])) {
       $i += 1;
     }
   }
+
   sort($auxpar);
+ 
+
   sort($auximpar);
+ 
   $ordenado = array_merge($auxpar, $auximpar);
 
   $mensaje = "<table border='1' >";
@@ -69,6 +73,7 @@ if (isset($_POST["miArray"])) {
   //SECTION - inicio fila ordenado
   $mensaje .= "<tr>";
   $mensaje .= "<td >ordenado</td>";
+
   foreach ($ordenado as $indice => $valorArray2) {
     if ($valorArray2 % 2 == 0) {
       $mensaje .= "<td style='$colorCambio1'> $valorArray2 </td>";
