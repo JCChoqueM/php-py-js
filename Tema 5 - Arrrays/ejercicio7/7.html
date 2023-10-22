@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>#7</title>
+    <meta charset="UTF-8" />
+    <script src="archives/soluciones/solucion.js"></script>
+    <script src="js/generarMatriz.js" defer></script>
+    <script src="js/generarNumero.js" defer></script>
+    <script src="js/ingresarDato.js" defer></script>
+    <script src="js/resolverAutomaticamente.js" defer></script>
+    <script src="js/solucion.js" defer></script>
+    <script src="archives/ingresarDato/ingresarDatoSol.js" defer></script>
+    <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Ejercicio 7</h1>
+        <h2>
+          Escribe un programa que genere 20 números enteros aleatorios entre 0 y
+          100 y que los almacene en un array. El programa debe ser capaz de
+          pasar todos los números pares a las primeras posiciones del array (del
+          0 en adelante) y todos los números impares a las celdas restantes.
+          Utiliza arrays auxiliares si es necesario.
+        </h2>
+        <div class="cajaAleatorios">
+          <p class="texto">Numeros generados automaticamente:</p>
+          <div class="cajayBoton">
+            <section class="numerosAleatorio">
+              <div class="rAleatorio" id="autoAleatorio"></div>
+            </section>
+            <button
+              class="bGenerarNumeroAletorio"
+              type="button"
+              onclick="limpiaryReemplazar()"
+            >
+              Limpiar y reemplazar
+            </button>
+          </div>
+        </div>
+        <form id="form">
+          <div class="cajaboton">
+            <!-- <div class="cajaForm">
+              <div>
+                <label for="num1">Introduzca un numero a buscar:</label>
+                <input
+                  type="number"
+                  id="num1"
+                  name="num1"
+                  placeholder="Introduzca un numero a buscar"
+                  required
+                />
+                <button class="bBuscar" type="button" onclick="buscar()">
+                  Buscar
+                </button>                                                  
+              </div>
+              <div>
+                <label for="num2">Introduzca un numero para reemplazar: </label>
+                <input
+                  type="number"
+                  id="num2"
+                  name="num2"
+                  placeholder="Introduzaca un numero para reemplazar"
+                  required
+                />
+                <button
+                  class="bReemplazar"
+                  type="button"
+                  onclick="reemplazar()"
+                >
+                  Reemplazar
+                </button>
+              </div>
+            </div> -->
+            <div class="otros">
+              <button
+                class="bResolverAutomaticamente"
+                type="button"
+                onclick="resolverAutomaticamente()"
+              >
+                Resolver Automaticamente
+              </button>
+              <!--               <button
+                class="bGenerarNumeroAletorio"
+                type="button"
+                onclick="LlenarAutomaticamente()"
+              >
+                Llenar Automaticamente
+              </button> -->
+            </div>
+          </div>
+        </form>
+        <!-- SECTION inicio contenedor cajas php js py -->
+        <div class="contenedores">
+          <section class="caja cajaPHP">
+            <button class="bPHP" type="button" onclick="automaticoPHP()">
+              Solucion PHP
+            </button>
+
+            <div class="r" id="resultadoPHP"></div>
+          </section>
+          <section class="caja cajaPY">
+            <button class="bPY" type="button" onclick="automaticoPY()">
+              Solucion Python
+            </button>
+            <div class="r" id="resultadoPython"></div>
+          </section>
+          <section class="caja cajaJS">
+            <button class="bJS" type="button" onclick="automaticoJS()">
+              Solucion JS
+            </button>
+            <div class="r" id="resultadoJavaScript"></div>
+          </section>
+        </div>
+        <!-- !SECTION fin contenedor cajas php js py -->
+      </div>
+      <footer>
+        <br />Julio Cesar Choque Mamani. <br />
+        <br />Solucionario:Luis José Sánchez-Aprende php con ejercicios.
+      </footer>
+    </div>
+    <!-- SECTION inicio botones para imagenes -->
+    <div class="image">
+      <div class="image-container">
+        <img src="./diagramas/solucion.svg" alt="Imagen de ejemplo" />
+      </div>
+    </div>
+    <!-- !SECTION fin botones para imagenes -->
+  </body>
+</html>
