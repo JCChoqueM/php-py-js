@@ -6,28 +6,27 @@ if (isset($_POST["miArray"])) {
   $colorCambio2 = 'background-color: orange; color:black';
   $aux = [];
   $aux2 = [];
-  $i = 0;
+  $auxpar = [];
+  $auximpar = [];
+
   foreach ($numero as $indice => $elemento) {
     if (abs($elemento) % 2 == 0) {
-      $aux[$i] = $elemento;
-      $auxpar[$indice] = $elemento;
-      $i += 1;
+      array_push($aux, $elemento);
+      array_push($auxpar, $elemento);
     }
   }
   foreach ($numero as $indice => $elemento) {
     if (abs($elemento) % 2 == 0) {
     } else {
-      $aux[$i] = $elemento;
-      $auximpar[$indice] = $elemento;
-      $i += 1;
+      array_push($aux, $elemento);
+      array_push($auximpar, $elemento);
     }
   }
 
   sort($auxpar);
- 
 
   sort($auximpar);
- 
+
   $ordenado = array_merge($auxpar, $auximpar);
 
   $mensaje = "<table border='1' >";
@@ -86,6 +85,10 @@ if (isset($_POST["miArray"])) {
   //!SECTION fin fila ordenado
 
   $mensaje .= "</table>";
+  $mensaje .= "El array tiene:<br>" . count($auxpar);
+  $mensaje .= (count($auxpar) != 1) ? " numeros pares y" : " numero par y";
+  $mensaje .= "<br>" . count($auximpar);
+  $mensaje .= (count($auximpar) != 1) ? " numeros impares" : " numero impar";
 
   echo $mensaje;
 } else {

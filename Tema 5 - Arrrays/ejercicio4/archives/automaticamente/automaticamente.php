@@ -18,7 +18,7 @@ if (isset($_POST["miArray"]) && ($_POST["num1"] !== "" || $_POST["num1"] === "0"
       $mensaje = "<span style='$colorCambio'>No se a realizado cambios:</span>";
     }
   }
-
+print_r($encontrar);
   $mensaje .= "<table border='1'><tr><th>Indice</th><th>Numero</th><th>Cambio</th></tr>";
   if ($encontrar) {
     foreach ($numero as $indice => $elemento) {

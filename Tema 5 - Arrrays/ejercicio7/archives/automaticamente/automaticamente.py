@@ -6,8 +6,8 @@ import json
 
 NUMERO = json.loads(sys.argv[1])
 MENSAJE = ""
-colorCambio1 = "background-color: yellow; color:black"
-colorCambio2 = "background-color: orange; color:black"
+COLORCAMBIO1 = "background-color: yellow; color:black"
+COLORCAMBIO2 = "background-color: orange; color:black"
 aux = []
 aux2 = []
 auxpar = []
@@ -42,9 +42,9 @@ MENSAJE += "<tr>"
 MENSAJE += "<td >Matriz</td>"
 for indice, elemento in enumerate(NUMERO):
     if elemento % 2 == 0:
-        MENSAJE += f"<td style='{colorCambio1}'> {elemento}</td>"
+        MENSAJE += f"<td style='{COLORCAMBIO1}'> {elemento}</td>"
     else:
-        MENSAJE += f"<td style='{colorCambio2}'> {elemento}</td>"
+        MENSAJE += f"<td style='{COLORCAMBIO2}'> {elemento}</td>"
 MENSAJE += "</tr>"
 #!SECTION fin fila matriz
 
@@ -53,9 +53,9 @@ MENSAJE += "<tr>"
 MENSAJE += "<td >Aux</td>"
 for indice, elemento in enumerate(aux):
     if elemento % 2 == 0:
-        MENSAJE += f"<td style='{colorCambio1}'> {elemento} </td>"
+        MENSAJE += f"<td style='{COLORCAMBIO1}'> {elemento} </td>"
     else:
-        MENSAJE += f"<td style='{colorCambio2}'> {elemento} </td>"
+        MENSAJE += f"<td style='{COLORCAMBIO2}'> {elemento} </td>"
 MENSAJE += "</tr>"
 #!SECTION fin fila aux
 
@@ -64,10 +64,17 @@ MENSAJE += "<tr>"
 MENSAJE += "<td >ordenado</td>"
 for indice, elemento in enumerate(ordenado):
     if elemento % 2 == 0:
-        MENSAJE += f"<td style='{colorCambio1}'> {elemento} </td>"
+        MENSAJE += f"<td style='{COLORCAMBIO1}'> {elemento} </td>"
     else:
-        MENSAJE += f"<td style='{colorCambio2}'> {elemento} </td>"
+        MENSAJE += f"<td style='{COLORCAMBIO2}'> {elemento} </td>"
 MENSAJE += "</tr>"
 #!SECTION fin fila ordenado
 MENSAJE += "</table>"
+
+
+MENSAJE += "El array tiene:<br>"
+MENSAJE += f"{len(auxpar)}"
+MENSAJE += " numeros pares y<br>" if (len(auxpar) != 1) else " numero par y<br>"
+MENSAJE += f"{len(auximpar)}"
+MENSAJE += " numeros impares " if (len(auximpar) != 1) else " numero impar "
 print(MENSAJE)
