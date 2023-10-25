@@ -3,10 +3,10 @@ function automaticoJS() {
 
   let colorCambio1 = "background-color: yellow; color:black";
   let colorCambio2 = "background-color: orange; color:black";
-  let aux = [];
-  let auxpar = [];
-  let auximpar = [];
-  let ordenado = [];
+  let aux = [],
+    auxpar = [],
+    auximpar = [],
+    ordenado = [];
   console.log(aux);
   numerosAuto.forEach((elemento) => {
     if (Math.abs(elemento) % 2 == 0) {
@@ -57,6 +57,7 @@ function automaticoJS() {
 
   mensaje += "</tr>";
   //!SECTION fin fila matriz
+
   //SECTION - inicio fila aux
   mensaje += "<tr>";
   mensaje += "<td >Aux</td>";
