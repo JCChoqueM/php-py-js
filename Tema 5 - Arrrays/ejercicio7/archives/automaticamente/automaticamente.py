@@ -29,10 +29,11 @@ auxpar.sort()
 auximpar.sort()
 ordenado = auxpar + auximpar
 MENSAJE = "<table border='1' >"
+
 # SECTION - fila indice
 MENSAJE += "<tr>"
 MENSAJE += "<th >Índice</th>"
-for indice, elemento in enumerate(NUMERO):
+for indice, _ in enumerate(NUMERO):
     MENSAJE += f"<th> {indice} </th>"
 MENSAJE += "</tr>"
 #!SECTION fin fila indice
@@ -40,7 +41,7 @@ MENSAJE += "</tr>"
 # SECTION - inicio fila matriz
 MENSAJE += "<tr>"
 MENSAJE += "<td >Matriz</td>"
-for indice, elemento in enumerate(NUMERO):
+for _, elemento in enumerate(NUMERO):
     if elemento % 2 == 0:
         MENSAJE += f"<td style='{COLORCAMBIO1}'> {elemento}</td>"
     else:
