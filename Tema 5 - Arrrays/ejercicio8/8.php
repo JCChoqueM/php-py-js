@@ -108,3 +108,29 @@ if ($contadorNumeros == 11) {
     }
     echo "</tr></table>";
 }
+
+
+
+
+$esPrimo = true;
+
+if ($n <= 1) {
+    $esPrimo = false;
+} elseif ($n <= 3) {
+    $esPrimo = true;
+} elseif ($n % 2 == 0) {
+    $esPrimo = false;
+} else {
+    for ($i = 2; $i * $i <= $n; $i++) {
+        if ($n % $i == 0) {
+            $esPrimo = false;
+            break;
+        }
+    }
+}
+
+if ($esPrimo) {
+    echo "$n es un número primo.";
+} else {
+    echo "$n no es un número primo.";
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-20 12:49:11 "/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0xMC0xNzsiMDI6NTg6MjIgIjsyNTQz"/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLURFSkxNNzA7MjAyMy0xMC0yMDsiMTI6NDk6MTEgIjsyOzI2NDU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num" type="Integer" array="True" size="3"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <for variable="contador" start="0" end="2" direction="inc" step="1">
+                <input variable="num[contador]"/>
+            </for>
+            <for variable="contador" start="0" end="2" direction="inc" step="1">
+                <if expression="abs(num[contador])%2==0">
+                    <then>
+                        <output expression="num[contador]&amp;&quot; soy par naranja&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="num[contador]&amp;&quot; soy impar celeste &quot;" newline="True"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

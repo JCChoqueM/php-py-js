@@ -13,7 +13,7 @@ function generarArray() {
     "Números ingresados Automáticamente: <br>" + numerosAuto.join(", ") + "";
 }
 document.addEventListener("DOMContentLoaded", function () {
-  generarArray();
+  generarArray(), resolverAutomaticamente();
   console.log(numerosAuto);
 });
 
@@ -27,5 +27,6 @@ function limpiaryReemplazar() {
   cleanresultadoJavaScript.innerHTML = "";
   numerosAuto = [];
   generarArray();
+  resolverAutomaticamente();
   console.log(numerosAuto);
 }

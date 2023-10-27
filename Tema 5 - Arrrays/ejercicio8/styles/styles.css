@@ -1,3 +1,4 @@
+/* Estilos para el body y el fondo */
 html,
 body {
     background-image: url("../images/fondo.webp");
@@ -9,6 +10,7 @@ body {
     justify-content: center;
 }
 
+/* Contenedor principal */
 .container {
     display: flex;
     width: 100%;
@@ -17,8 +19,7 @@ body {
     overflow: hidden;
 }
 
-
-
+/* Estilos para la imagen */
 .image {
     display: flex;
     justify-content: center;
@@ -35,26 +36,9 @@ body {
 
 .image-container {
     text-align: center;
-    /* Centra horizontalmente */
 }
 
-.image-container img {
-    display: block;
-    /* Asegura que la imagen sea un bloque para aplicar márgenes automáticos */
-    margin: 0 auto;
-    /* Centra horizontalmente la imagen dentro del contenedor */
-}
-
-
-.button-container {
-    display: flex;
-    justify-content: flex-start;
-    gap: 7px;
-    margin-bottom: 10px;
-
-}
-
-
+/* Estilos para el fondo con opacidad */
 body::after {
     content: "";
     display: block;
@@ -68,6 +52,7 @@ body::after {
     z-index: -1;
 }
 
+/* Estilos para el formulario */
 form {
     display: flex;
     align-content: flex-start;
@@ -76,21 +61,20 @@ form {
     gap: auto;
     font-size: 20px;
     margin-top: 15px;
-
 }
 
+/* Estilos para los botones de acción */
 .otros {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: .5rem;
+    gap: 0.5rem;
 }
 
 .cajaForm {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
 }
 
 form label {
@@ -107,20 +91,16 @@ form input[type="number"] {
     width: 23.1rem;
 }
 
+/* Estilos para los contenedores de resultados */
 .contenedores {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
     margin-bottom: 1rem;
     width: 100%;
-
-
 }
 
-/* button:hover {
-    cursor: pointer;
-} */
-
+/* Estilos para los botones */
 .bResolverAutomaticamente,
 .bGenerarNumeroAletorio,
 .bIngresarDato {
@@ -131,7 +111,7 @@ form input[type="number"] {
     padding: 10px 5px;
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .bBuscar,
@@ -143,7 +123,7 @@ form input[type="number"] {
     padding: 10px 5px;
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .bPHP,
@@ -156,9 +136,10 @@ form input[type="number"] {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer
+    cursor: pointer;
 }
 
+/* Estilos para las cajas de resultados */
 .caja {
     padding: 10px;
     margin-top: 10px;
@@ -181,7 +162,6 @@ form input[type="number"] {
 .cajaPY {
     background-color: #15ce0e;
     border: 2px solid green;
-
 }
 
 .cajaJS {
@@ -200,13 +180,13 @@ form input[type="number"] {
     overflow: auto;
 }
 
+/* Estilos para los resultados */
 .r {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-content: center;
     align-items: center;
-
     width: 200px;
     height: 50px;
     margin-top: 4px;
@@ -218,6 +198,7 @@ form input[type="number"] {
     font-weight: bold;
 }
 
+/* Estilos para el pie de página */
 footer {
     margin-top: auto;
     text-transform: uppercase;
@@ -234,5 +215,4 @@ footer {
     display: flex;
     flex-direction: row;
     width: 75%;
-
 }
