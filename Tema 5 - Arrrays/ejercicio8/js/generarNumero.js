@@ -5,7 +5,7 @@ function generarNumero(max, min) {
 function generarNumeroAleatorio() {
   const num1 = document.getElementById("num1");
 
-  num1.value = generarNumero(25, -2);
+  num1.value = generarNumero(100, -2);
 }
 
 /* !SECTION fin Numeros random */

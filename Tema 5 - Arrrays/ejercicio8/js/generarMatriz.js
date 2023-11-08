@@ -1,7 +1,7 @@
 var numerosAuto = [];
 
 function generarArray() {
-  const min = 0;
+  const min = -8;
   const max = 100;
 
   for (contador = 0; contador < 7; contador++) {
