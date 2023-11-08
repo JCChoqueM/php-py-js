@@ -32,15 +32,14 @@ if len(sys.argv) > 1:
             """
             if numero2 < 2:
                 return False
-            elif numero2 == 2 or numero2 == 3:
+            if numero2 in (2, 3):
                 return True
-            elif numero2 % 2 == 0:
+            if numero2 % 2 == 0:
                 return False
-            else:
-                for i in range(2, int(numero2**0.5) + 1):
-                    if numero2 % i == 0:
-                        return False
-                return True
+            for i in range(2, int(numero2**0.5) + 1):
+                if numero2 % i == 0:
+                    return False
+            return True
 
         for elemento in NUMERO:
             if es_primo(elemento):
