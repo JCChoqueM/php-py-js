@@ -8,7 +8,7 @@ if (!isset($_GET['n'])) {
     $numeroTexto = $_GET['numeroTexto'];
 }
 
-if ($contadorNumeros < 11) {
+if ($contadorNumeros < 4) {
     $contadorNumeros = $_GET['contadorNumeros'];
     $n = $_GET['n'];
     $numeroTexto = $_GET['numeroTexto'];
@@ -22,7 +22,7 @@ if ($contadorNumeros < 11) {
     $contadorNumeros++;
 }
 
-if (!isset($_GET['n']) || ($contadorNumeros < 11)) {
+if (!isset($_GET['n']) || ($contadorNumeros < 4)) {
 ?>
     <form action="8.php" method="get">
         <input type="hidden" name="ejercicio" value="08">
@@ -40,7 +40,7 @@ if (!isset($_GET['n']) || ($contadorNumeros < 11)) {
 //  El array con los números es $numero
 ////////////////////////////////////////////////////////////////
 
-if ($contadorNumeros == 11) {
+if ($contadorNumeros == 4) {
     $numero = explode(" ", $numeroTexto);
 
     // Muestra el array original
@@ -48,13 +48,13 @@ if ($contadorNumeros == 11) {
     // Índice
     echo "Array original:<br>";
     echo "<table><tr>";
-    for ($i = 0; $i < 10; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         echo "<td>$i</td>";
     }
     echo "</tr>";
 
     // Contenido
-    for ($i = 0; $i < 10; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         echo "<td>" . $numero[$i] . "</td>";
     }
     echo "</tr></table>";
@@ -63,7 +63,7 @@ if ($contadorNumeros == 11) {
     $cuentaPrimos = 0;
     $cuentaNoPrimos = 0;
 
-    for ($i = 0; $i < 10; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $esPrimo = true;
 
         for ($j = 2; $j < $numero[$i]; $j++) {
@@ -97,13 +97,13 @@ if ($contadorNumeros == 11) {
     // Índice
     echo "<br>Array resultante con los primos al principio y los no primos al final:<br>";
     echo "<table><tr>";
-    for ($i = 0; $i < 10; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         echo "<td>$i</td>";
     }
     echo "</tr>";
 
     // Contenido
-    for ($i = 0; $i < 10; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         echo "<td>" . $numero[$i] . "</td>";
     }
     echo "</tr></table>";
