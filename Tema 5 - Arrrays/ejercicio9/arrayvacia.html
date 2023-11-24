@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón Deshabilitado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Botón Deshabilitado</h1>
+
+    <button id="miBoton" onclick="realizarAccion()">Haz clic</button>
+    <button onclick="vaciarArray()">Vaciar Array</button>
+
+    <script>
+        const miArray = []; // Inicializamos con un array vacío
+
+        // Función para realizar alguna acción
+        function realizarAccion() {
+            miArray.push(Math.random()); // Agregamos un elemento al array
+            alert("¡Acción realizada! Array: " + miArray.join(", "));
+
+            // Deshabilitamos el botón después de hacer clic (suponiendo que ya se llenó el array)
+            const boton = document.getElementById("miBoton");
+            boton.disabled = true;
+        }
+
+        // Función para vaciar el array
+        function vaciarArray() {
+            miArray.length = 0; // Vaciamos el array
+
+            // Habilitamos el botón al vaciar el array
+            const boton = document.getElementById("miBoton");
+            boton.disabled = false;
+        }
+
+        // Deshabilitamos el botón si la matriz está vacía al cargar la página
+        window.onload = function () {
+            const boton = document.getElementById("miBoton");
+            boton.disabled = miArray.length === 0;
+        };
+    </script>
+</body>
+
+</html>

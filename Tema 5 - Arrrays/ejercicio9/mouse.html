@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Formulario</title>
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 8px;
+        }
+
+        .form-button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            /* Espaciado superior para el mensaje de error */
+        }
+
+        .error-input {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" class="form" onsubmit="return validarFormulario()">
+        <div class="form-group">
+            <label for="initial">Posición Inicial *</label>
+            <input title="Se necesita un número entre 0 y 9" type="number" class="form-input" id="initial"
+                placeholder="Introduce la posición inicial" min="0" max="9" required
+                oninput="validarRango('initial', 'initial-error')">
+            <div id="initial-error" class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="final">Posición Final *</label>
+            <input title="Se necesita un número entre 0 y 9" type="number" class="form-input" id="final"
+                placeholder="Introduce la posición final" min="0" max="9" required
+                oninput="validarRango('final', 'final-error')">
+            <div id="final-error" class="error-message"></div>
+        </div>
+
+        <div class="form-group form-group--submit">
+            <button class="form-button" type="submit">Enviar</button>
+        </div>
+    </form>
+
+    <script>
+        function mostrarError(mensaje, campoId, errorId) {
+            var errorDiv = document.getElementById(errorId);
+            var inputField = document.getElementById(campoId);
+
+            errorDiv.textContent = mensaje;
+            errorDiv.style.display = 'block';
+            inputField.classList.add('error-input');
+        }
+
+        function ocultarError(campoId, errorId) {
+            var errorDiv = document.getElementById(errorId);
+            var inputField = document.getElementById(campoId);
+
+            errorDiv.textContent = '';
+            errorDiv.style.display = 'none';
+            inputField.classList.remove('error-input');
+        }
+
+        function validarRango(campoId, errorId) {
+            var valor = document.getElementById(campoId).value;
+            var numero = parseInt(valor);
+
+            if (numero < 0 || numero > 9 || isNaN(numero)) {
+                mostrarError('Error: El número debe estar entre 0 y 9.', campoId, errorId);
+            } else {
+                ocultarError(campoId, errorId);
+            }
+        }
+
+        function validarFormulario() {
+            // Obtener los valores de los campos de entrada
+            var valorInicial = document.getElementById('initial').value;
+            var valorFinal = document.getElementById('final').value;
+
+            // Convertir los valores a números enteros
+            var numeroInicial = parseInt(valorInicial);
+            var numeroFinal = parseInt(valorFinal);
+
+            // Verificar si los números están en el rango permitido
+            if (numeroInicial < 0 || numeroInicial > 9 || numeroFinal < 0 || numeroFinal > 9) {
+                mostrarError('Error: Los números deben estar entre 0 y 9.', 'initial', 'initial-error');
+                return false; // Detener el envío del formulario
+            }
+
+            // Aquí podrías realizar otras validaciones si es necesario
+
+            return true; // Permitir el envío del formulario
+        }
+    </script>
+</body>
+
+</html>

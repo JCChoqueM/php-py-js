@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>#9</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/colorEnunciado.css" />
+  <!-- Importar scripts JavaScript -->
+  <script src="archives/soluciones/solucion.js"></script>
+  <script src="js/generarMatriz.js" defer></script>
+  <script src="js/generarNumero.js" defer></script>
+  <script src="js/ingresarDato.js" defer></script>
+  <script src="js/resolverAutomaticamente.js" defer></script>
+  <script src="js/solucion.js" defer></script>
+  <script src="archives/ingresarDato/ingresarDatoSol.js" defer></script>
+  <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Ejercicio 9</h1>
+      <h2>
+        <!-- Descripción del ejercicio -->
+        Realiza un programa que
+        <span class="input-resaltado">solicite al usuario ingresar 10 números por teclado</span>
+        y que los <span class="array-resaltado">almacene en un array</span>. A
+        continuación, el programa
+        <span class="info-resaltada">mostrará el contenido del array junto a sus índices (0-9)</span>. Luego, solicitará
+        dos posiciones, a las que llamaremos "<span class="posicion-resaltada">inicial</span>" y "<span
+          class="posicion-resaltada">final</span>". Se debe
+        <span class="verificacion-resaltada">verificar que la posición inicial es menor que la posición final</span>
+        y que ambos números están
+        <span class="verificacion-resaltada">entre 0 y 9</span>. El programa deberá
+        colocar el número de la posición
+        <span class="posicion-resaltada">inicial</span> en la posición
+        <span class="posicion-resaltada">final</span>, rotando el resto de números para
+        que no se pierda ninguno. Al final, se debe mostrar el
+        <span class="resultado-resaltado">array resultante</span>.
+
+      </h2>
+
+      <form id="form">
+        <div class="cajaboton">
+          <div class="cajaForm">
+            <!-- Campo de entrada para números -->
+            <div>
+              <label for="num1">Introduzca un número entero positivo:</label>
+              <input type="number" id="num1" name="num1" placeholder="Introduzca un número entero" required />
+              <button class="bGenerarNumeroAletorio" type="button" onclick="generarNumeroAleatorio()">
+                Generar números aleatorios
+              </button>
+              <button class="bIngresarDato" type="button" onclick="ingresarDato()">
+                Ingresar dato
+              </button>
+            </div>
+          <div class="contenedorInputButon">
+            <div class="input-group">
+              <label for="initial">Posición Inicial:</label>
+              <input type="number" id="initial" min="0" max="9" placeholder="0">
+              <label for="final">Posición Final:</label>
+              <input type="number" id="final" min="0" max="9" placeholder="1">
+            </div>
+            <div class="butonesGEnerarCalcular">
+              <div>
+                <button class="bGenerarNumeroAletorio" type="button" onclick="generarNumeroAleatorio()">
+                  Generar Inicial y Final
+                </button>
+                <button class="bIngresarDato" type="button" onclick="ingresarDato()">
+                  Calcular
+                </button>
+              </div>
+             
+              
+            </div>
+          </div>
+        </div>
+        <!-- Botones de acción -->
+          <button class="bResolverAutomaticamente" type="button" onclick="resolverAutomaticamente()">
+            Resolver Automáticamente
+          </button>
+        <button class="bIngresarDato" type="button" onclick="ingresarDato()">
+          Vaciar Array
+        </button>
+
+
+        </div>
+      </form>
+
+      <div class="contenedores">
+        <!-- Contenedores de resultados -->
+        <section class="caja cajaPHP">
+          <!-- Botón y contenedor de resultados para PHP -->
+          <button class="bPHP" type="button" onclick="solucionPHP()">
+            Solución PHP
+          </button>
+          <div class="r" id="resultadoPHP"></div>
+        </section>
+        <section class="caja cajaPY">
+          <!-- Botón y contenedor de resultados para Python -->
+          <button class="bPY" type="button" onclick="solucionPython()">
+            Solución Python
+          </button>
+          <div class="r" id="resultadoPython"></div>
+        </section>
+        <section class="caja cajaJS">
+          <!-- Botón y contenedor de resultados para JavaScript -->
+          <button class="bJS" type="button" onclick="solucionJavaScript()">
+            Solución JS
+          </button>
+          <div class="r" id="resultadoJavaScript"></div>
+        </section>
+      </div>
+
+      <footer>
+        <!-- Pie de página -->
+        <br />Julio Cesar Choque Mamani. <br />
+        <br />Solucionario: Luis José Sánchez - Aprende PHP con ejercicios.
+      </footer>
+    </div>
+  </div>
+
+  <div class="image">
+    <!-- Contenedor de imagen -->
+    <div class="image-container">
+      <img src="./diagramas/solucion.svg" alt="Imagen de ejemplo" />
+    </div>
+  </div>
+</body>
+
+</html>
