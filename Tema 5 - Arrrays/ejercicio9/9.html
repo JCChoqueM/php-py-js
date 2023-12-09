@@ -8,11 +8,14 @@
   <link rel="stylesheet" href="styles/colorEnunciado.css" />
   <!-- Importar scripts JavaScript -->
   <script src="archives/soluciones/solucion.js"></script>
-  <script src="js/generarMatriz.js" defer></script>
+
   <script src="js/generarNumero.js" defer></script>
   <script src="js/ingresarDato.js" defer></script>
   <script src="js/resolverAutomaticamente.js" defer></script>
   <script src="js/solucion.js" defer></script>
+  <script src="js/vaciar.js" defer></script>
+  <script src="js/generarMatriz.js" defer></script>
+  <script src="js/pruebaboton.js" defer></script>
   <script src="archives/ingresarDato/ingresarDatoSol.js" defer></script>
   <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
 </head>
@@ -45,44 +48,55 @@
         <div class="cajaboton">
           <div class="cajaForm">
             <!-- Campo de entrada para números -->
-            <div>
-              <label for="num1">Introduzca un número entero positivo:</label>
-              <input type="number" id="num1" name="num1" placeholder="Introduzca un número entero" required />
-              <button class="bGenerarNumeroAletorio" type="button" onclick="generarNumeroAleatorio()">
-                Generar números aleatorios
-              </button>
-              <button class="bIngresarDato" type="button" onclick="ingresarDato()">
-                Ingresar dato
-              </button>
-            </div>
             <div class="contenedorInputButon">
               <div class="input-group">
+                <label for="num1">Introduzca un número entero positivo:</label>
+                <input type="number" id="num1" name="num1" placeholder="Introduzca un número entero" required />
                 <label for="initial">Posición Inicial:</label>
                 <input type="number" id="initial" min="0" max="9" placeholder="0">
                 <label for="final">Posición Final:</label>
                 <input type="number" id="final" min="0" max="9" placeholder="1">
               </div>
               <div class="butonesGEnerarCalcular">
+
                 <div>
-                  <button class="bGenerarNumeroAletorio" type="button" onclick="generarNumeroAleatorio()">
-                    Generar Inicial y Final
+                  <button class="botones_cajaForm" type="button" onclick="generarNumeroAleatorio()">
+                    Generar números aleatorios
                   </button>
-                  <button class="bIngresarDato" type="button" onclick="ingresarDato()">
-                    Calcular
+                  <button class="botones_cajaForm" id="ingresarNumero" type="button" onclick="ingresarDato()">
+                    Ingresar dato
+                  </button>
+                  <button class="botones_cajaForm" type="button" onclick="completarMatriz()">
+                    Completar Datos
+                  </button>
+                  </button>
+
+                </div>
+                <div class="bvaciar">
+                  <button class="botones_cajaForm" type="button" onclick="gMatriz()">
+                    generar matriz
+                  </button>
+                  <button class="botones_cajaForm" id="vaciar" type="button" onclick="vaciar_array()">
+                    Vaciar Array
                   </button>
                 </div>
+                <div>
+                  <button class="botones_cajaForm" type="button" onclick="generar_inicial_final()">
+                    Generar Inicial y Final
+                  </button>
+                  <button class="botones_cajaForm" id="calcular" type="button" onclick="calcular()">
+                    Calcular
 
+                </div>
 
               </div>
             </div>
           </div>
           <!-- Botones de acción -->
-          <button class="bResolverAutomaticamente" type="button" onclick="resolverAutomaticamente()">
+          <button class="botones_cajaForm" type="button" onclick="resolverAutomaticamente()">
             Resolver Automáticamente
           </button>
-          <button class="bIngresarDato" type="button" onclick="ingresarDato()">
-            Vaciar Array
-          </button>
+
 
 
         </div>

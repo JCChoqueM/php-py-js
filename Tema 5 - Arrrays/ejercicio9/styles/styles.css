@@ -81,6 +81,7 @@ form input[type="number"]:invalid {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 form label {
@@ -108,9 +109,7 @@ form input[type="number"] {
 }
 
 /* Estilos para los botones */
-.bResolverAutomaticamente,
-.bGenerarNumeroAletorio,
-.bIngresarDato {
+.botones_cajaForm {
     background-color: #adda9b;
     color: rgb(30, 3, 63);
     border: 2px solid #2E6DA4;
@@ -119,7 +118,18 @@ form input[type="number"] {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+}
 
+.botones_cajaForm:disabled,
+.colorvaciar:disabled {
+    background-color: #CCCCCC;
+    /* Cambia el color a gris cuando está desactivado */
+    border-color: #AAAAAA;
+    /* Puedes ajustar el color del borde según tus preferencias */
+    color: #666666;
+    /* Puedes ajustar el color del texto según tus preferencias */
+    cursor: not-allowed;
+    /* Cambia el cursor cuando está desactivado */
 }
 
 .bPHP,
@@ -215,9 +225,21 @@ footer {
 }
 
 .butonesGEnerarCalcular {
+    /* Añadido para visualización */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 15px;
+    padding: 10px
+}
+
+.butonesGEnerarCalcular>div {
+    /* Añadido para visualización */
+    padding: 10px;
+    /* Añadido para visualización */
+    margin-bottom: 5px;
+}
+.bvaciar{
+    display: flex;
+    justify-content: left;
+    gap: 10px;
 }

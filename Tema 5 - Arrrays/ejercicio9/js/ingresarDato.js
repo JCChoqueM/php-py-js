@@ -7,20 +7,39 @@ function ingresarDato () {
   if (!isNaN(numero)) {
     numeros.push(numero)
     inputNumero.value = ''
-    var resultadosDiv = document.getElementById('resultadoJavaScript')
-    var resultadosDiv2 = document.getElementById('resultadoPHP')
-    var resultadosDiv3 = document.getElementById('resultadoPython')
+    actualizarResultados()
+    comprobarIndices()
+   comprobarArray()
 
-    resultadosDiv.innerHTML = 'Números ingresados: ' + numeros.join(', ') + ''
-    resultadosDiv2.innerHTML = 'Números ingresados: ' + numeros.join(', ') + ''
-    resultadosDiv3.innerHTML = 'Números ingresados: ' + numeros.join(', ') + ''
 
-    if (numeros.length === 5) {
-      ingresarPHP()
-      ingresarPY()
-      ingresarJS()
-    }
   }
+}
+function completarMatriz () {
+  // Completar el array con valores adicionales hasta llegar a 5
+  while (numeros.length < 5) {
+    var numeroAleatorio = Math.floor(Math.random() * 10) + 1 // Ejemplo de número aleatorio del 1 al 10
+    numeros.push(numeroAleatorio)
+  }
+
+  actualizarResultados()
+  comprobarArray()
+}
+
+function comprobarIndices () {
+  if (numeros.length === 5) {
+    ingresarPHP()
+    ingresarPY()
+    ingresarJS()
+  }
+}
+function actualizarResultados () {
+  var resultadosDiv = document.getElementById('resultadoJavaScript')
+  var resultadosDiv2 = document.getElementById('resultadoPHP')
+  var resultadosDiv3 = document.getElementById('resultadoPython')
+
+  resultadosDiv.innerHTML = 'Números ingresados: ' + numeros.join(', ')
+  resultadosDiv2.innerHTML = 'Números ingresados: ' + numeros.join(', ')
+  resultadosDiv3.innerHTML = 'Números ingresados: ' + numeros.join(', ')
 }
 
 async function ingresarPHP () {
