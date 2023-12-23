@@ -8,4 +8,8 @@ function vaciar_array () {
   resultadosDiv.innerHTML = 'Por favor, ingrese los nuevos valores JS'
   resultadosDiv2.innerHTML = 'Por favor, ingrese los nuevos valores PHP'
   resultadosDiv3.innerHTML = 'Por favor, ingrese los nuevos valores Python'
+  const num1 = document.getElementById('initial')
+  const num2 = document.getElementById('final')
+  num1.value = ''
+  num2.value = ''
 }

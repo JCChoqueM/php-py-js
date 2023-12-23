@@ -1,112 +1,74 @@
 <?php
 // Verificar si se proporciona el parámetro "numeros" a través de GET
-if (isset($_GET["numeros"])) {
+if ((isset($_GET["numeros1"]))) {
     // Decodificar el JSON proporcionado y asegurarse de que haya exactamente 5 elementos en el array
-    $numeros = json_decode($_GET["numeros"]);
+    $numeros = json_decode($_GET["numeros1"]);
+    $iniFin = json_decode($_GET["numeros2"]);
     if (count($numeros) === 5) {
 
         // Variables para el mensaje y estadísticas
         $mensaje = "";
-        $negativo = 0;
         $colorCambio1 = 'background-color: #2EFE64; color:black';
         $colorCambio2 = 'background-color: #FE2E2E; color:black';
         $colorNegativo = 'background-color: pink; color:black';
 
-        $auxPri = [];
-        $auxNoPri = [];
-        $aux = [];
-        $auxOrde = [];
+        $aux;
+        $arrayOriginal = array_slice($numeros, 0);
 
-        // Función que verifica si un número es primo
-        function esPrimo($numero)
-        {
-            if ($numero < 2) {
-                return false;
-            } elseif ($numero == 2 || $numero == 3) {
-                return true;
-            } elseif ($numero % 2 == 0) {
-                return false;
-            } else {
-                for ($i = 2; $i * $i <= $numero; $i++) {
-                    if ($numero % $i == 0) {
-                        return false;
+        if (!($iniFin[0] >= 0 && $iniFin[0] < (count($numeros) - 1))) {
+            $mensaje = "Inicial debe estar comprendido entre 0 y " . count($numeros) - 2;
+        } elseif (!($iniFin[1] > $iniFin[0] && $iniFin[1] <= (count($numeros) - 1))) {
+            $mensaje = "Final debe ser mayor que " . $iniFin[0] . " y menor que " . count($numeros) - 1;
+        } else {
+            $contador;
+            $aux = $numeros[count($numeros) - 1];
+            for ($contador = (count($numeros) - 1); $contador > $iniFin[1]; $contador--) {
+                $numeros[$contador] = $numeros[$contador - 1];
+            }
+            $numeros[$iniFin[1]] = $numeros[$iniFin[0]];
+            for ($contador = ($iniFin[0]); $contador > 0; $contador--) {
+                $numeros[$contador] = $numeros[$contador - 1];
+            }
+            $numeros[0] = $aux;
+            // Construir la tabla HTML con los resultados
+            $mensaje = "<table border='1' >";
+            $filas = [
+                ["Índice", array_keys($arrayOriginal)],
+                ["Matriz", $arrayOriginal],
+                ["Ordenado", $numeros]
+            ];
+
+            foreach ($filas as $fila) {
+                $titulo = $fila[0];
+                $datos = $fila[1];
+
+                $mensaje .= "<tr>";
+                $mensaje .= "<th>$titulo</th>";
+
+                if ($titulo !== "Índice") {
+                    // Construir filas de la tabla con colores según ciertas condiciones
+                    foreach ($datos as $clave => $elemento) {
+                        if ($clave == $iniFin[0]) {
+                            $color = $colorCambio1;
+                        } else {
+                            $color = $colorCambio2;
+                        }
+                        $mensaje .= "<td style='$color'>$elemento</td>";
+                    }
+                } else {
+                    // Mostrar índices en la primera fila
+                    foreach ($datos as $indice) {
+                        $mensaje .= "<td>$indice</td>";
                     }
                 }
-                return true;
-            }
-        }
 
-        // Contar números negativos en el array
-        foreach ($numeros as $elemento) {
-            if ($elemento < 0) {
-                $negativo += 1;
-            }
-        }
-
-        // Separar números primos y no primos en arrays auxiliares
-        foreach ($numeros as $elemento) {
-            if (esPrimo($elemento)) {
-                array_push($auxPri, $elemento);
-            } else {
-                array_push($auxNoPri, $elemento);
-            }
-        }
-
-        // Combinar arrays de primos y no primos
-        $aux = array_merge($auxPri, $auxNoPri);
-
-        // Ordenar arrays de primos y no primos
-        sort($auxPri);
-        sort($auxNoPri);
-
-        // Combinar arrays ordenados de primos y no primos
-        $auxOrde = array_merge($auxPri, $auxNoPri);
-
-        // Construir la tabla HTML con los resultados
-        $mensaje = "<table border='1' >";
-        $filas = [
-            ["Índice", array_keys($numeros)],
-            ["Matriz", $numeros],
-            ["Aux", $aux],
-            ["Ordenado", $auxOrde]
-        ];
-
-        foreach ($filas as $fila) {
-            $titulo = $fila[0];
-            $datos = $fila[1];
-
-            $mensaje .= "<tr>";
-            $mensaje .= "<th>$titulo</th>";
-
-            if ($titulo !== "Índice") {
-                // Construir filas de la tabla con colores según ciertas condiciones
-                foreach ($datos as $elemento) {
-                    if ($elemento < 0) {
-                        $color = $colorNegativo;
-                    } else {
-                        $color = esPrimo($elemento) ? $colorCambio1 : $colorCambio2;
-                    }
-                    $mensaje .= "<td style='$color'>$elemento</td>";
-                }
-            } else {
-                // Mostrar índices en la primera fila
-                foreach ($datos as $indice) {
-                    $mensaje .= "<td>$indice</td>";
-                }
+                $mensaje .= "</tr>";
             }
 
-            $mensaje .= "</tr>";
+            $mensaje .= "</table>";
         }
-
-        $mensaje .= "</table>";
-
-        // Información adicional sobre el array
-        $mensaje .= "El array tiene:<br>";
-        $mensaje .= count($auxPri) . ((count($auxPri) != 1) ? " numeros primos, <br>" : " numero primo, <br>");
-        $mensaje .= count($auxNoPri) . ((count($auxNoPri) != 1) ? " numeros no primos<br>" : " numero no primo,<br>");
-        $mensaje .= $negativo . (($negativo != 1) ? " numeros negativos." : " numero negativo.");
-
-        // Imprimir el mensaje
         echo $mensaje;
+    } else {
+        $mensaje = "El array esta vacio o no cumple las condiciones";
     }
 }

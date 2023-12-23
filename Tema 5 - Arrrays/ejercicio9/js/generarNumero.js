@@ -10,10 +10,10 @@ function generarNumeroAleatorio () {
 function generar_inicial_final () {
   const num1 = document.getElementById('initial')
   const num2 = document.getElementById('final')
+  num1.value = generarNumero(-1, 4)
+  num2.value = generarNumero(-1, 5)
 
-  num1.value = generarNumero(-2, 10)
-  num2.value = generarNumero(-2, 10)
+  comprobarArray()
 }
-
 
 /* !SECTION fin Numeros random */

@@ -53,9 +53,9 @@
                 <label for="num1">Introduzca un número entero positivo:</label>
                 <input type="number" id="num1" name="num1" placeholder="Introduzca un número entero" required />
                 <label for="initial">Posición Inicial:</label>
-                <input type="number" id="initial" min="0" max="9" placeholder="0">
+                <input type="number" id="initial" oninput="comprobarArray()" min="0" max="9" placeholder="0">
                 <label for="final">Posición Final:</label>
-                <input type="number" id="final" min="0" max="9" placeholder="1">
+                <input type="number" id="final" oninput="comprobarArray()" min="0" max="9" placeholder="1">
               </div>
               <div class="butonesGEnerarCalcular">
 
@@ -66,7 +66,7 @@
                   <button class="botones_cajaForm" id="ingresarNumero" type="button" onclick="ingresarDato()">
                     Ingresar dato
                   </button>
-                  <button class="botones_cajaForm" type="button" onclick="completarMatriz()">
+                  <button class="botones_cajaForm" id="completarMatri" type="button" onclick="completarMatriz()">
                     Completar Datos
                   </button>
                   </button>
@@ -84,7 +84,7 @@
                   <button class="botones_cajaForm" type="button" onclick="generar_inicial_final()">
                     Generar Inicial y Final
                   </button>
-                  <button class="botones_cajaForm" id="calcular" type="button" onclick="calcular()">
+                  <button  class="botones_cajaForm" id="calcular" type="button" onclick="calcular2()">
                     Calcular
 
                 </div>

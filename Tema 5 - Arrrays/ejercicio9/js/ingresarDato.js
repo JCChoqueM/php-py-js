@@ -1,4 +1,5 @@
 var numeros = []
+var ini_fin = []
 
 function ingresarDato () {
   var inputNumero = document.getElementById('num1')
@@ -8,12 +9,10 @@ function ingresarDato () {
     numeros.push(numero)
     inputNumero.value = ''
     actualizarResultados()
-    comprobarIndices()
-   comprobarArray()
-
-
+    comprobarArray()
   }
 }
+
 function completarMatriz () {
   // Completar el array con valores adicionales hasta llegar a 5
   while (numeros.length < 5) {
@@ -25,12 +24,39 @@ function completarMatriz () {
   comprobarArray()
 }
 
+function calcular2 () {
+  var inputInicial = document.getElementById('initial')
+  var inputFinal = document.getElementById('final')
+  var ini_ini = parseInt(inputInicial.value)
+  var fin_fin = parseInt(inputFinal.value)
+
+  if (!isNaN(ini_ini)) {
+    ini_fin.push(ini_ini)
+    ini_fin.push(fin_fin)
+
+  }
+  comprobarArray()
+  comprobarIndices()
+  ini_fin = []
+}
 function comprobarIndices () {
   if (numeros.length === 5) {
     ingresarPHP()
     ingresarPY()
     ingresarJS()
   }
+}
+function gMatriz () {
+  numeros = []
+  const min = -8
+  const max = 100
+
+  for (contador = 0; contador < 5; contador++) {
+    const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min
+    numeros.push(numeroAleatorio)
+  }
+  actualizarResultados()
+  comprobarArray()
 }
 function actualizarResultados () {
   var resultadosDiv = document.getElementById('resultadoJavaScript')
@@ -44,15 +70,21 @@ function actualizarResultados () {
 
 async function ingresarPHP () {
   try {
-    const response = await fetch(
-      'archives/ingresarDato/ingresarDato.php?numeros=' +
-        JSON.stringify(numeros)
-    )
+    const url =
+      'archives/ingresarDato/ingresarDato.php' +
+      '?numeros1=' +
+      JSON.stringify(numeros) +
+      '&numeros2=' +
+      JSON.stringify(ini_fin)
+
+    const response = await fetch(url)
+
     if (response.ok) {
       const suma = await response.text()
       var resultadosDiv = document.getElementById('resultadoPHP')
-      resultadosDiv.innerHTML += ` ${suma}  `
-      numeros = []
+      resultadosDiv.innerHTML = ` numeros ingresados: ${numeros.join(
+        ', '
+      )}<br> ${suma} `
     } else {
       console.error('Error en la solicitud:', response.status)
     }
@@ -73,8 +105,9 @@ async function ingresarPY () {
     if (response.ok) {
       const suma = await response.text()
       var resultadosDiv = document.getElementById('resultadoPython')
-      resultadosDiv.innerHTML += suma
-      numeros = []
+      resultadosDiv.innerHTML = ` numeros ingresados: ${numeros.join(
+        ', '
+      )}<br> ${suma} `
     } else {
       console.error('Error en la solicitud:', response.status)
     }
