@@ -10,7 +10,7 @@ if ((isset($_GET["numeros1"]))) {
         $mensaje = "";
         $colorCambio1 = 'background-color: #2EFE64; color:black';
         $colorCambio2 = 'background-color: #FE2E2E; color:black';
-        $colorNegativo = 'background-color: pink; color:black';
+        $colorNegativo = 'background-color: #00000000; color:black';
 
         $aux;
         $arrayOriginal = array_slice($numeros, 0);
@@ -50,8 +50,10 @@ if ((isset($_GET["numeros1"]))) {
                     foreach ($datos as $clave => $elemento) {
                         if ($clave == $iniFin[0]) {
                             $color = $colorCambio1;
-                        } else {
+                        } elseif ($clave == $iniFin[1]) {
                             $color = $colorCambio2;
+                        } else {
+                            $color = $colorNegativo;
                         }
                         $mensaje .= "<td style='$color'>$elemento</td>";
                     }
