@@ -95,13 +95,20 @@ async function ingresarPHP () {
 
 async function ingresarPY () {
   try {
-    const response = await fetch(
-      'archives/ingresarDato/ingresarDatoPY.php', // Cambiar la ruta al archivo PHP que ejecutará el script Python
-      {
-        method: 'POST',
-        body: JSON.stringify(numeros) // Enviamos el array de números en el cuerpo de la solicitud
-      }
-    )
+    const url = 'archives/ingresarDato/ingresarDatoPY.php'
+    const data = {
+      numeros1: numeros,
+      numeros2: ini_fin
+    }
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+
     if (response.ok) {
       const suma = await response.text()
       var resultadosDiv = document.getElementById('resultadoPython')
@@ -115,3 +122,4 @@ async function ingresarPY () {
     console.error('Error en la solicitud:', error)
   }
 }
+

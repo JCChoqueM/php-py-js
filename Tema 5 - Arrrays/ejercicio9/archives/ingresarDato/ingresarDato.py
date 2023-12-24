@@ -96,3 +96,21 @@ if len(sys.argv) > 1:
 
     # Imprimir el mensaje
     print(f"{MENSAJE}")
+
+
+import sys
+import json
+
+# Verificar que se proporcionen al menos dos argumentos
+if len(sys.argv) >= 3:
+    # Cargar los JSON proporcionados como argumentos y inicializar variables
+    NUMERO1 = json.loads(sys.argv[1])
+    NUMERO2 = json.loads(sys.argv[2])
+
+    # Aquí puedes realizar operaciones con las dos arrays (NUMERO1 y NUMERO2)
+    # Por ejemplo, imprimir las arrays o realizar algún cálculo
+
+    print("Array 1:", NUMERO1)
+    print("Array 2:", NUMERO2)
+else:
+    print("Error: Se esperan al menos dos argumentos JSON.")
