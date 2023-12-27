@@ -13,10 +13,7 @@ if ((isset($_GET["numeros1"]))) {
         $colorNegativo = 'background-color: #00000000; color:black';
 
         $aux;
-        $aux2;
-        if ($iniFin[1] + 1 > 4) {
-            $aux2 = 0;
-        }
+
         $arrayOriginal = array_slice($numeros, 0);
         $posicionesIntroducidas = "Inicial=" . $iniFin[0] . " Final=" . $iniFin[1];
         if (!($iniFin[0] >= 0 && $iniFin[0] < (count($numeros) - 1))) {
@@ -34,6 +31,9 @@ if ((isset($_GET["numeros1"]))) {
                 $numeros[$contador] = $numeros[$contador - 1];
             }
             $numeros[0] = $aux;
+
+
+            
             // Construir la tabla HTML con los resultados
             $mensaje = $posicionesIntroducidas;
             $mensaje .= "<table border='1' >";

@@ -1,116 +1,87 @@
 import sys
 import json
-from math import sqrt
 
 # Verificar si se proporciona al menos un argumento al ejecutar el script
 if len(sys.argv) > 1:
     # Cargar el JSON proporcionado como argumento y inicializar variables
-    NUMERO = json.loads(sys.argv[1])
+    NUMERO1 = json.loads(sys.argv[1])
+    NUMERO2 = json.loads(sys.argv[2])
     MENSAJE = ""
     COLORCAMBIO1 = "background-COLOR: #2EFE64; COLOR:black"
     COLORCAMBIO2 = "background-COLOR: #FE2E2E; COLOR:black"
-    COLORNEGATIVO = "background-COLOR: pink; COLOR:black"
-    auxPri = []
-    auxNoPri = []
-    aux = []
-    auxOrde = []
-    NEGATIVO = 0
+    COLORNEGATIVO = "background-COLOR: #00000000; COLOR:black"
+    AUX = None
+    ARRAY_ORIGINAL = NUMERO1.copy()
+    POSICIONES_INTRODUCIDAS = f"Inicial= {NUMERO2[0]} Final= {NUMERO2[1]}"
+    if not (NUMERO2[0] >= 0 and NUMERO2[0] < (len(NUMERO1) - 1)):
+        MENSAJE = f"Inicial debe estar comprendido entre 0 y  {len(NUMERO1) - 2}"
+    elif not (NUMERO2[1] > NUMERO2[0] and NUMERO2[1] <= (len(NUMERO1) - 1)):
+        MENSAJE = (
+            f"<br>Final debe ser mayor que {NUMERO2[0]} y menor que  {len(NUMERO1) - 1}"
+        )
+    else:
+        aux = NUMERO1[len(NUMERO1) - 1]
 
-    # Función que determina si un número es primo
-    def es_primo(numero2):
-        if numero2 < 2:
-            return False
-        if numero2 in (2, 3):
-            return True
-        if numero2 % 2 == 0:
-            return False
-        for i in range(2, int(sqrt(numero2)) + 1):
-            if numero2 % i == 0:
-                return False
-        return True
+        for contador in range(len(NUMERO1) - 1, NUMERO2[1], -1):
+            NUMERO1[contador] = NUMERO1[contador - 1]
 
-    # Contar números negativos en el array
-    for elemento in NUMERO:
-        if elemento < 0:
-            NEGATIVO += 1
+        NUMERO1[NUMERO2[1]] = NUMERO1[NUMERO2[0]]
 
-    # Separar números primos y no primos en arrays auxiliares
-    for elemento in NUMERO:
-        if es_primo(elemento):
-            auxPri.append(elemento)
-        else:
-            auxNoPri.append(elemento)
+        for contador in range(NUMERO2[0], 0, -1):
+            NUMERO1[contador] = NUMERO1[contador - 1]
 
-    # Combinar arrays de primos y no primos
-    aux = auxPri + auxNoPri
+        NUMERO1[0] = aux
 
-    # Ordenar arrays de primos y no primos
-    auxPri.sort()
-    auxNoPri.sort()
+        # Construir la tabla HTML con los resultados
+        MENSAJE = POSICIONES_INTRODUCIDAS
+        MENSAJE += "<table border='1' >"
+        filas = [
+            ["Indice", list(range(len(ARRAY_ORIGINAL)))],
+            ["Matriz", ARRAY_ORIGINAL],
+            ["Ordenado", NUMERO1],
+        ]
 
-    # Combinar arrays ordenados de primos y no primos
-    auxOrde = auxPri + auxNoPri
+        for fila in filas:
+            TITULO = fila[0]
+            datos = fila[1]
+            MENSAJE += "<tr>"
+            MENSAJE += f"<th>{TITULO}</th>"
 
-    # Construir la tabla HTML con los resultados
-    MENSAJE = "<table border='1' >"
-    filas = [
-        ["Indice", list(range(len(NUMERO)))],
-        ["Matriz", NUMERO],
-        ["Aux", aux],
-        ["Ordenado", auxOrde],
-    ]
+            if TITULO == "Indice":
+                # Construir filas de la tabla con colores según ciertas condiciones
+                for elemento in datos:
+                    MENSAJE += f"<td>{elemento}</td>"
+            elif TITULO == "Matriz":
+                # Construir filas de la tabla con colores según ciertas condiciones
+                for clave, elemento in enumerate(datos):
+                    if clave == NUMERO2[0]:
+                        COLOR = COLORCAMBIO1
+                    elif clave == NUMERO2[1]:
+                        COLOR = COLORCAMBIO2
+                    else:
+                        COLOR = COLORNEGATIVO
 
-    for fila in filas:
-        TITULO = fila[0]
-        datos = fila[1]
-        MENSAJE += "<tr>"
-        MENSAJE += f"<th>{TITULO}</th>"
+                    MENSAJE += f"<td style='{COLOR}'>{elemento}</td>"
+            elif TITULO == "Ordenado":
+                # Construir filas de la tabla con colores según ciertas condiciones
+                for clave, elemento in enumerate(datos):
+                    if clave == (NUMERO2[1] % len(datos)):
+                        # Si NUMERO2[1] está en la última posición, usa el índice 0
+                        COLOR = COLORCAMBIO1
+                    elif clave == (NUMERO2[1] + 1) % len(datos):
+                        # Color para la posición siguiente a NUMERO2[1]
+                        COLOR = COLORCAMBIO2
+                    else:
+                        # Color por defecto
+                        COLOR = COLORNEGATIVO
 
-        if TITULO != "Indice":
-            # Construir filas de la tabla con colores según ciertas condiciones
-            for elemento in datos:
-                if elemento < 0:
-                    COLOR = COLORNEGATIVO
-                else:
-                    COLOR = COLORCAMBIO1 if es_primo(elemento) else COLORCAMBIO2
-                MENSAJE += f"<td style='{COLOR}'>{elemento}</td>"
-        else:
-            # Mostrar índices en la primera fila
-            for elemento in datos:
-                MENSAJE += f"<td>{elemento}</td>"
+                    MENSAJE += f"<td style='{COLOR}'>{elemento}</td>"
 
-        MENSAJE += "</tr>"
+            MENSAJE += "</tr>"
 
-    MENSAJE += "</table>"
+        MENSAJE += "</table>"
 
-    # Información adicional sobre el array
-    MENSAJE += "El array tiene:<br>"
-    PLURALPRI = "numeros primos, <br>" if len(auxPri) != 1 else "numero primo, <br>"
-    PLURALNOPRI = (
-        "numeros no primos,<br>" if len(auxNoPri) != 1 else "numero no primo,<br>"
-    )
-    PLURALNEGATIVO = "numeros negativos." if NEGATIVO != 1 else "numero negativo."
-    MENSAJE += f"{len(auxPri)} {PLURALPRI}"
-    MENSAJE += f"{len(auxNoPri)} {PLURALNOPRI}"
-    MENSAJE += f"{NEGATIVO} {PLURALNEGATIVO}"
+        # Información adicional sobre el array
 
-    # Imprimir el mensaje
+        # Imprimir el mensaje
     print(f"{MENSAJE}")
-
-
-import sys
-import json
-
-# Verificar que se proporcionen al menos dos argumentos
-if len(sys.argv) >= 3:
-    # Cargar los JSON proporcionados como argumentos y inicializar variables
-    NUMERO1 = json.loads(sys.argv[1])
-    NUMERO2 = json.loads(sys.argv[2])
-
-    # Aquí puedes realizar operaciones con las dos arrays (NUMERO1 y NUMERO2)
-    # Por ejemplo, imprimir las arrays o realizar algún cálculo
-
-    print("Array 1:", NUMERO1)
-    print("Array 2:", NUMERO2)
-else:
-    print("Error: Se esperan al menos dos argumentos JSON.")
