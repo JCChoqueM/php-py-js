@@ -1,110 +1,85 @@
-"""
-Este script procesa un array de números y muestra un mensaje con estadísticas y una tabla HTML.
-"""
-
 import sys
 import json
-from math import sqrt
 
-# Verificar si se proporcionó un array de números como argumento
+# Verificar si se proporciona al menos un argumento al ejecutar el script
 if len(sys.argv) > 1:
-    # Convertir el argumento de cadena JSON a una lista de números
-    NUMERO = json.loads(sys.argv[1])
+    # Cargar el JSON proporcionado como argumento y inicializar variables
+    NUMERO1 = json.loads(sys.argv[1])
+    NUMERO2 = json.loads(sys.argv[2])
     MENSAJE = ""
     COLORCAMBIO1 = "background-COLOR: #2EFE64; COLOR:black"
     COLORCAMBIO2 = "background-COLOR: #FE2E2E; COLOR:black"
-    COLORNEGATIVO = "background-COLOR: pink; COLOR:black"
-    auxPri = []
-    auxNoPri = []
-    aux = []
-    auxOrde = []
-    NEGATIVO = 0
+    COLORNEGATIVO = "background-COLOR: #00000000; COLOR:black"
+    AUX = None
+    ARRAY_ORIGINAL = NUMERO1.copy()
+    POSICIONES_INTRODUCIDAS = f"Inicial= {NUMERO2[0]} Final= {NUMERO2[1]}"
+    if not (NUMERO2[0] >= 0 and NUMERO2[0] < (len(NUMERO1) - 1)):
+        MENSAJE = f"<br>{POSICIONES_INTRODUCIDAS}<br>Inicial debe estar comprendido entre 0 y  {len(NUMERO1) - 2}"
+    elif not (NUMERO2[1] > NUMERO2[0] and NUMERO2[1] <= (len(NUMERO1) - 1)):
+        MENSAJE = f"<br>{POSICIONES_INTRODUCIDAS}<br><br>Final debe ser mayor que {NUMERO2[0]} y menor que  {len(NUMERO1) - 1}"
+    else:
+        aux = NUMERO1[len(NUMERO1) - 1]
 
-    def es_primo(numero2):
-        """
-        Determina si un número es primo.
+        for contador in range(len(NUMERO1) - 1, NUMERO2[1], -1):
+            NUMERO1[contador] = NUMERO1[contador - 1]
 
-        Args:
-            numero2 (int): El número que se va a verificar.
+        NUMERO1[NUMERO2[1]] = NUMERO1[NUMERO2[0]]
 
-        Returns:
-            bool: True si el número es primo, False en caso contrario.
-        """
-        if numero2 < 2:
-            return False
-        if numero2 in (2, 3):
-            return True
-        if numero2 % 2 == 0:
-            return False
-        for i in range(2, int(sqrt(numero2)) + 1):
-            if numero2 % i == 0:
-                return False
-        return True
+        for contador in range(NUMERO2[0], 0, -1):
+            NUMERO1[contador] = NUMERO1[contador - 1]
 
-    # Contar números negativos en el array
-    for elemento in NUMERO:
-        if elemento < 0:
-            NEGATIVO += 1
+        NUMERO1[0] = aux
 
-    # Separar números primos y no primos en arrays auxiliares
-    for elemento in NUMERO:
-        if es_primo(elemento):
-            auxPri.append(elemento)
-        else:
-            auxNoPri.append(elemento)
+        # Construir la tabla HTML con los resultados
+        MENSAJE = POSICIONES_INTRODUCIDAS
+        MENSAJE += "<table border='1' >"
+        filas = [
+            ["Indice", list(range(len(ARRAY_ORIGINAL)))],
+            ["Matriz", ARRAY_ORIGINAL],
+            ["Ordenado", NUMERO1],
+        ]
 
-    # Combinar arrays de primos y no primos
-    aux = auxPri + auxNoPri
+        for fila in filas:
+            TITULO = fila[0]
+            datos = fila[1]
+            MENSAJE += "<tr>"
+            MENSAJE += f"<th>{TITULO}</th>"
 
-    # Ordenar arrays de primos y no primos
-    auxPri.sort()
-    auxNoPri.sort()
+            if TITULO == "Indice":
+                # Construir filas de la tabla con colores según ciertas condiciones
+                for elemento in datos:
+                    MENSAJE += f"<td>{elemento}</td>"
+            elif TITULO == "Matriz":
+                # Construir filas de la tabla con colores según ciertas condiciones
+                for clave, elemento in enumerate(datos):
+                    if clave == NUMERO2[0]:
+                        COLOR = COLORCAMBIO1
+                    elif clave == NUMERO2[1]:
+                        COLOR = COLORCAMBIO2
+                    else:
+                        COLOR = COLORNEGATIVO
 
-    # Combinar arrays ordenados de primos y no primos
-    auxOrde = auxPri + auxNoPri
+                    MENSAJE += f"<td style='{COLOR}'>{elemento}</td>"
+            elif TITULO == "Ordenado":
+                # Construir filas de la tabla con colores según ciertas condiciones
+                for clave, elemento in enumerate(datos):
+                    if clave == (NUMERO2[1] % len(datos)):
+                        # Si NUMERO2[1] está en la última posición, usa el índice 0
+                        COLOR = COLORCAMBIO1
+                    elif clave == (NUMERO2[1] + 1) % len(datos):
+                        # Color para la posición siguiente a NUMERO2[1]
+                        COLOR = COLORCAMBIO2
+                    else:
+                        # Color por defecto
+                        COLOR = COLORNEGATIVO
 
-    # Construir una tabla HTML con los resultados
-    MENSAJE = "<table border='1' >"
-    filas = [
-        ["Indice", list(range(len(NUMERO)))],
-        ["Matriz", NUMERO],
-        ["Aux", aux],
-        ["Ordenado", auxOrde],
-    ]
+                    MENSAJE += f"<td style='{COLOR}'>{elemento}</td>"
 
-    for fila in filas:
-        TITULO = fila[0]
-        datos = fila[1]
-        MENSAJE += "<tr>"
-        MENSAJE += f"<th>{TITULO}</th>"
+            MENSAJE += "</tr>"
 
-        # Construir filas de la tabla con colores según ciertas condiciones
-        if TITULO != "Indice":
-            for elemento in datos:
-                if elemento < 0:
-                    COLOR = COLORNEGATIVO
-                else:
-                    COLOR = COLORCAMBIO1 if es_primo(elemento) else COLORCAMBIO2
-                MENSAJE += f"<td style='{COLOR}'>{elemento}</td>"
-        else:
-            for elemento in datos:
-                MENSAJE += f"<td>{elemento}</td>"
-        MENSAJE += "</tr>"
+        MENSAJE += "</table>"
 
-    MENSAJE += "</table>"
+        # Información adicional sobre el array
 
-    # Información adicional sobre el array
-    MENSAJE += "El array tiene:<br>"
-    PLURALPRI = " numeros primos, <br>" if len(auxPri) != 1 else " numero primo, <br>"
-    PLURALNOPRI = (
-        " numeros no primos, <br>" if len(auxNoPri) != 1 else " numero no primo, <br>"
-    )
-    PLURALNEGATIVO = (
-        " numeros negativos. <br>" if (NEGATIVO) != 1 else " numero negativo. <br>"
-    )
-    MENSAJE += f"{len(auxPri)}{PLURALPRI}"
-    MENSAJE += f"{len(auxNoPri)}{PLURALNOPRI} "
-    MENSAJE += f"{NEGATIVO}{PLURALNEGATIVO} "
-
-    # Imprimir el mensaje
+        # Imprimir el mensaje
     print(f"{MENSAJE}")

@@ -1,106 +1,96 @@
 <?php
-if (isset($_GET["numerosAuto"])) {
-  // Decodificar el array de números desde la cadena JSON en la URL
-  $numeros = json_decode($_GET["numerosAuto"]);
+if (isset($_GET["numeros1"])) {
+  $numeros = json_decode($_GET["numeros1"]);
+  $iniFin = json_decode($_GET["numeros2"]);
+  if (count($numeros) === 7) {
 
-  $mensaje = "";
-  $negativo = 0;
-  $colorCambio1 = 'background-color: #2EFE64; color:black';
-  $colorCambio2 = 'background-color: #FE2E2E; color:black';
-  $colorNegativo = 'background-color: pink; color:black';
+    // Variables para el mensaje y estadísticas
+    $mensaje = "";
+    $colorCambio1 = 'background-color: #2EFE64; color:black';
+    $colorCambio2 = 'background-color: #FE2E2E; color:black';
+    $colorNegativo = 'background-color: #00000000; color:black';
 
-  $auxPri = [];
-  $auxNoPri = [];
-  $aux = [];
-  $auxOrde = [];
+    $aux;
 
-  // Función para verificar si un número es primo
-  function esPrimo($numero)
-  {
-    if ($numero < 2) {
-      return false;
-    } elseif ($numero == 2 || $numero == 3) {
-      return true;
-    } elseif ($numero % 2 == 0) {
-      return false;
+    $arrayOriginal = array_slice($numeros, 0);
+    $posicionesIntroducidas = "Inicial=" . $iniFin[0] . " Final=" . $iniFin[1];
+    if (!($iniFin[0] >= 0 && $iniFin[0] < (count($numeros) - 1))) {
+      $mensaje = "<br>$posicionesIntroducidas <br> Inicial debe estar comprendido entre 0 y " . count($numeros) - 2;
+    } elseif (!($iniFin[1] > $iniFin[0] && $iniFin[1] <= (count($numeros) - 1))) {
+      $mensaje = "<br>$posicionesIntroducidas  <br><br>Final debe ser mayor que " . $iniFin[0] . " y menor que " . count($numeros) - 1;
     } else {
-      for ($i = 2; $i * $i <= $numero; $i++) {
-        if ($numero % $i == 0) {
-          return false;
+      $contador;
+      $aux = $numeros[count($numeros) - 1];
+      for ($contador = (count($numeros) - 1); $contador > $iniFin[1]; $contador--) {
+        $numeros[$contador] = $numeros[$contador - 1];
+      }
+      $numeros[$iniFin[1]] = $numeros[$iniFin[0]];
+      for ($contador = ($iniFin[0]); $contador > 0; $contador--) {
+        $numeros[$contador] = $numeros[$contador - 1];
+      }
+      $numeros[0] = $aux;
+
+
+
+      // Construir la tabla HTML con los resultados
+      $mensaje = $posicionesIntroducidas;
+      $mensaje .= "<table border='1' >";
+      $filas = [
+        ["Índice", array_keys($arrayOriginal)],
+        ["Matriz", $arrayOriginal],
+        ["Ordenado", $numeros]
+      ];
+
+      foreach ($filas as $fila) {
+        $titulo = $fila[0];
+        $datos = $fila[1];
+
+        $mensaje .= "<tr>";
+        $mensaje .= "<th>$titulo</th>";
+
+        if ($titulo === "Índice") {
+          // Mostrar índices en la primera fila
+          foreach ($datos as $indice) {
+            $mensaje .= "<td>$indice</td>";
+          }
+        } elseif ($titulo === "Matriz") {
+          // Construir filas de la tabla con colores según ciertas condiciones
+          foreach ($datos as $clave => $elemento) {
+            if ($clave == $iniFin[0]) {
+              $color = $colorCambio1;
+            } elseif ($clave == $iniFin[1]) {
+              $color = $colorCambio2;
+            } else {
+              $color = $colorNegativo;
+            }
+            $mensaje .= "<td style='$color'>$elemento</td>";
+          }
+        } elseif ($titulo === "Ordenado") {
+          // Construir filas de la tabla con colores según ciertas condiciones
+          foreach ($datos as $clave => $elemento) {
+            if ($clave == ($iniFin[1] % count($datos))) {
+              // Si $final está en la última posición, usa el índice 0
+              $color = $colorCambio1;
+            } elseif ($clave == ($iniFin[1] + 1) % count($datos)) {
+              // Color para la posición siguiente a $final
+              $color = $colorCambio2;
+            } else {
+              // Color por defecto
+              $color = $colorNegativo;
+            }
+
+            $mensaje .= "<td style='$color'>$elemento</td>";
+          }
         }
+
+
+        $mensaje .= "</tr>";
       }
-      return true;
+
+      $mensaje .= "</table>";
     }
+    echo $mensaje;
+  } else {
+    $mensaje = "El array esta vacio o no cumple las condiciones";
   }
-
-  // Contar números negativos en el array 'numeros'
-  foreach ($numeros as $elemento) {
-    if ($elemento < 0) {
-      $negativo += 1;
-    }
-  }
-
-  // Separar números primos y no primos en listas auxiliares
-  foreach ($numeros as $elemento) {
-    if (esPrimo($elemento)) {
-      array_push($auxPri, $elemento);
-    } else {
-      array_push($auxNoPri, $elemento);
-    }
-  }
-
-  // Combinar listas de primos y no primos
-  $aux = array_merge($auxPri, $auxNoPri);
-
-  // Ordenar listas de primos y no primos
-  sort($auxPri);
-  sort($auxNoPri);
-
-  // Combinar listas ordenadas de primos y no primos
-  $auxOrde = array_merge($auxPri, $auxNoPri);
-
-  // Construir la tabla HTML
-  $mensaje = "<table border='1' >";
-  $filas = [
-    ["Índice", array_keys($numeros)],
-    ["Matriz", $numeros],
-    ["Aux", $aux],
-    ["Ordenado", $auxOrde]
-  ];
-
-  foreach ($filas as $fila) {
-    $titulo = $fila[0];
-    $datos = $fila[1];
-
-    $mensaje .= "<tr>";
-    $mensaje .= "<th>$titulo</th>";
-
-    if ($titulo !== "Índice") {
-      foreach ($datos as $elemento) {
-        if ($elemento < 0) {
-          $color = $colorNegativo;
-        } else {
-          $color = esPrimo($elemento) ? $colorCambio1 : $colorCambio2;
-        }
-        $mensaje .= "<td style='$color'>$elemento</td>";
-      }
-    } else {
-      foreach ($datos as $indice) {
-        $mensaje .= "<td>$indice</td>";
-      }
-    }
-
-    $mensaje .= "</tr>";
-  }
-
-  $mensaje .= "</table>";
-
-  // Información adicional sobre el array
-  $mensaje .= "El array tiene:<br>";
-  $mensaje .= count($auxPri) . ((count($auxPri) != 1) ? " numeros primos, <br>" : " numero primo, <br>");
-  $mensaje .= count($auxNoPri) . ((count($auxNoPri) != 1) ? " numeros no primos<br>" : " numero no primo,<br>");
-  $mensaje .= $negativo . (($negativo != 1) ? " numeros negativos." : " numero negativo.");
-
-  // Mostrar el mensaje
-  echo $mensaje;
 }

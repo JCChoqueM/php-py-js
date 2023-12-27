@@ -14,11 +14,9 @@ if len(sys.argv) > 1:
     ARRAY_ORIGINAL = NUMERO1.copy()
     POSICIONES_INTRODUCIDAS = f"Inicial= {NUMERO2[0]} Final= {NUMERO2[1]}"
     if not (NUMERO2[0] >= 0 and NUMERO2[0] < (len(NUMERO1) - 1)):
-        MENSAJE = f"Inicial debe estar comprendido entre 0 y  {len(NUMERO1) - 2}"
+        MENSAJE = f"<br>{POSICIONES_INTRODUCIDAS}<br><br>Inicial debe estar comprendido entre 0 y  {len(NUMERO1) - 2}"
     elif not (NUMERO2[1] > NUMERO2[0] and NUMERO2[1] <= (len(NUMERO1) - 1)):
-        MENSAJE = (
-            f"<br>Final debe ser mayor que {NUMERO2[0]} y menor que  {len(NUMERO1) - 1}"
-        )
+        MENSAJE = f"<br>{POSICIONES_INTRODUCIDAS}<br><br>Final debe ser mayor que {NUMERO2[0]} y menor que  {len(NUMERO1) - 1}"
     else:
         aux = NUMERO1[len(NUMERO1) - 1]
 

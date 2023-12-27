@@ -7,118 +7,103 @@ function automaticoJS() {
   let negativo = 0;
   let colorCambio1 = "background-color: #2EFE64; color:black";
   let colorCambio2 = "background-color: #FE2E2E; color:black";
-  let colorNegativo = "background-color: pink; color:black";
-  let auxPri = [];
-  let auxNoPri = [];
-  let aux = [];
-  let auxOrde = [];
+  let colorNegativo = "background-color: #00000000; color:black";
+  let color;
+  let aux;
+  // Copiar el array original
+  var arrayOriginal = numerosAuto.slice(0);
 
-  /**
-   * Función que determina si un número es primo.
-   * @param {number} numero - El número que se va a verificar.
-   * @returns {boolean} - True si el número es primo, False en caso contrario.
-   */
-  function esPrimo(numero) {
-    if (numero < 2) {
-      return false;
-    } else if (numero == 2 || numero == 3) {
-      return true;
-    } else if (numero % 2 == 0) {
-      return false;
-    } else {
-      for (let i = 2; i * i <= numero; i++) {
-        if (numero % i == 0) {
-          return false;
-        }
+  // Validar las posiciones introducidas
+  var posicionesIntroducidas =
+    "Inicial=" + ini_finAuto[0] + " Final=" + ini_finAuto[1];
+  mensaje = "";
+
+  if (!(ini_finAuto[0] >= 0 && ini_finAuto[0] < numerosAuto.length - 1)) {
+    mensaje = `<br>${posicionesIntroducidas}<br><br>Inicial debe estar comprendido entre 0 y   ${
+      numerosAuto.length - 2
+    }`;
+  } else if (
+    !(
+      ini_finAuto[1] > ini_finAuto[0] &&
+      ini_finAuto[1] <= numerosAuto.length - 1
+    )
+  ) {
+    mensaje = `<br>${posicionesIntroducidas} <br><br>Final debe ser mayor que ${
+      ini_finAuto[0]
+    }  y menor que   ${numerosAuto.length - 1}`;
+  } else {
+    let contador;
+    aux = numerosAuto[numerosAuto.length - 1];
+
+    for (
+      contador = numerosAuto.length - 1;
+      contador > ini_finAuto[1];
+      contador--
+    ) {
+      numerosAuto[contador] = numerosAuto[contador - 1];
+    }
+
+    numerosAuto[ini_finAuto[1]] = numerosAuto[ini_finAuto[0]];
+
+    for (contador = ini_finAuto[0]; contador > 0; contador--) {
+      numerosAuto[contador] = numerosAuto[contador - 1];
+    }
+
+    numerosAuto[0] = aux;
+
+    // Construir la tabla HTML con los resultados
+    mensaje = posicionesIntroducidas;
+    mensaje += "<table border='1' >";
+    const filas = [
+      ["Índice", Object.keys(arrayOriginal)],
+      ["Matriz", arrayOriginal],
+      ["Ordenado", numerosAuto],
+    ];
+
+    filas.forEach((fila) => {
+      const titulo = fila[0];
+      const datos = fila[1];
+
+      mensaje += "<tr>";
+      mensaje += `<th>${titulo}</th>`;
+      if (titulo === "Índice") {
+        // Mostrar índices en la primera fila
+        datos.forEach((indice) => {
+          mensaje += `<td>${indice}</td>`;
+        });
+      } else if (titulo === "Matriz") {
+        datos.forEach((elemento, clave) => {
+          if (clave == ini_finAuto[0]) {
+            color = colorCambio1;
+          } else if (clave == ini_finAuto[1]) {
+            color = colorCambio2;
+          } else {
+            color = colorNegativo;
+          }
+          mensaje += `<td style='${color}'>${elemento}</td>`;
+        });
+      } else if (titulo === "Ordenado") {
+        datos.forEach((elemento, clave) => {
+          if (clave == ini_finAuto[1] % datos.length) {
+            color = colorCambio1;
+          } else if (clave == (ini_finAuto[1] + 1) % datos.length) {
+            color = colorCambio2;
+          } else {
+            color = colorNegativo;
+          }
+          mensaje += `<td style='${color}'>${elemento}</td>`;
+        });
       }
-      return true;
-    }
+
+      mensaje += "</tr>";
+    });
+    mensaje += "</table>";
   }
+  console.table(numerosAuto);
 
-  // Procesar el array de números
-  numerosAuto.forEach((elemento) => {
-    // Contar números negativos
-    if (elemento < 0) {
-      negativo += 1;
-    }
-  });
-
-  numerosAuto.forEach((elemento) => {
-    // Separar números primos y no primos en arrays auxiliares
-    if (esPrimo(elemento)) {
-      auxPri.push(elemento);
-    } else {
-      auxNoPri.push(elemento);
-    }
-  });
-
-  // Combinar arrays de primos y no primos
-  aux = auxPri.concat(auxNoPri);
-
-  // Ordenar arrays de primos y no primos
-  auxPri.sort(function (a, b) {
-    return a - b;
-  });
-
-  auxNoPri.sort(function (a, b) {
-    return a - b;
-  });
-
-  // Combinar arrays ordenados de primos y no primos
-  auxOrde = auxPri.concat(auxNoPri);
-
-  // Construir la tabla HTML con los resultados
-  mensaje = "<table border='1' >";
-  filas = [
-    ["Índice", Object.keys(numerosAuto)],
-    ["Matriz", numerosAuto],
-    ["Aux", aux],
-    ["Ordenado", auxOrde],
-  ];
-
-  filas.forEach((fila) => {
-    titulo = fila[0];
-    datos = fila[1];
-
-    mensaje += "<tr>";
-    mensaje += `<th>${titulo}</th>`;
-
-    if (titulo !== "Índice") {
-      // Construir filas de la tabla con colores según ciertas condiciones
-      datos.forEach((elemento) => {
-        let color;
-        if (elemento < 0) {
-          color = colorNegativo;
-        } else {
-          color = esPrimo(elemento) ? colorCambio1 : colorCambio2;
-        }
-        mensaje += `<td style='${color}'>${elemento}</td>`;
-      });
-    } else {
-      // Mostrar índices en la primera fila
-      datos.forEach((indice) => {
-        mensaje += `<td>${indice}</td>`;
-      });
-    }
-
-    mensaje += "</tr>";
-  });
-
-  mensaje += "</table>";
-
-  // Información adicional sobre el array
-  mensaje += "El array tiene:<br>";
-  mensaje += `${auxPri.length}  ${
-    auxPri.length != 1 ? " numeros primos,  <br>" : " numero primo,  <br>"
-  }`;
-  mensaje += `${auxNoPri.length}  ${
-    auxNoPri.length != 1 ? " numeros no primos,<br>" : " numero no primo,<br>"
-  }`;
-  mensaje += `${negativo}  ${
-    negativo != 1 ? " numeros negativos." : " numero negativo."
-  }`;
-
-  // Mostrar el resultado en el elemento con id "resultadoJavaScript"
+  // Obtener el elemento HTML donde se mostrará el resultado y añadir el mensaje
   const resultadoDiv = document.getElementById("resultadoJavaScript");
-  resultadoDiv.innerHTML += mensaje;
+  resultadoDiv.innerHTML = `numeros ingresados: ${numerosAuto.join(
+    ", "
+  )}<br> ${mensaje} `;
 }

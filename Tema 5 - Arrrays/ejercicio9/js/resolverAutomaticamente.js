@@ -1,4 +1,5 @@
 var numerosAuto = []
+var ini_finAuto = []
 
 function generarArray () {
   const min = -8
@@ -18,27 +19,57 @@ function generarArray () {
   resultadosDiv3.innerHTML =
     'Números ingresados Automát: ' + numerosAuto.join(', ') + ''
 }
+function ingresarIndices () {
+  var inputInicial = document.getElementById('initial')
+  var inputFinal = document.getElementById('final')
+  var ini_iniAuto = parseInt(inputInicial.value)
+  var fin_finAuto = parseInt(inputFinal.value)
+
+  if (!isNaN(ini_iniAuto)) {
+    ini_finAuto.push(ini_iniAuto)
+    ini_finAuto.push(fin_finAuto)
+  }
+}
+function generar_inicial_final2 () {
+  const num1 = document.getElementById('initial')
+  const num2 = document.getElementById('final')
+  num1.value = generarNumero(-1, 6)
+  num2.value = generarNumero(-1, 7)
+}
 
 /* SECTION inicio sumar todo */
 function resolverAutomaticamente () {
   generarArray()
+  generar_inicial_final2()
+  ingresarIndices()
+
   if (numerosAuto.length === 7) {
     automaticoPHP()
     automaticoPY()
     automaticoJS()
   }
+  ini_finAuto = []
+
 }
 async function automaticoPHP () {
   try {
-    const response = await fetch(
-      'archives/automaticamente/automaticamente.php?numerosAuto=' +
-        JSON.stringify(numerosAuto)
-    )
+    const url =
+      'archives/automaticamente/automaticamente.php' +
+      '?numeros1=' +
+      JSON.stringify(numerosAuto) +
+      '&numeros2=' +
+      JSON.stringify(ini_finAuto)
+
+    const response = await fetch(url)
+
     if (response.ok) {
       const suma = await response.text()
       var resultadosDiv = document.getElementById('resultadoPHP')
-      resultadosDiv.innerHTML += `${suma}  `
+      resultadosDiv.innerHTML = ` numeros ingresados: ${numerosAuto.join(
+        ', '
+      )}<br> ${suma} `
       numerosAuto = []
+
     } else {
       console.error('Error en la solicitud:', response.status)
     }
@@ -49,18 +80,26 @@ async function automaticoPHP () {
 
 async function automaticoPY () {
   try {
-    const response = await fetch(
-      'archives/automaticamente/automaticamentePY.php', // Cambiar la ruta al archivo PHP que ejecutará el script Python
-      {
-        method: 'POST',
-        body: JSON.stringify(numerosAuto) // Enviamos el array de números en el cuerpo de la solicitud
-      }
-    )
+    const url = 'archives/automaticamente/automaticamentePY.php'
+    const data = {
+      numeros1: numerosAuto,
+      numeros2: ini_finAuto
+    }
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+
     if (response.ok) {
       const suma = await response.text()
       var resultadosDiv = document.getElementById('resultadoPython')
-      resultadosDiv.innerHTML += `${suma}`
-      numerosAuto = []
+      resultadosDiv.innerHTML = ` numeros ingresados: ${numerosAuto.join(
+        ', '
+      )}<br> ${suma} `
     } else {
       console.error('Error en la solicitud:', response.status)
     }

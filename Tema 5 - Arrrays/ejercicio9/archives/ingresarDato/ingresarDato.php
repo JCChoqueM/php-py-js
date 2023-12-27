@@ -17,9 +17,9 @@ if ((isset($_GET["numeros1"]))) {
         $arrayOriginal = array_slice($numeros, 0);
         $posicionesIntroducidas = "Inicial=" . $iniFin[0] . " Final=" . $iniFin[1];
         if (!($iniFin[0] >= 0 && $iniFin[0] < (count($numeros) - 1))) {
-            $mensaje = "Inicial debe estar comprendido entre 0 y " . count($numeros) - 2;
+            $mensaje = "<br>$posicionesIntroducidas  <br><br>Inicial debe estar comprendido entre 0 y " . count($numeros) - 2;
         } elseif (!($iniFin[1] > $iniFin[0] && $iniFin[1] <= (count($numeros) - 1))) {
-            $mensaje = "<br>Final debe ser mayor que " . $iniFin[0] . " y menor que " . count($numeros) - 1;
+            $mensaje = "<br>$posicionesIntroducidas  <br><br><br>Final debe ser mayor que " . $iniFin[0] . " y menor que " . count($numeros) - 1;
         } else {
             $contador;
             $aux = $numeros[count($numeros) - 1];
