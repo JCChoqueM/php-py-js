@@ -1,115 +1,117 @@
 <?php
 // Inicializar variables
 $mensaje = "";
+$numero=6;
 
 // Generar 6 números aleatorios y almacenarlos en el array 'numeros'
 for ($contador = 0; $contador < 6; $contador++) {
   $numeros[$contador] = rand(-5, 25);
 }
+for ($contador = 0; $contador < 6; $contador++) {
+  $iniFin[$contador] = rand(-1, 5);
+}
 
 $mensaje = "";
-$negativo = 0;
-$colorCambio1 = 'background-color: #2EFE64; color:black'; // Estilo para números primos
-$colorCambio2 = 'background-color: #FE2E2E; color:black'; // Estilo para números no primos
-$colorNegativo = 'background-color: pink; color:black';  // Estilo para números negativos
+$colorCambio1 = 'background-color: #2EFE64; color:black';
+$colorCambio2 = 'background-color: #FE2E2E; color:black';
+$colorNegativo = 'background-color: #00000000; color:black';
 
-$auxPri = [];    // Array para almacenar números primos
-$auxNoPri = [];  // Array para almacenar números no primos
-$aux = [];       // Array auxiliar para combinación de primos y no primos
-$auxOrde = [];   // Array para almacenar números ordenados
+$aux;
 
-// Función para determinar si un número es primo
-function esPrimo($numero)
-{
-  if ($numero < 2) {
-    return false;
-  } elseif ($numero == 2 || $numero == 3) {
-    return true;
-  } elseif ($numero % 2 == 0) {
-    return false;
-  } else {
-    for ($i = 2; $i * $i <= $numero; $i++) {
-      if ($numero % $i == 0) {
-        return false;
+$arrayOriginal = array_slice($numeros, 0);
+$mensaje = "Numeros generados:<br>";
+
+$mensaje .= implode(", ", $numeros);
+
+
+$posicionesIntroducidas = "<br>Inicial=" . $iniFin[0] . " Final=" . $iniFin[1];
+if (!($iniFin[0] >= 0 && $iniFin[0] < (count($numeros) - 1))) {
+  $mensaje .= "<br>$posicionesIntroducidas  <br><br>Inicial debe estar comprendido entre 0 y " . count($numeros) - 2;
+} elseif (!($iniFin[1] > $iniFin[0] && $iniFin[1] <= (count($numeros) - 1))) {
+  $mensaje .= "<br>$posicionesIntroducidas  <br><br><br>Final debe ser mayor que " . $iniFin[0] . " y menor que " . count($numeros) - 1;
+} else {
+  $contador;
+  $aux = $numeros[count($numeros) - 1];
+  for ($contador = (count($numeros) - 1); $contador > $iniFin[1]; $contador--) {
+    $numeros[$contador] = $numeros[$contador - 1];
+  }
+  $numeros[$iniFin[1]] = $numeros[$iniFin[0]];
+  for ($contador = ($iniFin[0]); $contador > 0; $contador--) {
+    $numeros[$contador] = $numeros[$contador - 1];
+  }
+  $numeros[0] = $aux;
+
+
+
+  // Construir la tabla HTML con los resultados
+  $mensaje .= $posicionesIntroducidas . "<br>";
+  $mensaje .= "<table border='1' >";
+  $filas = [
+    ["Índice", array_keys($arrayOriginal)],
+    ["Matriz", $arrayOriginal],
+    ["Ordenado", $numeros]
+  ];
+
+  foreach ($filas as $fila) {
+    $titulo = $fila[0];
+    $datos = $fila[1];
+
+    $mensaje .= "<tr>";
+    $mensaje .= "<th>$titulo</th>";
+
+    if ($titulo === "Índice") {
+      // Mostrar índices en la primera fila
+      foreach ($datos as $indice) {
+        $mensaje .= "<td>$indice</td>";
+      }
+    } elseif ($titulo === "Matriz") {
+      // Construir filas de la tabla con colores según ciertas condiciones
+      foreach ($datos as $clave => $elemento) {
+        if ($clave == $iniFin[0]) {
+          $color = $colorCambio1;
+        } elseif ($clave == $iniFin[1]) {
+          $color = $colorCambio2;
+        } else {
+          $color = $colorNegativo;
+        }
+        $mensaje .= "<td style='$color'>$elemento</td>";
+      }
+    } elseif ($titulo === "Ordenado") {
+      // Construir filas de la tabla con colores según ciertas condiciones
+      foreach ($datos as $clave => $elemento) {
+        if ($clave == ($iniFin[1] % count($datos))) {
+          // Si $final está en la última posición, usa el índice 0
+          $color = $colorCambio1;
+        } elseif ($clave == ($iniFin[1] + 1) % count($datos)) {
+          // Color para la posición siguiente a $final
+          $color = $colorCambio2;
+        } else {
+          // Color por defecto
+          $color = $colorNegativo;
+        }
+
+        $mensaje .= "<td style='$color'>$elemento</td>";
       }
     }
-    return true;
-  }
-}
 
-// Contar números negativos en el array 'numeros'
-foreach ($numeros as $elemento) {
-  if ($elemento < 0) {
-    $negativo += 1;
-  }
-}
 
-// Separar números primos y no primos en arrays auxiliares
-foreach ($numeros as $elemento) {
-  if (esPrimo($elemento)) {
-    array_push($auxPri, $elemento);
-  } else {
-    array_push($auxNoPri, $elemento);
-  }
-}
-
-// Combinar arrays de primos y no primos
-$aux = array_merge($auxPri, $auxNoPri);
-
-// Ordenar arrays de primos y no primos
-sort($auxPri);
-sort($auxNoPri);
-
-// Combinar arrays ordenados de primos y no primos
-$auxOrde = array_merge($auxPri, $auxNoPri);
-
-// Crear una cadena con los números ingresados separados por comas
-$ingresado = implode(", ", $numeros);
-echo "Números ingresados PHP: <br>" . $ingresado . ".<br>";
-
-$mensaje = "<table border='1' >";
-$filas = [
-  ["Índice", array_keys($numeros)],
-  ["Matriz", $numeros],
-  ["Aux", $aux],
-  ["Ordenado", $auxOrde]
-];
-
-// Construir la tabla HTML
-foreach ($filas as $fila) {
-  $titulo = $fila[0];
-  $datos = $fila[1];
-
-  $mensaje .= "<tr>";
-  $mensaje .= "<th>$titulo</th>";
-
-  if ($titulo !== "Índice") {
-    // Aplicar estilos y mostrar datos para cada celda
-    foreach ($datos as $elemento) {
-      if ($elemento < 0) {
-        $color = $colorNegativo;
-      } else {
-        $color = esPrimo($elemento) ? $colorCambio1 : $colorCambio2;
-      }
-      $mensaje .= "<td style='$color'>$elemento</td>";
-    }
-  } else {
-    // Mostrar índices en la primera fila
-    foreach ($datos as $indice) {
-      $mensaje .= "<td>$indice</td>";
-    }
+    $mensaje .= "</tr>";
   }
 
-  $mensaje .= "</tr>";
+  $mensaje .= "</table>";
 }
-
-$mensaje .= "</table>";
-
-// Información adicional sobre el array
-$mensaje .= "El array tiene:<br>";
-$mensaje .= count($auxPri) . ((count($auxPri) != 1) ? " números primos, <br>" : " número primo, <br>");
-$mensaje .= count($auxNoPri) . ((count($auxNoPri) != 1) ? " números no primos<br>" : " número no primo,<br>");
-$mensaje .= $negativo . (($negativo != 1) ? " números negativos." : " número negativo.");
-
-// Mostrar el resultado
 echo $mensaje;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Generar un número aleatorio
+  $numeroAleatorio = rand(1, 100); // Puedes ajustar los límites según tus necesidades
+
+  // Puedes almacenar el número aleatorio en una sesión si necesitas usarlo en otras páginas
+  session_start();
+  $_SESSION['num1'] = $numeroAleatorio;
+
+  // Redireccionar de nuevo al formulario con el número aleatorio
+  header("Location: formulario.html");
+  exit();
+}
+?>

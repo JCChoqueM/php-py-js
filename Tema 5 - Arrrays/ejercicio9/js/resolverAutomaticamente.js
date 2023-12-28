@@ -79,10 +79,12 @@ async function automaticoPHP () {
 }
 
 async function automaticoPY () {
+  let numeros4 = numerosAuto.slice(0)
+
   try {
     const url = 'archives/automaticamente/automaticamentePY.php'
     const data = {
-      numeros1: numerosAuto,
+      numeros1: numeros4,
       numeros2: ini_finAuto
     }
 
@@ -97,7 +99,7 @@ async function automaticoPY () {
     if (response.ok) {
       const suma = await response.text()
       var resultadosDiv = document.getElementById('resultadoPython')
-      resultadosDiv.innerHTML = ` numeros ingresados: ${numerosAuto.join(
+      resultadosDiv.innerHTML = ` numeros ingresados: ${numeros4.join(
         ', '
       )}<br> ${suma} `
     } else {

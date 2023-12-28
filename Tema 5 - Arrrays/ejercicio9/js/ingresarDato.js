@@ -33,7 +33,6 @@ function calcular2 () {
   if (!isNaN(ini_ini)) {
     ini_fin.push(ini_ini)
     ini_fin.push(fin_fin)
-
   }
   comprobarArray()
   comprobarIndices()
@@ -94,10 +93,11 @@ async function ingresarPHP () {
 }
 
 async function ingresarPY () {
+  let numeros3 = numeros.slice(0)
   try {
     const url = 'archives/ingresarDato/ingresarDatoPY.php'
     const data = {
-      numeros1: numeros,
+      numeros1: numeros3,
       numeros2: ini_fin
     }
 
@@ -112,7 +112,7 @@ async function ingresarPY () {
     if (response.ok) {
       const suma = await response.text()
       var resultadosDiv = document.getElementById('resultadoPython')
-      resultadosDiv.innerHTML = ` numeros ingresados: ${numeros.join(
+      resultadosDiv.innerHTML = ` numeroooos ingresados: ${numeros.join(
         ', '
       )}<br> ${suma} `
     } else {
@@ -122,4 +122,3 @@ async function ingresarPY () {
     console.error('Error en la solicitud:', error)
   }
 }
-

@@ -4,52 +4,52 @@
 function automaticoJS() {
   // Variables para el mensaje y estadísticas
   let mensaje = "";
-  let negativo = 0;
   let colorCambio1 = "background-color: #2EFE64; color:black";
   let colorCambio2 = "background-color: #FE2E2E; color:black";
   let colorNegativo = "background-color: #00000000; color:black";
   let color;
   let aux;
   // Copiar el array original
-  var arrayOriginal = numerosAuto.slice(0);
+  var numerosAuto2 = numerosAuto.slice(0);
+  var arrayOriginal = numerosAuto2.slice(0);
 
   // Validar las posiciones introducidas
   var posicionesIntroducidas =
     "Inicial=" + ini_finAuto[0] + " Final=" + ini_finAuto[1];
   mensaje = "";
 
-  if (!(ini_finAuto[0] >= 0 && ini_finAuto[0] < numerosAuto.length - 1)) {
+  if (!(ini_finAuto[0] >= 0 && ini_finAuto[0] < numerosAuto2.length - 1)) {
     mensaje = `<br>${posicionesIntroducidas}<br><br>Inicial debe estar comprendido entre 0 y   ${
-      numerosAuto.length - 2
+      numerosAuto2.length - 2
     }`;
   } else if (
     !(
       ini_finAuto[1] > ini_finAuto[0] &&
-      ini_finAuto[1] <= numerosAuto.length - 1
+      ini_finAuto[1] <= numerosAuto2.length - 1
     )
   ) {
     mensaje = `<br>${posicionesIntroducidas} <br><br>Final debe ser mayor que ${
       ini_finAuto[0]
-    }  y menor que   ${numerosAuto.length - 1}`;
+    }  y menor que   ${numerosAuto2.length - 1}`;
   } else {
     let contador;
-    aux = numerosAuto[numerosAuto.length - 1];
+    aux = numerosAuto2[numerosAuto2.length - 1];
 
     for (
-      contador = numerosAuto.length - 1;
+      contador = numerosAuto2.length - 1;
       contador > ini_finAuto[1];
       contador--
     ) {
-      numerosAuto[contador] = numerosAuto[contador - 1];
+      numerosAuto2[contador] = numerosAuto2[contador - 1];
     }
 
-    numerosAuto[ini_finAuto[1]] = numerosAuto[ini_finAuto[0]];
+    numerosAuto2[ini_finAuto[1]] = numerosAuto2[ini_finAuto[0]];
 
     for (contador = ini_finAuto[0]; contador > 0; contador--) {
-      numerosAuto[contador] = numerosAuto[contador - 1];
+      numerosAuto2[contador] = numerosAuto2[contador - 1];
     }
 
-    numerosAuto[0] = aux;
+    numerosAuto2[0] = aux;
 
     // Construir la tabla HTML con los resultados
     mensaje = posicionesIntroducidas;
@@ -57,7 +57,7 @@ function automaticoJS() {
     const filas = [
       ["Índice", Object.keys(arrayOriginal)],
       ["Matriz", arrayOriginal],
-      ["Ordenado", numerosAuto],
+      ["Ordenado", numerosAuto2],
     ];
 
     filas.forEach((fila) => {
@@ -99,11 +99,11 @@ function automaticoJS() {
     });
     mensaje += "</table>";
   }
-  console.table(numerosAuto);
+  console.table(numerosAuto2);
 
   // Obtener el elemento HTML donde se mostrará el resultado y añadir el mensaje
   const resultadoDiv = document.getElementById("resultadoJavaScript");
-  resultadoDiv.innerHTML = `numeros ingresados: ${numerosAuto.join(
+  resultadoDiv.innerHTML = `numeros ingresados: ${arrayOriginal.join(
     ", "
   )}<br> ${mensaje} `;
 }
