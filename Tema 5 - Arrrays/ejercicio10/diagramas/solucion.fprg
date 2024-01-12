@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-23 03:34:43 a.&#160;m."/>
+        <attribute name="created" value="RERyNTtERVNLVE9QLU5URUsxNkc7MjAyMy0xMS0xMTsxMTowNzoxNyBwLsKgbS47Mjk1NA=="/>
+        <attribute name="edited" value="RERyNTtERVNLVE9QLU5URUsxNkc7MjAyMy0xMS0yMzswMzozNDo0MyBhLsKgbS47MjA7MzA5OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="array" type="Integer" array="True" size="5"/>
+            <declare name="arrayAux" type="Integer" array="True" size="size(array)"/>
+            <declare name="aux" type="Integer" array="False" size=""/>
+            <declare name="inicial" type="Integer" array="False" size=""/>
+            <declare name="final" type="Integer" array="False" size=""/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <for variable="contador" start="0" end="size(array)-1" direction="inc" step="1">
+                <assign variable="array[contador]" expression="contador+3"/>
+            </for>
+            <declare name="siguiente" type="Boolean" array="False" size=""/>
+            <output expression="&quot;ingrese el valor de inicial y final&quot;" newline="True"/>
+            <do expression="!(siguiente)">
+                <output expression="&quot;ingrese el valor de inicial :&quot;" newline="True"/>
+                <input variable="inicial"/>
+                <if expression="(inicial&gt;=0&amp;&amp;inicial&lt;=size(array)-2)">
+                    <then>
+                        <assign variable="siguiente" expression="true"/>
+                    </then>
+                    <else>
+                        <assign variable="siguiente" expression="false"/>
+                        <output expression="&quot;Inicial debe estar comprendido entre: 0 y &quot;&amp;size(array)-2" newline="True"/>
+                    </else>
+                </if>
+            </do>
+            <do expression="!(siguiente)">
+                <output expression="&quot;ingrese el valor de Final :&quot;" newline="True"/>
+                <input variable="final"/>
+                <if expression="final&gt;inicial&amp;&amp;final&lt;=size(array)-1">
+                    <then>
+                        <assign variable="siguiente" expression="true"/>
+                    </then>
+                    <else>
+                        <assign variable="siguiente" expression="false"/>
+                        <output expression="&quot;Final debe ser mayor que: &quot;&amp;Inicial&amp;&quot; y menor que &quot;&amp;size(array)" newline="True"/>
+                    </else>
+                </if>
+            </do>
+            <for variable="contador" start="0" end="size(array)-1" direction="inc" step="1">
+                <assign variable="arrayAux[contador]" expression="array[contador]"/>
+            </for>
+            <assign variable="aux" expression="array[size(array)-1]"/>
+            <breakpoint expression="" always="True"/>
+            <for variable="contador" start="size(arrayAux)-1" end="final+1" direction="dec" step="1">
+                <assign variable="arrayAux[contador]" expression="arrayAux[contador-1]"/>
+            </for>
+            <assign variable="arrayAux[final]" expression="arrayAux[inicial]"/>
+            <for variable="contador" start="inicial" end="1" direction="dec" step="1">
+                <assign variable="arrayAux[contador]" expression="arrayAux[contador-1]"/>
+            </for>
+            <assign variable="arrayAux[0]" expression="aux"/>
+        </body>
+    </function>
+</flowgorithm>

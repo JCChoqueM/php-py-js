@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>#10</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/colorEnunciado.css" />
+  <!-- Importar scripts JavaScript -->
+  <script src="archives/soluciones/solucion.js"></script>
+  <script src="js/generarNumero.js" defer></script>
+  <script src="js/resolverAutomaticamente.js" defer></script>
+  <script src="js/solucion.js" defer></script>
+  <script src="js/generarMatriz.js" defer></script>
+  <script src="archives/ingresarDato/ingresarDatoSol.js" defer></script>
+  <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Ejercicio 10</h1>
+      <h2>
+        <!-- Descripción del ejercicio -->
+        Realiza un programa que
+        <span class="input-resaltado">escoja al azar 10 cartas de la baraja española</span>
+        y que diga cuántos puntos suman según el juego de la brisca. Emplea un
+        <span class="array-resaltado">array asociativo</span> para obtener los puntos a partir del nombre de
+        la figura de la carta. Asegúrate de que
+        <span class="verificacion-resaltada">no se repite ninguna carta</span>, igual que si las hubieras cogido
+        de un baraja de verdad.
+
+      </h2>
+
+      <form id="form">
+        <div class="cajaboton">
+
+          <!-- Botones de acción -->
+          <button class="botones_cajaForm" type="button" onclick="resolverAutomaticamente()">
+            Volver a seleccionar Cartas
+          </button>
+        </div>
+      </form>
+
+      <div class="contenedores">
+        <!-- Contenedores de resultados -->
+        <section class="caja cajaPHP">
+          <!-- Botón y contenedor de resultados para PHP -->
+          <button class="bPHP" type="button" onclick="solucionPHP()">
+            Solución PHP
+          </button>
+          <div class="r" id="resultadoPHP"></div>
+        </section>
+        <section class="caja cajaPY">
+          <!-- Botón y contenedor de resultados para Python -->
+          <button class="bPY" type="button" onclick="solucionPython()">
+            Solución Python
+          </button>
+          <div class="r" id="resultadoPython"></div>
+        </section>
+        <section class="caja cajaJS">
+          <!-- Botón y contenedor de resultados para JavaScript -->
+          <button class="bJS" type="button" onclick="solucionJavaScript()">
+            Solución JS
+          </button>
+          <div class="r" id="resultadoJavaScript"></div>
+        </section>
+      </div>
+
+      <footer>
+        <!-- Pie de página -->
+        <br />Julio Cesar Choque Mamani. <br />
+        <br />Solucionario: Luis José Sánchez - Aprende PHP con ejercicios.
+      </footer>
+    </div>
+  </div>
+
+  <div class="image">
+    <!-- Contenedor de imagen -->
+    <div class="image-container">
+      <img src="./diagramas/solucion.svg" alt="Imagen de ejemplo" />
+    </div>
+  </div>
+</body>
+
+</html>
