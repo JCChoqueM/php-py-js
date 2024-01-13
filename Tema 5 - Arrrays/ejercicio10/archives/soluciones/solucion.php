@@ -1,117 +1,76 @@
 <?php
-// Inicializar variables
-$mensaje = "";
-$numero=6;
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  // Obtener el cuerpo de la solicitud como JSON y convertirlo a un array asociativo
+  $datosJson = json_decode(file_get_contents('php://input'), true);
 
-// Generar 6 números aleatorios y almacenarlos en el array 'numeros'
-for ($contador = 0; $contador < 6; $contador++) {
-  $numeros[$contador] = rand(-5, 25);
-}
-for ($contador = 0; $contador < 6; $contador++) {
-  $iniFin[$contador] = rand(-1, 5);
-}
-
-$mensaje = "";
-$colorCambio1 = 'background-color: #2EFE64; color:black';
-$colorCambio2 = 'background-color: #FE2E2E; color:black';
-$colorNegativo = 'background-color: #00000000; color:black';
-
-$aux;
-
-$arrayOriginal = array_slice($numeros, 0);
-$mensaje = "Numeros generados:<br>";
-
-$mensaje .= implode(", ", $numeros);
-
-
-$posicionesIntroducidas = "<br>Inicial=" . $iniFin[0] . " Final=" . $iniFin[1];
-if (!($iniFin[0] >= 0 && $iniFin[0] < (count($numeros) - 1))) {
-  $mensaje .= "<br>$posicionesIntroducidas  <br><br>Inicial debe estar comprendido entre 0 y " . count($numeros) - 2;
-} elseif (!($iniFin[1] > $iniFin[0] && $iniFin[1] <= (count($numeros) - 1))) {
-  $mensaje .= "<br>$posicionesIntroducidas  <br><br><br>Final debe ser mayor que " . $iniFin[0] . " y menor que " . count($numeros) - 1;
-} else {
-  $contador;
-  $aux = $numeros[count($numeros) - 1];
-  for ($contador = (count($numeros) - 1); $contador > $iniFin[1]; $contador--) {
-    $numeros[$contador] = $numeros[$contador - 1];
-  }
-  $numeros[$iniFin[1]] = $numeros[$iniFin[0]];
-  for ($contador = ($iniFin[0]); $contador > 0; $contador--) {
-    $numeros[$contador] = $numeros[$contador - 1];
-  }
-  $numeros[0] = $aux;
+  // Acceder a los objetos dentro del array asociativo
+  $asociativo = $datosJson['asociativo'];
+  $valor = $datosJson['valor'];
+  $figura = $datosJson['figura'];
+  $cartasSacadas = [];
+  $contadorCartas = 0;
+  $sumaTotal = 0;
+  $random0a3 = $datosJson['randomFigura'];
+  $random0a9 = $datosJson['randomValor'];
 
 
 
-  // Construir la tabla HTML con los resultados
-  $mensaje .= $posicionesIntroducidas . "<br>";
-  $mensaje .= "<table border='1' >";
-  $filas = [
-    ["Índice", array_keys($arrayOriginal)],
-    ["Matriz", $arrayOriginal],
-    ["Ordenado", $numeros]
-  ];
+  // Iniciar la tabla
+  $mensaje = "<table border='1'><tr>";
 
-  foreach ($filas as $fila) {
-    $titulo = $fila[0];
-    $datos = $fila[1];
-
-    $mensaje .= "<tr>";
-    $mensaje .= "<th>$titulo</th>";
-
-    if ($titulo === "Índice") {
-      // Mostrar índices en la primera fila
-      foreach ($datos as $indice) {
-        $mensaje .= "<td>$indice</td>";
-      }
-    } elseif ($titulo === "Matriz") {
-      // Construir filas de la tabla con colores según ciertas condiciones
-      foreach ($datos as $clave => $elemento) {
-        if ($clave == $iniFin[0]) {
-          $color = $colorCambio1;
-        } elseif ($clave == $iniFin[1]) {
-          $color = $colorCambio2;
-        } else {
-          $color = $colorNegativo;
-        }
-        $mensaje .= "<td style='$color'>$elemento</td>";
-      }
-    } elseif ($titulo === "Ordenado") {
-      // Construir filas de la tabla con colores según ciertas condiciones
-      foreach ($datos as $clave => $elemento) {
-        if ($clave == ($iniFin[1] % count($datos))) {
-          // Si $final está en la última posición, usa el índice 0
-          $color = $colorCambio1;
-        } elseif ($clave == ($iniFin[1] + 1) % count($datos)) {
-          // Color para la posición siguiente a $final
-          $color = $colorCambio2;
-        } else {
-          // Color por defecto
-          $color = $colorNegativo;
-        }
-
-        $mensaje .= "<td style='$color'>$elemento</td>";
+  do {
+    if ($contadorCartas % 5 === 0 && $contadorCartas > 0) {
+      // Cerrar la fila anterior después de mostrar 5 cartas y abrir una nueva fila
+      if ($contadorCartas > 0) {
+        $mensaje .= "</tr><tr>";
       }
     }
 
+    $randomFigura = $figura[$random0a3];
+    var_dump($randomFigura);
+    $randomValor = $valor[rand(0, 9)];
 
-    $mensaje .= "</tr>";
-  }
+    $puntos = $asociativo[$randomValor];
+    $nombreCarta = "$randomValor de $randomFigura";
+    $imagenCarta = "images/" . strtolower(str_replace(" ", "_", $nombreCarta)) . ".png";
 
-  $mensaje .= "</table>";
+    if (!in_array($nombreCarta, $cartasSacadas)) {
+      // Agregar celdas a la fila para cada carta (imagen, nombre y puntos)
+      $mensaje .= "<td>";
+      $mensaje .= "<table border='1'>";
+      $mensaje .= "<tr>";
+      $mensaje .= "<td>";
+      // Celda para la imagen
+      $mensaje .= "<img src='$imagenCarta' alt='$nombreCarta' style='width: 70px; height: 95px;'><br>";
+
+      // Celda para el nombre de la carta
+      $mensaje .= "$nombreCarta<br>";
+      $mensaje .= "</td>";
+      $mensaje .= "</tr>";
+
+      $mensaje .= "<tr>";
+      $mensaje .= "<td>";
+
+      // Celda para los puntos
+      $mensaje .= "$puntos pts.";
+      $mensaje .= "</td>";
+      $mensaje .= "</tr>";
+
+      $mensaje .= "</table>";
+      $mensaje .= "</td>";
+
+
+      $cartasSacadas[] = $nombreCarta;
+      $contadorCartas += 1;
+      $sumaTotal += $puntos;
+    }
+  } while ($contadorCartas < 10);
+
+  // Cerrar la última fila
+  $mensaje .= "</tr></table><br> La suma total es: $sumaTotal";
+
+  echo $mensaje;
+} else {
+  // Manejar el caso en que la solicitud no sea de tipo POST
+  echo 'Método no permitido';
 }
-echo $mensaje;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Generar un número aleatorio
-  $numeroAleatorio = rand(1, 100); // Puedes ajustar los límites según tus necesidades
-
-  // Puedes almacenar el número aleatorio en una sesión si necesitas usarlo en otras páginas
-  session_start();
-  $_SESSION['num1'] = $numeroAleatorio;
-
-  // Redireccionar de nuevo al formulario con el número aleatorio
-  header("Location: formulario.html");
-  exit();
-}
-?>

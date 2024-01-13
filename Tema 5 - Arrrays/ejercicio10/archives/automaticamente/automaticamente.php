@@ -4,61 +4,51 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $datosJson = json_decode(file_get_contents('php://input'), true);
 
   // Acceder a los objetos dentro del array asociativo
-  $asociativo = $datosJson['asociativo'];
-  $valor = $datosJson['valor'];
-  $figura = $datosJson['figura'];
-  $cartasSacadas = [];
-  $contadorCartas = 0;
-  $sumaTotal = 0;
+  $cartasSacadas = $datosJson['cartasSacadas'];
+  $puntosSacados = $datosJson['puntosSacados'];
+  $sumaTotal = $datosJson['sumaTotal'];
 
   // Iniciar la tabla
   $mensaje = "<table border='1'><tr>";
 
-  do {
-    if ($contadorCartas % 5 === 0 && $contadorCartas > 0) {
+  $contador = 0;
+  foreach ($cartasSacadas as $carta) {
+    if ($contador % 5 === 0 && $contador > 0) {
       // Cerrar la fila anterior después de mostrar 5 cartas y abrir una nueva fila
-      if ($contadorCartas > 0) {
-        $mensaje .= "</tr><tr>";
-      }
+      $mensaje .= "</tr><tr>";
     }
 
-    $randomFigura = $figura[rand(0, 3)];
-    $randomValor = $valor[rand(0, 9)];
-    $puntos = $asociativo[$randomValor];
-    $nombreCarta = "$randomValor de $randomFigura";
-    $imagenCarta = "images/" . strtolower(str_replace(" ", "_", $nombreCarta)) . ".png";
+    $puntos = $puntosSacados[$contador];
 
-    if (!in_array($nombreCarta, $cartasSacadas)) {
-      // Agregar celdas a la fila para cada carta (imagen, nombre y puntos)
-      $mensaje .= "<td>";
-      $mensaje .= "<table border='1'>";
-      $mensaje .= "<tr>";
-      $mensaje .= "<td>";
-      // Celda para la imagen
-      $mensaje .= "<img src='$imagenCarta' alt='$nombreCarta' style='width: 70px; height: 95px;'><br>";
+    // Establecer un color de fondo condicional basado en los puntos
+    $colorFondo = ($puntos > 0) ? 'background-color: yellow;' : '';
 
-      // Celda para el nombre de la carta
-      $mensaje .= "$nombreCarta<br>";
-      $mensaje .= "</td>";
-      $mensaje .= "</tr>";
+    // Agregar celdas a la fila para cada carta (imagen, nombre y puntos)
+    $mensaje .= "<td style='$colorFondo'>";
+    $mensaje .= "<table border='1'>";
+    $mensaje .= "<tr>";
+    $mensaje .= "<td>";
+    // Celda para la imagen
+    $mensaje .= "<img src='images/" . strtolower(str_replace(" ", "_", $carta)) . ".png' alt='$carta' style='width: 70px; height: 95px;'><br>";
 
-      $mensaje .= "<tr>";
-      $mensaje .= "<td>";
+    // Celda para el nombre de la carta
+    $mensaje .= "$carta<br>";
+    $mensaje .= "</td>";
+    $mensaje .= "</tr>";
 
-      // Celda para los puntos
-      $mensaje .= "$puntos pts.";
-      $mensaje .= "</td>";
-      $mensaje .= "</tr>";
+    $mensaje .= "<tr>";
+    $mensaje .= "<td>";
 
-      $mensaje .= "</table>";
-      $mensaje .= "</td>";
+    // Celda para los puntos
+    $mensaje .= "$puntos pts.";
+    $mensaje .= "</td>";
+    $mensaje .= "</tr>";
 
+    $mensaje .= "</table>";
+    $mensaje .= "</td>";
 
-      $cartasSacadas[] = $nombreCarta;
-      $contadorCartas += 1;
-      $sumaTotal += $puntos;
-    }
-  } while ($contadorCartas < 10);
+    $contador++;
+  }
 
   // Cerrar la última fila
   $mensaje .= "</tr></table><br> La suma total es: $sumaTotal";

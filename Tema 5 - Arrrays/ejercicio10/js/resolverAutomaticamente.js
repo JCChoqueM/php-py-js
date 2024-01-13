@@ -23,6 +23,30 @@ const valor = [
   "rey",
 ];
 const figura = ["oros", "copas", "espadas", "bastos"];
+let cartasSacadas = [];
+let puntosSacados = [];
+let contadorCartas = 0;
+let sumaTotal = 0;
+
+function generarCartas() {
+  cartasSacadas = [];
+  puntosSacados = [];
+  contadorCartas = 0;
+  sumaTotal = 0;
+
+  do {
+    let randomFigura = figura[generarNumeroAleatorio(0, 3)];
+    let randomValor = valor[generarNumeroAleatorio(0, 9)];
+    let puntos = asociativo[randomValor];
+    let nombreCarta = `${randomValor} de ${randomFigura}`;
+    if (!cartasSacadas.includes(nombreCarta)) {
+      cartasSacadas.push(nombreCarta);
+      puntosSacados.push(puntos);
+      contadorCartas += 1;
+      sumaTotal += puntos;
+    }
+  } while (contadorCartas < 10);
+}
 
 function generarArray() {
   const min = -8;
@@ -34,8 +58,13 @@ function generarArray() {
   }
 }
 
+function generarNumeroAleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 /* SECTION inicio sumar todo */
 function resolverAutomaticamente() {
+  generarCartas();
   automaticoPHP();
   automaticoPY();
   automaticoJS();
@@ -49,7 +78,11 @@ async function automaticoPHP() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ asociativo, valor, figura }),
+      body: JSON.stringify({
+        cartasSacadas,
+        puntosSacados,
+        sumaTotal,
+      }),
     });
 
     if (response.ok) {
