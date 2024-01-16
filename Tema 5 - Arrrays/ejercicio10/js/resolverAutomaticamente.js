@@ -98,13 +98,14 @@ async function automaticoPHP() {
 }
 
 async function automaticoPY() {
-  let numeros4 = asociativo.slice(0);
-
   try {
     const url = "archives/automaticamente/automaticamentePY.php";
+
+    // Ajusta los datos según lo que espera el script PHP
     const data = {
-      numeros1: numeros4,
-      numeros2: valor,
+      cartasSacadas: cartasSacadas,
+      puntosSacados: puntosSacados,
+      sumaTotal: sumaTotal,
     };
 
     const response = await fetch(url, {
@@ -118,9 +119,7 @@ async function automaticoPY() {
     if (response.ok) {
       const suma = await response.text();
       var resultadosDiv = document.getElementById("resultadoPython");
-      resultadosDiv.innerHTML = ` numeros ingresados: ${numeros4.join(
-        ", "
-      )}<br> ${suma} `;
+      resultadosDiv.innerHTML = ` ${suma}<br>`;
     } else {
       console.error("Error en la solicitud:", response.status);
     }
@@ -128,5 +127,3 @@ async function automaticoPY() {
     console.error("Error en la solicitud:", error);
   }
 }
-
-/* !SECTION fin sumar todo */

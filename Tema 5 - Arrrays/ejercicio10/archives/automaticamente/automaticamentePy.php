@@ -3,16 +3,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $data = json_decode(file_get_contents("php://input"));
 
     if (
-        isset($data->numeros1) && count($data->numeros1) === 7 &&
-        isset($data->numeros2) && count($data->numeros2) === 2
+        isset($data->cartasSacadas) && is_array($data->cartasSacadas) &&
+        isset($data->puntosSacados) && is_array($data->puntosSacados) &&
+        isset($data->sumaTotal)
     ) {
-        $numeros1 = $data->numeros1;
-        $numeros2 = $data->numeros2;
+        $cartasSacadas = $data->cartasSacadas;
+        $puntosSacados = $data->puntosSacados;
+        $sumaTotal = $data->sumaTotal;
 
         // Construir el comando de Python con las dos arrays como argumentos
         $command = "python automaticamente.py " .
-            escapeshellarg(json_encode($numeros1)) . " " .
-            escapeshellarg(json_encode($numeros2));
+            escapeshellarg(json_encode($cartasSacadas, JSON_HEX_QUOT)) . " " .
+            escapeshellarg(json_encode($puntosSacados)) . " " .
+            escapeshellarg($sumaTotal);
 
         // Ejecutar el script de Python
         $output = shell_exec($command);
@@ -21,3 +24,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo $output;
     }
 }
+
