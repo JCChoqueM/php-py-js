@@ -1,81 +1,105 @@
-"""
-Este módulo muestra un MENSAJE incrementando el valor de i.
-"""
 import random
 
+asociativo = {
+    "uno": 11,
+    "dos": 0,
+    "tres": 10,
+    "cuatro": 0,
+    "cinco": 0,
+    "seis": 0,
+    "siete": 0,
+    "sota": 2,
+    "caballo": 3,
+    "rey": 4,
+}
 
-# Inicializar variables
-NUMERO1 = []  # Lista para almacenar números aleatorios
-NUMERO2 = []  # Lista para almacenar números aleatorios
-for _ in range(0, 6, 1):
-    ALEATORIO = random.randint(-9, 100)
-    NUMERO1.append(ALEATORIO)
-for _ in range(0, 6, 1):
-    ALEATORIO = random.randint(-1, 6)
-    NUMERO2.append(ALEATORIO)
-INTRODUCIDOS = ", ".join(map(str, NUMERO1))
-MENSAJE = f"numeros introducidos<br>{INTRODUCIDOS}<br>"
+valor = [
+    "uno",
+    "dos",
+    "tres",
+    "cuatro",
+    "cinco",
+    "seis",
+    "siete",
+    "sota",
+    "caballo",
+    "rey",
+]
 
-COLORCAMBIO1 = "background-COLOR: #2EFE64; COLOR:black"
-COLORCAMBIO2 = "background-COLOR: #FE2E2E; COLOR:black"
-COLORNEGATIVO = "background-COLOR: #00000000; COLOR:black"
-AUX = None
-ARRAY_ORIGINAL = NUMERO1.copy()
-POSICIONES_INTRODUCIDAS = f"Inicial= {NUMERO2[0]} Final= {NUMERO2[1]}"
-if not (NUMERO2[0] >= 0 and NUMERO2[0] < (len(NUMERO1) - 1)):
-    MENSAJE += f"<br>{POSICIONES_INTRODUCIDAS}<br><br>Inicial debe estar comprendido entre 0 y  {len(NUMERO1) - 2}"
-elif not (NUMERO2[1] > NUMERO2[0] and NUMERO2[1] <= (len(NUMERO1) - 1)):
-    MENSAJE += f"<br>{POSICIONES_INTRODUCIDAS}<br><br>Final debe ser mayor que {NUMERO2[0]} y menor que  {len(NUMERO1)-1} "
-else:
-    aux = NUMERO1[len(NUMERO1) - 1]
-    for contador in range(len(NUMERO1) - 1, NUMERO2[1], -1):
-        NUMERO1[contador] = NUMERO1[contador - 1]
-    NUMERO1[NUMERO2[1]] = NUMERO1[NUMERO2[0]]
-    for contador in range(NUMERO2[0], 0, -1):
-        NUMERO1[contador] = NUMERO1[contador - 1]
-    NUMERO1[0] = aux
-    # Construir la tabla HTML con los resultados
-    MENSAJE += POSICIONES_INTRODUCIDAS
-    MENSAJE += "<table border='1' >"
-    filas = [
-        ["Indice", list(range(len(ARRAY_ORIGINAL)))],
-        ["Matriz", ARRAY_ORIGINAL],
-        ["Ordenado", NUMERO1],
-    ]
-    for fila in filas:
-        TITULO = fila[0]
-        datos = fila[1]
-        MENSAJE += "<tr>"
-        MENSAJE += f"<th>{TITULO}</th>"
-        if TITULO == "Indice":
-            # Construir filas de la tabla con colores según ciertas condiciones
-            for elemento in datos:
-                MENSAJE += f"<td>{elemento}</td>"
-        elif TITULO == "Matriz":
-            # Construir filas de la tabla con colores según ciertas condiciones
-            for clave, elemento in enumerate(datos):
-                if clave == NUMERO2[0]:
-                    COLOR = COLORCAMBIO1
-                elif clave == NUMERO2[1]:
-                    COLOR = COLORCAMBIO2
-                else:
-                    COLOR = COLORNEGATIVO
-                MENSAJE += f"<td style='{COLOR}'>{elemento}</td>"
-        elif TITULO == "Ordenado":
-            # Construir filas de la tabla con colores según ciertas condiciones
-            for clave, elemento in enumerate(datos):
-                if clave == (NUMERO2[1] % len(datos)):
-                    # Si NUMERO2[1] está en la última posición, usa el índice 0
-                    COLOR = COLORCAMBIO1
-                elif clave == (NUMERO2[1] + 1) % len(datos):
-                    # Color para la posición siguiente a NUMERO2[1]
-                    COLOR = COLORCAMBIO2
-                else:
-                    # Color por defecto
-                    COLOR = COLORNEGATIVO
-                MENSAJE += f"<td style='{COLOR}'>{elemento}</td>"
-        MENSAJE += "</tr>"
+figura = ["oros", "copas", "espadas", "bastos"]
+
+cartas_sacadas = []
+puntos_sacados = []
+CONTADOR_CARTAS = 0
+SUMA_TOTAL = 0
+
+
+def generar_numero_aleatorio(inferior, superior):
+    return random.randint(inferior, superior)
+
+
+def generar_cartas():
+    global cartas_sacadas, puntos_sacados, CONTADOR_CARTAS, SUMA_TOTAL
+    cartas_sacadas = []
+    puntos_sacados = []
+    CONTADOR_CARTAS = 0
+    SUMA_TOTAL = 0
+
+    while CONTADOR_CARTAS < 10:
+        random_figura = figura[generar_numero_aleatorio(0, 3)]
+        random_valor = valor[generar_numero_aleatorio(0, 9)]
+        puntos = asociativo[random_valor]
+        nombre_carta = f"{random_valor} de {random_figura}"
+
+        if nombre_carta not in cartas_sacadas:
+            cartas_sacadas.append(nombre_carta)
+            puntos_sacados.append(puntos)
+            CONTADOR_CARTAS += 1
+            SUMA_TOTAL += puntos
+
+
+# Generar cartas
+generar_cartas()
+
+# Construir el MENSAJE HTML
+MENSAJE = "<table border='1'><tr>"
+
+CONTADOR = 0
+for carta, puntos in zip(cartas_sacadas, puntos_sacados):
+    if CONTADOR % 5 == 0 and CONTADOR > 0:
+        # Cerrar la fila anterior después de mostrar 5 cartas y abrir una nueva fila
+        MENSAJE += "</tr><tr>"
+
+    # Establecer un color de fondo condicional basado en los puntos
+    COLOR_FONDO = "background-color: yellow;" if puntos > 0 else ""
+
+    # Agregar celdas a la fila para cada carta (imagen, nombre y puntos)
+    MENSAJE += f"<td style='{COLOR_FONDO}'>"
+    MENSAJE += "<table border='1'>"
+    MENSAJE += "<tr>"
+    MENSAJE += "<td>"
+    # Celda para la imagen
+    MENSAJE += f"<img src='images/{carta.lower().replace(' ', '_')}.png' alt='{carta}' style='width: 70px; height: 95px;'><br>"
+
+    # Celda para el nombre de la carta
+    MENSAJE += f"{carta}<br>"
+    MENSAJE += "</td>"
+    MENSAJE += "</tr>"
+
+    MENSAJE += "<tr>"
+    MENSAJE += "<td>"
+
+    # Celda para los puntos
+    MENSAJE += f"{puntos} pts."
+    MENSAJE += "</td>"
+    MENSAJE += "</tr>"
+
     MENSAJE += "</table>"
-    # Información adicional sobre el array
-    # Imprimir el mensaje
-print(f"{MENSAJE}")
+    MENSAJE += "</td>"
+
+    CONTADOR += 1
+
+# Cerrar la última fila
+MENSAJE += "</tr></table><br> La suma total es: ${:.2f}".format(SUMA_TOTAL)
+
+print(MENSAJE)
