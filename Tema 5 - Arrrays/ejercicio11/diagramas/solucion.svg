@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Flowgorithm 3.5.1 (http://flowgorithm.org) -->
+
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="16354" height="9854">
+	<g>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,102 327,163"/>
+		<polygon fill="#404040" stroke="none" points="327,177 340,152 313,152"/>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,9677 327,9738"/>
+		<polygon fill="#404040" stroke="none" points="327,9752 340,9727 313,9727"/>
+		<g>
+			<path fill="#F0E0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 227,2 A 50 50, 0, 0 0, 227 102 L 427,102 A 50 50, 0, 0 0, 427 2 Z"/>
+			<text x="327" y="17" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="327" dy="50" unicode-bidi="embed">Principal</tspan>
+			</text>
+		</g>
+		<g>
+			<path fill="#F0E0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 227,9752 A 50 50, 0, 0 0, 227 9852 L 427,9852 A 50 50, 0, 0 0, 427 9752 Z"/>
+			<text x="327" y="9767" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="327" dy="50" unicode-bidi="embed">Fin</tspan>
+			</text>
+		</g>
+		<g>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,302 327,363"/>
+			<polygon fill="#404040" stroke="none" points="327,377 340,352 313,352"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,477 327,538"/>
+			<polygon fill="#404040" stroke="none" points="327,552 340,527 313,527"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,652 327,713"/>
+			<polygon fill="#404040" stroke="none" points="327,727 340,702 313,702"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,827 327,888"/>
+			<polygon fill="#404040" stroke="none" points="327,902 340,877 313,877"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,1002 327,1063"/>
+			<polygon fill="#404040" stroke="none" points="327,1077 340,1052 313,1052"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,1202 327,1263"/>
+			<polygon fill="#404040" stroke="none" points="327,1277 340,1252 313,1252"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,1377 327,1438"/>
+			<polygon fill="#404040" stroke="none" points="327,1452 340,1427 313,1427"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,1552 327,1613"/>
+			<polygon fill="#404040" stroke="none" points="327,1627 340,1602 313,1602"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,1727 327,1788"/>
+			<polygon fill="#404040" stroke="none" points="327,1802 340,1777 313,1777"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,1927 327,1988"/>
+			<polygon fill="#404040" stroke="none" points="327,2002 340,1977 313,1977"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,2102 327,2163"/>
+			<polygon fill="#404040" stroke="none" points="327,2177 340,2152 313,2152"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,2277 327,2338"/>
+			<polygon fill="#404040" stroke="none" points="327,2352 340,2327 313,2327"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,2452 327,2513"/>
+			<polygon fill="#404040" stroke="none" points="327,2527 340,2502 313,2502"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,2652 327,2713"/>
+			<polygon fill="#404040" stroke="none" points="327,2727 340,2702 313,2702"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,2852 327,2913"/>
+			<polygon fill="#404040" stroke="none" points="327,2927 340,2902 313,2902"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,3052 327,3113"/>
+			<polygon fill="#404040" stroke="none" points="327,3127 340,3102 313,3102"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,3227 327,3288"/>
+			<polygon fill="#404040" stroke="none" points="327,3302 340,3277 313,3277"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,3427 327,3488"/>
+			<polygon fill="#404040" stroke="none" points="327,3502 340,3477 313,3477"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,3627 327,3688"/>
+			<polygon fill="#404040" stroke="none" points="327,3702 340,3677 313,3677"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,3877 327,3938"/>
+			<polygon fill="#404040" stroke="none" points="327,3952 340,3927 313,3927"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,4077 327,4138"/>
+			<polygon fill="#404040" stroke="none" points="327,4152 340,4127 313,4127"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,4252 327,4313"/>
+			<polygon fill="#404040" stroke="none" points="327,4327 340,4302 313,4302"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,4427 327,4513"/>
+			<polygon fill="#404040" stroke="none" points="327,4527 340,4502 313,4502"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="327,4627 327,9513"/>
+			<polygon fill="#404040" stroke="none" points="327,9527 340,9502 313,9502"/>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 52,177 L 52,302 L 602,302 L 602,177 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="52,202 602,202"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="77,177 77,302"/>
+				<text x="339" y="217" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Cadena Matriz figura[4]</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 127,377 L 127,477 L 527,477 L 527,377 Z"/>
+				<text x="327" y="392" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">figura[0] = &quot;Oro&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 127,552 L 127,652 L 527,652 L 527,552 Z"/>
+				<text x="327" y="567" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">figura[1] = &quot;Copa&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 102,727 L 102,827 L 552,827 L 552,727 Z"/>
+				<text x="327" y="742" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">figura[2] = &quot;Espada&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 127,902 L 127,1002 L 527,1002 L 527,902 Z"/>
+				<text x="327" y="917" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">figura[3] = &quot;Basto&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 52,1077 L 52,1202 L 602,1202 L 602,1077 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="52,1102 602,1102"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="77,1077 77,1202"/>
+				<text x="339" y="1117" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Cadena Matriz cartas[3]</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 152,1277 L 152,1377 L 502,1377 L 502,1277 Z"/>
+				<text x="327" y="1292" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">cartas[0] = &quot;as&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 127,1452 L 127,1552 L 527,1552 L 527,1452 Z"/>
+				<text x="327" y="1467" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">cartas[1] = &quot;dos&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 127,1627 L 127,1727 L 527,1727 L 527,1627 Z"/>
+				<text x="327" y="1642" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">cartas[2] = &quot;tres&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 2,1802 L 2,1927 L 652,1927 L 652,1802 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="2,1827 652,1827"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="27,1802 27,1927"/>
+				<text x="339" y="1842" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Entero Matriz valorCartas[3]</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 102,2002 L 102,2102 L 552,2102 L 552,2002 Z"/>
+				<text x="327" y="2017" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">valorCartas[0] = 11</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 127,2177 L 127,2277 L 527,2277 L 527,2177 Z"/>
+				<text x="327" y="2192" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">valorCartas[1] = 0</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 102,2352 L 102,2452 L 552,2452 L 552,2352 Z"/>
+				<text x="327" y="2367" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">valorCartas[2] = 10</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 127,2527 L 127,2652 L 527,2652 L 527,2527 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="127,2552 527,2552"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="152,2527 152,2652"/>
+				<text x="339" y="2567" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Entero aleatorio</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 177,2727 L 177,2852 L 477,2852 L 477,2727 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="177,2752 477,2752"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="202,2727 202,2852"/>
+				<text x="339" y="2767" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Entero i</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 152,2927 L 152,3052 L 502,3052 L 502,2927 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="152,2952 502,2952"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="177,2927 177,3052"/>
+				<text x="339" y="2967" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Entero suma</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 177,3127 L 177,3227 L 477,3227 L 477,3127 Z"/>
+				<text x="327" y="3142" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">suma = 0</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 177,3302 L 177,3427 L 477,3427 L 477,3302 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="177,3327 477,3327"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="202,3302 202,3427"/>
+				<text x="339" y="3342" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Entero j</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 127,3502 L 127,3627 L 527,3627 L 527,3502 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="127,3527 527,3527"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="152,3502 152,3627"/>
+				<text x="339" y="3542" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Entero ranFigura</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 127,3702 L 127,3877 L 527,3877 L 527,3702 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="127,3727 527,3727"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="152,3702 152,3877"/>
+				<text x="339" y="3742" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Cadena Matriz</tspan>
+					<tspan x="339" dy="50" unicode-bidi="embed"> figuraSacada[3]</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 127,3952 L 127,4077 L 527,4077 L 527,3952 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="127,3977 527,3977"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="152,3952 152,4077"/>
+				<text x="339" y="3992" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="339" dy="50" unicode-bidi="embed">Booleano salida</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 177,4152 L 177,4252 L 477,4252 L 477,4152 Z"/>
+				<text x="327" y="4167" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">salida = true</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 177,4327 L 177,4427 L 477,4427 L 477,4327 Z"/>
+				<text x="327" y="4342" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">j = 0</tspan>
+				</text>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="527,4577 12577,4577 12577,4663"/>
+				<polygon fill="#404040" stroke="none" points="12577,4677 12590,4652 12563,4652"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="12577,9352 12577,9427 377,9427 377,4640"/>
+				<polygon fill="#404040" stroke="none" points="377,4627 363,4651 390,4651"/>
+				<g>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="12577,4777 12577,4838"/>
+					<polygon fill="#404040" stroke="none" points="12577,4852 12590,4827 12563,4827"/>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="12577,8852 12577,8913"/>
+					<polygon fill="#404040" stroke="none" points="12577,8927 12590,8902 12563,8902"/>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="12577,9127 12577,9188"/>
+					<polygon fill="#404040" stroke="none" points="12577,9202 12590,9177 12563,9177"/>
+					<g>
+						<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 12327,4677 L 12327,4777 L 12827,4777 L 12827,4677 Z"/>
+						<text x="12577" y="4692" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="12577" dy="50" unicode-bidi="embed">ranFigura = random(4)</tspan>
+						</text>
+					</g>
+					<g>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="12877,5027 15352,5027 15352,5238"/>
+						<polygon fill="#404040" stroke="none" points="15352,5252 15365,5227 15338,5227"/>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="15352,7152 15352,8827 12615,8827"/>
+						<polygon fill="#404040" stroke="none" points="12602,8827 12626,8840 12626,8813"/>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="12277,5027 8752,5027 8752,5238"/>
+						<polygon fill="#404040" stroke="none" points="8752,5252 8765,5227 8738,5227"/>
+						<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="8752,8727 8752,8827 12538,8827"/>
+						<polygon fill="#404040" stroke="none" points="12552,8827 12527,8813 12527,8840"/>
+						<g>
+							<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 12577,4852 L 12252,5027 L 12577,5202 L 12902,5027 Z"/>
+							<text x="12577" y="4992" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="12577" dy="50" unicode-bidi="embed">figura[ranFigura]==&quot;Oro&quot;</tspan>
+							</text>
+						</g>
+						<g>
+							<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="15352,5352 15352,5413"/>
+							<polygon fill="#404040" stroke="none" points="15352,5427 15365,5402 15338,5402"/>
+							<g>
+								<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 15102,5252 L 15102,5352 L 15602,5352 L 15602,5252 Z"/>
+								<text x="15352" y="5267" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+									<tspan x="15352" dy="50" unicode-bidi="embed">aleatorio = random(3)</tspan>
+								</text>
+							</g>
+							<g>
+								<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="15627,5577 15902,5577 15902,5763"/>
+								<polygon fill="#404040" stroke="none" points="15902,5777 15915,5752 15888,5752"/>
+								<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="15902,5977 15902,7127 15390,7127"/>
+								<polygon fill="#404040" stroke="none" points="15377,7127 15401,7140 15401,7113"/>
+								<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="15077,5577 14277,5577 14277,5763"/>
+								<polygon fill="#404040" stroke="none" points="14277,5777 14290,5752 14263,5752"/>
+								<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="14277,7027 14277,7127 15313,7127"/>
+								<polygon fill="#404040" stroke="none" points="15327,7127 15302,7113 15302,7140"/>
+								<g>
+									<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 15352,5427 L 15052,5577 L 15352,5727 L 15652,5577 Z"/>
+									<text x="15352" y="5542" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+										<tspan x="15352" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;as&quot;</tspan>
+									</text>
+								</g>
+								<g>
+									<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 15552,5777 L 15452,5977 L 16252,5977 L 16352,5777 Z"/>
+									<text x="15902" y="5792" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+										<tspan x="15902" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+										<tspan x="15902" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+										<tspan x="15902" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+									</text>
+								</g>
+								<g>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="14577,5952 14852,5952 14852,6163"/>
+									<polygon fill="#404040" stroke="none" points="14852,6177 14865,6152 14838,6152"/>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="14852,6377 14852,7002 14315,7002"/>
+									<polygon fill="#404040" stroke="none" points="14302,7002 14326,7015 14326,6988"/>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="13977,5952 13202,5952 13202,6163"/>
+									<polygon fill="#404040" stroke="none" points="13202,6177 13215,6152 13188,6152"/>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="13202,6902 13202,7002 14238,7002"/>
+									<polygon fill="#404040" stroke="none" points="14252,7002 14227,6988 14227,7015"/>
+									<g>
+										<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 14277,5777 L 13952,5952 L 14277,6127 L 14602,5952 Z"/>
+										<text x="14277" y="5917" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="14277" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;dos&quot;</tspan>
+										</text>
+									</g>
+									<g>
+										<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 14502,6177 L 14402,6377 L 15202,6377 L 15302,6177 Z"/>
+										<text x="14852" y="6192" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="14852" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+											<tspan x="14852" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+											<tspan x="14852" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+										</text>
+									</g>
+									<g>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="13502,6352 13777,6352 13777,6563"/>
+										<polygon fill="#404040" stroke="none" points="13777,6577 13790,6552 13763,6552"/>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="13777,6777 13777,6877 13240,6877"/>
+										<polygon fill="#404040" stroke="none" points="13227,6877 13251,6890 13251,6863"/>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="12902,6352 12702,6352 12702,6877 13163,6877"/>
+										<polygon fill="#404040" stroke="none" points="13177,6877 13152,6863 13152,6890"/>
+										<g>
+											<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 13202,6177 L 12877,6352 L 13202,6527 L 13527,6352 Z"/>
+											<text x="13202" y="6317" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="13202" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;tres&quot;</tspan>
+											</text>
+										</g>
+										<g>
+											<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 13427,6577 L 13327,6777 L 14127,6777 L 14227,6577 Z"/>
+											<text x="13777" y="6592" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="13777" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+												<tspan x="13777" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+												<tspan x="13777" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+											</text>
+										</g>
+										<g>
+										</g>
+										<ellipse cx="13202" cy="6877" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+										<text x="13652" y="6267" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="13652" dy="50" unicode-bidi="embed">Verdadero</tspan>
+										</text>
+										<text x="12789" y="6267" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="12789" dy="50" unicode-bidi="embed">Falso</tspan>
+										</text>
+									</g>
+									<ellipse cx="14277" cy="7002" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+									<text x="14727" y="5867" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+										<tspan x="14727" dy="50" unicode-bidi="embed">Verdadero</tspan>
+									</text>
+									<text x="13864" y="5867" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+										<tspan x="13864" dy="50" unicode-bidi="embed">Falso</tspan>
+									</text>
+								</g>
+								<ellipse cx="15352" cy="7127" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+								<text x="15777" y="5492" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+									<tspan x="15777" dy="50" unicode-bidi="embed">Verdadero</tspan>
+								</text>
+								<text x="14964" y="5492" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+									<tspan x="14964" dy="50" unicode-bidi="embed">Falso</tspan>
+								</text>
+							</g>
+						</g>
+						<g>
+							<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="9052,5427 11527,5427 11527,5638"/>
+							<polygon fill="#404040" stroke="none" points="11527,5652 11540,5627 11513,5627"/>
+							<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="11527,7552 11527,8702 8790,8702"/>
+							<polygon fill="#404040" stroke="none" points="8777,8702 8801,8715 8801,8688"/>
+							<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="8452,5427 4927,5427 4927,5638"/>
+							<polygon fill="#404040" stroke="none" points="4927,5652 4940,5627 4913,5627"/>
+							<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="4927,8602 4927,8702 8713,8702"/>
+							<polygon fill="#404040" stroke="none" points="8727,8702 8702,8688 8702,8715"/>
+							<g>
+								<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 8752,5252 L 8427,5427 L 8752,5602 L 9077,5427 Z"/>
+								<text x="8752" y="5392" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+									<tspan x="8752" dy="50" unicode-bidi="embed">figura[ranFigura]==&quot;Copa&quot;</tspan>
+								</text>
+							</g>
+							<g>
+								<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="11527,5752 11527,5813"/>
+								<polygon fill="#404040" stroke="none" points="11527,5827 11540,5802 11513,5802"/>
+								<g>
+									<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 11277,5652 L 11277,5752 L 11777,5752 L 11777,5652 Z"/>
+									<text x="11527" y="5667" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+										<tspan x="11527" dy="50" unicode-bidi="embed">aleatorio = random(3)</tspan>
+									</text>
+								</g>
+								<g>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="11802,5977 12077,5977 12077,6163"/>
+									<polygon fill="#404040" stroke="none" points="12077,6177 12090,6152 12063,6152"/>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="12077,6377 12077,7527 11565,7527"/>
+									<polygon fill="#404040" stroke="none" points="11552,7527 11576,7540 11576,7513"/>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="11252,5977 10452,5977 10452,6163"/>
+									<polygon fill="#404040" stroke="none" points="10452,6177 10465,6152 10438,6152"/>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="10452,7427 10452,7527 11488,7527"/>
+									<polygon fill="#404040" stroke="none" points="11502,7527 11477,7513 11477,7540"/>
+									<g>
+										<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 11527,5827 L 11227,5977 L 11527,6127 L 11827,5977 Z"/>
+										<text x="11527" y="5942" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="11527" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;as&quot;</tspan>
+										</text>
+									</g>
+									<g>
+										<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 11727,6177 L 11627,6377 L 12427,6377 L 12527,6177 Z"/>
+										<text x="12077" y="6192" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="12077" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+											<tspan x="12077" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+											<tspan x="12077" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+										</text>
+									</g>
+									<g>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="10752,6352 11027,6352 11027,6563"/>
+										<polygon fill="#404040" stroke="none" points="11027,6577 11040,6552 11013,6552"/>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="11027,6777 11027,7402 10490,7402"/>
+										<polygon fill="#404040" stroke="none" points="10477,7402 10501,7415 10501,7388"/>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="10152,6352 9377,6352 9377,6563"/>
+										<polygon fill="#404040" stroke="none" points="9377,6577 9390,6552 9363,6552"/>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="9377,7302 9377,7402 10413,7402"/>
+										<polygon fill="#404040" stroke="none" points="10427,7402 10402,7388 10402,7415"/>
+										<g>
+											<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 10452,6177 L 10127,6352 L 10452,6527 L 10777,6352 Z"/>
+											<text x="10452" y="6317" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="10452" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;dos&quot;</tspan>
+											</text>
+										</g>
+										<g>
+											<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 10677,6577 L 10577,6777 L 11377,6777 L 11477,6577 Z"/>
+											<text x="11027" y="6592" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="11027" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+												<tspan x="11027" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+												<tspan x="11027" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+											</text>
+										</g>
+										<g>
+											<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="9677,6752 9952,6752 9952,6963"/>
+											<polygon fill="#404040" stroke="none" points="9952,6977 9965,6952 9938,6952"/>
+											<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="9952,7177 9952,7277 9415,7277"/>
+											<polygon fill="#404040" stroke="none" points="9402,7277 9426,7290 9426,7263"/>
+											<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="9077,6752 8877,6752 8877,7277 9338,7277"/>
+											<polygon fill="#404040" stroke="none" points="9352,7277 9327,7263 9327,7290"/>
+											<g>
+												<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 9377,6577 L 9052,6752 L 9377,6927 L 9702,6752 Z"/>
+												<text x="9377" y="6717" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+													<tspan x="9377" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;tres&quot;</tspan>
+												</text>
+											</g>
+											<g>
+												<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 9602,6977 L 9502,7177 L 10302,7177 L 10402,6977 Z"/>
+												<text x="9952" y="6992" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+													<tspan x="9952" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+													<tspan x="9952" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+													<tspan x="9952" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+												</text>
+											</g>
+											<g>
+											</g>
+											<ellipse cx="9377" cy="7277" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+											<text x="9827" y="6667" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="9827" dy="50" unicode-bidi="embed">Verdadero</tspan>
+											</text>
+											<text x="8964" y="6667" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="8964" dy="50" unicode-bidi="embed">Falso</tspan>
+											</text>
+										</g>
+										<ellipse cx="10452" cy="7402" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+										<text x="10902" y="6267" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="10902" dy="50" unicode-bidi="embed">Verdadero</tspan>
+										</text>
+										<text x="10039" y="6267" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="10039" dy="50" unicode-bidi="embed">Falso</tspan>
+										</text>
+									</g>
+									<ellipse cx="11527" cy="7527" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+									<text x="11952" y="5892" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+										<tspan x="11952" dy="50" unicode-bidi="embed">Verdadero</tspan>
+									</text>
+									<text x="11139" y="5892" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+										<tspan x="11139" dy="50" unicode-bidi="embed">Falso</tspan>
+									</text>
+								</g>
+							</g>
+							<g>
+								<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="5252,5827 7702,5827 7702,6038"/>
+								<polygon fill="#404040" stroke="none" points="7702,6052 7715,6027 7688,6027"/>
+								<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="7702,7952 7702,8577 4965,8577"/>
+								<polygon fill="#404040" stroke="none" points="4952,8577 4976,8590 4976,8563"/>
+								<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="4602,5827 1102,5827 1102,6038"/>
+								<polygon fill="#404040" stroke="none" points="1102,6052 1115,6027 1088,6027"/>
+								<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1102,8477 1102,8577 4888,8577"/>
+								<polygon fill="#404040" stroke="none" points="4902,8577 4877,8563 4877,8590"/>
+								<g>
+									<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 4927,5652 L 4577,5827 L 4927,6002 L 5277,5827 Z"/>
+									<text x="4927" y="5792" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+										<tspan x="4927" dy="50" unicode-bidi="embed">figura[ranFigura]==&quot;Espada&quot;</tspan>
+									</text>
+								</g>
+								<g>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="7702,6152 7702,6213"/>
+									<polygon fill="#404040" stroke="none" points="7702,6227 7715,6202 7688,6202"/>
+									<g>
+										<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 7452,6052 L 7452,6152 L 7952,6152 L 7952,6052 Z"/>
+										<text x="7702" y="6067" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="7702" dy="50" unicode-bidi="embed">aleatorio = random(3)</tspan>
+										</text>
+									</g>
+									<g>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="7977,6377 8252,6377 8252,6563"/>
+										<polygon fill="#404040" stroke="none" points="8252,6577 8265,6552 8238,6552"/>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="8252,6777 8252,7927 7740,7927"/>
+										<polygon fill="#404040" stroke="none" points="7727,7927 7751,7940 7751,7913"/>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="7427,6377 6627,6377 6627,6563"/>
+										<polygon fill="#404040" stroke="none" points="6627,6577 6640,6552 6613,6552"/>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="6627,7827 6627,7927 7663,7927"/>
+										<polygon fill="#404040" stroke="none" points="7677,7927 7652,7913 7652,7940"/>
+										<g>
+											<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 7702,6227 L 7402,6377 L 7702,6527 L 8002,6377 Z"/>
+											<text x="7702" y="6342" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="7702" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;as&quot;</tspan>
+											</text>
+										</g>
+										<g>
+											<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 7902,6577 L 7802,6777 L 8602,6777 L 8702,6577 Z"/>
+											<text x="8252" y="6592" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="8252" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+												<tspan x="8252" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+												<tspan x="8252" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+											</text>
+										</g>
+										<g>
+											<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="6927,6752 7202,6752 7202,6963"/>
+											<polygon fill="#404040" stroke="none" points="7202,6977 7215,6952 7188,6952"/>
+											<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="7202,7177 7202,7802 6665,7802"/>
+											<polygon fill="#404040" stroke="none" points="6652,7802 6676,7815 6676,7788"/>
+											<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="6327,6752 5552,6752 5552,6963"/>
+											<polygon fill="#404040" stroke="none" points="5552,6977 5565,6952 5538,6952"/>
+											<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="5552,7702 5552,7802 6588,7802"/>
+											<polygon fill="#404040" stroke="none" points="6602,7802 6577,7788 6577,7815"/>
+											<g>
+												<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 6627,6577 L 6302,6752 L 6627,6927 L 6952,6752 Z"/>
+												<text x="6627" y="6717" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+													<tspan x="6627" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;dos&quot;</tspan>
+												</text>
+											</g>
+											<g>
+												<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 6852,6977 L 6752,7177 L 7552,7177 L 7652,6977 Z"/>
+												<text x="7202" y="6992" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+													<tspan x="7202" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+													<tspan x="7202" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+													<tspan x="7202" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+												</text>
+											</g>
+											<g>
+												<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="5852,7152 6127,7152 6127,7363"/>
+												<polygon fill="#404040" stroke="none" points="6127,7377 6140,7352 6113,7352"/>
+												<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="6127,7577 6127,7677 5590,7677"/>
+												<polygon fill="#404040" stroke="none" points="5577,7677 5601,7690 5601,7663"/>
+												<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="5252,7152 5052,7152 5052,7677 5513,7677"/>
+												<polygon fill="#404040" stroke="none" points="5527,7677 5502,7663 5502,7690"/>
+												<g>
+													<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 5552,6977 L 5227,7152 L 5552,7327 L 5877,7152 Z"/>
+													<text x="5552" y="7117" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+														<tspan x="5552" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;tres&quot;</tspan>
+													</text>
+												</g>
+												<g>
+													<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 5777,7377 L 5677,7577 L 6477,7577 L 6577,7377 Z"/>
+													<text x="6127" y="7392" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+														<tspan x="6127" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+														<tspan x="6127" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+														<tspan x="6127" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+													</text>
+												</g>
+												<g>
+												</g>
+												<ellipse cx="5552" cy="7677" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+												<text x="6002" y="7067" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+													<tspan x="6002" dy="50" unicode-bidi="embed">Verdadero</tspan>
+												</text>
+												<text x="5139" y="7067" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+													<tspan x="5139" dy="50" unicode-bidi="embed">Falso</tspan>
+												</text>
+											</g>
+											<ellipse cx="6627" cy="7802" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+											<text x="7077" y="6667" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="7077" dy="50" unicode-bidi="embed">Verdadero</tspan>
+											</text>
+											<text x="6214" y="6667" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="6214" dy="50" unicode-bidi="embed">Falso</tspan>
+											</text>
+										</g>
+										<ellipse cx="7702" cy="7927" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+										<text x="8127" y="6292" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="8127" dy="50" unicode-bidi="embed">Verdadero</tspan>
+										</text>
+										<text x="7314" y="6292" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="7314" dy="50" unicode-bidi="embed">Falso</tspan>
+										</text>
+									</g>
+								</g>
+								<g>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1427,6227 3877,6227 3877,6438"/>
+									<polygon fill="#404040" stroke="none" points="3877,6452 3890,6427 3863,6427"/>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="3877,8352 3877,8452 1140,8452"/>
+									<polygon fill="#404040" stroke="none" points="1127,8452 1151,8465 1151,8438"/>
+									<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,6227 577,6227 577,8452 1063,8452"/>
+									<polygon fill="#404040" stroke="none" points="1077,8452 1052,8438 1052,8465"/>
+									<g>
+										<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 1102,6052 L 752,6227 L 1102,6402 L 1452,6227 Z"/>
+										<text x="1102" y="6192" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+											<tspan x="1102" dy="50" unicode-bidi="embed">figura[ranFigura]==&quot;Basto&quot;</tspan>
+										</text>
+									</g>
+									<g>
+										<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="3877,6552 3877,6613"/>
+										<polygon fill="#404040" stroke="none" points="3877,6627 3890,6602 3863,6602"/>
+										<g>
+											<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 3627,6452 L 3627,6552 L 4127,6552 L 4127,6452 Z"/>
+											<text x="3877" y="6467" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="3877" dy="50" unicode-bidi="embed">aleatorio = random(3)</tspan>
+											</text>
+										</g>
+										<g>
+											<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="4152,6777 4427,6777 4427,6963"/>
+											<polygon fill="#404040" stroke="none" points="4427,6977 4440,6952 4413,6952"/>
+											<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="4427,7177 4427,8327 3915,8327"/>
+											<polygon fill="#404040" stroke="none" points="3902,8327 3926,8340 3926,8313"/>
+											<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="3602,6777 2802,6777 2802,6963"/>
+											<polygon fill="#404040" stroke="none" points="2802,6977 2815,6952 2788,6952"/>
+											<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2802,8227 2802,8327 3838,8327"/>
+											<polygon fill="#404040" stroke="none" points="3852,8327 3827,8313 3827,8340"/>
+											<g>
+												<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 3877,6627 L 3577,6777 L 3877,6927 L 4177,6777 Z"/>
+												<text x="3877" y="6742" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+													<tspan x="3877" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;as&quot;</tspan>
+												</text>
+											</g>
+											<g>
+												<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 4077,6977 L 3977,7177 L 4777,7177 L 4877,6977 Z"/>
+												<text x="4427" y="6992" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+													<tspan x="4427" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+													<tspan x="4427" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+													<tspan x="4427" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+												</text>
+											</g>
+											<g>
+												<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="3102,7152 3377,7152 3377,7363"/>
+												<polygon fill="#404040" stroke="none" points="3377,7377 3390,7352 3363,7352"/>
+												<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="3377,7577 3377,8202 2840,8202"/>
+												<polygon fill="#404040" stroke="none" points="2827,8202 2851,8215 2851,8188"/>
+												<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2502,7152 1727,7152 1727,7363"/>
+												<polygon fill="#404040" stroke="none" points="1727,7377 1740,7352 1713,7352"/>
+												<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1727,8102 1727,8202 2763,8202"/>
+												<polygon fill="#404040" stroke="none" points="2777,8202 2752,8188 2752,8215"/>
+												<g>
+													<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 2802,6977 L 2477,7152 L 2802,7327 L 3127,7152 Z"/>
+													<text x="2802" y="7117" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+														<tspan x="2802" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;dos&quot;</tspan>
+													</text>
+												</g>
+												<g>
+													<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 3027,7377 L 2927,7577 L 3727,7577 L 3827,7377 Z"/>
+													<text x="3377" y="7392" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+														<tspan x="3377" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+														<tspan x="3377" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+														<tspan x="3377" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+													</text>
+												</g>
+												<g>
+													<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2027,7552 2302,7552 2302,7763"/>
+													<polygon fill="#404040" stroke="none" points="2302,7777 2315,7752 2288,7752"/>
+													<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2302,7977 2302,8077 1765,8077"/>
+													<polygon fill="#404040" stroke="none" points="1752,8077 1776,8090 1776,8063"/>
+													<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1427,7552 1227,7552 1227,8077 1688,8077"/>
+													<polygon fill="#404040" stroke="none" points="1702,8077 1677,8063 1677,8090"/>
+													<g>
+														<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 1727,7377 L 1402,7552 L 1727,7727 L 2052,7552 Z"/>
+														<text x="1727" y="7517" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+															<tspan x="1727" dy="50" unicode-bidi="embed">cartas[aleatorio]==&quot;tres&quot;</tspan>
+														</text>
+													</g>
+													<g>
+														<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 1952,7777 L 1852,7977 L 2652,7977 L 2752,7777 Z"/>
+														<text x="2302" y="7792" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+															<tspan x="2302" dy="50" unicode-bidi="embed">Salida cartas[aleatorio]&amp;&quot; de &quot;&amp;</tspan>
+															<tspan x="2302" dy="50" unicode-bidi="embed">figura[ranFigura]&amp;&quot; = &quot;&amp;</tspan>
+															<tspan x="2302" dy="50" unicode-bidi="embed">valorCartas[aleatorio]</tspan>
+														</text>
+													</g>
+													<g>
+													</g>
+													<ellipse cx="1727" cy="8077" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+													<text x="2177" y="7467" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+														<tspan x="2177" dy="50" unicode-bidi="embed">Verdadero</tspan>
+													</text>
+													<text x="1314" y="7467" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+														<tspan x="1314" dy="50" unicode-bidi="embed">Falso</tspan>
+													</text>
+												</g>
+												<ellipse cx="2802" cy="8202" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+												<text x="3252" y="7067" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+													<tspan x="3252" dy="50" unicode-bidi="embed">Verdadero</tspan>
+												</text>
+												<text x="2389" y="7067" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+													<tspan x="2389" dy="50" unicode-bidi="embed">Falso</tspan>
+												</text>
+											</g>
+											<ellipse cx="3877" cy="8327" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+											<text x="4302" y="6692" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="4302" dy="50" unicode-bidi="embed">Verdadero</tspan>
+											</text>
+											<text x="3489" y="6692" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+												<tspan x="3489" dy="50" unicode-bidi="embed">Falso</tspan>
+											</text>
+										</g>
+									</g>
+									<g>
+									</g>
+									<ellipse cx="1102" cy="8452" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+									<text x="1577" y="6142" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+										<tspan x="1577" dy="50" unicode-bidi="embed">Verdadero</tspan>
+									</text>
+									<text x="664" y="6142" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+										<tspan x="664" dy="50" unicode-bidi="embed">Falso</tspan>
+									</text>
+								</g>
+								<ellipse cx="4927" cy="8577" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+								<text x="5402" y="5742" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+									<tspan x="5402" dy="50" unicode-bidi="embed">Verdadero</tspan>
+								</text>
+								<text x="4489" y="5742" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+									<tspan x="4489" dy="50" unicode-bidi="embed">Falso</tspan>
+								</text>
+							</g>
+							<ellipse cx="8752" cy="8702" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+							<text x="9202" y="5342" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="9202" dy="50" unicode-bidi="embed">Verdadero</tspan>
+							</text>
+							<text x="8339" y="5342" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+								<tspan x="8339" dy="50" unicode-bidi="embed">Falso</tspan>
+							</text>
+						</g>
+						<ellipse cx="12577" cy="8827" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+						<text x="13027" y="4942" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="13027" dy="50" unicode-bidi="embed">Verdadero</tspan>
+						</text>
+						<text x="12164" y="4942" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="12164" dy="50" unicode-bidi="embed">Falso</tspan>
+						</text>
+					</g>
+					<g>
+						<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 12302,8927 L 12302,9127 L 12852,9127 L 12852,8927 Z"/>
+						<text x="12577" y="8942" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="12577" dy="50" unicode-bidi="embed">figuraSacada[j] = cartas</tspan>
+							<tspan x="12577" dy="50" unicode-bidi="embed">[aleatorio]&amp;&quot; de &quot;&amp;figura</tspan>
+							<tspan x="12577" dy="50" unicode-bidi="embed">[ranFigura]</tspan>
+						</text>
+					</g>
+					<g>
+						<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 12277,9202 L 12277,9352 L 12877,9352 L 12877,9202 Z"/>
+						<text x="12577" y="9217" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="12577" dy="50" unicode-bidi="embed">suma = suma+valorCartas</tspan>
+							<tspan x="12577" dy="50" unicode-bidi="embed">[aleatorio]</tspan>
+						</text>
+					</g>
+				</g>
+				<g>
+					<path fill="#FFE0A0" stroke="#A08040" stroke-width="3" stroke-dasharray="none" d="M 177,4527 L 127,4577 L 177,4627 L 477,4627 L 527,4577 L 477,4527 Z"/>
+					<text x="327" y="4542" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="327" dy="50" unicode-bidi="embed">j = 0 hasta 2</tspan>
+					</text>
+				</g>
+				<text x="652" y="4492" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="652" dy="50" unicode-bidi="embed">Siguiente</tspan>
+				</text>
+				<text x="239" y="4642" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="239" dy="50" unicode-bidi="embed">Hecho</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 77,9527 L 2,9677 L 577,9677 L 652,9527 Z"/>
+				<text x="327" y="9542" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="327" dy="50" unicode-bidi="embed">Salida &quot;La suma de las</tspan>
+					<tspan x="327" dy="50" unicode-bidi="embed"> cartas es = &quot;&amp;suma</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>
