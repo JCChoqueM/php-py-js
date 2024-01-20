@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>#10</title>
+  <title>#11</title>
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="styles/colorEnunciado.css" />
   <!-- Importar scripts JavaScript -->
@@ -19,32 +19,36 @@
 <body>
   <div class="container">
     <div class="content">
-      <h1>Ejercicio 10</h1>
+      <h1>Ejercicio 11</h1>
       <h2>
         <!-- Descripción del ejercicio -->
-        Realiza un programa que
-        <span class="input-resaltado">escoja al azar 10 cartas de la baraja española</span>
-        y que diga cuántos puntos suman según el juego de la brisca. Emplea un
-        <span class="array-resaltado">array asociativo</span> para obtener los puntos a partir del nombre de
-        la figura de la carta. Asegúrate de que
-        <span class="verificacion-resaltada">no se repite ninguna carta</span>, igual que si las hubieras cogido
-        de un baraja de verdad.
 
+        <span class="info-resaltada">Crea un mini-diccionario español-inglés</span> que contenga, al menos,
+        <span class="resultado-resaltado">20 palabras (con su traducción)</span>. Utiliza un
+        <span class="array-resaltado">array asociativo</span> para almacenar las parejas de palabras.
+        El programa <span class="verificacion-resaltada">pedirá una palabra en español</span> y
+        dará la correspondiente traducción en <span class="input-resaltado">inglés</span>.
       </h2>
-
       <form id="form">
         <div class="cajaboton">
+          <div class="cajaForm">
+            <!-- Campo de entrada para números -->
+            <label for="num1">Introduzca una fruta en español:</label>
+            <input type="number" id="num1" name="num1" placeholder="introduzca una fruta en español" required />
+          </div>
 
-          <!-- Botones de acción -->
-          <button class="botones_cajaForm" type="button" onclick="resolverAutomaticamente()">
-            Volver a seleccionar Cartas
-          </button>
-          <button class="botones_cajaForm" type="button" onclick="solucionPHP_JS_PY()">
-            Solución (PHP/Python/JS):
-          </button>
-          <button class="botones_cajaForm" type="button" onclick="limpiarResultados()">
-            Limpiar resultados:
-          </button>
+        <div class="otros">
+            <!-- Botones de acción -->
+            <button class="botones_cajaForm" type="button" onclick="resolverAutomaticamente()">
+              traducir     
+            </button>
+            <button class="botones_cajaForm" type="button" onclick="solucionPHP_JS_PY()">
+              Solución (PHP/Python/JS):
+            </button>
+            <button class="botones_cajaForm" type="button" onclick="limpiarResultados()">
+              Limpiar resultados:
+            </button>
+        </div class="otros">
         </div>
       </form>
 
