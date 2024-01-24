@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $cartasSacadas = $datosJson['cartasSacadas'];
   $puntosSacados = $datosJson['puntosSacados'];
   $sumaTotal = $datosJson['sumaTotal'];
+  var_dump($cartasSacadas[1]);
 
   // Iniciar la tabla
   $mensaje = "<table border='1'><tr>";

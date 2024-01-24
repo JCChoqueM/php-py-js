@@ -1,61 +1,40 @@
 const asociativo = {
-  uno: 11,
-  dos: 0,
-  tres: 10,
-  cuatro: 0,
-  cinco: 0,
-  seis: 0,
-  siete: 0,
-  sota: 2,
-  caballo: 3,
-  rey: 4,
+  manzana: "Apple",
+  platano: "Banana",
+  naranja: "Orange",
+  uva: "Grape",
+  frutilla: "Strawberry",
+  mango: "Mango",
+  kiwi: "Kiwi",
+  piña: "Pineapple",
+  cereza: "Cherry",
+  pera: "Pear",
+  sandia: "Watermelon",
+  limon: "Lemon",
+  granada: "Pomegranate",
+  ciruela: "Plum",
+  papaya: "Papaya",
+  coco: "coconut",
+  higo: "Fig",
+  mandarina: "Tangerine",
+  mora: "Blackberry",
+  guayaba: "Guava",
+  pomelo: "Grapefruit",
+  durazno: "peach",
 };
-const valor = [
-  "uno",
-  "dos",
-  "tres",
-  "cuatro",
-  "cinco",
-  "seis",
-  "siete",
-  "sota",
-  "caballo",
-  "rey",
-];
-const figura = ["oros", "copas", "espadas", "bastos"];
-let cartasSacadas = [];
-let puntosSacados = [];
-let contadorCartas = 0;
-let sumaTotal = 0;
+frutaAleatoria();
 
-function generarCartas() {
-  cartasSacadas = [];
-  puntosSacados = [];
-  contadorCartas = 0;
-  sumaTotal = 0;
+function frutaAleatoria() {
+  const claves = Object.keys(asociativo);
 
-  do {
-    let randomFigura = figura[generarNumeroAleatorio(0, 3)];
-    let randomValor = valor[generarNumeroAleatorio(0, 9)];
-    let puntos = asociativo[randomValor];
-    let nombreCarta = `${randomValor} de ${randomFigura}`;
-    if (!cartasSacadas.includes(nombreCarta)) {
-      cartasSacadas.push(nombreCarta);
-      puntosSacados.push(puntos);
-      contadorCartas += 1;
-      sumaTotal += puntos;
-    }
-  } while (contadorCartas < 10);
-}
+  // Seleccionar una clave al azar
+  const claveAleatoria = claves[Math.floor(Math.random() * claves.length)];
 
-function generarArray() {
-  const min = -8;
-  const max = 100;
+  // Obtener el valor asociado a la clave aleatoria
 
-  for (contador = 0; contador < 7; contador++) {
-    const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
-    asociativo.push(numeroAleatorio);
-  }
+  // Llenar el input con la fruta en español
+  document.getElementById("fruta").value = claveAleatoria;
+
 }
 
 function generarNumeroAleatorio(min, max) {
@@ -64,12 +43,12 @@ function generarNumeroAleatorio(min, max) {
 
 /* SECTION inicio sumar todo */
 function resolverAutomaticamente() {
-  generarCartas();
   automaticoPHP();
   automaticoPY();
   automaticoJS();
 }
 async function automaticoPHP() {
+  const fruta = document.getElementById("fruta").value;
   try {
     const url = "archives/automaticamente/automaticamente.php";
 
@@ -79,16 +58,15 @@ async function automaticoPHP() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        cartasSacadas,
-        puntosSacados,
-        sumaTotal,
+        asociativo,
+        fruta,
       }),
     });
 
     if (response.ok) {
-      const suma = await response.text();
+      const traduccion = await response.text();
       var resultadosDiv = document.getElementById("resultadoPHP");
-      resultadosDiv.innerHTML = ` ${suma}<br>`;
+      resultadosDiv.innerHTML = ` ${traduccion}<br>`;
     } else {
       console.error("Error en la solicitud:", response.status);
     }
@@ -98,14 +76,14 @@ async function automaticoPHP() {
 }
 
 async function automaticoPY() {
+  const fruta = document.getElementById("fruta").value;
   try {
     const url = "archives/automaticamente/automaticamentePY.php";
 
     // Ajusta los datos según lo que espera el script PHP
     const data = {
-      cartasSacadas: cartasSacadas,
-      puntosSacados: puntosSacados,
-      sumaTotal: sumaTotal,
+      asociativo:asociativo,
+      fruta:fruta,
     };
 
     const response = await fetch(url, {

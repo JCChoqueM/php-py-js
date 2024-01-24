@@ -1,54 +1,50 @@
+# -- coding: latin-1 --
 import sys
 import json
 
+
 # Obtener los argumentos de la línea de comandos
-cartas_sacadas_json = sys.argv[1]
-puntos_sacados_json = sys.argv[2]
-suma_total = float(sys.argv[3])
+asociativo = sys.argv[1]
+fruta = sys.argv[2]
+asociativo = asociativo.replace("\\u00f1", "ñ")
+fruta = fruta.replace("\\u00f1", "ñ")
+fruta = fruta.strip()
 
-# Convertir los datos JSON a Python
-cartas_sacadas = [carta.strip(" ,") for carta in cartas_sacadas_json[1:-1].split(",")]
-puntos_sacados = json.loads(puntos_sacados_json)
+# Dividir la cadena en pares clave-valor
+pares_clave_valor = [par.strip() for par in asociativo[1:-1].split(",")]
 
-# Iniciar la tabla
-mensaje = "<table border='1'><tr>"
+# Crear un asociativo_diccionario a partir de los pares clave-valor
+asociativo_diccionario = {}
+for par in pares_clave_valor:
+    clave, valor = par.split(":")
+    asociativo_diccionario[clave.strip()] = valor.strip()
 
-contador = 0
-for carta, puntos in zip(cartas_sacadas, puntos_sacados):
-    if contador % 5 == 0 and contador > 0:
-        # Cerrar la fila anterior después de mostrar 5 cartas y abrir una nueva fila
-        mensaje += "</tr><tr>"
-
-    # Establecer un color de fondo condicional basado en los puntos
-    color_fondo = "background-color: yellow;" if puntos > 0 else ""
-
-    # Agregar celdas a la fila para cada carta (imagen, nombre y puntos)
-    mensaje += f"<td style='{color_fondo}'>"
-    mensaje += "<table border='1'>"
+if fruta in asociativo_diccionario:
+    # Construir la tabla HTML con la información de la fruta
+    mensaje = "<table border='1' style='border-collapse: collapse; text-align: center; background-color: yellow;'>"
     mensaje += "<tr>"
-    mensaje += "<td>"
-    # Celda para la imagen
-    mensaje += f"<img src='images/{carta.lower().replace(' ', '_')}.png' alt='{carta}' style='width: 70px; height: 95px;'><br>"
-
-    # Celda para el nombre de la carta
-    mensaje += f"{carta}<br>"
+    mensaje += "<th colspan='2' style='font-size: 2.0em; font-weight: bold;color: green;'>{}</th>".format(
+        fruta
+    )
+    mensaje += "</tr>"
+    mensaje += "<tr>"
+    mensaje += "<td style='padding: 10px;'>"
+    mensaje += "<img src='images/{}.png' alt='{}' style='width: 150px; height: 150px;'><br>".format(
+        fruta.replace("ñ", "_").lower(), fruta
+    )
     mensaje += "</td>"
     mensaje += "</tr>"
-
     mensaje += "<tr>"
-    mensaje += "<td>"
-
-    # Celda para los puntos
-    mensaje += f"{puntos} pts."
+    mensaje += "<td style='padding: 10px;'>"
+    mensaje += (
+        "<strong style='font-size: 1.2em; '>{0} en inglés es: <br>{1}</strong>".format(
+            fruta, asociativo_diccionario[fruta]
+        )
+    )
     mensaje += "</td>"
     mensaje += "</tr>"
-
     mensaje += "</table>"
-    mensaje += "</td>"
-
-    contador += 1
-
-# Cerrar la última fila
-mensaje += "</tr></table><br> La suma total es: ${:.2f}".format(suma_total)
+else:
+    mensaje = "<p style='color: red;'>No bromees, {} no es una fruta >:(".format(fruta)
 
 print(mensaje)

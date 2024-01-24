@@ -4,55 +4,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $datosJson = json_decode(file_get_contents('php://input'), true);
 
   // Acceder a los objetos dentro del array asociativo
-  $cartasSacadas = $datosJson['cartasSacadas'];
-  $puntosSacados = $datosJson['puntosSacados'];
-  $sumaTotal = $datosJson['sumaTotal'];
+  $asociativo = $datosJson['asociativo'];
+  $fruta = $datosJson['fruta'];
+  $mensaje = "";
 
-  // Iniciar la tabla
-  $mensaje = "<table border='1'><tr>";
-
-  $contador = 0;
-  foreach ($cartasSacadas as $carta) {
-    if ($contador % 5 === 0 && $contador > 0) {
-      // Cerrar la fila anterior después de mostrar 5 cartas y abrir una nueva fila
-      $mensaje .= "</tr><tr>";
-    }
-
-    $puntos = $puntosSacados[$contador];
-
-    // Establecer un color de fondo condicional basado en los puntos
-    $colorFondo = ($puntos > 0) ? 'background-color: yellow;' : '';
-
-    // Agregar celdas a la fila para cada carta (imagen, nombre y puntos)
-    $mensaje .= "<td style='$colorFondo'>";
-    $mensaje .= "<table border='1'>";
+  // Verificar si la fruta existe en el array asociativo
+  if (array_key_exists($fruta, $asociativo)) {
+    // Construir la tabla HTML con la información de la fruta
+    $mensaje .= "<table border='1' style='border-collapse: collapse; text-align: center; background-color: yellow;'>";
     $mensaje .= "<tr>";
-    $mensaje .= "<td>";
-    // Celda para la imagen
-    $mensaje .= "<img src='images/" . strtolower(str_replace(" ", "_", $carta)) . ".png' alt='$carta' style='width: 70px; height: 95px;'><br>";
-
-    // Celda para el nombre de la carta
-    $mensaje .= "$carta<br>";
+    $mensaje .= "<th colspan='2' style='font-size: 2.0em; font-weight: bold;color: green;'>$fruta</th>";
+    $mensaje .= "</tr>";
+    $mensaje .= "<tr>";
+    $mensaje .= "<td style='padding: 10px;'>";
+    $mensaje .= "<img src='images/" . strtolower(str_replace(" ", "_", $fruta)) . ".png' alt='$fruta' style='width: 150px; height: 150px;'><br>";
     $mensaje .= "</td>";
     $mensaje .= "</tr>";
-
     $mensaje .= "<tr>";
-    $mensaje .= "<td>";
-
-    // Celda para los puntos
-    $mensaje .= "$puntos pts.";
+    $mensaje .= "<td style='padding: 10px;'>";
+    $mensaje .= "<strong style='font-size: 1.2em; '>$fruta en inglés es: <br>" . $asociativo[$fruta] . "</strong> ";
     $mensaje .= "</td>";
     $mensaje .= "</tr>";
-
     $mensaje .= "</table>";
-    $mensaje .= "</td>";
-
-    $contador++;
+  } else {
+    $mensaje = "<p style='color: red;'>No bromees, $fruta no es una fruta >:(</p>";
   }
 
-  // Cerrar la última fila
-  $mensaje .= "</tr></table><br> La suma total es: $sumaTotal";
-
+  // Mostrar el mensaje
   echo $mensaje;
 } else {
   // Manejar el caso en que la solicitud no sea de tipo POST
