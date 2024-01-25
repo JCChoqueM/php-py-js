@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Flowgorithm 3.5.1 (http://flowgorithm.org) -->
+
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="2529" height="5104">
+	<g>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,102 777,163"/>
+		<polygon fill="#404040" stroke="none" points="777,177 790,152 763,152"/>
+		<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,4927 777,4988"/>
+		<polygon fill="#404040" stroke="none" points="777,5002 790,4977 763,4977"/>
+		<g>
+			<path fill="#F0E0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 677,2 A 50 50, 0, 0 0, 677 102 L 877,102 A 50 50, 0, 0 0, 877 2 Z"/>
+			<text x="777" y="17" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="777" dy="50" unicode-bidi="embed">Principal</tspan>
+			</text>
+		</g>
+		<g>
+			<path fill="#F0E0FF" stroke="#9070A0" stroke-width="3" stroke-dasharray="none" d="M 677,5002 A 50 50, 0, 0 0, 677 5102 L 877,5102 A 50 50, 0, 0 0, 877 5002 Z"/>
+			<text x="777" y="5017" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+				<tspan x="777" dy="50" unicode-bidi="embed">Fin</tspan>
+			</text>
+		</g>
+		<g>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,302 777,363"/>
+			<polygon fill="#404040" stroke="none" points="777,377 790,352 763,352"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,477 777,538"/>
+			<polygon fill="#404040" stroke="none" points="777,552 790,527 763,527"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,652 777,713"/>
+			<polygon fill="#404040" stroke="none" points="777,727 790,702 763,702"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,827 777,888"/>
+			<polygon fill="#404040" stroke="none" points="777,902 790,877 763,877"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,1027 777,1088"/>
+			<polygon fill="#404040" stroke="none" points="777,1102 790,1077 763,1077"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,1202 777,1263"/>
+			<polygon fill="#404040" stroke="none" points="777,1277 790,1252 763,1252"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,1377 777,1438"/>
+			<polygon fill="#404040" stroke="none" points="777,1452 790,1427 763,1427"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,1552 777,1613"/>
+			<polygon fill="#404040" stroke="none" points="777,1627 790,1602 763,1602"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,1752 777,1813"/>
+			<polygon fill="#404040" stroke="none" points="777,1827 790,1802 763,1802"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,1977 777,2038"/>
+			<polygon fill="#404040" stroke="none" points="777,2052 790,2027 763,2027"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,2152 777,2213"/>
+			<polygon fill="#404040" stroke="none" points="777,2227 790,2202 763,2202"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,2352 777,2413"/>
+			<polygon fill="#404040" stroke="none" points="777,2427 790,2402 763,2402"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,2527 777,2588"/>
+			<polygon fill="#404040" stroke="none" points="777,2602 790,2577 763,2577"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,2727 777,2788"/>
+			<polygon fill="#404040" stroke="none" points="777,2802 790,2777 763,2777"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,2902 777,2977"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,3127 777,3188"/>
+			<polygon fill="#404040" stroke="none" points="777,3202 790,3177 763,3177"/>
+			<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="777,3552 777,4388"/>
+			<polygon fill="#404040" stroke="none" points="777,4402 790,4377 763,4377"/>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 502,177 L 502,302 L 1052,302 L 1052,177 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="502,202 1052,202"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="527,177 527,302"/>
+				<text x="789" y="217" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="789" dy="50" unicode-bidi="embed">Cadena Matriz frutas[3]</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 527,377 L 527,477 L 1027,477 L 1027,377 Z"/>
+				<text x="777" y="392" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="777" dy="50" unicode-bidi="embed">frutas[0] = &quot;manzana&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 552,552 L 552,652 L 1002,652 L 1002,552 Z"/>
+				<text x="777" y="567" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="777" dy="50" unicode-bidi="embed">frutas[1] = &quot;platano&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 552,727 L 552,827 L 1002,827 L 1002,727 Z"/>
+				<text x="777" y="742" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="777" dy="50" unicode-bidi="embed">frutas[2] = &quot;naranja&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 502,902 L 502,1027 L 1052,1027 L 1052,902 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="502,927 1052,927"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="527,902 527,1027"/>
+				<text x="789" y="942" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="789" dy="50" unicode-bidi="embed">Cadena Matriz fruits[3]</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 577,1102 L 577,1202 L 977,1202 L 977,1102 Z"/>
+				<text x="777" y="1117" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="777" dy="50" unicode-bidi="embed">fruits[0] = &quot;apple&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 552,1277 L 552,1377 L 1002,1377 L 1002,1277 Z"/>
+				<text x="777" y="1292" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="777" dy="50" unicode-bidi="embed">fruits[1] = &quot;banana&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 552,1452 L 552,1552 L 1002,1552 L 1002,1452 Z"/>
+				<text x="777" y="1467" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="777" dy="50" unicode-bidi="embed">fruits[2] = &quot;orange&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 502,1627 L 502,1752 L 1052,1752 L 1052,1627 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="502,1652 1052,1652"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="527,1627 527,1752"/>
+				<text x="789" y="1667" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="789" dy="50" unicode-bidi="embed">Cadena frutaingresada</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 502,1827 L 427,1977 L 1052,1977 L 1127,1827 Z"/>
+				<text x="777" y="1842" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="777" dy="50" unicode-bidi="embed">Salida &quot;Ingrese el nombre</tspan>
+					<tspan x="777" dy="50" unicode-bidi="embed"> de una fruta&quot;</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#B0E0FF" stroke="#5080A0" stroke-width="3" stroke-dasharray="none" d="M 527,2052 L 477,2152 L 1027,2152 L 1077,2052 Z"/>
+				<text x="777" y="2067" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="777" dy="50" unicode-bidi="embed">Entrada frutaingresada</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 527,2227 L 527,2352 L 1027,2352 L 1027,2227 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="527,2252 1027,2252"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="552,2227 552,2352"/>
+				<text x="789" y="2267" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="789" dy="50" unicode-bidi="embed">Booleano encontrado</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 552,2427 L 552,2527 L 1002,2527 L 1002,2427 Z"/>
+				<text x="777" y="2442" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="777" dy="50" unicode-bidi="embed">encontrado = false</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 577,2602 L 577,2727 L 977,2727 L 977,2602 Z"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="577,2627 977,2627"/>
+				<polyline fill="none" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" points="602,2602 602,2727"/>
+				<text x="789" y="2642" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="789" dy="50" unicode-bidi="embed">Entero contador</tspan>
+				</text>
+			</g>
+			<g>
+				<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 627,2802 L 627,2902 L 927,2902 L 927,2802 Z"/>
+				<text x="777" y="2817" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="777" dy="50" unicode-bidi="embed">contador = 0</tspan>
+				</text>
+			</g>
+			<g>
+				<polygon fill="#FFA0A0" stroke="#A04C4C" stroke-width="3" points="823,3071 796,3098 757,3098 730,3071 730,3032 757,3005 796,3005 823,3032"/>
+				<text x="964" y="3017" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="964" dy="50" unicode-bidi="embed">Interrumpir</tspan>
+				</text>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1127,3377 1727,3377 1727,3588"/>
+				<polygon fill="#404040" stroke="none" points="1727,3602 1740,3577 1713,3577"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1727,4227 1727,4302 827,4302 827,3565"/>
+				<polygon fill="#404040" stroke="none" points="827,3552 813,3576 840,3576"/>
+				<g>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2052,3777 2327,3777 2327,3988"/>
+					<polygon fill="#404040" stroke="none" points="2327,4002 2340,3977 2313,3977"/>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="2327,4102 2327,4202 1765,4202"/>
+					<polygon fill="#404040" stroke="none" points="1752,4202 1776,4215 1776,4188"/>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1402,3777 1202,3777 1202,3988"/>
+					<polygon fill="#404040" stroke="none" points="1202,4002 1215,3977 1188,3977"/>
+					<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1202,4102 1202,4202 1688,4202"/>
+					<polygon fill="#404040" stroke="none" points="1702,4202 1677,4188 1677,4215"/>
+					<g>
+						<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 1727,3602 L 1377,3777 L 1727,3952 L 2077,3777 Z"/>
+						<text x="1727" y="3717" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="1727" dy="50" unicode-bidi="embed">frutaingresada==frutas</tspan>
+							<tspan x="1727" dy="50" unicode-bidi="embed">[contador]</tspan>
+						</text>
+					</g>
+					<g>
+						<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 2127,4002 L 2127,4102 L 2527,4102 L 2527,4002 Z"/>
+						<text x="2327" y="4017" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="2327" dy="50" unicode-bidi="embed">encontrado = true</tspan>
+						</text>
+					</g>
+					<g>
+						<path fill="#FFFFD0" stroke="#A0A070" stroke-width="3" stroke-dasharray="none" d="M 952,4002 L 952,4102 L 1452,4102 L 1452,4002 Z"/>
+						<text x="1202" y="4017" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+							<tspan x="1202" dy="50" unicode-bidi="embed">contador = contador+1</tspan>
+						</text>
+					</g>
+					<ellipse cx="1727" cy="4202" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+					<text x="2202" y="3692" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="2202" dy="50" unicode-bidi="embed">Verdadero</tspan>
+					</text>
+					<text x="1289" y="3692" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="1289" dy="50" unicode-bidi="embed">Falso</tspan>
+					</text>
+				</g>
+				<g>
+					<path fill="#FFE0A0" stroke="#A08040" stroke-width="3" stroke-dasharray="none" d="M 777,3202 L 427,3377 L 777,3552 L 1127,3377 Z"/>
+					<text x="777" y="3317" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="777" dy="50" unicode-bidi="embed">encontrado==false&amp;&amp;</tspan>
+						<tspan x="777" dy="50" unicode-bidi="embed">contador&lt;size(frutas)</tspan>
+					</text>
+				</g>
+				<text x="1252" y="3292" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="1252" dy="50" unicode-bidi="embed">Verdadero</tspan>
+				</text>
+				<text x="689" y="3567" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="689" dy="50" unicode-bidi="embed">Falso</tspan>
+				</text>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="952,4502 1227,4502 1227,4638"/>
+				<polygon fill="#404040" stroke="none" points="1227,4652 1240,4627 1213,4627"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="1227,4802 1227,4902 815,4902"/>
+				<polygon fill="#404040" stroke="none" points="802,4902 826,4915 826,4888"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="602,4502 377,4502 377,4638"/>
+				<polygon fill="#404040" stroke="none" points="377,4652 390,4627 363,4627"/>
+				<polyline fill="none" stroke="#404040" stroke-width="6" stroke-dasharray="none" points="377,4802 377,4902 738,4902"/>
+				<polygon fill="#404040" stroke="none" points="752,4902 727,4888 727,4915"/>
+				<g>
+					<path fill="#FFD0D0" stroke="#A07070" stroke-width="3" stroke-dasharray="none" d="M 777,4402 L 577,4502 L 777,4602 L 977,4502 Z"/>
+					<text x="777" y="4467" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="777" dy="50" unicode-bidi="embed">encontrado</tspan>
+					</text>
+				</g>
+				<g>
+					<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 927,4652 L 852,4802 L 1527,4802 L 1602,4652 Z"/>
+					<text x="1227" y="4667" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="1227" dy="50" unicode-bidi="embed">Salida frutaingresada&amp;&quot; = &quot;&amp;</tspan>
+						<tspan x="1227" dy="50" unicode-bidi="embed">fruits[contador]</tspan>
+					</text>
+				</g>
+				<g>
+					<path fill="#D0FFD0" stroke="#70A070" stroke-width="3" stroke-dasharray="none" d="M 102,4652 L 27,4802 L 652,4802 L 727,4652 Z"/>
+					<text x="377" y="4667" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+						<tspan x="377" dy="50" unicode-bidi="embed">Salida &quot;No se encontro la</tspan>
+						<tspan x="377" dy="50" unicode-bidi="embed"> fruta : &quot;&amp;frutaingresada</tspan>
+					</text>
+				</g>
+				<ellipse cx="777" cy="4902" rx="25" ry="25" fill="#FFD0D0" stroke="#A07070" stroke-width="3"/>
+				<text x="1102" y="4417" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="1102" dy="50" unicode-bidi="embed">Verdadero</tspan>
+				</text>
+				<text x="489" y="4417" fill="#000000" font-family="Arial" font-size="32pt" text-anchor="middle" direction="ltr">
+					<tspan x="489" dy="50" unicode-bidi="embed">Falso</tspan>
+				</text>
+			</g>
+		</g>
+	</g>
+</svg>

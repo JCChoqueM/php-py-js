@@ -98,7 +98,7 @@ async function automaticoPHP() {
 }
 
 async function automaticoPY() {
-  try {
+ try {
     const url = "archives/automaticamente/automaticamentePY.php";
 
     // Ajusta los datos según lo que espera el script PHP
@@ -125,5 +125,5 @@ async function automaticoPY() {
     }
   } catch (error) {
     console.error("Error en la solicitud:", error);
-  }
+  } 
 }

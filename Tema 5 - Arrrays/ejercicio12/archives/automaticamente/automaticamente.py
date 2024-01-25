@@ -1,35 +1,23 @@
 # -- coding: latin-1 --
-import random
 import sys
+import json
 
-fruta = sys.argv[1]
+
+# Obtener los argumentos de la línea de comandos
+asociativo = sys.argv[1]
+fruta = sys.argv[2]
+asociativo = asociativo.replace("\\u00f1", "ñ")
 fruta = fruta.replace("\\u00f1", "ñ")
 fruta = fruta.strip()
 
-asociativo_diccionario = {
-    "manzana": "Apple",
-    "platano": "Banana",
-    "naranja": "Orange",
-    "uva": "Grape",
-    "frutilla": "Strawberry",
-    "mango": "Mango",
-    "kiwi": "Kiwi",
-    "piña": "Pineapple",
-    "cereza": "Cherry",
-    "pera": "Pear",
-    "sandia": "Watermelon",
-    "limon": "Lemon",
-    "granada": "Pomegranate",
-    "ciruela": "Plum",
-    "papaya": "Papaya",
-    "coco": "coconut",
-    "higo": "Fig",
-    "mandarina": "Tangerine",
-    "mora": "Blackberry",
-    "guayaba": "Guava",
-    "pomelo": "Grapefruit",
-    "durazno": "peach",
-}
+# Dividir la cadena en pares clave-valor
+pares_clave_valor = [par.strip() for par in asociativo[1:-1].split(",")]
+
+# Crear un asociativo_diccionario a partir de los pares clave-valor
+asociativo_diccionario = {}
+for par in pares_clave_valor:
+    clave, valor = par.split(":")
+    asociativo_diccionario[clave.strip()] = valor.strip()
 
 if fruta in asociativo_diccionario:
     # Construir la tabla HTML con la información de la fruta
