@@ -1,23 +1,47 @@
-.input-resaltado {
+.azul {
     color: blue;
 }
 
-.array-resaltado {
+.verde {
     color: green;
 }
 
-.info-resaltada {
+.morado {
     color: purple;
 }
 
-.posicion-resaltada {
+.naranja {
     color: orange;
 }
 
-.verificacion-resaltada {
+.rojo {
     color: red;
 }
 
-.resultado-resaltado {
+.agua {
     color: teal;
+}
+
+.amarillo {
+    color: yellow;
+}
+
+.rosa {
+    color: pink;
+}
+
+.gris {
+    color: gray;
+}
+
+.negro {
+    color: black;
+}
+
+.blanco {
+    color: white;
+}
+
+.marron {
+    color: brown;
 }

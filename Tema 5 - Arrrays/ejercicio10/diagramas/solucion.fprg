@@ -4,63 +4,149 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="DDr5"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2023-11-23 03:34:43 a.&#160;m."/>
-        <attribute name="created" value="RERyNTtERVNLVE9QLU5URUsxNkc7MjAyMy0xMS0xMTsxMTowNzoxNyBwLsKgbS47Mjk1NA=="/>
-        <attribute name="edited" value="RERyNTtERVNLVE9QLU5URUsxNkc7MjAyMy0xMS0yMzswMzozNDo0MyBhLsKgbS47MjA7MzA5OQ=="/>
+        <attribute name="saved" value="2024-01-26 01:05:19 "/>
+        <attribute name="created" value="RERyNTtERFI1OzIwMjQtMDEtMDU7MDE6MzU6MTUgYS7CoG0uOzIxNDg="/>
+        <attribute name="edited" value="RERyNTtERFI1OzIwMjQtMDEtMjY7IjAxOjA1OjE5ICI7ODsxODc3"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="array" type="Integer" array="True" size="5"/>
-            <declare name="arrayAux" type="Integer" array="True" size="size(array)"/>
-            <declare name="aux" type="Integer" array="False" size=""/>
-            <declare name="inicial" type="Integer" array="False" size=""/>
-            <declare name="final" type="Integer" array="False" size=""/>
-            <declare name="contador" type="Integer" array="False" size=""/>
-            <for variable="contador" start="0" end="size(array)-1" direction="inc" step="1">
-                <assign variable="array[contador]" expression="contador+3"/>
-            </for>
-            <declare name="siguiente" type="Boolean" array="False" size=""/>
-            <output expression="&quot;ingrese el valor de inicial y final&quot;" newline="True"/>
-            <do expression="!(siguiente)">
-                <output expression="&quot;ingrese el valor de inicial :&quot;" newline="True"/>
-                <input variable="inicial"/>
-                <if expression="(inicial&gt;=0&amp;&amp;inicial&lt;=size(array)-2)">
+            <declare name="figura" type="String" array="True" size="4"/>
+            <assign variable="figura[0]" expression="&quot;Oro&quot;"/>
+            <assign variable="figura[1]" expression="&quot;Copa&quot;"/>
+            <assign variable="figura[2]" expression="&quot;Espada&quot;"/>
+            <assign variable="figura[3]" expression="&quot;Basto&quot;"/>
+            <declare name="cartas" type="String" array="True" size="3"/>
+            <assign variable="cartas[0]" expression="&quot;as&quot;"/>
+            <assign variable="cartas[1]" expression="&quot;dos&quot;"/>
+            <assign variable="cartas[2]" expression="&quot;tres&quot;"/>
+            <declare name="valorCartas" type="Integer" array="True" size="3"/>
+            <assign variable="valorCartas[0]" expression="11"/>
+            <assign variable="valorCartas[1]" expression="0"/>
+            <assign variable="valorCartas[2]" expression="10"/>
+            <declare name="aleatorio" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="suma" type="Integer" array="False" size=""/>
+            <assign variable="suma" expression="0"/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <declare name="ranFigura" type="Integer" array="False" size=""/>
+            <declare name="figuraSacada" type="String" array="True" size="3"/>
+            <declare name="salida" type="Boolean" array="False" size=""/>
+            <assign variable="salida" expression="true"/>
+            <assign variable="j" expression="0"/>
+            <for variable="j" start="0" end="2" direction="inc" step="1">
+                <assign variable="ranFigura" expression="random(4)"/>
+                <if expression="figura[ranFigura]==&quot;Oro&quot;">
                     <then>
-                        <assign variable="siguiente" expression="true"/>
+                        <assign variable="aleatorio" expression="random(3)"/>
+                        <if expression="cartas[aleatorio]==&quot;as&quot;">
+                            <then>
+                                <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="cartas[aleatorio]==&quot;dos&quot;">
+                                    <then>
+                                        <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="cartas[aleatorio]==&quot;tres&quot;">
+                                            <then>
+                                                <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
                     </then>
                     <else>
-                        <assign variable="siguiente" expression="false"/>
-                        <output expression="&quot;Inicial debe estar comprendido entre: 0 y &quot;&amp;size(array)-2" newline="True"/>
+                        <if expression="figura[ranFigura]==&quot;Copa&quot;">
+                            <then>
+                                <assign variable="aleatorio" expression="random(3)"/>
+                                <if expression="cartas[aleatorio]==&quot;as&quot;">
+                                    <then>
+                                        <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="cartas[aleatorio]==&quot;dos&quot;">
+                                            <then>
+                                                <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="cartas[aleatorio]==&quot;tres&quot;">
+                                                    <then>
+                                                        <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="figura[ranFigura]==&quot;Espada&quot;">
+                                    <then>
+                                        <assign variable="aleatorio" expression="random(3)"/>
+                                        <if expression="cartas[aleatorio]==&quot;as&quot;">
+                                            <then>
+                                                <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="cartas[aleatorio]==&quot;dos&quot;">
+                                                    <then>
+                                                        <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="cartas[aleatorio]==&quot;tres&quot;">
+                                                            <then>
+                                                                <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                                                            </then>
+                                                            <else/>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else>
+                                        <if expression="figura[ranFigura]==&quot;Basto&quot;">
+                                            <then>
+                                                <assign variable="aleatorio" expression="random(3)"/>
+                                                <if expression="cartas[aleatorio]==&quot;as&quot;">
+                                                    <then>
+                                                        <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="cartas[aleatorio]==&quot;dos&quot;">
+                                                            <then>
+                                                                <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="cartas[aleatorio]==&quot;tres&quot;">
+                                                                    <then>
+                                                                        <output expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]&amp;&quot; = &quot;&amp;valorCartas[aleatorio]" newline="True"/>
+                                                                    </then>
+                                                                    <else/>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
                     </else>
                 </if>
-            </do>
-            <do expression="!(siguiente)">
-                <output expression="&quot;ingrese el valor de Final :&quot;" newline="True"/>
-                <input variable="final"/>
-                <if expression="final&gt;inicial&amp;&amp;final&lt;=size(array)-1">
-                    <then>
-                        <assign variable="siguiente" expression="true"/>
-                    </then>
-                    <else>
-                        <assign variable="siguiente" expression="false"/>
-                        <output expression="&quot;Final debe ser mayor que: &quot;&amp;Inicial&amp;&quot; y menor que &quot;&amp;size(array)" newline="True"/>
-                    </else>
-                </if>
-            </do>
-            <for variable="contador" start="0" end="size(array)-1" direction="inc" step="1">
-                <assign variable="arrayAux[contador]" expression="array[contador]"/>
+                <assign variable="figuraSacada[j]" expression="cartas[aleatorio]&amp;&quot; de &quot;&amp;figura[ranFigura]"/>
+                <assign variable="suma" expression="suma+valorCartas[aleatorio]"/>
             </for>
-            <assign variable="aux" expression="array[size(array)-1]"/>
-            <breakpoint expression="" always="True"/>
-            <for variable="contador" start="size(arrayAux)-1" end="final+1" direction="dec" step="1">
-                <assign variable="arrayAux[contador]" expression="arrayAux[contador-1]"/>
-            </for>
-            <assign variable="arrayAux[final]" expression="arrayAux[inicial]"/>
-            <for variable="contador" start="inicial" end="1" direction="dec" step="1">
-                <assign variable="arrayAux[contador]" expression="arrayAux[contador-1]"/>
-            </for>
-            <assign variable="arrayAux[0]" expression="aux"/>
+            <output expression="&quot;La suma de las cartas es = &quot;&amp;suma" newline="True"/>
         </body>
     </function>
 </flowgorithm>

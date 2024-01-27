@@ -41,4 +41,3 @@ function automaticoJS() {
   const resultadoDiv = document.getElementById("resultadoJavaScript");
   resultadoDiv.innerHTML = ` ${mensaje}`;
 }
-console.log(asociativo);

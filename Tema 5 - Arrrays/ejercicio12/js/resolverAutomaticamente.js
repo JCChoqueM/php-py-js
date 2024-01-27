@@ -22,27 +22,6 @@ const asociativo = {
   pomelo: "Grapefruit",
   durazno: "peach",
 };
-frutaAleatoria();
-function solucion_PHP_PY_JS() {
-  frutaAleatoria();
-  solucionPHP();
-  frutaAleatoria();
-  solucionPython();
-  frutaAleatoria();
-  solucionJavaScript();
-  document.getElementById("fruta").value = "";
-}
-function frutaAleatoria() {
-  const claves = Object.keys(asociativo);
-
-  // Seleccionar una clave al azar
-  const claveAleatoria = claves[Math.floor(Math.random() * claves.length)];
-
-  // Obtener el valor asociado a la clave aleatoria
-
-  // Llenar el input con la fruta en español
-  document.getElementById("fruta").value = claveAleatoria;
-}
 
 function generarNumeroAleatorio(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;

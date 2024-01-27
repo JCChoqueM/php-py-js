@@ -3,15 +3,19 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>#11</title>
+  <title>#12</title>
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="styles/colorEnunciado.css" />
+  <link rel="stylesheet" href="styles/tarjeta.css" />
+  <link rel="stylesheet" href="styles/deshabilitar.css" />
   <!-- Importar scripts JavaScript -->
   <script src="archives/soluciones/solucion.js"></script>
-  <script src="js/generarNumero.js" defer></script>
+
   <script src="js/resolverAutomaticamente.js" defer></script>
+  <script src="js/crearTarjeta.js" defer></script>
   <script src="js/solucion.js" defer></script>
-  <script src="js/generarMatriz.js" defer></script>
+  <script src="js/deshabilitarBoton.js" defer></script>
+
   <script src="archives/ingresarDato/ingresarDatoSol.js" defer></script>
   <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
 </head>
@@ -22,40 +26,49 @@
       <h1>Ejercicio 11</h1>
       <h2>
         <!-- Descripción del ejercicio -->
+        Realia un programa que <span class="azul">escoja al azar 5 palabras en español</span> del mini-diccionario del
+        ejercicio anterior. El programa <span class="verde">pedirá que el usuario teclee la traducción al
+          inglés</span> de cada una de las palabras y <span class="naranja">comprobará si son correctas</span>. Al
+        final, el programa deberá mostrar cuántas <span class="rojo">respuestas son válidas</span> y cuántas <span
+          class="morado">erróneas</span>.
 
-        <span class="info-resaltada">Crea un mini-diccionario español-inglés</span> que contenga, al menos,
-        <span class="resultado-resaltado">20 palabras (con su traducción)</span>. Utiliza un
-        <span class="array-resaltado">array asociativo</span> para almacenar las parejas de palabras.
-        El programa <span class="verificacion-resaltada">pedirá una palabra en español</span> y
-        dará la correspondiente traducción en <span class="input-resaltado">inglés</span>.
+
       </h2>
+      <span class="traduce">Traduce las siguientes frutas:</span>
+      <div class="contenedor-tarjetas">
+        <!-- Tarjeta 1 -->
+        <div class="tarjeta" id="tarjeta1">
+          <div class="titulo"></div>
+          <img class="fruta" src="" alt="">
+          <input class="input-fruta" id="input1" type="text" placeholder="Escribe algo...">
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="tarjeta" id="tarjeta2">
+          <div class="titulo"></div>
+          <img class="fruta" src="" alt="">
+          <input class="input-fruta" id="input2" type="text" placeholder="Escribe algo...">
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="tarjeta" id="tarjeta3">
+          <div class="titulo"></div>
+          <img class="fruta" src="" alt="">
+          <input class="input-fruta" id="input3" type="text" placeholder="Escribe algo...">
+        </div>
+      </div>
       <form id="form">
         <div class="cajaboton">
-          <div class="cajaForm">
-            <!-- Campo de entrada para números -->
-            <div>
-              <label for="fruta">Introduzca una fruta en español:</label>
-              <input type="text" id="fruta" name="fruta" placeholder="introduzca una fruta en español" required />
-            </div>
-            <div>
-              <button class="botonFrutaAleatoria" type="button" onclick="frutaAleatoria()">
-                fruta aleatoria
-              </button>
-            </div>
-          </div>
-
           <div class="otros">
             <!-- Botones de acción -->
-            <button class="botones_cajaForm" type="button" onclick="resolverAutomaticamente()">
-              traducir
+            <button class="boton_cajaFormS" type="button" id="miBoton" onclick="traducir()" disabled>
+              Traducir
             </button>
-            <button class="botones_cajaForm" type="button" onclick="solucion_PHP_PY_JS()">
-              solucion php/py/js
+            <button class="botonFrutaAleatoria" type="button" onclick="generar()">
+              Generar
             </button>
             <button class="botones_cajaForm" type="button" onclick="limpiarResultados()">
               Limpiar resultados:
             </button>
-          </div class="otros">
+          </div>
         </div>
       </form>
 
