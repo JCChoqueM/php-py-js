@@ -14,6 +14,7 @@
   <script src="js/resolverAutomaticamente.js" defer></script>
   <script src="js/crearTarjeta.js" defer></script>
   <script src="js/solucion.js" defer></script>
+  <script src="js/llenar.js" defer></script>
   <script src="js/deshabilitarBoton.js" defer></script>
 
   <script src="archives/ingresarDato/ingresarDatoSol.js" defer></script>
@@ -59,11 +60,14 @@
         <div class="cajaboton">
           <div class="otros">
             <!-- Botones de acción -->
-            <button class="boton_cajaFormS" type="button" id="miBoton" onclick="traducir()" disabled>
+            <button class="boton_cajaFormS" type="button" id="miBoton" onclick="traducir()">
               Traducir
             </button>
             <button class="botonFrutaAleatoria" type="button" onclick="generar()">
               Generar
+            </button>
+            <button id="botonLlenar" class="botonFrutaAleatoria llenar" type="button" onclick="llenar()">
+              llenar
             </button>
             <button class="botones_cajaForm" type="button" onclick="limpiarResultados()">
               Limpiar resultados:
@@ -111,6 +115,13 @@
       <img src="./diagramas/solucion.svg" alt="Imagen de ejemplo" />
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById("miBoton").disabled = true;
+    });
+
+  
+  </script>
 </body>
 
 </html>

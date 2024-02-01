@@ -4,11 +4,7 @@ function solucionPHP_JS_PY() {
   solucionPython();
   solucionJavaScript();
 }
-function limpiarResultados() {
-  document.getElementById("resultadoPHP").innerHTML = "";
-  document.getElementById("resultadoPython").innerHTML = "";
-  document.getElementById("resultadoJavaScript").innerHTML = "";
-}
+
 function solucionPHP() {
   const fruta = document.getElementById("fruta").value;
 
@@ -21,7 +17,7 @@ function solucionPHP() {
 
   fetch("archives/soluciones/solucion.php", {
     method: "POST",
-    body: formData
+    body: formData,
   })
     .then((response) => response.text())
     .then((text) => {
@@ -35,13 +31,13 @@ function solucionPHP() {
 
 /* SECTION inicio boton Python */
 async function solucionPython() {
- const fruta = document.getElementById("fruta").value;
+  const fruta = document.getElementById("fruta").value;
   try {
     const url = "archives/soluciones/solucionPy.php";
 
     // Ajusta los datos según lo que espera el script PHP
     const data = {
-      fruta:fruta,
+      fruta: fruta,
     };
 
     const response = await fetch(url, {

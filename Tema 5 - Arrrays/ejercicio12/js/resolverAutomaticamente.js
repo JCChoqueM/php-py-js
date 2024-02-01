@@ -1,25 +1,25 @@
 const asociativo = {
-  manzana: "Apple",
-  platano: "Banana",
-  naranja: "Orange",
-  uva: "Grape",
-  frutilla: "Strawberry",
-  mango: "Mango",
-  kiwi: "Kiwi",
-  piña: "Pineapple",
-  cereza: "Cherry",
-  pera: "Pear",
-  sandia: "Watermelon",
-  limon: "Lemon",
-  granada: "Pomegranate",
-  ciruela: "Plum",
-  papaya: "Papaya",
+  manzana: "apple",
+  platano: "banana",
+  naranja: "orange",
+  uva: "grape",
+  frutilla: "strawberry",
+  mango: "mango",
+  kiwi: "kiwi",
+  piña: "pineapple",
+  cereza: "cherry",
+  pera: "pear",
+  sandia: "watermelon",
+  limon: "lemon",
+  granada: "pomegranate",
+  ciruela: "plum",
+  papaya: "papaya",
   coco: "coconut",
-  higo: "Fig",
-  mandarina: "Tangerine",
-  mora: "Blackberry",
-  guayaba: "Guava",
-  pomelo: "Grapefruit",
+  higo: "fig",
+  mandarina: "tangerine",
+  mora: "blackberry",
+  guayaba: "guava",
+  pomelo: "grapefruit",
   durazno: "peach",
 };
 
@@ -28,13 +28,15 @@ function generarNumeroAleatorio(min, max) {
 }
 
 /* SECTION inicio sumar todo */
-function resolverAutomaticamente() {
+function traducir() {
   automaticoPHP();
   automaticoPY();
   automaticoJS();
 }
 async function automaticoPHP() {
-  const fruta = document.getElementById("fruta").value;
+  const input1 = document.getElementById("input1").value;
+  const input2 = document.getElementById("input2").value;
+  const input3 = document.getElementById("input3").value;
   try {
     const url = "archives/automaticamente/automaticamente.php";
 
@@ -45,7 +47,11 @@ async function automaticoPHP() {
       },
       body: JSON.stringify({
         asociativo,
-        fruta,
+        valoresUtilizados,
+        clavesUtilizadas,
+        input1,
+        input2,
+        input3,
       }),
     });
 

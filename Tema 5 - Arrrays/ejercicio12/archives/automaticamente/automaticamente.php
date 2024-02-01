@@ -5,33 +5,54 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   // Acceder a los objetos dentro del array asociativo
   $asociativo = $datosJson['asociativo'];
-  $fruta = $datosJson['fruta'];
+  $input = [
+    $input1 = $datosJson['input1'],
+    $input2 = $datosJson['input2'],
+    $input3 = $datosJson['input3']
+  ];
+  $clavesUtilizadas = $datosJson['clavesUtilizadas'];
+  $valoresUtilizados = $datosJson['valoresUtilizados'];
   $mensaje = "";
+  $correcto = 0;
+  $incorrecto = 0;
+  $mensaje = "<table border='1'  style='text-align:center';><tr>";
+  foreach ($input as $indice => $valor) {
+    $colorFondo = ($valor == $valoresUtilizados[$indice]) ? 'color: green;' : 'color: red;';
+   
+    $mensaje .= "<td>";
+    $mensaje .= "<span style='font-size: 25px;'>". $clavesUtilizadas[$indice]." </span><br>";
+    $mensaje .= "<table border='1'>";
+    $mensaje .= "<tr>";
+    $mensaje .= "<td>";
+    // Celda para la imagen
+    $mensaje .= "<img src='images/" . strtolower(str_replace(" ", "_", $clavesUtilizadas[$indice])) . ".png' alt='$clavesUtilizadas[$indice]' style='width: 130px; height: 165px;'><br>";
 
-  // Verificar si la fruta existe en el array asociativo
-  if (array_key_exists($fruta, $asociativo)) {
-    // Construir la tabla HTML con la información de la fruta
-    $mensaje .= "<table border='1' style='border-collapse: collapse; text-align: center; background-color: yellow;'>";
-    $mensaje .= "<tr>";
-    $mensaje .= "<th colspan='2' style='font-size: 2.0em; font-weight: bold;color: green;'>$fruta</th>";
-    $mensaje .= "</tr>";
-    $mensaje .= "<tr>";
-    $mensaje .= "<td style='padding: 10px;'>";
-    $mensaje .= "<img src='images/" . strtolower(str_replace(" ", "_", $fruta)) . ".png' alt='$fruta' style='width: 150px; height: 150px;'><br>";
+    // Celda para el nombre de la valor
     $mensaje .= "</td>";
     $mensaje .= "</tr>";
+
     $mensaje .= "<tr>";
-    $mensaje .= "<td style='padding: 10px;'>";
-    $mensaje .= "<strong style='font-size: 1.2em; '>$fruta en inglés es: <br>" . $asociativo[$fruta] . "</strong> ";
+    $mensaje .= "<td style='height: 75px; text-align: center; font-size: 17px;'>";
+
+    // Celda para los puntos
+    $mensaje .= $input[$indice];
+    if ($valor == $valoresUtilizados[$indice]) {
+      $correcto += 1;
+      $mensaje.="<br><span style='$colorFondo;'>correcto</span>";
+    } else {
+      $incorrecto += 1;
+      $mensaje.= "<br><span style='$colorFondo;'>incorrecto</span><br>la traduccion es:<br>". $valoresUtilizados[$indice];
+    }
     $mensaje .= "</td>";
     $mensaje .= "</tr>";
+
     $mensaje .= "</table>";
-  } else {
-    $mensaje = "<p style='color: red;'>No bromees, $fruta no es una fruta >:(</p>";
+    $mensaje .= "</td>";
   }
+  $mensaje .= "</tr></table><br> correctos: $correcto<br>Incorrectos:$incorrecto";
 
-  // Mostrar el mensaje
   echo $mensaje;
+
 } else {
   // Manejar el caso en que la solicitud no sea de tipo POST
   echo 'Método no permitido';

@@ -25,7 +25,4 @@ input2.addEventListener("input", verificarCampos);
 input3.addEventListener("input", verificarCampos);
 
 // Función para realizar la traducción
-function traducir() {
-  // Aquí puedes agregar tu código para realizar la traducción
-  console.log("Realizando traducción...");
-}
+
