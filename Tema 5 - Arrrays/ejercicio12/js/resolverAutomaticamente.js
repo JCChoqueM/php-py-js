@@ -68,14 +68,20 @@ async function automaticoPHP() {
 }
 
 async function automaticoPY() {
-  const fruta = document.getElementById("fruta").value;
+  const input1 = document.getElementById("input1").value;
+  const input2 = document.getElementById("input2").value;
+  const input3 = document.getElementById("input3").value;
   try {
     const url = "archives/automaticamente/automaticamentePY.php";
 
     // Ajusta los datos según lo que espera el script PHP
     const data = {
       asociativo: asociativo,
-      fruta: fruta,
+      valoresUtilizados: valoresUtilizados,
+      clavesUtilizadas: clavesUtilizadas,
+      input1: input1,
+      input2: input2,
+      input3: input3,
     };
 
     const response = await fetch(url, {

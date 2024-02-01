@@ -28,7 +28,7 @@ if fruta in asociativo_diccionario:
     mensaje += "</tr>"
     mensaje += "<tr>"
     mensaje += "<td style='padding: 10px;'>"
-    mensaje += f"<img src='images/{fruta.replace('ñ', '_').lower()}.png' alt='{fruta}' style='width: 150px; height: 150px;'><br>"
+    mensaje += f"<img src='images/{fruta}.png' alt='{fruta}' style='width: 150px; height: 150px;'><br>"
     mensaje += "</td>"
     mensaje += "</tr>"
     mensaje += "<tr>"

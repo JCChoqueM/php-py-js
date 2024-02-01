@@ -3,40 +3,54 @@
  */
 function automaticoJS() {
   // Variables para el mensaje y estadísticas
-  const fruta = document.getElementById("fruta").value;
+  const input1 = document.getElementById("input1").value;
+  const input2 = document.getElementById("input2").value;
+  const input3 = document.getElementById("input3").value;
+  // Inicializar variables de mensaje, correcto e incorrecto
   let mensaje = "";
-  if (asociativo.hasOwnProperty(fruta)) {
-    // Construir la tabla HTML con la información de la fruta
-    mensaje =
-      "<table border='1' style='border-collapse: collapse; text-align: center; background-color: yellow;'>";
-    mensaje += "<tr>";
-    mensaje +=
-      "<th colspan='2' style='font-size: 2.0em; font-weight: bold;color: green;'>" +
-      fruta +
-      "</th>";
-    mensaje += "</tr>";
-    mensaje += "<tr>";
-    mensaje += "<td style='padding: 10px;'>";
-    mensaje += `<img src='images/${fruta
-      .toLowerCase()
-      .replace(
-        / /g,
-        "_"
-      )}.png' alt='${fruta}' style='width: 150px; height: 150px;'><br>`;
+  let correcto = 0;
+  let incorrecto = 0;
+  let input = [input1, input2, input3];
+  // Iniciar la estructura de la tabla
+  mensaje += `<table border='1' style='text-align:center';><tr>`;
 
-    mensaje += "</td>";
-    mensaje += "</tr>";
-    mensaje += "<tr>";
-    mensaje += "<td style='padding: 10px;'>";
-    mensaje += `<strong style='font-size: 1.2em;'>${fruta} en inglés es: <br>${asociativo[fruta]}</strong>`;
-    mensaje += "</td>";
-    mensaje += "</tr>";
-    mensaje += "</table>";
+  // Iterar sobre los elementos de entrada (input) utilizando forEach
+  input.forEach((valor, indice) => {
+    // Determinar el color de fondo basado en la comparación entre el valor actual y el valor utilizado
+    const colorFondo =
+      valor === valoresUtilizados[indice] ? "color: green;" : "color: red;";
 
-    // Mostrar el mensaje
-  } else {
-    mensaje = `No bromees ${fruta} no es una fruta`;
-  }
+    // Construir la celda de la tabla
+    mensaje += `<td>`;
+    mensaje += `<span style='font-size: 25px;'>${clavesUtilizadas[indice]} </span><br>`;
+    mensaje += `<table border='1'>`;
+    mensaje += `<tr>`;
+    mensaje += `<td>`;
+    // Celda para la imagen
+    mensaje += `<img src='images/${clavesUtilizadas[indice]}.png' alt='${clavesUtilizadas[indice]}' style='width: 130px; height: 165px;'><br>`;
+    mensaje += `</td>`;
+    mensaje += `</tr>`;
+    mensaje += `<tr>`;
+    mensaje += `<td style='height: 75px; text-align: center; font-size: 17px;'>`;
+    // Celda para los puntos
+    mensaje += `${valor}`;
+    // Determinar si la respuesta es correcta o incorrecta
+    if (valor === valoresUtilizados[indice]) {
+      correcto += 1;
+      mensaje += `<br><span style='${colorFondo}'>correcto</span>`;
+    } else {
+      incorrecto += 1;
+      mensaje += `<br><span style='${colorFondo}'>incorrecto</span><br>la traducción es:<br>${valoresUtilizados[indice]}`;
+    }
+    mensaje += `</td>`;
+    mensaje += `</tr>`;
+    mensaje += `</table>`;
+    mensaje += `</td>`;
+  });
+
+  // Finalizar la tabla y agregar el resumen de correctos e incorrectos
+  mensaje += `</tr></table><br> correctos: ${correcto}<br>Incorrectos:${incorrecto}`;
+
   // Obtener el elemento HTML donde se mostrará el resultado y añadir el mensaje
   const resultadoDiv = document.getElementById("resultadoJavaScript");
   resultadoDiv.innerHTML = ` ${mensaje}`;
