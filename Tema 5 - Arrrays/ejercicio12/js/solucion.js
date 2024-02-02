@@ -6,10 +6,16 @@ function solucionPHP_JS_PY() {
 }
 
 function solucionPHP() {
-  const fruta = document.getElementById("fruta").value;
+  const input1 = document.getElementById("input1").value;
+  const input2 = document.getElementById("input2").value;
+  const input3 = document.getElementById("input3").value;
 
   const formData = new FormData();
-  formData.append("fruta", fruta);
+  formData.append("input1", input1);
+  formData.append("input2", input2);
+  formData.append("input3", input3);
+  formData.append("valoresUtilizados", JSON.stringify(valoresUtilizados));
+  formData.append("clavesUtilizadas", JSON.stringify(clavesUtilizadas));
   /*  const num1 = document.getElementById("num1").value;
 
   const formData = new FormData();
@@ -31,13 +37,19 @@ function solucionPHP() {
 
 /* SECTION inicio boton Python */
 async function solucionPython() {
-  const fruta = document.getElementById("fruta").value;
+  const input1 = document.getElementById("input1").value;
+  const input2 = document.getElementById("input2").value;
+  const input3 = document.getElementById("input3").value;
   try {
     const url = "archives/soluciones/solucionPy.php";
 
     // Ajusta los datos según lo que espera el script PHP
     const data = {
-      fruta: fruta,
+      input1: input1,
+      input2: input2,
+      input3: input3,
+      valoresUtilizados: valoresUtilizados,
+      clavesUtilizadas: clavesUtilizadas,
     };
 
     const response = await fetch(url, {
