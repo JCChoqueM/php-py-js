@@ -1,42 +1,16 @@
-const asociativo = {
-  manzana: "apple",
-  platano: "banana",
-  naranja: "orange",
-  uva: "grape",
-  frutilla: "strawberry",
-  mango: "mango",
-  kiwi: "kiwi",
-  piña: "pineapple",
-  cereza: "cherry",
-  pera: "pear",
-  sandia: "watermelon",
-  limon: "lemon",
-  granada: "pomegranate",
-  ciruela: "plum",
-  papaya: "papaya",
-  coco: "coconut",
-  higo: "fig",
-  mandarina: "tangerine",
-  mora: "blackberry",
-  guayaba: "guava",
-  pomelo: "grapefruit",
-  durazno: "peach",
-};
-
 function generarNumeroAleatorio(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
 /* SECTION inicio sumar todo */
-function traducir() {
-  automaticoPHP();
+function resolver() {
+  const { num1ero, minimo, xMinimo, yMinimo } = generarMatrizYDatos();
+  automaticoPHP(num1ero, minimo, xMinimo, yMinimo);
   automaticoPY();
   automaticoJS();
 }
-async function automaticoPHP() {
-  const input1 = document.getElementById("input1").value;
-  const input2 = document.getElementById("input2").value;
-  const input3 = document.getElementById("input3").value;
+
+async function automaticoPHP(numero, minimo, xMinimo, yMinimo) {
   try {
     const url = "archives/automaticamente/automaticamente.php";
 
@@ -46,19 +20,17 @@ async function automaticoPHP() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        asociativo,
-        valoresUtilizados,
-        clavesUtilizadas,
-        input1,
-        input2,
-        input3,
+        numero,
+        minimo,
+        xMinimo,
+        yMinimo,
       }),
     });
 
     if (response.ok) {
-      const traduccion = await response.text();
+      const resolver = await response.text();
       var resultadosDiv = document.getElementById("resultadoPHP");
-      resultadosDiv.innerHTML = ` ${traduccion}<br>`;
+      resultadosDiv.innerHTML = ` ${resolver}<br>`;
     } else {
       console.error("Error en la solicitud:", response.status);
     }
@@ -66,6 +38,7 @@ async function automaticoPHP() {
     console.error("Error en la solicitud:", error);
   }
 }
+
 
 async function automaticoPY() {
   const input1 = document.getElementById("input1").value;

@@ -6,18 +6,13 @@
   <title>#13</title>
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="styles/colorEnunciado.css" />
-  <link rel="stylesheet" href="styles/tarjeta.css" />
-  <link rel="stylesheet" href="styles/deshabilitar.css" />
   <!-- Importar scripts JavaScript -->
+
   <script src="archives/soluciones/solucion.js"></script>
-
   <script src="js/resolverAutomaticamente.js" defer></script>
-  <script src="js/crearTarjeta.js" defer></script>
   <script src="js/solucion.js" defer></script>
-  <script src="js/llenar.js" defer></script>
-  <script src="js/deshabilitarBoton.js" defer></script>
+  <script src="js/generarArray.js" defer></script>
 
-  <script src="archives/ingresarDato/ingresarDatoSol.js" defer></script>
   <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
 </head>
 
@@ -42,14 +37,8 @@
         <div class="cajaboton">
           <div class="otros">
             <!-- Botones de acción -->
-            <button class="boton_cajaFormS" type="button" id="miBoton" onclick="traducir()">
-              Verificar
-            </button>
-            <button class="botonFrutaAleatoria" type="button" onclick="generar()">
-              Generar
-            </button>
-            <button id="botonLlenar" class="botonFrutaAleatoria llenar" type="button" onclick="llenar()">
-              llenar
+            <button class="botones_cajaForm resolver" type="button" onclick="resolver()">
+              Resolver
             </button>
             <button class="botones_cajaForm" type="button" onclick="limpiarResultados()">
               Limpiar resultados:
@@ -98,13 +87,7 @@
       <img src="./diagramas/solucion.svg" alt="Imagen de ejemplo" />
     </div>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById("miBoton").disabled = true;
-    });
 
-
-  </script>
 </body>
 
 </html>

@@ -109,18 +109,7 @@ form input[type="text"] {
     width: 100%;
 }
 
-.botonFrutaAleatoria{
-    background-color: #d5d823;
-        color: rgb(30, 3, 63);
-        border: 2px solid #2E6DA4;
-        border-radius: 5px;
-        padding: 10px 5px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        height: 4rem;
-        width: 11rem;
-}
+
 .botonFrutaAleatoria.llenar {
     background-color: #5cff33;
     /* Segundo color para el botón "llenar" */
@@ -137,6 +126,9 @@ form input[type="text"] {
     cursor: pointer;
     height: 4rem;
     width: 10rem;
+}
+.botones_cajaForm.resolver {
+    background-color: #f6fa16;
 }
 
 .botones_cajaForm:disabled,

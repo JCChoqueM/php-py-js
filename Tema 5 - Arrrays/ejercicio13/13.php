@@ -31,10 +31,10 @@ for ($x = 0; $x < 9; $x++) {
 // Se muestra el array con el mínimo en azul y sus
 // diagonales en verde
 // Nota: abs($x) devuelve el valor absoluto de $x
-echo "<table>";
-for ($x = 0; $x < 9; $x++) {
+echo "<table border='1'>";
+for ($x = 0; $x < 6; $x++) {
     echo "<tr>";
-    for ($y = 0; $y < 6; $y++) {
+    for ($y = 0; $y < 9; $y++) {
         if ($numero[$x][$y] == $minimo) {
             echo '<td><span style="color: blue; font-weight:bold">' . $numero[$x][$y] . ' </span></td>';
         } else if (abs((abs($x) - abs($xMinimo))) == abs((abs($y) - abs($yMinimo)))) {
