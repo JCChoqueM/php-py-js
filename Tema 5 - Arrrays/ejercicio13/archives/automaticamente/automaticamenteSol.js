@@ -1,56 +1,52 @@
 /**
  * Función que procesa automáticamente un array de números y muestra estadísticas en una tabla HTML.
  */
-function automaticoJS() {
+function automaticoJS(num1ero, minimo, xMinimo, yMinimo) {
   // Variables para el mensaje y estadísticas
-  const input1 = document.getElementById("input1").value;
-  const input2 = document.getElementById("input2").value;
-  const input3 = document.getElementById("input3").value;
-  // Inicializar variables de mensaje, correcto e incorrecto
-  let mensaje = "";
-  let correcto = 0;
-  let incorrecto = 0;
-  let input = [input1, input2, input3];
-  // Iniciar la estructura de la tabla
-  mensaje += `<table border='1' style='text-align:center';><tr>`;
+  var mensaje = "<table border='1'>";
 
-  // Iterar sobre los elementos de entrada (input) utilizando forEach
-  input.forEach((valor, indice) => {
-    // Determinar el color de fondo basado en la comparación entre el valor actual y el valor utilizado
-    const colorFondo =
-      valor === valoresUtilizados[indice] ? "color: green;" : "color: red;";
+  // Añadir fila de índices de columna arriba de la tabla
+  mensaje += "<tr>";
+  mensaje += "<td></td>"; // Celda vacía para ajustar el índice de fila
+  for (var y = 0; y < 9; y++) {
+    mensaje += "<td style='background-color: yellow;'>" + y + "</td>";
+  }
+  mensaje += "</tr>";
 
-    // Construir la celda de la tabla
-    mensaje += `<td>`;
-    mensaje += `<span style='font-size: 25px;'>${clavesUtilizadas[indice]} </span><br>`;
-    mensaje += `<table border='1'>`;
-    mensaje += `<tr>`;
-    mensaje += `<td>`;
-    // Celda para la imagen
-    mensaje += `<img src='images/${clavesUtilizadas[indice]}.png' alt='${clavesUtilizadas[indice]}' style='width: 130px; height: 165px;'><br>`;
-    mensaje += `</td>`;
-    mensaje += `</tr>`;
-    mensaje += `<tr>`;
-    mensaje += `<td style='height: 75px; text-align: center; font-size: 17px;'>`;
-    // Celda para los puntos
-    mensaje += `${valor}`;
-    // Determinar si la respuesta es correcta o incorrecta
-    if (valor === valoresUtilizados[indice]) {
-      correcto += 1;
-      mensaje += `<br><span style='${colorFondo}'>correcto</span>`;
-    } else {
-      incorrecto += 1;
-      mensaje += `<br><span style='${colorFondo}'>incorrecto</span><br>la traducción es:<br>${valoresUtilizados[indice]}`;
+  for (var x = 0; x < 6; x++) {
+    mensaje += "<tr>";
+    // Añadir índice de fila a la izquierda de la fila
+    mensaje +=
+      "<td style='background-color: orange;'>" + "&nbsp;&nbsp;" + x + "</td>";
+    for (var y = 0; y < 9; y++) {
+      // Determinar el color de fondo basado en la posición de la celda
+      var colorFondo = (x + y) % 2 == 0 ? "" : "grey";
+      if (num1ero[x][y] == minimo) {
+        mensaje +=
+          "<td style='background-color: #33E9FF; color: black;'>" +
+          num1ero[x][y] +
+          "</td>";
+      } else if (
+        Math.abs(Math.abs(x) - Math.abs(xMinimo)) ==
+        Math.abs(Math.abs(y) - Math.abs(yMinimo))
+      ) {
+        mensaje +=
+          "<td style='background-color: green;'>" + num1ero[x][y] + "</td>";
+      } else {
+        mensaje +=
+          "<td style='background-color: " +
+          colorFondo +
+          ";'>" +
+          num1ero[x][y] +
+          "</td>";
+      }
     }
-    mensaje += `</td>`;
-    mensaje += `</tr>`;
-    mensaje += `</table>`;
-    mensaje += `</td>`;
-  });
+    mensaje += "</tr>";
+  }
+  mensaje += "</table>";
 
-  // Finalizar la tabla y agregar el resumen de correctos e incorrectos
-  mensaje += `</tr></table><br> correctos: ${correcto}<br>Incorrectos:${incorrecto}`;
-
+  // Usar plantilla de cadena para mostrar el valor mínimo y su posición
+  mensaje += `<br>El valor mínimo es ${minimo}<br> en la posición [${xMinimo}][${yMinimo}]`;
   // Obtener el elemento HTML donde se mostrará el resultado y añadir el mensaje
   const resultadoDiv = document.getElementById("resultadoJavaScript");
   resultadoDiv.innerHTML = ` ${mensaje}`;

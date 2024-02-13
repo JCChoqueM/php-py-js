@@ -7,7 +7,7 @@ function resolver() {
   const { num1ero, minimo, xMinimo, yMinimo } = generarMatrizYDatos();
   automaticoPHP(num1ero, minimo, xMinimo, yMinimo);
   automaticoPY(num1ero, minimo, xMinimo, yMinimo);
-  automaticoJS();
+  automaticoJS(num1ero, minimo, xMinimo, yMinimo);
 }
 
 async function automaticoPHP(numero, minimo, xMinimo, yMinimo) {
