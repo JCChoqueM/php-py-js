@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>#14</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/colorEnunciado.css" />
+  <!-- Importar scripts JavaScript -->
+
+  <script src="archives/soluciones/solucion.js"></script>
+  <script src="js/resolverAutomaticamente.js" defer></script>
+  <script src="js/solucion.js" defer></script>
+  <script src="js/generarArray.js" defer></script>
+  <script src="js/limpiarResultados.js" defer></script>
+
+  <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Ejercicio 14</h1>
+      <h2>
+        <!-- Descripción del ejercicio -->
+        Realiza un array bidimensional de <span class="verde">6 filas por 9 columnas</span> con números enteros
+        positivos comprendidos entre <span class="azul">100 y 999</span> (ambos incluidos). Todos los números deben ser
+        <span class="rojo">distintos</span>, es decir, <span class="naranja">no se puede repetir ninguno</span>.<br>
+        <span class="morado">Muestra a continuación por pantalla el contenido del array de tal forma
+          que se cumplan los siguientes requisitos:</span><br>
+        Los números de las dos diagonales donde está el <span class="agua">mínimo</span> deben aparecer de <span
+          class="verde">color verde</span>.<br>
+        El <span class="agua"> mínimo</span> debe aparecer de <span class="azul">color azul</span>.<br>
+        Los demás números deben aparecer decolor negro
+
+      </h2>
+      <form id="form">
+        <div class="cajaboton">
+          <div class="otros">
+            <!-- Botones de acción -->
+            <button class="botones_cajaForm resolver" type="button" onclick="resolver()">
+              Resolver
+            </button>
+            <button class="botones_cajaForm" type="button" onclick="limpiarResultados()">
+              Limpiar resultados:
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="contenedores">
+        <!-- Contenedores de resultados -->
+        <section class="caja cajaPHP">
+          <!-- Botón y contenedor de resultados para PHP -->
+          <button class="bPHP" type="button" onclick="solucionPHP()">
+            Solución PHP
+          </button>
+          <div class="r" id="resultadoPHP"></div>
+        </section>
+        <section class="caja cajaPY">
+          <!-- Botón y contenedor de resultados para Python -->
+          <button class="bPY" type="button" onclick="solucionPython()">
+            Solución Python
+          </button>
+          <div class="r" id="resultadoPython"></div>
+        </section>
+        <section class="caja cajaJS">
+          <!-- Botón y contenedor de resultados para JavaScript -->
+          <button class="bJS" type="button" onclick="solucionJavaScript()">
+            Solución JS
+          </button>
+          <div class="r" id="resultadoJavaScript"></div>
+        </section>
+      </div>
+
+      <footer>
+        <!-- Pie de página -->
+        <br />Julio Cesar Choque Mamani. <br />
+        <br />Solucionario: Luis José Sánchez - Aprende PHP con ejercicios.
+      </footer>
+    </div>
+  </div>
+
+  <div class="image">
+    <!-- Contenedor de imagen -->
+    <div class="image-container">
+
+      <img src="./diagramas/solucion.svg" alt="Imagen de ejemplo" />
+    </div>
+  </div>
+
+</body>
+
+</html>
