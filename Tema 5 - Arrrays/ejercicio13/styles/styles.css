@@ -130,6 +130,9 @@ form input[type="text"] {
 .botones_cajaForm.resolver {
     background-color: #f6fa16;
 }
+.botones_cajaForm.solucionPhpPyJs {
+    background-color: rgb(33, 221, 228);
+}
 
 .botones_cajaForm:disabled,
 .colorvaciar:disabled {

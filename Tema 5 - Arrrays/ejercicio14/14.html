@@ -23,15 +23,12 @@
       <h1>Ejercicio 14</h1>
       <h2>
         <!-- Descripción del ejercicio -->
-        Realiza un array bidimensional de <span class="verde">6 filas por 9 columnas</span> con números enteros
-        positivos comprendidos entre <span class="azul">100 y 999</span> (ambos incluidos). Todos los números deben ser
-        <span class="rojo">distintos</span>, es decir, <span class="naranja">no se puede repetir ninguno</span>.<br>
-        <span class="morado">Muestra a continuación por pantalla el contenido del array de tal forma
-          que se cumplan los siguientes requisitos:</span><br>
-        Los números de las dos diagonales donde está el <span class="agua">mínimo</span> deben aparecer de <span
-          class="verde">color verde</span>.<br>
-        El <span class="agua"> mínimo</span> debe aparecer de <span class="azul">color azul</span>.<br>
-        Los demás números deben aparecer decolor negro
+      <span style="color: blue;">Escribe un programa</span> que, <span style="color: green;">dada una posición en un tablero
+        de ajedrez</span>, nos diga a qué casillas podría saltar un alfil que se encuentra en esa posición. <span
+        style="color: red;">Indícalo de forma gráfica sobre el tablero con un color diferente para estas casillas donde puede
+        saltar la figura.</span><br> <span style="color: purple;">El alfil se mueve siempre en diagonal.</span> <span
+        style="color: orange;">El tablero cuenta con 64 casillas.</span> <span style="color: brown;">Las columnas se indican
+        con las letras de la "a" a la "h".</span> <span style="color: teal;">Las filas se indican del 1 al 8.</span>
 
       </h2>
       <form id="form">
@@ -44,10 +41,15 @@
             <button class="botones_cajaForm" type="button" onclick="limpiarResultados()">
               Limpiar resultados:
             </button>
+            <button class="botones_cajaForm solucionPhpPyJs" type="button" onclick="solucionPhpPyJs()">
+              Solución PHP,PY,JS:
+            </button>
           </div>
+          <label for="num1">Introduzca las coordenadas para el alfil:</label>
+          <input class="input-fruta" id="input1" type="text" placeholder="a4">
         </div>
       </form>
-
+      
       <div class="contenedores">
         <!-- Contenedores de resultados -->
         <section class="caja cajaPHP">

@@ -64,7 +64,7 @@ form {
 }
 
 form input[type="text"]:invalid {
-    border: 1px solid red;
+    border: 1px solid rgb(47, 0, 255);
     background-color: #ffd9d9;
     /* Cambia el color de fondo en caso de inválidez */
 }
@@ -93,7 +93,7 @@ form label {
 form input[type="text"] {
     padding: 1.3rem;
     border-radius: 0.25rem;
-    border: 1px solid #d31b1b;
+    border: 2px solid #1b27d3;
     margin-bottom: 1rem;
     height: 1px;
     width: 18rem;
@@ -129,6 +129,9 @@ form input[type="text"] {
 }
 .botones_cajaForm.resolver {
     background-color: #f6fa16;
+}
+.botones_cajaForm.solucionPhpPyJs {
+    background-color: rgb(33, 221, 228);
 }
 
 .botones_cajaForm:disabled,

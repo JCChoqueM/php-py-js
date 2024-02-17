@@ -1,8 +1,11 @@
 /* SECTION inicio boton PHP */
+function solucionPhpPyJs() {
+  solucionPHP();
+  solucionPython();
+  solucionJavaScript();
+}
 
 function solucionPHP() {
-
-
   const formData = new FormData();
 
   /*  const num1 = document.getElementById("num1").value;
@@ -26,14 +29,11 @@ function solucionPHP() {
 
 /* SECTION inicio boton Python */
 async function solucionPython() {
-
   try {
     const url = "archives/soluciones/solucionPy.php";
 
     // Ajusta los datos según lo que espera el script PHP
-    const data = {
-   
-    };
+    const data = {};
 
     const response = await fetch(url, {
       method: "POST",
