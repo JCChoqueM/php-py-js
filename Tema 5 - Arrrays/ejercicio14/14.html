@@ -13,6 +13,9 @@
   <script src="js/solucion.js" defer></script>
   <script src="js/generarArray.js" defer></script>
   <script src="js/limpiarResultados.js" defer></script>
+  <script src="js/llenar.js" defer></script>
+  <script src="js/validarInput.js" defer></script>
+  <script src="js/usarInput.js" defer></script>
 
   <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
 </head>
@@ -23,33 +26,47 @@
       <h1>Ejercicio 14</h1>
       <h2>
         <!-- Descripción del ejercicio -->
-      <span style="color: blue;">Escribe un programa</span> que, <span style="color: green;">dada una posición en un tablero
-        de ajedrez</span>, nos diga a qué casillas podría saltar un alfil que se encuentra en esa posición. <span
-        style="color: red;">Indícalo de forma gráfica sobre el tablero con un color diferente para estas casillas donde puede
-        saltar la figura.</span><br> <span style="color: purple;">El alfil se mueve siempre en diagonal.</span> <span
-        style="color: orange;">El tablero cuenta con 64 casillas.</span> <span style="color: brown;">Las columnas se indican
-        con las letras de la "a" a la "h".</span> <span style="color: teal;">Las filas se indican del 1 al 8.</span>
+        <span style="color: blue;">Escribe un programa</span> que, <span style="color: green;">dada una posición en un
+          tablero
+          de ajedrez</span>, nos diga a qué casillas podría saltar un alfil que se encuentra en esa posición. <span
+          style="color: red;">Indícalo de forma gráfica sobre el tablero con un color diferente para estas casillas
+          donde puede
+          saltar la figura.</span><br> <span style="color: purple;">El alfil se mueve siempre en diagonal.</span> <span
+          style="color: orange;">El tablero cuenta con 64 casillas.</span> <span style="color: brown;">Las columnas se
+          indican
+          con las letras de la "a" a la "h".</span> <span style="color: teal;">Las filas se indican del 1 al 8.</span>
 
       </h2>
-      <form id="form">
+      <form id="form" onsubmit="return false;">
+        <!-- Evita que el formulario se envíe cuando se presiona Enter -->
         <div class="cajaboton">
+          <label for="input1">Introduzca las coordenadas para el alfil:</label>
+          <input class="input-fruta" id="input1" type="text" pattern="[a-h][1-8]" oninput="validarInput(this)"
+            placeholder="Introduzca una coordenada">
+
+          <button class="botones_cajaForm llenarResolver" type="button" onclick="llenarYResolver()">
+            Llenar y resolver
+          </button>
+          <button class="botones_cajaForm solucionPhpPyJs" type="button" onclick="solucionAleatoriaPhpPyJs()">
+            Solución Aleatoria
+          </button>
           <div class="otros">
             <!-- Botones de acción -->
             <button class="botones_cajaForm resolver" type="button" onclick="resolver()">
               Resolver
             </button>
+            <button class="botones_cajaForm llenar" type="button" onclick="llenar('input1')">
+              llenar:
+            </button>
+
             <button class="botones_cajaForm" type="button" onclick="limpiarResultados()">
               Limpiar resultados:
             </button>
-            <button class="botones_cajaForm solucionPhpPyJs" type="button" onclick="solucionPhpPyJs()">
-              Solución PHP,PY,JS:
-            </button>
           </div>
-          <label for="num1">Introduzca las coordenadas para el alfil:</label>
-          <input class="input-fruta" id="input1" type="text" placeholder="a4">
+
         </div>
       </form>
-      
+
       <div class="contenedores">
         <!-- Contenedores de resultados -->
         <section class="caja cajaPHP">

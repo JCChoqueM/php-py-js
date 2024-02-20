@@ -31,7 +31,7 @@
     <?php
     // Recoge la posición del alfil
     $posicion = isset($_GET['posicion']) ? $_GET['posicion'] : 'a1';
-    $x = ord(substr($posicion, 0, 1)) - ord('a');
+    $x = ord(substr(strtolower($posicion), 0, 1)) - ord('a');
     $y = 8 - substr($posicion, 1, 1);
 
     // Pinta el tablero de ajedrez
