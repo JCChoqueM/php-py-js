@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $datosJson = json_decode(file_get_contents('php://input'), true);
     // Obtener el valor del input y convertirlo a minúsculas
     $valor =
-    strtolower(trim($datosJson['num1']));
+      strtolower(trim($datosJson['num1']));
 
     // Crear un array para mapear las letras a sus valores numéricos
     $letrasMap = array('a' => 0, 'b' => 1, 'c' => 2, 'd' => 3, 'e' => 4, 'f' => 5, 'g' => 6, 'h' => 7);
@@ -42,22 +42,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   // Acceder a los objetos dentro del array asociativo
   $resultado = usarInput();
-  if ($resultado !== null){
-    $ejeX= $resultado['ejeX'];
-    $ejeY= $resultado['ejeY'];
-  }else{
-    exit();;
+  if ($resultado !== null) {
+    $ejeX = $resultado['ejeX'];
+    $ejeY = $resultado['ejeY'];
+  } else {
+    exit();
   }
-  
-  $valor =
-  (strtolower(trim($datosJson['num1'])));
-$mensaje = "Posicion insertada $valor";
+
+  $mensaje = "Posicion insertada " . $datosJson['num1'];
 
 
-$tabla_ancho = 300; // Ancho de la tabla
-$tabla_alto = 300; // Alto de la tabla
-$celula_ancho = 35; // Ancho de las celdas
-$celula_alto = 35; // Alto de las celdas
+  $tabla_ancho = 300; // Ancho de la tabla
+  $tabla_alto = 300; // Alto de la tabla
+  $celula_ancho = 35; // Ancho de las celdas
+  $celula_alto = 35; // Alto de las celdas
 
   $mensaje .= "<table border='1' style='border-collapse: collapse; width: {$tabla_ancho}px; height: {$tabla_alto}px;'>"; // Establecer un tamaño fijo para la tabla
   $mensaje .= "<tr><td style='width: {$celula_ancho}px; height: {$celula_alto}px;'></td>";
@@ -103,10 +101,6 @@ $celula_alto = 35; // Alto de las celdas
   $mensaje .= "</table>";
 
   echo $mensaje;
-
-
-
-
 } else {
   // Manejar el caso en que la solicitud no sea de tipo POST
   echo 'Método no permitido';

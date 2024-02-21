@@ -1,5 +1,5 @@
 function generarNumeroAleatorio(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 /* SECTION inicio sumar todo */
@@ -37,13 +37,13 @@ async function automaticoPHP() {
 }
 
 async function automaticoPY() {
-  const num1 = document.getElementById("num1").value;
+  const num1 = document.getElementById("input1").value;
   try {
     const url = "archives/automaticamente/automaticamentePY.php";
 
     // Ajusta los datos según lo que espera el script PHP
     const data = {
-      numero: num1
+      numero: num1,
     };
 
     const response = await fetch(url, {

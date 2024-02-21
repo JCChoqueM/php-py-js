@@ -3,64 +3,98 @@ import sys
 import json
 
 
-def convertir_cadena_a_lista(cadena):
-    # Reemplazar la secuencia de escape \\u00f1 con el carácter "ñ"
-    cadena_con_n = cadena.replace("\\u00f1", "ñ")
+def usar_input():
+    try:
+        # Obtener el valor del input y convertirlo a minúsculas
+        valor = sys.argv[1].lower().strip()
 
-    # Eliminar los corchetes al principio y al final de la cadena
-    cadena_sin_corchetes = cadena_con_n.strip("[]")
+        # Verificar si el valor tiene la longitud adecuada
+        if len(valor) != 2:
+            print("La combinación debe tener exactamente dos caracteres y soy pY.")
+            return None  # Devolver None si el valor no tiene la longitud adecuada
 
-    # Dividir la cadena en elementos individuales
-    elementos = cadena_sin_corchetes.split(",")
+        letra = valor[0]
+        numero = valor[1]
 
-    # Eliminar espacios en blanco alrededor de cada elemento y crear la lista
-    lista = [elemento.strip() for elemento in elementos]
+        # Verificar si la letra está dentro del rango de "a" a "h" y si el número está dentro del rango de "1" a "8"
+        if letra < "a" or letra > "h" or numero < "1" or numero > "8":
+            print("La combinación debe estar dentro del rango de 'a1' a 'h8'. soy de PY")
+            return None
 
-    return lista
-
-
-# Obtener los argumentos de la línea de comandos
-
-numero = json.loads(sys.argv[1])
-minimo = int(sys.argv[2])
-xMinimo = int(sys.argv[3])
-yMinimo = int(sys.argv[4])
+        # Obtener los valores numéricos asociados a la letra y al número
 
 
-mensaje = "<table border='1'>"
+        # Devolver un diccionario con los valores numéricos obtenidos
+        return {"ejeX": numero, "ejeY": letra}
+    except Exception as e:
+        print("Error:", e)
 
-# Añadir fila de índices de columna arriba de la tabla
-mensaje += "<tr>"
-mensaje += "<td></td>"  # Celda vacía para ajustar el índice de fila
-for y in range(9):
-    mensaje += f"<td style='background-color: yellow;'>{y}</td>"
-mensaje += "</tr>"
+resultado = usar_input()
+if resultado:
+    numero = resultado['ejeX']
+    letra = resultado['ejeY']
+else:
+    exit()
+ejeX = ord("8") - ord(numero)
+ejeY = ord(letra) - ord("a")
 
-# Generar las filas de la tabla con los datos
-for x in range(6):
+
+mensaje = f"Posicion insertada{sys.argv[1]}"
+
+tabla_ancho = 300  # Ancho de la tabla
+tabla_alto = 300  # Alto de la tabla
+celula_ancho = 35  # Ancho de las celdas
+celula_alto = 35  # Alto de las celdas
+
+mensaje += f"<table border='1' style='border-collapse: collapse; width: {tabla_ancho}px; height: {tabla_alto}px;'>"
+mensaje += "<tr><td style='width: {celula_ancho}px; height: {celula_alto}px;'></td>"
+# Añadir letras a la derecha
+for y in range(8):
+    mensaje += (
+        f"<td style='background-color: yellow; width: {celula_ancho}px; height: {celula_alto}px;'>"
+        + chr(97 + y)
+        + "</td>"
+    )
+mensaje += f"<td style='width: {celula_ancho}px; height: {celula_alto}px;'></td></tr>"
+
+# Añadir filas con números y celdas vacías
+for x in range(8):
     mensaje += "<tr>"
-    # Añadir índice de fila a la izquierda de la fila
-    mensaje += f"<td style='background-color: orange;'>&nbsp&nbsp{x}</td>"
-    for y in range(9):
-        # Determinar el color de fondo basado en la posición de la celda
+    # Añadir número a la izquierda
+    mensaje += (
+        f"<td style='background-color: orange; width: {celula_ancho}px; height: {celula_alto}px;'>"
+        + str(8 - x)
+        + "</td>"
+    )
+    # Añadir celdas vacías
+    for y in range(8):
         color_fondo = "white" if (x + y) % 2 == 0 else "grey"
-
-        # Resaltar el valor mínimo y su posición
-        if numero[x][y] == minimo:
-            mensaje += f"<td style='background-color: #33E9FF ;'>{numero[x][y]}</td>"
-        elif abs(x - xMinimo) == abs(y - yMinimo):
-            mensaje += f"<td style='background-color: green; '>{numero[x][y]}</td>"
+        # Verificar si esta es la posición correspondiente a ejeX y ejeY y aplicar la imagen si es así
+        if x == ejeX and y == ejeY:
+            imagen_fondo = 'url("images/alfil.png")'  # Cambiar la ruta por la ruta real de tu imagen
+        elif abs(abs(x) - abs(ejeX)) == abs(abs(y) - abs(ejeY)):
+            imagen_fondo = 'url("images/alfilsemitransparente.png")'  # Cambiar la ruta por la ruta real de tu imagen
         else:
-            mensaje += (
-                f"<td style='background-color: {color_fondo};'>{numero[x][y]}</td>"
-            )
+            imagen_fondo = "none"  # Sin imagen de fondo
+        mensaje += f"<td style='background-image: {imagen_fondo}; background-color: {color_fondo}; background-size: cover; width: {celula_ancho}px; height: {celula_alto}px;'></td>"
+    # Añadir número a la derecha
+    mensaje += (
+        f"<td style='background-color: orange; width: {celula_ancho}px; height: {celula_alto}px;'>"
+        + str(8 - x)
+        + "</td>"
+    )
     mensaje += "</tr>"
 
-# Finalizar la tabla HTML
-mensaje += "</table>"
-mensaje += (
-    f"<br>El valor mínimo es {minimo}<br> en la posición [{xMinimo}][{yMinimo}]"
-)
+# Añadir fila de letras a la izquierda
+mensaje += "<tr><td style='width: {celula_ancho}px; height: {celula_alto}px;'></td>"
+for y in range(8):
+    mensaje += (
+        f"<td style='background-color: yellow; width: {celula_ancho}px; height: {celula_alto}px;'>"
+        + chr(97 + y)
+        + "</td>"
+    )
+mensaje += f"<td style='width: {celula_ancho}px; height: {celula_alto}px;'></td></tr>"
 
-# Imprimir el mensaje (tabla HTML y valor mínimo)
+mensaje += "</table>"
+
 print(mensaje)

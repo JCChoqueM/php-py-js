@@ -5,6 +5,10 @@ function llenar(inputId) {
 
   // Obtener una letra aleatoria
   let letraAleatoria = letras[Math.floor(Math.random() * letras.length)];
+  let mayuscula = generarNumeroAleatorio(0, 1);
+  if (mayuscula) {
+    letraAleatoria = letraAleatoria.toUpperCase();
+  }
 
   // Obtener un número aleatorio
   let numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
@@ -23,13 +27,8 @@ function llenar(inputId) {
   input.classList.add("valid"); // Agregar clase de estilo de válid
 }
 
-
-
-
-
-
-
-
-
-
-
+function llenarYResolver() {
+  llenar("input1");
+  automaticoPHP();
+  automaticoPY();
+}
