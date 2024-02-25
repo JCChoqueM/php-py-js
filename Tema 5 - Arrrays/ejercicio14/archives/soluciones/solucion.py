@@ -1,74 +1,102 @@
 # -- coding: latin-1 --
 import sys
+import json
 
 
-def convertir_cadena_a_lista(cadena):
-    # Reemplazar la secuencia de escape \\u00f1 con el carácter "ñ"
-    cadena_con_n = cadena.replace("\\u00f1", "ñ")
+def usar_input():
+    try:
+        # Obtener el valor del input y convertirlo a minúsculas
+        valor = sys.argv[1].lower().strip()
 
-    # Eliminar los corchetes al principio y al final de la cadena
-    cadena_sin_corchetes = cadena_con_n.strip("[]")
+        # Verificar si el valor tiene la longitud adecuada
+        if len(valor) != 2:
+            print("La combinación debe tener exactamente dos caracteres y soy pY.")
+            return None  # Devolver None si el valor no tiene la longitud adecuada
 
-    # Dividir la cadena en elementos individuales
-    elementos = cadena_sin_corchetes.split(",")
+        letra = valor[0]
+        numero = valor[1]
 
-    # Eliminar espacios en blanco alrededor de cada elemento y crear la lista
-    lista = [elemento.strip() for elemento in elementos]
-
-    return lista
-
-
-# Obtener los argumentos de la línea de comandos
-import random
-
-lineal = []
-i = 0
-
-while i < 54:
-    n = random.randint(100, 999)
-    if n not in lineal:
-        lineal.append(n)
-        i += 1
-
-minimo = 999
-i = 0
-xMinimo = 0
-yMinimo = 0
-numero = []
-
-for x in range(6):
-    numero.append([])
-    for y in range(9):
-        numero[x].append(lineal[i])
-        i += 1
-        if numero[x][y] < minimo:
-            minimo = numero[x][y]
-            xMinimo = x
-            yMinimo = y
-
-mensaje = "<table border='1'>"
-mensaje += "<tr>"
-mensaje += "<td></td>"
-for y in range(9):
-    mensaje += f"<td style='background-color: yellow;'>{y}</td>"
-mensaje += "</tr>"
-for x in range(6):
-    mensaje += "<tr>"
-    mensaje += f"<td style='background-color: orange;'>{x}</td>"
-    for y in range(9):
-        colorFondo = "white" if (x + y) % 2 == 0 else "grey"
-        if numero[x][y] == minimo:
-            mensaje += f"<td style='background-color: #33E9FF; color: black;'>{numero[x][y]}</td>"
-        elif abs(abs(x) - abs(xMinimo)) == abs(abs(y) - abs(yMinimo)):
-            mensaje += f"<td style='background-color: green;'>{numero[x][y]}</td>"
-        else:
-            mensaje += (
-                f"<td style='background-color: {colorFondo};'>{numero[x][y]}</td>"
+        # Verificar si la letra está dentro del rango de "a" a "h" y si el número está dentro del rango de "1" a "8"
+        if letra < "a" or letra > "h" or numero < "1" or numero > "8":
+            print(
+                "La combinación debe estar dentro del rango de 'a1' a 'h8'. soy de PY"
             )
+            return None
+
+        # Obtener los valores numéricos asociados a la letra y al número
+
+        # Devolver un diccionario con los valores numéricos obtenidos
+        return {"ejeX": numero, "ejeY": letra}
+    except Exception as e:
+        print("Error:", e)
+
+
+resultado = usar_input()
+if resultado:
+    numero = resultado["ejeX"]
+    letra = resultado["ejeY"]
+else:
+    exit()
+ejeX = ord("8") - ord(numero)
+ejeY = ord(letra) - ord("a")
+
+
+mensaje = f"Posicion insertada{sys.argv[1]} Resuleto con Python"
+
+tabla_ancho = 300  # Ancho de la tabla
+tabla_alto = 300  # Alto de la tabla
+celula_ancho = 35  # Ancho de las celdas
+celula_alto = 35  # Alto de las celdas
+
+mensaje += f"<table border='1' style='border-collapse: collapse; width: {tabla_ancho}px; height: {tabla_alto}px;'>"
+mensaje += "<tr><td style='width: {celula_ancho}px; height: {celula_alto}px;'></td>"
+# Añadir letras a la derecha
+for y in range(8):
+    mensaje += (
+        f"<td style='background-color: yellow; width: {celula_ancho}px; height: {celula_alto}px;'>"
+        + chr(97 + y)
+        + "</td>"
+    )
+mensaje += f"<td style='width: {celula_ancho}px; height: {celula_alto}px;'></td></tr>"
+
+# Añadir filas con números y celdas vacías
+for x in range(8):
+    mensaje += "<tr>"
+    # Añadir número a la izquierda
+    mensaje += (
+        f"<td style='background-color: orange; width: {celula_ancho}px; height: {celula_alto}px;'>"
+        + str(8 - x)
+        + "</td>"
+    )
+    # Añadir celdas vacías
+    for y in range(8):
+        color_fondo = "white" if (x + y) % 2 == 0 else "grey"
+        # Verificar si esta es la posición correspondiente a ejeX y ejeY y aplicar la imagen si es así
+        if x == ejeX and y == ejeY:
+            imagen_fondo = 'url("images/alfil.png")'  # Cambiar la ruta por la ruta real de tu imagen
+        elif abs(abs(x) - abs(ejeX)) == abs(abs(y) - abs(ejeY)):
+            imagen_fondo = 'url("images/alfilsemitransparente.png")'  # Cambiar la ruta por la ruta real de tu imagen
+        else:
+            imagen_fondo = "none"  # Sin imagen de fondo
+        mensaje += f"<td style='background-image: {imagen_fondo}; background-color: {color_fondo}; background-size: cover; width: {celula_ancho}px; height: {celula_alto}px;'></td>"
+    # Añadir número a la derecha
+    mensaje += (
+        f"<td style='background-color: orange; width: {celula_ancho}px; height: {celula_alto}px;'>"
+        + str(8 - x)
+        + "</td>"
+    )
     mensaje += "</tr>"
+
+# Añadir fila de letras a la izquierda
+mensaje += "<tr><td style='width: {celula_ancho}px; height: {celula_alto}px;'></td>"
+for y in range(8):
+    mensaje += (
+        f"<td style='background-color: yellow; width: {celula_ancho}px; height: {celula_alto}px;'>"
+        + chr(97 + y)
+        + "</td>"
+    )
+mensaje += f"<td style='width: {celula_ancho}px; height: {celula_alto}px;'></td></tr>"
+
 mensaje += "</table>"
-mensaje += (
-    f"<br>El valor mínimo es {minimo}<br> en la posición [{xMinimo}][{yMinimo}]"
-)
 
 print(mensaje)

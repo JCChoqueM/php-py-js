@@ -31,4 +31,5 @@ function llenarYResolver() {
   llenar("input1");
   automaticoPHP();
   automaticoPY();
+  automaticoJS('normal');
 }

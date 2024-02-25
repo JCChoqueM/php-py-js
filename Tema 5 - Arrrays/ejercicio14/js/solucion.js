@@ -1,17 +1,34 @@
 /* SECTION inicio boton PHP */
-function solucionPhpPyJs() {
-  solucionPHP();
-  solucionPython();
-  solucionJavaScript();
+
+function generarLetraNumero() {
+  let letras = ["a", "b", "c", "d", "e", "f", "g", "h"];
+  let numeros = [1, 2, 3, 4, 5, 6, 7, 8];
+
+  // Obtener una letra aleatoria
+  let letraAleatoria = letras[Math.floor(Math.random() * letras.length)];
+  let mayuscula = generarNumeroAleatorio(0, 1);
+  if (mayuscula) {
+    letraAleatoria = letraAleatoria.toUpperCase();
+  }
+
+  // Obtener un número aleatorio
+  let numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
+
+  // Construir la combinación aleatoria
+  let combinacion = letraAleatoria + numeroAleatorio;
+  return combinacion;
 }
+function solucionPHP(accion) {
+  let formData = new FormData();
 
-function solucionPHP() {
-  const formData = new FormData();
-
-  /*  const num1 = document.getElementById("num1").value;
-
-  const formData = new FormData();
-  formData.append("num1", num1); */
+  if (accion === "random") {
+    document.getElementById("input1").value = "";
+    const input1 = generarLetraNumero();
+    formData.append("input1", input1);
+  } else if (accion === "normal") {
+    const valorInput = document.getElementById("input1").value;
+    formData.append("input1", valorInput);
+  }
 
   fetch("archives/soluciones/solucion.php", {
     method: "POST",
@@ -28,12 +45,25 @@ function solucionPHP() {
 /* !SECTION fin boton PHP */
 
 /* SECTION inicio boton Python */
-async function solucionPython() {
+async function solucionPython(accion) {
+  let input1;
+
+    if (accion === "random") {
+
+      input1 = generarLetraNumero();
+
+    } else if (accion === "normal") {
+      input1 = document.getElementById("input1").value;
+
+    }
+  
   try {
     const url = "archives/soluciones/solucionPy.php";
 
     // Ajusta los datos según lo que espera el script PHP
-    const data = {};
+    const data = {
+      input1: input1,
+    };
 
     const response = await fetch(url, {
       method: "POST",
