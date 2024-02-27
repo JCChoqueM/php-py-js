@@ -44,7 +44,6 @@ async function automaticoPY(numero) {
     // Ajusta los datos según lo que espera el script PHP
     const data = {
       numero: numero,
-
     };
 
     const response = await fetch(url, {
