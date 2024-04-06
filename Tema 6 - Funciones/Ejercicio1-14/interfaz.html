@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
             height: 100vh;
             background-color: #f4f4f4;
         }
+
         #container {
             background-color: #fff;
             padding: 20px;
@@ -22,14 +24,17 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
+
         label {
             margin-right: 10px;
         }
+
         select {
             margin-bottom: 20px;
         }
     </style>
 </head>
+
 <body>
     <div id="container">
         <h1>Biblioteca de Funciones Matemáticas</h1>
@@ -125,101 +130,102 @@
             document.getElementById('resultado').innerText = resultado;
         }
 
-   // Función para determinar si un número es capicúa
-    function esCapicua(numero) {
-        // Convertir el número a cadena para poder manipularlo más fácilmente
-        let numeroStr = numero.toString();
-        // Comparar el número con su reverso
-        return numeroStr === numeroStr.split('').reverse().join('');
-    }
-
-    // Función para determinar si un número es primo
-    function esPrimo(numero) {
-        // Si el número es 0 o 1 no es primo
-        if (numero <= 1) {
-            return false;
+        // Función para determinar si un número es capicúa
+        function esCapicua(numero) {
+            // Convertir el número a cadena para poder manipularlo más fácilmente
+            let numeroStr = numero.toString();
+            // Comparar el número con su reverso
+            return numeroStr === numeroStr.split('').reverse().join('');
         }
-        // Comprobar si el número es divisible por algún número desde 2 hasta la mitad de él mismo
-        for (let i = 2; i <= numero / 2; i++) {
-            if (numero % i === 0) {
+
+        // Función para determinar si un número es primo
+        function esPrimo(numero) {
+            // Si el número es 0 o 1 no es primo
+            if (numero <= 1) {
                 return false;
             }
+            // Comprobar si el número es divisible por algún número desde 2 hasta la mitad de él mismo
+            for (let i = 2; i <= numero / 2; i++) {
+                if (numero % i === 0) {
+                    return false;
+                }
+            }
+            // Si no se encontró ningún divisor, entonces es primo
+            return true;
         }
-        // Si no se encontró ningún divisor, entonces es primo
-        return true;
-    }
 
-    // Función para encontrar el siguiente número primo mayor que el número dado
-    function siguientePrimo(numero) {
-        // Incrementar el número hasta encontrar el siguiente primo
-        numero++;
-        while (!esPrimo(numero)) {
+        // Función para encontrar el siguiente número primo mayor que el número dado
+        function siguientePrimo(numero) {
+            // Incrementar el número hasta encontrar el siguiente primo
             numero++;
+            while (!esPrimo(numero)) {
+                numero++;
+            }
+            return numero;
         }
-        return numero;
-    }
 
-    // Función para calcular la potencia de un número
-    function potencia(base, exponente) {
-        return Math.pow(base, exponente);
-    }
-
-    // Función para contar el número de dígitos de un número entero
-    function digitos(numero) {
-        return numero.toString().length;
-    }
-
-    // Función para invertir un número
-    function voltea(numero) {
-        return parseInt(numero.toString().split('').reverse().join(''));
-    }
-
-    // Función para obtener el dígito en una posición específica de un número
-    function digitoN(numero, posicion) {
-        let numeroStr = numero.toString();
-        if (posicion >= 0 && posicion < numeroStr.length) {
-            return parseInt(numeroStr.charAt(posicion));
-        } else {
-            return null;
+        // Función para calcular la potencia de un número
+        function potencia(base, exponente) {
+            return Math.pow(base, exponente);
         }
-    }
 
-    // Función para obtener la posición de la primera ocurrencia de un dígito dentro de un número
-    function posicionDeDigito(numero, digito) {
-        let posicion = numero.toString().indexOf(digito.toString());
-        return posicion !== -1 ? posicion : -1;
-    }
+        // Función para contar el número de dígitos de un número entero
+        function digitos(numero) {
+            return numero.toString().length;
+        }
 
-    // Función para quitar n dígitos por detrás de un número
-    function quitaPorDetras(numero, n) {
-        return parseInt(numero.toString().slice(0, -n));
-    }
+        // Función para invertir un número
+        function voltea(numero) {
+            return parseInt(numero.toString().split('').reverse().join(''));
+        }
 
-    // Función para quitar n dígitos por delante de un número
-    function quitaPorDelante(numero, n) {
-        return parseInt(numero.toString().slice(n));
-    }
+        // Función para obtener el dígito en una posición específica de un número
+        function digitoN(numero, posicion) {
+            let numeroStr = numero.toString();
+            if (posicion >= 0 && posicion < numeroStr.length) {
+                return parseInt(numeroStr.charAt(posicion));
+            } else {
+                return null;
+            }
+        }
 
-    // Función para agregar un dígito por detrás de un número
-    function pegaPorDetras(numero, n) {
-        return parseInt(numero.toString() + n.toString());
-    }
+        // Función para obtener la posición de la primera ocurrencia de un dígito dentro de un número
+        function posicionDeDigito(numero, digito) {
+            let posicion = numero.toString().indexOf(digito.toString());
+            return posicion !== -1 ? posicion : -1;
+        }
 
-    // Función para agregar un dígito por delante de un número
-    function pegaPorDelante(numero, n) {
-        return parseInt(n.toString() + numero.toString());
-    }
+        // Función para quitar n dígitos por detrás de un número
+        function quitaPorDetras(numero, n) {
+            return parseInt(numero.toString().slice(0, -n));
+        }
 
-    // Función para obtener un trozo de un número
-    function trozoDeNumero(numero, inicio, fin) {
-        return parseInt(numero.toString().slice(inicio, fin + 1));
-    }
+        // Función para quitar n dígitos por delante de un número
+        function quitaPorDelante(numero, n) {
+            return parseInt(numero.toString().slice(n));
+        }
 
-    // Función para juntar dos números
-    function juntaNumeros(numero1, numero2) {
-        return parseInt(numero1.toString() + numero2.toString());
-    }
+        // Función para agregar un dígito por detrás de un número
+        function pegaPorDetras(numero, n) {
+            return parseInt(numero.toString() + n.toString());
+        }
+
+        // Función para agregar un dígito por delante de un número
+        function pegaPorDelante(numero, n) {
+            return parseInt(n.toString() + numero.toString());
+        }
+
+        // Función para obtener un trozo de un número
+        function trozoDeNumero(numero, inicio, fin) {
+            return parseInt(numero.toString().slice(inicio, fin + 1));
+        }
+
+        // Función para juntar dos números
+        function juntaNumeros(numero1, numero2) {
+            return parseInt(numero1.toString() + numero2.toString());
+        }
 
     </script>
 </body>
+
 </html>
