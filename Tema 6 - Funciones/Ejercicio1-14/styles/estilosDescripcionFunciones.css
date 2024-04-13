@@ -1,0 +1,182 @@
+/* Estilos para el tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    white-space: normal;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    /* Justificar el texto */
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 18px;
+    overflow-wrap: break-word;
+    max-width: 150px;
+    /* Ancho máximo del cuadro de texto */
+    margin: auto;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilo para resaltar las palabras */
+.tooltip span.highlight {
+    text-decoration: underline;
+    /* Subrayar el texto */
+    font-weight: bold;
+    /* Texto en negrita para resaltar */
+}
+
+/* Estilo para mostrar el tooltip debajo de la primera letra */
+.tooltip:hover .tooltiptext {
+    top: calc(100% + 5px);
+    /* Coloca el tooltip debajo del texto */
+    left: 0;
+    /* Alinea el tooltip con la primera letra */
+    width: 450px;
+    /* Permitir que el ancho del tooltip se ajuste automáticamente */
+}
+
+/* Colores personalizados para cada tooltip */
+#esCapicuaTooltip {
+    background-color: rgb(91, 91, 202);
+}
+
+#esPrimoTooltip {
+    background-color: rgb(202, 91, 91);
+}
+
+#siguientePrimoTooltip {
+    background-color: rgb(91, 202, 91);
+}
+
+#potenciaTooltip {
+    background-color: rgb(202, 91, 202);
+}
+
+#digitosTooltip {
+    background-color: rgb(91, 202, 202);
+}
+
+#volteaTooltip {
+    background-color: rgb(202, 43, 202);
+}
+
+#digitoNTooltip {
+    background-color: rgb(202, 146, 91);
+}
+
+#posicionDeDigitoTooltip {
+    background-color: rgb(91, 202, 146);
+}
+
+#quitaPorDetrasTooltip {
+    background-color: rgb(146, 91, 202);
+}
+
+#quitaPorDelanteTooltip {
+    background-color: rgb(202, 91, 146);
+}
+
+#pegaPorDetrasTooltip {
+    background-color: rgb(146, 202, 91);
+}
+
+#pegaPorDelanteTooltip {
+    background-color: rgb(91, 202, 91);
+}
+
+#trozoDeNumeroTooltip {
+    background-color: rgb(202, 91, 91);
+}
+
+#juntaNumerosTooltip {
+    background-color: rgb(91, 91, 202);
+}
+
+/* Clases de resaltado */
+[class^="_"] {
+    color: inherit;
+}
+
+._1 {
+    color: rgb(91, 91, 202);
+}
+
+/* Azul */
+._2 {
+    color: rgb(202, 91, 91);
+}
+
+/* Rojo */
+._3 {
+    color: rgb(91, 202, 91);
+}
+
+/* Verde */
+._4 {
+    color: rgb(202, 91, 202);
+}
+
+/* Morado */
+._5 {
+    color: rgb(91, 202, 202);
+}
+
+/* Cyan */
+._6 {
+    color: rgb(202, 43, 202);
+}
+
+/* Amarillo */
+._7 {
+    color: rgb(202, 146, 91);
+}
+
+/* Naranja */
+._8 {
+    color: rgb(91, 202, 146);
+}
+
+/* Turquesa */
+._9 {
+    color: rgb(146, 91, 202);
+}
+
+/* Violeta */
+._10 {
+    color: rgb(202, 91, 146);
+}
+
+/* Rosa */
+._11 {
+    color: rgb(146, 202, 91);
+}
+
+/* Lima */
+._12 {
+    color: rgb(91, 202, 91);
+}
+
+/* Verde claro */
+._13 {
+    color: rgb(202, 91, 91);
+}
+
+/* Rojo claro */
+._14 {
+    color: rgb(91, 91, 202);
+}
+
+/* Azul claro */
