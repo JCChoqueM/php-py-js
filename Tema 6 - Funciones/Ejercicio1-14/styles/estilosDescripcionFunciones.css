@@ -226,6 +226,7 @@
         background-color: #f9f9f9;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
     }
 
     /* Estilos para el formulario */
@@ -254,11 +255,15 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         box-sizing: border-box;
+
     }
 
     /* Estilos para el contenedor de tooltips */
     #tooltips-container {
         margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+        color: rgb(36, 24, 3);
     }
 
     .tooltip {
@@ -280,10 +285,27 @@
         transition: opacity 0.3s;
         font-size: 14px;
         max-width: 200px;
+
     }
 
     .tooltip:hover .tooltiptext {
         visibility: visible;
         opacity: 1;
+
     }
+
+    .bTodo {
+        background-color: #16fa29;
+        color: rgb(30, 3, 63);
+        border: 2px solid #2E6DA4;
+        border-radius: 5px;
+        padding: 10px 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        height: 4rem;
+        width: 10rem;
+    }
+
+
 }
