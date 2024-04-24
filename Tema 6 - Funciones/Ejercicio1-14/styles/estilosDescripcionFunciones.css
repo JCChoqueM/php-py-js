@@ -295,7 +295,7 @@
     }
 
     .bTodo {
-        background-color: #16fa29;
+        background-color: var(--color-esCapicua);
         color: rgb(30, 3, 63);
         border: 2px solid #2E6DA4;
         border-radius: 5px;
