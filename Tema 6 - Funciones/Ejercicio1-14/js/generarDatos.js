@@ -1,9 +1,14 @@
 let esPrimerClick = true
+let contadorDeClicks = 1
+
+
 
 function generarDatos () {
   const select = document.getElementById('accion')
   const opcionSeleccionada = select.value
   const numInput = document.getElementById('num1')
+
+
   const numInput2 = document.getElementById('num2')
   console.log(esPrimerClick)
   switch (opcionSeleccionada) {
@@ -28,6 +33,10 @@ function generarDatos () {
       numInput.value = generarVoltea()
       break
     case 'digitoN':
+      let objeto = generarDigitoN()
+      numInput.value = objeto.input1
+      numInput2.value = objeto.input2
+      validarInput(numInput2)
       break
     case 'posicionDeDigito':
       break
@@ -208,18 +217,15 @@ function generarVoltea () {
 
 //SECTION - Inicio 7.- digitoN
 function generarDigitoN () {
-  let input1 = generarNumeroAleatorio(0, 9999999999999)
+
+  let input1
   let input2
+  input1 = generarNumeroAleatorio(0, 999999)
   let digitos = contarDigitos(input1)
-  do {
-    if (esPrimerClick) {
-      input2 = generarNumeroAleatorio(0, 13)
-    } else {
-      input2 = generarNumeroAleatorio(0, 13)
-    }
-  } while (input2 > digitos - 1)
-  for (let i = 0; i < 2; i++) {
-    numeroGenerado[i] = generarNumeroAleatorio(0, 15)
+  if (esPrimerClick) {
+    input2 = generarNumeroAleatorio(0, digitos - 1)
+  } else {
+    input2 = generarNumeroAleatorio(digitos + 2, digitos + 4)
   }
   esPrimerClick = !esPrimerClick
 

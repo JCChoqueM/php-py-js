@@ -1,111 +1,148 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>#14</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/colorEnunciado.css" />
+    <!-- Importar scripts JavaScript -->
 
-<head>
-  <meta charset="UTF-8" />
-  <title>#14</title>
-  <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="stylesheet" href="styles/colorEnunciado.css" />
-  <!-- Importar scripts JavaScript -->
+    <script src="archives/soluciones/solucion.js"></script>
+    <script src="js/resolverAutomaticamente.js" defer></script>
+    <script src="js/solucion.js" defer></script>
+    <script src="js/generarArray.js" defer></script>
+    <script src="js/limpiarResultados.js" defer></script>
+    <script src="js/llenar.js" defer></script>
+    <script src="js/validarInput.js" defer></script>
+    <script src="js/solucionAleatoria.js" defer></script>
 
-  <script src="archives/soluciones/solucion.js"></script>
-  <script src="js/resolverAutomaticamente.js" defer></script>
-  <script src="js/solucion.js" defer></script>
-  <script src="js/generarArray.js" defer></script>
-  <script src="js/limpiarResultados.js" defer></script>
-  <script src="js/llenar.js" defer></script>
-  <script src="js/validarInput.js" defer></script>
-  <script src="js/solucionAleatoria.js" defer></script>
+    <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
+  </head>
 
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Ejercicio 14</h1>
+        <h2>
+          <!-- Descripción del ejercicio -->
+          <span style="color: blue">Escribe un programa</span> que,
+          <span style="color: green"
+            >dada una posición en un tablero de ajedrez</span
+          >, nos diga a qué casillas podría saltar un alfil que se encuentra en
+          esa posición.
+          <span style="color: red"
+            >Indícalo de forma gráfica sobre el tablero con un color diferente
+            para estas casillas donde puede saltar la figura.</span
+          ><br />
+          <span style="color: purple"
+            >El alfil se mueve siempre en diagonal.</span
+          >
+          <span style="color: orange">El tablero cuenta con 64 casillas.</span>
+          <span style="color: brown"
+            >Las columnas se indican con las letras de la "a" a la "h".</span
+          >
+          <span style="color: teal">Las filas se indican del 1 al 8.</span>
+        </h2>
+        <form id="form" onsubmit="return false;">
+          <!-- Evita que el formulario se envíe cuando se presiona Enter -->
+          <div class="cajaboton">
+            <label for="input1"
+              >Introduzca las coordenadas para el alfil:</label
+            >
+            <input
+              class="input-fruta"
+              id="input1"
+              type="text"
+              pattern="[a-hA-H][1-8]"
+              oninput="validarInput(this)"
+              placeholder="Introduzca una coordenada"
+            />
 
-  <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
-</head>
-
-<body>
-  <div class="container">
-    <div class="content">
-      <h1>Ejercicio 14</h1>
-      <h2>
-        <!-- Descripción del ejercicio -->
-        <span style="color: blue;">Escribe un programa</span> que, <span style="color: green;">dada una posición en un
-          tablero
-          de ajedrez</span>, nos diga a qué casillas podría saltar un alfil que se encuentra en esa posición. <span
-          style="color: red;">Indícalo de forma gráfica sobre el tablero con un color diferente para estas casillas
-          donde puede
-          saltar la figura.</span><br> <span style="color: purple;">El alfil se mueve siempre en diagonal.</span> <span
-          style="color: orange;">El tablero cuenta con 64 casillas.</span> <span style="color: brown;">Las columnas se
-          indican
-          con las letras de la "a" a la "h".</span> <span style="color: teal;">Las filas se indican del 1 al 8.</span>
-
-      </h2>
-      <form id="form" onsubmit="return false;">
-        <!-- Evita que el formulario se envíe cuando se presiona Enter -->
-        <div class="cajaboton">
-          <label for="input1">Introduzca las coordenadas para el alfil:</label>
-          <input class="input-fruta" id="input1" type="text" pattern="[a-hA-H][1-8]" oninput="validarInput(this)"
-            placeholder="Introduzca una coordenada">
-
-          <button class="botones_cajaForm llenarResolver" type="button" onclick="llenarYResolver()">
-            Llenar y resolver
-          </button>
-          <button class="botones_cajaForm solucionPhpPyJs" type="button" onclick="solucionAleatoriaPhpPyJs()">
-            Solución Aleatoria
-          </button>
-          <div class="otros">
-            <!-- Botones de acción -->
-            <button class="botones_cajaForm resolver" type="button" onclick="resolver()">
-              Resolver
+            <button
+              class="botones_cajaForm llenarResolver"
+              type="button"
+              onclick="llenarYResolver()"
+            >
+              Llenar y resolver
             </button>
-            <button class="botones_cajaForm llenar" type="button" onclick="llenar('input1')">
-              llenar:
+            <button
+              class="botones_cajaForm solucionPhpPyJs"
+              type="button"
+              onclick="solucionAleatoriaPhpPyJs()"
+            >
+              Solución Aleatoria
             </button>
+            <div class="otros">
+              <!-- Botones de acción -->
+              <button
+                class="botones_cajaForm resolver"
+                type="button"
+                onclick="resolver()"
+              >
+                Resolver
+              </button>
+              <button
+                class="botones_cajaForm llenar"
+                type="button"
+                onclick="llenar('input1')"
+              >
+                llenar:
+              </button>
 
-            <button class="botones_cajaForm" type="button" onclick="limpiarResultados()">
-              Limpiar resultados:
-            </button>
+              <button
+                class="botones_cajaForm"
+                type="button"
+                onclick="limpiarResultados()"
+              >
+                Limpiar resultados:
+              </button>
+            </div>
           </div>
+        </form>
 
+        <div class="contenedores">
+          <!-- Contenedores de resultados -->
+          <section class="caja cajaPHP">
+            <!-- Botón y contenedor de resultados para PHP -->
+            <button class="bPHP" type="button" onclick="solucionPHP('normal')">
+              Solución PHP
+            </button>
+            <div class="r" id="resultadoPHP"></div>
+          </section>
+          <section class="caja cajaPY">
+            <!-- Botón y contenedor de resultados para Python -->
+            <button
+              class="bPY"
+              type="button"
+              onclick="solucionPython('normal')"
+            >
+              Solución Python
+            </button>
+            <div class="r" id="resultadoPython"></div>
+          </section>
+          <section class="caja cajaJS">
+            <!-- Botón y contenedor de resultados para JavaScript -->
+            <button
+              class="bJS"
+              type="button"
+              onclick="solucionJavaScript('normal')"
+            >
+              Solución JS
+            </button>
+            <div class="r" id="resultadoJavaScript"></div>
+          </section>
         </div>
-      </form>
 
-      <div class="contenedores">
-        <!-- Contenedores de resultados -->
-        <section class="caja cajaPHP">
-          <!-- Botón y contenedor de resultados para PHP -->
-          <button class="bPHP" type="button" onclick="solucionPHP('normal')">
-            Solución PHP
-          </button>
-          <div class="r" id="resultadoPHP"></div>
-        </section>
-        <section class="caja cajaPY">
-          <!-- Botón y contenedor de resultados para Python -->
-          <button class="bPY" type="button" onclick="solucionPython('normal')">
-            Solución Python
-          </button>
-          <div class="r" id="resultadoPython"></div>
-        </section>
-        <section class="caja cajaJS">
-          <!-- Botón y contenedor de resultados para JavaScript -->
-          <button class="bJS" type="button" onclick="solucionJavaScript('normal')">
-            Solución JS
-          </button>
-          <div class="r" id="resultadoJavaScript"></div>
-        </section>
+        <footer>
+          <!-- Pie de página -->
+          <br />Julio Cesar Choque Mamani. <br />
+          <br />Solucionario: Luis José Sánchez - Aprende PHP con ejercicios.
+        </footer>
       </div>
-
-      <footer>
-        <!-- Pie de página -->
-        <br />Julio Cesar Choque Mamani. <br />
-        <br />Solucionario: Luis José Sánchez - Aprende PHP con ejercicios.
-      </footer>
     </div>
-  </div>
 
-  <div class="image">
-    <!-- Contenedor de imagen -->
-
-  </div>
-
-</body>
-
+    <div class="image">
+      <!-- Contenedor de imagen -->
+    </div>
+  </body>
 </html>
