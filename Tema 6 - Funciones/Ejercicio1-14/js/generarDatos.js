@@ -25,6 +25,7 @@ function generarDatos () {
       numInput.value = generarDigito()
       break
     case 'voltea':
+      numInput.value = generarVoltea()
       break
     case 'digitoN':
       break
@@ -57,7 +58,20 @@ function generarNumeroAleatorio (min, max) {
   // Generar un número aleatorio dentro del rango especificado
   return Math.floor(min + Math.random() * (max - min + 1))
 }
-
+function contarDigitos (numero) {
+  let contador = 0
+  let dividendo = Math.abs(numero)
+  if (numero >= 0 && numero < 10) {
+    contador = 1
+    return contador
+  } else {
+    while (dividendo > 0) {
+      contador += 1
+      dividendo = Math.trunc(dividendo / 10)
+    }
+    return contador
+  }
+}
 //SECTION - Inicio 1.- esCapicua
 // Función para generar un número capicúa aleatorio de 5 cifras
 function generarCapicua () {
@@ -172,14 +186,45 @@ function generarDigito () {
 
   return numeroGenerado
 }
-
 // !SECTION 5.- digitos
 
 //SECTION - Inicio 6.- voltea
+function generarVoltea () {
+  let numeroGenerado
+
+  if (esPrimerClick) {
+    numeroGenerado = generarNumeroAleatorio(0, 999)
+  } else {
+    numeroGenerado = generarNumeroAleatorio(1000, 99999)
+  }
+
+  // Invertir esPrimerClick una vez
+  esPrimerClick = !esPrimerClick
+
+  return numeroGenerado
+}
 
 // !SECTION 6.- voltea
 
 //SECTION - Inicio 7.- digitoN
+function generarDigitoN () {
+  let input1 = generarNumeroAleatorio(0, 9999999999999)
+  let input2
+  let digitos = contarDigitos(input1)
+  do {
+    if (esPrimerClick) {
+      input2 = generarNumeroAleatorio(0, 13)
+    } else {
+      input2 = generarNumeroAleatorio(0, 13)
+    }
+  } while (input2 > digitos - 1)
+  for (let i = 0; i < 2; i++) {
+    numeroGenerado[i] = generarNumeroAleatorio(0, 15)
+  }
+  esPrimerClick = !esPrimerClick
+
+  return { input1, input2 }
+}
 
 // !SECTION 7.- digitoN
 
