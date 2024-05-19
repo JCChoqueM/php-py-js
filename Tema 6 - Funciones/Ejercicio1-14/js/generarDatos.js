@@ -46,13 +46,26 @@ function generarDatos () {
       numInput.value = QuitaPorDetras.input1
       numInput2.value = QuitaPorDetras.input2
       validarInputQuitaPorDetras(numInput2)
-
       break
     case 'quitaPorDelante':
+      let QuitaPorDelante = generarQuitaPorDelante()
+      numInput.value = QuitaPorDelante.input1
+      numInput2.value = QuitaPorDelante.input2
+      validarInputQuitaPorDelante(numInput2)
+
       break
     case 'pegaPorDetras':
+      let posicionPegaPorDetras = generarPegaPorDetras()
+      numInput.value = posicionPegaPorDetras.input1
+      numInput2.value = posicionPegaPorDetras.input2
+      validarInputPegaPorDetras(numInput2)
       break
     case 'pegaPorDelante':
+      let posicionPegaPorDelante = generarPegaPorDelante()
+      numInput.value = posicionPegaPorDelante.input1
+      numInput2.value = posicionPegaPorDelante.input2
+      validarInputPegaPorDelante(numInput2)
+
       break
     case 'trozoDeNumero':
       break
@@ -274,15 +287,63 @@ function generarQuitaPorDetras () {
 // !SECTION 9.- quitaPorDetras
 
 //SECTION - Inicio 10.- quitaPorDelante
+function generarQuitaPorDelante () {
+  let input1
+  let input2
+  input1 = generarNumeroAleatorio(0, 999999)
+  let digitos = contarDigitos(input1)
+  if (esPrimerClick) {
+    input2 = generarNumeroAleatorio(0, digitos - 1)
+  } else {
+    input2 = generarNumeroAleatorio(digitos + 2, digitos + 4)
+  }
+  esPrimerClick = !esPrimerClick
+
+  return { input1, input2 }
+}
 
 // !SECTION 10.- quitaPorDelante
 
 //SECTION - Inicio 11.- pegaPorDetras
+function generarPegaPorDetras () {
+  let input1
+  let input2
+  input1 = generarNumeroAleatorio(0, 999999)
+  if (esPrimerClick) {
+    input2 = generarNumeroAleatorio(0, 9)
+  } else {
+    do {
+      input2 = generarNumeroAleatorio(-5, 15)
+    } while (!(input2 < 0 || input2 > 9))
+  }
+  esPrimerClick = !esPrimerClick
+  return { input1, input2 }
+}
 
 // !SECTION 11.- pegaPorDetras
 
 //SECTION - Inicio 12.- pegaPorDelante
+function generarPegaPorDelante () {
+  let input1
+  let input2
+  input1 = generarNumeroAleatorio(0, 999999)
+  let digitos = contarDigitos(input1)
 
+  if (esPrimerClick) {
+    do {
+      input2 = generarNumeroAleatorio(-9, 9)
+    } while (!((input2 <= 0 && input2 > -9) || (input2 >= 0 && input2 < 9)))
+  } else {
+    do {
+      input2 = generarNumeroAleatorio(-19, 19)
+    } while (
+      !((input2 <= -10 && input2 > -19) || (input2 >= 10 && input2 < 19))
+    )
+  }
+  esPrimerClick = !esPrimerClick
+
+  return { input1, input2 }
+}
 // !SECTION 12.- pegaPorDelante
 
 //SECTION - Inicio 13.- trozoDeNumero
