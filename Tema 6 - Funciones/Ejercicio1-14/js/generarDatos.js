@@ -40,9 +40,13 @@ function generarDatos () {
       numInput.value = posicionDedigito.input1
       numInput2.value = posicionDedigito.input2
       validarInputPosicionDeDigito(numInput2)
-
       break
     case 'quitaPorDetras':
+      let QuitaPorDetras = generarQuitaPorDetras()
+      numInput.value = QuitaPorDetras.input1
+      numInput2.value = QuitaPorDetras.input2
+      validarInputQuitaPorDetras(numInput2)
+
       break
     case 'quitaPorDelante':
       break
@@ -249,10 +253,23 @@ function generarPosicionDeDigito () {
 
   return { input1, input2 }
 }
-
 // !SECTION 8.- posicionDeDigito
 
 //SECTION - Inicio 9.- quitaPorDetras
+function generarQuitaPorDetras () {
+  let input1
+  let input2
+  input1 = generarNumeroAleatorio(0, 999999)
+  let digitos = contarDigitos(input1)
+  if (esPrimerClick) {
+    input2 = generarNumeroAleatorio(0, digitos - 1)
+  } else {
+    input2 = generarNumeroAleatorio(digitos + 2, digitos + 4)
+  }
+  esPrimerClick = !esPrimerClick
+
+  return { input1, input2 }
+}
 
 // !SECTION 9.- quitaPorDetras
 

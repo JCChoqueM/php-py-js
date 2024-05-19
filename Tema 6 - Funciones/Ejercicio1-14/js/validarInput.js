@@ -11,7 +11,7 @@ function validarInputYMostrarError (mensajeError) {
   resultadoDiv3.innerHTML = mensajeError
 }
 
-// Validación específica para el caso de DigitoN
+//SECTION - 7.-digitoN
 function validarInputDigitoN (input) {
   const valor = parseInt(document.getElementById('num1').value)
   const valor2 = parseInt(input.value)
@@ -28,8 +28,9 @@ function validarInputDigitoN (input) {
 
   validarInputYMostrarError(mensajeError)
 }
+//!SECTION fin 7.-digitoN
 
-// Validación específica para el caso de PosicionDeDigito
+//SECTION - 8.- posicionDeDigito
 function validarInputPosicionDeDigito (input) {
   const valor = parseInt(document.getElementById('num1').value)
   const valor2 = parseInt(input.value)
@@ -44,8 +45,29 @@ function validarInputPosicionDeDigito (input) {
 
   validarInputYMostrarError(mensajeError)
 }
+//!SECTION fin 8.-posicionDeDigito
 
-// Funciones para llamar a las validaciones específicas desde los eventos
+//SECTION -  9.- quitaPorDetras
+function validarInputQuitaPorDetras (input) {
+  const valor = parseInt(document.getElementById('num1').value)
+  const valor2 = parseInt(input.value)
+  let mensajeError = ''
+
+  // Verificar si el valor tiene la longitud adecuada
+  if (valor2 > contarDigitos(valor)) {
+    mensajeError = `El numero ${valor} tiene ${contarDigitos(
+      valor
+    )} digitos. No se puede quitar mas de eso`
+  } else if (valor2 < 0) {
+    mensajeError = `la cantidad de numeros a quitar no puede ser negativo`
+  }
+
+  validarInputYMostrarError(mensajeError)
+}
+
+//!SECTION fin 9.- quitaPorDetras
+
+//SECTION -  Funciones para llamar a las validaciones específicas desde los eventos
 function validarNum1DigitoN () {
   validarInputDigitoN(document.getElementById('num2'))
 }
@@ -53,3 +75,9 @@ function validarNum1DigitoN () {
 function validarNum1PosicionDeDigito () {
   validarInputPosicionDeDigito(document.getElementById('num2'))
 }
+
+function validarNum1QuitaPorDetras () {
+  validarInputQuitaPorDetras(document.getElementById('num2'))
+}
+
+//!SECTION fin Funciones para llamar a las validaciones específicas desde los eventos
