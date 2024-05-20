@@ -1,13 +1,14 @@
 let esPrimerClick = true
+let trozoDenumeroError = true
 let contadorDeClicks = 1
 
 function generarDatos () {
   const select = document.getElementById('accion')
   const opcionSeleccionada = select.value
   const numInput = document.getElementById('num1')
-
   const numInput2 = document.getElementById('num2')
-  console.log(esPrimerClick)
+  const numInput3 = document.getElementById('num3')
+  console.log("---------------------------------------------")
   switch (opcionSeleccionada) {
     case 'esCapicua':
       numInput.value = generarCapicua()
@@ -65,9 +66,14 @@ function generarDatos () {
       numInput.value = posicionPegaPorDelante.input1
       numInput2.value = posicionPegaPorDelante.input2
       validarInputPegaPorDelante(numInput2)
-
       break
     case 'trozoDeNumero':
+      let posicionTrozoDeNumero = generarTrozoDeNumero()
+      numInput.value = posicionTrozoDeNumero.input1
+      numInput2.value = posicionTrozoDeNumero.input2
+      numInput3.value = posicionTrozoDeNumero.input3
+      validarInputTrozoDeNumero()
+
       break
     case 'juntaNumeros':
       break
@@ -331,7 +337,7 @@ function generarPegaPorDelante () {
 
   if (esPrimerClick) {
     do {
-      input2 = generarNumeroAleatorio(-9, 9)
+      input2 = generarNumeroAleatorio(0, digitos)
     } while (!((input2 <= 0 && input2 > -9) || (input2 >= 0 && input2 < 9)))
   } else {
     do {
@@ -347,6 +353,41 @@ function generarPegaPorDelante () {
 // !SECTION 12.- pegaPorDelante
 
 //SECTION - Inicio 13.- trozoDeNumero
+function generarTrozoDeNumero () {
+  let input1, input2, input3
+  input1 = generarNumeroAleatorio(0, 9999999)
+  let digitos = contarDigitos(input1) - 1
+
+  if (esPrimerClick) {
+    do {
+      input2 = generarNumeroAleatorio(0, digitos)
+    } while (!(input2 >= 0 && input2 <= digitos))
+
+    do {
+      input3 = generarNumeroAleatorio(0, digitos)
+    } while (!(input3 >= input2 && input3 <= digitos))
+
+  } else {
+    if (trozoDenumeroError) {
+      do {
+        input2 = generarNumeroAleatorio(0, digitos)
+      } while (!(input2 >= 0 && input2 <= digitos))
+      input3 = generarNumeroAleatorio(digitos + 2, digitos + 5)
+  
+    } else {
+      input2 = generarNumeroAleatorio(digitos + 1, digitos + 5)
+      do {
+        input3 = generarNumeroAleatorio(0, digitos)
+      } while (!(input3 >= 0 && input3 <= digitos))
+  
+    }
+    trozoDenumeroError = !trozoDenumeroError
+  }
+
+  esPrimerClick = !esPrimerClick
+
+  return { input1, input2, input3 }
+}
 
 // !SECTION 13.- trozoDeNumero
 

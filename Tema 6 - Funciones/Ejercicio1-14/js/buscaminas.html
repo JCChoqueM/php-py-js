@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscaminas</title>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: repeat(10, 30px);
+      grid-template-rows: repeat(10, 30px);
+    }
+
+    .cell {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hidden {
+      background-color: #aaa;
+    }
+
+    .mine {
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.getElementById('container');
+
+      // Create grid
+      for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+          const cell = document.createElement('div');
+          cell.classList.add('cell');
+          cell.dataset.row = i;
+          cell.dataset.col = j;
+          container.appendChild(cell);
+        }
+      }
+
+      // Add mines
+      const mines = Array.from({ length: 10 }, () => ({
+        row: Math.floor(Math.random() * 10),
+        col: Math.floor(Math.random() * 10)
+      }));
+      
+      mines.forEach(mine => {
+        const cell = container.querySelector(`[data-row="${mine.row}"][data-col="${mine.col}"]`);
+        cell.classList.add('mine');
+      });
+
+      // Add click event listener
+      container.addEventListener('click', function(event) {
+        const clickedCell = event.target;
+        if (!clickedCell.classList.contains('cell')) return;
+
+        const row = parseInt(clickedCell.dataset.row);
+        const col = parseInt(clickedCell.dataset.col);
+
+        if (clickedCell.classList.contains('mine')) {
+          alert('¡Perdiste!');
+          container.querySelectorAll('.mine').forEach(mine => {
+            mine.classList.remove('hidden');
+          });
+        } else {
+          const minesCount = countAdjacentMines(row, col);
+          clickedCell.textContent = minesCount;
+          clickedCell.classList.add('hidden');
+        }
+      });
+
+      // Function to count adjacent mines
+      function countAdjacentMines(row, col) {
+        let count = 0;
+        for (let i = row - 1; i <= row + 1; i++) {
+          for (let j = col - 1; j <= col + 1; j++) {
+            if (i >= 0 && i < 10 && j >= 0 && j < 10) {
+              const cell = container.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+              if (cell.classList.contains('mine')) count++;
+            }
+          }
+        }
+        return count;
+      }
+    });
+  </script>
+</body>
+</html>
