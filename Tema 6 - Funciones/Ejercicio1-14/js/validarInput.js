@@ -119,39 +119,86 @@ function validarInputTrozoDeNumero () {
   const valor2 = parseInt(document.getElementById('num2').value)
   const valor3 = parseInt(document.getElementById('num3').value)
   let digitos = contarDigitos(valor) - 1
+  const boton = document.getElementById('resolver')
+
   let mensajeError = ''
   console.log(typeof valor)
   console.log(!isNaN(valor2))
   console.log(!isNaN(valor3))
   // Verificar si el valor tiene la longitud adecuada
-  if (isNaN(valor) && isNaN(valor2) && isNaN(valor3)) {
-    mensajeError = 'Por favor, ingrese números en todos los campos.'
-  } else if (!isNaN(valor) && isNaN(valor2) && isNaN(valor3)) {
-    mensajeError = 'Llene los campos 2 y 3.'
-  } else if (isNaN(valor) && !isNaN(valor2) && isNaN(valor3)) {
-    mensajeError = 'Llene los campos 1 y 3.'
-  } else if (isNaN(valor) && isNaN(valor2) && !isNaN(valor3)) {
-    mensajeError = 'Llene los campos 1 y 2.'
-  } else if (isNaN(valor) && !isNaN(valor2) && !isNaN(valor3)) {
-    mensajeError = 'Llene el campo 1.'
-  } else if (!isNaN(valor) && isNaN(valor2) && !isNaN(valor3)) {
-    mensajeError = 'Llene el campo 2.'
-  } else if (!isNaN(valor) && !isNaN(valor2) && isNaN(valor3)) {
-    mensajeError = 'Llene el campo 3.'
-  } else {
-    if (
-      valor2 >= 0 &&
-      valor2 <= digitos &&
-      valor3 >= valor2 &&
-      valor3 <= digitos
-    ) {
-      mensajeError = 'Puede continuar.'
-    } else if (valor2 >= 0 && valor2 <= digitos && valor3 > digitos) {
-      mensajeError = 'El campo 3 no está en el rango.'
-    } else if (valor2 > digitos && valor3 >= 0 && valor3 <= digitos) {
-      mensajeError = 'El campo 2 no está en el rango.'
-    }
+  const estado =
+    (isNaN(valor) ? '0' : '1') +
+    (isNaN(valor2) ? '0' : '1') +
+    (isNaN(valor3) ? '0' : '1')
+  const estado2 =
+    (valor2 < 0 ? 'N' : valor2 > digitos ? 'F' : 'I') +
+    (valor3 < 0 ? 'N' : valor3 > digitos ? 'F' : 'I')
+
+  switch (estado) {
+    case '000':
+      mensajeError = 'Por favor, ingrese números en todos los campos.'
+      break
+    case '100':
+      mensajeError = 'Llene los campos 2 y 3.'
+      break
+    case '010':
+      mensajeError = 'Llene los campos 1 y 3.'
+      break
+    case '001':
+      mensajeError = 'Llene los campos 1 y 2.'
+      break
+    case '011':
+      mensajeError = 'Llene el campo 1.'
+      break
+    case '101':
+      mensajeError = 'Llene el campo 2.'
+      break
+    case '110':
+      mensajeError = 'Llene el campo 3.'
+      break
+    case '111':
+      switch (estado2) {
+        case 'NN':
+          mensajeError = 'input2 e input 3 no pueden ser negativos'
+          break
+        case 'NI':
+          mensajeError = 'input2 no puede ser negativo'
+          break
+        case 'IN':
+          mensajeError = 'input3 no puede ser negativo'
+          break
+        case 'FI':
+          mensajeError = 'El campo 2 no está en el rango.'
+          break
+        case 'IF':
+          mensajeError = 'El campo 3 no está en el rango.'
+          break
+        case 'FF':
+          mensajeError = 'El campo 2 y 3 no están en el rango permitido.'
+          break
+        case 'FN':
+          mensajeError =
+            'El campo 2 no está en el rango y input3 no puede ser negativo.'
+          break
+        case 'NF':
+          mensajeError =
+            'input2 no puede ser negativo y el campo 3 no está en el rango.'
+          break
+        case 'II':
+          mensajeError = 'Puede Continuar2'
+          boton.disabled = false
+
+          break
+        default:
+          mensajeError = 'revisame algo paso'
+      }
+      break
   }
+
+  if (estado !== '111' || estado2 !== 'II') {
+    boton.disabled = true
+  }
+
   validarInputYMostrarError(mensajeError)
 }
 
