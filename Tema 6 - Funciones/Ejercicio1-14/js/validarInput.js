@@ -86,30 +86,92 @@ function validarInputQuitaPorDelante (input) {
 function validarInputPegaPorDetras (input) {
   const valor = parseInt(document.getElementById('num1').value)
   const valor2 = parseInt(input.value)
+  const boton = document.getElementById('resolver')
   let mensajeError = ''
 
-  // Verificar si el valor tiene la longitud adecuada
-  if (valor2 > 9) {
-    mensajeError = `solo se permite pegar numeros de 1 digito`
-  } else if (valor2 < 0) {
-    mensajeError = `<span>el numero NO puede ser negativo:   ${valor}<span style='color: red;'>${valor2}</span>.  </span> `
+  // Combinaciones posibles y mensajes correspondientes
+  const estado = (isNaN(valor) ? '0' : '1') + (isNaN(valor2) ? '0' : '1')
+
+  switch (estado) {
+    case '00':
+      mensajeError = 'Ambos campos están vacíos. Por favor, ingrese números.'
+      break
+    case '01':
+      if (valor2 > 9) {
+        mensajeError =
+          'El campo 1 esta vacio y Solo se permite pegar números de 1 dígito.'
+      } else if (valor2 < 0 && valor2 >= -9) {
+        mensajeError = `<span>  el campo 1 esta vacio y no se permiten numeros negativos  <span style='color: red;'>${valor2}</span>.</span>`
+      } else if (valor2 < 0 && valor2 < -9) {
+        mensajeError = `<span>  el campo 1 esta vacio y no se permiten numeros negativos de mas de una cifra  <span style='color: red;'>${valor2}</span>.</span>`
+      } else {
+        mensajeError = `El campo 1 esta vacio`
+      }
+      break
+    case '10':
+      mensajeError =
+        'El campo 2 está vacío. Por favor, ingrese un número en el campo 2.'
+      break
+    case '11':
+      if (valor2 > 9) {
+        mensajeError = 'Solo se permite pegar números de 1 dígito.'
+      } else if (valor2 < 0) {
+        mensajeError = `<span>El campo 2 no puede tener numeros negativos ${valor}<span style='color: red;'>${valor2}</span>.</span>`
+      } else {
+        mensajeError = 'Continuar' // No hay error si ambos están correctos
+      }
+      break
+    default:
+      mensajeError = 'Error desconocido. Por favor, revise las entradas.'
   }
+
+  // Habilitar o deshabilitar el botón según el estado del error
+  boton.disabled = mensajeError !== 'Continuar'
 
   validarInputYMostrarError(mensajeError)
 }
+
 // !SECTION 11.- pegaPorDetras
 
 //SECTION - Inicio 12.- pegaPorDelante
 function validarInputPegaPorDelante (input) {
+  const valor = parseInt(document.getElementById('num1').value)
   const valor2 = parseInt(input.value)
+  const boton = document.getElementById('resolver')
   let mensajeError = ''
-  // Verificar si el valor tiene la longitud adecuada
-  if (valor2 > 9 || valor2 < -9) {
-    mensajeError = `solo se permite pegar numeros de 1 digito`
+
+  // Combinaciones posibles y mensajes correspondientes
+  const estado = (isNaN(valor) ? '0' : '1') + (isNaN(valor2) ? '0' : '1')
+
+  switch (estado) {
+    case '00':
+      mensajeError = 'Ambos campos están vacíos. Por favor, ingrese números.'
+      break
+    case '01':
+      mensajeError =
+        'El campo 1 está vacío. Por favor, ingrese un número en el campo 1.'
+      break
+    case '10':
+      mensajeError =
+        'El campo 2 está vacío. Por favor, ingrese un número en el campo 2.'
+      break
+    case '11':
+      if (valor2 > 9 || valor2 < -9) {
+        mensajeError = 'Solo se permite pegar números de 1 dígito.'
+      } else {
+        mensajeError = 'Continuar'
+      }
+      break
+    default:
+      mensajeError = 'Error desconocido. Por favor, revise las entradas.'
   }
+
+  // Habilitar o deshabilitar el botón según el estado del error
+  boton.disabled = mensajeError !== 'Continuar'
 
   validarInputYMostrarError(mensajeError)
 }
+
 // !SECTION 12.- pegaPorDelante
 
 //SECTION - Inicio 13.- trozoDeNumero
@@ -122,9 +184,6 @@ function validarInputTrozoDeNumero () {
   const boton = document.getElementById('resolver')
 
   let mensajeError = ''
-  console.log(typeof valor)
-  console.log(!isNaN(valor2))
-  console.log(!isNaN(valor3))
   // Verificar si el valor tiene la longitud adecuada
   const estado =
     (isNaN(valor) ? '0' : '1') +
@@ -185,9 +244,14 @@ function validarInputTrozoDeNumero () {
             'input2 no puede ser negativo y el campo 3 no está en el rango.'
           break
         case 'II':
-          mensajeError = 'Puede Continuar2'
-          boton.disabled = false
-
+          if (valor2 >= 0 && valor2 <= digitos) {
+            if (valor3 >= valor2 && valor3 <= digitos) {
+              mensajeError = 'Puede Continuar2'
+              boton.disabled = false
+            } else {
+              mensajeError = 'input2 no puede ser mayor que input3'
+            }
+          }
           break
         default:
           mensajeError = 'revisame algo paso'
