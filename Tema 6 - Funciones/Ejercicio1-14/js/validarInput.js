@@ -138,6 +138,7 @@ function validarInputPegaPorDelante (input) {
   const valor = parseInt(document.getElementById('num1').value)
   const valor2 = parseInt(input.value)
   const boton = document.getElementById('resolver')
+  let unDigito = (valor2 >= 0 && valor2 <= 9) || (valor2 >= -9 && valor2 <= -1)
   let mensajeError = ''
 
   // Combinaciones posibles y mensajes correspondientes
@@ -148,23 +149,30 @@ function validarInputPegaPorDelante (input) {
       mensajeError = 'Ambos campos están vacíos. Por favor, ingrese números.'
       break
     case '01':
-      if (valor2 > 9 || valor2 < -9) {
-        mensajeError =
-          'El campo 1 esta vacio y Solo se permite pegar números de 1 dígito.'
+      if (unDigito) {
+        mensajeError = 'El campo 1 está vacío.'
       } else {
-        mensajeError =
-          'El campo 1 está vacío. Por favor, ingrese un número en el campo 1.'
+        mensajeError = `El campo 1 esta vacio <br><br> input2 solo puede tener 1 dígito.`
       }
       break
     case '10':
-      mensajeError =
-        'El campo 2 está vacío. Por favor, ingrese un número en el campo 2.'
+      if (valor < 0) {
+        mensajeError = `input1 no puede ser negativo <br><br> input 2 esta vacio`
+      } else {
+        mensajeError = 'El campo 2 está vacío. '
+      }
       break
     case '11':
-      if (valor2 > 9 || valor2 < -9) {
-        mensajeError = 'Solo se permite pegar números de 1 dígito.'
+      if (valor < 0) {
+        mensajeError = unDigito
+          ? 'input1 no puede ser negativo'
+          : 'input1 no puede ser negativo <br><br> input2 solo puede tener 1 dígito.'
       } else {
-        mensajeError = 'Continuar'
+        if (unDigito) {
+          mensajeError = 'Continuar'
+        } else {
+          mensajeError = 'input2 solo puede tener 1 digito '
+        }
       }
       break
     default:
