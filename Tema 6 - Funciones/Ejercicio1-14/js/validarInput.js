@@ -148,8 +148,13 @@ function validarInputPegaPorDelante (input) {
       mensajeError = 'Ambos campos están vacíos. Por favor, ingrese números.'
       break
     case '01':
-      mensajeError =
-        'El campo 1 está vacío. Por favor, ingrese un número en el campo 1.'
+      if (valor2 > 9 || valor2 < -9) {
+        mensajeError =
+          'El campo 1 esta vacio y Solo se permite pegar números de 1 dígito.'
+      } else {
+        mensajeError =
+          'El campo 1 está vacío. Por favor, ingrese un número en el campo 1.'
+      }
       break
     case '10':
       mensajeError =
