@@ -135,44 +135,44 @@ function validarInputPegaPorDetras (input) {
 
 //SECTION - Inicio 12.- pegaPorDelante
 function validarInputPegaPorDelante (input) {
-  const valor = parseInt(document.getElementById('num1').value)
-  const valor2 = parseInt(input.value)
+  const input1 = parseInt(document.getElementById('num1').value)
+  const input2 = parseInt(input.value)
   const boton = document.getElementById('resolver')
-  let unDigito = (valor2 >= 0 && valor2 <= 9) || (valor2 >= -9 && valor2 <= -1)
+  let esValido = (input2 >= 0 && input2 <= 9) || (input2 >= -9 && input2 <= -1)
   let mensajeError = ''
 
   // Combinaciones posibles y mensajes correspondientes
-  const estado = (isNaN(valor) ? '0' : '1') + (isNaN(valor2) ? '0' : '1')
+  const estado = (isNaN(input1) ? '0' : '1') + (isNaN(input2) ? '0' : '1')
 
   switch (estado) {
     case '00':
       mensajeError = 'Ambos campos están vacíos. Por favor, ingrese números.'
       break
     case '01':
-      if (unDigito) {
+      if (esValido) {
         mensajeError = 'El campo 1 está vacío.'
       } else {
-        mensajeError = `El campo 1 esta vacio <br><br> input2 solo puede tener 1 dígito.`
+        mensajeError = `El campo 1 esta vacio <br><br> input2 No puede tener mas de 1 digito`
       }
       break
     case '10':
-      if (valor < 0) {
-        mensajeError = `input1 no puede ser negativo <br><br> input 2 esta vacio`
-      } else {
+      if (input1 >= 0) {
         mensajeError = 'El campo 2 está vacío. '
+      } else {
+        mensajeError = `input1 no puede ser negativo <br><br> input 2 esta vacio`
       }
       break
     case '11':
-      if (valor < 0) {
-        mensajeError = unDigito
-          ? 'input1 no puede ser negativo'
-          : 'input1 no puede ser negativo <br><br> input2 solo puede tener 1 dígito.'
-      } else {
-        if (unDigito) {
+      if (input1 >= 0) {
+        if (esValido) {
           mensajeError = 'Continuar'
         } else {
-          mensajeError = 'input2 solo puede tener 1 digito '
+          mensajeError = 'input2 No puede tener mas de 1 digito'
         }
+      } else {
+        mensajeError = esValido
+          ? 'input1 no puede ser negativo'
+          : 'input1 no puede ser negativo <br><br> input2 No puede tener mas de 1 digito'
       }
       break
     default:
