@@ -84,41 +84,47 @@ function validarInputQuitaPorDelante (input) {
 
 //SECTION - Inicio 11.- pegaPorDetras
 function validarInputPegaPorDetras (input) {
-  const valor = parseInt(document.getElementById('num1').value)
-  const valor2 = parseInt(input.value)
+  const input1 = parseInt(document.getElementById('num1').value)
+  const input2 = parseInt(input.value)
   const boton = document.getElementById('resolver')
+  let esValido = (input2 >= 0 && input2 <= 9) || (input2 >= -9 && input2 <= -1)
   let mensajeError = ''
 
   // Combinaciones posibles y mensajes correspondientes
-  const estado = (isNaN(valor) ? '0' : '1') + (isNaN(valor2) ? '0' : '1')
+  const estado = (isNaN(input1) ? '0' : '1') + (isNaN(input2) ? '0' : '1')
 
   switch (estado) {
     case '00':
-      mensajeError = 'Ambos campos están vacíos. Por favor, ingrese números.'
+      mensajeError =
+        '00- Ambos campos están vacíos. Por favor, ingrese números.'
       break
     case '01':
-      if (valor2 > 9) {
-        mensajeError =
-          'El campo 1 esta vacio y Solo se permite pegar números de 1 dígito.'
-      } else if (valor2 < 0 && valor2 >= -9) {
-        mensajeError = `<span>  el campo 1 esta vacio y no se permiten numeros negativos  <span style='color: red;'>${valor2}</span>.</span>`
-      } else if (valor2 < 0 && valor2 < -9) {
-        mensajeError = `<span>  el campo 1 esta vacio y no se permiten numeros negativos de mas de una cifra  <span style='color: red;'>${valor2}</span>.</span>`
+      if (esValido) {
+        mensajeError = '01- El campo 1 está vacío.'
       } else {
-        mensajeError = `El campo 1 esta vacio`
+        mensajeError = `01- El campo 1 esta vacio <br><br> input2 No puede tener mas de 1 digito`
       }
       break
     case '10':
-      mensajeError =
-        'El campo 2 está vacío. Por favor, ingrese un número en el campo 2.'
+      mensajeError = `10- input 2 esta vacio`
       break
     case '11':
-      if (valor2 > 9) {
-        mensajeError = 'Solo se permite pegar números de 1 dígito.'
-      } else if (valor2 < 0) {
-        mensajeError = `<span>El campo 2 no puede tener numeros negativos ${valor}<span style='color: red;'>${valor2}</span>.</span>`
+      if (input1 >= 0) {
+        mensajeError = esValido
+          ? '11- Continuar'
+          : '11- input2 no puede tener más de 1 dígito'
       } else {
-        mensajeError = 'Continuar' // No hay error si ambos están correctos
+        if (esValido) {
+          mensajeError =
+            input2 >= 0
+              ? '11- Continuar'
+              : `<span>11- El campo 2 no puede tener números negativos <br><span style='color: red;'>${input2}</span>${input1}.  </span>`
+        } else {
+          mensajeError =
+            input2 >= 0
+              ? '11- input2 no puede tener más de 1 dígito'
+              : '11- input2 no puede tener más de 1 dígito y no puede ser negativo'
+        }
       }
       break
     default:
@@ -130,7 +136,6 @@ function validarInputPegaPorDetras (input) {
 
   validarInputYMostrarError(mensajeError)
 }
-
 // !SECTION 11.- pegaPorDetras
 
 //SECTION - Inicio 12.- pegaPorDelante
@@ -177,7 +182,6 @@ function validarInputPegaPorDelante (input) {
               : '11- input2 no puede tener más de 1 dígito y no puede ser negativo'
         }
       }
-
       break
     default:
       mensajeError = 'Error desconocido. Por favor, revise las entradas.'
