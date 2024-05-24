@@ -146,7 +146,8 @@ function validarInputPegaPorDelante (input) {
 
   switch (estado) {
     case '00':
-      mensajeError = '00- Ambos campos están vacíos. Por favor, ingrese números.'
+      mensajeError =
+        '00- Ambos campos están vacíos. Por favor, ingrese números.'
       break
     case '01':
       if (esValido) {
