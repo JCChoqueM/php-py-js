@@ -110,19 +110,30 @@ function validarInputPegaPorDetras (input) {
       break
     case '11':
       if (input1 >= 0) {
-        mensajeError = esValido
-          ? '11- Continuar'
-          : '11- input2 no puede tener más de 1 dígito'
+        if (esValido) {
+          if (input2 >= 0) {
+            mensajeError = 'Continuar'
+          } else {
+            mensajeError = `<span>11- El campo 2 no puede tener números negativos <br>${input1}<span style='color: red;'>${input2}</span>.  </span>`
+          }
+        } else {
+          if (input2 >= 0) {
+            mensajeError = '11- input2 no puede tener más de 1 dígito'
+          } else {
+            mensajeError =
+              '11- input2 no puede tener más de 1 dígito y no puede ser negativo'
+          }
+        }
       } else {
         if (esValido) {
           mensajeError =
             input2 >= 0
               ? '11- Continuar'
-              : `<span>11- El campo 2 no puede tener números negativos <br><span style='color: red;'>${input2}</span>${input1}.  </span>`
+              : `<span>11- El campo 2 no puede tener números negativos2 <br>${input1}<span style='color: red;'>${input2}</span>.  </span>`
         } else {
           mensajeError =
             input2 >= 0
-              ? '11- input2 no puede tener más de 1 dígito'
+              ? '11- input2 no puede tener más de 1 dígito2'
               : '11- input2 no puede tener más de 1 dígito y no puede ser negativo'
         }
       }
@@ -167,13 +178,13 @@ function validarInputPegaPorDelante (input) {
     case '11':
       if (input1 >= 0) {
         mensajeError = esValido
-          ? '11- Continuar'
+          ? 'Continuar'
           : '11- input2 no puede tener más de 1 dígito'
       } else {
         if (esValido) {
           mensajeError =
             input2 >= 0
-              ? '11- Continuar'
+              ? 'Continuar'
               : `<span>11- El campo 2 no puede tener números negativos <br><span style='color: red;'>${input2}</span>${input1}.  </span>`
         } else {
           mensajeError =
