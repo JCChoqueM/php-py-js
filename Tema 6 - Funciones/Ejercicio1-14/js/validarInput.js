@@ -146,34 +146,37 @@ function validarInputPegaPorDelante (input) {
 
   switch (estado) {
     case '00':
-      mensajeError = 'Ambos campos están vacíos. Por favor, ingrese números.'
+      mensajeError = '00- Ambos campos están vacíos. Por favor, ingrese números.'
       break
     case '01':
       if (esValido) {
-        mensajeError = 'El campo 1 está vacío.'
+        mensajeError = '01- El campo 1 está vacío.'
       } else {
-        mensajeError = `El campo 1 esta vacio <br><br> input2 No puede tener mas de 1 digito`
+        mensajeError = `01- El campo 1 esta vacio <br><br> input2 No puede tener mas de 1 digito`
       }
       break
     case '10':
-      if (input1 >= 0) {
-        mensajeError = 'El campo 2 está vacío. '
-      } else {
-        mensajeError = `input1 no puede ser negativo <br><br> input 2 esta vacio`
-      }
+      mensajeError = `10- input 2 esta vacio`
       break
     case '11':
       if (input1 >= 0) {
-        if (esValido) {
-          mensajeError = 'Continuar'
-        } else {
-          mensajeError = 'input2 No puede tener mas de 1 digito'
-        }
-      } else {
         mensajeError = esValido
-          ? 'input1 no puede ser negativo'
-          : 'input1 no puede ser negativo <br><br> input2 No puede tener mas de 1 digito'
+          ? '11- Continuar'
+          : '11- input2 no puede tener más de 1 dígito'
+      } else {
+        if (esValido) {
+          mensajeError =
+            input2 >= 0
+              ? '11- Continuar'
+              : `<span>11- El campo 2 no puede tener números negativos <br><span style='color: red;'>${input2}</span>${input1}.  </span>`
+        } else {
+          mensajeError =
+            input2 >= 0
+              ? '11- input2 no puede tener más de 1 dígito'
+              : '11- input2 no puede tener más de 1 dígito y no puede ser negativo'
+        }
       }
+
       break
     default:
       mensajeError = 'Error desconocido. Por favor, revise las entradas.'
