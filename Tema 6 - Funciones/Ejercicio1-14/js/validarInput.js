@@ -184,10 +184,14 @@ function validarInputPegaPorDelante(input) {
           if (input2 >= 0) {
             mensajeError = "Continuar";
           } else {
-            mensajeError = `<span>11- El campo 2 no puede tener números negativos:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
+            mensajeError = `<span>1-1 El campo 2 no puede tener números negativos:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
           }
         } else {
-          mensajeError = `<span> 11- input2 no puede tener más de 1 dígito:<br><span ${rojo}>${input2}</span>${input1}</span>`;
+          if (input2 >= 0) {
+            mensajeError = `<span>11 El campo 2 no puede tener mas de 1 digito:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
+          } else {
+            mensajeError = `<span>1-1 El campo 2 no puede tener números negativos ni ser mas de 1 digito:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
+          }
         }
       } else {
         if (esValido) {
