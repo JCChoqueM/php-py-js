@@ -157,6 +157,8 @@ function validarInputPegaPorDelante(input) {
   let esValido = (input2 >= 0 && input2 <= 9) || (input2 >= -9 && input2 <= -1);
   let mensajeError = "";
   let rojo = "style = 'color: red;'";
+  let centrar =
+    "style='display: inline-block; text-align: center; width: 100%;'";
   let verde = "style = 'color: green;'";
   let continuar = false;
 
@@ -179,32 +181,38 @@ function validarInputPegaPorDelante(input) {
       mensajeError = `10- input 2 esta vacio`;
       break;
     case "11":
-      if (input1 >= 0) {
-        if (esValido) {
-          if (input2 >= 0) {
-            mensajeError = "Continuar";
+      if (input2 != 0) {
+        if (input1 > 0) {
+          if (esValido) {
+            if (input2 >= 0) {
+              mensajeError = "Continuar";
+            } else {
+              mensajeError = `<span>1-1 El campo 2 no puede tener números negativos:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
+            }
           } else {
-            mensajeError = `<span>1-1 El campo 2 no puede tener números negativos:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
+            if (input2 > 0) {
+              mensajeError = `<span>11 El campo 2 no puede tener mas de 1 digito:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
+            } else {
+              mensajeError = `<span>1-1 El campo 2 no puede tener números negativos ni ser mas de 1 digito:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
+            }
           }
         } else {
-          if (input2 >= 0) {
-            mensajeError = `<span>11 El campo 2 no puede tener mas de 1 digito:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
+          if (esValido) {
+            mensajeError =
+              input2 >= 0
+                ? "Continuar"
+                : `<span>11- El campo 2 no puede tener números negativos <br><span ${rojo}>${input2}</span>${input1}.  </span>`;
           } else {
-            mensajeError = `<span>1-1 El campo 2 no puede tener números negativos ni ser mas de 1 digito:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
+            mensajeError =
+              input2 >= 0
+                ? "11- input2 no puede tener más de 1 dígito"
+                : "11- input2 no puede tener más de 1 dígito y no puede ser negativo";
           }
         }
       } else {
-        if (esValido) {
-          mensajeError =
-            input2 >= 0
-              ? "Continuar"
-              : `<span>11- El campo 2 no puede tener números negativos <br><span ${rojo}>${input2}</span>${input1}.  </span>`;
-        } else {
-          mensajeError =
-            input2 >= 0
-              ? "11- input2 no puede tener más de 1 dígito"
-              : "11- input2 no puede tener más de 1 dígito y no puede ser negativo";
-        }
+        mensajeError = `<span>input2 debe ser distinto de 0: <br><span ${centrar}>
+          <span ${rojo}>${input2}</span>${input1}<br>${input1}</span>
+        </span> `;
       }
       break;
     default:
