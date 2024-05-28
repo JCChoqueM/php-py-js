@@ -157,8 +157,7 @@ function validarInputPegaPorDelante(input) {
   let esValido = (input2 >= 0 && input2 <= 9) || (input2 >= -9 && input2 <= -1);
   let mensajeError = "";
   let rojo = "style = 'color: red;'";
-  let centrar =
-    "style='display: inline-block; text-align: center; width: 100%;'";
+  let centrar = "style='display: flex; justify-content: center;'";
   let verde = "style = 'color: green;'";
   let continuar = false;
 
@@ -211,20 +210,32 @@ function validarInputPegaPorDelante(input) {
         }
       } else {
         if (input1 < 0) {
-          mensajeError = `<span>input2 debe ser distinto de 0: 
-          <br>
-          <span ${centrar}>
-          <span>-<span ${rojo}>${input2}</span>${Math.abs(input1)}</span>
-          <br>
-          <span><span ${rojo}>${input2}</span>${input1}</span>
-          <br>
-          <span>${input1}</span>
-          </span>
-          </span> `;
+          mensajeError = `
+    <span>
+      input2 debe ser distinto de 0:
+      <div ${centrar}>
+        <span>-<span ${rojo}>${input2}</span>${Math.abs(input1)}</span>
+      </div>
+      <div ${centrar}>
+        <span><span ${rojo}>${input2}</span>${input1}</span>
+      </div>
+      <div ${centrar}>
+        <span>${input1}</span>
+      </div>
+    </span>
+  `;
         } else {
-          mensajeError = `<span>input2 debe ser distinto de 0: <br><span ${centrar}>
-            <span ${rojo}>${input2}</span>${input1}<br>${input1}</span>
-          </span> `;
+          mensajeError = `
+    <span>
+      input2 debe ser distinto de 0:
+      <div ${centrar}>
+        <span><span ${rojo}>${input2}</span>${input1}</span>
+      </div>
+      <div ${centrar}>
+        <span>${input1}</span>
+      </div>
+    </span>
+  `;
         }
       }
       break;
