@@ -180,6 +180,13 @@ function validarInputPegaPorDelante(input) {
       mensajeError = `10- input 2 esta vacio`;
       break;
     case "11":
+      if (input1 == 0) {
+        if (esValido) {
+          if(input2==0){
+            
+          }
+        }
+      }
       if (input2 != 0) {
         if (input1 > 0) {
           if (esValido) {
@@ -198,12 +205,12 @@ function validarInputPegaPorDelante(input) {
         } else {
           if (esValido) {
             mensajeError =
-              input2 >= 0
+              input2 > 0
                 ? "Continuar"
                 : `<span>11- El campo 2 no puede tener números negativos <br><span ${rojo}>${input2}</span>${input1}.  </span>`;
           } else {
             mensajeError =
-              input2 >= 0
+              input2 > 0
                 ? "11- input2 no puede tener más de 1 dígito"
                 : "11- input2 no puede tener más de 1 dígito y no puede ser negativo";
           }
@@ -211,7 +218,6 @@ function validarInputPegaPorDelante(input) {
       } else {
         if (input1 < 0) {
           mensajeError = `
-    <span>
       input2 debe ser distinto de 0:
       <div ${centrar}>
         <span>-<span ${rojo}>${input2}</span>${Math.abs(input1)}</span>
@@ -222,11 +228,10 @@ function validarInputPegaPorDelante(input) {
       <div ${centrar}>
         <span>${input1}</span>
       </div>
-    </span>
+    
   `;
         } else {
           mensajeError = `
-    <span>
       input2 debe ser distinto de 0:
       <div ${centrar}>
         <span><span ${rojo}>${input2}</span>${input1}</span>
@@ -234,7 +239,6 @@ function validarInputPegaPorDelante(input) {
       <div ${centrar}>
         <span>${input1}</span>
       </div>
-    </span>
   `;
         }
       }
