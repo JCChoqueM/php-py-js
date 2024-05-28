@@ -210,9 +210,22 @@ function validarInputPegaPorDelante(input) {
           }
         }
       } else {
-        mensajeError = `<span>input2 debe ser distinto de 0: <br><span ${centrar}>
-          <span ${rojo}>${input2}</span>${input1}<br>${input1}</span>
-        </span> `;
+        if (input1 < 0) {
+          mensajeError = `<span>input2 debe ser distinto de 0: 
+          <br>
+          <span ${centrar}>
+          <span>-<span ${rojo}>${input2}</span>${Math.abs(input1)}</span>
+          <br>
+          <span><span ${rojo}>${input2}</span>${input1}</span>
+          <br>
+          <span>${input1}</span>
+          </span>
+          </span> `;
+        } else {
+          mensajeError = `<span>input2 debe ser distinto de 0: <br><span ${centrar}>
+            <span ${rojo}>${input2}</span>${input1}<br>${input1}</span>
+          </span> `;
+        }
       }
       break;
     default:
