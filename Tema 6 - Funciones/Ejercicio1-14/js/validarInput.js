@@ -157,7 +157,7 @@ function validarInputPegaPorDelante(input) {
   let esValido = (input2 >= 0 && input2 <= 9) || (input2 >= -9 && input2 <= -1);
   let mensajeError = "";
   let rojo = "style = 'color: red;'";
-  let centrar = "style='display: flex; justify-content: center;'";
+  let centrar = "style='text-align: center;'";
   let verde = "style = 'color: green;'";
   let continuar = false;
 
@@ -184,31 +184,69 @@ function validarInputPegaPorDelante(input) {
         case input1 == 0:
           switch (true) {
             case input2 == 0:
-              mensajeError = `${input2}${input1}<br>${input1}`;
+              mensajeError = `Input2 no puede ser 0:<br>
+             <div ${centrar}>
+                  <span ${rojo}>${input2}</span>${input1}<br>
+                  ${input1}  
+             </div>`;
               break;
             case esValido:
               mensajeError = `Continuar`;
               break;
             case !esValido:
-              mensajeError = `${input2}${input1}`;
+              mensajeError = `input2 no puede tener mas de 1 digito:<br>
+             <div ${centrar}>
+                  <span ${rojo}>${input2}</span>${input1}<br> 
+             </div>`;
               break;
           }
           break;
         case input1 > 0:
           switch (true) {
             case input2 == 0:
-              mensajeError = `${input2}${input1}<br>${input1}`;
+              mensajeError = `Input2 no puede ser 0:<br>
+             <div ${centrar}>
+                  <span ${rojo}>${input2}</span>${input1}<br>
+                  ${input1}  
+             </div>`;
               break;
             case esValido:
               mensajeError = `Continuar`;
               break;
             case !esValido:
-              mensajeError = `${input2}${input1}`;
+              mensajeError = `input2 no puede tener mas de 1 digito:<br>
+             <div ${centrar}>
+                  <span ${rojo}>${input2}</span>${input1}<br> 
+             </div>`;
               break;
           }
           break;
         case input1 < 0:
-          console.log("input1 es negativo");
+          mensajeError = `Input1 no puede ser Negativo:<br>`;
+          switch (true) {
+            case input2 == 0:
+              mensajeError += `
+             <div ${centrar}>
+                  <span ${rojo}>${input2}</span>${input1}<br>
+                 -<span ${rojo}>${input2}</span>${Math.abs(input1)}<br>
+                  ${input1}  
+             </div>`;
+              break;
+            case esValido:
+              mensajeError += `
+             <div ${centrar}>
+                <span ${rojo}>${input2}</span>${input1}<br> 
+                - <span ${rojo}>${input2}</span> ${Math.abs(input1)}<br>
+             </div>`;
+              break;
+            case !esValido:
+              mensajeError += `
+             <div ${centrar}>
+                  <span ${rojo}>${input2}</span>${input1}<br> 
+                 -<span ${rojo}>${input2}</span>${Math.abs(input1)}<br>
+             </div>`;
+              break;
+          }
           break;
         default:
           console.log("input1 no es un número válido");
