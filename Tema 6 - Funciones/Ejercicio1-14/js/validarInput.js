@@ -227,23 +227,29 @@ function validarInputPegaPorDelante(input) {
             case input2 == 0:
               mensajeError += `
              <div ${centrar}>
-                  <span ${rojo}>${input2}</span>${input1}<br>
-                 -<span ${rojo}>${input2}</span>${Math.abs(input1)}<br>
-                  ${input1}  
+                  <span ${rojo}>-</span>${input2}<span ${rojo}>${Math.abs(
+                input1
+              )}</span><br>
+                 ${input2}<span ${rojo}>${input1}</span><br>
+                  <span ${rojo}>${input1}</span> 
              </div>`;
               break;
             case esValido:
               mensajeError += `
              <div ${centrar}>
-                <span ${rojo}>${input2}</span>${input1}<br> 
-                - <span ${rojo}>${input2}</span> ${Math.abs(input1)}<br>
+                  <span ${rojo}>-</span>${input2}<span ${rojo}>${Math.abs(
+                input1
+              )}</span><br>
+                 ${input2}<span ${rojo}>${input1}</span><br> 
              </div>`;
               break;
             case !esValido:
               mensajeError += `
              <div ${centrar}>
-                  <span ${rojo}>${input2}</span>${input1}<br> 
-                 -<span ${rojo}>${input2}</span>${Math.abs(input1)}<br>
+                  <span ${rojo}>-</span>${input2}<span ${rojo}>${Math.abs(
+                input1
+              )}</span><br>
+                 ${input2}<span ${rojo}>${input1}</span><br>
              </div>`;
               break;
           }
@@ -251,83 +257,6 @@ function validarInputPegaPorDelante(input) {
         default:
           console.log("input1 no es un número válido");
       }
-      /*       if (input1 == 0) {
-        if (input2 != 0) {
-          if (esValido) {
-            mensajeError = "Continuar";
-          } else {
-            mensajeError = `input2 No puede tener mas de un digito:
-          <div ${centrar}>
-          <span><span ${rojo}>${input2}</span>${input1}</span>
-          </div>`;
-          }
-        } else {
-          mensajeError = `input2 debe ser distinto de 0:
-         <div ${centrar}>
-          <span><span ${rojo}>${input2}</span>${input1}</span>
-          </div>`;
-        }
-        //input1 es distinto de 0
-      } else {
-        if (input1 > 0) {
-        } else if (input1 < 0) {
-        }
-        if (input2 != 0) {
-          if (input1 > 0) {
-            if (esValido) {
-              if (input2 > 0) {
-                mensajeError = "Continuar";
-              } else {
-                mensajeError = `<span>1-1 El campo 2 no puede tener números negativos:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
-              }
-            } else {
-              if (input2 > 0) {
-                mensajeError = `<span>11 El campo 2 no puede tener mas de 1 digito:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
-              } else {
-                mensajeError = `<span>1-1 El campo 2 no puede tener números negativos ni ser mas de 1 digito:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
-              }
-            }
-          } else {
-            if (esValido) {
-              mensajeError =
-                input2 > 0
-                  ? "Continuar"
-                  : `<span>11- El campo 2 no puede tener números negativos <br><span ${rojo}>${input2}</span>${input1}.  </span>`;
-            } else {
-              mensajeError =
-                input2 > 0
-                  ? "11- input2 no puede tener más de 1 dígito"
-                  : "11- input2 no puede tener más de 1 dígito y no puede ser negativo";
-            }
-          }
-        } else {
-          if (input1 < 0) {
-            mensajeError = `
-        input2 debe ser distinto de 0:
-        <div ${centrar}>
-          <span>-<span ${rojo}>${input2}</span>${Math.abs(input1)}</span>
-        </div>
-        <div ${centrar}>
-          <span><span ${rojo}>${input2}</span>${input1}</span>
-        </div>
-        <div ${centrar}>
-          <span>${input1}</span>
-        </div>
-      
-    `;
-          } else {
-            mensajeError = `
-        input2 debe ser distinto de 0:
-        <div ${centrar}>
-          <span><span ${rojo}>${input2}</span>${input1}</span>
-        </div>
-        <div ${centrar}>
-          <span>${input1}</span>
-        </div>
-    `;
-          }
-        }
-      } */
       break;
     default:
       mensajeError = "Error desconocido. Por favor, revise las entradas.";
