@@ -180,7 +180,40 @@ function validarInputPegaPorDelante(input) {
       mensajeError = `10- input 2 esta vacio`;
       break;
     case "11":
-      if (input1 == 0) {
+      switch (true) {
+        case input1 == 0:
+          switch (true) {
+            case input2 == 0:
+              mensajeError = `${input2}${input1}<br>${input1}`;
+              break;
+            case esValido:
+              mensajeError = `Continuar`;
+              break;
+            case !esValido:
+              mensajeError = `${input2}${input1}`;
+              break;
+          }
+          break;
+        case input1 > 0:
+          switch (true) {
+            case input2 == 0:
+              mensajeError = `${input2}${input1}<br>${input1}`;
+              break;
+            case esValido:
+              mensajeError = `Continuar`;
+              break;
+            case !esValido:
+              mensajeError = `${input2}${input1}`;
+              break;
+          }
+          break;
+        case input1 < 0:
+          console.log("input1 es negativo");
+          break;
+        default:
+          console.log("input1 no es un número válido");
+      }
+      /*       if (input1 == 0) {
         if (input2 != 0) {
           if (esValido) {
             mensajeError = "Continuar";
@@ -196,11 +229,15 @@ function validarInputPegaPorDelante(input) {
           <span><span ${rojo}>${input2}</span>${input1}</span>
           </div>`;
         }
+        //input1 es distinto de 0
       } else {
+        if (input1 > 0) {
+        } else if (input1 < 0) {
+        }
         if (input2 != 0) {
           if (input1 > 0) {
             if (esValido) {
-              if (input2 >= 0) {
+              if (input2 > 0) {
                 mensajeError = "Continuar";
               } else {
                 mensajeError = `<span>1-1 El campo 2 no puede tener números negativos:<br><span ${rojo}>${input2}</span>${input1}.  </span>`;
@@ -252,7 +289,7 @@ function validarInputPegaPorDelante(input) {
     `;
           }
         }
-      }
+      } */
       break;
     default:
       mensajeError = "Error desconocido. Por favor, revise las entradas.";
