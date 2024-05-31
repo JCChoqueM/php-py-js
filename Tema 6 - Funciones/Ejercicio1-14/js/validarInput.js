@@ -89,10 +89,11 @@ function validarInputPegaPorDetras(input) {
   const boton = document.getElementById("resolver");
   let esValido = (input2 >= 0 && input2 <= 9) || (input2 >= -9 && input2 <= -1);
   let mensajeError = "";
+  let rojo = "style = 'color: red;'";
+  let centrar = "style='text-align: center;'";
 
   // Combinaciones posibles y mensajes correspondientes
   const estado = (isNaN(input1) ? "0" : "1") + (isNaN(input2) ? "0" : "1");
-
   switch (estado) {
     case "00":
       mensajeError =
@@ -109,33 +110,82 @@ function validarInputPegaPorDetras(input) {
       mensajeError = `10- input 2 esta vacio`;
       break;
     case "11":
-      if (input1 >= 0) {
-        if (esValido) {
-          if (input2 >= 0) {
-            mensajeError = "Continuar";
-          } else {
-            mensajeError = `<span>11- El campo 2 no puede tener números negativos <br>${input1}<span style='color: red;'>${input2}</span>.  </span>`;
+      switch (true) {
+        case input1 == 0:
+          switch (true) {
+            case input2 == 0:
+              mensajeError = `Input2 no puede ser 0:<br>
+             <div ${centrar}>
+                  <span ${rojo}>${input2}</span>${input1}<br>
+                  ${input1}  
+             </div>`;
+              break;
+            case esValido:
+              mensajeError = `Continuar`;
+              break;
+            case !esValido:
+              mensajeError = `input2 no puede tener mas de 1 digito:<br>
+             <div ${centrar}>
+                  <span ${rojo}>${input2}</span>${input1}<br> 
+             </div>`;
+              break;
           }
-        } else {
-          if (input2 >= 0) {
-            mensajeError = "11- input2 no puede tener más de 1 dígito";
-          } else {
-            mensajeError =
-              "11- input2 no puede tener más de 1 dígito y no puede ser negativo";
+          break;
+        case input1 > 0:
+          switch (true) {
+            case input2 == 0:
+              mensajeError = `Input2 no puede ser 0:<br>
+             <div ${centrar}>
+                  <span ${rojo}>${input2}</span>${input1}<br>
+                  ${input1}  
+             </div>`;
+              break;
+            case esValido:
+              mensajeError = `Continuar`;
+              break;
+            case !esValido:
+              mensajeError = `input2 no puede tener mas de 1 digito:<br>
+             <div ${centrar}>
+                  <span ${rojo}>${input2}</span>${input1}<br> 
+             </div>`;
+              break;
           }
-        }
-      } else {
-        if (esValido) {
-          mensajeError =
-            input2 >= 0
-              ? "11- Continuar"
-              : `<span>11- El campo 2 no puede tener números negativos2 <br>${input1}<span style='color: red;'>${input2}</span>.  </span>`;
-        } else {
-          mensajeError =
-            input2 >= 0
-              ? "11- input2 no puede tener más de 1 dígito2"
-              : "11- input2 no puede tener más de 1 dígito y no puede ser negativo";
-        }
+          break;
+        case input1 < 0:
+          mensajeError = `Input1 no puede ser Negativo:<br>`;
+          switch (true) {
+            case input2 == 0:
+              mensajeError += `
+             <div ${centrar}>
+                  <span ${rojo}>-</span>${input2}<span ${rojo}>${Math.abs(
+                input1
+              )}</span><br>
+                 ${input2}<span ${rojo}>${input1}</span><br>
+                  <span ${rojo}>${input1}</span> 
+             </div>`;
+              break;
+            case esValido:
+              mensajeError += `
+             <div ${centrar}>
+                  <span ${rojo}>-</span>${input2}<span ${rojo}>${Math.abs(
+                input1
+              )}</span><br>
+                 ${input2}<span ${rojo}>${input1}</span><br> 
+             </div>`;
+              break;
+            case !esValido:
+              mensajeError += `
+             <div ${centrar}>
+                  <span ${rojo}>-</span>${input2}<span ${rojo}>${Math.abs(
+                input1
+              )}</span><br>
+                 ${input2}<span ${rojo}>${input1}</span><br>
+             </div>`;
+              break;
+          }
+          break;
+        default:
+          console.log("input1 no es un número válido");
       }
       break;
     default:
@@ -158,8 +208,6 @@ function validarInputPegaPorDelante(input) {
   let mensajeError = "";
   let rojo = "style = 'color: red;'";
   let centrar = "style='text-align: center;'";
-  let verde = "style = 'color: green;'";
-  let continuar = false;
 
   // Combinaciones posibles y mensajes correspondientes
   const estado = (isNaN(input1) ? "0" : "1") + (isNaN(input2) ? "0" : "1");
