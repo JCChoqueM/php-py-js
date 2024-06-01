@@ -67,16 +67,16 @@ function validarInputQuitaPorDetras(input) {
 
 //SECTION - Inicio 10.- quitaPorDelante
 function validarInputQuitaPorDelante(input) {
-  const valor = parseInt(document.getElementById("num1").value);
-  const valor2 = parseInt(input.value);
+  const input1 = parseInt(document.getElementById("num1").value);
+  const input2 = parseInt(input.value);
   const boton = document.getElementById("resolver");
   let mensajeError = "";
   // Verificar si el valor tiene la longitud adecuada
-  if (valor2 > contarDigitos(valor)) {
-    mensajeError = `El numero ${valor} tiene ${contarDigitos(
-      valor
+  if (input2 > contarDigitos(input1)) {
+    mensajeError = `El numero ${input1} tiene ${contarDigitos(
+      input1
     )} digitos. <br>No se puede quitar mas de eso`;
-  } else if (valor2 < 0) {
+  } else if (input2 < 0) {
     mensajeError = `la cantidad de numeros a quitar no puede ser negativo`;
   } else {
     mensajeError = `Continuar`;
