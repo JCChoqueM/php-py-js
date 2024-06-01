@@ -69,15 +69,19 @@ function validarInputQuitaPorDetras(input) {
 function validarInputQuitaPorDelante(input) {
   const valor = parseInt(document.getElementById("num1").value);
   const valor2 = parseInt(input.value);
+  const boton = document.getElementById("resolver");
   let mensajeError = "";
   // Verificar si el valor tiene la longitud adecuada
   if (valor2 > contarDigitos(valor)) {
     mensajeError = `El numero ${valor} tiene ${contarDigitos(
       valor
-    )} digitos. No se puede quitar mas de eso`;
+    )} digitos. <br>No se puede quitar mas de eso`;
   } else if (valor2 < 0) {
     mensajeError = `la cantidad de numeros a quitar no puede ser negativo`;
+  } else {
+    mensajeError = `Continuar`;
   }
+  boton.disabled = mensajeError !== "Continuar";
   validarInputYMostrarError(mensajeError);
 }
 // !SECTION 10.- quitaPorDelante
@@ -112,74 +116,87 @@ function validarInputPegaPorDetras(input) {
     case "11":
       switch (true) {
         case input1 == 0:
+          mensajeError = `Input1 no puede ser 0<br>`;
           switch (true) {
             case input2 == 0:
-              mensajeError = `Input2 no puede ser 0:<br>
+              mensajeError += `
              <div ${centrar}>
-                  <span ${rojo}>${input2}</span>${input1}<br>
-                  ${input1}  
+                  ${input1}<span ${rojo}>${input2}</span><br>
+                  <span ${rojo}>${input2}</span> 
              </div>`;
               break;
             case esValido:
-              mensajeError = `Continuar`;
+              if (input2 > 0) {
+                mensajeError += `
+              <div ${centrar}>
+                   ${input1}<span ${rojo}>${input2}</span><br>
+                   <span ${rojo}>${input2}</span>
+              </div>`;
+              } else {
+                mensajeError += `
+             <div ${centrar}>
+                  ${input1}<span ${rojo}>${input2}</span><br>
+             </div>`;
+              }
               break;
             case !esValido:
-              mensajeError = `input2 no puede tener mas de 1 digito:<br>
+              if (input2 > 0) {
+                mensajeError += `
+              <div ${centrar}>
+                   ${input1}<span ${rojo}>${input2}</span><br>
+                  <span ${rojo}>${input2}</span> 
+              </div>`;
+              } else {
+                mensajeError += `
              <div ${centrar}>
-                  <span ${rojo}>${input2}</span>${input1}<br> 
+                  ${input1}<span ${rojo}>${input2}</span><br>
              </div>`;
+              }
               break;
           }
           break;
         case input1 > 0:
           switch (true) {
             case input2 == 0:
-              mensajeError = `Input2 no puede ser 0:<br>
-             <div ${centrar}>
-                  <span ${rojo}>${input2}</span>${input1}<br>
-                  ${input1}  
-             </div>`;
-              break;
-            case esValido:
               mensajeError = `Continuar`;
               break;
-            case !esValido:
-              mensajeError = `input2 no puede tener mas de 1 digito:<br>
+            case esValido:
+              if (input2 > 0) {
+                mensajeError = `Continuar`;
+              } else {
+                mensajeError = `input2 no puede ser Negativo:<br>
              <div ${centrar}>
-                  <span ${rojo}>${input2}</span>${input1}<br> 
+                  ${input1}<span ${rojo}>${input2}</span><br>
+             </div>`;
+              }
+              break;
+            case !esValido:
+              mensajeError = `Input2 No puede tener mas de 1 digito:<br>
+             <div ${centrar}>
+                  ${input1}<span ${rojo}>${input2}</span><br>
              </div>`;
               break;
           }
           break;
         case input1 < 0:
-          mensajeError = `Input1 no puede ser Negativo:<br>`;
           switch (true) {
             case input2 == 0:
-              mensajeError += `
-             <div ${centrar}>
-                  <span ${rojo}>-</span>${input2}<span ${rojo}>${Math.abs(
-                input1
-              )}</span><br>
-                 ${input2}<span ${rojo}>${input1}</span><br>
-                  <span ${rojo}>${input1}</span> 
-             </div>`;
+              mensajeError = `Continuar`;
               break;
             case esValido:
-              mensajeError += `
+              if (input2 > 0) {
+                mensajeError = `Continuar`;
+              } else {
+                mensajeError = `input2 no puede ser Negativo:<br>
              <div ${centrar}>
-                  <span ${rojo}>-</span>${input2}<span ${rojo}>${Math.abs(
-                input1
-              )}</span><br>
-                 ${input2}<span ${rojo}>${input1}</span><br> 
+                  ${input1}<span ${rojo}>${input2}</span><br>
              </div>`;
+              }
               break;
             case !esValido:
-              mensajeError += `
+              mensajeError = `Input2 No puede tener mas de 1 digito:<br>
              <div ${centrar}>
-                  <span ${rojo}>-</span>${input2}<span ${rojo}>${Math.abs(
-                input1
-              )}</span><br>
-                 ${input2}<span ${rojo}>${input1}</span><br>
+                  ${input1}<span ${rojo}>${input2}</span><br>
              </div>`;
               break;
           }
