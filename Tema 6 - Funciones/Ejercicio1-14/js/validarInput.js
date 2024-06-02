@@ -81,7 +81,11 @@ function validarInputQuitaPorDetras(input) {
 function validarInputQuitaPorDelante(input) {
   const input1 = parseInt(document.getElementById("num1").value);
   const input2 = parseInt(input.value);
+  const nDigito = contarDigitos(input1);
   const boton = document.getElementById("resolver");
+  let centrar = "style='text-align: center;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
   let mensajeError = "";
   const estado = (isNaN(input1) ? "0" : "1") + (isNaN(input2) ? "0" : "1");
   switch (estado) {
@@ -96,11 +100,14 @@ function validarInputQuitaPorDelante(input) {
       mensajeError = `10- input 2 esta vacio`;
       break;
     case "11":
-      if (input2 > contarDigitos(input1)) {
-        mensajeError = `El numero ${input1} tiene ${contarDigitos(
-          input1
-        )} digitos. <br>No se puede quitar mas de eso<br>
-        ${crearTabla(input1)}`;
+      if (input2 > nDigito) {
+        mensajeError = `
+        <div ${centrar}>El numero ${input1} tiene <span ${verde}>${nDigito} ${
+          nDigito == 1 ? "digito." : "digitos."
+        }</span> <br>
+        ${crearTabla(input1, 1)}
+        <span ${rojo}>No se puede quitar ${input2} digitos</span>.
+        </div>`;
       } else if (input2 < 0) {
         mensajeError = `la cantidad de numeros a quitar no puede ser negativo`;
       } else {
@@ -498,4 +505,3 @@ function validarTrozoDeNumero3() {
 }
 
 //!SECTION fin Funciones para llamar a las validaciones específicas desde los eventos
-

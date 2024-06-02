@@ -25,7 +25,7 @@ function cargarTooltip () {
 }
 
 // Llamar a la función cargarTooltip al cargar la página para mostrar el primer tooltip
-window.onload = cargarTooltip
+
 
 // Llamar a la función cargarTooltip cada vez que se cambie la selección en el select
-document.getElementById('accion').onchange = cargarTooltip
+
