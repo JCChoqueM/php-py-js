@@ -15,17 +15,22 @@ function validarInputYMostrarError(mensajeError) {
 function validarInputDigitoN(input) {
   const valor = parseInt(document.getElementById("num1").value);
   const valor2 = parseInt(input.value);
+  const boton = document.getElementById("resolver");
   let mensajeError = "";
 
   // Verificar si el valor tiene la longitud adecuada
   if (valor2 > contarDigitos(valor) - 1) {
-    mensajeError = `El numero ${valor2} ${valor} tiene posiciones de 0 a ${
+    mensajeError = `El numero  ${valor} tiene posiciones de 0 a ${
       contarDigitos(valor) - 1
-    } digitos.`;
+    }. <br>
+    ${crearTabla(valor)}`;
   } else if (valor2 < 0) {
     mensajeError = `La Posicion no puede ser negativa`;
+  } else {
+    mensajeError = `Continuar`;
   }
 
+  boton.disabled = mensajeError !== "Continuar";
   validarInputYMostrarError(mensajeError);
 }
 //!SECTION fin 7.-digitoN
@@ -34,6 +39,7 @@ function validarInputDigitoN(input) {
 function validarInputPosicionDeDigito(input) {
   const valor = parseInt(document.getElementById("num1").value);
   const valor2 = parseInt(input.value);
+  const boton = document.getElementById("resolver");
   let mensajeError = "";
 
   // Verificar si el valor tiene la longitud adecuada
@@ -41,32 +47,17 @@ function validarInputPosicionDeDigito(input) {
     mensajeError = `solo se permite ingresa numeros de 1 digito`;
   } else if (valor2 < 0) {
     mensajeError = `el numero no puede ser negativo`;
+  } else {
+    mensajeError = `Continuar`;
   }
 
+  boton.disabled = mensajeError !== "Continuar";
   validarInputYMostrarError(mensajeError);
 }
 //!SECTION fin 8.-posicionDeDigito
 
 //SECTION -  9.- quitaPorDetras
 function validarInputQuitaPorDetras(input) {
-  const valor = parseInt(document.getElementById("num1").value);
-  const valor2 = parseInt(input.value);
-  let mensajeError = "";
-  // Verificar si el valor tiene la longitud adecuada
-  if (valor2 > contarDigitos(valor)) {
-    mensajeError = `El numero ${valor} tiene ${contarDigitos(
-      valor
-    )} digitos. No se puede quitar mas de eso`;
-  } else if (valor2 < 0) {
-    mensajeError = `la cantidad de numeros a quitar no puede ser negativo`;
-  }
-
-  validarInputYMostrarError(mensajeError);
-}
-//!SECTION fin 9.- quitaPorDetras
-
-//SECTION - Inicio 10.- quitaPorDelante
-function validarInputQuitaPorDelante(input) {
   const input1 = parseInt(document.getElementById("num1").value);
   const input2 = parseInt(input.value);
   const boton = document.getElementById("resolver");
@@ -81,6 +72,46 @@ function validarInputQuitaPorDelante(input) {
   } else {
     mensajeError = `Continuar`;
   }
+  boton.disabled = mensajeError !== "Continuar";
+  validarInputYMostrarError(mensajeError);
+}
+//!SECTION fin 9.- quitaPorDetras
+
+//SECTION - Inicio 10.- quitaPorDelante
+function validarInputQuitaPorDelante(input) {
+  const input1 = parseInt(document.getElementById("num1").value);
+  const input2 = parseInt(input.value);
+  const boton = document.getElementById("resolver");
+  let mensajeError = "";
+  const estado = (isNaN(input1) ? "0" : "1") + (isNaN(input2) ? "0" : "1");
+  switch (estado) {
+    case "00":
+      mensajeError =
+        "00- Ambos campos están vacíos. Por favor, ingrese números.";
+      break;
+    case "01":
+      mensajeError = "01- El campo 1 está vacío.";
+      break;
+    case "10":
+      mensajeError = `10- input 2 esta vacio`;
+      break;
+    case "11":
+      if (input2 > contarDigitos(input1)) {
+        mensajeError = `El numero ${input1} tiene ${contarDigitos(
+          input1
+        )} digitos. <br>No se puede quitar mas de eso<br>
+        ${crearTabla(input1)}`;
+      } else if (input2 < 0) {
+        mensajeError = `la cantidad de numeros a quitar no puede ser negativo`;
+      } else {
+        mensajeError = `Continuar`;
+      }
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
+  }
+  // Verificar si el valor tiene la longitud adecuada
+
   boton.disabled = mensajeError !== "Continuar";
   validarInputYMostrarError(mensajeError);
 }
@@ -467,3 +498,4 @@ function validarTrozoDeNumero3() {
 }
 
 //!SECTION fin Funciones para llamar a las validaciones específicas desde los eventos
+

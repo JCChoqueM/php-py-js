@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dígitos e Índices en una Tabla Horizontal</title>
+</head>
+<body>
+  <input type="number" id="num1" placeholder="Ingrese un número">
+  <input type="number" id="num2" placeholder="Ingrese posición del dígito" oninput="validarInputPosicionDeDigito(this)">
+  <button id="resolver" disabled>Resolver</button>
+  <div id="mensajeError"></div>
+
+  <script>
+    function validarInputPosicionDeDigito(input) {
+      const valor = parseInt(document.getElementById("num1").value);
+      const valor2 = parseInt(input.value);
+      const boton = document.getElementById("resolver");
+      const mensajeErrorDiv = document.getElementById("mensajeError");
+      let mensajeError = "";
+
+      // Verificar si el valor tiene la longitud adecuada
+      if (valor2 > 9) {
+        mensajeError = `Solo se permite ingresar números de 1 dígito.`;
+      } else if (valor2 < 0) {
+        mensajeError = `El número no puede ser negativo.`;
+      } else {
+        mensajeError = `hola`;
+      }
+
+      boton.disabled = mensajeError !== "hola";
+
+      if (mensajeError === "hola") {
+        mensajeError += createNumberTable(valor);
+      }
+      
+      mensajeErrorDiv.innerHTML = mensajeError;
+    }
+
+    function createNumberTable(number) {
+      const numberString = number.toString();
+      let tableHtml = '<table style="border-collapse: collapse; margin: 20px auto;">';
+
+      // Crear la fila para los índices
+      tableHtml += '<tr>';
+      for (let i = 0; i < numberString.length; i++) {
+        tableHtml += `<td style="border: 1px solid black; padding: 10px; text-align: center; background-color: lightblue;">${i}</td>`;
+      }
+      tableHtml += '</tr>';
+
+      // Crear la fila para los dígitos
+      tableHtml += '<tr>';
+      for (let digit of numberString) {
+        tableHtml += `<td style="border: 1px solid black; padding: 10px; text-align: center; background-color: lightgreen;">${digit}</td>`;
+      }
+      tableHtml += '</tr>';
+
+      tableHtml += '</table>';
+      return tableHtml;
+    }
+  </script>
+</body>
+</html>
