@@ -11,7 +11,54 @@ function validarInputYMostrarError(mensajeError) {
   resultadoDiv3.innerHTML = mensajeError;
 }
 //SECTION - Inicio 1.- esCapicua
-
+function validarInputEscapicua() {
+  const input1 = parseInt(document.getElementById("num1").value);
+  const nDigito = contarDigitos(input1);
+  const boton = document.getElementById("resolver");
+  let esValido = (input1 >= 0 && input1 <= 9) || (input1 >= -9 && input1 <= -1);
+  let habilitarBoton = false;
+  let centrar = "style='text-align: center;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
+  let mensajeError = "";
+  const estado = isNaN(input1) ? "0" : "1";
+  switch (estado) {
+    case "0":
+      mensajeError = "0-El campo están vacío. Por favor, ingrese número(s).";
+      break;
+    case "1":
+      switch (true) {
+        case esValido:
+          if (input1 >= 0) {
+            mensajeError = `<span ${rojo}>Los números de un solo dígito (0-9) son siempre capicúas.</span>`;
+          } else {
+            mensajeError = `<span ${rojo}>Ignorando el signo (${input1}), los números de un solo dígito (0-9) siempre son capicúas.</span>`;
+          }
+          break;
+        case !esValido:
+          habilitarBoton = true;
+          break;
+      }
+      /*      if (input1 >= 0 && input1 <= 9) {
+        mensajeError = `<span ${rojo}>Los numeros con un dígito son 0-9 son palindrómicos</span>`;
+      } else if (input1 < 0) {
+        mensajeError = `<span ${rojo}>el numero no puede ser negativo</span>`;
+      } else {
+        mensajeError = `Continuar:<br><div ${centrar}>El numero ${input1} tiene <span ${verde}>${nDigito} ${
+          nDigito == 1 ? "posicion." : "posiciones."
+        }</span> <br>
+        ${crearTabla(input1, 0)}
+        <span ${verde}>Si se puede buscar la posicion ${input2}</span>.
+        </div>`;
+        habilitarBoton = true;
+      } */
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
+  }
+  boton.disabled = !habilitarBoton;
+  validarInputYMostrarError(mensajeError);
+}
 // !SECTION 1.- esCapicua
 
 //SECTION - Inicio 2.- esPrimo
