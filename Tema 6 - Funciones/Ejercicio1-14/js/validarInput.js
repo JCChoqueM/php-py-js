@@ -10,69 +10,177 @@ function validarInputYMostrarError(mensajeError) {
   resultadoDiv2.innerHTML = mensajeError;
   resultadoDiv3.innerHTML = mensajeError;
 }
+//SECTION - Inicio 1.- esCapicua
 
+// !SECTION 1.- esCapicua
+
+//SECTION - Inicio 2.- esPrimo
+
+// !SECTION 2.- esPrimo
+
+//SECTION - Inicio 3.- siguientePrimo
+
+// !SECTION 3.- siguientePrimo
+
+//SECTION - Inicio 4.- potencia
+
+// !SECTION 4.- potencia
+
+//SECTION - Inicio 5.- digitos
+
+// !SECTION 5.- digitos
+
+//SECTION - Inicio 6.- voltea
+
+// !SECTION 6.- voltea
 //SECTION - 7.-digitoN
 function validarInputDigitoN(input) {
-  const valor = parseInt(document.getElementById("num1").value);
-  const valor2 = parseInt(input.value);
+  const input1 = parseInt(document.getElementById("num1").value);
+  const input2 = parseInt(input.value);
+  const nDigito = contarDigitos(input1);
   const boton = document.getElementById("resolver");
+  let habilitarBoton = false;
+  let centrar = "style='text-align: center;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
   let mensajeError = "";
-
-  // Verificar si el valor tiene la longitud adecuada
-  if (valor2 > contarDigitos(valor) - 1) {
-    mensajeError = `El numero  ${valor} tiene posiciones de 0 a ${
-      contarDigitos(valor) - 1
-    }. <br>
-    ${crearTabla(valor)}`;
-  } else if (valor2 < 0) {
-    mensajeError = `La Posicion no puede ser negativa`;
-  } else {
-    mensajeError = `Continuar`;
+  const estado = (isNaN(input1) ? "0" : "1") + (isNaN(input2) ? "0" : "1");
+  switch (estado) {
+    case "00":
+      mensajeError =
+        "00- Ambos campos están vacíos. Por favor, ingrese números.";
+      break;
+    case "01":
+      mensajeError = "01- El campo 1 está vacío.";
+      break;
+    case "10":
+      mensajeError = `10- input 2 esta vacio`;
+      break;
+    case "11":
+      if (input2 > contarDigitos(input1) - 1) {
+        mensajeError = `<br><div ${centrar}>El numero ${input1} tiene <span ${verde}>${nDigito} ${
+          nDigito == 1 ? "posicion." : "posiciones."
+        }</span> <br>
+        ${crearTabla(input1, 0)}
+        </div>
+        <span ${rojo}>No se puede buscar la posicon ${input2}</span>.`;
+      } else if (input2 < 0) {
+        mensajeError = `<span ${rojo}>el numero no puede ser negativo</span>`;
+      } else {
+        mensajeError = `Continuar:<br><div ${centrar}>El numero ${input1} tiene <span ${verde}>${nDigito} ${
+          nDigito == 1 ? "posicion." : "posiciones."
+        }</span> <br>
+        ${crearTabla(input1, 0)}
+        <span ${verde}>Si se puede buscar la posicion ${input2}</span>.
+        </div>`;
+        habilitarBoton = true;
+      }
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
   }
-
-  boton.disabled = mensajeError !== "Continuar";
+  boton.disabled = !habilitarBoton;
   validarInputYMostrarError(mensajeError);
 }
+
 //!SECTION fin 7.-digitoN
 
 //SECTION - 8.- posicionDeDigito
 function validarInputPosicionDeDigito(input) {
-  const valor = parseInt(document.getElementById("num1").value);
-  const valor2 = parseInt(input.value);
+  const input1 = parseInt(document.getElementById("num1").value);
+  const input2 = parseInt(input.value);
+  const nDigito = contarDigitos(input1);
   const boton = document.getElementById("resolver");
+  let habilitarBoton = false;
+  let centrar = "style='text-align: center;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
   let mensajeError = "";
-
-  // Verificar si el valor tiene la longitud adecuada
-  if (valor2 > 9) {
-    mensajeError = `solo se permite ingresa numeros de 1 digito`;
-  } else if (valor2 < 0) {
-    mensajeError = `el numero no puede ser negativo`;
-  } else {
-    mensajeError = `Continuar`;
+  const estado = (isNaN(input1) ? "0" : "1") + (isNaN(input2) ? "0" : "1");
+  switch (estado) {
+    case "00":
+      mensajeError =
+        "00- Ambos campos están vacíos. Por favor, ingrese números.";
+      break;
+    case "01":
+      mensajeError = "01- El campo 1 está vacío.";
+      break;
+    case "10":
+      mensajeError = `10- input 2 esta vacio`;
+      break;
+    case "11":
+      if (input2 > 9) {
+        mensajeError = `<span ${rojo}>solo se permite ingresar numeros de 1 digito</span>`;
+      } else if (input2 < 0) {
+        mensajeError = `<span ${rojo}>el numero no puede ser negativo</span>`;
+      } else {
+        mensajeError = `Continuar:<br><div ${centrar}> 
+        <span ${verde}>Si se puede buscar el digito ${input2}</span> en ${input1}.
+        ${crearTabla(input1, 0)}
+        </div>
+       `;
+        habilitarBoton = true;
+      }
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
   }
-
-  boton.disabled = mensajeError !== "Continuar";
+  boton.disabled = !habilitarBoton;
   validarInputYMostrarError(mensajeError);
 }
+
 //!SECTION fin 8.-posicionDeDigito
 
 //SECTION -  9.- quitaPorDetras
 function validarInputQuitaPorDetras(input) {
   const input1 = parseInt(document.getElementById("num1").value);
   const input2 = parseInt(input.value);
+  const nDigito = contarDigitos(input1);
   const boton = document.getElementById("resolver");
+  let habilitarBoton = false;
+  let centrar = "style='text-align: center;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
   let mensajeError = "";
-  // Verificar si el valor tiene la longitud adecuada
-  if (input2 > contarDigitos(input1)) {
-    mensajeError = `El numero ${input1} tiene ${contarDigitos(
-      input1
-    )} digitos. <br>No se puede quitar mas de eso`;
-  } else if (input2 < 0) {
-    mensajeError = `la cantidad de numeros a quitar no puede ser negativo`;
-  } else {
-    mensajeError = `Continuar`;
+  const estado = (isNaN(input1) ? "0" : "1") + (isNaN(input2) ? "0" : "1");
+  switch (estado) {
+    case "00":
+      mensajeError =
+        "00- Ambos campos están vacíos. Por favor, ingrese números.";
+      break;
+    case "01":
+      mensajeError = "01- El campo 1 está vacío.";
+      break;
+    case "10":
+      mensajeError = `10- input 2 esta vacio`;
+      break;
+    case "11":
+      if (input2 > nDigito) {
+        mensajeError = `
+        <div ${centrar}>El numero ${input1} tiene <span ${verde}>${nDigito} ${
+          nDigito == 1 ? "digito." : "digitos."
+        }</span> <br>
+        ${crearTablaReves(input1, 1)}
+        <span ${rojo}>No se puede quitar ${input2} digitos por Detras</span>.
+        </div>`;
+      } else if (input2 < 0) {
+        mensajeError = `<span ${rojo}>La cantidad de numeros a quitar no puede ser negativo</span>`;
+      } else {
+        mensajeError = `Continuar:<br><div ${centrar}>El numero ${input1} tiene <span ${verde}>${nDigito} ${
+          nDigito == 1 ? "digito." : "digitos."
+        }</span> <br>
+        ${crearTablaReves(input1, 1)}
+        <span ${verde}>Si se puede quitar ${input2} digitos por Detras</span>.
+        </div>`;
+        habilitarBoton = true;
+      }
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
   }
-  boton.disabled = mensajeError !== "Continuar";
+  // Verificar si el valor tiene la longitud adecuada
+
+  boton.disabled = !habilitarBoton;
   validarInputYMostrarError(mensajeError);
 }
 //!SECTION fin 9.- quitaPorDetras
@@ -83,6 +191,7 @@ function validarInputQuitaPorDelante(input) {
   const input2 = parseInt(input.value);
   const nDigito = contarDigitos(input1);
   const boton = document.getElementById("resolver");
+  let habilitarBoton = false;
   let centrar = "style='text-align: center;'";
   let rojo = "style = 'color: red;'";
   let verde = "style = 'color: darkgreen;'";
@@ -106,12 +215,18 @@ function validarInputQuitaPorDelante(input) {
           nDigito == 1 ? "digito." : "digitos."
         }</span> <br>
         ${crearTabla(input1, 1)}
-        <span ${rojo}>No se puede quitar ${input2} digitos</span>.
+        <span ${rojo}>No se puede quitar ${input2} digitos por Delante</span>.
         </div>`;
       } else if (input2 < 0) {
-        mensajeError = `la cantidad de numeros a quitar no puede ser negativo`;
+        mensajeError = `<span ${rojo}>La cantidad de numeros a quitar no puede ser negativo</span>`;
       } else {
-        mensajeError = `Continuar`;
+        mensajeError = `Continuar:<br><div ${centrar}>El numero ${input1} tiene <span ${verde}>${nDigito} ${
+          nDigito == 1 ? "digito." : "digitos."
+        }</span> <br>
+        ${crearTabla(input1, 1)}
+        <span ${verde}>Si se puede quitar ${input2} digitos por Delante</span>.
+        </div>`;
+        habilitarBoton = true;
       }
       break;
     default:
@@ -119,7 +234,7 @@ function validarInputQuitaPorDelante(input) {
   }
   // Verificar si el valor tiene la longitud adecuada
 
-  boton.disabled = mensajeError !== "Continuar";
+  boton.disabled = !habilitarBoton;
   validarInputYMostrarError(mensajeError);
 }
 // !SECTION 10.- quitaPorDelante
@@ -145,7 +260,7 @@ function validarInputPegaPorDetras(input) {
       if (esValido) {
         mensajeError = "01- El campo 1 está vacío.";
       } else {
-        mensajeError = `01- El campo 1 esta vacio <br><br> input2 No puede tener mas de 1 digito`;
+        mensajeError = `01- El campo 1 esta vacio <br><br> No se puede pegar 2 digitos`;
       }
       break;
     case "10":
@@ -209,7 +324,7 @@ function validarInputPegaPorDetras(input) {
               }
               break;
             case !esValido:
-              mensajeError = `Input2 No puede tener mas de 1 digito:<br>
+              mensajeError = `No se puede pegar 2 digitos:<br>
              <div ${centrar}>
                   ${input1}<span ${rojo}>${input2}</span><br>
              </div>`;
@@ -232,7 +347,7 @@ function validarInputPegaPorDetras(input) {
               }
               break;
             case !esValido:
-              mensajeError = `Input2 No puede tener mas de 1 digito:<br>
+              mensajeError = `No se puede pegar 2 digitos:<br>
              <div ${centrar}>
                   ${input1}<span ${rojo}>${input2}</span><br>
              </div>`;
@@ -276,7 +391,7 @@ function validarInputPegaPorDelante(input) {
       if (esValido) {
         mensajeError = "01- El campo 1 está vacío.";
       } else {
-        mensajeError = `01- El campo 1 esta vacio <br><br> input2 No puede tener mas de 1 digito`;
+        mensajeError = `01- El campo 1 esta vacio <br><br> No se puede pegar 2 digitos`;
       }
       break;
     case "10":
@@ -297,7 +412,7 @@ function validarInputPegaPorDelante(input) {
               mensajeError = `Continuar`;
               break;
             case !esValido:
-              mensajeError = `input2 no puede tener mas de 1 digito:<br>
+              mensajeError = `No se puede pegar 2 digitos:<br>
              <div ${centrar}>
                   <span ${rojo}>${input2}</span>${input1}<br> 
              </div>`;
@@ -317,7 +432,7 @@ function validarInputPegaPorDelante(input) {
               mensajeError = `Continuar`;
               break;
             case !esValido:
-              mensajeError = `input2 no puede tener mas de 1 digito:<br>
+              mensajeError = `No se puede pegar 2 digitos:<br>
              <div ${centrar}>
                   <span ${rojo}>${input2}</span>${input1}<br> 
              </div>`;
@@ -358,7 +473,6 @@ function validarInputPegaPorDelante(input) {
           }
           break;
         default:
-          console.log("input1 no es un número válido");
       }
       break;
     default:

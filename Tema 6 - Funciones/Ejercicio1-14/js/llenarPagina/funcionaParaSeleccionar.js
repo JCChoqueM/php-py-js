@@ -5,6 +5,7 @@ function selectOption(option) {
   cargarInput();
   cambiarColor();
   deshabilitarBoton();
+  limpiarResultados();
 }
 
 // Función para actualizar el tooltip según la opción seleccionada
