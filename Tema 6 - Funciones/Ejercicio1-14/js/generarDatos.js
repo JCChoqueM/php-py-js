@@ -17,9 +17,11 @@ function generarDatos() {
       break;
     case "esPrimo":
       numInput.value = generarPrimo();
+      validarInputEsPrimo();
       break;
     case "siguientePrimo":
       numInput.value = generarSiguientePrimo();
+        validarInputSiguientePrimo();
       break;
     case "potencia":
       let numero = generarPotencia();
