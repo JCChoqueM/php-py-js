@@ -115,7 +115,54 @@ function validarInputSiguientePrimo() {
 // !SECTION 3.- siguientePrimo
 
 //SECTION - Inicio 4.- potencia
-
+function validarInputPotencia() {
+  const base = parseInt(document.getElementById("num1").value);
+  const exponente = parseInt(document.getElementById("num2").value);
+  const nDigito = contarDigitos(base);
+  const boton = document.getElementById("resolver");
+  let habilitarBoton = false;
+  let centrar = "style='text-align: center;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
+  let mensajeError = "";
+  const estado = (isNaN(base) ? "0" : "1") + (isNaN(exponente) ? "0" : "1");
+  switch (estado) {
+    case "00":
+      mensajeError =
+        "00- Ambos campos están vacíos. Por favor, ingrese números.";
+      break;
+    case "01":
+      mensajeError = "01- El campo 1 está vacío.";
+      break;
+    case "10":
+      mensajeError = `10- input 2 esta vacio`;
+      break;
+    case "11":
+      if (exponente > contarDigitos(base) - 1) {
+        mensajeError = `<br><div ${centrar}>El numero ${base} tiene <span ${verde}>${nDigito} ${
+          nDigito == 1 ? "posicion." : "posiciones."
+        }</span> <br>
+        ${crearTabla(base, 0)}
+        </div>
+        <span ${rojo}>No se puede buscar la posicon ${exponente}</span>.`;
+      } else if (exponente < 0) {
+        mensajeError = `<span ${rojo}>el numero no puede ser negativo</span>`;
+      } else {
+        mensajeError = `Continuar:<br><div ${centrar}>El numero ${base} tiene <span ${verde}>${nDigito} ${
+          nDigito == 1 ? "posicion." : "posiciones."
+        }</span> <br>
+        ${crearTabla(base, 0)}
+        <span ${verde}>Si se puede buscar la posicion ${exponente}</span>.
+        </div>`;
+        habilitarBoton = true;
+      }
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
+  }
+  boton.disabled = !habilitarBoton;
+  validarInputYMostrarError(mensajeError);
+}
 // !SECTION 4.- potencia
 
 //SECTION - Inicio 5.- digitos
