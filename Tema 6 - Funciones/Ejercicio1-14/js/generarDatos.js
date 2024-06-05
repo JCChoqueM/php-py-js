@@ -21,12 +21,13 @@ function generarDatos() {
       break;
     case "siguientePrimo":
       numInput.value = generarSiguientePrimo();
-        validarInputSiguientePrimo();
+      validarInputSiguientePrimo();
       break;
     case "potencia":
       let numero = generarPotencia();
       numInput.value = numero[0];
       numInput2.value = numero[1];
+      validarInputPotencia();
       break;
     case "digitos":
       numInput.value = generarDigito();

@@ -118,12 +118,12 @@ function validarInputSiguientePrimo() {
 function validarInputPotencia() {
   const base = parseInt(document.getElementById("num1").value);
   const exponente = parseInt(document.getElementById("num2").value);
-  const nDigito = contarDigitos(base);
-  const boton = document.getElementById("resolver");
-  let habilitarBoton = false;
+
   let centrar = "style='text-align: center;'";
   let rojo = "style = 'color: red;'";
   let verde = "style = 'color: darkgreen;'";
+  let letra = "style = 'font-size: 20px; font-weight: bold'";
+
   let mensajeError = "";
   const estado = (isNaN(base) ? "0" : "1") + (isNaN(exponente) ? "0" : "1");
   switch (estado) {
@@ -138,29 +138,53 @@ function validarInputPotencia() {
       mensajeError = `10- input 2 esta vacio`;
       break;
     case "11":
-      if (exponente > contarDigitos(base) - 1) {
-        mensajeError = `<br><div ${centrar}>El numero ${base} tiene <span ${verde}>${nDigito} ${
-          nDigito == 1 ? "posicion." : "posiciones."
-        }</span> <br>
-        ${crearTabla(base, 0)}
-        </div>
-        <span ${rojo}>No se puede buscar la posicon ${exponente}</span>.`;
+      if (exponente == 0) {
+        if (base == 0) {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado tiene 2 valores:<br> 1 <br>e Indefinido</span>`;
+        } else {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es: 1</span>`;
+        }
       } else if (exponente < 0) {
-        mensajeError = `<span ${rojo}>el numero no puede ser negativo</span>`;
-      } else {
-        mensajeError = `Continuar:<br><div ${centrar}>El numero ${base} tiene <span ${verde}>${nDigito} ${
-          nDigito == 1 ? "posicion." : "posiciones."
-        }</span> <br>
-        ${crearTabla(base, 0)}
-        <span ${verde}>Si se puede buscar la posicion ${exponente}</span>.
-        </div>`;
-        habilitarBoton = true;
+        if (base == 0) {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es:<br><br>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>
+              (${base})<sup>${Math.abs(exponente)}</sup>
+            </span></mi>
+        </mfrac>
+    </math> =
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>${base}</span></mi>
+        </mfrac>
+    </math> = Indefinido
+            </span>`;
+        } else {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es:<br><br>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>
+              (${base})<sup>${Math.abs(exponente)}</sup>
+            </span></mi>
+        </mfrac>
+    </math> =
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>${Math.pow(base, Math.abs(exponente))}</span></mi>
+        </mfrac>
+    </math>
+            </span>`;
+        }
       }
       break;
     default:
       mensajeError = "Error desconocido. Por favor, revise las entradas.";
   }
-  boton.disabled = !habilitarBoton;
   validarInputYMostrarError(mensajeError);
 }
 // !SECTION 4.- potencia
