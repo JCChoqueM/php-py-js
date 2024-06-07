@@ -190,7 +190,78 @@ function validarInputPotencia() {
 // !SECTION 4.- potencia
 
 //SECTION - Inicio 5.- digitos
+function validarInputDigitos() {
+  const base = parseInt(document.getElementById("num1").value);
+  const exponente = parseInt(document.getElementById("num2").value);
 
+  let centrar = "style='text-align: center;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
+  let letra = "style = 'font-size: 20px; font-weight: bold'";
+
+  let mensajeError = "";
+  const estado = (isNaN(base) ? "0" : "1") + (isNaN(exponente) ? "0" : "1");
+  switch (estado) {
+    case "00":
+      mensajeError =
+        "00- Ambos campos están vacíos. Por favor, ingrese números.";
+      break;
+    case "01":
+      mensajeError = "01- El campo 1 está vacío.";
+      break;
+    case "10":
+      mensajeError = `10- input 2 esta vacio`;
+      break;
+    case "11":
+      if (exponente == 0) {
+        if (base == 0) {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado tiene 2 valores:<br> 1 <br>e Indefinido</span>`;
+        } else {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es: 1</span>`;
+        }
+      } else if (exponente < 0) {
+        if (base == 0) {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es:<br><br>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>
+              (${base})<sup>${Math.abs(exponente)}</sup>
+            </span></mi>
+        </mfrac>
+    </math> =
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>${base}</span></mi>
+        </mfrac>
+    </math> = Indefinido
+            </span>`;
+        } else {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es:<br><br>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>
+              (${base})<sup>${Math.abs(exponente)}</sup>
+            </span></mi>
+        </mfrac>
+    </math> =
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>${Math.pow(base, Math.abs(exponente))}</span></mi>
+        </mfrac>
+    </math>
+            </span>`;
+        }
+      }
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
+  }
+  validarInputYMostrarError(mensajeError);
+}
 // !SECTION 5.- digitos
 
 //SECTION - Inicio 6.- voltea
