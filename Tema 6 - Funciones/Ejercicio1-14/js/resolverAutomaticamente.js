@@ -3,14 +3,36 @@ function generarNumeroAleatorio(min, max) {
 }
 
 /* SECTION inicio sumar todo */
-function resolver() {
-  const { num1ero } = generarMatrizYDatos();
-  automaticoPHP(num1ero);
-  automaticoPY(num1ero);
-  automaticoJS(num1ero);
+async function resolver2() {
+  // Recopilar los valores de los inputs utilizando FormData
+  const formulario = document.getElementById("FormularioInputs");
+  const datosFormulario = new FormData(formulario);
+
+  // Filtrar solo los datos de los inputs
+  const datos = {};
+  datosFormulario.forEach((value, key) => {
+    const inputElement = formulario.querySelector(`[name="${key}"]`);
+    if (inputElement && inputElement.tagName.toLowerCase() === "input") {
+      if (!datos[key]) {
+        datos[key] = value;
+      } else {
+        if (!Array.isArray(datos[key])) {
+          datos[key] = [datos[key]];
+        }
+        datos[key].push(value);
+      }
+    }
+  });
+
+  console.log("Datos recopilados solo de inputs:", datos); // Para verificar la recopilación de datos
+
+  // Llamar a las funciones con los datos recopilados
+  await automaticoPHP(datos);
+  await automaticoPY(datos);
+  await automaticoJS(datos);
 }
 
-async function automaticoPHP(numero) {
+async function automaticoPHP(numero2) {
   try {
     const url = "archives/automaticamente/automaticamente.php";
 
@@ -20,8 +42,7 @@ async function automaticoPHP(numero) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        numero,
-
+        numero2,
       }),
     });
 
