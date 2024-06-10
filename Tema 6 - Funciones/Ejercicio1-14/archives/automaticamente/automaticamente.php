@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../automaticamente/fucionesphp/funciones.php';
+include __DIR__ . '/../automaticamente/php/funciones.php';
 // Verificar si se recibieron datos POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
