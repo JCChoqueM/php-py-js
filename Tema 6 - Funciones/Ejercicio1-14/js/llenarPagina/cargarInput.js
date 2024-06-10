@@ -35,7 +35,7 @@ function inicializar() {
   cargarInput();
   cargarTooltip();
   cambiarColor();
-  deshabilitarBoton();
+
 }
 window.onload = inicializar;
 
@@ -45,12 +45,10 @@ document.getElementById("accion").onchange = function () {
   cargarInput(); // Llama a la función cargarInput()
   cambiarColor();
   cargarTooltip();
-  deshabilitarBoton();
+
   limpiarResultados();
   // Llama a otra función, por ejemplo, otraFuncion()
   // Llama a otras funciones aquí según sea necesario
 };
 
-function deshabilitarBoton() {
-  document.getElementById("resolver").disabled = true;
-}
+

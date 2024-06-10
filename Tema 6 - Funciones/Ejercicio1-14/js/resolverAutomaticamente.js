@@ -3,24 +3,21 @@ function generarNumeroAleatorio(min, max) {
 }
 
 /* SECTION inicio sumar todo */
-async function resolver2() {
+async function resolver() {
   // Recopilar los valores de los inputs utilizando FormData
   const formulario = document.getElementById("FormularioInputs");
+  let select = document.getElementById("accion");
   const datosFormulario = new FormData(formulario);
 
-  // Filtrar solo los datos de los inputs
-  const datos = {};
+  // Crear un array indexado para almacenar los valores recopilados
+  const datos = [];
+  datos.push(select.value);
+  // Iterar sobre los valores del formulario
   datosFormulario.forEach((value, key) => {
     const inputElement = formulario.querySelector(`[name="${key}"]`);
     if (inputElement && inputElement.tagName.toLowerCase() === "input") {
-      if (!datos[key]) {
-        datos[key] = value;
-      } else {
-        if (!Array.isArray(datos[key])) {
-          datos[key] = [datos[key]];
-        }
-        datos[key].push(value);
-      }
+      // Agregar el valor al array indexado
+      datos.push(value);
     }
   });
 
@@ -28,11 +25,11 @@ async function resolver2() {
 
   // Llamar a las funciones con los datos recopilados
   await automaticoPHP(datos);
-  await automaticoPY(datos);
-  await automaticoJS(datos);
+  /*   await automaticoPY(datos);
+  await automaticoJS(datos); */
 }
 
-async function automaticoPHP(numero2) {
+async function automaticoPHP(datos) {
   try {
     const url = "archives/automaticamente/automaticamente.php";
 
@@ -41,9 +38,7 @@ async function automaticoPHP(numero2) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        numero2,
-      }),
+      body: JSON.stringify(datos),
     });
 
     if (response.ok) {

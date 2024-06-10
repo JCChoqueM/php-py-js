@@ -4,7 +4,6 @@ function selectOption(option) {
   cargarTooltip();
   cargarInput();
   cambiarColor();
-  deshabilitarBoton();
   limpiarResultados();
 }
 
