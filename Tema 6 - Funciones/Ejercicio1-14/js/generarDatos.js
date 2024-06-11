@@ -13,7 +13,7 @@ function generarDatos() {
   switch (opcionSeleccionada) {
     case "esCapicua":
       numInput.value = generarCapicua();
-      validarInputEscapicua();
+      resolver();
       break;
     case "esPrimo":
       numInput.value = generarPrimo();

@@ -1,7 +1,7 @@
 <?php
 // app/includes/archivo2.php
 
-function hola()
+function hola2()
 {
-    return "hola";
+    return "hola2";
 }
