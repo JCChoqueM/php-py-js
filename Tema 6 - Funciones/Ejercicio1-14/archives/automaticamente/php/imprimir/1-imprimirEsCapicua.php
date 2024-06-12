@@ -16,7 +16,7 @@ function imprimirEscapicua($input1)
                 case $esValido:
                     if ($input1 >= 0) {
                         $mensajeError =
-                            "<span>El numero <span style='color: green'>" . $input1 . "</span> es un palíndromo.</span>";
+                            "<span>El numero dfgdfd<span style='color: green'>" . $input1 . "</span> es un palíndromo.</span>";
                     } else {
                         $mensajeError = "<span>El número <span style='color: red'>" . $input1 . "</span>  es negativo<br>Al ignorar el signo:<br> <span style='color: green'>" . abs($input1) . " </span>es un palíndromo.</span>";
                     }
