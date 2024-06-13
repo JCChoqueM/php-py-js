@@ -25,8 +25,8 @@ async function resolver() {
 
   // Llamar a las funciones con los datos recopilados
   await automaticoPHP(datos);
-  /*   await automaticoPY(datos);
-  await automaticoJS(datos); */
+    await automaticoPY(datos);
+  /* await automaticoJS(datos); */
 }
 
 async function automaticoPHP(datos) {
@@ -71,9 +71,9 @@ async function automaticoPY(numero) {
     });
 
     if (response.ok) {
-      const suma = await response.text();
+      const resultado = await response.text();
       var resultadosDiv = document.getElementById("resultadoPython");
-      resultadosDiv.innerHTML = ` ${suma} <br>`;
+      resultadosDiv.innerHTML = ` ${resultado} <br>`;
     } else {
       console.error("Error en la solicitud:", response.status);
     }
@@ -81,3 +81,4 @@ async function automaticoPY(numero) {
     console.error("Error en la solicitud:", error);
   }
 }
+

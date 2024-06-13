@@ -1,6 +1,4 @@
 <?php
-// app/includes/archivo2.php
-
 function esCapicua($numero)
 {
     $numeroOriginal = $numero;
