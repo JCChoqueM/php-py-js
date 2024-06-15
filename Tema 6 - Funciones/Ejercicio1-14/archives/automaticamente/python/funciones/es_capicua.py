@@ -28,7 +28,7 @@ def es_capicua(numero):
         numero = numero // 10
 
     if abs(numero_original) == volteado:
-        return f"El número \033[92m{abs(numero_original)}\033[0m es capicúa"  # \033[92m y \033[0m para color verde en terminal
+        return f"El numero {abs(numero_original)} es capicua"  
     else:
-        return f"El número \033[91m{abs(numero_original)}\033[0m NO es capicúa"  # \033[91m y \033[0m para color rojo en terminal
+        return f"El numero {abs(numero_original)} NO es capicua"  
 

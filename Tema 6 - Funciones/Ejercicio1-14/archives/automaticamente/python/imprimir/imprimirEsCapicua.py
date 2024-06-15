@@ -15,22 +15,6 @@ sys.path.append(dos_dir)
 from es_capicua import es_capicua
 
 
-def es_capicua(numero):
-    numero_original = numero
-    numero = abs(numero)
-    volteado = 0
-
-    while numero > 0:
-        digito = numero % 10
-        volteado = volteado * 10 + digito
-        numero = numero // 10
-
-    if abs(numero_original) == volteado:
-        return f"El número \033[92m{abs(numero_original)}\033[0m es capicúa"
-    else:
-        return f"El número \033[91m{abs(numero_original)}\033[0m NO es capicúa"
-
-
 def imprimir_es_capicua(input1):
     mensaje_error = ""
     estado = "0" if not isinstance(input1, (int, float)) else "1"
@@ -65,7 +49,4 @@ def imprimir_es_capicua(input1):
     return mensaje_error
 
 
-# Ejemplo de uso
-print(imprimir_es_capicua(12321))
-print(imprimir_es_capicua(-121))
-print(imprimir_es_capicua("texto"))
+
