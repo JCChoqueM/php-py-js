@@ -16,7 +16,7 @@ from es_capicua import es_capicua
 
 
 def imprimir_es_capicua(input1):
-    input1=int(input1)
+
     mensaje_error = ""
     try:
         input1 = int(input1)
@@ -29,7 +29,7 @@ def imprimir_es_capicua(input1):
 
     if estado == "0":
         mensaje_error = (
-            "El campo está vacío o no es un número. Por favor, ingrese número(s)."
+            "El campo esta vacio o no es un numero. Por favor, ingrese numero(s)."
         )
     elif estado == "1":
         if es_valido:
