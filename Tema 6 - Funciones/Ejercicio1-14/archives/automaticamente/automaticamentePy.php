@@ -3,6 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Obtener los datos de la solicitud POST
     $data = json_decode(file_get_contents("php://input"));
 
+
     if (isset($data->numero)) {
         $numero = $data->numero;
 

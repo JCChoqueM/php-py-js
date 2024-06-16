@@ -13,14 +13,15 @@ datos_con_espacios = cadena_limpia.split(", ")
 
 # Eliminar espacios adicionales de cada elemento
 datos = [dato.strip() for dato in datos_con_espacios]
-
+print(datos)
+print(datos[0])
+print(datos[1])
 select = datos[0]
-input1 = int(datos[1])
+input1 = (datos[1])
 mensajeError = ""
 
-if select == datos[0]:
+if select == "esCapicua":
     mensajeError = imprimir_es_capicua(input1)
 else:
     mensajeError = "Preguntame mas<br>"
 print(mensajeError)
-

@@ -28,7 +28,6 @@ def es_capicua(numero):
         numero = numero // 10
 
     if abs(numero_original) == volteado:
-        return f"El numero {abs(numero_original)} es capicua"  
+        return f"El numero <span style='color: green'>{abs(numero_original)}</span> es capicua"
     else:
-        return f"El numero {abs(numero_original)} NO es capicua"  
-
+        return f"El numero <span style='color: red'>{abs(numero_original)}</span> NO es capicua"
