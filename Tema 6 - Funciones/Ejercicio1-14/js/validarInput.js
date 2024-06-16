@@ -2,13 +2,9 @@
 function validarInputYMostrarError(mensajeError) {
   // Establecer el mensaje de error en el input
   const resultadoDiv1 = document.getElementById("resultadoJavaScript");
-  const resultadoDiv2 = document.getElementById("resultadoPHP");
-  const resultadoDiv3 = document.getElementById("resultadoPython");
-
   // Insertar el mensaje de error en cada elemento
   resultadoDiv1.innerHTML = mensajeError;
-  resultadoDiv2.innerHTML = mensajeError;
-  resultadoDiv3.innerHTML = mensajeError;
+
 }
 //SECTION - Inicio 1.- esCapicua
 function validarInputEscapicua() {

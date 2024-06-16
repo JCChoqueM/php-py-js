@@ -25,8 +25,8 @@ async function resolver() {
 
   // Llamar a las funciones con los datos recopilados
   await automaticoPHP(datos);
-    await automaticoPY(datos);
-  /* await automaticoJS(datos); */
+  await automaticoPY(datos);
+  await automaticoJS(datos);
 }
 
 async function automaticoPHP(datos) {
@@ -81,4 +81,4 @@ async function automaticoPY(numero) {
     console.error("Error en la solicitud:", error);
   }
 }
-
+function automaticoJS

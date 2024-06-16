@@ -14,6 +14,7 @@ function generarDatos() {
     case "esCapicua":
       numInput.value = generarCapicua();
       resolver();
+      validarInputEscapicua();
       break;
     case "esPrimo":
       numInput.value = generarPrimo();
