@@ -1,7 +1,7 @@
 /**
  * Función que procesa automáticamente un array de números y muestra estadísticas en una tabla HTML.
  */
-function automaticoJS(numero) {
+/* function automaticoJS(numero) {
   let bidimensional = numero;
   function imprimirTabla(numero, ejeX, ejeY) {
     let mensaje = "<table border='1'>";
@@ -103,4 +103,4 @@ function automaticoJS(numero) {
 
   const resultadoDiv = document.getElementById("resultadoJavaScript");
   resultadoDiv.innerHTML = ` ${mensaje1} <br> ${mensaje2}`;
-}
+} */

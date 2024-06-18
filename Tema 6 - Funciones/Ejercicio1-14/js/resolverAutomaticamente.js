@@ -28,7 +28,7 @@ async function resolver() {
   await automaticoPY(datos);
   await automaticoJS(datos);
 }
-
+tiene
 async function automaticoPHP(datos) {
   try {
     const url = "archives/automaticamente/automaticamente.php";
@@ -81,4 +81,6 @@ async function automaticoPY(numero) {
     console.error("Error en la solicitud:", error);
   }
 }
-function automaticoJS
+function automaticoJS(numero){
+numero 
+}
