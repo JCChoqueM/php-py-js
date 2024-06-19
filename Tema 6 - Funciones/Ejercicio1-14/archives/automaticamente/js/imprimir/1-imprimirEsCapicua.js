@@ -3,8 +3,7 @@
 include __DIR__ . '/../funciones/funciones.php'; */
 function imprimirEscapicua(input1) {
   mensajeError = "";
-  if (!is_numeric(input1)) {
-    var_dump(input1);
+  if (isNaN(input1)) {
     mensajeError = `El campo está vacío o no es un número. Por favor, ingrese número(s).`;
   } else {
     input1 = parseInt(input1); // Convertir a entero
@@ -19,9 +18,9 @@ function imprimirEscapicua(input1) {
       }
     } else {
       if (input1 >= 0) {
-        mensajeError = `<span>  ${esCapicua(input1)}  </span>`;
+        mensajeError = `<span>  ${esCapcua(input1)}  </span>`;
       } else {
-        mensajeError = `<span>El número <span style='color: red'>  ${input1}  </span> es negativo.<br> Al ignorar el signo:<br>   ${esCapicua(
+        mensajeError = `<span> El número < span style = 'color: red' > ${input1}</span> es negativo.<br> Al ignorar el signo: <br>${esCapicua(
           input1
         )} </span>`;
       }
