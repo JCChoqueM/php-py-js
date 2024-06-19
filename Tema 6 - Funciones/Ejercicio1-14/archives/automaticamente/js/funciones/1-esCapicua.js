@@ -1,4 +1,4 @@
-<?php
+
 // app/includes/archivo2.php
 
 function esCapicua($numero)
@@ -15,8 +15,8 @@ function esCapicua($numero)
 
     // Comparar la cadena original con la invertida
     if (abs($numeroOriginal) === $volteado) {
-        return "El número <span style='color: green'>" . abs($numeroOriginal) . "</span> es capicúa";
+        return `El número <span style='color: green'>  ${Math.abs($numeroOriginal)} . </span> es capicúa`;
     } else {
-        return "El número <span style='color: red'>" . abs($numeroOriginal) . "</span> NO es capicúa";
+        return `El número <span style='color: red'>  ${Math.abs($numeroOriginal)} . </span> NO es capicúa`;
     }
 }
