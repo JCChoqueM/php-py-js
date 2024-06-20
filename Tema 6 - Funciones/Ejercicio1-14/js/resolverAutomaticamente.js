@@ -21,14 +21,14 @@ async function resolver() {
     }
   });
 
-  console.log("Datos recopilados solo de inputs:", datos); // Para verificar la recopilación de datos
+  /*   console.log("Datos recopilados solo de inputs:", datos);  */ // Para verificar la recopilación de datos
 
   // Llamar a las funciones con los datos recopilados
   await automaticoPHP(datos);
   await automaticoPY(datos);
-  await automaticoJS(datos);
+  automaticoJS(datos);
 }
-tiene
+
 async function automaticoPHP(datos) {
   try {
     const url = "archives/automaticamente/automaticamente.php";
@@ -53,13 +53,13 @@ async function automaticoPHP(datos) {
   }
 }
 
-async function automaticoPY(numero) {
+async function automaticoPY(datos) {
   try {
     const url = "archives/automaticamente/automaticamentePY.php";
 
     // Ajusta los datos según lo que espera el script PHP
     const data = {
-      numero: numero,
+      numero: datos,
     };
 
     const response = await fetch(url, {
@@ -81,6 +81,9 @@ async function automaticoPY(numero) {
     console.error("Error en la solicitud:", error);
   }
 }
-function automaticoJS(numero){
-numero 
+function automaticoJS(datos) {
+  mensajeError = automaticamenteJS(datos);
+  const resultadoDiv1 = document.getElementById("resultadoJavaScript");
+  // Insertar el mensaje de error en cada elemento
+  resultadoDiv1.innerHTML = mensajeError;
 }

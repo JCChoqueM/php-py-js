@@ -9,12 +9,12 @@ function generarDatos() {
   const numInput = document.getElementById("num1");
   const numInput2 = document.getElementById("num2");
   const numInput3 = document.getElementById("num3");
-  console.log("---------------------------------------------");
+/*   console.log("---------------------------------------------"); */
   switch (opcionSeleccionada) {
     case "esCapicua":
+      limpiarResultados()
       numInput.value = generarCapicua();
       resolver();
-      validarInputEscapicua();
       break;
     case "esPrimo":
       numInput.value = generarPrimo();
@@ -121,7 +121,7 @@ function generarCapicua() {
   if (esPrimerClick) {
     do {
       numeroGenerado = generarNumeroAleatorio(0, 100000);
-    } while (!esCapicua(numeroGenerado));
+    } while (!esCapicuaGenerar(numeroGenerado));
   } else {
     numeroGenerado = generarNumeroAleatorio(0, 100000);
   }
@@ -133,7 +133,7 @@ function generarCapicua() {
 }
 
 // Función para verificar si un número es capicúa
-function esCapicua(numero) {
+function esCapicuaGenerar(numero) {
   // Convertir el número en una cadena de texto
   const cadenaNumero = numero.toString();
   // Obtener la cadena invertida
