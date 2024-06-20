@@ -12,7 +12,7 @@ function generarDatos() {
 /*   console.log("---------------------------------------------"); */
   switch (opcionSeleccionada) {
     case "esCapicua":
-      limpiarResultados()
+
       numInput.value = generarCapicua();
       resolver();
       break;
