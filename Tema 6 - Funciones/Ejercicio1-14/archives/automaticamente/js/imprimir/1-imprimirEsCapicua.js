@@ -13,7 +13,7 @@ function imprimirEscapicua(input1) {
   switch (estado) {
     case "0":
       mensajeError =
-        "El campo esta vacio o no es un numero. Por favor, ingrese numero(s)..";
+        "El campo esta vacio o no es un numero. Por favor, ingrese numero(s).";
       break;
     case "1":
       switch (true) {
