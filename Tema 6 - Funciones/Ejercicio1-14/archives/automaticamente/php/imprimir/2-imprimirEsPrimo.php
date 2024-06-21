@@ -8,7 +8,7 @@ function imprimirEsPrimo($input1)
     $estado = !is_numeric($input1) ? "0" : "1";
     switch ($estado) {
         case "0":
-            $mensajeError = "0-El campo está vacío o no es un número. Por favor, ingrese número(s).";
+            $mensajeError = "El campo está vacío o no es un número. Por favor, ingrese número(s).";
             break;
         case "1":
             $input1 = (int)$input1; // Asegurarse de que $input1 es un entero
