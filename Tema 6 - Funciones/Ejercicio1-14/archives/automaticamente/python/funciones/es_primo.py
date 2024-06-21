@@ -12,10 +12,3 @@ def es_primo(numero):
     # Si no se encontraron divisores, el número es primo
     return True
 
-
-# Ejemplo de uso:
-numero = 12
-if es_primo(numero):
-    print(f"El número {numero} es primo.")
-else:
-    print(f"El número {numero} no es primo.")

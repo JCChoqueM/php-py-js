@@ -1,11 +1,30 @@
-from funciones.funciones import es_primo
+import os
+import sys
+
+
+# Obtener la ruta del directorio actual donde se encuentra doss.py
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Obtener la ruta al directorio donde está uno.py
+dos_dir = os.path.abspath(os.path.join(current_dir, "..", "funciones"))
+
+# Añadir el directorio donde está uno.py al sys.path
+sys.path.append(dos_dir)
+
+# Importar el módulo uno.py
+from es_primo import es_primo
 
 
 def imprimir_es_primo(input1):
     rojo = "style='color: red;'"
     verde = "style='color: darkgreen;'"
     mensaje_error = ""
-    estado = not input1.isdigit() if isinstance(input1, str) else "0"
+    try:
+        input1 = int(input1)
+        estado = "1"  # Suponiendo que si se puede convertir a entero o float, el estado sea "1"
+    except ValueError:
+        input1 = 0
+        estado = "0"
 
     if estado == "0":
         mensaje_error = (
@@ -31,8 +50,3 @@ def imprimir_es_primo(input1):
         mensaje_error = "Error desconocido. Por favor, revise las entradas."
 
     return mensaje_error
-
-
-# Ejemplo de uso:
-input1 = "17"
-print(imprimir_es_primo(input1))

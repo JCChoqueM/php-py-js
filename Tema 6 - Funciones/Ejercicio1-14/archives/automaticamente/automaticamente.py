@@ -1,6 +1,7 @@
 import sys
 
 from python.imprimir.imprimirEsCapicua import imprimir_es_capicua
+from python.imprimir.imprimirEsPrimo import imprimir_es_primo
 
 # Cadena inicial
 cadena = sys.argv[1] if len(sys.argv) > 1 else ""
@@ -23,11 +24,13 @@ else:
         datos.append("")
 
 select = datos[0]
-input1 = (datos[1])
+input1 = datos[1]
 mensajeError = ""
 
 if select == "esCapicua":
     mensajeError = imprimir_es_capicua(input1)
+elif select == "esPrimo":
+    mensajeError = imprimir_es_primo(input1)
 else:
     mensajeError = "Preguntame mas<br>"
 print(mensajeError)
