@@ -9,16 +9,16 @@ function generarDatos() {
   const numInput = document.getElementById("num1");
   const numInput2 = document.getElementById("num2");
   const numInput3 = document.getElementById("num3");
-/*   console.log("---------------------------------------------"); */
+  /*   console.log("---------------------------------------------"); */
   switch (opcionSeleccionada) {
     case "esCapicua":
-
       numInput.value = generarCapicua();
       resolver();
       break;
     case "esPrimo":
+     
       numInput.value = generarPrimo();
-      validarInputEsPrimo();
+      resolver();
       break;
     case "siguientePrimo":
       numInput.value = generarSiguientePrimo();
@@ -153,11 +153,11 @@ function generarPrimo() {
   if (esPrimerClick) {
     do {
       numeroGenerado = generarNumeroAleatorio(0, 100);
-    } while (!esPrimo(numeroGenerado));
+    } while (!esPrimoGenerar(numeroGenerado));
   } else {
     do {
       numeroGenerado = generarNumeroAleatorio(0, 100);
-    } while (esPrimo(numeroGenerado));
+    } while (esPrimoGenerar(numeroGenerado));
   }
 
   // Invertir esPrimerClick una vez
@@ -167,7 +167,7 @@ function generarPrimo() {
 }
 
 // Función para verificar si un número es capicúa
-function esPrimo(numero) {
+function esPrimoGenerar(numero) {
   // Un número menor o igual a 1 no es primo
   if (numero <= 1) {
     return false;

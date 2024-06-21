@@ -6,7 +6,7 @@ function validarInputYMostrarError(mensajeError) {
   resultadoDiv1.innerHTML = mensajeError;
 
 }
-//SECTION - Inicio 1.- esCapicua
+/* //SECTION - Inicio 1.- esCapicua
 function validarInputEscapicua() {
   const input1 = parseInt(document.getElementById("num1").value);
   let esValido = (input1 >= 0 && input1 <= 9) || (input1 >= -9 && input1 <= -1);
@@ -48,7 +48,7 @@ function validarInputEscapicua() {
   }
   validarInputYMostrarError(mensajeError);
 }
-// !SECTION 1.- esCapicua
+// !SECTION 1.- esCapicua */
 
 //SECTION - Inicio 2.- esPrimo
 function validarInputEsPrimo() {
