@@ -28,7 +28,7 @@ def imprimir_es_primo(input1):
 
     if estado == "0":
         mensaje_error = (
-            "El campo está vacío o no es un número. Por favor, ingrese número(s)."
+            "El campo esta vacio o no es un numero. Por favor, ingrese numero(s)."
         )
     elif estado == "1":
         input1 = int(input1)  # Asegurarse de que input1 sea un entero
@@ -39,12 +39,12 @@ def imprimir_es_primo(input1):
 
         mensaje_error = "<span>"
         if input1 > 1:
-            mensaje_error += f"El número <span {color}>{input1}</span> {'es primo' if es_primo_input1 else 'NO es primo'}"
+            mensaje_error += f"El numero <span {color}>{input1}</span> {'es primo' if es_primo_input1 else 'NO es primo'}"
         else:
-            mensaje_error += f"En matemáticas, un número primo es un número natural mayor que <span {verde}>1</span>, el número <span {rojo}>{input1}</span> no es primo."
+            mensaje_error += f"En matematicas, un numero primo es un numero natural mayor que <span {verde}>1</span>, el numero <span {rojo}>{input1}</span> no es primo."
             if input1 != 0 and input1 != 1:
                 mensaje_error += f"<br><br><span {color}>Ignorando el signo:</span><br>"
-                mensaje_error += f"El número <span {color}>{abs_input1}</span> {'es primo' if es_primo_abs_input1 else 'NO es primo'}"
+                mensaje_error += f"El numero <span {color}>{abs_input1}</span> {'es primo' if es_primo_abs_input1 else 'NO es primo'}"
         mensaje_error += "</span>"
     else:
         mensaje_error = "Error desconocido. Por favor, revise las entradas."

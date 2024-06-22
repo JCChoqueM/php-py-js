@@ -6,6 +6,9 @@ function automaticamenteJS(datos) {
     case select == "esCapicua":
       mensajeError = imprimirEscapicua(input1);
       break;
+    case select == "esPrimo":
+      mensajeError = imprimirEsPrimo(input1);
+      break;
     default:
       mensajeError = select;
   }
