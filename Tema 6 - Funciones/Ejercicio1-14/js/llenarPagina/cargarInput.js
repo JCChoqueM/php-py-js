@@ -31,11 +31,10 @@ function cargarInput() {
 
 // Llamar a la función cargarInput al cargar la página para mostrar el primer input
 function inicializar() {
-  document.getElementById("accion").value = "esPrimo";
+  document.getElementById("accion").value = "siguientePrimo";
   cargarInput();
   cargarTooltip();
   cambiarColor();
-
 }
 window.onload = inicializar;
 
@@ -50,5 +49,3 @@ document.getElementById("accion").onchange = function () {
   // Llama a otra función, por ejemplo, otraFuncion()
   // Llama a otras funciones aquí según sea necesario
 };
-
-
