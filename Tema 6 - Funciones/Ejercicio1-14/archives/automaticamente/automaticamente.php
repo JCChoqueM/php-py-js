@@ -17,6 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       case ($select == "esPrimo"):
         $mensajeError = imprimirEsPrimo($input1);
         break;
+      case ($select == "siguientePrimo"):
+        $mensajeError = imprimirSiguientePrimo($input1);
+        break;
       default:
         "Preugntame mas";
     }

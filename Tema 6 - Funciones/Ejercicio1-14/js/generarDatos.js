@@ -16,13 +16,12 @@ function generarDatos() {
       resolver();
       break;
     case "esPrimo":
-     
       numInput.value = generarPrimo();
       resolver();
       break;
     case "siguientePrimo":
       numInput.value = generarSiguientePrimo();
-      validarInputSiguientePrimo();
+      resolver();
       break;
     case "potencia":
       let numero = generarPotencia();

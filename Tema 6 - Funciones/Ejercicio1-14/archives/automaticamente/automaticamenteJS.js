@@ -9,6 +9,9 @@ function automaticamenteJS(datos) {
     case select == "esPrimo":
       mensajeError = imprimirEsPrimo(input1);
       break;
+    case select == "siguientePrimo":
+      mensajeError = imprimirSiguientePrimo(input1);
+      break;
     default:
       mensajeError = select;
   }
