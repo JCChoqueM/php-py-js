@@ -12,14 +12,11 @@ function imprimirSiguientePrimo($input1)
             break;
         case "1":
             $input1 = (int)$input1; // Asegurarse de que $input1 es un entero
-            $absInput1 = abs($input1);
-            $esPrimo = esPrimo($input1);
-            $esPrimoAbs = esPrimo($absInput1);
             $color = $input1 >= 0 ? $verde : $rojo;
             $mensajeError = "<span>";
             if ($input1 > 1) {
                 $mensajeError .= "El número ingresado es: <span $verde>$input1</span>.<br>
-        El siguiente número primo es: <span $verde>".siguientePrimo($input1)."</span>";
+        El siguiente número primo es: <span $verde>" . siguientePrimo($input1) . "</span>";
             } else {
                 $mensajeError .= "El número ingresado es: <span $color>$input1</span>.<br>
         Por definición, el siguiente número primo es: <span $verde>2</span>.";
