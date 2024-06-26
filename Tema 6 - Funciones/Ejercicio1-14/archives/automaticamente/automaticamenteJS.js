@@ -13,7 +13,7 @@ function automaticamenteJS(datos) {
       mensajeError = imprimirSiguientePrimo(input1);
       break;
     default:
-      mensajeError = select;
+      mensajeError = "soy error";
   }
   return mensajeError;
 }

@@ -3,6 +3,7 @@ import sys
 from python.imprimir.imprimirEsCapicua import imprimir_es_capicua
 from python.imprimir.imprimirEsPrimo import imprimir_es_primo
 from python.imprimir.imprimirSiguientePrimo import imprimir_siguiente_primo
+from python.imprimir.imprimirPotencia import imprimir_potencia
 
 # Cadena inicial
 cadena = sys.argv[1] if len(sys.argv) > 1 else ""
@@ -34,6 +35,8 @@ elif select == "esPrimo":
     mensajeError = imprimir_es_primo(input1)
 elif select == "siguientePrimo":
     mensajeError = imprimir_siguiente_primo(input1)
+elif select == "potencia":
+    mensajeError = imprimir_potencia(input1, datos[2])
 else:
     mensajeError = "Preguntame mas<br>"
 print(mensajeError)

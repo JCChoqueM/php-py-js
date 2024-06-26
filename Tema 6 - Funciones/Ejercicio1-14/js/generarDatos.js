@@ -203,7 +203,7 @@ function generarSiguientePrimo() {
 function generarPotencia() {
   let numeroGenerado = [];
   for (let i = 0; i < 2; i++) {
-    numeroGenerado[i] = generarNumeroAleatorio(0, 15);
+    numeroGenerado[i] = generarNumeroAleatorio(-7, 5);
   }
   esPrimerClick = !esPrimerClick;
 
