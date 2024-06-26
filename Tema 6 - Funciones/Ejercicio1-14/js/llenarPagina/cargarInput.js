@@ -31,7 +31,7 @@ function cargarInput() {
 
 // Llamar a la función cargarInput al cargar la página para mostrar el primer input
 function inicializar() {
-  document.getElementById("accion").value = "potencia";
+  document.getElementById("accion").value = "digitos";
   cargarInput();
   cargarTooltip();
   cambiarColor();
