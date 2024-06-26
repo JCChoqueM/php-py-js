@@ -67,6 +67,12 @@ function imprimirPotencia($base, $exponente)
                     </math>
                     </span>";
                 }
+            } else {
+                if ($exponente == 1) {
+                    $mensajeError = "<span $centrar>($base)<sup>$exponente</sup> El resultado es $base</span>";
+                } elseif ($exponente > 1) {
+                    $mensajeError = "<span $centrar>($base)<sup>$exponente</sup> resultado es chanc chan chan:" . potencia($base, $exponente) . "</span>";
+                }
             }
             break;
         default:
