@@ -2,8 +2,6 @@
 include __DIR__ . '/../funciones/funciones.php';
 function imprimirPotencia($base, $exponente)
 {
-    var_dump($base);
-    var_dump($exponente);
     $centrar = "style='text-align: center;'";
     $rojo = "style='color: red;'";
     $verde = "style='color: darkgreen;'";
@@ -14,20 +12,20 @@ function imprimirPotencia($base, $exponente)
 
     switch ($estado) {
         case "00":
-            $mensajeError = "00- Ambos campos están vacíos. Por favor, ingrese números.";
+            $mensajeError = "Ambos campos están vacíos. Por favor, ingrese números.";
             break;
         case "01":
-            $mensajeError = "01- El campo 1 está vacío.";
+            $mensajeError = "El campo base está vacío.";
             break;
         case "10":
-            $mensajeError = "10- El campo 2 está vacío.";
+            $mensajeError = "El campo exponente está vacío.";
             break;
         case "11":
             $base = intval($base);
             $exponente = intval($exponente);
             if ($exponente == 0) {
                 if ($base == 0) {
-                    $mensajeError = "<span $centrar>($base)<sup>$exponente</sup> resultado tiene 2 valores:<br> 1 <br>e Indefinido</span>";
+                    $mensajeError = "<span $centrar>($base)<sup>$exponente</sup> tiene 2 valores posibles: 1 o indefinido</span>";
                 } else {
                     $mensajeError = "<span $centrar>($base)<sup>$exponente</sup> resultado es: 1</span>";
                 }
@@ -71,7 +69,7 @@ function imprimirPotencia($base, $exponente)
                 if ($exponente == 1) {
                     $mensajeError = "<span $centrar>($base)<sup>$exponente</sup> El resultado es $base</span>";
                 } elseif ($exponente > 1) {
-                    $mensajeError = "<span $centrar>($base)<sup>$exponente</sup> resultado es chanc chan chan:" . potencia($base, $exponente) . "</span>";
+                    $mensajeError = "<span $centrar>($base)<sup>$exponente</sup> resultado es: " . potencia($base, $exponente) . "</span>";
                 }
             }
             break;
