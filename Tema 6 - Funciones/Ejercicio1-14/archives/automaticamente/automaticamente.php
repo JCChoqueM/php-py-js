@@ -20,6 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       case ($select == "siguientePrimo"):
         $mensajeError = imprimirSiguientePrimo($input1);
         break;
+      case ($select == "potencia"):
+        $input2 = ($datos[2]);
+        $mensajeError = imprimirPotencia($input1, $input2);
+        break;
       default:
         "Preugntame mas";
     }
@@ -35,4 +39,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   // Si no se recibieron datos POST, retornar un mensaje de error
   echo "Error: No se recibieron datos POST";
 }
-

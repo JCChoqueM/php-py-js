@@ -27,7 +27,7 @@ function generarDatos() {
       let numero = generarPotencia();
       numInput.value = numero[0];
       numInput2.value = numero[1];
-      validarInputPotencia();
+      resolver();
       break;
     case "digitos":
       numInput.value = generarDigito();
