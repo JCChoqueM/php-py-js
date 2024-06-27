@@ -20,26 +20,20 @@ def imprimir_potencia(base, exponente):
     rojo = "color: red;"
     verde = "color: darkgreen;"
     letra = "font-size: 20px; font-weight: bold"
-    estado = ""
     mensaje_error = ""
     try:
         base = int(base)
         estado = "1"
-        try:
-            exponente = int(exponente)
-            estado += "1"
-        except ValueError:
-            exponente = 0
-            estado += "0"  # Agrega "1" si ambos son números válidos
     except ValueError:
         base = 0
         estado = "0"
-        try:
-            exponente = int(exponente)
-            estado += "1"
-        except ValueError:
-            exponente = 0
-            estado += "0"
+
+    try:
+        exponente = int(exponente)
+        estado += "1"
+    except ValueError:
+        exponente = 0
+        estado += "0"
 
     if estado == "00":
         mensaje_error = "Ambos campos estan vacios. Por favor, ingrese numeros."
@@ -99,3 +93,25 @@ def imprimir_potencia(base, exponente):
         mensaje_error = "Error desconocido. Por favor, revise las entradas."
 
     return mensaje_error
+
+
+"""    
+   try:
+        base = int(base)
+        estado = "1"
+        try:
+            exponente = int(exponente)
+            estado += "1"
+        except ValueError:
+            exponente = 0
+            estado += "0"  # Agrega "1" si ambos son números válidos
+    except ValueError:
+        base = 0
+        estado = "0"
+        try:
+            exponente = int(exponente)
+            estado += "1"
+        except ValueError:
+            exponente = 0
+            estado += "0"
+"""
