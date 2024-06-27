@@ -31,6 +31,7 @@ function generarDatos() {
       break;
     case "digitos":
       numInput.value = generarDigito();
+      resolver();
       break;
     case "voltea":
       numInput.value = generarVoltea();
@@ -216,9 +217,9 @@ function generarDigito() {
   let numeroGenerado;
 
   if (esPrimerClick) {
-    numeroGenerado = generarNumeroAleatorio(0, 999);
+    numeroGenerado = generarNumeroAleatorio(0, 99999);
   } else {
-    numeroGenerado = generarNumeroAleatorio(1000, 99999);
+    numeroGenerado = generarNumeroAleatorio(-10000, 0);
   }
 
   // Invertir esPrimerClick una vez

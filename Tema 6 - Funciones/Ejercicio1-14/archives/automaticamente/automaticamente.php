@@ -24,6 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $input2 = ($datos[2]);
         $mensajeError = imprimirPotencia($input1, $input2);
         break;
+      case ($select == "digitos"):
+        $mensajeError = imprimirDigitos($input1);
+        break;
       default:
         "Preugntame mas";
     }
