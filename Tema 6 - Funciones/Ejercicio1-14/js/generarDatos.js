@@ -35,6 +35,7 @@ function generarDatos() {
       break;
     case "voltea":
       numInput.value = generarVoltea();
+         resolver();
       break;
     case "digitoN":
       let digitoN = generarDigitoN();

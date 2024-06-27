@@ -4,6 +4,7 @@ from python.imprimir.imprimirEsCapicua import imprimir_es_capicua
 from python.imprimir.imprimirEsPrimo import imprimir_es_primo
 from python.imprimir.imprimirSiguientePrimo import imprimir_siguiente_primo
 from python.imprimir.imprimirPotencia import imprimir_potencia
+from python.imprimir.imprimirDigitos import imprimir_digitos
 
 # Cadena inicial
 cadena = sys.argv[1] if len(sys.argv) > 1 else ""
@@ -37,6 +38,8 @@ elif select == "siguientePrimo":
     mensajeError = imprimir_siguiente_primo(input1)
 elif select == "potencia":
     mensajeError = imprimir_potencia(input1, datos[2])
+elif select == "digitos":
+    mensajeError = imprimir_digitos(input1)
 else:
     mensajeError = "Preguntame mas<br>"
 print(mensajeError)

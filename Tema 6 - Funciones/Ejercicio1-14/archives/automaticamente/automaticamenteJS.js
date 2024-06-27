@@ -15,6 +15,9 @@ function automaticamenteJS(datos) {
     case select == "potencia":
       mensajeError = imprimirPotencia(input1, datos[2]);
       break;
+    case select == "digitos":
+      mensajeError = imprimirDigitos(input1);
+      break;
     default:
       mensajeError = "soy error";
   }

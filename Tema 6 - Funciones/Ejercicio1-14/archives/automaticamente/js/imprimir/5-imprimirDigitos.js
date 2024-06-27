@@ -1,6 +1,6 @@
-function imprimirSiguientePrimo(input1) {
-  const rojo = "style='color: red;'";
-  const verde = "style='color: darkgreen;'";
+function imprimirDigitos(input1) {
+  const rojo = "color: red;";
+  const verde = "color: darkgreen;";
   let mensajeError = "";
   input1 = parseInt(input1);
   const estado = isNaN(input1) ? "0" : "1";
@@ -14,14 +14,14 @@ function imprimirSiguientePrimo(input1) {
       input1 = parseInt(input1); // Asegurarse de que input1 es un entero
       const color = input1 >= 0 ? verde : rojo;
       mensajeError = "<span>";
-      if (input1 > 1) {
-        mensajeError += `El número ingresado es: <span ${verde}>${input1}</span>.<br>
-        El siguiente número primo es: <span ${verde}>${siguientePrimo(
+      if (input1 >= 0) {
+        mensajeError += `El número: <span style="${color}">${input1}</span>.<br> tiene: <span style="${color}">${digitos(
           input1
-        )}</span>`;
+        )} dígitos</span>`;
       } else {
-        mensajeError += `El número ingresado es: <span ${color}>${input1}</span>.<br>
-        Por definición, el siguiente número primo es: <span ${verde}>2</span>.`;
+        mensajeError += `El número: <span style="${color}">${input1}</span>.<br> tiene: <span style="${color}">${digitos(
+          Math.abs(input1)
+        )} dígitos</span>`;
       }
       mensajeError += "</span>";
       break;
