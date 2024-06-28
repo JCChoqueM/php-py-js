@@ -27,6 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       case ($select == "digitos"):
         $mensajeError = imprimirDigitos($input1);
         break;
+      case ($select == "voltea"):
+        $mensajeError = imprimirVoltea($input1);
+        break;
       default:
         "Preugntame mas";
     }
