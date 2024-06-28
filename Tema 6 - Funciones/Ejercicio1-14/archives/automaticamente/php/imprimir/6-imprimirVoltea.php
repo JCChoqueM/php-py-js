@@ -12,14 +12,15 @@ function imprimirVoltea($input1)
             break;
         case "1":
             $input1 = (int)$input1; // Asegurarse de que $input1 es un entero
+            $voltea = voltea($input1);
             $color = $input1 >= 0 ? $verde : $rojo;
             $mensajeError = "<span>";
             if ($input1 >= 0) {
-                $mensajeError .= "El número: <span $color>$input1</span>.<br>
-        volteado: <span $color>" . voltea($input1) . "</span>";
+                $mensajeError .= "Numero Ingresado: <span $color>$input1</span>.<br>
+        volteado: <span $color>" . $voltea[0]."<br>". $voltea[1] . "</span>";
             } else {
-                $mensajeError .= "El número: <span $color>$input1</span>.<br>
-        volteado: <span $color>" . voltea(abs($input1)) . "</span>";
+                $mensajeError .= "Numero Ingresado: <span $color>$input1</span>.<br>
+        volteado: <span $color>" . $voltea[0] . "<br>" . $voltea[1] . "</span>";
             }
             $mensajeError .= "</span>";
             break;
