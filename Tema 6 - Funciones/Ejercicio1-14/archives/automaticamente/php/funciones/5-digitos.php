@@ -1,6 +1,7 @@
 <?php
 function digitos($num1)
 {
+    $num1=abs($num1);
     $digitos = 0;
     $dividendo = $num1;
     do {

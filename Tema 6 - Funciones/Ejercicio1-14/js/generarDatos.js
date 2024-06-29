@@ -3,6 +3,9 @@ let trozoDenumeroError = true;
 let contadorDeClicks = 1;
 let falsofalso = 0;
 
+let contadorClicks = 0;
+let generarNegativoEnTercerClick = false;
+
 function generarDatos() {
   const select = document.getElementById("accion");
   const opcionSeleccionada = select.value;
@@ -35,7 +38,7 @@ function generarDatos() {
       break;
     case "voltea":
       numInput.value = generarVoltea();
-         resolver();
+      resolver();
       break;
     case "digitoN":
       let digitoN = generarDigitoN();
@@ -231,13 +234,31 @@ function generarDigito() {
 // !SECTION 5.- digitos
 
 //SECTION - Inicio 6.- voltea
-function generarVoltea() {
-  let numeroGenerado;
+function generarNumeroTerminadoEnCero(min, max) {
+  let numero;
+  do {
+    numero = generarNumeroAleatorio(min, max);
+  } while (numero % 10 !== 0);
+  return numero;
+}
 
-  if (esPrimerClick) {
-    numeroGenerado = generarNumeroAleatorio(0, 999);
+function generarVoltea() {
+  contadorClicks++;
+
+  let numeroGenerado;
+  if (contadorClicks % 3 === 0) {
+    if (generarNegativoEnTercerClick) {
+      numeroGenerado = generarNumeroTerminadoEnCero(-999, -1);
+    } else {
+      numeroGenerado = generarNumeroTerminadoEnCero(0, 999);
+    }
+    generarNegativoEnTercerClick = !generarNegativoEnTercerClick;
   } else {
-    numeroGenerado = generarNumeroAleatorio(1000, 99999);
+    if (esPrimerClick) {
+      numeroGenerado = generarNumeroAleatorio(-999, 0);
+    } else {
+      numeroGenerado = generarNumeroAleatorio(0, 999);
+    }
   }
 
   // Invertir esPrimerClick una vez
@@ -245,7 +266,6 @@ function generarVoltea() {
 
   return numeroGenerado;
 }
-
 // !SECTION 6.- voltea
 
 //SECTION - Inicio 7.- digitoN

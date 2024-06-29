@@ -19,7 +19,7 @@ function imprimirDigitos($input1)
         tiene: <span $color>" . digitos($input1) . " digitos</span>";
             } else {
                 $mensajeError .= "El número: <span $color>$input1</span>.<br>
-        tiene: <span $color>" . digitos(abs($input1)) . " digitos</span>";
+        tiene: <span $color>" . digitos(($input1)) . " digitos</span>";
             }
             $mensajeError .= "</span>";
             break;

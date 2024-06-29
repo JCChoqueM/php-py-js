@@ -12,8 +12,7 @@ function imprimirVoltea($input1)
             break;
         case "1":
             $input1 = (int)$input1; // Asegurarse de que $input1 es un entero
-            $voltea = voltea(abs($input1));
-            var_dump($voltea);
+            $voltea = voltea(($input1));
             $color = $input1 >= 0 ? $verde : $rojo;
             $mensajeError = "<span>";
             if ($input1 >= 0) {

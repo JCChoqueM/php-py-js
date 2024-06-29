@@ -29,9 +29,8 @@ function voltea($num1)
             $volteadoStr = "0" . $volteadoStr;
         }
 
-        $array[0] = $volteadoStr;
-        $array[1] = $voltea;
+        $array[0] = ($num1 < 0) ? "-" . $volteadoStr : $volteadoStr;
+        $array[1] = ($num1 < 0) ? -$voltea : $voltea;
     }
-
     return $array;
 }
