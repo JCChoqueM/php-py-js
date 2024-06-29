@@ -6,7 +6,263 @@ function validarInputYMostrarError(mensajeError) {
   resultadoDiv1.innerHTML = mensajeError;
 
 }
+/* //SECTION - Inicio 1.- esCapicua
+function validarInputEscapicua() {
+  const input1 = parseInt(document.getElementById("num1").value);
+  let esValido = (input1 >= 0 && input1 <= 9) || (input1 >= -9 && input1 <= -1);
+  let habilitarBoton = false;
+  let centrar = "style='text-align: center;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
+  let mensajeError = "";
+  const estado = isNaN(input1) ? "0" : "1";
+  switch (estado) {
+    case "0":
+      mensajeError = "0-El campo están vacío. Por favor, ingrese número(s).";
+      break;
+    case "1":
+      switch (true) {
+        case esValido:
+          if (input1 >= 0) {
+            mensajeError = `<span>El numero ${input1} es un palindromo.</span>`;
+          } else {
+            mensajeError = `<span >El número ${input1} es negativo, pero al ignorar el signo, ${Math.abs(
+              input1
+            )} es un palíndromo.</span>`;
+          }
+          break;
+        case !esValido:
+          if (input1 >= 0) {
+            mensajeError = `<span>Continuar</span>`;
+          } else {
+            mensajeError = `<span >El número ${input1} es negativo, pero al ignorar el signo, ${Math.abs(
+              input1
+            )} es: Continuar</span>`;
+          }
+          habilitarBoton = true;
+          break;
+      }
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
+  }
+  validarInputYMostrarError(mensajeError);
+}
+// !SECTION 1.- esCapicua */
 
+//SECTION - Inicio 2.- esPrimo
+function validarInputEsPrimo() {
+  const input1 = parseInt(document.getElementById("num1").value);
+  let centrar = "style='text-align: center;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
+  let mensajeError = "";
+  const estado = isNaN(input1) ? "0" : "1";
+  switch (estado) {
+    case "0":
+      mensajeError = "0-El campo están vacío. Por favor, ingrese número(s).";
+      break;
+    case "1":
+      if (input1 > 1) {
+        mensajeError = `<span>El numero ${input1} es continuar.</span>`;
+      } else {
+        mensajeError = `En matemáticas, un número primo es un número natural mayor que 1, el numero
+        <span ${rojo}>${input1}</span> no es primo`;
+      }
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
+  }
+  validarInputYMostrarError(mensajeError);
+}
+// !SECTION 2.- esPrimo
+
+//SECTION - Inicio 3.- siguientePrimo
+function validarInputSiguientePrimo() {
+  const input1 = parseInt(document.getElementById("num1").value);
+  let centrar = "style='text-align: center;'";
+  let izquierda = "style='text-align: left;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
+  let mensajeError = "";
+  const estado = isNaN(input1) ? "0" : "1";
+  switch (estado) {
+    case "0":
+      mensajeError = "0-El campo están vacío. Por favor, ingrese número(s).";
+      break;
+    case "1":
+      if (input1 > 1) {
+        mensajeError = `<div ${izquierda}>
+        El número ingresado es: <span ${verde}>${input1}</span>.<br>
+        El siguiente número primo es: <span ${verde}>continuar</span>.
+    </div>`;
+      } else {
+        mensajeError = `<div>
+        El número ingresado es: <span ${rojo}>${input1}</span>.<br>
+        Por definición, el siguiente número primo es: <span ${verde}>2</span>.
+    </div>`;
+      }
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
+  }
+  validarInputYMostrarError(mensajeError);
+}
+// !SECTION 3.- siguientePrimo
+
+//SECTION - Inicio 4.- potencia
+function validarInputPotencia() {
+  const base = parseInt(document.getElementById("num1").value);
+  const exponente = parseInt(document.getElementById("num2").value);
+
+  let centrar = "style='text-align: center;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
+  let letra = "style = 'font-size: 20px; font-weight: bold'";
+
+  let mensajeError = "";
+  const estado = (isNaN(base) ? "0" : "1") + (isNaN(exponente) ? "0" : "1");
+  switch (estado) {
+    case "00":
+      mensajeError =
+        "00- Ambos campos están vacíos. Por favor, ingrese números.";
+      break;
+    case "01":
+      mensajeError = "01- El campo 1 está vacío.";
+      break;
+    case "10":
+      mensajeError = `10- input 2 esta vacio`;
+      break;
+    case "11":
+      if (exponente == 0) {
+        if (base == 0) {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado tiene 2 valores:<br> 1 <br>e Indefinido</span>`;
+        } else {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es: 1</span>`;
+        }
+      } else if (exponente < 0) {
+        if (base == 0) {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es:<br><br>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>
+              (${base})<sup>${Math.abs(exponente)}</sup>
+            </span></mi>
+        </mfrac>
+    </math> =
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>${base}</span></mi>
+        </mfrac>
+    </math> = Indefinido
+            </span>`;
+        } else {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es:<br><br>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>
+              (${base})<sup>${Math.abs(exponente)}</sup>
+            </span></mi>
+        </mfrac>
+    </math> =
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>${Math.pow(base, Math.abs(exponente))}</span></mi>
+        </mfrac>
+    </math>
+            </span>`;
+        }
+      }
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
+  }
+  validarInputYMostrarError(mensajeError);
+}
+// !SECTION 4.- potencia
+
+//SECTION - Inicio 5.- digitos
+function validarInputDigitos() {
+  const base = parseInt(document.getElementById("num1").value);
+  const exponente = parseInt(document.getElementById("num2").value);
+
+  let centrar = "style='text-align: center;'";
+  let rojo = "style = 'color: red;'";
+  let verde = "style = 'color: darkgreen;'";
+  let letra = "style = 'font-size: 20px; font-weight: bold'";
+
+  let mensajeError = "";
+  const estado = (isNaN(base) ? "0" : "1") + (isNaN(exponente) ? "0" : "1");
+  switch (estado) {
+    case "00":
+      mensajeError =
+        "00- Ambos campos están vacíos. Por favor, ingrese números.";
+      break;
+    case "01":
+      mensajeError = "01- El campo 1 está vacío.";
+      break;
+    case "10":
+      mensajeError = `10- input 2 esta vacio`;
+      break;
+    case "11":
+      if (exponente == 0) {
+        if (base == 0) {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado tiene 2 valores:<br> 1 <br>e Indefinido</span>`;
+        } else {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es: 1</span>`;
+        }
+      } else if (exponente < 0) {
+        if (base == 0) {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es:<br><br>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>
+              (${base})<sup>${Math.abs(exponente)}</sup>
+            </span></mi>
+        </mfrac>
+    </math> =
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>${base}</span></mi>
+        </mfrac>
+    </math> = Indefinido
+            </span>`;
+        } else {
+          mensajeError = `<span ${centrar}>(${base})<sup>${exponente}</sup> resultado es:<br><br>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>
+              (${base})<sup>${Math.abs(exponente)}</sup>
+            </span></mi>
+        </mfrac>
+    </math> =
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mfrac ${letra}>
+            <mi>1</mi>
+            <mi><span>${Math.pow(base, Math.abs(exponente))}</span></mi>
+        </mfrac>
+    </math>
+            </span>`;
+        }
+      }
+      break;
+    default:
+      mensajeError = "Error desconocido. Por favor, revise las entradas.";
+  }
+  validarInputYMostrarError(mensajeError);
+}
+// !SECTION 5.- digitos
+
+//SECTION - Inicio 6.- voltea
+
+// !SECTION 6.- voltea
 //SECTION - 7.-digitoN
 function validarInputDigitoN(input) {
   const input1 = parseInt(document.getElementById("num1").value);
