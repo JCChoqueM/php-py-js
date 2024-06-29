@@ -2,6 +2,7 @@ function imprimirVoltea(input1) {
   const rojo = "color: red;";
   const verde = "color: darkgreen;";
   let mensajeError = "";
+  input1 = parseInt(input1);
   const estado = isNaN(input1) ? "0" : "1";
 
   switch (estado) {
