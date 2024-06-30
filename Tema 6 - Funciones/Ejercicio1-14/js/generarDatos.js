@@ -44,7 +44,7 @@ function generarDatos() {
       let digitoN = generarDigitoN();
       numInput.value = digitoN.input1;
       numInput2.value = digitoN.input2;
-      validarInputDigitoN(numInput2);
+      resolver();
       break;
     case "posicionDeDigito":
       let posicionDedigito = generarPosicionDeDigito();

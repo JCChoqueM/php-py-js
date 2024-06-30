@@ -1,31 +1,41 @@
 <?php
 include __DIR__ . '/../funciones/funciones.php';
-function imprimirDigitoN($input1)
+function imprimirDigitoN($input1, $input2)
 {
+    $centrar = "style='text-align: center;'";
     $rojo = "style='color: red;'";
     $verde = "style='color: darkgreen;'";
     $mensajeError = "";
-    $estado = !is_numeric($input1) ? "0" : "1";
+    $estado = (!is_numeric($input1) ? "0" : "1") . (!is_numeric($input2) ? "0" : "1");
     switch ($estado) {
-        case "0":
-            $mensajeError = "El campo está vacío o no es un número. Por favor, ingrese número(s).";
+        case "00":
+            $mensajeError = "00- Ambos campos están vacíos. Por favor, ingrese números.";
             break;
-        case "1":
-            $input1 = (int)$input1; // Asegurarse de que $input1 es un entero
-            $voltea = voltea(($input1));
-            $color = $input1 >= 0 ? $verde : $rojo;
-            $mensajeError = "<span>";
-            if ($input1 >= 0) {
-                $mensajeError .= "Numero Ingresado: <span $color>$input1</span>.<br>
-        volteado literal: <span $color>" . $voltea[0] . "</span><br>volteado numeral: <span $color>" . $voltea[1] . "</span>";
-            } else {
-                $mensajeError .= "Numero Ingresado: <span $color>$input1</span>.<br>
-        volteado literal: <span $color>" . $voltea[0] . "</span><br>volteado numeral: <span $color>" . $voltea[1] . "</span>";
+        case "01":
+            $mensajeError = "01- El campo 1 está vacío.";
+            break;
+        case "10":
+            $mensajeError = "10- input 2 esta vacio";
+            break;
+        case "11":
+            $nDigito = digitos($input1);
+            $input1=intval($input1);
+            $input2=intval($input2);
+            $mensajeError = "<br><div $centrar>El numero $input1 tiene <span $verde> " . ($nDigito == 1 ? "la posicion." : " las siguiuentes posiciones.") . "</span> <br>" .
+                crearTabla($input1, 0) . "</div>";
+
+            switch (true) {
+                case ($input2 > $nDigito - 1 || $input2 < 0):
+                    $mensajeError .= "<span $rojo>No se puede buscar la posicion $input2</span>.";
+                    break;
+                default:
+                    $mensajeError .= "<span $verde>Si se puede buscar la posicion $input2</span>.";
+                    break;
             }
-            $mensajeError .= "</span>";
             break;
         default:
             $mensajeError = "Error desconocido. Por favor, revise las entradas.";
     }
-    return "$mensajeError";
+
+    return  $mensajeError;
 }
