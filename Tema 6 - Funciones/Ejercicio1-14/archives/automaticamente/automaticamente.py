@@ -6,6 +6,7 @@ from python.imprimir.imprimirSiguientePrimo import imprimir_siguiente_primo
 from python.imprimir.imprimirPotencia import imprimir_potencia
 from python.imprimir.imprimirDigitos import imprimir_digitos
 from python.imprimir.imprimirVoltea import imprimir_voltea
+from python.imprimir.imprimirDigitoN import imprimir_DigitoN
 
 # Cadena inicial
 cadena = sys.argv[1] if len(sys.argv) > 1 else ""
@@ -43,6 +44,8 @@ elif select == "digitos":
     mensajeError = imprimir_digitos(input1)
 elif select == "voltea":
     mensajeError = imprimir_voltea(input1)
+elif select == "digitoN":
+    mensajeError = imprimir_DigitoN(input1, datos[2])
 else:
     mensajeError = "Preguntame mas<br>"
 print(mensajeError)
