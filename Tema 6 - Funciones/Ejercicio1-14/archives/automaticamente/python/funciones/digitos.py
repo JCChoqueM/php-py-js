@@ -2,7 +2,9 @@ def digitos(num1):
     num1 = abs(num1)
     digitos = 0
     dividendo = num1
-    while dividendo > 0:
-        dividendo //= 10
+    while True:
+        dividendo = dividendo // 10
         digitos += 1
+        if dividendo <= 0:
+            break
     return digitos

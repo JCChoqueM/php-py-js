@@ -12,6 +12,7 @@ dos_dir = os.path.abspath(os.path.join(current_dir, "..", "funciones"))
 sys.path.append(dos_dir)
 
 # Importar el módulo uno.py
+from digitos import digitos
 from digitoN import digitoN
 from crearTabla import crearTabla
 
@@ -47,8 +48,9 @@ def imprimir_DigitoN(input1, input2):
     elif estado == "10":
         mensajeError = "input 2 está vacio."
     elif estado == "11":
-        nDigito = len(str(input1))
-        input1 = int(input1)
+        nDigito = digitos(int(input1))
+        print(nDigito)
+        input1 = int((input1))
         input2 = int(input2)
         mensajeError = (
             f"<br><div {centrar}>El numero {input1} tiene <span {verde}> "
