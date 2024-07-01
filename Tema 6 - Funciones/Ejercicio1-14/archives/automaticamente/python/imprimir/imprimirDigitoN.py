@@ -46,10 +46,9 @@ def imprimir_DigitoN(input1, input2):
     elif estado == "01":
         mensajeError = "El campo 1 esta vacio."
     elif estado == "10":
-        mensajeError = "input 2 está vacio."
+        mensajeError = "input 2 esta vacio."
     elif estado == "11":
-        nDigito = digitos(int(input1))
-        print(nDigito)
+        nDigito = digitos(input1)
         input1 = int((input1))
         input2 = int(input2)
         mensajeError = (
