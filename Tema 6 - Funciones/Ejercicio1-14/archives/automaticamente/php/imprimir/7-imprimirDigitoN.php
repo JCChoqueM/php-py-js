@@ -6,6 +6,7 @@ function imprimirDigitoN($input1, $input2)
     $rojo = "style='color: red;'";
     $verde = "style='color: darkgreen;'";
     $azul = "style='color: blue;'";
+    $negro = "style='color: black;'";
     $mensajeError = "";
     $estado = (!is_numeric($input1) ? "0" : "1") . (!is_numeric($input2) ? "0" : "1");
     switch ($estado) {
@@ -30,7 +31,7 @@ function imprimirDigitoN($input1, $input2)
                     $mensajeError .= "<span $rojo>No se puede buscar la posicion $input2</span>.";
                     break;
                 default:
-                    $mensajeError .= "<span $azul>El numero en la posicion $input2 es: " . abs(digitoN($input1, $input2)) . "</span>.";
+                    $mensajeError .= "<span $azul>El numero en la posicion $input2 es: <span $negro>" . abs(digitoN($input1, $input2)) . "</span></span>.";
                     break;
             }
             break;
