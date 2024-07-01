@@ -3,8 +3,8 @@
 include __DIR__ . '/../funciones/funciones.php';
 function digitoN($numero, $posicion)
 {
-    $digitos = digitos($numero);
-    $exponente = $digitos - $posicion - 1;
+    $digitos_numero = digitos($numero);
+    $exponente = $digitos_numero - $posicion - 1;
     $primero = intdiv($numero, (potencia(10, $exponente)));
     $segundo = ($primero % 10);
     return $segundo;

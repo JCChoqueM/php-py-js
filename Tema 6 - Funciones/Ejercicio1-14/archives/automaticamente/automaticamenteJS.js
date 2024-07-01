@@ -21,6 +21,9 @@ function automaticamenteJS(datos) {
     case select == "voltea":
       mensajeError = imprimirVoltea(input1);
       break;
+    case select == "digitoN":
+      mensajeError = imprimirDigitoN(input1, datos[2]);
+      break;
     default:
       mensajeError = "soy error";
   }
