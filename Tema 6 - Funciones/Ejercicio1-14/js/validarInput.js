@@ -4,68 +4,13 @@ function validarInputYMostrarError(mensajeError) {
   const resultadoDiv1 = document.getElementById("resultadoJavaScript");
   // Insertar el mensaje de error en cada elemento
   resultadoDiv1.innerHTML = mensajeError;
-
 }
-
-//SECTION - 7.-digitoN
-function validarInputDigitoN(input) {
-  const input1 = parseInt(document.getElementById("num1").value);
-  const input2 = parseInt(input.value);
-  const nDigito = contarDigitos(input1);
-  const boton = document.getElementById("resolver");
-  let habilitarBoton = false;
-  let centrar = "style='text-align: center;'";
-  let rojo = "style = 'color: red;'";
-  let verde = "style = 'color: darkgreen;'";
-  let mensajeError = "";
-  const estado = (isNaN(input1) ? "0" : "1") + (isNaN(input2) ? "0" : "1");
-  switch (estado) {
-    case "00":
-      mensajeError =
-        "00- Ambos campos están vacíos. Por favor, ingrese números.";
-      break;
-    case "01":
-      mensajeError = "01- El campo 1 está vacío.";
-      break;
-    case "10":
-      mensajeError = `10- input 2 esta vacio`;
-      break;
-    case "11":
-      if (input2 > contarDigitos(input1) - 1) {
-        mensajeError = `<br><div ${centrar}>El numero ${input1} tiene <span ${verde}>${nDigito} ${
-          nDigito == 1 ? "posicion." : "posiciones."
-        }</span> <br>
-        ${crearTabla(input1, 0)}
-        </div>
-        <span ${rojo}>No se puede buscar la posicon ${input2}</span>.`;
-      } else if (input2 < 0) {
-        mensajeError = `<span ${rojo}>el numero no puede ser negativo</span>`;
-      } else {
-        mensajeError = `Continuar:<br><div ${centrar}>El numero ${input1} tiene <span ${verde}>${nDigito} ${
-          nDigito == 1 ? "posicion." : "posiciones."
-        }</span> <br>
-        ${crearTabla(input1, 0)}
-        <span ${verde}>Si se puede buscar la posicion ${input2}</span>.
-        </div>`;
-        habilitarBoton = true;
-      }
-      break;
-    default:
-      mensajeError = "Error desconocido. Por favor, revise las entradas.";
-  }
-  boton.disabled = !habilitarBoton;
-  validarInputYMostrarError(mensajeError);
-}
-
-//!SECTION fin 7.-digitoN
 
 //SECTION - 8.- posicionDeDigito
 function validarInputPosicionDeDigito(input) {
   const input1 = parseInt(document.getElementById("num1").value);
   const input2 = parseInt(input.value);
   const nDigito = contarDigitos(input1);
-  const boton = document.getElementById("resolver");
-  let habilitarBoton = false;
   let centrar = "style='text-align: center;'";
   let rojo = "style = 'color: red;'";
   let verde = "style = 'color: darkgreen;'";
@@ -93,14 +38,12 @@ function validarInputPosicionDeDigito(input) {
         ${crearTabla(input1, 0)}
         </div>
        `;
-        habilitarBoton = true;
       }
       break;
     default:
       mensajeError = "Error desconocido. Por favor, revise las entradas.";
   }
-  boton.disabled = !habilitarBoton;
-  validarInputYMostrarError(mensajeError);
+  return mensajeError;
 }
 
 //!SECTION fin 8.-posicionDeDigito

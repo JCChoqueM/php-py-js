@@ -34,6 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $input2 = ($datos[2]);
         $mensajeError = imprimirDigitoN($input1, $input2);
         break;
+      case ($select == "posicionDeDigito"):
+        $input2 = ($datos[2]);
+        $mensajeError = imprimirPosicionDeDigito($input1, $input2);
+        break;
       default:
         "Preugntame mas";
     }
