@@ -34,3 +34,16 @@ function voltea($num1)
     }
     return $array;
 }
+
+function voltea2($num1)
+{
+    $voltea = 0;
+    $dividendo = abs($num1);  // Consideramos el valor absoluto para voltear correctamente
+    // Voltear el número
+    while ($dividendo > 0) {
+        $voltea = $voltea * 10 + ($dividendo % 10);
+        $dividendo = intdiv($dividendo, 10);
+    }
+        return $voltea;
+
+}
