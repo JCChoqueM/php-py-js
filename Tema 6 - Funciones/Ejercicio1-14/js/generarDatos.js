@@ -50,7 +50,7 @@ function generarDatos() {
       let posicionDedigito = generarPosicionDeDigito();
       numInput.value = posicionDedigito.input1;
       numInput2.value = posicionDedigito.input2;
-      resolver(numInput2);
+      resolver();
       break;
     case "quitaPorDetras":
       let QuitaPorDetras = generarQuitaPorDetras();

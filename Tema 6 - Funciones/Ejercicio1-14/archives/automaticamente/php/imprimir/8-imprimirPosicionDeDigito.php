@@ -29,12 +29,15 @@ function imprimirPosicionDeDigito($input1, $input2)
             if ($input2 > 9 || $input2 < 0) {
                 $mensajeError .= "<span $rojo>Numero ingresado $input1.<br> Solo se permiten numeros positivos de 1 digito: $input2 no es valido para la busqueda</span>.";
             } else {
-                $mensajeError = "<br><div $centrar>Posiciones del numero: $input1<br><span $azul>Izquierda a Derecha</span>" .
-                    crearTabla(abs($input1), 0) . "</div>";
-                $mensajeError .= "<div $centrar> <span $rojo>Derecha a izquierda</span>" .
-                    crearTablaReves(abs($input1), 0) . "</div>";
+                $mensajeError = "<br><div $centrar>Posiciones del numero: $input1<br>";
 
-                $mensajeError .= "<span $azul>El numero en la posicion $input2 es: <span $negro>"  . "</span></span>.";
+                $mensajeError .= "<span $azul>Izquierda a Derecha</span>";
+                $mensajeError .= crearTabla(abs($input1), 0);
+                $mensajeError .= "<span $azul>El numero <span $negro>$input2</span> esta en la posicion: <span $negro>"  . posicionDeDigito((intval((voltea($input1)))), $input2) . "</span></span>.<br>";
+
+                $mensajeError .= " <span $rojo>Derecha a izquierda</span>";
+                $mensajeError .=   crearTablaReves(abs($input1), 0);
+                $mensajeError .= "<span $rojo>El numero <span $negro>$input2</span> esta en la posicion: <span $negro>"  . posicionDeDigito($input1, $input2) . "</span></span>.</div>";
             }
             break;
         default:
