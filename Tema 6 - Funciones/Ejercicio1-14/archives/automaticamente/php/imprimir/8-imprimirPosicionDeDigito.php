@@ -33,11 +33,11 @@ function imprimirPosicionDeDigito($input1, $input2)
 
                 $mensajeError .= "<span $azul>Izquierda a Derecha</span>";
                 $mensajeError .= crearTabla(abs($input1), 0);
-                $mensajeError .= "<span $azul>El numero <span $negro>$input2</span> esta en la posicion: <span $negro>"  . posicionDeDigito((intval((voltea($input1)))), $input2) . "</span></span>.<br>";
+                $mensajeError .= "<span $azul>El numero <span $negro>$input2</span> esta en la posicion: <span $negro>"  . posicionDeDigitoIzquierdaDerecha($input1, $input2) . "</span></span>.<br>";
 
                 $mensajeError .= " <span $rojo>Derecha a izquierda</span>";
                 $mensajeError .=   crearTablaReves(abs($input1), 0);
-                $mensajeError .= "<span $rojo>El numero <span $negro>$input2</span> esta en la posicion: <span $negro>"  . posicionDeDigito($input1, $input2) . "</span></span>.</div>";
+                $mensajeError .= "<span $rojo>El numero <span $negro>$input2</span> esta en la posicion: <span $negro>"  . posicionDeDigitoDerechaIzquierda($input1, $input2) . "</span></span></div>";
             }
             break;
         default:
