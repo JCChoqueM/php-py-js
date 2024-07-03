@@ -1,5 +1,5 @@
 <?php
-function crearTabla($number, $startIndex)
+function crearTabla($number, $startIndex, $highlightPosition = -1)
 {
     $numberString = strval($number);
     $headerText = $startIndex === 0 ? "Posicion" : "Dígito";
@@ -10,7 +10,8 @@ function crearTabla($number, $startIndex)
     $tableHtml .= "<th style='border: 1px solid black; padding: 5px; text-align: center; background-color: lightgray; font-size: small; font-weight: bold;'>$headerText</th>";
     for ($i = 0; $i < strlen($numberString); $i++) {
         $index = $i + $startIndex;
-        $tableHtml .= "<td style='border: 1px solid black; padding: 5px; text-align: center; background-color: lightblue; font-size: small; font-weight: bold;'>$index</td>";
+        $cellStyle = $i == $highlightPosition ? "background-color: yellow;" : "background-color: lightblue;";
+        $tableHtml .= "<td style='border: 1px solid black; padding: 5px; text-align: center; $cellStyle font-size: small; font-weight: bold;'>$index</td>";
     }
     $tableHtml .= "</tr>";
 
@@ -19,7 +20,8 @@ function crearTabla($number, $startIndex)
     $tableHtml .= "<th style='border: 1px solid black; padding: 5px; text-align: center; background-color: lightgray; font-size: small; font-weight: bold;'></th>";
     for ($i = 0; $i < strlen($numberString); $i++) {
         $digit = $numberString[$i];
-        $tableHtml .= "<td style='border: 1px solid black; padding: 15px; text-align: center; background-color: lightgreen; font-size: medium; font-weight: bold;'>$digit</td>";
+        $cellStyle = $i == $highlightPosition ? "background-color: yellow;" : "background-color: lightgreen;";
+        $tableHtml .= "<td style='border: 1px solid black; padding: 15px; text-align: center; $cellStyle font-size: medium; font-weight: bold;'>$digit</td>";
     }
     $tableHtml .= "</tr>";
 
@@ -27,7 +29,7 @@ function crearTabla($number, $startIndex)
     return $tableHtml;
 }
 
-function crearTablaReves($number, $startIndex)
+function crearTablaReves($number, $startIndex, $highlightPosition = -1)
 {
     $numberString = strval($number);
     $headerText = $startIndex === 0 ? "Posicion" : "Dígito";
@@ -38,7 +40,8 @@ function crearTablaReves($number, $startIndex)
     $tableHtml .= "<th style='border: 1px solid black; padding: 5px; text-align: center; background-color: lightgray; font-size: small; font-weight: bold;'>$headerText</th>";
     for ($i = strlen($numberString) - 1; $i >= 0; $i--) {
         $index = $i + $startIndex;
-        $tableHtml .= "<td style='border: 1px solid black; padding: 5px; text-align: center; background-color: lightblue; font-size: small; font-weight: bold;'>$index</td>";
+        $cellStyle = $i == $highlightPosition ? "background-color: yellow;" : "background-color: lightblue;";
+        $tableHtml .= "<td style='border: 1px solid black; padding: 5px; text-align: center; $cellStyle font-size: small; font-weight: bold;'>$index</td>";
     }
     $tableHtml .= "</tr>";
 
@@ -47,7 +50,8 @@ function crearTablaReves($number, $startIndex)
     $tableHtml .= "<th style='border: 1px solid black; padding: 5px; text-align: center; background-color: lightgray; font-size: small; font-weight: bold;'></th>";
     for ($i = 0; $i < strlen($numberString); $i++) {
         $digit = $numberString[$i];
-        $tableHtml .= "<td style='border: 1px solid black; padding: 15px; text-align: center; background-color: lightgreen; font-size: medium; font-weight: bold;'>$digit</td>";
+        $cellStyle = $i == $highlightPosition ? "background-color: yellow;" : "background-color: lightgreen;";
+        $tableHtml .= "<td style='border: 1px solid black; padding: 15px; text-align: center; $cellStyle font-size: medium; font-weight: bold;'>$digit</td>";
     }
     $tableHtml .= "</tr>";
 
