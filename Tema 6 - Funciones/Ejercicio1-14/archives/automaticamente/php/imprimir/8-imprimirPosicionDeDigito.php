@@ -30,16 +30,23 @@ function imprimirPosicionDeDigito($input1, $input2)
                 $mensajeError .= "<span $rojo>Numero ingresado $input1.<br> Solo se permiten numeros positivos de 1 digito: $input2 no es valido para la busqueda</span>.";
             } else {
                 $IzqDer = posicionDeDigitoIzquierdaDerecha($input1, $input2);
+                $posicionIzqDer = (!is_numeric($IzqDer) ? "-1" : $IzqDer);
                 $DerIzq = posicionDeDigitoDerechaIzquierda($input1, $input2);
-                $mensajeError = "<br><div $centrar>Posiciones del numero: $input1<br>";
+                $posicionDerIzq = (!is_numeric($DerIzq) ? "-1" : $DerIzq);
+                $mensajeError = "<br><div $centrar><br>";
 
-                $mensajeError .= "<span $azul>Izquierda a Derecha<br></span>";
-                $mensajeError .= "<span $azul>El numero '$input2' esta en la posicion: '"  . $IzqDer . "'</span>.<br>";
-                $mensajeError .= crearTabla(abs($input1), 0);
+                $mensajeError .= "<span $azul>";
+                $mensajeError .= "Izquierda a Derecha<br>";
+                $mensajeError .= "El numero '$input2' esta en la posicion: '$IzqDer'.<br>";
+                $mensajeError .= crearTabla(abs($input1), 0, $posicionIzqDer);
+                $mensajeError .= "</span>";
 
-                $mensajeError .= " <span $rojo>Derecha a izquierda</span>";
-                $mensajeError .=   crearTablaReves(abs($input1), 0);
-                $mensajeError .= "<span $rojo>El numero <span $negro>$input2</span> esta en la posicion: <span $negro>"  . $DerIzq . "</span></span></div>";
+                $mensajeError .= " <span $rojo>";
+                $mensajeError .= " Derecha a izquierda<br>";
+                $mensajeError .= "El numero '$input2' esta en la posicion: '$DerIzq'.<br>";
+                $mensajeError .=   crearTablaReves(abs($input1), 0, $posicionDerIzq);
+                $mensajeError .= "</span>";
+                $mensajeError .=  "</div>";
             }
             break;
         default:
