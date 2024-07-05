@@ -27,7 +27,7 @@ function imprimirPosicionDeDigito($input1, $input2)
             $input1 = intval($input1);
             $input2 = intval($input2);
             if ($input2 > 9 || $input2 < 0) {
-                $mensajeError .= "<span $rojo>Numero ingresado $input1.<br> Solo se permiten numeros positivos de 1 digito: $input2 no es valido para la busqueda</span>.";
+                $mensajeError .= "<span $rojo>Numero ingresado $input1.<br> Solo se permiten numeros positivos de 1 digito:<br> $input2 no es valido para la busqueda</span>.";
             } else {
                 $IzqDer = posicionDeDigitoIzquierdaDerecha($input1, $input2);
                 $posicionIzqDer = (!is_numeric($IzqDer) ? "-1" : $IzqDer);

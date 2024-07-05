@@ -39,7 +39,7 @@ def imprimirPosicionDeDigito(input1, input2):
         estado += "0"
 
     if estado == "00":
-        mensajeError = "Ambos campos están vacíos. Por favor, ingrese números."
+        mensajeError = "Ambos campos están vacíos. Por favor, ingrese numeros."
     elif estado == "01":
         mensajeError = "El campo 1 está vacío."
     elif estado == "10":
@@ -49,7 +49,7 @@ def imprimirPosicionDeDigito(input1, input2):
         input2 = int(input2)
 
         if input2 > 9 or input2 < 0:
-            mensajeError += f"<span {rojo}>Número ingresado {input1}.<br> Solo se permiten números positivos de 1 dígito: {input2} no es válido para la búsqueda</span>."
+            mensajeError += f"<span {rojo}>Numero ingresado {input1}.<br> Solo se permiten numeros positivos de 1 digito: <br>{input2} no es valido para la busqueda</span>."
         else:
             IzqDer = posicion_de_digito_izquierda_derecha(input1, input2)
             posicionIzqDer = IzqDer if isinstance(IzqDer, int) else "-1"
@@ -59,14 +59,14 @@ def imprimirPosicionDeDigito(input1, input2):
             mensajeError = f"<br><div {centrar}><br>"
             mensajeError += f"<span {azul}>"
             mensajeError += f"Izquierda a Derecha<br>"
-            mensajeError += f"El número '{input2}' está en la posición: '{IzqDer}'.<br>"
+            mensajeError += f"El numero '{input2}' esta en la posicion: '{IzqDer}'.<br>"
             mensajeError += crearTabla(abs(input1), 0, posicionIzqDer)
 
             mensajeError += "</span>"
 
             mensajeError += f"<span {rojo}>"
             mensajeError += f" Derecha a Izquierda<br>"
-            mensajeError += f"El número '{input2}' está en la posición: '{DerIzq}'.<br>"
+            mensajeError += f"El numero '{input2}' esta en la posicion: '{DerIzq}'.<br>"
             mensajeError += crearTablaReves(abs(input1), 0, posicionDerIzq)
             mensajeError += "</span>"
             mensajeError += "</div>"
