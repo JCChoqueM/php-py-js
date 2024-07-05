@@ -31,3 +31,15 @@ def voltea(num1):
         array.append(-voltea if num1 < 0 else voltea)
 
     return array
+
+
+def voltea2(num1):
+    volteado = 0
+    dividendo = abs(num1)  # Consideramos el valor absoluto para voltear correctamente
+
+    # Voltear el número
+    while dividendo > 0:
+        volteado = volteado * 10 + (dividendo % 10)
+        dividendo = dividendo // 10
+
+    return volteado

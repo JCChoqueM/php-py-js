@@ -7,6 +7,7 @@ from python.imprimir.imprimirPotencia import imprimir_potencia
 from python.imprimir.imprimirDigitos import imprimir_digitos
 from python.imprimir.imprimirVoltea import imprimir_voltea
 from python.imprimir.imprimirDigitoN import imprimir_DigitoN
+from python.imprimir.imprimirPosicionDeDigito import imprimirPosicionDeDigito
 
 # Cadena inicial
 cadena = sys.argv[1] if len(sys.argv) > 1 else ""
@@ -46,6 +47,8 @@ elif select == "voltea":
     mensajeError = imprimir_voltea(input1)
 elif select == "digitoN":
     mensajeError = imprimir_DigitoN(input1, datos[2])
+elif select == "posicionDeDigito":
+    mensajeError = imprimirPosicionDeDigito(input1, datos[2])
 else:
     mensajeError = "Preguntame mas<br>"
 print(mensajeError)
