@@ -24,6 +24,9 @@ function automaticamenteJS(datos) {
     case select == "digitoN":
       mensajeError = imprimirDigitoN(input1, datos[2]);
       break;
+    case select == "posicionDeDigito":
+      mensajeError = imprimirPosicionDeDigito(input1, datos[2]);
+      break;
     default:
       mensajeError = "soy error";
   }

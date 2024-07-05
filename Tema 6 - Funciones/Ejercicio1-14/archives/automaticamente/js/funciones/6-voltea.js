@@ -31,3 +31,14 @@ function voltea(num1) {
 
   return array;
 }
+
+function voltea2($num1) {
+  let voltea = 0;
+  dividendo = Math.abs($num1); // Consideramos el valor absoluto para voltear correctamente
+  // Voltear el número
+  while (dividendo > 0) {
+    voltea = voltea * 10 + (dividendo % 10);
+    dividendo = Math.trunc(dividendo/10);
+  }
+  return voltea;
+}

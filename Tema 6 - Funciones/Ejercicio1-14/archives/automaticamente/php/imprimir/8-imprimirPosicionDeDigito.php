@@ -2,8 +2,6 @@
 include __DIR__ . '/../funciones/funciones.php';
 function imprimirPosicionDeDigito($input1, $input2)
 {
-
-    $nDigito = digitos($input1);
     $centrar = "style='text-align: center;'";
     $rojo = "style='color: red;'";
     $verde = "style='color: darkgreen;'";
@@ -23,7 +21,6 @@ function imprimirPosicionDeDigito($input1, $input2)
             $mensajeError = "El campo 2 está vacío";
             break;
         case "11":
-            $nDigito = digitos($input1);
             $input1 = intval($input1);
             $input2 = intval($input2);
             if ($input2 > 9 || $input2 < 0) {
