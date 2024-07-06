@@ -6,48 +6,6 @@ function validarInputYMostrarError(mensajeError) {
   resultadoDiv1.innerHTML = mensajeError;
 }
 
-//SECTION - 8.- posicionDeDigito
-function validarInputPosicionDeDigito(input) {
-  const input1 = parseInt(document.getElementById("num1").value);
-  const input2 = parseInt(input.value);
-  const nDigito = contarDigitos(input1);
-  let centrar = "style='text-align: center;'";
-  let rojo = "style = 'color: red;'";
-  let verde = "style = 'color: darkgreen;'";
-  let mensajeError = "";
-  const estado = (isNaN(input1) ? "0" : "1") + (isNaN(input2) ? "0" : "1");
-  switch (estado) {
-    case "00":
-      mensajeError =
-        "00- Ambos campos están vacíos. Por favor, ingrese números.";
-      break;
-    case "01":
-      mensajeError = "01- El campo 1 está vacío.";
-      break;
-    case "10":
-      mensajeError = `10- input 2 esta vacio`;
-      break;
-    case "11":
-      if (input2 > 9) {
-        mensajeError = `<span ${rojo}>solo se permite ingresar numeros de 1 digito</span>`;
-      } else if (input2 < 0) {
-        mensajeError = `<span ${rojo}>el numero no puede ser negativo</span>`;
-      } else {
-        mensajeError = `Continuar:<br><div ${centrar}> 
-        <span ${verde}>Si se puede buscar el digito ${input2}</span> en ${input1}.
-        ${crearTabla(input1, 0)}
-        </div>
-       `;
-      }
-      break;
-    default:
-      mensajeError = "Error desconocido. Por favor, revise las entradas.";
-  }
-  return mensajeError;
-}
-
-//!SECTION fin 8.-posicionDeDigito
-
 //SECTION -  9.- quitaPorDetras
 function validarInputQuitaPorDetras(input) {
   const input1 = parseInt(document.getElementById("num1").value);
@@ -97,8 +55,7 @@ function validarInputQuitaPorDetras(input) {
   }
   // Verificar si el valor tiene la longitud adecuada
 
-  boton.disabled = !habilitarBoton;
-  validarInputYMostrarError(mensajeError);
+  return mensajeError;
 }
 //!SECTION fin 9.- quitaPorDetras
 

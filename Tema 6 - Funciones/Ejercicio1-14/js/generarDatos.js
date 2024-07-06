@@ -56,7 +56,7 @@ function generarDatos() {
       let QuitaPorDetras = generarQuitaPorDetras();
       numInput.value = QuitaPorDetras.input1;
       numInput2.value = QuitaPorDetras.input2;
-      validarInputQuitaPorDetras(numInput2);
+      resolver();
       break;
     case "quitaPorDelante":
       let QuitaPorDelante = generarQuitaPorDelante();
