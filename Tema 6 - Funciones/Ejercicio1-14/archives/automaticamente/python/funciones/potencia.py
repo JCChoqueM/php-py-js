@@ -1,5 +1,5 @@
 def potencia(base, exponente):
-    potencia = 1
+    potencia2 = 1
     for _ in range(exponente):
-        potencia *= base
-    return potencia
+        potencia2 *= base
+    return potencia2
