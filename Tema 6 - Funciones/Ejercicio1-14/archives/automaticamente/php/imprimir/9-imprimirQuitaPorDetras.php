@@ -22,9 +22,9 @@ function imprimirQuitaPorDetras($input1, $input2)
         case "11":
             $input1 = intval($input1);
             $input2 = intval($input2);
-            $digitoS = ($nDigito == 1 ? "dígito." : "dígitos.");
+            $digitoS = ($input2 == 1 ? "dígito" : "dígitos");
             $mensajeError = "<div $centrar>";
-            $mensajeError .= "El número $input1 tiene <span $verde>$nDigito $digitoS</span> <br>";
+            $mensajeError .= "El número $input1 tiene <span $verde>$nDigito $digitoS.</span> <br>";
             $mensajeError .= crearTablaReves(abs($input1), 1);
             if ($input2 == 0) {
                 $mensajeError .= "<span $rojo>Quitar $input2 dígitos nos dara el mismo numero $input1</span><br>";
@@ -36,7 +36,7 @@ function imprimirQuitaPorDetras($input1, $input2)
             } elseif ($input2 == $nDigito) {
                 $mensajeError .= "<span $rojo>Quitar $input2 dígitos resultará en 0</span>";
             } else {
-                $mensajeError .= "<span $verde>el numero $input1 menos $input2 $digitoS es:<br> " . quitaPorDetras($input1, $input2) . ".</span>";
+                $mensajeError .= "<span $verde>el numero $input1 menos $input2 $digitoS es: " . quitaPorDetras($input1, $input2) . ".</span>";
                 $mensajeError .= crearTablaReves((quitaPorDetras($input1, $input2)), 1);
             }
             $mensajeError .= "</div>";
