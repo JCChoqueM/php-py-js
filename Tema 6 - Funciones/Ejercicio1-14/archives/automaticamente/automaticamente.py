@@ -53,6 +53,7 @@ elif select == "posicionDeDigito":
 elif select == "quitaPorDetras":
     mensajeError = imprimir_quita_por_detras(input1, datos[2])
     print(datos)
+    """ revisar """
 else:
     mensajeError = "Preguntame mas<br>"
 print(mensajeError)
