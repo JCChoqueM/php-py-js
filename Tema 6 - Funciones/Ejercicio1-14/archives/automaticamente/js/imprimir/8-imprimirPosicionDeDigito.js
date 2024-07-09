@@ -6,6 +6,8 @@ function imprimirPosicionDeDigito(input1, input2) {
   const azul = "style='color: blue;'";
   const negro = "style='color: black;'";
   let mensajeError = "";
+  input1 = parseInt(input1);
+  input2 = parseInt(input2);
   const estado = (isNaN(input1) ? "0" : "1") + (isNaN(input2) ? "0" : "1");
 
   switch (estado) {
