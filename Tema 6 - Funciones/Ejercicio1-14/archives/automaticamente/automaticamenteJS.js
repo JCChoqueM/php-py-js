@@ -27,6 +27,9 @@ function automaticamenteJS(datos) {
     case select == "posicionDeDigito":
       mensajeError = imprimirPosicionDeDigito(input1, datos[2]);
       break;
+    case select == "quitaPorDetras":
+      mensajeError = imprimirQuitaPorDetras(input1, datos[2]);
+      break;
     default:
       mensajeError = "soy error";
   }
