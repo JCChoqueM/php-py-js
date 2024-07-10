@@ -30,6 +30,9 @@ function automaticamenteJS(datos) {
     case select == "quitaPorDetras":
       mensajeError = imprimirQuitaPorDetras(input1, datos[2]);
       break;
+    case select == "quitaPorDelante":
+      mensajeError = imprimirQuitaPorDelante(input1, datos[2]);
+      break;
     default:
       mensajeError = "soy error";
   }
