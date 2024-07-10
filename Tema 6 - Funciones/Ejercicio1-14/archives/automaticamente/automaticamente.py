@@ -9,6 +9,7 @@ from python.imprimir.imprimirVoltea import imprimir_voltea
 from python.imprimir.imprimirDigitoN import imprimir_DigitoN
 from python.imprimir.imprimirPosicionDeDigito import imprimirPosicionDeDigito
 from python.imprimir.imprimirQuitaPorDetras import imprimir_quita_por_detras
+from python.imprimir.imprimirQuitaPorDelante import imprimir_quita_por_delante
 
 # Cadena inicial
 cadena = sys.argv[1] if len(sys.argv) > 1 else ""
@@ -52,8 +53,8 @@ elif select == "posicionDeDigito":
     mensajeError = imprimirPosicionDeDigito(input1, datos[2])
 elif select == "quitaPorDetras":
     mensajeError = imprimir_quita_por_detras(input1, datos[2])
-    print(datos)
-    """ revisar """
+elif select == "quitaPorDelante":
+    mensajeError = imprimir_quita_por_delante(input1, datos[2])
 else:
     mensajeError = "Preguntame mas<br>"
 print(mensajeError)
