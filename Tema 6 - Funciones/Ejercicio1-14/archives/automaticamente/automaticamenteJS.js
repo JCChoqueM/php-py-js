@@ -33,6 +33,9 @@ function automaticamenteJS(datos) {
     case select == "quitaPorDelante":
       mensajeError = imprimirQuitaPorDelante(input1, datos[2]);
       break;
+    case select == "pegaPorDetras":
+      mensajeError = imprimirPegaPorDetras(input1, datos[2]);
+      break;
     default:
       mensajeError = "soy error";
   }
