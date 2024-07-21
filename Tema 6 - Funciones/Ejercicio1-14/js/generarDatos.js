@@ -62,8 +62,7 @@ function generarDatos() {
       let QuitaPorDelante = generarQuitaPorDelante();
       numInput.value = QuitaPorDelante.input1;
       numInput2.value = QuitaPorDelante.input2;
-      validarInputQuitaPorDelante(numInput2);
-
+      resolver();
       break;
     case "pegaPorDetras":
       let posicionPegaPorDetras = generarPegaPorDetras();
