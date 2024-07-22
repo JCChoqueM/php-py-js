@@ -1,6 +1,6 @@
 def crearTabla(number, startIndex, highlightPosition=-1):
     numberString = str(number)
-    headerText = "Posicion" if startIndex == 0 else "Dígito"
+    headerText = "Posicion" if startIndex == 0 else "Digito"
     tableHtml = '<table style="border-collapse: collapse; margin: 20px auto;">'
 
     # Crear la fila de encabezado para los índices

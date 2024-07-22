@@ -16,6 +16,7 @@ from quitaPorDetras import quita_por_detras
 from digitos import digitos
 from crearTabla import crearTablaReves
 
+
 def imprimir_quita_por_detras(input1, input2):
     centrar = "style='text-align: center;'"
     rojo = "style='color: red;'"
@@ -38,7 +39,7 @@ def imprimir_quita_por_detras(input1, input2):
     if estado == "00":
         mensaje_error = "Ambos campos estan vacios. Por favor, ingrese numeros."
     elif estado == "01":
-        mensaje_error = "El campo 1 está vacio."
+        mensaje_error = "El campo 1 esta vacio."
     elif estado == "10":
         mensaje_error = "El campo 2 esta vacio."
     elif estado == "11":

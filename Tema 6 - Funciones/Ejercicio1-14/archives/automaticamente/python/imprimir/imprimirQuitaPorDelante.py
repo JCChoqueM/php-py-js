@@ -14,7 +14,7 @@ sys.path.append(dos_dir)
 # Importar el módulo uno.py
 from quitaPorDelante import quita_por_delante
 from digitos import digitos
-from crearTabla import crearTablaReves
+from crearTabla import crearTabla
 
 
 def imprimir_quita_por_delante(input1, input2):
@@ -40,7 +40,7 @@ def imprimir_quita_por_delante(input1, input2):
     if estado == "00":
         mensaje_error = "Ambos campos estan vacios. Por favor, ingrese numeros."
     elif estado == "01":
-        mensaje_error = "El campo 1 está vacio."
+        mensaje_error = "El campo 1 esta vacio."
     elif estado == "10":
         mensaje_error = "El campo 2 esta vacio."
     elif estado == "11":
@@ -52,13 +52,13 @@ def imprimir_quita_por_delante(input1, input2):
         mensaje_error += (
             f"El numero {input1} tiene <span {verde}>{n_digito} {digito_s}.</span> <br>"
         )
-        mensaje_error += crearTablaReves(abs(input1), 1)
+        mensaje_error += crearTabla(abs(input1), 1)
         if input2 == 0:
             mensaje_error += f"<span {rojo}>Quitar {input2} digitos nos dara el mismo numero {input1}</span><br>"
-            mensaje_error += crearTablaReves(abs(input1), 1)
+            mensaje_error += crearTabla(abs(input1), 1)
         elif input2 > n_digito:
             mensaje_error += (
-                f"<span {rojo}>No se puede quitar {input2} digitos por Detras</span>"
+                f"<span {rojo}>No se puede quitar {input2} digitos por Delante</span>"
             )
         elif input2 < 0:
             mensaje_error += f"<span {rojo}>La cantidad de numeros a quitar no puede ser negativa</span>"
@@ -68,7 +68,7 @@ def imprimir_quita_por_delante(input1, input2):
             )
         else:
             mensaje_error += f"<span {verde}>El numero {input1} menos {input2} {digito_s} es: {quita_por_delante(input1, input2)}.</span>"
-            mensaje_error += crearTablaReves(abs(quita_por_delante(input1, input2)), 1)
+            mensaje_error += crearTabla(abs(quita_por_delante(input1, input2)), 1)
         mensaje_error += "</div>"
     else:
         mensaje_error = "Error desconocido. Por favor, revise las entradas."
