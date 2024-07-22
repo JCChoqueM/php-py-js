@@ -17,7 +17,6 @@ from digitos import digitos
 from crearTabla import crearTablaReves
 
 def imprimir_quita_por_detras(input1, input2):
-    n_digito = digitos(int(input1))
     centrar = "style='text-align: center;'"
     rojo = "style='color: red;'"
     verde = "style='color: darkgreen;'"
@@ -43,6 +42,7 @@ def imprimir_quita_por_detras(input1, input2):
     elif estado == "10":
         mensaje_error = "El campo 2 esta vacio."
     elif estado == "11":
+        n_digito = digitos(int(input1))
         input1 = int(input1)
         input2 = int(input2)
         digito_s = "digito" if input2 == 1 else "digitos"

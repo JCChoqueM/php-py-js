@@ -30,7 +30,7 @@ function imprimirQuitaPorDelante($input1, $input2)
                 $mensajeError .= "<span $rojo>Quitar $input2 dígitos nos dara el mismo numero $input1</span><br>";
                 $mensajeError .= crearTablaReves(abs($input1), 1);
             } elseif ($input2 > $nDigito) {
-                $mensajeError .= "<span $rojo>No se puede quitar $input2 dígitos por Detras</span>";
+                $mensajeError .= "<span $rojo>No se puede quitar $input2 dígitos por Delante</span>";
             } elseif ($input2 < 0) {
                 $mensajeError .= "<span $rojo>La cantidad de números a quitar no puede ser negativa</span>";
             } elseif ($input2 == $nDigito) {
