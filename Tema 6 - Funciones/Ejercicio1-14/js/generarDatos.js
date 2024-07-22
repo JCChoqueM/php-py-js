@@ -68,7 +68,7 @@ function generarDatos() {
       let posicionPegaPorDetras = generarPegaPorDetras();
       numInput.value = posicionPegaPorDetras.input1;
       numInput2.value = posicionPegaPorDetras.input2;
-      validarInputPegaPorDetras(numInput2);
+      resolver();
       break;
     case "pegaPorDelante":
       let posicionPegaPorDelante = generarPegaPorDelante();

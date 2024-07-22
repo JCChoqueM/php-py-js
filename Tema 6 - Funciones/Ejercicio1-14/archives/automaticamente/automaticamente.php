@@ -46,6 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $input2 = ($datos[2]);
         $mensajeError = imprimirQuitaPorDelante($input1, $input2);
         break;
+      case ($select == "pegaPorDetras"):
+        $input2 = ($datos[2]);
+        $mensajeError = imprimirPegaPorDetras($input1, $input2);
+        break;
       default:
         "Preugntame mas";
     }
