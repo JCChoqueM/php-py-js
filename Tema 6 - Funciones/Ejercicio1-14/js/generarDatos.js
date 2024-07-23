@@ -341,7 +341,7 @@ function generarQuitaPorDelante() {
 function generarPegaPorDetras() {
   let input1;
   let input2;
-  input1 = generarNumeroAleatorio(0, 999);
+  input1 = generarNumeroAleatorio(-150, 999);
   if (esPrimerClick) {
     input2 = generarNumeroAleatorio(0, 9);
   } else {
