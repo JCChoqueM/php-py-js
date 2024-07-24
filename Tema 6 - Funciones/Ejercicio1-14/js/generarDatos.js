@@ -359,7 +359,7 @@ function generarPegaPorDetras() {
 function generarPegaPorDelante() {
   let input1;
   let input2;
-  input1 = generarNumeroAleatorio(0, 999999);
+  input1 = generarNumeroAleatorio(0, 9999);
   let digitos = contarDigitos(input1);
 
   if (esPrimerClick) {

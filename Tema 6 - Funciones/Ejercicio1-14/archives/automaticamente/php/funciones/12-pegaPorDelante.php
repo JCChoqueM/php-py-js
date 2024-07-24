@@ -1,9 +1,10 @@
 <?php
 include __DIR__ . '/../funciones/funciones.php';
-function pegaPorDelante($numero, $digito)
+function pegaPorDelante($numero, $numero2)
 {
-    $pegado = (abs($numero) * 10) + $digito;
-    if ($numero < 0) {
+    $aux = digitos($numero);
+    $pegado = (abs($numero2) * potencia(10, $aux)) + abs($numero);
+    if ($numero2 < 0) {
         return -$pegado;
     } else {
         return $pegado;

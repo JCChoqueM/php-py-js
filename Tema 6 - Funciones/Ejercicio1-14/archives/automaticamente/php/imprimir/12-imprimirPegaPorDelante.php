@@ -33,15 +33,16 @@ function imprimirPegaPorDelante($input1, $input2)
         case "11":
             if ($nDigito == 1) {
                 $mensajeError .= "<span $centrar>";
-                $mensajeError .= "<span $morado>$input1</span> con <span $naranja>$input2</span> pegado por detras:<br>";
+                $mensajeError .= "<span $morado>$input1</span> con <span $naranja>$input2</span> pegado por delante:<br>";
                 $mensajeError .= "<span $verde>";
                 if ($input1 < 0) {
+                    $mensajeError .= "$input2$input1";
                 } else {
-                    if ($input1 == 0) {
+                    if ($input2 == 0) {
                         $mensajeError .= "<span $negro>Numeral:</span>  " . pegaPorDelante($input1, $input2);
-                        $mensajeError .= "<br><span $negro>Literal:</span>  $input1$input2";
+                        $mensajeError .= "<br><span $negro>Literal:</span>  $input2$input1";
                     } else {
-                        $mensajeError .=  pegaPorDelante($input1, $input2);
+                        $mensajeError .=  "caso :" . pegaPorDelante($input1, $input2);
                     }
                 }
                 $mensajeError .= "</span>";
