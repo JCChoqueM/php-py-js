@@ -74,7 +74,7 @@ function generarDatos() {
       let posicionPegaPorDelante = generarPegaPorDelante();
       numInput.value = posicionPegaPorDelante.input1;
       numInput2.value = posicionPegaPorDelante.input2;
-      validarInputPegaPorDelante(numInput2);
+      resolver();
       break;
     case "trozoDeNumero":
       let posicionTrozoDeNumero = generarTrozoDeNumero();
