@@ -2,7 +2,6 @@
 include __DIR__ . '/../funciones/funciones.php';
 function imprimirPegaPorDelante($input1, $input2)
 {
-
     $centrar = "style='text-align: center;'";
     $rojo = "style='color: red;'";
     $verde = "style='color: darkgreen;'";
@@ -37,12 +36,12 @@ function imprimirPegaPorDelante($input1, $input2)
                 $mensajeError .= "<span $verde>";
                 if ($input1 < 0) {
                     $mensajeError = "<span>";
-                    $mensajeError = "<span $rojo>El pegado de $input2 delante de: $input1 tiene distintas soluciones</span>";
+                    $mensajeError .= "<span $rojo>El pegado de $input2 delante de: $input1 tiene distintas soluciones</span>";
                     if ($input2 == 0) {
                         $mensajeError .= "<span>";
                         $mensajeError .= "<br>Numeral: <span $rojo>$input1 </span>";
-                        $mensajeError .= "<br>Literal: <span $rojo>$input2$input1</span>";
                         $mensajeError .= "<br>Literal:  <span $rojo>-$input2" . abs($input1) . "</span>";
+                        $mensajeError .= "<br>Literal: <span $rojo>$input2$input1</span>";
                         $mensajeError .= "</span>";
                     } elseif ($input2 > 0) {
                         $mensajeError .= "<span>";
