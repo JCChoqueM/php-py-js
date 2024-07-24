@@ -40,15 +40,15 @@ def imprimir_pega_por_delante(input1, input2):
 
     nDigito = digitos(input2)
     if estado == "00":
-        mensajeError = "Ambos campos están vacíos. Por favor, ingrese números."
+        mensajeError = "Ambos campos estan vacios. Por favor, ingrese numeros."
     elif estado == "01":
-        mensajeError = "El campo 1 está vacío.<br>"
+        mensajeError = "El campo 1 esta vacio.<br>"
         mensajeError += f"<span style='{rojo}'>"
         if nDigito > 1:
-            mensajeError += "El campo 2 no puede tener más de 1 dígito."
+            mensajeError += "El campo 2 no puede tener mas de 1 digito."
         mensajeError += "</span>"
     elif estado == "10":
-        mensajeError = "El campo 2 está vacío."
+        mensajeError = "El campo 2 esta vacio."
     elif estado == "11":
         if nDigito == 1:
             mensajeError += f"<span style='{centrar}'>"
@@ -93,7 +93,7 @@ def imprimir_pega_por_delante(input1, input2):
         else:
             mensajeError += f"<span style='{rojo}'>"
             if nDigito > 1:
-                mensajeError += "El campo 2 no puede tener más de 1 dígito.<br>"
+                mensajeError += "El campo 2 no puede tener mas de 1 digito.<br>"
             mensajeError += "</span>"
     else:
         mensajeError = "Error desconocido. Por favor, revise las entradas."
