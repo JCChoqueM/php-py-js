@@ -22,9 +22,6 @@ function imprimirPegaPorDelante($input1, $input2)
         case "01":
             $mensajeError = "El campo 1 está vacío.<br>";
             $mensajeError .= "<span $rojo>";
-            if ($input2 < 0) {
-                $mensajeError .= "El campo 2 no puede ser negativo.<br>";
-            }
             if ($nDigito > 1) {
                 $mensajeError .= "El campo 2 no puede tener más de 1 dígito.";
             }
@@ -34,7 +31,7 @@ function imprimirPegaPorDelante($input1, $input2)
             $mensajeError = "El campo 2 está vacío.";
             break;
         case "11":
-            if ($input2 >= 0 && $nDigito == 1) {
+            if ($input1 >= 0 && $nDigito == 1) {
                 $mensajeError .= "<span $centrar>";
                 $mensajeError .= "<span $morado>$input1</span> con <span $naranja>$input2</span> pegado por detras:<br>";
                 $mensajeError .= "<span $verde>";
