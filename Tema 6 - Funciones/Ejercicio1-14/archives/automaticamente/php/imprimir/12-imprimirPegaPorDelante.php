@@ -36,7 +36,26 @@ function imprimirPegaPorDelante($input1, $input2)
                 $mensajeError .= "<span $morado>$input1</span> con <span $naranja>$input2</span> pegado por delante:<br>";
                 $mensajeError .= "<span $verde>";
                 if ($input1 < 0) {
-                    $mensajeError .= "$input2$input1";
+                    $mensajeError = "<span>";
+                    $mensajeError = "<span $rojo>El pegado de $input2 delante de: $input1 tiene distintas soluciones</span>";
+                    if ($input2 == 0) {
+                        $mensajeError .= "<span>";
+                        $mensajeError .= "<br>Numeral: <span $rojo>$input1 </span>";
+                        $mensajeError .= "<br>Literal: <span $rojo>$input2$input1</span>";
+                        $mensajeError .= "<br>Literal:  <span $rojo>-$input2" . abs($input1) . "</span>";
+                        $mensajeError .= "</span>";
+                    } elseif ($input2 > 0) {
+                        $mensajeError .= "<span>";
+                        $mensajeError .= "<br>Numeral:  <span $rojo>-$input2" . abs($input1) . "</span>";
+                        $mensajeError .= "<br>Literal: <span $rojo>$input2$input1</span>";
+                        $mensajeError .= "</span>";
+                    } elseif ($input2 < 0) {
+                        $mensajeError .= "<span>";
+                        $mensajeError .= "<br>Literal: <span $rojo>$input2$input1</span>";
+                        $mensajeError .= "<br>Literal:  <span $rojo>-$input2" . abs($input1) . "</span>";
+                        $mensajeError .= "</span>";
+                    }
+                    $mensajeError .= "</span>";
                 } else {
                     if ($input2 == 0) {
                         $mensajeError .= "<span $negro>Numeral:</span>  " . pegaPorDelante($input1, $input2);
