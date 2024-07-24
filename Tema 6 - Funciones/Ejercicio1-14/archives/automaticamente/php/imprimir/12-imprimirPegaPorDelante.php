@@ -31,7 +31,14 @@ function imprimirPegaPorDelante($input1, $input2)
             $mensajeError = "El campo 2 está vacío.";
             break;
         case "11":
-            if ($input1 >= 0 && $nDigito == 1) {
+            if($input1<0){
+
+            }else{
+                if($input2==0){
+                    
+                }
+            }
+            if ($input2 >= 0 && $nDigito == 1) {
                 $mensajeError .= "<span $centrar>";
                 $mensajeError .= "<span $morado>$input1</span> con <span $naranja>$input2</span> pegado por detras:<br>";
                 $mensajeError .= "<span $verde>";
