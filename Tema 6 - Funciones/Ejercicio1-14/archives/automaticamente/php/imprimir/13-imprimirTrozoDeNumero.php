@@ -42,7 +42,7 @@ function imprimirTrozoDeNumero($valor, $valor2, $valor3)
             break;
         case "111":
             $mensajeError .= "<span $centrar>";
-            $mensajeError .= crearTabla(abs($valor), 0);
+            $mensajeError .= crearTablaTrozo(abs($valor), 0);
             switch ($estado2) {
                 case "NN":
                     $mensajeError .= "input2 e input 3 no pueden ser negativos";
@@ -71,7 +71,9 @@ function imprimirTrozoDeNumero($valor, $valor2, $valor3)
                 case "II":
                     if ($valor2 >= 0 && $valor2 <= $digitos) {
                         if ($valor3 >= $valor2 && $valor3 <= $digitos) {
-                            $mensajeError .= "Puede Continuar2";
+                            $mensajeError = "<span $centrar>";
+                            $mensajeError .= crearTablaTrozo(abs($valor), 0, $valor2, $valor3);
+                            $mensajeError .= "</span>";
                         } else {
                             $mensajeError .= "input2 no puede ser mayor que input3";
                         }
@@ -80,7 +82,7 @@ function imprimirTrozoDeNumero($valor, $valor2, $valor3)
                 default:
                     $mensajeError = "revisame algo paso";
             }
-            $mensajeError.="</span>";
+            $mensajeError .= "</span>";
             break;
     }
 
