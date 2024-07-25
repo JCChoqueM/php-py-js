@@ -363,12 +363,8 @@ function validarInputPegaPorDelante(input) {
 
 //SECTION - Inicio 13.- trozoDeNumero
 function validarInputTrozoDeNumero() {
-  console.log(typeof document.getElementById("num1").value);
-  const valor = parseInt(document.getElementById("num1").value);
-  const valor2 = parseInt(document.getElementById("num2").value);
-  const valor3 = parseInt(document.getElementById("num3").value);
+
   let digitos = contarDigitos(valor) - 1;
-  const boton = document.getElementById("resolver");
 
   let mensajeError = "";
   // Verificar si el valor tiene la longitud adecuada
@@ -446,11 +442,6 @@ function validarInputTrozoDeNumero() {
       break;
   }
 
-  if (estado !== "111" || estado2 !== "II") {
-    boton.disabled = true;
-  }
-
-  validarInputYMostrarError(mensajeError);
 }
 
 // !SECTION 13.- trozoDeNumero

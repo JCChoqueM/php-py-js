@@ -54,6 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $input2 = ($datos[2]);
         $mensajeError = imprimirPegaPorDelante($input1, $input2);
         break;
+      case ($select == "trozoDeNumero"):
+        $input2 = ($datos[2]);
+        $input3 = ($datos[3]);
+        $mensajeError = imprimirTrozoDeNumero($input1, $input2, $input3);
+        break;
       default:
         "Preugntame mas";
     }
