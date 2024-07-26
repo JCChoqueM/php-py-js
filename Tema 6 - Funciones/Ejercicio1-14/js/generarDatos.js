@@ -382,7 +382,7 @@ function generarPegaPorDelante() {
 //SECTION - Inicio 13.- trozoDeNumero
 function generarTrozoDeNumero() {
   let input1, input2, input3;
-  input1 = generarNumeroAleatorio(0, 9999999);
+  input1 = generarNumeroAleatorio(0, 99999);
   let digitos = contarDigitos(input1) - 1;
   if (falsofalso != 5) {
     if (esPrimerClick) {

@@ -73,6 +73,7 @@ function imprimirTrozoDeNumero($valor, $valor2, $valor3)
                         if ($valor3 >= $valor2 && $valor3 <= $digitos) {
                             $mensajeError = "<span $centrar>";
                             $mensajeError .= crearTablaTrozo(abs($valor), 0, $valor2, $valor3);
+                            $mensajeError .= trozoDeNumero($valor,$valor2,$valor3);
                             $mensajeError .= "</span>";
                         } else {
                             $mensajeError .= "Inicial ($valor2) no puede ser mayor que Final ($valor3)";
