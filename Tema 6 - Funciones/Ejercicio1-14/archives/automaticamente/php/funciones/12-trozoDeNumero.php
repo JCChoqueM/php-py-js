@@ -2,7 +2,7 @@
 include __DIR__ . '/../funciones/funciones.php';
 function trozoDeNumero($numero, $inicial, $final)
 {
-    $absNumero = abs($numero);
+    $numero = abs($numero);
     $digitoNumero = digitos($numero);
     $exponenteDetras = $digitoNumero - ($final + 1);
     $quitaDetras = intdiv($numero, (potencia(10, $exponenteDetras)));

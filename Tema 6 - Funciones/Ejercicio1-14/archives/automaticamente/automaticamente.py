@@ -12,6 +12,7 @@ from python.imprimir.imprimirQuitaPorDetras import imprimir_quita_por_detras
 from python.imprimir.imprimirQuitaPorDelante import imprimir_quita_por_delante
 from python.imprimir.imprimirPegaPorDetras import imprimir_pega_por_detras
 from python.imprimir.imprimirPegaPorDelante import imprimir_pega_por_delante
+from python.imprimir.imprimirTrozoDeNumero import imprimir_trozo_de_numero
 
 
 # Cadena inicial
@@ -36,6 +37,7 @@ else:
 
 select = datos[0]
 input1 = datos[1]
+input2 = datos[2]
 mensajeError = ""
 
 if select == "esCapicua":
@@ -62,6 +64,8 @@ elif select == "pegaPorDetras":
     mensajeError = imprimir_pega_por_detras(input1, datos[2])
 elif select == "pegaPorDelante":
     mensajeError = imprimir_pega_por_delante(input1, datos[2])
+elif select == "trozoDeNumero":
+    mensajeError = imprimir_trozo_de_numero(input1, datos[2], datos[3])
 else:
     mensajeError = "Preguntame mas<br>"
 print(mensajeError)

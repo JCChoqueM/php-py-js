@@ -5,7 +5,8 @@ function imprimirTrozoDeNumero($valor, $valor2, $valor3)
 {
     $centrar = "style='text-align: center;'";
     // Contar los dígitos del valor
-    $digitos = strlen((string)$valor) - 1;
+
+    $digitos = digitos($valor) - 1;
 
     $mensajeError = "";
     // Verificar si el valor tiene la longitud adecuada
@@ -73,11 +74,13 @@ function imprimirTrozoDeNumero($valor, $valor2, $valor3)
                         if ($valor3 >= $valor2 && $valor3 <= $digitos) {
                             $mensajeError = "<span $centrar>";
                             $mensajeError .= crearTablaTrozo(abs($valor), 0, $valor2, $valor3);
-                            $mensajeError .= trozoDeNumero($valor,$valor2,$valor3);
+                            $mensajeError .= trozoDeNumero($valor, $valor2, $valor3);
                             $mensajeError .= "</span>";
                         } else {
                             $mensajeError .= "Inicial ($valor2) no puede ser mayor que Final ($valor3)";
                         }
+                    } else {
+                        $mensajeError .= "Inicial ($valor2) no está en el rango permitido.(revisar...)";
                     }
                     break;
                 default:
