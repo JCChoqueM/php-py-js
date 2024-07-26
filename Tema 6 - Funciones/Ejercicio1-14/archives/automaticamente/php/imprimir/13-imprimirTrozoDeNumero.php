@@ -45,28 +45,28 @@ function imprimirTrozoDeNumero($valor, $valor2, $valor3)
             $mensajeError .= crearTablaTrozo(abs($valor), 0);
             switch ($estado2) {
                 case "NN":
-                    $mensajeError .= "input2 e input 3 no pueden ser negativos";
+                    $mensajeError .= "Inicial ($valor2) y Final ($valor3) no pueden ser negativos";
                     break;
                 case "NI":
-                    $mensajeError .= "input2 no puede ser negativo";
+                    $mensajeError .= "Inicial ($valor2) no puede ser negativo";
                     break;
                 case "IN":
-                    $mensajeError .= "input3 no puede ser negativo";
+                    $mensajeError .= "Final ($valor3) no puede ser negativo";
                     break;
                 case "FI":
-                    $mensajeError .= "El campo 2 no está en el rango.";
+                    $mensajeError .= "Inicial ($valor2) no puede ser mayor que ($digitos)";
                     break;
                 case "IF":
-                    $mensajeError .= "El campo 3 no está en el rango.";
+                    $mensajeError .= "Final ($valor3) no puede ser mayor que ($digitos)";
                     break;
                 case "FF":
-                    $mensajeError .= "El campo 2 y 3 no están en el rango permitido.";
+                    $mensajeError .= "Inicial ($valor2) y Final ($valor3) no puede ser mayor que ($digitos)";
                     break;
                 case "FN":
-                    $mensajeError .= "El campo 2 no está en el rango y input3 no puede ser negativo.";
+                    $mensajeError .= "Inicial ($valor2) no puede ser mayor que ($digitos) y Final ($valor3) no puede ser negativo.";
                     break;
                 case "NF":
-                    $mensajeError .= "input2 no puede ser negativo y el campo 3 no está en el rango.";
+                    $mensajeError .= "inicial ($valor2) no puede ser negativo y Final ($valor3) no puede ser mayor que ($digitos).";
                     break;
                 case "II":
                     if ($valor2 >= 0 && $valor2 <= $digitos) {
@@ -75,7 +75,7 @@ function imprimirTrozoDeNumero($valor, $valor2, $valor3)
                             $mensajeError .= crearTablaTrozo(abs($valor), 0, $valor2, $valor3);
                             $mensajeError .= "</span>";
                         } else {
-                            $mensajeError .= "input2 no puede ser mayor que input3";
+                            $mensajeError .= "Inicial ($valor2) no puede ser mayor que Final ($valor3)";
                         }
                     }
                     break;
