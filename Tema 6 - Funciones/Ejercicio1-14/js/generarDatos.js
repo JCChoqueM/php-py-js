@@ -78,7 +78,6 @@ function generarDatos() {
       break;
     case "trozoDeNumero":
       let posicionTrozoDeNumero = generarTrozoDeNumero();
-      console.log(numInput);
       numInput.value = posicionTrozoDeNumero.input1;
       numInput2.value = posicionTrozoDeNumero.input2;
       numInput3.value = posicionTrozoDeNumero.input3;

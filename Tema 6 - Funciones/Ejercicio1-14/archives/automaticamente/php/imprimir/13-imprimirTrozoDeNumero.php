@@ -6,7 +6,6 @@ function imprimirTrozoDeNumero($valor, $valor2, $valor3)
     $centrar = "style='text-align: center;'";
     // Contar los dígitos del valor
 
-    $digitos = digitos($valor) - 1;
 
     $mensajeError = "";
     // Verificar si el valor tiene la longitud adecuada
@@ -14,7 +13,8 @@ function imprimirTrozoDeNumero($valor, $valor2, $valor3)
         (!is_numeric($valor) ? "0" : "1") .
         (!is_numeric($valor2) ? "0" : "1") .
         (!is_numeric($valor3) ? "0" : "1");
-
+    $valor = intval($valor);
+    $digitos = digitos($valor) - 1;
     $estado2 =
         ($valor2 < 0 ? "N" : ($valor2 > $digitos ? "F" : "I")) .
         ($valor3 < 0 ? "N" : ($valor3 > $digitos ? "F" : "I"));

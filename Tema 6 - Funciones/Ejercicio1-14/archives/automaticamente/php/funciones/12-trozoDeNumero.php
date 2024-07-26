@@ -10,6 +10,7 @@ function trozoDeNumero($numero, $inicial, $final)
     $exponenteDelante = $digitoNumero - $inicial;
     $quitaDelante = $quitaDetras % (potencia(10, $exponenteDelante));
     $digitoNumero = digitos($quitaDelante);
+    
     if ($digitoNumero < $exponenteDelante) {
         $especial = "";
         for ($contador = $digitoNumero; $contador <= $exponenteDelante - 1; $contador++) {

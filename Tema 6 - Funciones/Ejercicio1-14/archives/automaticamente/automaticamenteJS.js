@@ -39,6 +39,9 @@ function automaticamenteJS(datos) {
     case select == "pegaPorDelante":
       mensajeError = imprimirPegaPorDelante(input1, datos[2]);
       break;
+    case select == "trozoDeNumero":
+      mensajeError = imprimirTrozoDeNumero(input1, datos[2], datos[3]);
+      break;
     default:
       mensajeError = "soy error";
   }
