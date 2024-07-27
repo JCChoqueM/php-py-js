@@ -59,6 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $input3 = ($datos[3]);
         $mensajeError = imprimirTrozoDeNumero($input1, $input2, $input3);
         break;
+      case ($select == "juntaNumeros"):
+        $input2 = ($datos[2]);
+        $mensajeError = imprimirJuntaNumeros($input1, $input2);
+        break;
       default:
         "Preugntame mas";
     }

@@ -82,9 +82,12 @@ function generarDatos() {
       numInput2.value = posicionTrozoDeNumero.input2;
       numInput3.value = posicionTrozoDeNumero.input3;
       resolver();
-
       break;
     case "juntaNumeros":
+      let posicionJuntaNumeros = generarjuntaNumeros();
+      numInput.value = posicionJuntaNumeros.input1;
+      numInput2.value = posicionJuntaNumeros.input2;
+      resolver();
       break;
     default: // Color por defecto
       numInput.value = 666;
@@ -422,5 +425,18 @@ function generarTrozoDeNumero() {
 // !SECTION 13.- trozoDeNumero
 
 //SECTION - Inicio 14.- juntaNumeros
-
+function generarjuntaNumeros() {
+  let input1;
+  let input2;
+  input1 = generarNumeroAleatorio(-150, 999);
+  if (esPrimerClick) {
+    input2 = generarNumeroAleatorio(-15, 15);
+  } else {
+    do {
+      input2 = generarNumeroAleatorio(-15, 15);
+    } while (!(input2 < 0 || input2 > 9));
+  }
+  esPrimerClick = !esPrimerClick;
+  return { input1, input2 };
+}
 // !SECTION 14.- juntaNumeros
