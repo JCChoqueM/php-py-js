@@ -70,13 +70,22 @@ function imprimirJuntaNumeros($input1, $input2)
                     $pegado2 .= "<br>Numeral: " . pegaPorDelante($input1, $input2);
                     break;
                 case "PN":
-                    $mensajeError .= "Inicial ($input1) no puede ser mayor que ($input2) y Final ($input2) no puede ser negativo.";
+                    $pegado1 = "Literal: " . color($input1, 1) . color($input2, 2);
+                    $pegado1 .= "<br>Numeral: -" . pegaPorDetras($input1, $input2);
+                    $pegado2 = "Literal: " . color($input2, 2) . color($input1, 1);
+                    $pegado2 .= "<br>Numeral: " . pegaPorDelante($input1, $input2);
                     break;
                 case "NN":
-                    $mensajeError .= "inicial ($input1) no puede ser negativo y Final ($input2) no puede ser mayor que ($input2).";
+                    $pegado1 = "Literal: " . color($input1, 1) . color($input2, 2);
+                    $pegado1 .= "<br>Literal: " . color("-", 2) . color("-", 1) . color(abs($input1), 1) . color(abs($input2), 2);
+                    $pegado2 = "Literal: " . color($input2, 2) . color($input1, 1);
+                    $pegado2 .= "<br>Literal: " . color("-", 1) . color("-", 2) . color(abs($input2), 2) . color(abs($input1), 1);
                     break;
                 case "NP":
-
+                    $pegado1 = "Literal: " . color($input1, 1) . color($input2, 2);
+                    $pegado1 .= "<br>Numeral: " . pegaPorDetras($input1, $input2);
+                    $pegado2 = "Literal: " . color($input2, 2) . color($input1, 1);
+                    $pegado2 .= "<br>Numeral: -" . pegaPorDelante($input1, $input2);
                     break;
                 default:
                     $mensajeError = "revisame algo paso";
