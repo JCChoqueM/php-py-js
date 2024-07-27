@@ -92,3 +92,26 @@ function crearTablaTrozo($number, $startIndex, $highlightStart = -1, $highlightE
     $tableHtml .= "</table>";
     return $tableHtml;
 }
+
+function crearTablaPegado($pegado1, $pegado2)
+{
+    // Estructura de la tabla en HTML
+    $tablaHtml = '<table style="border-collapse: collapse; width: 300px; margin: 5px auto;">';
+
+    // Fila de encabezado
+    $tablaHtml .= '<tr>';
+    $tablaHtml .= '<th style="border: 1px solid black; padding: 5px; text-align: center; width: 50%;">Pegado1</th>';
+    $tablaHtml .= '<th style="border: 1px solid black; padding: 5px; text-align: center; width: 50%;">Pegado2</th>';
+    $tablaHtml .= '</tr>';
+
+    // Filas con el contenido de pegado1 y pegado2
+    $tablaHtml .= '<tr>';
+    $tablaHtml .= '<td style="border: 1px solid black; padding: 5px; text-align: center;">' . $pegado1 . '</td>';
+    $tablaHtml .= '<td style="border: 1px solid black; padding: 5px; text-align: center;">' . $pegado2 . '</td>';
+    $tablaHtml .= '</tr>';
+
+    // Cerrar la tabla
+    $tablaHtml .= '</table>';
+
+    return $tablaHtml;
+}

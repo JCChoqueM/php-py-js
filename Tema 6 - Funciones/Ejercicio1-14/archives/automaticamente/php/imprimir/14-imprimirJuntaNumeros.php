@@ -4,10 +4,8 @@ function imprimirJuntaNumeros($input1, $input2)
 {
     $centrar = "style='text-align: center;'";
     $rojo = "style='color: red;'";
-    $verde = "style='color: darkgreen;'";
-    $negro = "style='color: black;'";
-    $morado = "style='color: purple;'";
-    $naranja = "style='color: brown'";
+    $azul = "style='color: blue;'";
+
     $mensajeError = "";
     $estado = (!is_numeric($input1) ? "0" : "1") . (!is_numeric($input2) ? "0" : "1");
 
@@ -28,26 +26,48 @@ function imprimirJuntaNumeros($input1, $input2)
             $mensajeError = "El campo 2 está vacío.";
             break;
         case "11":
-            $mensajeError .= "<span $centrar>";
-            $mensajeError .= "El pegado de los numeros <span $morado>$input1</span> y <span $naranja>$input2</span> es:<br>";
+            $pegado1 = "";
+            $pegado2 = "";
+            $mensajeError = "<span $centrar>";
+            $mensajeError .= "El pegado de los numeros <span $rojo>$input1</span> y <span $azul>$input2</span> es:<br>";
             switch ($estado2) {
                 case "CC":
-                    $mensajeError .= "00";
+                    $pegado1 = "Literal: " . color($input1, 1) . color($input2, 2);
+                    $pegado1 .= "<br>Numeral: 0";
+                    $pegado2 = "Literal: " . color($input2, 2) . color($input1, 1);
+                    $pegado2 .= "<br>Numeral: 0";
                     break;
                 case "CP":
-                    $mensajeError .= "01";
+                    $pegado1 = "Literal: " . color($input1, 1) . color($input2, 2);
+                    $pegado1 .= "<br>Numeral: " . pegaPorDetras($input1, $input2);
+                    $pegado2 = "Literal: " . color($input2, 2) . color($input1, 1);
+                    $pegado2 .= "<br>Numeral: " . pegaPorDelante($input1, $input2);
                     break;
                 case "PC":
-                    $mensajeError .= "Final ($input2) no puede ser negativo";
+                    $pegado1 = "Literal: " . color($input1, 1) . color($input2, 2);
+                    $pegado1 .= "<br>Numeral: " . pegaPorDetras($input1, $input2);
+                    $pegado2 = "Literal: " . color($input2, 2) . color($input1, 1);
+                    $pegado2 .= "<br>Numeral: " . pegaPorDelante($input1, $input2);
                     break;
                 case "CN":
-                    $mensajeError .= "Inicial ($input1) no puede ser mayor que ($input2)";
+                    $pegado1 = "Literal: " . color($input1, 1) . color($input2, 2);
+                    $pegado1 .= "<br>Literal: " . color("-", 2) . color($input1, 1) . color(abs($input2), 2);
+                    $pegado1 .= "<br>Numeral: -" . pegaPorDetras($input1, $input2);
+                    $pegado2 = "Literal: " . color($input2, 2) . color($input1, 1);
+                    $pegado2 .= "<br>Numeral: " . pegaPorDelante($input1, $input2);
                     break;
                 case "NC":
-                    $mensajeError .= "Final ($input2) no puede ser mayor que ($input2)";
+                    $pegado1 = "Literal: " . color($input1, 1) . color($input2, 2);
+                    $pegado1 .= "<br>Numeral: " . pegaPorDetras($input1, $input2);
+                    $pegado2 = "Literal: " . color($input2, 1) . color($input1, 1);
+                    $pegado2 .= "<br>Literal: " . color("-", 1) . color($input2, 2) . color(abs($input1), 1);
+                    $pegado2 .= "<br>Numeral: -" . pegaPorDelante($input1, $input2);
                     break;
                 case "PP":
-                    $mensajeError .= "Inicial ($input1) y Final ($input2) no puede ser mayor que ($input2)";
+                    $pegado1 = "Literal: " . color($input1, 1) . color($input2, 2);
+                    $pegado1 .= "<br>Numeral: " . pegaPorDetras($input1, $input2);
+                    $pegado2 = "Literal: " . color($input2, 2) . color($input1, 1);
+                    $pegado2 .= "<br>Numeral: " . pegaPorDelante($input1, $input2);
                     break;
                 case "PN":
                     $mensajeError .= "Inicial ($input1) no puede ser mayor que ($input2) y Final ($input2) no puede ser negativo.";
@@ -56,28 +76,26 @@ function imprimirJuntaNumeros($input1, $input2)
                     $mensajeError .= "inicial ($input1) no puede ser negativo y Final ($input2) no puede ser mayor que ($input2).";
                     break;
                 case "NP":
-                    if ($input1 >= 0 && $input1 <= $input2) {
-                        if ($input2 >= $input1 && $input2 <= $input2) {
-                            $mensajeError = "<span $centrar>";
-                            $mensajeError .= crearTablaTrozo(abs($input1), 0, $input1, $input2);
-                            $mensajeError .= trozoDeNumero($input1, $input1, $input2);
-                            $mensajeError .= "</span>";
-                        } else {
-                            $mensajeError .= "Inicial ($input1) no puede ser mayor que Final ($input2)";
-                        }
-                    } else {
-                        $mensajeError .= "Inicial ($input1) no está en el rango permitido.(revisar...)";
-                    }
+
                     break;
                 default:
                     $mensajeError = "revisame algo paso";
             }
-
+            $mensajeError .= crearTablaPegado($pegado1, $pegado2);
             $mensajeError .= "</span>";
             break;
         default:
             $mensajeError = "Error desconocido. Por favor, revise las entradas.";
     }
 
+
     return $mensajeError;
+}
+
+function color($numero, $mn)
+{
+    $naranja = "style='color: red;'";
+    $morado = "style='color: blue;'";
+    $style = $mn == 1 ? $naranja : $morado;
+    return "<span $style>$numero</span>";
 }

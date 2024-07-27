@@ -25,6 +25,6 @@ function generarTabla($pegado1, $pegado2)
 }
 
 // Ejemplo de uso
-$pegado1 = "Literal: <span $naranja>0</span><span $morado>9</span>";
+$pegado1 = "Literal y mas alla: <span $naranja>0</span><span $morado>9</span>";
 $pegado2 = "90";
-echo generarTabla($pegado1, $pegado2);
+/* echo generarTabla($pegado1, $pegado2); */
