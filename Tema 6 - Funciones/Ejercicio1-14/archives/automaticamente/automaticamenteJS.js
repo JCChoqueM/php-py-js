@@ -42,6 +42,9 @@ function automaticamenteJS(datos) {
     case select == "trozoDeNumero":
       mensajeError = imprimirTrozoDeNumero(input1, datos[2], datos[3]);
       break;
+    case select == "juntaNumeros":
+      mensajeError = imprimirJuntaNumeros(input1, datos[2]);
+      break;
     default:
       mensajeError = "soy error";
   }

@@ -1,8 +1,5 @@
-function pegaPorDetras(numero, digito) {
-  let pegado = Math.abs(numero) * 10 + digito;
-  if (numero < 0) {
-    return -pegado;
-  } else {
-    return pegado;
-  }
+function pegaPorDetras(numero, numero2) {
+  const exponente = digitos(numero2);
+  const pegado = Math.abs(numero) * potencia(10, exponente) + Math.abs(numero2);
+  return numero < 0 ? -pegado : pegado;
 }
