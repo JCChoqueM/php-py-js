@@ -103,3 +103,27 @@ def crearTablaTrozo(numero, start_index, highlight_start=-1, highlight_end=-1):
 
     table_html += "</table>"
     return table_html
+
+
+def crearTablaPegado(pegado1, pegado2):
+    # Estructura de la tabla en HTML
+    tabla_html = (
+        '<table style="border-collapse: collapse; width: 300px; margin: 5px auto;">'
+    )
+
+    # Fila de encabezado
+    tabla_html += "<tr>"
+    tabla_html += '<th style="border: 1px solid black; padding: 5px; text-align: center; width: 50%;">Pegado1</th>'
+    tabla_html += '<th style="border: 1px solid black; padding: 5px; text-align: center; width: 50%;">Pegado2</th>'
+    tabla_html += "</tr>"
+
+    # Filas con el contenido de pegado1 y pegado2
+    tabla_html += "<tr>"
+    tabla_html += f'<td style="border: 1px solid black; padding: 5px; text-align: center;">{pegado1}</td>'
+    tabla_html += f'<td style="border: 1px solid black; padding: 5px; text-align: center;">{pegado2}</td>'
+    tabla_html += "</tr>"
+
+    # Cerrar la tabla
+    tabla_html += "</table>"
+
+    return tabla_html

@@ -13,6 +13,7 @@ from python.imprimir.imprimirQuitaPorDelante import imprimir_quita_por_delante
 from python.imprimir.imprimirPegaPorDetras import imprimir_pega_por_detras
 from python.imprimir.imprimirPegaPorDelante import imprimir_pega_por_delante
 from python.imprimir.imprimirTrozoDeNumero import imprimir_trozo_de_numero
+from python.imprimir.imprimirJuntaNumeros import imprimir_junta_numeros
 
 
 # Cadena inicial
@@ -32,40 +33,40 @@ else:
     datos = [dato.strip() for dato in datos_con_espacios]
 
     # Asegurar que la lista tenga al menos dos elementos
-    while len(datos) < 2:
+    while len(datos) < 1:
         datos.append("")
 
 select = datos[0]
-input1 = datos[1]
-input2 = datos[2]
-mensajeError = ""
 
+mensajeError = ""
 if select == "esCapicua":
-    mensajeError = imprimir_es_capicua(input1)
+    mensajeError = imprimir_es_capicua(datos[1])
 elif select == "esPrimo":
-    mensajeError = imprimir_es_primo(input1)
+    mensajeError = imprimir_es_primo(datos[1])
 elif select == "siguientePrimo":
-    mensajeError = imprimir_siguiente_primo(input1)
+    mensajeError = imprimir_siguiente_primo(datos[1])
 elif select == "potencia":
-    mensajeError = imprimir_potencia(input1, datos[2])
+    mensajeError = imprimir_potencia(datos[1], datos[2])
 elif select == "digitos":
-    mensajeError = imprimir_digitos(input1)
+    mensajeError = imprimir_digitos(datos[1])
 elif select == "voltea":
-    mensajeError = imprimir_voltea(input1)
+    mensajeError = imprimir_voltea(datos[1])
 elif select == "digitoN":
-    mensajeError = imprimir_DigitoN(input1, datos[2])
+    mensajeError = imprimir_DigitoN(datos[1], datos[2])
 elif select == "posicionDeDigito":
-    mensajeError = imprimirPosicionDeDigito(input1, datos[2])
+    mensajeError = imprimirPosicionDeDigito(datos[1], datos[2])
 elif select == "quitaPorDetras":
-    mensajeError = imprimir_quita_por_detras(input1, datos[2])
+    mensajeError = imprimir_quita_por_detras(datos[1], datos[2])
 elif select == "quitaPorDelante":
-    mensajeError = imprimir_quita_por_delante(input1, datos[2])
+    mensajeError = imprimir_quita_por_delante(datos[1], datos[2])
 elif select == "pegaPorDetras":
-    mensajeError = imprimir_pega_por_detras(input1, datos[2])
+    mensajeError = imprimir_pega_por_detras(datos[1], datos[2])
 elif select == "pegaPorDelante":
-    mensajeError = imprimir_pega_por_delante(input1, datos[2])
+    mensajeError = imprimir_pega_por_delante(datos[1], datos[2])
 elif select == "trozoDeNumero":
-    mensajeError = imprimir_trozo_de_numero(input1, datos[2], datos[3])
+    mensajeError = imprimir_trozo_de_numero(datos[1], datos[2], datos[3])
+elif select == "juntaNumeros":
+    mensajeError = imprimir_junta_numeros(datos[1], datos[2])
 else:
     mensajeError = "Preguntame mas<br>"
 print(mensajeError)

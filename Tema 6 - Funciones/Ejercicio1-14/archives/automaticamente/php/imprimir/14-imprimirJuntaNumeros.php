@@ -11,7 +11,7 @@ function imprimirJuntaNumeros($input1, $input2)
 
     $input1 = intval($input1);
     $input2 = intval($input2);
-    $nDigito = digitos(intval($input2));
+
     $estado2 =
         ($input1 == 0 ? "C" : ($input1 > 0 ? "P" : "N")) .
         ($input2 == 0 ? "C" : ($input2 > 0 ? "P" : "N"));
