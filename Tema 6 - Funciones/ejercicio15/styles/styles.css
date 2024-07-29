@@ -1,0 +1,271 @@
+/* Estilos para el body y el fondo */
+html,
+body {
+    background-image: url("../images/fondo.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Estilos para la imagen */
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.image img {
+    width: 35%;
+    height: 35%;
+    object-fit: contain;
+    margin: auto;
+}
+
+.image-container {
+    text-align: center;
+}
+
+/* Estilos para el fondo con opacidad */
+body::after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
+    font-weight: bold;
+    gap: auto;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+form input[type="text"]:invalid {
+    border: 1px solid red;
+    background-color: #ffd9d9;
+    /* Cambia el color de fondo en caso de inválidez */
+}
+
+/* Estilos para los botones de acción */
+.otros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    gap: 0.5rem;
+}
+
+.cajaForm {
+display: flex;
+    flex-direction: row;
+    align-items: center;
+gap: 0.5rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: auto;
+
+}
+
+form input[type="text"] {
+    padding: 1.3rem;
+    border-radius: 0.25rem;
+    border: 1px solid #d31b1b;
+    margin-bottom: 1rem;
+    height: 1px;
+    width: 18rem;
+}
+
+/* Estilos para los contenedores de resultados */
+.contenedores {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    height: 40rem;
+    width: 100%;
+}
+
+
+.botonFrutaAleatoria.llenar {
+    background-color: #5cff33;
+    /* Segundo color para el botón "llenar" */
+}
+/* Estilos para los botones */
+.botones_cajaForm {
+    background-color: #adda9b;
+    color: rgb(30, 3, 63);
+    border: 2px solid #2E6DA4;
+    border-radius: 5px;
+    padding: 10px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 4rem;
+    width: 10rem;
+}
+.botones_cajaForm.resolver {
+    background-color: #f6fa16;
+}
+.botones_cajaForm.solucionPhpPyJs {
+    background-color: rgb(33, 221, 228);
+}
+
+.botones_cajaForm:disabled,
+.colorvaciar:disabled {
+    background-color: #CCCCCC;
+    /* Cambia el color a gris cuando está desactivado */
+    border-color: #AAAAAA;
+    /* Puedes ajustar el color del borde según tus preferencias */
+    color: #666666;
+    /* Puedes ajustar el color del texto según tus preferencias */
+    cursor: not-allowed;
+    /* Cambia el cursor cuando está desactivado */
+}
+
+.bPHP,
+.bJS,
+.bPY {
+    background-color: #9bc3da;
+    color: rgb(30, 3, 63);
+    border: 2px solid #2E6DA4;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilos para las cajas de resultados */
+.caja {
+    padding: 10px;
+    margin-top: 10px;
+    width: 10px;
+    min-height: 325px;
+    height: 2,5rem;
+    flex-grow: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cajaPHP {
+    background-color: #bacee0;
+    border: 2px solid blue;
+}
+
+.cajaPY {
+    background-color: #15ce0e;
+    border: 2px solid green;
+}
+
+.cajaJS {
+    background-color: #dee670;
+    border: 2px solid rgb(204, 122, 14);
+}
+
+/* Estilos para los resultados */
+.r {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    margin-top: 4px;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.rAleatorio {
+    font-weight: bold;
+}
+
+/* Estilos para el pie de página */
+footer {
+    margin-top: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.texto {
+    margin-top: auto;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.cajayBoton {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+}
+
+.contenedorInputButon {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.butonesGEnerarCalcular {
+    /* Añadido para visualización */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px
+}
+
+.butonesGEnerarCalcular>div {
+    /* Añadido para visualización */
+    padding: 10px;
+    /* Añadido para visualización */
+    margin-bottom: 5px;
+}
+
+.bvaciar {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    /* Combina bordes de celdas adyacentes en una sola línea */
+}
+
+table,
+td {
+    border: 0.2px solid black;
+    /* Establece el borde de la tabla y las celdas */
+}
