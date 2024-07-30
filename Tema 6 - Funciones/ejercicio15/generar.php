@@ -29,10 +29,28 @@ function inicializarNumeros($limite)
 }
 
 // Ejemplo de uso
-$limite = 50;
-$primos = inicializarNumeros($limite);
-print_r(imprimirArrayHorizontal($primos));
+$limite = [1000];
 
+for ($i = 0; $i < count($limite); $i++) {
+    echo imprimirArrayHorizontal(inicializarNumeros($limite[$i]));
+    echo " Para el límite " . $limite[$i] . " el tamaño del array es:" . count(inicializarNumeros($limite[$i])) . "<br>";
+    echo "------------------------------------------------------------------------";
+}
+function calcularTamanoArray($limite)
+{
+    $count = 0;
+
+    for ($i = 2; $i <= $limite; $i++) {
+        // Excluye múltiplos de 2 y 5
+        if ($i % 2 != 0 && $i % 5 != 0) {
+            $count++;
+        }
+    }
+
+    return $count + 1;
+}
+
+// Ejemplo de uso
 function imprimirArrayHorizontal($array)
 {
     // Abrir la tabla
