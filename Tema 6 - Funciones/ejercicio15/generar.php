@@ -29,13 +29,12 @@ function inicializarNumeros($limite)
 }
 
 // Ejemplo de uso
-$limite = [1000];
+$limite = [10000000];
 
-for ($i = 0; $i < count($limite); $i++) {
-    echo imprimirArrayHorizontal(inicializarNumeros($limite[$i]));
-    echo " Para el límite " . $limite[$i] . " el tamaño del array es:" . count(inicializarNumeros($limite[$i])) . "<br>";
-    echo "------------------------------------------------------------------------";
-}
+
+
+    echo " Para el límite " . $limite[0] . " el tamaño del array es:" . count(inicializarNumeros($limite[0])) . "<br>";
+
 function calcularTamanoArray($limite)
 {
     $count = 0;
