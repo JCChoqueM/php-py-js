@@ -10,7 +10,7 @@
     <script src="archives/soluciones/solucion.js"></script>
     <script src="js/resolverAutomaticamente.js" defer></script>
     <script src="js/solucion.js" defer></script>
-    <script src="js/generarArray.js" defer></script>
+    <script src="js/generarNumeros.js" defer></script>
     <script src="js/limpiarResultados.js" defer></script>
 
     <script src="archives/automaticamente/automaticamenteSol.js" defer></script>
@@ -24,30 +24,28 @@
           <!-- Descripción del ejercicio -->
           Muestra los números primos que hay entre 1 y 1000
         </h2>
-        <form id="form">
+        <form id="FormularioInputs">
           <div class="cajaboton">
+            <div class="cajaForm">
+              <label for="num1"></label>
+              <input
+                type="number"
+                id="num1"
+                name="num1"
+                value="1000"
+                oninput="resolver()"
+                placeholder="Introduzaca un numero entero"
+                required
+              />
+            </div>
             <div class="otros">
               <!-- Botones de acción -->
-              <button
-                class="botones_cajaForm resolver"
+                <button
+                class="bLlenar"
                 type="button"
-                onclick="resolver()"
+                onclick="llenarFormulario()"
               >
-                Resolver
-              </button>
-              <button
-                class="botones_cajaForm"
-                type="button"
-                onclick="limpiarResultados()"
-              >
-                Limpiar resultados:
-              </button>
-              <button
-                class="botones_cajaForm solucionPhpPyJs"
-                type="button"
-                onclick="solucionPhpPyJs()"
-              >
-                Solución PHP,PY,JS:
+                Generar números aleatorios
               </button>
             </div>
           </div>

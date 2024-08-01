@@ -62,7 +62,18 @@ form {
     font-size: 20px;
     margin-top: 15px;
 }
-
+.cajaForm {
+    display: flex;
+    flex-direction: column;
+}
+form input[type="number"] {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #f17005;
+    margin-bottom: 1rem;
+    height: 10px;
+    width: 15rem;
+}
 form input[type="text"]:invalid {
     border: 1px solid red;
     background-color: #ffd9d9;
@@ -152,6 +163,16 @@ form input[type="text"] {
     background-color: #9bc3da;
     color: rgb(30, 3, 63);
     border: 2px solid #2E6DA4;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.bLlenar {
+    background-color: #7ddd24;
+    color: rgb(30, 3, 63);
+    border: 2px solid #7ba42e;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
