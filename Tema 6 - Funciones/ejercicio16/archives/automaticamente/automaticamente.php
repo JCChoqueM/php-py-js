@@ -8,11 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   // Verificar si se recibieron datos y que sea un array
 
 
-  $limite = $datos[0];
-  if($limite>0&&$limite<=1000){
-    $mensaje= imprimirTabla(cribaEratostenes($limite));
-  }else{
-$mensaje="Solo se permiten numeros entre 1 y 1000";
+  $limite = intval($datos[0]);
+  if ($limite > 0 && $limite <= 99999) {
+    $mensaje = imprimirTabla(capicua($limite));
+  } else {
+    $mensaje = "Solo se permiten numeros entre 1 y 99999";
   }
   echo $mensaje;;
 } else {
@@ -21,28 +21,70 @@ $mensaje="Solo se permiten numeros entre 1 y 1000";
 }
 
 
-function cribaEratostenes($limite)
+function capicua($limite)
 {
-  $numeros = array_fill(2, $limite - 1, true);
+  $mensaje = [];
 
-  for ($n = 2; $n <= sqrt($limite); $n++) {
-    if ($numeros[$n]) {
-      for ($i = $n * $n; $i <= $limite; $i += $n) {
-        $numeros[$i] = false;
+  // Generar capicúas de 1 a 5 dígitos
+  // 1 dígito
+  for ($i = 1; $i <= 9; $i++) {
+    if ($i <= $limite) {
+      $mensaje[] = $i;
+    }
+  }
+
+  // 2 dígitos
+  for ($i = 1; $i <= 9; $i++) {
+    $capicua = $i . $i;
+    if ($capicua <= $limite) {
+      $mensaje[] = $capicua;
+    }
+  }
+
+  // 3 dígitos
+  for ($i = 1; $i <= 9; $i++) {
+    for ($j = 0; $j <= 9; $j++) {
+      $capicua = $i . $j . $i;
+      if ($capicua <= $limite) {
+        $mensaje[] = $capicua;
       }
     }
   }
 
-  return array_keys(array_filter($numeros));
+  // 4 dígitos
+  for ($i = 1; $i <= 9; $i++) {
+    for ($j = 0; $j <= 9; $j++) {
+      $capicua = $i . $j . $j . $i;
+      if ($capicua <= $limite) {
+        $mensaje[] = $capicua;
+      }
+    }
+  }
+
+  // 5 dígitos
+  for ($i = 1; $i <= 9; $i++) {
+    for ($j = 0; $j <= 9; $j++) {
+      for ($k = 0; $k <= 9; $k++) {
+        $capicua = $i . $j . $k . $j . $i;
+        if ($capicua <= $limite) {
+          $mensaje[] = $capicua;
+        }
+      }
+    }
+  }
+
+  return $mensaje;
 }
-function imprimirTabla($array, $columnas = 10)
+
+
+function imprimirTabla($array, $columnas = 6)
 {
   echo "<style>
             table {
-                width: 75%;
+                width: 100%;
                 border-collapse: collapse;
             }
-            th, td {
+           th, td {
                 border: 1px solid #333;
                 padding: 5px;
                 text-align: center;

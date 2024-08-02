@@ -26,7 +26,7 @@ else:
         datos.append("")
 
 
-def criba_eratostenes(limite):
+def generar_capicua(limite):
     """
     Implementa el algoritmo de la criba de Eratóstenes
     para encontrar todos los números primos hasta un límite dado.
@@ -37,21 +37,49 @@ def criba_eratostenes(limite):
     Returns:
         list: Una lista de booleanos donde True indica que el índice es un número primo.
     """
-    numeros = [True] * (limite + 1)
-    numeros[0] = numeros[1] = False  # 0 y 1 no son primos
+    mensaje = []
 
-    for n in range(2, int(math.sqrt(limite)) + 1):
-        if numeros[n]:
-            for i in range(n * n, limite + 1, n):
-                numeros[i] = False
+    # Generar capicúas de 1 a 5 dígitos
+    # 1 dígito
+    for i in range(1, 10):
+        if i <= limite:
+            mensaje.append(i)
 
-    return [i for i, es_primo in enumerate(numeros) if es_primo]
+    # 2 dígitos
+    for i in range(1, 10):
+        capi_cua = int(f"{i}{i}")
+        if capi_cua <= limite:
+            mensaje.append(capi_cua)
+
+    # 3 dígitos
+    for i in range(1, 10):
+        for j in range(0, 10):
+            capi_cua = int(f"{i}{j}{i}")
+            if capi_cua <= limite:
+                mensaje.append(capi_cua)
+
+    # 4 dígitos
+    for i in range(1, 10):
+        for j in range(0, 10):
+            capi_cua = int(f"{i}{j}{j}{i}")
+            if capi_cua <= limite:
+                mensaje.append(capi_cua)
+
+    # 5 dígitos
+    for i in range(1, 10):
+        for j in range(0, 10):
+            for k in range(0, 10):
+                capi_cua = int(f"{i}{j}{k}{j}{i}")
+                if capi_cua <= limite:
+                    mensaje.append(capi_cua)
+
+    return mensaje
 
 
 # Ejemplo de uso:
 
 
-def imprimir_tabla(array, columnas=10):
+def imprimir_tabla(array, columnas=6):
     """
     Genera una tabla HTML a partir de un array dado.
 
@@ -60,9 +88,9 @@ def imprimir_tabla(array, columnas=10):
         columnas (int, optional): Número de columnas en la tabla. Por defecto es 10.
     """
     html = """
-    <style>
+<style>
         table {
-            width: 75%;
+            width: 100%;
             border-collapse: collapse;
         }
         th, td {
@@ -84,24 +112,30 @@ def imprimir_tabla(array, columnas=10):
             background-color: #ffffff;
         }
     </style>
-    <table>
     """
+    html += "<table>"
+    contador = 0
+    html += "<tr>"
 
-    for i, valor in enumerate(array):
-        if i % columnas == 0 and i != 0:
-            html += "</tr><tr>"
+    for valor in array:
         html += f"<td>{valor}</td>"
+        contador += 1
 
-    html += "</tr></table>"
+        if contador % columnas == 0:
+            html += "</tr><tr>"
+
+    html += "</tr>"
+    html += "</table>"
+
     return html
 
 
 LIMITE_NUMERO = int(datos[0])
 MENSAJE = ""
-if LIMITE_NUMERO > 1 and LIMITE_NUMERO <= 1000:
+if LIMITE_NUMERO > 1 and LIMITE_NUMERO <= 99999:
 
     # Imprimir el resultado en la consola (para verificar)
-    MENSAJE = imprimir_tabla(criba_eratostenes(LIMITE_NUMERO))
+    MENSAJE = imprimir_tabla(generar_capicua(LIMITE_NUMERO))
 else:
-    MENSAJE = "El numero debe estar entre 1 y 1000"
+    MENSAJE = "El numero debe estar entre 1 y 99999"
 print(MENSAJE)

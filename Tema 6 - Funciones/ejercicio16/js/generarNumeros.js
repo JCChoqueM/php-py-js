@@ -12,18 +12,22 @@ function llenarFormulario() {
 
   // Definir el rango según el número de clics
   let min, max;
-  if (clickCount % 3 === 1) {
-    // Primer clic: 1-100
+  if (clickCount % 4 === 1) {
+    // Primer clic: números de 1 dígito (1-9)
     min = 1;
-    max = 100;
-  } else if (clickCount % 3 === 2) {
-    // Segundo clic: 101-1000
-    min = 101;
-    max = 1000;
+    max = 99;
+  } else if (clickCount % 4 === 2) {
+    // Segundo clic: números de 2 a 3 dígitos (10-999)
+    min = 10;
+    max = 999;
+  } else if (clickCount % 4 === 3) {
+    // Tercer clic: números de 4 a 5 dígitos (1000-99999)
+    min = 1000;
+    max = 99999;
   } else {
-    // Tercer clic: 1001-2000
-    min = 1001;
-    max = 2000;
+    // Cuarto clic y posteriores: números de 6 a 6 dígitos (100000-999999)
+    min = 100000;
+    max = 999999;
   }
 
   // Generar y asignar el número aleatorio
