@@ -1,0 +1,311 @@
+:root {
+    --color-fondo-tooltip: #555;
+    /* Color de fondo predeterminado del tooltip */
+    --color-texto-tooltip: #ffffff;
+    /* Color de texto predeterminado del tooltip */
+    --color-destacado-tooltip: underline;
+    /* Estilo de subrayado para texto destacado */
+    --color-destacado-texto: bold;
+    /* Estilo de texto en negrita para texto destacado */
+
+    /* Definición de colores personalizados para cada tipo de tooltip */
+    --color-esCapicua: rgb(91, 91, 202);
+    --color-esPrimo: rgb(202, 91, 91);
+    --color-siguientePrimo: rgb(91, 202, 91);
+    --color-potencia: rgb(202, 91, 202);
+    --color-digitos: rgb(91, 202, 202);
+    --color-voltea: rgb(202, 43, 202);
+    --color-digitoN: rgb(202, 146, 91);
+    --color-posicionDeDigito: rgb(91, 202, 146);
+    --color-quitaPorDetras: rgb(146, 91, 202);
+    --color-quitaPorDelante: rgb(202, 91, 146);
+    --color-pegaPorDetras: rgb(238, 132, 10);
+    --color-pegaPorDelante: rgb(91, 202, 91);
+    --color-trozoDeNumero: rgb(202, 91, 91);
+    --color-juntaNumeros: rgb(91, 91, 202);
+}
+
+.contenedor-1 {
+
+    /* Estilos para el tooltip */
+    .tooltip {
+        position: relative;
+        /* Posición del tooltip */
+        display: inline-block;
+        /* Se muestra como un bloque en línea */
+        cursor: pointer;
+    }
+
+    /* Estilos para el texto del tooltip */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        /* Inicialmente oculto */
+        white-space: normal;
+        /* Espacio en blanco normal */
+        background-color: var(--color-fondo-tooltip);
+        /* Color de fondo del tooltip */
+        color: var(--color-texto-tooltip);
+        /* Color de texto del tooltip */
+        text-align: center;
+        /* Alineación del texto del tooltip */
+        border-radius: 6px;
+        /* Borde redondeado del tooltip */
+        padding: 5px;
+        /* Relleno del tooltip */
+        position: absolute;
+        /* Posición absoluta del tooltip */
+        z-index: 1;
+        /* Posición en la pila de capas para estar por encima de otros elementos */
+        opacity: 0;
+        /* Opacidad inicial del tooltip */
+        transition: opacity 0.3s;
+        /* Transición suave de la opacidad */
+        font-size: 18px;
+        /* Tamaño de fuente del tooltip */
+        overflow-wrap: break-word;
+        /* Dividir palabras largas en el tooltip */
+        max-width: 150px;
+        /* Ancho máximo del tooltip */
+        margin: auto;
+        /* Margen automático del tooltip */
+
+    }
+
+    /* Mostrar el tooltip al pasar el ratón sobre él */
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        /* Hacer visible el tooltip */
+        opacity: 1;
+        /* Opacidad completa del tooltip */
+    }
+
+    /* Estilo para resaltar palabras dentro del tooltip */
+    .tooltip span.highlight {
+        text-decoration: var(--color-destacado-tooltip);
+        /* Estilo de subrayado para texto destacado */
+        font-weight: var(--color-destacado-texto);
+        /* Estilo de texto en negrita para texto destacado */
+    }
+
+    /* Estilo para colocar el tooltip debajo de la primera letra */
+    .tooltip:hover .tooltiptext {
+        top: calc(100% + 5px);
+        /* Posicionar debajo del texto */
+        left: 0;
+        /* Alinear con la primera letra */
+        width: 450px;
+        /* Ancho del tooltip */
+    }
+
+    /* Colores personalizados para cada tooltip */
+    #esCapicuaTooltip {
+        background-color: var(--color-esCapicua);
+    }
+
+    #esPrimoTooltip {
+        background-color: var(--color-esPrimo);
+    }
+
+    #siguientePrimoTooltip {
+        background-color: var(--color-siguientePrimo);
+    }
+
+    #potenciaTooltip {
+        background-color: var(--color-potencia);
+    }
+
+    #digitosTooltip {
+        background-color: var(--color-digitos);
+    }
+
+    #volteaTooltip {
+        background-color: var(--color-voltea);
+    }
+
+    #digitoNTooltip {
+        background-color: var(--color-digitoN);
+    }
+
+    #posicionDeDigitoTooltip {
+        background-color: var(--color-posicionDeDigito);
+    }
+
+    #quitaPorDetrasTooltip {
+        background-color: var(--color-quitaPorDetras);
+    }
+
+    #quitaPorDelanteTooltip {
+        background-color: var(--color-quitaPorDelante);
+    }
+
+    #pegaPorDetrasTooltip {
+        background-color: var(--color-pegaPorDetras);
+    }
+
+    #pegaPorDelanteTooltip {
+        background-color: var(--color-pegaPorDelante);
+    }
+
+    #trozoDeNumeroTooltip {
+        background-color: var(--color-trozoDeNumero);
+    }
+
+    #juntaNumerosTooltip {
+        background-color: var(--color-juntaNumeros);
+    }
+
+    /* Clases de resaltado */
+    [class^="_"] {
+        color: inherit;
+    }
+
+    ._1 {
+        color: var(--color-esCapicua);
+    }
+
+    ._2 {
+        color: var(--color-esPrimo);
+    }
+
+    ._3 {
+        color: var(--color-siguientePrimo);
+    }
+
+    ._4 {
+        color: var(--color-potencia);
+    }
+
+    ._5 {
+        color: var(--color-digitos);
+    }
+
+    ._6 {
+        color: var(--color-voltea);
+    }
+
+    ._7 {
+        color: var(--color-digitoN);
+    }
+
+    ._8 {
+        color: var(--color-posicionDeDigito);
+    }
+
+    ._9 {
+        color: var(--color-quitaPorDetras);
+    }
+
+    ._10 {
+        color: var(--color-quitaPorDelante);
+    }
+
+    ._11 {
+        color: var(--color-pegaPorDetras);
+    }
+
+    ._12 {
+        color: var(--color-pegaPorDelante);
+    }
+
+    ._13 {
+        color: var(--color-trozoDeNumero);
+    }
+
+    ._14 {
+        color: var(--color-juntaNumeros);
+    }
+}
+
+.bibliotecaFunciones {
+
+    /* Estilos para el contenedor principal */
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    }
+
+    /* Estilos para el formulario */
+    .formularioBiblioteca {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+        width: 25rem;
+    }
+
+    .formularioBiblioteca label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .formularioBiblioteca input[type="number"],
+    .formularioBiblioteca input[type="text"],
+    .formularioBiblioteca select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+
+    }
+
+    /* Estilos para el contenedor de tooltips */
+    #tooltips-container {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+        color: rgb(36, 24, 3);
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        white-space: normal;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px;
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 14px;
+        max-width: 200px;
+
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+
+    }
+
+    .bTodo {
+        background-color: var(--color-esCapicua);
+        color: rgb(30, 3, 63);
+        border: 2px solid #2E6DA4;
+        border-radius: 5px;
+        padding: 10px 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        height: 4rem;
+        width: 10rem;
+    }
+
+
+}
