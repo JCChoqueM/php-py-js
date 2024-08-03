@@ -1,111 +1,96 @@
 function automaticamenteJS(datos) {
-  mensajeError = "";
-  if (datos[0] > 0 && datos[0] <= 99999) {
-    mensajeError += imprimirTabla(capicua(parseInt(datos[0])));
-  } else {
-    mensajeError = "Solo se permiten numeros entre 1 y 99999";
+  let numero = parseInt(datos[0], 10);
+  const estado = isNaN(numero) ? "0" : "1";
+  let mensaje = [];
+  switch (estado) {
+    case "0":
+      mensaje.push(
+        "El campo esta vacio o no es un numero. Por favor, ingrese numero(s)."
+      );
+      break;
+    case "1":
+      numero = Math.abs(numero); // Asegura que el número sea positivo
+      if (verificarBinario(numero)) {
+        mensaje.push(
+          `El numero binario ${numero} es igual a :<br>${transformar(
+            numero
+          )} en base decimal.`
+        );
+      } else {
+        mensaje.push(`El numero ${numero} no es binario.`);
+      }
+      break;
+    default:
+      mensaje.push("Error desconocido. Por favor, revise las entradas.");
   }
 
-  return mensajeError;
+  return imprimirTabla(mensaje);
+}
+function transformar(divisor) {
+  let suma = 0;
+  let i = 0;
+
+  while (divisor > 0) {
+    suma += (divisor % 10) * Math.pow(2, i);
+    divisor = Math.floor(divisor / 10);
+    i++;
+  }
+
+  return suma;
 }
 
-function capicua(limite) {
-  const mensaje = [];
-
-  // Generar capicúas de 1 a 5 dígitos
-  // 1 dígito
-  for (let i = 1; i <= 9; i++) {
-    if (i <= limite) {
-      mensaje.push(i);
+function verificarBinario(divisor) {
+  while (divisor > 0) {
+    if (divisor % 10 !== 0 && divisor % 10 !== 1) {
+      return false;
     }
+    divisor = Math.floor(divisor / 10);
   }
-
-  // 2 dígitos
-  for (let i = 1; i <= 9; i++) {
-    const capicua = parseInt(`${i}${i}`);
-    if (capicua <= limite) {
-      mensaje.push(capicua);
-    }
-  }
-
-  // 3 dígitos
-  for (let i = 1; i <= 9; i++) {
-    for (let j = 0; j <= 9; j++) {
-      const capicua = parseInt(`${i}${j}${i}`);
-      if (capicua <= limite) {
-        mensaje.push(capicua);
-      }
-    }
-  }
-
-  // 4 dígitos
-  for (let i = 1; i <= 9; i++) {
-    for (let j = 0; j <= 9; j++) {
-      const capicua = parseInt(`${i}${j}${j}${i}`);
-      if (capicua <= limite) {
-        mensaje.push(capicua);
-      }
-    }
-  }
-
-  // 5 dígitos
-  for (let i = 1; i <= 9; i++) {
-    for (let j = 0; j <= 9; j++) {
-      for (let k = 0; k <= 9; k++) {
-        const capicua = parseInt(`${i}${j}${k}${j}${i}`);
-        if (capicua <= limite) {
-          mensaje.push(capicua);
-        }
-      }
-    }
-  }
-
-  return mensaje;
+  return true;
 }
 
-function imprimirTabla(array, columnas = 6) {
-  let html = `<style>
-                table {
-                    width: 100%;
-                    border-collapse: collapse;
-                }
-                th, td {
-                    border: 1px solid #333;
-                    padding: 5px;
-                    text-align: center;
-                    font-size: 18px;
-                }
-                th {
-                    background-color: #f2f2f2;
-                }
-                td {
-                    background-color: #e6e6e6;
-                }
-                tr:nth-child(even) {
-                    background-color: #f9f9f9;
-                }
-                tr:nth-child(odd) {
-                    background-color: #ffffff;
-                }
-              </style>`;
-  html += "<table>";
+function imprimirTabla(array, columnas = 1) {
+  let html = `
+    <style>
+      table {
+          width: 100%;
+          border-collapse: collapse;
+      }
+      th, td {
+          border: 1px solid #333;
+          padding: 20px;
+          text-align: center;
+          font-size: 18px;
+          width: 350px; 
+      }
+      th {
+          background-color: #f2f2f2;
+      }
+      td {
+          background-color: #e6e6e6;
+      }
+      tr:nth-child(even) {
+          background-color: #f9f9f9;
+      }
+      tr:nth-child(odd) {
+          background-color: #ffffff;
+      }
+    </style>
+    <table>
+  `;
+
   let contador = 0;
-  html += "<tr>";
+  html += "<tr>"; // Inicia la primera fila
 
   array.forEach((valor) => {
-    html += `<td>${valor}</td>`;
+    html += `<td>${valor}</td>`; // Imprime cada valor en una celda de tabla
     contador++;
 
     if (contador % columnas === 0) {
-      html += "</tr><tr>";
+      html += "</tr><tr>"; // Inicia una nueva fila cada $columnas valores
     }
   });
 
-  html += "</tr>";
-  html += "</table>";
-
+  html += "</tr></table>"; // Cierra la última fila y la tabla
   return html;
 }
-
-
-

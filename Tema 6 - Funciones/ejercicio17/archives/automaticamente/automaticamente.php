@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       if (verificarBinario($numero)) {
         $mensaje[] = "El numero binario $numero es igual a :<br>" . transformar($numero) . " en base Decimal.";
       } else {
-        $mensaje[] = "El numero ingresado no es Binario";
+        $mensaje[] = "El numero $numero no es Binario";
       }
       break;
     default:

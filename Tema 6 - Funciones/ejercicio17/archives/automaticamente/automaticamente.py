@@ -119,7 +119,7 @@ elif ESTADO == "1":
             f"El numero binario {numero} es igual a :<br>{transformar(numero)} en base decimal."
         )
     else:
-        mensaje.append("El numero ingresado no es binario.")
+        mensaje.append(f"El numero {numero} no es binario.")
 else:
     mensaje = ["Error desconocido. Por favor, revise las entradas."]
 
