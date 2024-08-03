@@ -3,81 +3,63 @@
 // Verificar si se recibieron datos POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-  // Obtener los datos enviados desde JavaScript
+
   $datos = json_decode(file_get_contents("php://input"), true);
-  // Verificar si se recibieron datos y que sea un array
 
-
-  $limite = intval($datos[0]);
-  if ($limite > 0 && $limite <= 99999) {
-    $mensaje = imprimirTabla(capicua($limite));
-  } else {
-    $mensaje = "Solo se permiten numeros entre 1 y 99999";
+  $estado = !is_numeric($datos[0]) ? "0" : "1";
+  $mensaje = [];
+  switch ($estado) {
+    case "0":
+      $mensaje[] = "El campo está vacío o no es un número. Por favor, ingrese número(s).";
+      break;
+    case "1":
+      $numero = intval($datos[0]);
+      if ($numero >= 0) {
+      } else {
+        $numero = abs($numero);
+      }
+      if (verificarBinario($numero)) {
+        $mensaje[] = "El numero binario $numero es igual a :<br>" . transformar($numero) . " en base Decimal.";
+      } else {
+        $mensaje[] = "El numero ingresado no es Binario";
+      }
+      break;
+    default:
+      $mensaje[] = "Error desconocido. Por favor, revise las entradas.";
   }
-  echo $mensaje;;
+  echo (imprimirTabla($mensaje));
 } else {
   // Si no se recibieron datos POST, retornar un mensaje de error
   echo "Error: No se recibieron datos POST";
 }
 
 
-function capicua($limite)
+function transformar($divisor)
 {
-  $mensaje = [];
-
-  // Generar capicúas de 1 a 5 dígitos
-  // 1 dígito
-  for ($i = 1; $i <= 9; $i++) {
-    if ($i <= $limite) {
-      $mensaje[] = $i;
-    }
+  $suma = 0;
+  for ($i = 0; $divisor > 0; $i++) {
+    $suma += ($divisor % 10) * 2 ** $i;
+    $divisor = intdiv($divisor, 10);
   }
 
-  // 2 dígitos
-  for ($i = 1; $i <= 9; $i++) {
-    $capicua = $i . $i;
-    if ($capicua <= $limite) {
-      $mensaje[] = $capicua;
-    }
-  }
-
-  // 3 dígitos
-  for ($i = 1; $i <= 9; $i++) {
-    for ($j = 0; $j <= 9; $j++) {
-      $capicua = $i . $j . $i;
-      if ($capicua <= $limite) {
-        $mensaje[] = $capicua;
-      }
-    }
-  }
-
-  // 4 dígitos
-  for ($i = 1; $i <= 9; $i++) {
-    for ($j = 0; $j <= 9; $j++) {
-      $capicua = $i . $j . $j . $i;
-      if ($capicua <= $limite) {
-        $mensaje[] = $capicua;
-      }
-    }
-  }
-
-  // 5 dígitos
-  for ($i = 1; $i <= 9; $i++) {
-    for ($j = 0; $j <= 9; $j++) {
-      for ($k = 0; $k <= 9; $k++) {
-        $capicua = $i . $j . $k . $j . $i;
-        if ($capicua <= $limite) {
-          $mensaje[] = $capicua;
-        }
-      }
-    }
-  }
-
-  return $mensaje;
+  return $suma;
 }
 
+function verificarBinario($divisor)
+{
+  $var_return = True;
+  while ($divisor > 0 && $var_return == True) {
+    if ($divisor % 10 == 0 || $divisor % 10 == 1) {
+      $divisor = intdiv($divisor, 10);
+    } else {
+      $var_return = False;
+    }
+  }
 
-function imprimirTabla($array, $columnas = 6)
+  return $var_return;
+}
+
+function imprimirTabla($array, $columnas = 1)
 {
   echo "<style>
             table {
@@ -86,9 +68,10 @@ function imprimirTabla($array, $columnas = 6)
             }
            th, td {
                 border: 1px solid #333;
-                padding: 5px;
+                padding: 20px;
                 text-align: center;
                 font-size: 18px;
+                width: 350px; 
             }
             th {
                 background-color: #f2f2f2;

@@ -26,108 +26,82 @@ else:
         datos.append("")
 
 
-def generar_capicua(limite):
-    """
-    Implementa el algoritmo de la criba de Eratóstenes
-    para encontrar todos los números primos hasta un límite dado.
-
-    Args:
-        limite (int): El número máximo hasta el cual buscar números primos.
-
-    Returns:
-        list: Una lista de booleanos donde True indica que el índice es un número primo.
-    """
-    mensaje = []
-
-    # Generar capicúas de 1 a 5 dígitos
-    # 1 dígito
-    for i in range(1, 10):
-        if i <= limite:
-            mensaje.append(i)
-
-    # 2 dígitos
-    for i in range(1, 10):
-        capi_cua = int(f"{i}{i}")
-        if capi_cua <= limite:
-            mensaje.append(capi_cua)
-
-    # 3 dígitos
-    for i in range(1, 10):
-        for j in range(0, 10):
-            capi_cua = int(f"{i}{j}{i}")
-            if capi_cua <= limite:
-                mensaje.append(capi_cua)
-
-    # 4 dígitos
-    for i in range(1, 10):
-        for j in range(0, 10):
-            capi_cua = int(f"{i}{j}{j}{i}")
-            if capi_cua <= limite:
-                mensaje.append(capi_cua)
-
-    # 5 dígitos
-    for i in range(1, 10):
-        for j in range(0, 10):
-            for k in range(0, 10):
-                capi_cua = int(f"{i}{j}{k}{j}{i}")
-                if capi_cua <= limite:
-                    mensaje.append(capi_cua)
-
-    return mensaje
+def transformar(divisor):
+    suma = 0
+    i = 0
+    while divisor > 0:
+        suma += (divisor % 10) * 2**i
+        divisor = divisor // 10
+        i += 1
+    return suma
 
 
-# Ejemplo de uso:
+def verificar_binario(divisor):
+    while divisor > 0:
+        if divisor % 10 not in (0, 1):
+            return False
+        divisor = divisor // 10
+    return True
 
 
-def imprimir_tabla(array, columnas=6):
-    """
-    Genera una tabla HTML a partir de un array dado.
-
-    Args:
-        array (list): Lista de elementos a mostrar en la tabla.
-        columnas (int, optional): Número de columnas en la tabla. Por defecto es 10.
-    """
-    html = """
-<style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #333;
-            padding: 5px;
-            text-align: center;
-            font-size: 18px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        td {
-            background-color: #e6e6e6;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
-    </style>
-    """
+def imprimir_tabla(array):
+    html = "<style>\
+                table {\
+                    width: 100%;\
+                    border-collapse: collapse;\
+                }\
+                th, td {\
+                    border: 1px solid #333;\
+                    padding: 20px;\
+                    text-align: center;\
+                    font-size: 18px;\
+                    width: 350px;\
+                }\
+                th {\
+                    background-color: #f2f2f2;\
+                }\
+                td {\
+                    background-color: #e6e6e6;\
+                }\
+                tr:nth-child(even) {\
+                    background-color: #f9f9f9;\
+                }\
+                tr:nth-child(odd) {\
+                    background-color: #ffffff;\
+                }\
+            </style>"
     html += "<table>"
-    contador = 0
     html += "<tr>"
 
     for valor in array:
         html += f"<td>{valor}</td>"
-        contador += 1
-
-        if contador % columnas == 0:
-            html += "</tr><tr>"
 
     html += "</tr>"
     html += "</table>"
 
     return html
+
+
+
+def procesar():
+    datos = request.get_json()
+
+    if not datos or not isinstance(datos[0], int):
+        mensaje = [
+            "El campo está vacío o no es un número. Por favor, ingrese número(s)."
+        ]
+    else:
+        numero = abs(datos[0])
+        mensaje = []
+
+        if verificar_binario(numero):
+            mensaje.append(
+                f"El numero binario {numero} es igual a :<br>{transformar(numero)} en base Decimal."
+            )
+        else:
+            mensaje.append("El numero ingresado no es Binario")
+
+    return imprimir_tabla(mensaje)
 
 
 LIMITE_NUMERO = int(datos[0])
