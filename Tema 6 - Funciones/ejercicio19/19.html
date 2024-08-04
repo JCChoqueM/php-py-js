@@ -5,38 +5,11 @@
     <title>#19</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/colorEnunciado.css" />
-    <link rel="stylesheet" href="styles/estilosDescripcionFunciones.css" />
+
     <!-- Importar scripts JavaScript -->
 
     <script src="archives/soluciones/solucion.js"></script>
     <script src="archives/automaticamente/js/funciones/crearTabla.js"></script>
-    <script src="archives/automaticamente/js/funciones/1-esCapicua.js"></script>
-    <script src="archives/automaticamente/js/imprimir/1-imprimirEsCapicua.js"></script>
-    <script src="archives/automaticamente/js/funciones/2-esPrimo.js"></script>
-    <script src="archives/automaticamente/js/imprimir/2-imprimirEsPrimo.js"></script>
-    <script src="archives/automaticamente/js/funciones/3-siguientePrimo.js"></script>
-    <script src="archives/automaticamente/js/imprimir/3-imprimirSiguientePrimo.js"></script>
-    <script src="archives/automaticamente/js/funciones/4-potencia.js"></script>
-    <script src="archives/automaticamente/js/imprimir/4-imprimirPotencia.js"></script>
-    <script src="archives/automaticamente/js/funciones/5-digitos.js"></script>
-    <script src="archives/automaticamente/js/imprimir/5-imprimirDigitos.js"></script>
-    <script src="archives/automaticamente/js/funciones/6-voltea.js"></script>
-    <script src="archives/automaticamente/js/imprimir/6-imprimirVoltea.js"></script>
-    <script src="archives/automaticamente/js/funciones/7-digitoN.js"></script>
-    <script src="archives/automaticamente/js/imprimir/7-imprimirDigitoN.js"></script>
-    <script src="archives/automaticamente/js/funciones/8-posicionDeDigito.js"></script>
-    <script src="archives/automaticamente/js/imprimir/8-imprimirPosicionDeDigito.js"></script>
-    <script src="archives/automaticamente/js/funciones/9-quitaPorDetras.js"></script>
-    <script src="archives/automaticamente/js/imprimir/9-imprimirQuitaPorDetras.js"></script>
-    <script src="archives/automaticamente/js/funciones/10-quitaPorDelante.js"></script>
-    <script src="archives/automaticamente/js/imprimir/10-imprimirQuitaPorDelante.js"></script>
-    <script src="archives/automaticamente/js/funciones/11-pegaPorDetras.js"></script>
-    <script src="archives/automaticamente/js/imprimir/11-imprimirPegaPorDetras.js"></script>
-    <script src="archives/automaticamente/js/funciones/12-pegaPorDelante.js"></script>
-    <script src="archives/automaticamente/js/imprimir/12-imprimirPegaPorDelante.js"></script>
-    <script src="archives/automaticamente/js/funciones/13-trozoDeNumero.js"></script>
-    <script src="archives/automaticamente/js/imprimir/13-imprimirTrozoDeNumero.js"></script>
-    <script src="archives/automaticamente/js/imprimir/14-imprimirJuntaNumeros.js"></script>
     <script src="js/resolverAutomaticamente.js" defer></script>
     <script src="js/solucion.js" defer></script>
     <script src="js/limpiarResultados.js" defer></script>
@@ -65,84 +38,75 @@
             </span>
           </p>
         </h2>
-        <div class="bibliotecaFunciones">
-          <label for="accion">Selecciona una función:</label>
-          <select id="accion">
-            <option value="Binario">1.- Binario</option>
-            <option value="Octal">2.- Octal/option>
-            <option value="Decimal">3.- Decimal</option>
-            <option value="Hexadecimal">4.-Hexadecimal</option>
-          </select>
-
-          <div id="tooltips-container"></div>
-
+        <div class="cajaDeDatos">
           <div class="formularioBiblioteca">
             <form id="FormularioInputs">
-              <div id="funcionesInput"></div>
+              <label for="num1">Ingrese un número:</label>
+              <input
+                type="number"
+                id="num1"
+                name="num1"
+                value="73"
+                oninput="resolver()"
+                placeholder="Ingrese un número aquí"
+                required
+              />
             </form>
+          </div>
+          <div class="selecciones">
             <div>
-              <button
-                id="miBoton"
-                class="bTodo"
-                type="button"
-                onclick="generarDatos()"
-              >
-                Generar números Aleatorios
-              </button>
+              <label for="accion">Base:</label>
+              <select id="accion">
+                <option value="Binario">Binario</option>
+                <option value="Octal">Octal</option>
+                <option value="Decimal">Decimal</option>
+                <option value="Hexadecimal">Hexadecimal</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="accion2">Transformar a:</label>
+              <select id="accion2">
+                <option value="Binario">Binario</option>
+                <option value="Octal">Octal</option>
+                <option value="Decimal">Decimal</option>
+                <option value="Hexadecimal">Hexadecimal</option>
+              </select>
             </div>
           </div>
         </div>
-        <form id="form">
-          <div class="cajaboton">
-            <div class="otros">
-              <!-- Botones de acción -->
-              <!--    <button
-                class="botones_cajaForm resolver"
-                type="button"
-                id="resolver"
-                onclick="resolver2()"
-              >
-                Resolver
-              </button> -->
-              <button
-                class="botones_cajaForm"
-                type="button"
-                onclick="limpiarResultados()"
-              >
-                Limpiar resultados:
-              </button>
-              <!--        <button
-                class="botones_cajaForm solucionPhpPyJs"
-                type="button"
-                onclick="solucionPhpPyJs()"
-              >
-                Solución PHP,PY,JS:
-              </button> -->
-            </div>
+
+        <div class="cajaboton">
+          <div>
+            <button
+              class="botones_cajaForm"
+              type="button"
+              onclick="limpiarResultados()"
+            >
+              Limpiar resultados
+            </button>
           </div>
-        </form>
+
+          <div>
+            <button
+              class="botones_cajaForm"
+              type="button"
+              onclick="generarDatos()"
+            >
+              Generar números Aleatorios
+            </button>
+          </div>
+        </div>
 
         <div class="contenedores">
           <!-- Contenedores de resultados -->
           <section class="caja cajaPHP">
-            <!-- Botón y contenedor de resultados para PHP -->
-            <button class="bPHP" type="button" onclick="solucionPHP()">
-              Solución PHP
-            </button>
             <div class="r" id="resultadoPHP"></div>
           </section>
           <section class="caja cajaPY">
-            <!-- Botón y contenedor de resultados para Python -->
-            <button class="bPY" type="button" onclick="solucionPython()">
-              Solución Python
-            </button>
             <div class="r" id="resultadoPython"></div>
           </section>
           <section class="caja cajaJS">
-            <!-- Botón y contenedor de resultados para JavaScript -->
-            <button class="bJS" type="button" onclick="solucionJavaScript()">
-              Solución JS
-            </button>
             <div class="r" id="resultadoJavaScript"></div>
           </section>
         </div>

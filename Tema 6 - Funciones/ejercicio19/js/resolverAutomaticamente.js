@@ -7,11 +7,11 @@ async function resolver() {
   // Recopilar los valores de los inputs utilizando FormData
   const formulario = document.getElementById("FormularioInputs");
   let select = document.getElementById("accion");
+  let select2 = document.getElementById("accion2");
   const datosFormulario = new FormData(formulario);
 
   // Crear un array indexado para almacenar los valores recopilados
   const datos = [];
-  datos.push(select.value);
   // Iterar sobre los valores del formulario
   datosFormulario.forEach((value, key) => {
     const inputElement = formulario.querySelector(`[name="${key}"]`);
@@ -20,6 +20,8 @@ async function resolver() {
       datos.push(value);
     }
   });
+  datos.push(select.value);
+  datos.push(select2.value);
 
   /*   console.log("Datos recopilados solo de inputs:", datos);  */ // Para verificar la recopilación de datos
 

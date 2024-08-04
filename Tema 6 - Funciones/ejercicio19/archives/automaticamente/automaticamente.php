@@ -9,8 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if (is_array($datos) && count($datos) > 0) {
     $select = $datos[0];
     $input1 = ($datos[1]);
-    $mensajeError = "";
-    switch ($select) {
+    $mensajeError = $datos[0];
+    $mensajeError .= $datos[1];
+    $mensajeError .= $datos[2];
+/*     switch ($select) {
       case ($select == "esCapicua"):
         $mensajeError = imprimirEscapicua($input1);
         break;
@@ -54,18 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $input2 = ($datos[2]);
         $mensajeError = imprimirPegaPorDelante($input1, $input2);
         break;
-      case ($select == "trozoDeNumero"):
-        $input2 = ($datos[2]);
-        $input3 = ($datos[3]);
-        $mensajeError = imprimirTrozoDeNumero($input1, $input2, $input3);
-        break;
-      case ($select == "juntaNumeros"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirJuntaNumeros($input1, $input2);
-        break;
-      default:
         "Preugntame mas";
-    }
+    } */
 
     // Verificar si el input es un número
 
