@@ -13,8 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       case ($select == "Iguales"):
         $mensajeError = imprimirIguales($datos[0], $datos[1], $datos[2]);
         break;
-      case ($select == "DecimalBinario"):
-        $mensajeError = "as";
+      case ($select == "HexadecimalDecimal"):
+        $mensajeError = imprimirHexadecimalDecimal($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "siguientePrimo"):
         $mensajeError = imprimirSiguientePrimo($input1);
