@@ -17,45 +17,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mensajeError = imprimirDecimalBinario($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "DecimalHeaxdecimal"):
-        $mensajeError = imprimirDecimalHeaxdecimal($input1);
+        $mensajeError = imprimirDecimalHeaxdecimal($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "DecimalOctal"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirDecimalOctal($input1, $input2);
+        $mensajeError = imprimirDecimalOctal($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "BinarioDecimal"):
-        $mensajeError = imprimirBinarioDecimal($input1);
+        $mensajeError = imprimirBinarioDecimal($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "BinarioHexadecimal"):
-        $mensajeError = imprimirBinarioHexadecimal($input1);
+        $mensajeError = imprimirBinarioHexadecimal($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "BinarioOctal"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirBinarioOctal($input1, $input2);
+        $mensajeError = imprimirBinarioOctal($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "HexadecimalDecimal"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirHexadecimalDecimal($input1, $input2);
+        $mensajeError = imprimirHexadecimalDecimal($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "HexadecimalBinario"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirHexadecimalBinario($input1, $input2);
+        $mensajeError = imprimirHexadecimalBinario($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "HexadecimalOctal"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirHexadecimalOctal($input1, $input2);
+        $mensajeError = imprimirHexadecimalOctal($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "OctalDecimal"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirOctalDecimal($input1, $input2);
+        $mensajeError = imprimirOctalDecimal($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "OctalBinario"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirOctalBinario($input1, $input2);
+        $mensajeError = imprimirOctalBinario($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "OctalHexadecimal"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirOctalHexadecimal($input1, $input2);
+        $mensajeError = imprimirOctalHexadecimal($datos[0], $datos[1], $datos[2]);
         break;
       default:
         $mensajeError = "Preugntame mas";

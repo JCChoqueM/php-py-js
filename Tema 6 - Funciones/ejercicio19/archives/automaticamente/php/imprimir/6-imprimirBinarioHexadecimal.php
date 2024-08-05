@@ -1,14 +1,20 @@
 <?php
 // app/includes/archivo2.php
 include __DIR__ . '/../funciones/funciones.php';
-function imprimirHexadecimalDecimal($numero, $base, $destino)
+function imprimirBinarioHexadecimal($numero, $base, $destino)
 {
     $mensajeError = "";
 
     $estado = validarNumero($numero, $base) ? "1" : "0";
     switch ($estado) {
         case "0":
-            $mensajeError = ($numero == "") ? "El campo está vacío" : "$numero no es $base.";
+            if ($numero == "") {
+                $mensajeError
+                    = "El campo está vacío";
+            } else {
+                $mensajeError
+                    = "$numero no es una base valida.";
+            }
             break;
         case "1":
             $mensajeError
