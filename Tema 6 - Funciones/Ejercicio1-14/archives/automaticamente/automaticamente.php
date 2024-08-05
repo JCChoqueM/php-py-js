@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mensajeError = imprimirJuntaNumeros($input1, $input2);
         break;
       default:
-        "Preugntame mas";
+       $mensajeError= "Preugntame mas";
     }
 
     // Verificar si el input es un número

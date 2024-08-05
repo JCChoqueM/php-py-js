@@ -13,47 +13,52 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       case ($select == "Iguales"):
         $mensajeError = imprimirIguales($datos[0], $datos[1], $datos[2]);
         break;
+      case ($select == "DecimalBinario"):
+        $mensajeError = imprimirDecimalBinario($datos[0], $datos[1], $datos[2]);
+        break;
+      case ($select == "DecimalHeaxdecimal"):
+        $mensajeError = imprimirDecimalHeaxdecimal($input1);
+        break;
+      case ($select == "DecimalOctal"):
+        $input2 = ($datos[2]);
+        $mensajeError = imprimirDecimalOctal($input1, $input2);
+        break;
+      case ($select == "BinarioDecimal"):
+        $mensajeError = imprimirBinarioDecimal($input1);
+        break;
+      case ($select == "BinarioHexadecimal"):
+        $mensajeError = imprimirBinarioHexadecimal($input1);
+        break;
+      case ($select == "BinarioOctal"):
+        $input2 = ($datos[2]);
+        $mensajeError = imprimirBinarioOctal($input1, $input2);
+        break;
       case ($select == "HexadecimalDecimal"):
-        $mensajeError = imprimirHexadecimalDecimal($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "siguientePrimo"):
-        $mensajeError = imprimirSiguientePrimo($input1);
-        break;
-      case ($select == "potencia"):
         $input2 = ($datos[2]);
-        $mensajeError = imprimirPotencia($input1, $input2);
+        $mensajeError = imprimirHexadecimalDecimal($input1, $input2);
         break;
-      case ($select == "digitos"):
-        $mensajeError = imprimirDigitos($input1);
-        break;
-      case ($select == "voltea"):
-        $mensajeError = imprimirVoltea($input1);
-        break;
-      case ($select == "digitoN"):
+      case ($select == "HexadecimalBinario"):
         $input2 = ($datos[2]);
-        $mensajeError = imprimirDigitoN($input1, $input2);
+        $mensajeError = imprimirHexadecimalBinario($input1, $input2);
         break;
-      case ($select == "posicionDeDigito"):
+      case ($select == "HexadecimalOctal"):
         $input2 = ($datos[2]);
-        $mensajeError = imprimirPosicionDeDigito($input1, $input2);
+        $mensajeError = imprimirHexadecimalOctal($input1, $input2);
         break;
-      case ($select == "quitaPorDetras"):
+      case ($select == "OctalDecimal"):
         $input2 = ($datos[2]);
-        $mensajeError = imprimirQuitaPorDetras($input1, $input2);
+        $mensajeError = imprimirOctalDecimal($input1, $input2);
         break;
-      case ($select == "quitaPorDelante"):
+      case ($select == "OctalBinario"):
         $input2 = ($datos[2]);
-        $mensajeError = imprimirQuitaPorDelante($input1, $input2);
+        $mensajeError = imprimirOctalBinario($input1, $input2);
         break;
-      case ($select == "pegaPorDetras"):
+      case ($select == "OctalHexadecimal"):
         $input2 = ($datos[2]);
-        $mensajeError = imprimirPegaPorDetras($input1, $input2);
+        $mensajeError = imprimirOctalHexadecimal($input1, $input2);
         break;
-      case ($select == "pegaPorDelante"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirPegaPorDelante($input1, $input2);
-        break;
-        "Preugntame mas";
+      default:
+        $mensajeError = "Preugntame mas";
     }
 
     // Verificar si el input es un número
