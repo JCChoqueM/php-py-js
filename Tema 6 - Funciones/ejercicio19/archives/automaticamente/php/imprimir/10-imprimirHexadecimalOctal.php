@@ -18,7 +18,7 @@ function imprimirHexadecimalOctal($numero, $base, $destino)
             break;
         case "1":
             $mensajeError
-                = "El numero: $numero $base <br>Es igual a: $numero $destino";
+                = "El numero: $numero $base <br>Es igual a: " . DecimalOctal(HexadecimalDecimal($numero)) . " $destino";
 
             break;
         default:
@@ -28,3 +28,4 @@ function imprimirHexadecimalOctal($numero, $base, $destino)
 
     return $mensajeError;
 }
+

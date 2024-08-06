@@ -18,7 +18,7 @@ function imprimirOctalBinario($numero, $base, $destino)
             break;
         case "1":
             $mensajeError
-                = "El numero: $numero $base <br>Es igual a: $numero $destino";
+                = "El numero: $numero $base <br>Es igual a: " . DecimalBinario(OctalDecimal($numero)) . " $destino";
 
             break;
         default:

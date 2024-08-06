@@ -18,7 +18,7 @@ function imprimirOctalDecimal($numero, $base, $destino)
             break;
         case "1":
             $mensajeError
-                = "El numero: $numero $base <br>Es igual a: $numero $destino";
+                = "El numero: $numero $base <br>Es igual a: " . OctalDecimal($numero) . " $destino";
 
             break;
         default:

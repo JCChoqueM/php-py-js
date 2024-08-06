@@ -1,13 +1,12 @@
 <?php
-function digitos($num1)
+function HexadecimalDecimal($numeroHexadecimal)
 {
-    $num1=abs($num1);
-    $digitos = 0;
-    $dividendo = $num1;
-    do {
-        $dividendo = intdiv($dividendo, 10);
-        $digitos = $digitos + 1;
-    } while ($dividendo > 0);
-    return $digitos;
-
+    // Verificar si el valor es una cadena hexadecimal válida
+    if (ctype_xdigit($numeroHexadecimal)) {
+        // Convertir hexadecimal a decimal
+        $decimal = hexdec($numeroHexadecimal);
+        return $decimal;
+    } else {
+        return "Error: El valor no es un hexadecimal válido.";
+    }
 }
