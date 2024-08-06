@@ -1,8 +1,12 @@
 <?php
-// app/includes/archivo2.php
-include __DIR__ . '/../funciones/funciones.php';
-function siguientePrimo($numero)
+function DecimalOctal($numeroDecimal)
 {
-    for ($numero += 1; !esPrimo($numero); $numero++);
-    return $numero;
+    // Verificar si el número es un entero positivo
+    if (is_int($numeroDecimal) && $numeroDecimal >= 0) {
+        // Convertir de decimal a octal
+        $octal = decoct($numeroDecimal);
+        return $octal;
+    } else {
+        return "Error: El número debe ser un entero positivo.";
+    }
 }

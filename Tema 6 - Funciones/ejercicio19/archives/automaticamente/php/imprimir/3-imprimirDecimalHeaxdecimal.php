@@ -17,8 +17,9 @@ function imprimirDecimalHeaxdecimal($numero, $base, $destino)
             }
             break;
         case "1":
+            $numero=intval($numero);
             $mensajeError
-                = "El numero: $numero $base <br>Es igual a: $numero $destino";
+                = "El numero: $numero $base <br>Es igual a: " . DecimalHexadecimal($numero) . " $destino";
 
             break;
         default:

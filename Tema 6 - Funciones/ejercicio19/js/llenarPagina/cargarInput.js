@@ -1,7 +1,7 @@
 // Llamar a la función cargarInput al cargar la página para mostrar el primer input
 function inicializar() {
   document.getElementById("accion").value = "Decimal";
-  document.getElementById("accion2").value = "Binario";
+  document.getElementById("accion2").value = "Hexadecimal";
   resolver();
 }
 window.onload = inicializar;

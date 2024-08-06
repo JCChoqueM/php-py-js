@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       case ($select == "DecimalBinario"):
         $mensajeError = imprimirDecimalBinario($datos[0], $datos[1], $datos[2]);
         break;
-      case ($select == "DecimalHeaxdecimal"):
+      case ($select == "DecimalHexadecimal"):
         $mensajeError = imprimirDecimalHeaxdecimal($datos[0], $datos[1], $datos[2]);
         break;
       case ($select == "DecimalOctal"):
