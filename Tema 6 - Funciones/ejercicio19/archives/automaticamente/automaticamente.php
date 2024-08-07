@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../automaticamente/php/imprimir/imprimir.php';
+include __DIR__ . '/../automaticamente/php/imprimir/prueba.php';
 // Verificar si se recibieron datos POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -9,48 +9,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if (is_array($datos) && count($datos) > 0) {
     $select = $datos[1] == $datos[2] ? "Iguales" : $datos[1] . $datos[2];
 
-    switch ($select) {
-      case ($select == "Iguales"):
-        $mensajeError = imprimirIguales($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "DecimalBinario"):
-        $mensajeError = imprimirDecimalBinario($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "DecimalHexadecimal"):
-        $mensajeError = imprimirDecimalHeaxdecimal($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "DecimalOctal"):
-        $mensajeError = imprimirDecimalOctal($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "BinarioDecimal"):
-        $mensajeError = imprimirBinarioDecimal($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "BinarioHexadecimal"):
-        $mensajeError = imprimirBinarioHexadecimal($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "BinarioOctal"):
-        $mensajeError = imprimirBinarioOctal($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "HexadecimalDecimal"):
-        $mensajeError = imprimirHexadecimalDecimal($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "HexadecimalBinario"):
-        $mensajeError = imprimirHexadecimalBinario($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "HexadecimalOctal"):
-        $mensajeError = imprimirHexadecimalOctal($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "OctalDecimal"):
-        $mensajeError = imprimirOctalDecimal($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "OctalBinario"):
-        $mensajeError = imprimirOctalBinario($datos[0], $datos[1], $datos[2]);
-        break;
-      case ($select == "OctalHexadecimal"):
-        $mensajeError = imprimirOctalHexadecimal($datos[0], $datos[1], $datos[2]);
-        break;
-      default:
-        $mensajeError = "Preugntame mas";
+    // Preparar el nombre de la función
+    $funcion = "imprimir" . $select;
+
+    // Verificar si la función existe y llamarla
+    if (function_exists($funcion)) {
+      $mensajeError = $funcion($datos[0], $datos[1], $datos[2]);
+    } else {
+      $mensajeError = "Pregúntame más";
     }
 
     // Verificar si el input es un número
