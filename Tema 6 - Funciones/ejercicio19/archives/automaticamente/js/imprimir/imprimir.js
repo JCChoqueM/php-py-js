@@ -15,9 +15,8 @@ function imprimirConversion(numero, base, destino, conversionFunction) {
     case "1":
       // Convertir el número usando la función proporcionada
 
-      mensajeError = `El número: ${numero} ${base} <br>Es igual a: ${conversionFunction(
-        numero
-      )} ${destino}`;
+      mensajeError = `El número: ${numero} ${base} 
+      <br>Es igual a: ${conversionFunction(numero)} ${destino}`;
       break;
     default:
       mensajeError = "Error desconocido. Por favor, revise las entradas.";
