@@ -20,5 +20,3 @@ function validarNumero($numero, $base)
 
     return $esValido; // Retorna true si el número es válido, false en caso contrario
 }
-
-
