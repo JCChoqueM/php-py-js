@@ -39,66 +39,68 @@
             </span>
           </p>
         </h2>
-        <div class="bibliotecaFunciones">
-          <label for="accion">Selecciona una función:</label>
-          <select id="accion">
-            <option value="generaArrayInt">1.- generaArrayInt</option>
-            <option value="minimoArrayInt">2.- minimoArrayInt</option>
-            <option value="maximoArrayInt">3.- maximoArrayInt</option>
-            <option value="mediaArrayInt">4.- mediaArrayInt</option>
-            <option value="estaEnArrayInt">5.- estaEnArrayInt</option>
-            <option value="posicionEnArray">6.- posicionEnArray</option>
-            <option value="volteaArrayInt">7.- volteaArrayInt</option>
-            <option value="rotaDerechaArrayInt">8.- rotaDerechaArrayInt</option>
-            <option value="rotaIzquierdaArrayInt">
-              9.- rotaIzquierdaArrayInt
-            </option>
-          </select>
 
-          <div id="tooltips-container"></div>
-
-          <div class="formularioBiblioteca">
-            <form id="FormularioInputs">
-              <div id="funcionesInput"></div>
-            </form>
-          </div>
+        <div class="botones">
+          <button
+            class="botones_uso btn-generar"
+            type="button"
+            onclick="generarDatos()"
+          >
+            Generar
+          </button>
+          <button
+            class="botones_uso btn-limpiar"
+            type="button"
+            onclick="limpiarResultados()"
+          >
+            Limpiar
+          </button>
         </div>
 
-    
-          <div class="botones">
-            <button
-              class="botones_cajaForm"
-              type="button"
-              onclick="limpiarResultados()"
-            >
-              Limpiar resultados:
-            </button>
-            <button
-              id="miBoton"
-              class="botones_cajaForm"
-              type="button"
-              onclick="generarDatos()"
-            >
-              Generar números Aleatorios
-            </button>
-          </div>
+<div class="cuadroConSelect">
+
+  <div class="cajayBoton">
+  <p class="texto">Números generados automáticamente:</p>
+  <div class="rAleatorio" id="autoAleatorio"></div>
+</div>
   
+
+  <div class="selectorYFormulario">
+    <label for="accion">Selecciona una función:</label>
+    <select id="accion" class="selectFunciones">
+      <option value="generaArrayInt">1.- generaArrayInt</option>
+      <option value="minimoArrayInt">2.- minimoArrayInt</option>
+      <option value="maximoArrayInt">3.- maximoArrayInt</option>
+      <option value="mediaArrayInt">4.- mediaArrayInt</option>
+      <option value="estaEnArrayInt">5.- estaEnArrayInt</option>
+      <option value="posicionEnArray">6.- posicionEnArray</option>
+      <option value="volteaArrayInt">7.- volteaArrayInt</option>
+      <option value="rotaDerechaArrayInt">8.- rotaDerechaArrayInt</option>
+      <option value="rotaIzquierdaArrayInt">9.- rotaIzquierdaArrayInt</option>
+    </select>
+
+  </div>
+</div>
+<div class="formularioBiblioteca">
+  <form id="FormularioInputs">
+    <div id="funcionesInput"></div>
+  </form>
+</div>
+
+
+        <div id="tooltips-container"></div>
 
         <div class="contenedores">
           <!-- Contenedores de resultados -->
           <section class="caja cajaPHP">
             <!-- Botón y contenedor de resultados para PHP -->
-            <div class="cuadro-estilo-boton">
-              Solucion PHP
-            </div>
+            <div class="cuadro-estilo-boton">Solucion PHP</div>
             <div class="r" id="resultadoPHP"></div>
           </section>
 
           <section class="caja cajaJS">
             <!-- Botón y contenedor de resultados para JavaScript -->
-            <div class="cuadro-estilo-boton">
-              Solucion JS
-            </div>
+            <div class="cuadro-estilo-boton">Solucion JS</div>
             <div class="r" id="resultadoJavaScript"></div>
           </section>
         </div>
