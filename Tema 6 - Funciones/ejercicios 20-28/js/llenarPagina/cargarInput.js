@@ -31,7 +31,7 @@ function cargarInput() {
 
 // Llamar a la función cargarInput al cargar la página para mostrar el primer input
 function inicializar() {
-  document.getElementById("accion").value = "esCapicua";
+  document.getElementById("accion").value = "minimoArrayInt";
   cargarInput();
   cargarTooltip();
   cambiarColor();

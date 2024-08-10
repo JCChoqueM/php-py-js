@@ -39,56 +39,89 @@
             </span>
           </p>
         </h2>
-
-        <div class="botones">
-          <button
-            class="botones_uso btn-generar"
-            type="button"
-            onclick="generarDatos()"
-          >
-            Generar
-          </button>
-          <button
-            class="botones_uso btn-limpiar"
-            type="button"
-            onclick="limpiarResultados()"
-          >
-            Limpiar
-          </button>
+        <div id="tooltips-container"></div>
+        <div class="cajaInputsBotones">
+          <form class="imputs">
+            <div class="form-row">
+              <label for="num1">Tamaño:</label>
+              <input
+                type="number"
+                id="tamaño"
+                name="tamaño"
+                oninput="resolver()"
+                placeholder="Tamaño"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <label for="minimo">Minimo:</label>
+              <input
+                type="number"
+                id="minimo"
+                name="minimo"
+                oninput="resolver()"
+                placeholder="Minimo"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <label for="maximo">Máximo:</label>
+              <input
+                type="number"
+                id="maximo"
+                name="maximo"
+                oninput="resolver()"
+                placeholder="Máximo"
+                required
+              />
+            </div>
+            <div class="form-row" id="funcionesInput"></div>
+          </form>
+          <div class="dividirCuadros">
+            <div class="cuadroSeleccion">
+              <label for="accion">Selecciona una función:</label>
+              <select id="accion" class="selectFunciones">
+                <option value="generaArrayInt">1.- generaArrayInt</option>
+                <option value="minimoArrayInt">2.- minimoArrayInt</option>
+                <option value="maximoArrayInt">3.- maximoArrayInt</option>
+                <option value="mediaArrayInt">4.- mediaArrayInt</option>
+                <option value="estaEnArrayInt">5.- estaEnArrayInt</option>
+                <option value="posicionEnArray">6.- posicionEnArray</option>
+                <option value="volteaArrayInt">7.- volteaArrayInt</option>
+                <option value="rotaDerechaArrayInt">
+                  8.- rotaDerechaArrayInt
+                </option>
+                <option value="rotaIzquierdaArrayInt">
+                  9.- rotaIzquierdaArrayInt
+                </option>
+              </select>
+            </div>
+            <div class="botones">
+              <button
+                class="botones_uso btn-generar"
+                id="miBoton"
+                type="button"
+                onclick="generarDatos()"
+              >
+                Generar
+              </button>
+              <button
+                class="botones_uso btn-limpiar"
+                type="button"
+                onclick="limpiarResultados()"
+              >
+                Limpiar
+              </button>
+            </div>
+          </div>
         </div>
 
-<div class="cuadroConSelect">
-
-  <div class="cajayBoton">
-  <p class="texto">Números generados automáticamente:</p>
-  <div class="rAleatorio" id="autoAleatorio"></div>
-</div>
-  
-
-  <div class="selectorYFormulario">
-    <label for="accion">Selecciona una función:</label>
-    <select id="accion" class="selectFunciones">
-      <option value="generaArrayInt">1.- generaArrayInt</option>
-      <option value="minimoArrayInt">2.- minimoArrayInt</option>
-      <option value="maximoArrayInt">3.- maximoArrayInt</option>
-      <option value="mediaArrayInt">4.- mediaArrayInt</option>
-      <option value="estaEnArrayInt">5.- estaEnArrayInt</option>
-      <option value="posicionEnArray">6.- posicionEnArray</option>
-      <option value="volteaArrayInt">7.- volteaArrayInt</option>
-      <option value="rotaDerechaArrayInt">8.- rotaDerechaArrayInt</option>
-      <option value="rotaIzquierdaArrayInt">9.- rotaIzquierdaArrayInt</option>
-    </select>
-
-  </div>
-</div>
-<div class="formularioBiblioteca">
-  <form id="FormularioInputs">
-    <div id="funcionesInput"></div>
-  </form>
-</div>
-
-
-        <div id="tooltips-container"></div>
+        <div class="cajaArraySeleccion">
+          <div class="cuadroArray">
+            <p class="texto">Números generados automáticamente:</p>
+            <div class="arrayAleatorio" id="arrayNumerosAleatorios"></div>
+          </div>
+        </div>
 
         <div class="contenedores">
           <!-- Contenedores de resultados -->
