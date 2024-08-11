@@ -41,28 +41,39 @@ body {
     font-weight: bold;
     text-align: center;
     color: #fff;
-    /* Color del texto */
     border: 2px solid transparent;
-    /* Borde transparente */
+    /* Borde transparente, no se usa visualmente */
     border-radius: 5px;
-    /* Bordes redondeados */
     cursor: pointer;
     text-decoration: none;
-    /* Elimina subrayado */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    /* Transiciones suaves para el fondo, sombra y transformación */
 }
 
+.botones_uso:hover {
+
+    /* Color de fondo al pasar el mouse */
+    color: #f0f0f0;
+    /* Color del texto para contraste */
+    transform: scale(1.05);
+    /* Aumenta ligeramente el tamaño del botón */
+
+    /* Efecto de rayos de luz */
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5), 0 0 30px rgba(0, 0, 255, 0.3), 0 0 45px rgba(0, 0, 255, 0.2);
+    /* Sombra con varios niveles de difuminado para simular rayos de luz */
+}
 /* Estilo específico para el primer botón */
 .btn-limpiar {
     background-color: #dc3545;
     /* Color de fondo rojo */
-    border-color: #dc3545;
+
     /* Borde con el mismo color que el fondo */
 }
 
 .btn-generar {
     background-color: #28a745;
     /* Color de fondo verde */
-    border-color: #28a745;
+
     /* Borde con el mismo color que el fondo */
 }
 
@@ -325,3 +336,4 @@ margin-left: 1px;
     flex-direction: column;
     gap: 18px;
 }
+
