@@ -1,20 +1,21 @@
 <?php
-include __DIR__ . '/../automaticamente/php/imprimir/imprimir.php';
+include __DIR__ . '/php/imprimir/imprimir.php';
 // Verificar si se recibieron datos POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   // Obtener los datos enviados desde JavaScript
   $datos = json_decode(file_get_contents("php://input"), true);
   // Verificar si se recibieron datos y que sea un array
+  var_dump($datos);
   if (is_array($datos) && count($datos) > 0) {
     $select = $datos[0];
-    $input1 = ($datos[1]);
+
     $mensajeError = "";
     switch ($select) {
       case ($select == "generaArrayInt"):
-        $mensajeError = imprimirGeneraArrayInt($input1);
+        $mensajeError = "asea";
         break;
-      case ($select == "minimoArrayInt"):
+  /*     case ($select == "minimoArrayInt"):
         $mensajeError = imprimirMinimoArrayInt($input1);
         break;
       case ($select == "maximoArrayInt"):
@@ -41,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       case ($select == "rotaIzquierdaArrayInt"):
         $input2 = ($datos[2]);
         $mensajeError = imprimiRotaIzquierdaArrayInts($input1, $input2);
-        break;
+        break; */
       default:
        $mensajeError= "Preugntame mas";
     }

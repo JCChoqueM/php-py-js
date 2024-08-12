@@ -6,17 +6,7 @@ let falsofalso = 0;
 let contadorClicks = 0;
 let generarNegativoEnTercerClick = false;
 
-var numerosAuto = [];
-function generarArray(tamaño, min, max) {
-  numerosAuto = [];
-  for (contador = 0; contador < tamaño; contador++) {
-    const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
-    numerosAuto.push(numeroAleatorio);
-  }
-  var resultadosDiv = document.getElementById("arrayNumerosAleatorios");
 
-  resultadosDiv.innerHTML = numerosAuto.join(", ");
-}
 
 function generarDatos() {
   const select = document.getElementById("accion");
@@ -32,7 +22,6 @@ function generarDatos() {
       numInput.value = datos.tamaño;
       numInput2.value = datos.minimo;
       numInput3.value = datos.maximo;
-
       resolver();
       break;
     case "minimoArrayInt":

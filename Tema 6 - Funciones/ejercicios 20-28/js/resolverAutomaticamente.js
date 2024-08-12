@@ -20,18 +20,31 @@ async function resolver() {
       datos.push(value);
     }
   });
+  let array = validacion(datos[1], datos[2], datos[3]);
 
-  /*   console.log("Datos recopilados solo de inputs:", datos);  */ // Para verificar la recopilación de datos
-
-  // Llamar a las funciones con los datos recopilados
-  await automaticoPHP(datos);
-  await automaticoPY(datos);
-  automaticoJS(datos);
+  if (typeof array === "string") {
+    limpiarResultados()
+    var resultadosDiv = document.getElementById("arrayNumerosAleatorios");
+    resultadosDiv.innerHTML = array;
+    // Si el dato es una cadena, haz algo
+    console.log("El dato es un array:", array);
+  } else if (Array.isArray(array)) {
+    var resultadosDiv = document.getElementById("arrayNumerosAleatorios");
+    resultadosDiv.innerHTML = array.join(", ");
+    // Si el dato es un array, haz algo diferente
+    console.log("El dato es un array:", array);
+    array.unshift(select.value);
+    await automaticoPHP(array);
+    automaticoJS(array);
+  } else {
+    // Para otros tipos de datos, si es necesario
+    console.log("El dato es de otro tipo:", array);
+  }
 }
 
 async function automaticoPHP(datos) {
   try {
-    const url = "archives/automaticamente/automaticamente.php";
+    const url = "archives/automaticamente.php";
 
     const response = await fetch(url, {
       method: "POST",
@@ -53,34 +66,6 @@ async function automaticoPHP(datos) {
   }
 }
 
-async function automaticoPY(datos) {
-  try {
-    const url = "archives/automaticamente/automaticamentePY.php";
-
-    // Ajusta los datos según lo que espera el script PHP
-    const data = {
-      numero: datos,
-    };
-
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (response.ok) {
-      const resultado = await response.text();
-      var resultadosDiv = document.getElementById("resultadoPython");
-      resultadosDiv.innerHTML = ` ${resultado} <br>`;
-    } else {
-      console.error("Error en la solicitud:", response.status);
-    }
-  } catch (error) {
-    console.error("Error en la solicitud:", error);
-  }
-}
 function automaticoJS(datos) {
   mensajeError = automaticamenteJS(datos);
   const resultadoDiv1 = document.getElementById("resultadoJavaScript");
