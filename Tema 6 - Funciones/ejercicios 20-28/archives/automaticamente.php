@@ -11,57 +11,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $input1 = ($datos[1]);
     $mensajeError = "";
     switch ($select) {
-      case ($select == "esCapicua"):
-        $mensajeError = imprimirEscapicua($input1);
+      case ($select == "generaArrayInt"):
+        $mensajeError = imprimirGeneraArrayInt($input1);
         break;
-      case ($select == "esPrimo"):
-        $mensajeError = imprimirEsPrimo($input1);
+      case ($select == "minimoArrayInt"):
+        $mensajeError = imprimirMinimoArrayInt($input1);
         break;
-      case ($select == "siguientePrimo"):
-        $mensajeError = imprimirSiguientePrimo($input1);
+      case ($select == "maximoArrayInt"):
+        $mensajeError = imprimirMaximoArrayInt($input1);
         break;
-      case ($select == "potencia"):
+      case ($select == "mediaArrayInt"):
         $input2 = ($datos[2]);
-        $mensajeError = imprimirPotencia($input1, $input2);
+        $mensajeError = imprimirMediaArrayInt($input1, $input2);
         break;
-      case ($select == "digitos"):
-        $mensajeError = imprimirDigitos($input1);
+      case ($select == "estaEnArrayInt"):
+        $mensajeError = imprimirEstaEnArrayInt($input1);
         break;
-      case ($select == "voltea"):
-        $mensajeError = imprimirVoltea($input1);
+      case ($select == "posicionEnArray"):
+        $mensajeError = imprimirPosicionEnArray($input1);
         break;
-      case ($select == "digitoN"):
+      case ($select == "volteaArrayInt"):
         $input2 = ($datos[2]);
-        $mensajeError = imprimirDigitoN($input1, $input2);
+        $mensajeError = imprimirVolteaArrayInt($input1, $input2);
         break;
-      case ($select == "posicionDeDigito"):
+      case ($select == "rotaDerechaArrayInt"):
         $input2 = ($datos[2]);
-        $mensajeError = imprimirPosicionDeDigito($input1, $input2);
+        $mensajeError = imprimirRotaDerechaArrayInt($input1, $input2);
         break;
-      case ($select == "quitaPorDetras"):
+      case ($select == "rotaIzquierdaArrayInt"):
         $input2 = ($datos[2]);
-        $mensajeError = imprimirQuitaPorDetras($input1, $input2);
-        break;
-      case ($select == "quitaPorDelante"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirQuitaPorDelante($input1, $input2);
-        break;
-      case ($select == "pegaPorDetras"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirPegaPorDetras($input1, $input2);
-        break;
-      case ($select == "pegaPorDelante"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirPegaPorDelante($input1, $input2);
-        break;
-      case ($select == "trozoDeNumero"):
-        $input2 = ($datos[2]);
-        $input3 = ($datos[3]);
-        $mensajeError = imprimirTrozoDeNumero($input1, $input2, $input3);
-        break;
-      case ($select == "juntaNumeros"):
-        $input2 = ($datos[2]);
-        $mensajeError = imprimirJuntaNumeros($input1, $input2);
+        $mensajeError = imprimiRotaIzquierdaArrayInts($input1, $input2);
         break;
       default:
        $mensajeError= "Preugntame mas";

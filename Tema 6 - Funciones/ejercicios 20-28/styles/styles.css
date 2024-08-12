@@ -182,7 +182,7 @@ footer {
 }
 
 /* Estilo para el formulario */
-.imputs {
+.FormularioInputs {
     display: flex;
     flex-direction: column;
     /* Alinea los elementos en una columna */
@@ -195,7 +195,7 @@ footer {
 }
 
 /* Estilo para cada fila del formulario */
-.imputs .form-row {
+.FormularioInputs .form-row {
     display: flex;
     /* Usa flexbox para alinear label e input en fila */
     align-items: center;
@@ -205,7 +205,7 @@ footer {
 }
 
 /* Estilo para las etiquetas */
-.imputs label {
+.FormularioInputs label {
     font-size: 14px;
     /* Tamaño de fuente más pequeño */
     font-weight: bold;
@@ -217,7 +217,7 @@ footer {
 }
 
 /* Estilo para los inputs */
-.imputs input {
+.FormularioInputs input {
     padding: 8px;
     /* Espaciado interno reducido */
     font-size: 14px;
@@ -261,15 +261,24 @@ margin-left: 1px;
 
 /* Estilo específico para el área de números generados */
 .arrayAleatorio {
+    font-weight: bold;
     background-color: #e8e8e8;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 3px;
     min-height: 25px;
-    /* Ajusta la altura según el contenido esperado */
-    overflow-y: auto;
     width: 585px;
     /* Hace que el contenedor ocupe todo el ancho disponible */
+    display: flex;
+    /* Usa flexbox para centrar contenido */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    overflow-y: auto;
+    /* Permite el desplazamiento vertical si el contenido excede el alto del contenedor */
+    text-align: center;
+    /* Centra el texto dentro del contenedor */
 }
 
 /* Ajuste del select para hacerlo más compacto y alineado */

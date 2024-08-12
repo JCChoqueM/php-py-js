@@ -12,6 +12,8 @@ function generarArray() {
   resultadosDiv.innerHTML =
     "Números ingresados Automáticamente: <br>" + numerosAuto.join(", ") + "";
 }
+
+
 document.addEventListener("DOMContentLoaded", function () {
   generarArray(), buscar(), reemplazar();
   console.log(numerosAuto);
@@ -26,6 +28,6 @@ function limpiaryReemplazar() {
   cleanPython.innerHTML = "";
   cleanresultadoJavaScript.innerHTML = "";
   numerosAuto = [];
-  generarArray();
+  generarArray(); 
   console.log(numerosAuto);
 }
