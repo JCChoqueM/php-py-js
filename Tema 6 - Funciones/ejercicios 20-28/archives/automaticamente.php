@@ -6,17 +6,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   // Obtener los datos enviados desde JavaScript
   $datos = json_decode(file_get_contents("php://input"), true);
   // Verificar si se recibieron datos y que sea un array
-  var_dump($datos);
+
   if (is_array($datos) && count($datos) > 0) {
-    $select = $datos[0];
+    $select = $datos['seleccion'];
+    $array = $datos['arrayGenerado'];
 
     $mensajeError = "";
     switch ($select) {
       case ($select == "generaArrayInt"):
-        $mensajeError = "asea";
+        $mensajeError = imprimirGenerarArrayInt($array);
         break;
-  /*     case ($select == "minimoArrayInt"):
-        $mensajeError = imprimirMinimoArrayInt($input1);
+            case ($select == "minimoArrayInt"):
+        $mensajeError = imprimirMinimoArrayInt($array);
         break;
       case ($select == "maximoArrayInt"):
         $mensajeError = imprimirMaximoArrayInt($input1);
@@ -29,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mensajeError = imprimirEstaEnArrayInt($input1);
         break;
       case ($select == "posicionEnArray"):
-        $mensajeError = imprimirPosicionEnArray($input1);
+        $mensajeError = imprimirPosicionEnArrayInt($input1);
         break;
       case ($select == "volteaArrayInt"):
         $input2 = ($datos[2]);
@@ -41,10 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         break;
       case ($select == "rotaIzquierdaArrayInt"):
         $input2 = ($datos[2]);
-        $mensajeError = imprimiRotaIzquierdaArrayInts($input1, $input2);
-        break; */
+        $mensajeError = imprimirRotaIzquierdaArrayInt($input1, $input2);
+        break;
       default:
-       $mensajeError= "Preugntame mas";
+        $mensajeError = "Preugntame mas";
     }
 
     // Verificar si el input es un número

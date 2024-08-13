@@ -16,17 +16,21 @@ function generarDatos() {
   const numInput3 = document.getElementById("maximo");
   const numInput4 = document.getElementById("extra");
   /*   console.log("---------------------------------------------"); */
+ let datos = generarTrozoDeNumero();
   switch (opcionSeleccionada) {
     case "generaArrayInt":
-      let datos = generarTrozoDeNumero();
+     
       numInput.value = datos.tamaño;
       numInput2.value = datos.minimo;
       numInput3.value = datos.maximo;
       resolver();
       break;
     case "minimoArrayInt":
-      numInput.value = generarPrimo();
-      resolver();
+
+     numInput.value = datos.tamaño;
+     numInput2.value = datos.minimo;
+     numInput3.value = datos.maximo;
+     resolver();
       break;
     case "maximoArrayInt":
       numInput.value = generarSiguientePrimo();

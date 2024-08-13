@@ -50,17 +50,18 @@ function inicializar() {
   cargarInput();
   cargarTooltip();
   cambiarColor();
+  generarDatos()
 }
 window.onload = inicializar;
 
 // Llamar a la función cargarInput cada vez que se cambie la selección en el select
 
 document.getElementById("accion").onchange = function () {
+
   cargarInput(); // Llama a la función cargarInput()
   cambiarColor();
   cargarTooltip();
-
-  limpiarResultados();
+  resolver();
   // Llama a otra función, por ejemplo, otraFuncion()
   // Llama a otras funciones aquí según sea necesario
 };

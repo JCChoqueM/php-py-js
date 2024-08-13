@@ -1,20 +1,13 @@
 <?php
-function esCapicua($numero)
+function minimoArrayInt($array)
 {
-    $numeroOriginal = $numero;
-    $numero = (abs($numero));
-    $volteado = 0;
-    $digito = null;
-    while ($numero > 0) {
-        $digito = $numero % 10;
-        $volteado = $volteado * 10 + $digito;
-        $numero = intdiv($numero, 10);
+    $minimo = $array[0]; // Inicializa el mínimo con el primer valor del array
+
+    foreach ($array as $valor) {
+        if ($valor < $minimo) {
+            $minimo = $valor;
+        }
     }
 
-    // Comparar la cadena original con la invertida
-    if (abs($numeroOriginal) === $volteado) {
-        return "El número <span style='color: green'>" . abs($numeroOriginal) . "</span> es capicúa";
-    } else {
-        return "El número <span style='color: red'>" . abs($numeroOriginal) . "</span> NO es capicúa";
-    }
+    return $minimo;
 }

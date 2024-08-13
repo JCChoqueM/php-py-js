@@ -11,7 +11,6 @@ async function resolver() {
 
   // Crear un array indexado para almacenar los valores recopilados
   const datos = [];
-  datos.push(select.value);
   // Iterar sobre los valores del formulario
   datosFormulario.forEach((value, key) => {
     const inputElement = formulario.querySelector(`[name="${key}"]`);
@@ -20,10 +19,19 @@ async function resolver() {
       datos.push(value);
     }
   });
-  let array = validacion(datos[1], datos[2], datos[3]);
+
+  let array = validacion(datos[0], datos[1], datos[2]);
+
+  const objetoDatos = {
+    seleccion: select.value,
+    arrayGenerado: array,
+  };
+  if (datos.length > 3) {
+    objetoDatos.extra = datos[3];
+  }
 
   if (typeof array === "string") {
-    limpiarResultados()
+    limpiarResultados();
     var resultadosDiv = document.getElementById("arrayNumerosAleatorios");
     resultadosDiv.innerHTML = array;
     // Si el dato es una cadena, haz algo
@@ -33,9 +41,9 @@ async function resolver() {
     resultadosDiv.innerHTML = array.join(", ");
     // Si el dato es un array, haz algo diferente
     console.log("El dato es un array:", array);
-    array.unshift(select.value);
-    await automaticoPHP(array);
-    automaticoJS(array);
+
+    await automaticoPHP(objetoDatos);
+    automaticoJS(objetoDatos);
   } else {
     // Para otros tipos de datos, si es necesario
     console.log("El dato es de otro tipo:", array);
