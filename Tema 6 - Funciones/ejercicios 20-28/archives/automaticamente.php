@@ -17,29 +17,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       case ($select == "generaArrayInt"):
         $mensajeError = imprimirGenerarArrayInt($array);
         break;
-            case ($select == "minimoArrayInt"):
+      case ($select == "minimoArrayInt"):
         $mensajeError = imprimirMinimoArrayInt($array);
         break;
       case ($select == "maximoArrayInt"):
         $mensajeError = imprimirMaximoArrayInt($array);
         break;
       case ($select == "mediaArrayInt"):
-        $mensajeError = imprimirMediaArrayInt($array, $input2);
+        $mensajeError = imprimirMediaArrayInt($array);
         break;
       case ($select == "estaEnArrayInt"):
-        $mensajeError = imprimirEstaEnArrayInt($array);
+        $mensajeError = imprimirEstaEnArrayInt($array, $extra);
         break;
       case ($select == "posicionEnArray"):
-        $mensajeError = imprimirPosicionEnArrayInt($array);
+        $mensajeError = imprimirPosicionEnArrayInt($array, $extra);
         break;
       case ($select == "volteaArrayInt"):
-        $mensajeError = imprimirVolteaArrayInt($array, $input2);
+        $mensajeError = imprimirVolteaArrayInt($array);
         break;
       case ($select == "rotaDerechaArrayInt"):
-        $mensajeError = imprimirRotaDerechaArrayInt($array, $input2);
+        $mensajeError = imprimirRotaDerechaArrayInt($array, $extra);
         break;
       case ($select == "rotaIzquierdaArrayInt"):
-        $mensajeError = imprimirRotaIzquierdaArrayInt($array, $input2);
+        $mensajeError = imprimirRotaIzquierdaArrayInt($array, $extra);
         break;
       default:
         $mensajeError = "Preugntame mas";
