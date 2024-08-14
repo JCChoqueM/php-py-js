@@ -17,61 +17,21 @@ function generarDatos() {
   let datos = generarTrozoDeNumero();
   switch (opcionSeleccionada) {
     case "generaArrayInt":
-      numInput.value = datos.tamaño;
-      numInput2.value = datos.minimo;
-      numInput3.value = datos.maximo;
-      resolver();
-      break;
     case "minimoArrayInt":
-      numInput.value = datos.tamaño;
-      numInput2.value = datos.minimo;
-      numInput3.value = datos.maximo;
-      resolver();
-      break;
     case "maximoArrayInt":
-      numInput.value = datos.tamaño;
-      numInput2.value = datos.minimo;
-      numInput3.value = datos.maximo;
-      resolver();
-      break;
     case "mediaArrayInt":
-      numInput.value = datos.tamaño;
-      numInput2.value = datos.minimo;
-      numInput3.value = datos.maximo;
-      resolver();
-      break;
     case "estaEnArrayInt":
-      numInput.value = datos.tamaño;
-      numInput2.value = datos.minimo;
-      numInput3.value = datos.maximo;
-
-      resolver();
-      break;
     case "posicionEnArrayInt":
-      numInput.value = datos.tamaño;
-      numInput2.value = datos.minimo;
-      numInput3.value = datos.maximo;
-      resolver();
-      break;
     case "volteaArrayInt":
-      numInput.value = datos.tamaño;
-      numInput2.value = datos.minimo;
-      numInput3.value = datos.maximo;
-      resolver();
-      break;
     case "rotaDerechaArrayInt":
-      numInput.value = datos.tamaño;
-      numInput2.value = datos.minimo;
-      numInput3.value = datos.maximo;
-      resolver();
-      break;
     case "rotaIzquierdaArrayInt":
       numInput.value = datos.tamaño;
       numInput2.value = datos.minimo;
       numInput3.value = datos.maximo;
       resolver();
       break;
-    default: // Color por defecto
+    default:
+      // Color por defecto
       numInput.value = 666;
       break;
   }
@@ -103,8 +63,8 @@ function generarTrozoDeNumero() {
 
   return { tamaño, minimo, maximo };
 }
-
 // !SECTION 13.- trozoDeNumero
+
 function extra2() {
   // Obtener el input con ID "extra" dentro del contenedor de inputs
   var input = document.querySelector("#funcionesInput #extra");
