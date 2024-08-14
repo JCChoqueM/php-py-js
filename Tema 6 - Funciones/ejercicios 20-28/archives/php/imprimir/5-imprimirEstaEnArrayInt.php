@@ -1,7 +1,7 @@
 <?php
 // app/includes/archivo2.php
 include __DIR__ . '/../funciones/funciones.php';
-function imprimirEstaEnArrayInt($input1)
+function imprimirEstaEnArrayInt($input1,$extra)
 {
     $mensajeError = "";
     if (is_array($input1)) {

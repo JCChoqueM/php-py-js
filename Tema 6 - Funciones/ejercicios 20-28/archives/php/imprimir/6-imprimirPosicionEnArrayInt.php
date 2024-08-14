@@ -1,7 +1,8 @@
 <?php
 // app/includes/archivo2.php
 include __DIR__ . '/../funciones/funciones.php';
-function imprimirPosicionEnArrayInt($input1)
+function
+imprimirPosicionEnArrayInt($input1, $extra)
 {
     $mensajeError = "";
     if (is_array($input1)) {

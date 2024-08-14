@@ -19,6 +19,7 @@ async function resolver() {
       datos.push(value);
     }
   });
+  console.log(datos.length);
 
   let array = validacion(datos[0], datos[1], datos[2]);
 
@@ -31,7 +32,7 @@ async function resolver() {
   }
 
   if (typeof array === "string") {
-    limpiarResultados();
+    limpiarCajas();
     var resultadosDiv = document.getElementById("arrayNumerosAleatorios");
     resultadosDiv.innerHTML = array;
     // Si el dato es una cadena, haz algo

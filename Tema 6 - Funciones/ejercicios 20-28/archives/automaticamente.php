@@ -8,42 +8,54 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   // Verificar si se recibieron datos y que sea un array
 
   if (is_array($datos) && count($datos) > 0) {
+    $mensajeError = "";
     $select = $datos['seleccion'];
     $array = $datos['arrayGenerado'];
+    print_r(count($datos));
+    print_r($datos);
+    if (count($datos) > 2) {
+      $extra = $datos['extra'];
+      switch ($select) {
+        case ($select == "estaEnArrayInt"):
+          $mensajeError = imprimirEstaEnArrayInt($array, $extra);
+          break;
+        case ($select == "posicionEnArray"):
+          $mensajeError = imprimirPosicionEnArrayInt($array, $extra);
+          break;
+        case ($select == "rotaDerechaArrayInt"):
+          $mensajeError = imprimirRotaDerechaArrayInt($array, $extra);
+          break;
+        case ($select == "rotaIzquierdaArrayInt"):
+          $mensajeError = imprimirRotaIzquierdaArrayInt($array, $extra);
+          break;
+        default:
+          $mensajeError = "EL 4TO INPUT ESTA MAL";
+      }
+    } else {
+      switch ($select) {
+        case ($select == "generaArrayInt"):
+          $mensajeError = imprimirGenerarArrayInt($array);
+          break;
+        case ($select == "minimoArrayInt"):
+          $mensajeError = imprimirMinimoArrayInt($array);
+          break;
+        case ($select == "maximoArrayInt"):
+          $mensajeError = imprimirMaximoArrayInt($array);
+          break;
+        case ($select == "mediaArrayInt"):
+          $mensajeError = imprimirMediaArrayInt($array);
+          break;
 
+        case ($select == "volteaArrayInt"):
+          $mensajeError = imprimirVolteaArrayInt($array);
+          break;
 
-    $mensajeError = "";
-    switch ($select) {
-      case ($select == "generaArrayInt"):
-        $mensajeError = imprimirGenerarArrayInt($array);
-        break;
-      case ($select == "minimoArrayInt"):
-        $mensajeError = imprimirMinimoArrayInt($array);
-        break;
-      case ($select == "maximoArrayInt"):
-        $mensajeError = imprimirMaximoArrayInt($array);
-        break;
-      case ($select == "mediaArrayInt"):
-        $mensajeError = imprimirMediaArrayInt($array);
-        break;
-      case ($select == "estaEnArrayInt"):
-        $mensajeError = imprimirEstaEnArrayInt($array, $extra);
-        break;
-      case ($select == "posicionEnArray"):
-        $mensajeError = imprimirPosicionEnArrayInt($array, $extra);
-        break;
-      case ($select == "volteaArrayInt"):
-        $mensajeError = imprimirVolteaArrayInt($array);
-        break;
-      case ($select == "rotaDerechaArrayInt"):
-        $mensajeError = imprimirRotaDerechaArrayInt($array, $extra);
-        break;
-      case ($select == "rotaIzquierdaArrayInt"):
-        $mensajeError = imprimirRotaIzquierdaArrayInt($array, $extra);
-        break;
-      default:
-        $mensajeError = "Preugntame mas";
+        default:
+          $mensajeError = "Preugntame mas";
+      }
     }
+
+
 
     // Verificar si el input es un número
 

@@ -12,7 +12,7 @@ function generarDatos() {
   const numInput = document.getElementById("tamaño");
   const numInput2 = document.getElementById("minimo");
   const numInput3 = document.getElementById("maximo");
-  const numInput4 = document.getElementById("extra");
+
   /*   console.log("---------------------------------------------"); */
   let datos = generarTrozoDeNumero();
   switch (opcionSeleccionada) {
@@ -44,6 +44,7 @@ function generarDatos() {
       numInput.value = datos.tamaño;
       numInput2.value = datos.minimo;
       numInput3.value = datos.maximo;
+
       resolver();
       break;
     case "posicionEnArrayInt":
@@ -104,3 +105,15 @@ function generarTrozoDeNumero() {
 }
 
 // !SECTION 13.- trozoDeNumero
+function extra2() {
+  // Obtener el input con ID "extra" dentro del contenedor de inputs
+  var input = document.querySelector("#funcionesInput #extra");
+
+  // Asignar un número aleatorio si el input existe
+  if (input) {
+    input.value = generarNumeroAleatorio(1, 9);
+  } else {
+    console.error('Elemento con ID "extra" no encontrado.');
+  }
+  resolver();
+}
