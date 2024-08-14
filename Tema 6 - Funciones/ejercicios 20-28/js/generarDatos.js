@@ -1,11 +1,3 @@
-let esPrimerClick = true;
-let trozoDenumeroError = true;
-let contadorDeClicks = 1;
-let falsofalso = 0;
-
-let contadorClicks = 0;
-let generarNegativoEnTercerClick = false;
-
 function generarDatos() {
   const select = document.getElementById("accion");
   const opcionSeleccionada = select.value;

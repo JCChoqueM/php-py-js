@@ -14,7 +14,7 @@
     --color-maximoArrayInt: rgb(91, 202, 91);
     --color-mediaArrayInt: rgb(202, 91, 202);
     --color-estaEnArrayInt: rgb(91, 202, 202);
-    --color-posicionEnArray: rgb(202, 43, 202);
+    --color-posicionEnArrayInt: rgb(202, 43, 202);
     --color-volteaArrayInt: rgb(202, 146, 91);
     --color-rotaDerechaArrayInt: rgb(91, 202, 146);
     --color-rotaIzquierdaArrayInt: rgb(146, 91, 202);
@@ -113,8 +113,8 @@
         background-color: var(--color-estaEnArrayInt);
     }
 
-    #posicionEnArrayTooltip {
-        background-color: var(--color-posicionEnArray);
+    #posicionEnArrayIntTooltip {
+        background-color: var(--color-posicionEnArrayInt);
     }
 
     #volteaArrayIntTooltip {
@@ -156,7 +156,7 @@
     }
 
     ._6 {
-        color: var(--color-posicionEnArray);
+        color: var(--color-posicionEnArrayInt);
     }
 
     ._7 {

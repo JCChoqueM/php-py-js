@@ -29,10 +29,10 @@ function cambiarColor() {
         document.documentElement
       ).getPropertyValue("--color-estaEnArrayInt");
       break;
-    case "posicionEnArray":
+    case "posicionEnArrayInt":
       boton.style.backgroundColor = getComputedStyle(
         document.documentElement
-      ).getPropertyValue("--color-posicionEnArray");
+      ).getPropertyValue("--color-posicionEnArrayInt");
       break;
     case "volteaArrayInt":
       boton.style.backgroundColor = getComputedStyle(
