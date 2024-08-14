@@ -6,8 +6,8 @@ function imprimirMaximoArrayInt($input1)
     $mensajeError = "";
     if (is_array($input1)) {
 
-        $mensajeError = "El valor minimo del array es: " . minimoArrayInt($input1);
-        $mensajeError .= crearTabla($input1, -1, minimoArrayInt($input1));
+        $mensajeError = "El valor maximo del array es: " . maximoArrayInt($input1);
+        $mensajeError .= crearTabla($input1, -1, maximoArrayInt($input1));
     } else {
         echo "El índice 'arrayGenerado' no es un array.";
     }

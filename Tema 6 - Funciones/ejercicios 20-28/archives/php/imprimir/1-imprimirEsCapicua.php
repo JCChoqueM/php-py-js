@@ -7,7 +7,7 @@ function imprimirGenerarArrayInt($input1)
     if (is_array($input1)) {
 
         $mensajeError = "El array Generado es:";
-        $mensajeError .= crearTabla($input1,-1,-1);
+        $mensajeError .= crearTabla($input1, -1, -1);
     } else {
         echo "El índice 'arrayGenerado' no es un array.";
     }

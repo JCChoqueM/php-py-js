@@ -6,8 +6,6 @@ let falsofalso = 0;
 let contadorClicks = 0;
 let generarNegativoEnTercerClick = false;
 
-
-
 function generarDatos() {
   const select = document.getElementById("accion");
   const opcionSeleccionada = select.value;
@@ -16,56 +14,60 @@ function generarDatos() {
   const numInput3 = document.getElementById("maximo");
   const numInput4 = document.getElementById("extra");
   /*   console.log("---------------------------------------------"); */
- let datos = generarTrozoDeNumero();
+  let datos = generarTrozoDeNumero();
   switch (opcionSeleccionada) {
     case "generaArrayInt":
-     
       numInput.value = datos.tamaño;
       numInput2.value = datos.minimo;
       numInput3.value = datos.maximo;
       resolver();
       break;
     case "minimoArrayInt":
-
-     numInput.value = datos.tamaño;
-     numInput2.value = datos.minimo;
-     numInput3.value = datos.maximo;
-     resolver();
+      numInput.value = datos.tamaño;
+      numInput2.value = datos.minimo;
+      numInput3.value = datos.maximo;
+      resolver();
       break;
     case "maximoArrayInt":
-      numInput.value = generarSiguientePrimo();
+      numInput.value = datos.tamaño;
+      numInput2.value = datos.minimo;
+      numInput3.value = datos.maximo;
       resolver();
       break;
-    case "potencia":
-      let numero = generarPotencia();
-      numInput.value = numero[0];
-      numInput2.value = numero[1];
+    case "mediaArrayInt":
+      numInput.value = datos.tamaño;
+      numInput2.value = datos.minimo;
+      numInput3.value = datos.maximo;
       resolver();
       break;
-    case "digitos":
-      numInput.value = generarDigito();
+    case "estaEnArrayInt":
+      numInput.value = datos.tamaño;
+      numInput2.value = datos.minimo;
+      numInput3.value = datos.maximo;
       resolver();
       break;
-    case "voltea":
-      numInput.value = generarVoltea();
+    case "posicionEnArrayInt":
+      numInput.value = datos.tamaño;
+      numInput2.value = datos.minimo;
+      numInput3.value = datos.maximo;
       resolver();
       break;
-    case "digitoN":
-      let digitoN = generarDigitoN();
-      numInput.value = digitoN.input1;
-      numInput2.value = digitoN.input2;
+    case "volteaArrayInt":
+      numInput.value = datos.tamaño;
+      numInput2.value = datos.minimo;
+      numInput3.value = datos.maximo;
       resolver();
       break;
-    case "posicionDeDigito":
-      let posicionDedigito = generarPosicionDeDigito();
-      numInput.value = posicionDedigito.input1;
-      numInput2.value = posicionDedigito.input2;
+    case "rotaDerechaArrayInt":
+      numInput.value = datos.tamaño;
+      numInput2.value = datos.minimo;
+      numInput3.value = datos.maximo;
       resolver();
       break;
-    case "quitaPorDetras":
-      let QuitaPorDetras = generarQuitaPorDetras();
-      numInput.value = QuitaPorDetras.input1;
-      numInput2.value = QuitaPorDetras.input2;
+    case "rotaIzquierdaArrayInt":
+      numInput.value = datos.tamaño;
+      numInput2.value = datos.minimo;
+      numInput3.value = datos.maximo;
       resolver();
       break;
     default: // Color por defecto
