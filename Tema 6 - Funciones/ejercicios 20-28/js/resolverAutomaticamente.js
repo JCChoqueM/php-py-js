@@ -1,11 +1,9 @@
-function generarNumeroAleatorio(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+
 
 /* SECTION inicio sumar todo */
 async function resolver() {
   // Recopilar los valores de los inputs utilizando FormData
-  const formulario = document.getElementById("FormularioInputs");
+  const formulario = document.getElementById("FormularioInputs2");
   let select = document.getElementById("accion");
   const datosFormulario = new FormData(formulario);
 
@@ -19,7 +17,7 @@ async function resolver() {
       datos.push(value);
     }
   });
-  console.log(datos.length);
+  console.log(datos);
 
   let array = validacion(datos[0], datos[1], datos[2]);
 

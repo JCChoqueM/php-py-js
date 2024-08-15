@@ -21,25 +21,40 @@ function cargarInput() {
         var tempDiv = document.createElement("div");
         tempDiv.innerHTML = data;
 
-        // Obtener el elemento específico por su ID según la opción seleccionada
+        // Obtener el div específico por su ID según la opción seleccionada
         var inputContainer = tempDiv.querySelector(
-          "#" + opcionSeleccionada + "Input"
+          `#${opcionSeleccionada}Input`
         );
-
-        // Clonar el contenido del input container para evitar problemas de referencia
-        var inputContent = inputContainer.cloneNode(true);
 
         // Limpiar el contenedor de inputs antes de agregar el nuevo contenido
         var funcionesInputContainer = document.getElementById("funcionesInput");
         funcionesInputContainer.innerHTML = "";
 
-        // Insertar el contenido clonado en el contenedor deseado
-        funcionesInputContainer.appendChild(inputContent);
+        // Extraer y agregar solo los elementos internos del contenedor
+        if (inputContainer) {
+          // Crear un contenedor temporal para manejar la clonación
+          var tempContentDiv = document.createElement("div");
+          tempContentDiv.appendChild(inputContainer.cloneNode(true));
+
+          // Extraer los elementos internos (label, input, button)
+          var label = tempContentDiv.querySelector("label");
+          var input = tempContentDiv.querySelector("input");
+          var button = tempContentDiv.querySelector("button");
+
+          // Insertar los elementos internos en el contenedor principal
+          if (label) funcionesInputContainer.appendChild(label);
+          if (input) funcionesInputContainer.appendChild(input);
+          if (button) funcionesInputContainer.appendChild(button);
+        } else {
+          console.error(
+            `No se encontró el contenedor para ${opcionSeleccionada}`
+          );
+        }
 
         // Llenar el input con ID "extra" con un número aleatorio
-        extra2();
+  
       })
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => console.error("Error al cargar el contenido:", error));
   } else {
     // Si la opción seleccionada no está en las opciones especiales, no hacer nada
     var funcionesInputContainer = document.getElementById("funcionesInput");
@@ -53,7 +68,7 @@ function inicializar() {
   cargarInput();
   cargarTooltip();
   cambiarColor();
-  generarDatos();
+limpiarResultados()
 }
 window.onload = inicializar;
 
@@ -61,8 +76,8 @@ window.onload = inicializar;
 
 document.getElementById("accion").onchange = function () {
   cargarInput(); // Llama a la función cargarInput()
-  cambiarColor();
   cargarTooltip();
-  resolver();
+  cambiarColor();
+  limpiarCajas()
   // Llama a otras funciones aquí según sea necesario
 };
