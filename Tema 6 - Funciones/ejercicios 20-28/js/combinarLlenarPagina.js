@@ -2,8 +2,6 @@ const archivosJavaScript = [
   'js/llenarPagina/insertarSpan.js',
   'js/llenarPagina/funcionesParatexto.js',
   'js/llenarPagina/cargarFuncionesHtml.js',
-  'js/llenarPagina/funcionaParaSeleccionar.js',
-  'js/llenarPagina/cargarInput.js',
   'js/llenarPagina/cambiarColor.js'
 ]
 
