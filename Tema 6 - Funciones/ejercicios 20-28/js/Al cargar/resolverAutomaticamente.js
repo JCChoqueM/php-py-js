@@ -1,8 +1,3 @@
-
-
-/* SECTION inicio sumar todo */
-
-
 async function automaticoPHP(datos) {
   try {
     const url = "archives/automaticamente.php";

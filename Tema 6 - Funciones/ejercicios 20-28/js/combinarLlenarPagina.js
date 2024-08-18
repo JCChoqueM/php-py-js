@@ -1,8 +1,6 @@
 const archivosJavaScript = [
   'js/llenarPagina/insertarSpan.js',
   'js/llenarPagina/funcionesParatexto.js',
-  'js/llenarPagina/cargarFuncionesHtml.js',
-  'js/llenarPagina/cambiarColor.js'
 ]
 
 async function cargarYAgregarArchivosAlHead () {
