@@ -46,7 +46,7 @@ function automaticamenteJS(datos) {
       mensajeError = imprimirJuntaNumeros(input1, datos[2]);
       break;
     default:
-      mensajeError = "soy error";
+      mensajeError = "Revisa algun Dato";
   }
   return mensajeError;
 }
