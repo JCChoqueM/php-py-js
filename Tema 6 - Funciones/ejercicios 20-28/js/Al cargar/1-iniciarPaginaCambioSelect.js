@@ -4,6 +4,7 @@ function inicializar() {
   cargarInput();
   cargarTooltip();
   cambiarColor();
+  
   generarDatos();
 }
 window.onload = inicializar;
