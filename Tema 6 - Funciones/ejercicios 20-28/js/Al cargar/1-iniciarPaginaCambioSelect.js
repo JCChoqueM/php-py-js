@@ -5,6 +5,8 @@ function inicializar() {
   cargarTooltip();
   cambiarColor();
   
+
+  
   generarDatos();
 }
 window.onload = inicializar;
