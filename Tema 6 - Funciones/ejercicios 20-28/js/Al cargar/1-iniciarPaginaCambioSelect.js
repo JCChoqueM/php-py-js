@@ -10,6 +10,7 @@ function inicializar() {
   generarDatos();
 }
 window.onload = inicializar;
+// recmpletar
 
 // Llamar a la función cargarInput cada vez que se cambie la selección en el select
 
