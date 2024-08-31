@@ -6,8 +6,7 @@ function inicializar() {
   cambiarColor();
   
 
-  
-  generarDatos();
+  mostrarDatos();
 }
 window.onload = inicializar;
 // recmpletar
