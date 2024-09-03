@@ -1,15 +1,15 @@
 <?php
 // app/includes/archivo2.php
 
-function volteaArrayInt($array)
-{
-    $maximo = $array[0]; // Inicializa el mínimo con el primer valor del array
+function volteaArrayInt($input1)
 
-    foreach ($array as $valor) {
-        if ($valor > $maximo) {
-            $maximo = $valor;
-        }
+{
+    $resultado = [];
+    $count = count($input1);
+
+    for ($i = $count - 1; $i >= 0; $i--) {
+        $resultado[] = $input1[$i];
     }
 
-    return $maximo;
+    return $resultado;
 }

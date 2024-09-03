@@ -47,15 +47,17 @@ function imprimirPosicionEnArrayInt($input1, $extra)
 function imprimirRotaDerechaArrayInt($input1, $extra)
 {
     $mensajeError = "";
+
     if (is_array($input1)) {
 
-        $arrayRotado = rotaDerechaArrayInt($input1, $extra);
+        // Utilizar $extra también como número de rotaciones
+        list($arrayRotado, $nuevaPosicion) = rotaDerechaArrayInt($input1, $extra);
 
-        // Añadir el array rotado a la salida
-        $mensajeError .= "Array Original".crearTabla($input1, 0, $extra);
-        $mensajeError .= "Array rotado: $extra veces " . crearTabla($arrayRotado,$input1[0], $input1[0]) ;
+        // Añadir el array original y el array rotado a la salida
+        $mensajeError .= "Array Original:<br>" . crearTablaRotada($input1, 0) . "<br>";
+        $mensajeError .= "Array Rotado $extra veces:<br>" . crearTablaRotada($arrayRotado, $nuevaPosicion) . "<br>";
     } else {
-        echo "El índice 'arrayGenerado' no es un array.";
+        $mensajeError = "El índice 'arrayGenerado' no es un array.";
     }
 
     return $mensajeError;
@@ -67,12 +69,17 @@ function
 imprimirRotaIzquierdaArrayInt($input1, $extra)
 {
     $mensajeError = "";
+
     if (is_array($input1)) {
 
-        $mensajeError = "El valor minimo del array es: " . minimoArrayInt($input1);
-        $mensajeError .= crearTabla($input1, -1, minimoArrayInt($input1));
+        // Utilizar $extra también como número de rotaciones
+        list($arrayRotado, $nuevaPosicion) = rotaIzquierdaArrayInt($input1, $extra);
+
+        // Añadir el array original y el array rotado a la salida
+        $mensajeError .= "Array Original:<br>" . crearTablaRotada($input1, 0) . "<br>";
+        $mensajeError .= "Array Rotado $extra veces:<br>" . crearTablaRotada($arrayRotado, $nuevaPosicion) . "<br>";
     } else {
-        echo "El índice 'arrayGenerado' no es un array.";
+        $mensajeError = "El índice 'arrayGenerado' no es un array.";
     }
 
     return $mensajeError;

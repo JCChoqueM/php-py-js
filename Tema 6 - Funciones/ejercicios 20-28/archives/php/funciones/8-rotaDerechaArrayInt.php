@@ -1,24 +1,27 @@
 <?php
 // app/includes/archivo2.php
 
-function rotaDerechaArrayInt($array,$n)
+function rotaDerechaArrayInt($input1, $extra)
 {
-    if (empty($array)) {
-        return $array;
+    if (empty($input1)) {
+        return [$input1, 0]; // Retorna el array vacío y posición 0
     }
 
     // Calcula el número de rotaciones necesarias
-    $n = $n % count($array);
+    $extra = $extra % count($input1);
 
-    // Si $n es 0, no se requiere rotación
-    if ($n === 0) {
-        return $array;
+    // Si $extra es 0, no se requiere rotación
+    if ($extra === 0) {
+        return [$input1, 0]; // Retorna el array original y posición 0
     }
 
-    // Extrae las partes del array y las combina en el orden deseado
-    $part1 = array_splice($array, -$n); // Últimos $n elementos
-    $part2 = array_splice($array, 0); // Elementos restantes
+    // Extrae las partes del input1 y las combina en el orden deseado
+    $part1 = array_splice($input1, -$extra); // Últimos $extra elementos
+    $part2 = array_splice($input1, 0); // Elementos restantes
 
-    // Devuelve el array rotado
-    return array_merge($part1, $part2);
+    // Calcula la nueva posición del elemento que estaba en el índice 0
+    $nuevaPosicion = $extra;
+
+    // Devuelve el array rotado y la nueva posición del primer elemento original
+    return [array_merge($part1, $part2), $nuevaPosicion];
 }

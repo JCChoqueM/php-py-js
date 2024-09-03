@@ -76,12 +76,17 @@ function imprimirMediaArrayInt($input1)
 function imprimirVolteaArrayInt($input1)
 {
     $mensajeError = "";
+
     if (is_array($input1)) {
 
-        $mensajeError = "El valor minimo del array es: " . minimoArrayInt($input1);
-        $mensajeError .= crearTabla($input1, -1, minimoArrayInt($input1));
+        // Utilizar $extra también como número de rotaciones
+        $arrayVolteado = volteaArrayInt($input1);
+
+        // Añadir el array original y el array rotado a la salida
+        $mensajeError .= "Array Original:" . crearTablaRotada($input1, -1) . "<br>";
+        $mensajeError .= "Array Volteado:" . crearTablaRotada($arrayVolteado, -1) . "<br>";
     } else {
-        echo "El índice 'arrayGenerado' no es un array.";
+        $mensajeError = "El índice 'arrayGenerado' no es un array.";
     }
 
     return $mensajeError;
