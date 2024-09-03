@@ -4,7 +4,7 @@ function extra2() {
 
   // Asignar un número aleatorio si el input existe
   if (input) {
-    input.value = myData.getValues().extra;
+    input.value = generarNumeroAleatorio(1,9);
   } else {
     console.error('Elemento con ID "extra" no encontrado.');
   }
