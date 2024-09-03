@@ -1,4 +1,3 @@
-// Objeto myData inicializado con valores generados
 const myData = (function () {
   let values = generarPrimerDato(); // Inicializa con datos generados
 
@@ -14,13 +13,21 @@ const myData = (function () {
         "tamaño" in newValues &&
         "minimo" in newValues &&
         "maximo" in newValues &&
-        "extra" in newValues &&
         "array" in newValues
       ) {
-        values = { ...newValues }; // Actualiza los valores
+        // Actualiza los valores, preservando 'extra' si no está presente en newValues
+        values = {
+          ...values, // Mantiene los valores actuales
+          ...newValues, // Sobrescribe solo con los nuevos valores proporcionados
+        };
+        console.log(myData.getValues());
+      } else if (newValues && "extra" in newValues) {
+        // Actualiza solo 'extra' si es lo único proporcionado
+        values.extra = newValues.extra;
+        console.log(myData.getValues());
       } else {
         console.error(
-          "Debe ser un objeto con las propiedades 'tamaño', 'minimo', 'maximo', 'extra' y 'array'."
+          "Debe ser un objeto con las propiedades 'tamaño', 'minimo', 'maximo', 'array' o 'extra'."
         );
       }
     },
@@ -28,32 +35,60 @@ const myData = (function () {
 })();
 
 // Función para actualizar los datos según los cambios del input
-function actualizarDatosDesdeInput() {
-  const tamaño = parseInt(document.getElementById("tamaño").value, 10);
-  const minimo = parseInt(document.getElementById("minimo").value, 10);
-  const maximo = parseInt(document.getElementById("maximo").value, 10);
-  const extra = parseInt(document.getElementById("extra").value, 10);
+function actualizarDatosDesdeInput(event) {
+  const id = event.target.id;
 
-  // Verifica si los valores son válidos antes de actualizar
-  if (isNaN(tamaño) || isNaN(minimo) || isNaN(maximo) || isNaN(extra)) {
-    console.error("Por favor, ingrese todos los valores numéricos.");
-    return;
+  if (id === "extra") {
+    // Actualizar solo 'extra' si es el campo modificado
+    const extraInput = document.getElementById("extra");
+    const extra = extraInput ? parseInt(extraInput.value, 10) : undefined;
+
+    if (extraInput && !isNaN(extra)) {
+      myData.updateValues({ extra });
+    } else {
+      console.error(
+        "Por favor, ingrese un valor numérico válido para 'extra'."
+      );
+    }
+  } else {
+    // Actualizar tamaño, mínimo, máximo y regenerar el array
+    const tamaño = parseInt(document.getElementById("tamaño").value, 10);
+    const minimo = parseInt(document.getElementById("minimo").value, 10);
+    const maximo = parseInt(document.getElementById("maximo").value, 10);
+
+    if (isNaN(tamaño) || isNaN(minimo) || isNaN(maximo)) {
+      console.error("Por favor, ingrese todos los valores numéricos.");
+      return;
+    }
+
+    const newArray = generarArray(tamaño, minimo, maximo); // Regenera el array con los nuevos datos
+
+    const newValues = {
+      tamaño,
+      minimo,
+      maximo,
+      array: newArray,
+    };
+
+    myData.updateValues(newValues);
   }
 
-  const newArray = generarArray(tamaño, minimo, maximo); // Regenera el array con los nuevos datos
-  myData.updateValues({ tamaño, minimo, maximo, extra, array: newArray });
+  // Llamar a la función resolver() después de actualizar
+  resolver();
 }
 
 // Asignar un evento de escucha para actualizar los datos al cambiar un input
 document
   .getElementById("tamaño")
-  .addEventListener("change", actualizarDatosDesdeInput);
+  .addEventListener("input", actualizarDatosDesdeInput);
 document
   .getElementById("minimo")
-  .addEventListener("change", actualizarDatosDesdeInput);
+  .addEventListener("input", actualizarDatosDesdeInput);
 document
   .getElementById("maximo")
-  .addEventListener("change", actualizarDatosDesdeInput);
+  .addEventListener("input", actualizarDatosDesdeInput);
 document
-  .getElementById("extra")
-  .addEventListener("change", actualizarDatosDesdeInput);
+  .getElementById("funcionesInput")
+  .addEventListener("input", actualizarDatosDesdeInput);
+
+console.log(myData.getValues());

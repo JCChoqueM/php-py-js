@@ -6,7 +6,7 @@ function mostrarDatos() {
   const mostrarArray = document.getElementById("arrayNumerosAleatorios");
 
   // Generar datos aleatorios
-  let datos = generarPrimerDato();
+  let datos = myData.getValues();
 
   // Asignar valores comunes
   numInput.value = datos.tamaño;
@@ -17,7 +17,4 @@ function mostrarDatos() {
     extraInput.value = datos.extra;
   }
   mostrarArray.value = datos.array.join(", ");
-
-  // Llamar a resolver() siempre
-  resolver();
 }

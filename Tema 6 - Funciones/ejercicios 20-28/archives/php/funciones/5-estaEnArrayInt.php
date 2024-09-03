@@ -1,15 +1,11 @@
 <?php
 // app/includes/archivo2.php
 
-function estaEnArrayInt($array)
+function estaEnArrayInt($array,$numero)
 {
-    $maximo = $array[0]; // Inicializa el mínimo con el primer valor del array
-
-    foreach ($array as $valor) {
-        if ($valor > $maximo) {
-            $maximo = $valor;
-        }
+    // Verifica si $array es un array y si $numero está en el array
+    if (is_array($array) && in_array($numero, $array)) {
+        return true;
     }
-
-    return $maximo;
+    return false;
 }

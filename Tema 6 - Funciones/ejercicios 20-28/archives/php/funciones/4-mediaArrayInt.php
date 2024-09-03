@@ -1,15 +1,20 @@
 <?php
-// app/includes/archivo2.php
-
 function mediaArrayInt($array)
 {
-    $maximo = $array[0]; // Inicializa el mínimo con el primer valor del array
-
-    foreach ($array as $valor) {
-        if ($valor > $maximo) {
-            $maximo = $valor;
-        }
+    // Verifica si el array no está vacío
+    if (empty($array)) {
+        return 0; // Retorna 0 si el array está vacío
     }
 
-    return $maximo;
+    // Suma todos los elementos del array
+    $suma = array_sum($array);
+
+    // Calcula el número de elementos en el array
+    $numeroDeElementos = count($array);
+
+    // Calcula la media
+    $media = $suma / $numeroDeElementos;
+
+    // Formatea la media a 2 decimales
+    return number_format($media, 2);
 }

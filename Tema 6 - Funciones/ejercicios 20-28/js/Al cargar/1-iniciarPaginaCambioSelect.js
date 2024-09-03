@@ -1,6 +1,6 @@
 // Llamar a la función cargarInput al cargar la página para mostrar el primer input
 function inicializar() {
-  document.getElementById("accion").value = "estaEnArrayInt";
+  document.getElementById("accion").value = "rotaDerechaArrayInt";
   cargarInput();
   cargarTooltip();
   cambiarColor();
@@ -17,6 +17,7 @@ document.getElementById("accion").onchange = function () {
   cargarInput(); // Llama a la función cargarInput()
   cambiarColor();
   cargarTooltip();
+    mostrarDatos();
   resolver();
   // Llama a otras funciones aquí según sea necesario
 };
@@ -27,6 +28,7 @@ function selectOption(option) {
   cargarInput();
   cambiarColor();
   cargarTooltip();
+    mostrarDatos();
   resolver();
 }
 

@@ -35,7 +35,7 @@ function validacion(tamaño, minimo, maximo) {
       if (maximo < minimo) {
         mensajeError = "Maximo no puede ser menor que Minimo";
       } else {
-        mensajeError = generarArray(tamaño, maximo, minimo);
+        mensajeError = myData.getValues().array;
       }
       break;
   }

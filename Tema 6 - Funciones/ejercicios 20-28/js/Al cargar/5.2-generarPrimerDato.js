@@ -10,3 +10,10 @@ function generarPrimerDato() {
   let array = generarArray(tamaño, minimo, maximo);
   return { tamaño, minimo, maximo, extra, array };
 }
+
+function generarDatos() {
+  const nuevoDatos = generarPrimerDato();
+  myData.updateValues(nuevoDatos);
+  mostrarDatos();
+  resolver();
+}

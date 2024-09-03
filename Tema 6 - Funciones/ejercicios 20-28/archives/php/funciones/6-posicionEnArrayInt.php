@@ -1,15 +1,18 @@
 <?php
 // app/includes/archivo2.php
-
-function posicionEnArrayInt($array)
+function posicionEnArrayInt($input1, $extra)
 {
-    $maximo = $array[0]; // Inicializa el mínimo con el primer valor del array
 
-    foreach ($array as $valor) {
-        if ($valor > $maximo) {
-            $maximo = $valor;
+    $posiciones = [];
+    if (is_array($input1)) {
+        foreach ($input1 as $indice => $valor) {
+            if ($valor == $extra) {
+                $posiciones[] = $indice;
+            }
         }
+    } else {
+        echo "El primer parámetro no es un array.";
     }
 
-    return $maximo;
+    return $posiciones;
 }

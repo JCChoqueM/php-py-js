@@ -34,7 +34,7 @@ async function resolver() {
     console.log("El dato es un array:", array);
   } else if (Array.isArray(array)) {
     var resultadosDiv = document.getElementById("arrayNumerosAleatorios");
-    resultadosDiv.innerHTML = array.join(", ");
+    resultadosDiv.innerHTML = myData.getValues().array.join(", ");
     // Si el dato es un array, haz algo diferente
     console.log("El dato es un array:", array);
 
