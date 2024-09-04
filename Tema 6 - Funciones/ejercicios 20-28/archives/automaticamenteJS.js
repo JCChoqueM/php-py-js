@@ -1,52 +1,39 @@
 function automaticamenteJS(datos) {
   mensajeError = "";
-  let select = datos[0];
-  let input1 = datos[1];
+  let select = datos.seleccion;
+  let input1 = datos.arrayGenerado;
+  let extra = datos.extra;
   switch (true) {
-    case select == "esCapicua":
-      mensajeError = imprimirEscapicua(input1);
+    case select == "generaArrayInt":
+      mensajeError = imprimirGenerarArrayInt(input1);
       break;
-    case select == "esPrimo":
-      mensajeError = imprimirEsPrimo(input1);
+    case select == "minimoArrayInt":
+      mensajeError = imprimirMinimoArrayInt(input1);
       break;
-    case select == "siguientePrimo":
-      mensajeError = imprimirSiguientePrimo(input1);
+    case select == "maximoArrayInt":
+      mensajeError = imprimirMaximoArrayInt(input1);
       break;
-    case select == "potencia":
-      mensajeError = imprimirPotencia(input1, datos[2]);
+    case select == "mediaArrayInt":
+      mensajeError = imprimirMediaArrayInt(input1);
       break;
-    case select == "digitos":
-      mensajeError = imprimirDigitos(input1);
+    case select == "estaEnArrayInt":
+      mensajeError = imprimirEstaEnArrayInt(input1,extra);
       break;
-    case select == "voltea":
-      mensajeError = imprimirVoltea(input1);
+    case select == "posicionEnArrayInt":
+      mensajeError = imprimirPosicionEnArrayInt(input1,extra);
       break;
-    case select == "digitoN":
-      mensajeError = imprimirDigitoN(input1, datos[2]);
+    case select == "volteaArrayInt":
+      mensajeError = imprimirVolteaArrayInt(input1);
       break;
-    case select == "posicionDeDigito":
-      mensajeError = imprimirPosicionDeDigito(input1, datos[2]);
+    case select == "rotaDerechaArrayInt":
+      mensajeError = imprimirRotaDerechaArrayInt(input1, extra);
       break;
-    case select == "quitaPorDetras":
-      mensajeError = imprimirQuitaPorDetras(input1, datos[2]);
+    case select == "rotaIzquierdaArrayInt":
+      mensajeError = imprimirRotaIzquierdaArrayInt(input1, extra);
       break;
-    case select == "quitaPorDelante":
-      mensajeError = imprimirQuitaPorDelante(input1, datos[2]);
-      break;
-    case select == "pegaPorDetras":
-      mensajeError = imprimirPegaPorDetras(input1, datos[2]);
-      break;
-    case select == "pegaPorDelante":
-      mensajeError = imprimirPegaPorDelante(input1, datos[2]);
-      break;
-    case select == "trozoDeNumero":
-      mensajeError = imprimirTrozoDeNumero(input1, datos[2], datos[3]);
-      break;
-    case select == "juntaNumeros":
-      mensajeError = imprimirJuntaNumeros(input1, datos[2]);
-      break;
+
     default:
-      mensajeError = "Algo fallo ";
+      mensajeError = "Algo fallo " + datos.extra;
   }
   return mensajeError;
 }
