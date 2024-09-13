@@ -173,7 +173,7 @@ footer {
     /* Usa flexbox para alinear elementos en una fila */
     align-items: center;
     /* Alinea los elementos en la parte superior del contenedor */
-    gap: 20px;
+    gap: 55px;
     /* Espacio entre los elementos */
     padding: 15px;
 ;

@@ -37,7 +37,7 @@ function cargarInput() {
         funcionesInputContainer.appendChild(inputContent);
 
         // Llenar el input con ID "extra" con un número aleatorio
-        extra2();
+
       })
       .catch((error) => console.error("Error:", error));
   } else {

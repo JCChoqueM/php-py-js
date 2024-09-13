@@ -62,13 +62,24 @@
         <div class="cajaInputsBotones">
           <form class="FormularioInputs" id="FormularioInputs2">
             <div class="form-row">
-              <label for="tamaño">Tamaño:</label>
+              <label for="Fila">Fila:</label>
               <input
                 type="number"
-                id="tamaño"
-                name="tamaño"
+                id="Fila"
+                name="Fila"
                 oninput="resolver()"
-                placeholder="Tamaño"
+                placeholder="Fila"
+                required
+              />
+            </div>
+              <div class="form-row">
+              <label for="Columna">Columna:</label>
+              <input
+                type="number"
+                id="Columna"
+                name="Columna"
+                oninput="resolver()"
+                placeholder="Columna"
                 required
               />
             </div>
