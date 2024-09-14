@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>sessionStorage Example</title>
+</head>
+<body>
+    <input type="text" id="sessionData" placeholder="Enter session data">
+    <button onclick="saveSessionData()">Save Session Data</button>
+    <button onclick="clearSessionData()">Clear Session Data</button>
+
+    <script>
+        function saveSessionData() {
+            const data = document.getElementById('sessionData').value;
+            sessionStorage.setItem('sessionKey', data);
+            alert('Session data saved!');
+        }
+
+        function clearSessionData() {
+            sessionStorage.removeItem('sessionKey');
+            alert('Session data cleared!');
+        }
+    </script>
+</body>
+</html>
