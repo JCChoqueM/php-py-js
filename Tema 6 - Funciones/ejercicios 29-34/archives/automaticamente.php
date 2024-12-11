@@ -50,3 +50,12 @@ function obtenerFuncion($accion)
 
   return isset($mapaFunciones[$accion]) ? $mapaFunciones[$accion] : null;
 }
+
+
+
+
+
+
+
+
+
