@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>#19</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/colorEnunciado.css" />
+
+    <!-- Importar scripts JavaScript -->
+
+    <script src="archives/soluciones/solucion.js"></script>
+    <script src="archives/automaticamente/js/funciones/crearTabla.js"></script>
+    <script src="archives/automaticamente/js/imprimir/imprimir.js"></script>
+    <script src="js/resolverAutomaticamente.js" defer></script>
+    <script src="js/solucion.js" defer></script>
+    <script src="js/limpiarResultados.js" defer></script>
+    <script src="js/generarDatos.js" defer></script>
+    <script src="js/combinarLlenarPagina.js" defer></script>
+    <script src="js/validarInput.js" defer></script>
+    <script src="archives/automaticamente/js/funciones/1-decimal_a.js"></script>
+    <script src="archives/automaticamente/js/funciones/2-base_a.js"></script>
+    <script src="archives/automaticamente/js/funciones/3-Iguales.js"></script>
+    <script src="archives/automaticamente/js/funciones/validar.js"></script>
+
+    <script src="archives/automaticamente/automaticamenteJS.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Ejercicio 19</h1>
+        <h2>
+          <!-- Descripción del ejercicio -->
+          <p>
+            une y amplos los dos programas anteriores de tal forma que se
+            permita convertir un numero entre cualquiera de las siguientes
+            bases: <span style="color: orange">Decimal</span>,
+            <span style="color: red">Binario</span>,
+            <span style="color: purple">Hexadecimal</span> y
+            <span style="color: teal">Octal</span>.<br />
+            <span class="contenedor-1">
+              <span id="funciones-container"></span>
+            </span>
+          </p>
+        </h2>
+        <div class="cajaDeDatos">
+          <div class="formularioBiblioteca">
+            <form id="FormularioInputs">
+              <label for="num1">Ingrese un número:</label>
+              <input
+                type="text"
+                id="num1"
+                name="num1"
+                value="459"
+                oninput="resolver()"
+                placeholder="Ingrese un número aquí"
+                required
+              />
+            </form>
+          </div>
+          <div class="selecciones">
+            <div>
+              <label for="accion">Base:</label>
+              <select id="accion">
+                <option value="Decimal">Decimal</option>
+                <option value="Binario">Binario</option>
+                <option value="Hexadecimal">Hexadecimal</option>
+                <option value="Octal">Octal</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="accion2">Transformar a:</label>
+              <select id="accion2">
+                <option value="Decimal">Decimal</option>
+                <option value="Binario">Binario</option>
+                <option value="Hexadecimal">Hexadecimal</option>
+                <option value="Octal">Octal</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="cajaboton">
+          <div>
+            <button
+              class="botones_cajaForm"
+              type="button"
+              onclick="limpiarResultados()"
+            >
+              Limpiar resultados
+            </button>
+          </div>
+
+          <div>
+            <button
+              class="botones_cajaForm"
+              type="button"
+              onclick="generarDatos()"
+            >
+              Generar números Aleatorios
+            </button>
+          </div>
+        </div>
+
+        <div class="contenedores">
+          <!-- Contenedores de resultados -->
+          <section class="caja cajaPHP">
+            <div class="r" id="resultadoPHP"></div>
+          </section>
+          <section class="caja cajaPY">
+            <div class="r" id="resultadoPython"></div>
+          </section>
+          <section class="caja cajaJS">
+            <div class="r" id="resultadoJavaScript"></div>
+          </section>
+        </div>
+
+        <footer>
+          <!-- Pie de página -->
+          <br />Julio Cesar Choque Mamani. <br />
+          <br />Solucionario: Luis José Sánchez - Aprende PHP con ejercicios.
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

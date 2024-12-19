@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DDr5"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-26 01:04:20 "/>
+        <attribute name="created" value="RERyNTtERFI1OzIwMjQtMDEtMjE7IjEyOjA4OjAwICI7MTc1Mg=="/>
+        <attribute name="edited" value="RERyNTtERFI1OzIwMjQtMDEtMjY7IjAxOjA0OjIwICI7MTU7MTkxNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="frutas" type="String" array="True" size="3"/>
+            <assign variable="frutas[0]" expression="&quot;manzana&quot;"/>
+            <assign variable="frutas[1]" expression="&quot;platano&quot;"/>
+            <assign variable="frutas[2]" expression="&quot;naranja&quot;"/>
+            <declare name="fruits" type="String" array="True" size="3"/>
+            <assign variable="fruits[0]" expression="&quot;apple&quot;"/>
+            <assign variable="fruits[1]" expression="&quot;banana&quot;"/>
+            <assign variable="fruits[2]" expression="&quot;orange&quot;"/>
+            <declare name="traducirM" type="String" array="True" size="size(frutas)"/>
+            <declare name="respuesta" type="String" array="True" size="size(frutas)"/>
+            <declare name="traducidoM" type="String" array="True" size="size(frutas)"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <declare name="encontrado" type="Boolean" array="False" size=""/>
+            <declare name="contador2" type="Integer" array="False" size=""/>
+            <declare name="correcto" type="Integer" array="False" size=""/>
+            <assign variable="correcto" expression="0"/>
+            <declare name="incorrecto" type="Integer" array="False" size=""/>
+            <assign variable="incorrecto" expression="0"/>
+            <output expression="&quot;Traduce las siguientes frutas : &quot;" newline="True"/>
+            <for variable="contador" start="0" end="size(frutas)-1" direction="inc" step="1">
+                <assign variable="traducirM[contador]" expression="frutas[random(3)]"/>
+                <output expression="&quot;Traduce : &quot;&amp;traducirM[contador]" newline="True"/>
+                <input variable="respuesta[contador]"/>
+            </for>
+            <for variable="contador" start="0" end="size(frutas)-1" direction="inc" step="1">
+                <assign variable="encontrado" expression="false"/>
+                <assign variable="contador2" expression="0"/>
+                <while expression="encontrado==false&amp;&amp;contador2&lt;size(frutas)">
+                    <if expression="traducirM[contador]==frutas[contador2]">
+                        <then>
+                            <assign variable="traducidoM[contador]" expression="fruits[contador2]"/>
+                            <assign variable="encontrado" expression="true"/>
+                        </then>
+                        <else>
+                            <assign variable="contador2" expression="contador2+1"/>
+                        </else>
+                    </if>
+                </while>
+                <if expression="traducidoM[contador]==respuesta[contador]">
+                    <then>
+                        <output expression="&quot;Respuesta : &quot;&amp;traducirM[contador]&amp;&quot; = &quot;&amp;respuesta[contador]" newline="True"/>
+                        <output expression="&quot;          correcto : &quot;&amp;traducirM[contador]&amp;&quot; = &quot;&amp;traducidoM[contador]" newline="True"/>
+                        <assign variable="correcto" expression="correcto+1"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Respuesta : &quot;&amp;traducirM[contador]&amp;&quot; = &quot;&amp;respuesta[contador]" newline="True"/>
+                        <output expression="&quot;          incorrecto :&quot;&amp;traducirM[contador]&amp;&quot; en ingles es = &quot;&amp;traducidoM[contador]" newline="True"/>
+                        <assign variable="incorrecto" expression="incorrecto+1"/>
+                    </else>
+                </if>
+            </for>
+            <output expression="&quot;Respuestas Correctas = &quot;&amp;correcto" newline="True"/>
+            <output expression="&quot;Respuestas Incorrectas = &quot;&amp;incorrecto" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
