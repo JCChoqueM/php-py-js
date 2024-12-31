@@ -100,6 +100,8 @@ const generarInputs = (opcionSeleccionada) => {
   });
 };
 
+
+
 cambiarColorBoton(select.value);
 insertarDescripcionDiv(select.value);
 generarInputs(select.value);

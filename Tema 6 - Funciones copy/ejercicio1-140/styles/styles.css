@@ -9,33 +9,33 @@
   /* Estilo de texto en negrita para texto destacado */
 
   /* Definición de colores personalizados para cada tipo de tooltip */
-  --esCapicua: rgb(91, 91, 202);
-  --esPrimo: rgb(202, 91, 91);
-  --siguientePrimo: rgb(91, 202, 91);
-  --potencia: rgb(202, 91, 202);
-  --digitos: rgb(91, 202, 202);
-  --voltea: rgb(202, 43, 202);
-  --digitoN: rgb(202, 146, 91);
-  --posicionDeDigito: rgb(91, 202, 146);
-  --quitaPorDetras: rgb(146, 91, 202);
-  --quitaPorDelante: rgb(202, 91, 146);
-  --pegaPorDetras: rgb(238, 132, 10);
-  --pegaPorDelante: rgb(91, 202, 91);
-  --trozoDeNumero: rgb(202, 91, 91);
-  --juntaNumeros: rgb(91, 91, 202);
+  --esCapicua: #004085; /* Azul fuerte */
+  --esPrimo: #721c24; /* Rojo oscuro */
+  --siguientePrimo: #155724; /* Verde oscuro */
+  --potencia: #6f42c1; /* Morado fuerte */
+  --digitos: #0c5460; /* Azul verdoso oscuro */
+  --voltea: #856404; /* Amarillo dorado oscuro */
+  --digitoN: #343a40; /* Gris oscuro */
+  --posicionDeDigito: #1b4b91; /* Azul medianoche */
+  --quitaPorDetras: #5a3b1e; /* Marrón oscuro */
+  --quitaPorDelante: #2d3748; /* Gris carbón */
+  --pegaPorDetras: #007bff; /* Azul vivo */
+  --pegaPorDelante: #28a745; /* Verde brillante */
+  --trozoDeNumero: #dc3545; /* Rojo vibrante */
+  --juntaNumeros: #b38600; /* Amarillo oscuro dorado */
 }
-h1{
- margin-top: 0;
-margin-bottom: 5px;
+h1 {
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 .fuente {
   display: block;
   margin-right: 50px;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .fuente__contenido {
-  white-space: normal; 
+  white-space: normal;
   font-size: 23px;
   font-weight: bold;
   margin-top: 10px;
@@ -78,7 +78,6 @@ margin-bottom: 5px;
   gap: 15px; /* Espacio entre el label y el select */
   background-color: #f4f4f4;
   border-radius: 8px;
-
 }
 
 /* Estilo para el label dentro del bloque */
@@ -94,12 +93,11 @@ margin-bottom: 5px;
 .seleccion__select {
   font-size: 16px;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #140707;
   border-radius: 4px;
   width: 200px;
   height: 40px; /* Asegura que la altura del select sea suficiente para alinear el texto */
 }
-
 
 /* Estilo general para el formulario */
 .formulario {
@@ -112,7 +110,7 @@ margin-bottom: 5px;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   border-radius: 8px;
-  width: 3000px;
+  width: 1200px;
 }
 
 /* Contenedor de los inputs */
@@ -123,7 +121,7 @@ margin-bottom: 5px;
   width: 300px; /* Asegura que el input ocupe el 100% del contenedor */
   padding: 8px;
 }
-.label__letra{
+.label__letra {
   font-weight: bold;
 }
 /* Estilo para los botones dentro del formulario */
@@ -141,7 +139,6 @@ margin-bottom: 5px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #007bff;
   color: white;
   transition: background-color 0.3s;
 }
@@ -151,12 +148,95 @@ margin-bottom: 5px;
   background-color: #28a745;
 }
 
-/* Efecto al pasar el ratón sobre el botón */
-.formulario__boton:hover {
-  background-color: #0056b3;
-}
-
 /* Efecto al pasar el ratón sobre el botón de enviar */
 .formulario__boton--enviar:hover {
   background-color: #218838;
+}
+
+/* Contenedor principal que organiza las cajas */
+.contenedor {
+  display: flex;
+  justify-content: space-between; /* Espacio entre las secciones */
+  gap: 10px;
+  padding: 5px;
+}
+
+/* Estilos generales para las cajas */
+.contenedor__caja {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
+}
+
+/* Estilos para la caja PHP */
+.contenedor__caja--php {
+  background-color: #bacee0;
+  border: 2px solid blue;
+}
+
+/* Estilos para la caja JS */
+.contenedor__caja--js {
+  background-color: #dee670;
+  border: 2px solid rgb(204, 122, 14);
+}
+
+/* Estilo para los botones de cada caja */
+.caja__boton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+/* Estilo para el botón de PHP */
+.caja__boton--php {
+  background-color: #007bff;
+  color: white;
+  border: 2px solid rgb(54, 54, 211);
+}
+
+.caja__boton--php:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para el botón de JS */
+.caja__boton--js {
+  background-color: #f7df1e;
+  color: rgb(15, 3, 3);
+  border: 2px solid rgb(231, 162, 72);
+}
+
+.caja__boton--js:hover {
+  background-color: #ffd700;
+}
+
+/* Estilos para los resultados */
+.caja__resultado {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  height: 150px;
+  background-color: #fff;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  overflow-y: auto;
+  display: none; /* Oculta el resultado inicialmente */
+}
+
+/* Muestra el resultado cuando se active */
+.caja__resultado.active {
+  display: block;
 }
