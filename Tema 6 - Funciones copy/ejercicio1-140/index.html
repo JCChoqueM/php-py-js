@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>PHP Funciones ejercicios 1-14</title>
+    <link
+      rel="stylesheet"
+      href="styles/styles.css"
+    />
+  </head>
+  <body>
+    <h1>Ejercicio 1-14</h1>
+    <div class="fuente">
+      <span class="fuente__contenido fuente--">
+        Crea una <span style="color: orange">biblioteca</span> de <span style="color: red">funciones Matemáticas</span> que contenga las
+        siguientes <span style="color: purple">funciones</span>. <span style="color: teal">Recuerda</span> que puedes usar unas dentro de
+        otras si es necesario.
+      </span>
+      <span
+        id="contenedor"
+        class="fuente__contenido fuente--"
+      >
+        <!-- Elementos de texto -->
+      </span>
+      <div
+        id="tooltip"
+        class="tooltip"
+      ></div>
+    </div>
+
+    <div class="seleccion">
+      <p class="seleccion__texto">Selecciona una función:</p>
+      <select
+        id="miSelect"
+        class="seleccion__select"
+      ></select>
+    </div>
+
+    <div id="descripcionDiv" class="fuente__contenido" ></div>
+    <form action="" class="formulario " >
+      <div id="contenedorInputs" class="formulario__contenedor-inputs"></div>
+      <div class="formulario__botones">
+        <button id="miBoton" class="formulario__boton" type="button">Generar Numeros Aleatorios</button>
+        <button type="submit" class="formulario__boton formulario__boton--enviar">Enviar</button>
+      </div>
+    </form>
+    
+    <script src="javascript/objeto.js"></script>
+    <script src="javascript/script.js"></script>
+  </body>
+</html>

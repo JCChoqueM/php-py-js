@@ -1,0 +1,162 @@
+:root {
+  --color-fondo-tooltip: #555;
+  /* Color de fondo predeterminado del tooltip */
+  --color-texto-tooltip: #ffffff;
+  /* Color de texto predeterminado del tooltip */
+  --color-destacado-tooltip: underline;
+  /* Estilo de subrayado para texto destacado */
+  --color-destacado-texto: bold;
+  /* Estilo de texto en negrita para texto destacado */
+
+  /* Definición de colores personalizados para cada tipo de tooltip */
+  --esCapicua: rgb(91, 91, 202);
+  --esPrimo: rgb(202, 91, 91);
+  --siguientePrimo: rgb(91, 202, 91);
+  --potencia: rgb(202, 91, 202);
+  --digitos: rgb(91, 202, 202);
+  --voltea: rgb(202, 43, 202);
+  --digitoN: rgb(202, 146, 91);
+  --posicionDeDigito: rgb(91, 202, 146);
+  --quitaPorDetras: rgb(146, 91, 202);
+  --quitaPorDelante: rgb(202, 91, 146);
+  --pegaPorDetras: rgb(238, 132, 10);
+  --pegaPorDelante: rgb(91, 202, 91);
+  --trozoDeNumero: rgb(202, 91, 91);
+  --juntaNumeros: rgb(91, 91, 202);
+}
+h1{
+ margin-top: 0;
+margin-bottom: 5px;
+}
+.fuente {
+  display: block;
+  margin-right: 50px;
+  margin-bottom:10px;
+}
+
+.fuente__contenido {
+  white-space: normal; 
+  font-size: 23px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.texto-item {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: underline;
+  text-indent: 10px;
+}
+
+.texto-item:hover {
+  /* Opcional: si deseas un efecto al pasar el ratón */
+  color: inherit; /* Cambia el color solo si es necesario */
+}
+
+/* Estilo para el tooltip */
+.tooltip {
+  position: absolute;
+  display: none;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  background-color: #000; /* Color predeterminado para el fondo */
+  max-width: 200px;
+  text-align: center;
+  z-index: 1;
+  font-size: 18px;
+}
+
+/* Estilo para el bloque principal */
+.seleccion {
+  font-family: Arial, sans-serif;
+  display: flex; /* Alinea los elementos horizontalmente */
+  align-items: baseline; /* Alinea los elementos por la línea base */
+  gap: 15px; /* Espacio entre el label y el select */
+  background-color: #f4f4f4;
+  border-radius: 8px;
+
+}
+
+/* Estilo para el label dentro del bloque */
+.seleccion__texto {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  margin: 0; /* Elimina cualquier margen innecesario */
+  line-height: 24px; /* Ajusta la altura de línea para que se alinee con el select */
+}
+
+/* Estilo para el select dentro del bloque */
+.seleccion__select {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  height: 40px; /* Asegura que la altura del select sea suficiente para alinear el texto */
+}
+
+
+/* Estilo general para el formulario */
+.formulario {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  gap: 15px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  width: 3000px;
+}
+
+/* Contenedor de los inputs */
+.formulario__contenedor-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px; /* Asegura que el input ocupe el 100% del contenedor */
+  padding: 8px;
+}
+.label__letra{
+  font-weight: bold;
+}
+/* Estilo para los botones dentro del formulario */
+.formulario__botones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Estilo común para todos los botones */
+.formulario__boton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+/* Estilo para el botón de enviar */
+.formulario__boton--enviar {
+  background-color: #28a745;
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+.formulario__boton:hover {
+  background-color: #0056b3;
+}
+
+/* Efecto al pasar el ratón sobre el botón de enviar */
+.formulario__boton--enviar:hover {
+  background-color: #218838;
+}
