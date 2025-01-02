@@ -71,6 +71,7 @@ select.addEventListener('change', () => {
 });
 
 const contenedorInputs = document.getElementById('contenedorInputs');
+
 const generarInputs = (opcionSeleccionada) => {
   // Limpiar contenido previo
   contenedorInputs.innerHTML = '';
