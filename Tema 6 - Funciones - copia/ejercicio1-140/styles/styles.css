@@ -221,22 +221,21 @@ h1 {
 
 /* Estilos para los resultados */
 .caja__resultado {
+  z-index: 100px;
   margin-top: 15px;
   padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 5px solid #b82c2c;
+  border-radius: 7px;
   width: 100%;
-  height: 150px;
-  background-color: #fff;
+  height: 100%;
+  background-color: #dee670;
   box-sizing: border-box;
   text-align: center;
   font-size: 18px;
-  color: #333;
+  color: #020202;
   overflow-y: auto;
-  display: none; /* Oculta el resultado inicialmente */
+ /* Oculta el resultado inicialmente */
 }
 
-/* Muestra el resultado cuando se active */
-.caja__resultado.active {
-  display: block;
-}
+
+

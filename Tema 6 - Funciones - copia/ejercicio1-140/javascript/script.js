@@ -100,8 +100,6 @@ const generarInputs = (opcionSeleccionada) => {
     contenedorInputs.appendChild(input);
   });
 };
-console.log("message")
-
 
 cambiarColorBoton(select.value);
 insertarDescripcionDiv(select.value);
