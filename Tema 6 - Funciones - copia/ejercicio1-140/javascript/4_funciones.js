@@ -1,9 +1,5 @@
-function funcion_esCapicua(elemento,datos,mostrarFuncion) {
-
-    const valor = datos.num1 || "";
-
-    const esCapicua = valor === valor.split("").reverse().join("");
-
-    mostrarFuncion(document.querySelector("#resultadoJS"), esCapicua ? "Es capicúa" : "No es capicúa");
-  }
-  
+function funcion_esCapicua(datos) {
+  const numStr = datos.toString();
+  const numInvertido = numStr.split('').reverse().join('');
+  return numStr === numInvertido;
+}

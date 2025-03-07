@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     const funcionSeleccion = acciones['funcion_' + seleccion];
-    console.log(funcionSeleccion)
+ 
     const funcionMostrar = acciones['mostrar_' + seleccion];
 
     if (funcionSeleccion || funcionMostrar) {
