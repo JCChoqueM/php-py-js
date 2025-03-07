@@ -7,15 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const formData = new FormData(form);
     const datos = Object.fromEntries(formData.entries());
     const acciones = {
-      ['imprimir_' + seleccion]: window['imprimir_' + seleccion],
+      ['funcion_' + seleccion]: window['funcion_' + seleccion],
       ['mostrar_' + seleccion]: window['mostrar_' + seleccion],
     };
 
-    const funcionImprimir = acciones['imprimir_' + seleccion];
+    const funcionSeleccion = acciones['funcion_' + seleccion];
+    console.log(funcionSeleccion)
     const funcionMostrar = acciones['mostrar_' + seleccion];
 
-    if (funcionImprimir || funcionMostrar) {
-      validarYProcesar(datos, funcionImprimir, funcionMostrar);
+    if (funcionSeleccion || funcionMostrar) {
+      validarYProcesar(datos, funcionSeleccion, funcionMostrar);
     } else {
       console.warn(`No se encontró una función válida para "${seleccion}"`);
     }
