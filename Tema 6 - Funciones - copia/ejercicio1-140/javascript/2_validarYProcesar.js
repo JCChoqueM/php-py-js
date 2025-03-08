@@ -5,12 +5,13 @@ function filtrarCamposVacios(datos) {
 }
 function validarYProcesar(datos, funcionSeleccion, mostrarFuncion) {
   const resultadoJS = document.querySelector('#resultadoJS');
+  const resultadoPHP = document.querySelector('#resultadoPHP');
   const camposVacios = filtrarCamposVacios(datos);
   const totalCampos = Object.keys(datos).length;
 
   // Si no hay campos vacíos, procesamos los datos
   if (camposVacios.length === 0) {
-    mostrarFuncion(resultadoJS, datos, funcionSeleccion);
+    mostrarFuncion(resultadoJS, resultadoPHP, datos, funcionSeleccion);
     return;
   }
 
@@ -30,5 +31,6 @@ function validarYProcesar(datos, funcionSeleccion, mostrarFuncion) {
   }
 
   // Mostrar el mensaje de error
-  mostrarError(resultadoJS, mensaje);
+  mostrarResultado(resultadoJS, mensaje);
+  mostrarResultado(resultadoPHP, mensaje);
 }

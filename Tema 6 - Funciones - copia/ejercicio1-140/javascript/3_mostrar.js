@@ -1,35 +1,53 @@
-function mostrarError(resultadoJS, mensaje) {
-  resultadoJS.innerHTML = '';
-  const resultadoMensaje = document.createElement('p');
-  resultadoMensaje.classList.add('respuesta');
-  resultadoMensaje.textContent = mensaje;
-  resultadoJS.appendChild(resultadoMensaje);
+// Función para construir el mensaje con formato
+function construirMensaje(numeroOriginal, numero, esCapicua) {
+  let mensaje = numeroOriginal < 0
+    ? `El número <span style="color: red;">${numeroOriginal}</span> es negativo.<br>Al ignorar el signo: `
+    : '';
+
+  return mensaje + `El número <span style="color: ${esCapicua ? 'green' : 'red'};">${numero}</span> ${esCapicua ? 'es' : 'NO es'} capicúa.`;
 }
 
-function mostrar_esCapicua(resultadoJS, datos, funcionSeleccion) {
-  resultadoJS.innerHTML = ''; // Limpiar el contenedor de resultados
+// Función para mostrar el resultado en el contenedor con manejo de errores
+function mostrarResultado(contenedor, mensaje, esError = false) {
+  contenedor.innerHTML = ''; // Limpiar el contenido anterior
+  const elemento = document.createElement('p');
+  elemento.classList.add('respuesta');
+  elemento.innerHTML = esError ? `<span style="color: red;">${mensaje}</span>` : mensaje;
+  contenedor.appendChild(elemento);
+}
 
-  // Comprobar si el número es negativo
-  let numero = Math.abs(datos.num1);
-  let mensaje = '';
+// Función para obtener respuesta de PHP
+async function obtenerRespuestaPHP(numero) {
+  try {
+    const response = await fetch('javascript/capicua.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `num=${numero}`,
+    });
 
-  // Crear el elemento para mostrar el número
-  const numeroElemento = document.createElement('span');
-  numeroElemento.textContent = numero;
-
-  // Verificar si el número es negativo y actualizar el mensaje
-  if (datos.num1 < 0) {
-    mensaje = `El número <span style="color: red;">${datos.num1}</span> es negativo.<br>Al ignorar el signo: `;
-    numeroElemento.style.color = 'red';
+    return (await response.text()) === 'true'; // Devuelve booleano directamente
+  } catch (error) {
+    return new Error(error.message); // Devuelve un error en caso de fallo
   }
+}
 
-  // Verificar si el número es capicúa
-  const esCapicua = funcionSeleccion(numero);
-  mensaje += `El número <span style="color: ${esCapicua ? 'green' : 'red'};">${numero}</span> ${esCapicua ? 'es' : 'NO es'} capicúa.`;
 
-  // Crear y agregar el mensaje al contenedor de resultados
-  const resultadoMensaje = document.createElement('p');
-  resultadoMensaje.classList.add('respuesta');
-  resultadoMensaje.innerHTML = mensaje;
-  resultadoJS.appendChild(resultadoMensaje);
+
+// Función principal para verificar si un número es capicúa en JS y PHP
+async function mostrar_esCapicua(resultadoJS, resultadoPHP, datos, funcionSeleccion) {
+
+  const numeroOriginal = datos.num1;
+  const numero = Math.abs(numeroOriginal);
+
+  // Evaluar en JavaScript
+  const esCapicuaJS = funcionSeleccion(numero);
+  mostrarResultado(resultadoJS, construirMensaje(numeroOriginal, numero, esCapicuaJS));
+
+  // Evaluar en PHP
+  const respuestaPHP = await obtenerRespuestaPHP(numero);
+  if (respuestaPHP instanceof Error) {
+    mostrarResultado(resultadoPHP, `Error en PHP: ${respuestaPHP.message}`, true);
+  } else {
+    mostrarResultado(resultadoPHP, construirMensaje(numeroOriginal, numero, respuestaPHP));
+  }
 }
