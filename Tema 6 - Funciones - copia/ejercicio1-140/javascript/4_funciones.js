@@ -1,5 +1,12 @@
 function funcion_esCapicua(datos) {
-  const numStr = datos.toString();
+  const numero = Math.abs(datos.num1);
+  const numStr = numero.toString();
   const numInvertido = numStr.split('').reverse().join('');
-  return numStr === numInvertido;
+  let resultado = numStr === numInvertido;
+
+  return resultado;
+}
+
+function funcion_potencia(params) {
+  return Math.pow(params.num1, params.num2);
 }
