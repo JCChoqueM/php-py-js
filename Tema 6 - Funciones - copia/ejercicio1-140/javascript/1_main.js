@@ -8,15 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const datos = Object.fromEntries(formData.entries());
     const acciones = {
       ['funcion_' + seleccion]: window['funcion_' + seleccion],
-      ['mostrar_' + seleccion]: window['mostrar_' + seleccion],
     };
 
     const funcionSeleccion = acciones['funcion_' + seleccion];
 
-    const funcionMostrar = acciones['mostrar_' + seleccion];
-
-    if (funcionSeleccion || funcionMostrar) {
-      validarYProcesar(datos, funcionSeleccion, funcionMostrar);
+    if (funcionSeleccion) {
+      validarYProcesar(datos, funcionSeleccion);
     } else {
       console.warn(`No se encontró una función válida para "${seleccion}"`);
     }

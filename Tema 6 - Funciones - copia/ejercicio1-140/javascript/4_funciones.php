@@ -1,11 +1,30 @@
 <?php
-function funcion_esCapicua($num) {
+function funcion_esCapicua($num)
+{
     // Convertimos el número a string, lo invertimos y comparamos con el original
     $num = abs($num);
     return strval($num) === strrev(strval($num));
 }
-function funcion_potencia($base, $exponente) {
+function funcion_esPrimo($num)
+{
+    // Un número es primo si solo es divisible por 1 y por sí mismo
+    if ($num < 2) {
+        return false;
+    }
+    for ($i = 2; $i <= sqrt($num); $i++) {
+        if ($num % $i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+function funcion_potencia($base, $exponente)
+{
     return pow($base, $exponente); // pow() es la función nativa de PHP para calcular potencias
+}
+function funcion_digitos($num)
+{
+    return strlen((string)abs($num));
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -35,6 +54,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(["error" => "Faltan parámetros en la petición"]);
     }
 }
-
-
-?>
