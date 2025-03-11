@@ -53,6 +53,28 @@ function funcion_digitos($num)
 /* !section fin - 5.-digitos */
 
 /* section2 6.-voltea */
+function funcion_voltea($num1) {
+    $digitosOriginal = funcion_digitos($num1);
+    $voltea = 0;
+    $dividendo = abs($num1);
+
+    // Voltear el número
+    while ($dividendo > 0) {
+        $voltea = $voltea * 10 + ($dividendo % 10);
+        $dividendo = intdiv($dividendo, 10);
+    }
+
+    // Convertir a string asegurando los ceros faltantes
+    $volteadoStr = str_pad((string)$voltea, $digitosOriginal, "0", STR_PAD_LEFT);
+
+    // Si el número original era negativo, mantener el signo
+    if ($num1 < 0) {
+        $volteadoStr = "-" . $volteadoStr;
+        $voltea = -$voltea;
+    }
+
+    return [$volteadoStr, $voltea];
+}
 
 /* !section2 fin - 6.-voltea */
 
