@@ -1,88 +1,86 @@
-const selectElement = document.getElementById('miSelect');
-
-// Generar opciones dinámicamente
-textos.forEach((item, index) => {
-  const optionElement = document.createElement('option');
-  optionElement.value = item.texto; // Asigna el valor
-  optionElement.textContent = `${index + 1}.-${item.texto}`; // Asigna el texto visible
-  selectElement.appendChild(optionElement);
-});
-
-const contenedor = document.getElementById('contenedor');
-const tooltip = document.getElementById('tooltip');
-
-// Generar los textos dinámicamente
-textos.forEach((item, index) => {
-  const span = document.createElement('SPAN');
-  span.textContent = `${index + 1}.-${item.texto} `;
-  span.className = 'texto-item';
-  span.style.color = `var(--${item.texto})`;
-
-  // Mostrar tooltip
-  span.addEventListener('mouseover', () => {
-    tooltip.textContent = item.descripcion;
-    tooltip.style.display = 'block';
-
-    const rect = span.getBoundingClientRect();
-    tooltip.style.left = `${rect.left}px`;
-    tooltip.style.top = `${rect.bottom + 5}px`;
-
-    tooltip.style.backgroundColor = `var(--${item.texto})`;
-  });
-
-  // Ocultar tooltip
-  span.addEventListener('mouseout', () => {
-    tooltip.style.display = 'none';
-  });
-  span.addEventListener('click', () => {
-    select.value = item.texto; // Actualizar el valor del select
-    select.dispatchEvent(new Event('change'));
-    // Actualizar el contenido del span descripción
-  });
-
-  contenedor.appendChild(span);
-});
-
-// Obtener el select y el botón
+// Obtener elementos del DOM
 const select = document.getElementById('miSelect');
 const boton = document.getElementById('miBoton');
 const descripcionDiv = document.getElementById('descripcionDiv');
-// Función para cambiar el color del botón
+const contenedorInputs = document.getElementById('contenedorInputs');
+const contenedor = document.getElementById('contenedor');
+const tooltip = document.getElementById('tooltip');
 
-function cambiarColorBoton(valorSeleccionado) {
-  boton.style.backgroundColor = `var(--${valorSeleccionado})` || '';
-}
+// Definir la opción inicial seleccionada
+const opcionInicial = 'voltea'; // Reemplázalo con la opción que desees
 
-function insertarDescripcionDiv(valorSeleccionado) {
-  const textoSeleccionado = textos.find((item) => item.texto === valorSeleccionado);
-  if (textoSeleccionado) {
-    descripcionDiv.textContent = textoSeleccionado.descripcion;
-  } else {
-    descripcionDiv.textContent = 'Seleccione una función para ver su descripción.';
+// Función para generar opciones del select
+function generarOpcionesSelect() {
+  textos.forEach((item, index) => {
+    const option = document.createElement('option');
+    option.value = item.texto;
+    option.textContent = `${index + 1}.-${item.texto}`;
+    select.appendChild(option);
+  });
+
+  // Establecer la opción inicial si existe en textos
+  if (textos.some((item) => item.texto === opcionInicial)) {
+    select.value = opcionInicial;
   }
 }
-// Establecer el color del botón al cargar la página (según el valor seleccionado por defecto)
 
-// Event listener para cambiar el color cuando se selecciona una opción
-select.addEventListener('change', () => {
-  cambiarColorBoton(select.value);
-  insertarDescripcionDiv(select.value);
-  generarInputs(select.value);
-});
+// Función para generar la lista de textos
+function generarListaTextos() {
+  textos.forEach((item, index) => {
+    const span = document.createElement('SPAN');
+    span.textContent = `${index + 1}.-${item.texto} `;
+    span.className = 'texto-item';
+    span.style.color = `var(--${item.texto})`;
 
-const contenedorInputs = document.getElementById('contenedorInputs');
+    span.addEventListener('mouseover', () => mostrarTooltip(span, item.descripcion, item.texto));
+    span.addEventListener('mouseout', ocultarTooltip);
+    span.addEventListener('click', () => actualizarSeleccion(item.texto));
 
-const generarInputs = (opcionSeleccionada) => {
-  // Limpiar contenido previo
+    contenedor.appendChild(span);
+  });
+}
+
+// Función para mostrar el tooltip
+function mostrarTooltip(elemento, descripcion, color) {
+  tooltip.textContent = descripcion;
+  tooltip.style.display = 'block';
+
+  const rect = elemento.getBoundingClientRect();
+  tooltip.style.left = `${rect.left}px`;
+  tooltip.style.top = `${rect.bottom + 5}px`;
+  tooltip.style.backgroundColor = `var(--${color})`;
+}
+
+// Función para ocultar el tooltip
+function ocultarTooltip() {
+  tooltip.style.display = 'none';
+}
+
+// Función para actualizar la selección en el select
+function actualizarSeleccion(valor) {
+  select.value = valor;
+  select.dispatchEvent(new Event('change'));
+}
+
+// Función para cambiar el color del botón
+function cambiarColorBoton(valor) {
+  boton.style.backgroundColor = `var(--${valor})` || '';
+}
+
+// Función para insertar la descripción
+function insertarDescripcion(valor) {
+  const item = textos.find((t) => t.texto === valor);
+  descripcionDiv.textContent = item ? item.descripcion : 'Seleccione una función para ver su descripción.';
+}
+
+// Función para generar inputs dinámicos
+function generarInputs(opcion) {
   contenedorInputs.innerHTML = '';
 
-  // Buscar el objeto correspondiente en "textos"
-  const funcionSeleccionada = textos.find((funcion) => funcion.texto === opcionSeleccionada);
+  const funcion = textos.find((t) => t.texto === opcion);
+  if (!funcion) return;
 
-  if (!funcionSeleccionada) return;
-
-  // Crear los inputs dinámicamente
-  funcionSeleccionada.inputs.forEach((inputConfig) => {
+  funcion.inputs.forEach((inputConfig) => {
     const label = document.createElement('label');
     label.setAttribute('for', inputConfig.id);
     label.textContent = inputConfig.label;
@@ -94,13 +92,27 @@ const generarInputs = (opcionSeleccionada) => {
     input.name = inputConfig.name;
     input.placeholder = inputConfig.placeholder;
     input.required = true;
-    /*  input.oninput = resolver; */
 
-    contenedorInputs.appendChild(label);
-    contenedorInputs.appendChild(input);
+    contenedorInputs.append(label, input);
   });
-};
+}
 
-cambiarColorBoton(select.value);
-insertarDescripcionDiv(select.value);
-generarInputs(select.value);
+// Event listener del select
+select.addEventListener('change', () => {
+  cambiarColorBoton(select.value);
+  insertarDescripcion(select.value);
+  generarInputs(select.value);
+});
+
+// Inicialización
+function iniciar() {
+  generarOpcionesSelect();
+  generarListaTextos();
+
+  // Aplicar valores iniciales
+  cambiarColorBoton(select.value);
+  insertarDescripcion(select.value);
+  generarInputs(select.value);
+}
+
+iniciar();
