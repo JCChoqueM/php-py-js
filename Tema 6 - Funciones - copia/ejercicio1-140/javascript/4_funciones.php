@@ -79,7 +79,14 @@ function funcion_voltea($num1) {
 /* !section2 fin - 6.-voltea */
 
 /* section 7.-digitoN*/
-
+function funcion_digitoN($numero, $posicion)
+{
+    $digitos_numero = funcion_digitos($numero);
+    $exponente = $digitos_numero - $posicion - 1;
+    $primero = intval($numero, (funcion_potencia(10, $exponente)));
+    $segundo = ($primero % 10);
+    return $segundo;
+}
 /* !section fin - 7.-digitoN*/
 
 /* section2 8.-posicionDeDigito */

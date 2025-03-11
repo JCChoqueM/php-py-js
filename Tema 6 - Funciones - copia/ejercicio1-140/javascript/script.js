@@ -7,7 +7,7 @@ const contenedor = document.getElementById('contenedor');
 const tooltip = document.getElementById('tooltip');
 
 // Definir la opción inicial seleccionada
-const opcionInicial = 'voltea'; // Reemplázalo con la opción que desees
+const opcionInicial = 'digitoN'; // Reemplázalo con la opción que desees
 
 // Función para generar opciones del select
 function generarOpcionesSelect() {
