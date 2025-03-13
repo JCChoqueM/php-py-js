@@ -19,7 +19,7 @@ async function obtenerRespuestaPHP(objeto, funcionPHP) {
     });
 
     const resultadoTexto = await response.text(); // Obtener la respuesta en texto
-    console.log('Respuesta de PHP:', resultadoTexto);
+
     return resultadoTexto; // Retornar la respuesta
   } catch (error) {
     console.error('Error en la petición PHP:', error.message);
@@ -49,6 +49,7 @@ async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSelecci
 
   // Evaluar en JavaScript
   const esVerdaderoJS = funcionSeleccion(...Object.values(datos));
+  console.log("respuestaJS:",esVerdaderoJS)
   mostrarResultado(resultadoJS, construirMensaje(datos, esVerdaderoJS));
 
   // Evaluar en PHP con la misma función (si existe en PHP)
@@ -59,6 +60,7 @@ async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSelecci
     if (resultadoJSON.error) {
       mostrarResultado(resultadoPHP, `Error en PHP: ${resultadoJSON.error}`, true);
     } else {
+      console.log("resultadoPHP:",resultadoJSON.resultado)
       mostrarResultado(resultadoPHP, construirMensaje(datos, resultadoJSON.resultado));
     }
   } catch (error) {

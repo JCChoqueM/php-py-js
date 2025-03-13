@@ -81,6 +81,21 @@ function funcion_digitoN(numero, posicion) {
 /* !section fin - 7.-digitoN*/
 
 /* section2 8.-posicionDeDigito */
+function funcion_posicionDeDigito(numero, digito) {
+  // Convertimos el número en una cadena absoluta (sin signo negativo)
+  let strNum = Math.abs(numero).toString();
+
+  // Encontramos la primera ocurrencia del dígito
+  let posIzq = strNum.indexOf(digito.toString());
+
+  // Encontramos la última ocurrencia del dígito
+  let posDer = strNum.lastIndexOf(digito.toString());
+
+  // Ajustamos la posición de derecha a izquierda
+  let posDerInvertido = posDer !== -1 ? strNum.length - 1 - posDer : -1;
+
+  return [posIzq !== -1 ? posIzq : -1, posDerInvertido];
+}
 
 /* !section2 fin - 8.-posicionDeDigito */
 

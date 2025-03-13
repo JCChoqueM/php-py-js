@@ -53,7 +53,8 @@ function funcion_digitos($num)
 /* !section fin - 5.-digitos */
 
 /* section2 6.-voltea */
-function funcion_voltea($num1) {
+function funcion_voltea($num1)
+{
     $digitosOriginal = funcion_digitos($num1);
     $voltea = 0;
     $dividendo = abs($num1);
@@ -90,6 +91,25 @@ function funcion_digitoN($numero, $posicion)
 /* !section fin - 7.-digitoN*/
 
 /* section2 8.-posicionDeDigito */
+function funcion_posicionDeDigito($numero, $digito)
+{
+    // Convertimos el número en una cadena absoluta (sin signo negativo)
+    $strNum = strval(abs($numero));
+
+    // Encontramos la primera ocurrencia del dígito
+    $posIzq = strpos($strNum, strval($digito));
+
+    // Encontramos la última ocurrencia del dígito
+    $posDer = strrpos($strNum, strval($digito));
+
+    // Ajustamos la posición de derecha a izquierda
+    $posDerInvertido = ($posDer !== false) ? (strlen($strNum) - 1 - $posDer) : -1;
+
+    return [
+        ($posIzq !== false) ? $posIzq : -1,
+        $posDerInvertido
+    ];
+}
 
 /* !section2 fin - 8.-posicionDeDigito */
 

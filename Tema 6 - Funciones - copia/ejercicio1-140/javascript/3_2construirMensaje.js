@@ -113,7 +113,49 @@ function construirMensaje_esCapicua(datos, resultado) {
   /* !section fin - 7.-digitoN*/
   
   /* section2 8.-posicionDeDigito */
-  
+  function construirMensaje_posicionDeDigito(datos, resultado) {
+    const input1 = parseInt(datos.num1);
+    const input2 = parseInt(datos.num2);
+
+    const estilos = {
+        centrar: "style='text-align: center;'",
+        rojo: "style='color: red;'",
+        verde: "style='color: darkgreen;'",
+        azul: "style='color: blue;'",
+        negro: "style='color: black;'"
+    };
+
+    if (input2 < 0 || input2 > 9) {
+        return `<span ${estilos.rojo}>
+                  Número ingresado: ${input1}.<br>
+                  Solo se permiten números positivos de 1 dígito.<br>
+                  '${input2}' no es válido para la búsqueda.
+                </span>`;
+    }
+
+
+    
+    const [posicionIzqDer, posicionDerIzq] = resultado; 
+
+    return `
+        <br>
+        <div ${estilos.centrar}>
+            <br>
+            <span ${estilos.azul}>
+                Izquierda a Derecha<br>
+                El número '${input2}' está en la posición: '${posicionIzqDer}'.<br>
+                ${crearTabla(Math.abs(input1), 0, posicionIzqDer)}
+            </span>
+            <br>
+            <span ${estilos.rojo}>
+                Derecha a Izquierda<br>
+                El número '${input2}' está en la posición: '${posicionDerIzq}'.<br>
+                ${crearTablaReves(Math.abs(input1), 0, posicionDerIzq)}
+            </span>
+        </div>
+    `;
+}
+
   /* !section2 fin - 8.-posicionDeDigito */
   
   /* section 9.-quitaPorDetras */
