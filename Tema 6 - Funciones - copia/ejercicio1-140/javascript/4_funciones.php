@@ -114,7 +114,12 @@ function funcion_posicionDeDigito($numero, $digito)
 /* !section2 fin - 8.-posicionDeDigito */
 
 /* section 9.-quitaPorDetras */
-
+function funcion_quitaPorDetras($numero, $digito)
+{
+    $numero = abs($numero);
+    $nuevoNumero = floor($numero / funcion_potencia(10, $digito));
+    return $nuevoNumero;
+}
 /* !section fin - 9.-quitaPorDetras */
 
 /* section2 10.-quitaPorDelante */

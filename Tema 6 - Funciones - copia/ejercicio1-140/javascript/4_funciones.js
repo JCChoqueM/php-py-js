@@ -100,7 +100,12 @@ function funcion_posicionDeDigito(numero, digito) {
 /* !section2 fin - 8.-posicionDeDigito */
 
 /* section 9.-quitaPorDetras */
-
+function funcion_quitaPorDetras(numero, digito) {
+  numero = Math.abs(numero);
+  nuevoNumero = Math.trunc(numero / funcion_potencia(10, digito));
+  console.log(nuevoNumero)
+  return nuevoNumero;
+}
 /* !section fin - 9.-quitaPorDetras */
 
 /* section2 10.-quitaPorDelante */
