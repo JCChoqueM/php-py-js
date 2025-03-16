@@ -7,7 +7,7 @@ const contenedor = document.getElementById('contenedor');
 const tooltip = document.getElementById('tooltip');
 
 // Definir la opción inicial seleccionada
-const opcionInicial = 'quitaPorDetras'; // Reemplázalo con la opción que desees
+const opcionInicial = 'juntaNumeros'; // Reemplázalo con la opción que desees
 
 // Función para generar opciones del select
 function generarOpcionesSelect() {

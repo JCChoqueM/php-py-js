@@ -123,22 +123,94 @@ function funcion_quitaPorDetras($numero, $digito)
 /* !section fin - 9.-quitaPorDetras */
 
 /* section2 10.-quitaPorDelante */
+function funcion_quitaPorDelante($numero, $digito)
+{
+    $esNegativo = $numero < 0;
+    $numero = abs($numero);
+
+    // Contar los dígitos del número
+    $totalDigitos = funcion_digitos($numero);
+
+    // Si se piden quitar más dígitos de los que tiene el número, devolver 0
+    if ($digito >= $totalDigitos) {
+        return 0;
+    }
+
+    // Cálculo de la nueva cantidad de dígitos
+    $calculo = $totalDigitos - $digito;
+    $nuevoNumero = $numero % pow(10, $calculo);
+
+    // Restaurar el signo si el número original era negativo
+    return $esNegativo ? -$nuevoNumero : $nuevoNumero;
+}
 
 /* !section2 fin - 10.-quitaPorDelante */
 
 /* section 11.-pegaPorDetras */
-
+function funcion_pegaPorDetras($numero, $numero2)
+{
+    $exponente = funcion_digitos($numero2);
+    $pegado = abs($numero) * funcion_potencia(10, $exponente) + abs($numero2);
+    return $numero < 0 ? -$pegado : $pegado;
+}
 /* !section fin - 11.-pegaPorDetras */
 
 /* section2 12.-pegaPorDelante */
+function funcion_pegaPorDelante($numero, $numero2)
+{
+    $aux = funcion_digitos($numero); // Cantidad de dígitos del número
+    $pegado = abs($numero2) * pow(10, $aux) + abs($numero);
 
+    // Si numero2 era negativo, mantener el signo
+    return $numero2 < 0 ? -$pegado : $pegado;
+}
 /* !section2 fin - 12.-pegaPorDelante */
 
 /* section 13.-trozoDeNumero */
 
+
+function funcion_trozoDeNumero($numero, $inicial, $final)
+{
+    $numero = abs(intval($numero)); // Asegurarse de que el número sea positivo
+    $inicial = intval($inicial);
+    $final = intval($final);
+
+    $digitoNumero = funcion_digitos($numero); // Obtener el número total de dígitos
+
+    // Validaciones de rango
+    if ($inicial < 0 || $final < 0 || $inicial > $digitoNumero - 1 || $final > $digitoNumero - 1 || $inicial > $final) {
+        return "Error: Los valores inicial y final deben estar dentro del rango permitido.";
+    }
+
+    // Quitar dígitos por detrás
+    $exponenteDetras = $digitoNumero - ($final + 1);
+    $quitaDetras = floor($numero / pow(10, $exponenteDetras));
+
+    // Número de dígitos del nuevo número
+    $digitoNumeroNuevo = funcion_digitos($quitaDetras);
+
+    // Quitar dígitos por delante
+    $exponenteDelante = $digitoNumeroNuevo - $inicial;
+    $quitaDelante = $quitaDetras % pow(10, $exponenteDelante);
+
+    $digitoFinal = funcion_digitos($quitaDelante);
+
+    // Verifica si es necesario agregar ceros a la izquierda
+    if ($digitoFinal < $exponenteDelante) {
+        $cerosExtra = str_repeat('0', $exponenteDelante - $digitoFinal);
+        return "El trozo de número es:<br> Literal: {$cerosExtra}{$quitaDelante} <br>Numeral: {$quitaDelante}";
+    } else {
+        return "El trozo de número es: {$quitaDelante}";
+    }
+}
+
+
 /* !section fin - 13.-trozoDeNumero */
 /* section2 14.-juntaNumeros */
-
+function funcion_juntaNumeros($num1,$num2)
+{ 
+    return $num1.$num2;
+}
 /* !section2 fin - 14.-juntaNumeros */
 
 

@@ -103,27 +103,70 @@ function funcion_posicionDeDigito(numero, digito) {
 function funcion_quitaPorDetras(numero, digito) {
   numero = Math.abs(numero);
   nuevoNumero = Math.trunc(numero / funcion_potencia(10, digito));
-  console.log(nuevoNumero)
+  console.log(nuevoNumero);
   return nuevoNumero;
 }
 /* !section fin - 9.-quitaPorDetras */
 
 /* section2 10.-quitaPorDelante */
-
+function funcion_quitaPorDelante(numero, digito) {
+  numero = Math.abs(numero);
+  calculo = funcion_digitos(numero) - digito;
+  nuevoNumero = numero % funcion_potencia(10, calculo);
+  console.log(nuevoNumero);
+  return nuevoNumero;
+}
 /* !section2 fin - 10.-quitaPorDelante */
 
 /* section 11.-pegaPorDetras */
-
+function funcion_pegaPorDetras(numero, numero2) {
+  const exponente = funcion_digitos(numero2);
+  const pegado = Math.abs(numero) * funcion_potencia(10, exponente) + Math.abs(numero2);
+  console.log(pegado)
+  return numero < 0 ? -pegado : pegado;
+}
 /* !section fin - 11.-pegaPorDetras */
 
 /* section2 12.-pegaPorDelante */
-
+function funcion_pegaPorDelante(numero, numero2) {
+  const aux = funcion_digitos(numero);
+  const pegado = Math.abs(numero2) * funcion_potencia(10, aux) + Math.abs(numero);
+  console.log(pegado)
+  return numero2 < 0 ? -pegado : pegado;
+}
 /* !section2 fin - 12.-pegaPorDelante */
 
 /* section 13.-trozoDeNumero */
+function funcion_trozoDeNumero(numero, inicial, final) {
+  numero = Math.abs(parseInt(numero));
+  inicial = parseInt(inicial);
+  final = parseInt(final);
+
+  let digitoNumero = funcion_digitos(numero);
+  if (inicial < 0 || final < 0 || inicial > digitoNumero - 1 || final > digitoNumero - 1 || inicial > final) {
+    return "Error: Los valores inicial y final deben estar dentro del rango permitido.";
+  }
+
+  let exponenteDetras = digitoNumero - (final + 1);
+  let quitaDetras = Math.trunc(numero / funcion_potencia(10, exponenteDetras));
+  let digitoNumeroNuevo = funcion_digitos(quitaDetras);
+  let exponenteDelante = digitoNumeroNuevo - inicial;
+  let quitaDelante = quitaDetras % funcion_potencia(10, exponenteDelante);
+  let digitoFinal = funcion_digitos(quitaDelante);
+
+  if (digitoFinal < exponenteDelante) {
+    let cerosExtra = "0".repeat(exponenteDelante - digitoFinal);
+    return `El trozo de número es:<br> Literal: ${cerosExtra}${quitaDelante} <br>Numeral: ${quitaDelante}`;
+  } else {
+    return `El trozo de número es: ${quitaDelante}`;
+  }
+}
+
 
 /* !section fin - 13.-trozoDeNumero */
 
 /* section2 14.-juntaNumeros */
-
+function funcion_juntaNumeros(num1, num2) {
+  return "solo existo";
+}
 /* !section2 fin - 14.-juntaNumeros */
