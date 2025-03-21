@@ -1,0 +1,235 @@
+:root {
+  --color-fondo-tooltip: #555;
+  /* Color de fondo predeterminado del tooltip */
+  --color-texto-tooltip: #ffffff;
+  /* Color de texto predeterminado del tooltip */
+  --color-destacado-tooltip: underline;
+  /* Estilo de subrayado para texto destacado */
+  --color-destacado-texto: bold;
+  /* Estilo de texto en negrita para texto destacado */
+
+  /* Definición de colores personalizados para cada tipo de tooltip */
+  --esCapicua: #004085; /* Azul fuerte */
+  --esPrimo: #721c24; /* Rojo oscuro */
+  --siguientePrimo: #155724; /* Verde oscuro */
+  --potencia: #6f42c1; /* Morado fuerte */
+  --digitos: #0c5460; /* Azul verdoso oscuro */
+  --voltea: #856404; /* Amarillo dorado oscuro */
+  --digitoN: #343a40; /* Gris oscuro */
+  --posicionDeDigito: #1b4b91; /* Azul medianoche */
+  --quitaPorDetras: #5a3b1e; /* Marrón oscuro */
+  --quitaPorDelante: #2d3748; /* Gris carbón */
+  --pegaPorDetras: #007bff; /* Azul vivo */
+  --pegaPorDelante: #28a745; /* Verde brillante */
+  --trozoDeNumero: #dc3545; /* Rojo vibrante */
+  --juntaNumeros: #b38600; /* Amarillo oscuro dorado */
+}
+h1 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.fuente {
+  display: block;
+  margin-right: 50px;
+  margin-bottom: 10px;
+}
+
+.fuente__contenido {
+  white-space: normal;
+  font-size: 23px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.texto-item {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: underline;
+  text-indent: 10px;
+}
+
+.texto-item:hover {
+  /* Opcional: si deseas un efecto al pasar el ratón */
+  color: inherit; /* Cambia el color solo si es necesario */
+}
+
+/* Estilo para el tooltip */
+.tooltip {
+  position: absolute;
+  display: none;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  background-color: #000; /* Color predeterminado para el fondo */
+  max-width: 200px;
+  text-align: center;
+  z-index: 1;
+  font-size: 18px;
+}
+
+/* Estilo para el bloque principal */
+.seleccion {
+  font-family: Arial, sans-serif;
+  display: flex; /* Alinea los elementos horizontalmente */
+  align-items: baseline; /* Alinea los elementos por la línea base */
+  gap: 15px; /* Espacio entre el label y el select */
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+/* Estilo para el label dentro del bloque */
+.seleccion__texto {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  margin: 0; /* Elimina cualquier margen innecesario */
+  line-height: 24px; /* Ajusta la altura de línea para que se alinee con el select */
+}
+
+/* Estilo para el select dentro del bloque */
+.seleccion__select {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #140707;
+  border-radius: 4px;
+  width: 200px;
+  height: 40px; /* Asegura que la altura del select sea suficiente para alinear el texto */
+}
+
+/* Estilo general para el formulario */
+.formulario {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  gap: 15px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  width: 1200px;
+}
+
+/* Contenedor de los inputs */
+.formulario__contenedor-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px; /* Asegura que el input ocupe el 100% del contenedor */
+  padding: 8px;
+}
+.label__letra {
+  font-weight: bold;
+}
+/* Estilo para los botones dentro del formulario */
+.formulario__botones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Estilo común para todos los botones */
+.formulario__boton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+/* Estilo para el botón de enviar */
+.formulario__boton--enviar {
+  background-color: #28a745;
+}
+
+/* Efecto al pasar el ratón sobre el botón de enviar */
+.formulario__boton--enviar:hover {
+  background-color: #218838;
+}
+.formulario__boton--aleatorio{
+  background-color: #1b7091;
+}
+.formulario__boton--aleatorio:hover{
+  background-color: #1b2d91;
+}
+/* Contenedor principal que organiza las cajas */
+.contenedor {
+  display: flex;
+  justify-content: space-between; /* Espacio entre las secciones */
+  gap: 10px;
+  padding: 5px;
+}
+
+/* Estilos generales para las cajas */
+.contenedor__caja {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
+}
+
+/* Estilos para la caja PHP */
+.contenedor__caja--php {
+  background-color: #bacee0;
+  border: 2px solid blue;
+}
+
+/* Estilos para la caja JS */
+.contenedor__caja--js {
+  background-color: #dee670;
+  border: 2px solid rgb(204, 122, 14);
+}
+
+/* Estilo para los botones de cada caja */
+.caja__boton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+/* Estilo para el botón de PHP */
+.caja__boton--php {
+  background-color: #007bff;
+  color: white;
+  border: 2px solid rgb(54, 54, 211);
+}
+
+/* Estilo para el botón de JS */
+.caja__boton--js {
+  background-color: #f7df1e;
+  color: rgb(15, 3, 3);
+  border: 2px solid rgb(231, 162, 72);
+}
+
+/* Estilos para los resultados */
+.caja__resultado {
+  z-index: 100px;
+  margin-top: 15px;
+  padding: 15px;
+  border: 5px solid #b82c2c;
+  border-radius: 7px;
+  width: 100%;
+  height: 100%;
+  background-color: #dee670;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 18px;
+  color: #020202;
+  overflow-y: auto;
+  /* Oculta el resultado inicialmente */
+}
