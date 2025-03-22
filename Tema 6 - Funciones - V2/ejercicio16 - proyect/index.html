@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>PHP Funciones ejercicio #16</title>
+    <link
+      rel="stylesheet"
+      href="styles/styles.css"
+    />
+  </head>
+  <body>
+    <h1>Ejercicio #16</h1>
+    <div class="fuente">
+      <span class="fuente__contenido fuente--">
+        Muestra los numeros <span style="color: orange">Capicua</span> que hay entre <span style="color: teal">"1" </span> y un numero
+        <span style="color: purple">N</span> menor a <span style="color: rgb(234, 0, 255)">99999</span>
+      </span>
+      <span
+        id="contenedor"
+        class="fuente__contenido fuente--"
+      >
+        <!-- Elementos de texto -->
+      </span>
+      <div
+        id="tooltip"
+        class="tooltip"
+      ></div>
+    </div>
+
+    <div
+      id="descripcionDiv"
+      class="fuente__contenido"
+    ></div>
+    <form
+      action=""
+      id="form"
+      class="formulario"
+    >
+      <div
+        id="contenedorInputs"
+        class="formulario__contenedor-inputs"
+      >
+        <label
+          for="num1"
+          class="label__letra"
+          >Ingrese un numero inicial para mostrar
+        </label>
+        <input
+          type="number"
+          id="num1"
+          name="num1"
+          placeholder="Ingrese un numero entero positivo"
+          required="true"
+        />
+      </div>
+
+      <div class="formulario__botones">
+        <button
+          id="miBoton"
+          class="formulario__boton formulario__boton--aleatorio"
+          type="button"
+          onclick="generarDatos()"
+        >
+          Generar Numeros Aleatorios
+        </button>
+      </div>
+    </form>
+
+    <div class="contenedor">
+      <section class="contenedor__caja contenedor__caja--js">
+        <button
+          class="caja__boton caja__boton--js"
+          onclick="solucionJavaScript()"
+        >
+          Solución JS
+        </button>
+        <div
+          class="caja__resultado"
+          id="resultadoJS"
+        ></div>
+      </section>
+      <section class="contenedor__caja contenedor__caja--php">
+        <button
+          class="caja__boton caja__boton--php"
+          onclick="solucionPHP()"
+        >
+          Solución PHP
+        </button>
+        <div
+          class="caja__resultado"
+          id="resultadoPHP"
+        ></div>
+      </section>
+    </div>
+    <footer>
+      <!-- Pie de página -->
+      <br />Julio Cesar Choque Mamani. <br />
+    </footer>
+    <script src="javascript/3_2construirMensaje.js"></script>
+    <script src="javascript/3_1mostrar.js"></script>
+    <script src="javascript/generarDatos.js"></script>
+    <script src="javascript/crearTabla.js"></script>
+    <!--     <script src="javascript/script.js"></script> -->
+    <script src="javascript/4_funciones.js"></script>
+    <script src="javascript/2_validarYProcesar.js"></script>
+    <script src="javascript/1_main.js"></script>
+  </body>
+</html>
