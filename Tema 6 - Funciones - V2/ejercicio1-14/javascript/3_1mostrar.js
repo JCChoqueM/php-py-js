@@ -55,11 +55,13 @@ async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSelecci
   // Evaluar en PHP con la misma función (si existe en PHP)
   try {
     const respuestaPHP = await obtenerRespuestaPHP(datos, nombreFuncion);
+    console.log(respuestaPHP)
     const resultadoJSON = JSON.parse(respuestaPHP); // Convertir la respuesta JSON a objeto
 
     if (resultadoJSON.error) {
       mostrarResultado(resultadoPHP, `Error en PHP: ${resultadoJSON.error}`, true);
     } else {
+      console.log('resultadoJson:',resultadoJSON)
       console.log("resultadoPHP:",resultadoJSON.resultado)
       mostrarResultado(resultadoPHP, construirMensaje(datos, resultadoJSON.resultado));
     }
