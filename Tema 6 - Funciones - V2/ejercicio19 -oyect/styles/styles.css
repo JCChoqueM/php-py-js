@@ -1,0 +1,204 @@
+/* Estilos para el body y el fondo */
+html,
+body {
+    background-image: url("../images/fondo.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.formularioBiblioteca input[type="number"] {
+    font-size: 20px;
+}
+
+/* Estilos para los contenedores de resultados */
+.contenedores {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    height: 40rem;
+    width: 100%;
+}
+
+/* Estilos para los botones */
+.botones_cajaForm {
+    background-color: #adda9b;
+    color: rgb(30, 3, 63);
+    border: 2px solid #2E6DA4;
+    border-radius: 5px;
+    padding: 10px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 4rem;
+    width: 10rem;
+}
+
+.botones_cajaForm:disabled {
+    background-color: #CCCCCC;
+    border-color: #AAAAAA;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.bTodo {
+    background-color: #9bc3da;
+    color: rgb(30, 3, 63);
+    border: 2px solid #2E6DA4;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilos para las cajas de resultados */
+.caja {
+    padding: 10px;
+    margin-top: 10px;
+    min-height: 325px;
+    flex-grow: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cajaPHP {
+    background-color: #bacee0;
+    border: 2px solid blue;
+}
+
+.cajaPY {
+    background-color: #15ce0e;
+    border: 2px solid green;
+}
+
+.cajaJS {
+    background-color: #dee670;
+    border: 2px solid rgb(204, 122, 14);
+}
+
+/* Estilos para los resultados */
+.r {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+    margin-top: 4px;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+/* Estilos para el pie de página */
+footer {
+    margin-top: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.texto {
+    margin-top: auto;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+td {
+    border: 0.2px solid black;
+}
+
+.cajaboton {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    gap: 5px;
+}
+
+/* Estilos generales para los contenedores */
+.cajaDeDatos{
+    display: flex;
+
+}
+.selecciones,
+.formularioBiblioteca {
+    display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #f4f4f4;
+}
+
+/* Estilos para las selecciones */
+.selecciones {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.selecciones label,
+.formularioBiblioteca label {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.selecciones select,
+.formularioBiblioteca input[type="number"] {
+    padding: 0.4rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 100%;
+    max-width: 250px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.selecciones select:focus,
+.formularioBiblioteca input[type="number"]:focus {
+    border-color: #2E6DA4;
+    outline: none;
+}
+

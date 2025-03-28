@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Funciones Matemáticas</title>
+    <style>
+        /* Estilos para el tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            white-space: nowrap;
+            /* Evita el salto de línea */
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Estilo para resaltar las palabras */
+        .tooltip span.highlight {
+            text-decoration: underline;
+            /* Subrayar el texto */
+            font-weight: bold;
+            /* Texto en negrita para resaltar */
+        }
+
+        /* Estilo para mostrar el tooltip debajo de la primera letra */
+        .tooltip:hover .tooltiptext {
+            top: calc(100% + 5px);
+            /* Coloca el tooltip debajo del texto */
+            left: 0;
+            /* Alinea el tooltip con la primera letra */
+            width: auto;
+            /* Permitir que el ancho del tooltip se ajuste automáticamente */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>
+        <!-- Descripción del ejercicio -->
+        <p>Crea una <span style="color: orange;">biblioteca</span> de <span style="color: red;">funciones
+                Matemáticas</span> que contenga las siguientes <span style="color: purple;">funciones</span>.
+            <span style="color: teal;">Recuerda</span> que puedes usar unas dentro de
+            otras si es necesario.
+        </p>
+    </h2>
+
+    <!-- Función esCapicua con descripción -->
+    <div class="tooltip">
+        <span onmouseover="showDescription('esCapicua')" onmouseout="hideDescription('esCapicua')" class="highlight"
+            style="color: blue;">esCapicua</span>
+        <div class="tooltiptext" id="esCapicuaTooltip">
+            Comprueba si un número es capicúa, es decir, si se lee igual de izquierda a derecha que de derecha a
+            izquierda.
+        </div>
+    </div>
+
+    <!-- Función esPrimo con descripción -->
+    <div class="tooltip">
+        <span onmouseover="showDescription('esPrimo')" onmouseout="hideDescription('esPrimo')" class="highlight"
+            style="color: blue;">esPrimo</span>
+        <div class="tooltiptext" id="esPrimoTooltip">
+            Comprueba si un número es primo, es decir, si solo es divisible por sí mismo y por 1.
+        </div>
+    </div>
+
+    <!-- Función siguientePrimo con descripción -->
+    <div class="tooltip">
+        <span onmouseover="showDescription('siguientePrimo')" onmouseout="hideDescription('siguientePrimo')"
+            class="highlight" style="color: blue;">siguientePrimo</span>
+        <div class="tooltiptext" id="siguientePrimoTooltip">
+            Encuentra el siguiente número primo mayor que el número dado.
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar la descripción del tooltip
+        function showDescription(id) {
+            var tooltip = document.getElementById(id + 'Tooltip');
+            tooltip.style.visibility = 'visible';
+        }
+
+        // Función para ocultar la descripción del tooltip
+        function hideDescription(id) {
+            var tooltip = document.getElementById(id + 'Tooltip');
+            tooltip.style.visibility = 'hidden';
+        }
+    </script>
+
+</body>
+
+</html>

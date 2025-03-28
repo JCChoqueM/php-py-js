@@ -1,292 +1,235 @@
-/* Estilos para el body y el fondo */
-html,
-body {
-    background-image: url("../images/fondo.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 97%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+:root {
+  --color-fondo-tooltip: #555;
+  /* Color de fondo predeterminado del tooltip */
+  --color-texto-tooltip: #ffffff;
+  /* Color de texto predeterminado del tooltip */
+  --color-destacado-tooltip: underline;
+  /* Estilo de subrayado para texto destacado */
+  --color-destacado-texto: bold;
+  /* Estilo de texto en negrita para texto destacado */
+
+  /* Definición de colores personalizados para cada tipo de tooltip */
+  --esCapicua: #004085; /* Azul fuerte */
+  --esPrimo: #721c24; /* Rojo oscuro */
+  --siguientePrimo: #155724; /* Verde oscuro */
+  --potencia: #6f42c1; /* Morado fuerte */
+  --digitos: #0c5460; /* Azul verdoso oscuro */
+  --voltea: #856404; /* Amarillo dorado oscuro */
+  --digitoN: #343a40; /* Gris oscuro */
+  --posicionDeDigito: #1b4b91; /* Azul medianoche */
+  --quitaPorDetras: #5a3b1e; /* Marrón oscuro */
+  --quitaPorDelante: #2d3748; /* Gris carbón */
+  --pegaPorDetras: #007bff; /* Azul vivo */
+  --pegaPorDelante: #28a745; /* Verde brillante */
+  --trozoDeNumero: #dc3545; /* Rojo vibrante */
+  --juntaNumeros: #b38600; /* Amarillo oscuro dorado */
+}
+h1 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.fuente {
+  display: block;
+  margin-right: 50px;
+  margin-bottom: 10px;
 }
 
-/* Contenedor principal */
-.container {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    overflow: hidden;
+.fuente__contenido {
+  white-space: normal;
+  font-size: 23px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-/* Estilos para la imagen */
-.image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.texto-item {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: underline;
+  text-indent: 10px;
 }
 
-.image img {
-    width: 35%;
-    height: 35%;
-    object-fit: contain;
-    margin: auto;
+.texto-item:hover {
+  /* Opcional: si deseas un efecto al pasar el ratón */
+  color: inherit; /* Cambia el color solo si es necesario */
 }
 
-.image-container {
-    text-align: center;
+/* Estilo para el tooltip */
+.tooltip {
+  position: absolute;
+  display: none;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  background-color: #000; /* Color predeterminado para el fondo */
+  max-width: 200px;
+  text-align: center;
+  z-index: 1;
+  font-size: 18px;
 }
 
-/* Estilos para el fondo con opacidad */
-body::after {
-    content: "";
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    opacity: 0.4;
-    z-index: -1;
+/* Estilo para el bloque principal */
+.seleccion {
+  font-family: Arial, sans-serif;
+  display: flex; /* Alinea los elementos horizontalmente */
+  align-items: baseline; /* Alinea los elementos por la línea base */
+  gap: 15px; /* Espacio entre el label y el select */
+  background-color: #f4f4f4;
+  border-radius: 8px;
 }
 
-/* Estilos para el formulario */
-form {
-    display: flex;
-    align-content: flex-start;
-    align-items: flex-start;
-    font-weight: bold;
-    gap: auto;
-    font-size: 20px;
-    margin-top: 15px;
-}
-.cajaForm {
-    display: flex;
-    flex-direction: column;
-}
-form input[type="number"] {
-    padding: 1rem;
-    border-radius: 0.25rem;
-    border: 1px solid #f17005;
-    margin-bottom: 1rem;
-    height: 10px;
-    width: 15rem;
-}
-form input[type="text"]:invalid {
-    border: 1px solid red;
-    background-color: #ffd9d9;
-    /* Cambia el color de fondo en caso de inválidez */
+/* Estilo para el label dentro del bloque */
+.seleccion__texto {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  margin: 0; /* Elimina cualquier margen innecesario */
+  line-height: 24px; /* Ajusta la altura de línea para que se alinee con el select */
 }
 
-/* Estilos para los botones de acción */
-.otros {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:flex-start;
-    gap: 0.5rem;
+/* Estilo para el select dentro del bloque */
+.seleccion__select {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #140707;
+  border-radius: 4px;
+  width: 200px;
+  height: 40px; /* Asegura que la altura del select sea suficiente para alinear el texto */
 }
 
-.cajaForm {
-display: flex;
-    flex-direction:column;
-    align-items: center;
-gap: 0.5rem;
+/* Estilo general para el formulario */
+.formulario {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  gap: 15px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  width: 1200px;
 }
 
-form label {
-    display: block;
-    margin-bottom: auto;
-
+/* Contenedor de los inputs */
+.formulario__contenedor-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px; /* Asegura que el input ocupe el 100% del contenedor */
+  padding: 8px;
+}
+.label__letra {
+  font-weight: bold;
+}
+/* Estilo para los botones dentro del formulario */
+.formulario__botones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
 }
 
-form input[type="text"] {
-    padding: 1.3rem;
-    border-radius: 0.25rem;
-    border: 1px solid #d31b1b;
-    margin-bottom: 1rem;
-    height: 1px;
-    width: 18rem;
+/* Estilo común para todos los botones */
+.formulario__boton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s;
 }
 
-/* Estilos para los contenedores de resultados */
-.contenedores {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    height: 25rem;
-    width: 100%;
+/* Estilo para el botón de enviar */
+.formulario__boton--enviar {
+  background-color: #28a745;
 }
 
-
-.botonFrutaAleatoria.llenar {
-    background-color: #5cff33;
-    /* Segundo color para el botón "llenar" */
+/* Efecto al pasar el ratón sobre el botón de enviar */
+.formulario__boton--enviar:hover {
+  background-color: #218838;
 }
-/* Estilos para los botones */
-.botones_cajaForm {
-    background-color: #adda9b;
-    color: rgb(30, 3, 63);
-    border: 2px solid #2E6DA4;
-    border-radius: 5px;
-    padding: 10px 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    height: 4rem;
-    width: 10rem;
+.formulario__boton--aleatorio{
+  background-color: #1b7091;
 }
-.botones_cajaForm.resolver {
-    background-color: #f6fa16;
+.formulario__boton--aleatorio:hover{
+  background-color: #1b2d91;
 }
-.botones_cajaForm.solucionPhpPyJs {
-    background-color: rgb(33, 221, 228);
+/* Contenedor principal que organiza las cajas */
+.contenedor {
+  display: flex;
+  justify-content: space-between; /* Espacio entre las secciones */
+  gap: 10px;
+  padding: 5px;
 }
 
-.botones_cajaForm:disabled,
-.colorvaciar:disabled {
-    background-color: #CCCCCC;
-    /* Cambia el color a gris cuando está desactivado */
-    border-color: #AAAAAA;
-    /* Puedes ajustar el color del borde según tus preferencias */
-    color: #666666;
-    /* Puedes ajustar el color del texto según tus preferencias */
-    cursor: not-allowed;
-    /* Cambia el cursor cuando está desactivado */
+/* Estilos generales para las cajas */
+.contenedor__caja {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
 }
 
-.bPHP,
-.bJS,
-.bPY {
-    background-color: #9bc3da;
-    color: rgb(30, 3, 63);
-    border: 2px solid #2E6DA4;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.bLlenar {
-    background-color: #7ddd24;
-    color: rgb(30, 3, 63);
-    border: 2px solid #7ba42e;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+/* Estilos para la caja PHP */
+.contenedor__caja--php {
+  background-color: #bacee0;
+  border: 2px solid blue;
 }
 
-/* Estilos para las cajas de resultados */
-.caja {
-    padding: 7px;
-    margin-top: 10px;
-    width: 10px;
-    min-height: 325px;
-    height: 2,5rem;
-    flex-grow: 1;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+/* Estilos para la caja JS */
+.contenedor__caja--js {
+  background-color: #dee670;
+  border: 2px solid rgb(204, 122, 14);
 }
 
-.cajaPHP {
-    background-color: #bacee0;
-    border: 2px solid blue;
+/* Estilo para los botones de cada caja */
+.caja__boton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;
 }
 
-.cajaPY {
-    background-color: #15ce0e;
-    border: 2px solid green;
+/* Estilo para el botón de PHP */
+.caja__boton--php {
+  background-color: #007bff;
+  color: white;
+  border: 2px solid rgb(54, 54, 211);
 }
 
-.cajaJS {
-    background-color: #dee670;
-    border: 2px solid rgb(204, 122, 14);
+/* Estilo para el botón de JS */
+.caja__boton--js {
+  background-color: #f7df1e;
+  color: rgb(15, 3, 3);
+  border: 2px solid rgb(231, 162, 72);
 }
 
 /* Estilos para los resultados */
-.r {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: center;
-    width: 400px;
-    height: 50px;
-    margin-top: 4px;
-    background-color: transparent;
-    font-weight: bold;
-}
-
-.rAleatorio {
-    font-weight: bold;
-}
-
-/* Estilos para el pie de página */
-footer {
-    margin-top: auto;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.texto {
-    margin-top: auto;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.cajayBoton {
-    display: flex;
-    flex-direction: row;
-    width: 75%;
-}
-
-.contenedorInputButon {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.butonesGEnerarCalcular {
-    /* Añadido para visualización */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px
-}
-
-.butonesGEnerarCalcular>div {
-    /* Añadido para visualización */
-    padding: 10px;
-    /* Añadido para visualización */
-    margin-bottom: 5px;
-}
-
-.bvaciar {
-    display: flex;
-    justify-content: left;
-    gap: 10px;
-}
-
-table {
-    border-collapse: collapse;
-    /* Combina bordes de celdas adyacentes en una sola línea */
-}
-
-table,
-td {
-    border: 0.2px solid black;
-    /* Establece el borde de la tabla y las celdas */
+.caja__resultado {
+  z-index: 100px;
+  margin-top: 15px;
+  padding: 15px;
+  border: 5px solid #b82c2c;
+  border-radius: 7px;
+  width: 100%;
+  height: 100%;
+  background-color: #dee670;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 18px;
+  color: #020202;
+  overflow-y: auto;
+  /* Oculta el resultado inicialmente */
 }
