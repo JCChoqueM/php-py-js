@@ -9,20 +9,15 @@
   /* Estilo de texto en negrita para texto destacado */
 
   /* Definición de colores personalizados para cada tipo de tooltip */
-  --esCapicua: #004085; /* Azul fuerte */
-  --esPrimo: #721c24; /* Rojo oscuro */
-  --siguientePrimo: #155724; /* Verde oscuro */
-  --potencia: #6f42c1; /* Morado fuerte */
-  --digitos: #0c5460; /* Azul verdoso oscuro */
-  --voltea: #856404; /* Amarillo dorado oscuro */
-  --digitoN: #343a40; /* Gris oscuro */
-  --posicionDeDigito: #1b4b91; /* Azul medianoche */
-  --quitaPorDetras: #5a3b1e; /* Marrón oscuro */
-  --quitaPorDelante: #2d3748; /* Gris carbón */
-  --pegaPorDetras: #007bff; /* Azul vivo */
-  --pegaPorDelante: #28a745; /* Verde brillante */
-  --trozoDeNumero: #dc3545; /* Rojo vibrante */
-  --juntaNumeros: #b38600; /* Amarillo oscuro dorado */
+  --generaArrayInt: rgb(91, 91, 202);
+  --minimoArrayInt: rgb(202, 91, 91);
+  --maximoArrayInt: rgb(91, 202, 91);
+  --mediaArrayInt: rgb(202, 91, 202);
+  --estaEnArrayInt: rgb(91, 202, 202);
+  --posicionEnArrayInt: rgb(202, 43, 202);
+  --volteaArrayInt: rgb(202, 146, 91);
+  --rotaDerechaArrayInt: rgb(91, 202, 146);
+  --rotaIzquierdaArrayInt: rgb(146, 91, 202);
 }
 h1 {
   margin-top: 0;
@@ -152,12 +147,7 @@ h1 {
 .formulario__boton--enviar:hover {
   background-color: #218838;
 }
-.formulario__boton--aleatorio{
-  background-color: #1b7091;
-}
-.formulario__boton--aleatorio:hover{
-  background-color: #1b2d91;
-}
+
 /* Contenedor principal que organiza las cajas */
 .contenedor {
   display: flex;
@@ -197,7 +187,7 @@ h1 {
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
-
+  cursor: pointer;
   transition: background-color 0.3s ease;
   margin-bottom: 15px;
 }
@@ -209,11 +199,19 @@ h1 {
   border: 2px solid rgb(54, 54, 211);
 }
 
+.caja__boton--php:hover {
+  background-color: #0056b3;
+}
+
 /* Estilo para el botón de JS */
 .caja__boton--js {
   background-color: #f7df1e;
   color: rgb(15, 3, 3);
   border: 2px solid rgb(231, 162, 72);
+}
+
+.caja__boton--js:hover {
+  background-color: #ffd700;
 }
 
 /* Estilos para los resultados */
@@ -232,9 +230,4 @@ h1 {
   color: #020202;
   overflow-y: auto;
   /* Oculta el resultado inicialmente */
-}
-.selecciones {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
 }
