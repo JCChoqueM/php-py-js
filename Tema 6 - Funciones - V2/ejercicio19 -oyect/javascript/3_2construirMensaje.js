@@ -4,15 +4,26 @@ function construirMensaje_(datos, resultado) {
   const salida = document.querySelector('#seleccion2').value;
   let mensaje = '';
 
+  // Definir los colores de las bases
+  const coloresBase = {
+    Decimal: 'blue',
+    Binario: 'green',
+    Hexadecimal: 'orangered',
+    Octal: 'purple'
+  };
+
+  // Verificar si el número es válido
   if (validarNumero(numero, base)) {
     mensaje =
-      `El número <span style='color: blue;'><strong>${numero}</strong></span> en base <span style='color: blue;'><strong>${base}</strong></span><br> ` +
-      `Es igual a: <span style='color: rgb(234, 0, 255);'><strong>${resultado}</strong></span> en base <span style='color: rgb(234, 0, 255);'><strong>${salida}</strong></span>`;
+      `El número <span style='color: ${coloresBase[base]};'><strong>${numero}</strong></span> en base <span style='color: ${coloresBase[base]};'><strong>${base}</strong></span><br> ` +
+      `Es igual a: <span style='color: ${coloresBase[salida]};'><strong>${resultado}</strong></span> en base <span style='color: ${coloresBase[salida]};'><strong>${salida}</strong></span>`;
   } else {
     mensaje = `El número <span style='color: red;'><strong>${numero}</strong></span> no es una base <span style='color: red;'><strong>${base}</strong></span> válida.`;
   }
+
   return mensaje;
 }
+
 
 function validarNumero(numero, base) {
   let esValido = false;
