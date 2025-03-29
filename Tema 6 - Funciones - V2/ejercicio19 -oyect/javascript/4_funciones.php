@@ -1,14 +1,67 @@
 <?php
-function decimalABinario($divisor)
-{
-    $suma = 0;
-    for ($i = 0; $divisor > 0; $divisor = intdiv($divisor, 2)) {
-        if ($divisor % 2 == 1) {
-            $suma += 10 ** $i;
-        }
-        $i++;
-    }
-    return $suma;
+
+function DecimalBinario($numeroDecimal) {
+    return decbin(intval($numeroDecimal));
+}
+
+function DecimalHexadecimal($numeroDecimal) {
+    return strtoupper(dechex(intval($numeroDecimal)));
+}
+
+function DecimalOctal($numeroDecimal) {
+    return decoct(intval($numeroDecimal));
+}
+
+function BinarioDecimal($numeroBinario) {
+    return bindec($numeroBinario);
+}
+
+function HexadecimalDecimal($numeroHexadecimal) {
+    return hexdec($numeroHexadecimal);
+}
+
+function OctalDecimal($numeroOctal) {
+    return octdec($numeroOctal);
+}
+
+function DecimalDecimal($numeroDecimal) {
+    return $numeroDecimal;
+}
+
+function BinarioBinario($numeroBinario) {
+    return $numeroBinario;
+}
+
+function HexadecimalHexadecimal($numeroHexadecimal) {
+    return $numeroHexadecimal;
+}
+
+function OctalOctal($numeroOctal) {
+    return $numeroOctal;
+}
+
+function BinarioHexadecimal($numeroBinario) {
+    return strtoupper(dechex(bindec($numeroBinario)));
+}
+
+function BinarioOctal($numeroBinario) {
+    return decoct(bindec($numeroBinario));
+}
+
+function HexadecimalBinario($numeroHexadecimal) {
+    return decbin(hexdec($numeroHexadecimal));
+}
+
+function HexadecimalOctal($numeroHexadecimal) {
+    return decoct(hexdec($numeroHexadecimal));
+}
+
+function OctalBinario($numeroOctal) {
+    return decbin(octdec($numeroOctal));
+}
+
+function OctalHexadecimal($numeroOctal) {
+    return strtoupper(dechex(octdec($numeroOctal)));
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

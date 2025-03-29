@@ -49,14 +49,34 @@
           >Ingrese un numero inicial para mostrar
         </label>
         <input
-          type="number"
+          type="text"
           id="num1"
           name="num1"
           placeholder="Ingrese un numero entero positivo"
           required="true"
         />
       </div>
+      <div class="selecciones">
+        <div>
+          <label for="accion">Base:</label>
+          <select id="seleccion1">
+            <option value="Decimal">Decimal</option>
+            <option value="Binario">Binario</option>
+            <option value="Hexadecimal">Hexadecimal</option>
+            <option value="Octal">Octal</option>
+          </select>
+        </div>
 
+        <div>
+          <label for="accion2">Transformar a:</label>
+          <select id="seleccion2">
+            <option value="Decimal">Decimal</option>
+            <option value="Binario">Binario</option>
+            <option value="Hexadecimal">Hexadecimal</option>
+            <option value="Octal">Octal</option>
+          </select>
+        </div>
+      </div>
       <div class="formulario__botones">
         <button
           id="miBoton"
@@ -71,24 +91,14 @@
 
     <div class="contenedor">
       <section class="contenedor__caja contenedor__caja--js">
-        <button
-          class="caja__boton caja__boton--js"
-          onclick="solucionJavaScript()"
-        >
-          Solución JS
-        </button>
+        <button class="caja__boton caja__boton--js">Solución JS</button>
         <div
           class="caja__resultado"
           id="resultadoJS"
         ></div>
       </section>
       <section class="contenedor__caja contenedor__caja--php">
-        <button
-          class="caja__boton caja__boton--php"
-          onclick="solucionPHP()"
-        >
-          Solución PHP
-        </button>
+        <button class="caja__boton caja__boton--php">Solución PHP</button>
         <div
           class="caja__resultado"
           id="resultadoPHP"

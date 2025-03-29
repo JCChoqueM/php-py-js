@@ -233,3 +233,8 @@ h1 {
   overflow-y: auto;
   /* Oculta el resultado inicialmente */
 }
+.selecciones {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
