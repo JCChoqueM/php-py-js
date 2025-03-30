@@ -110,9 +110,17 @@ function iniciar() {
   generarListaTextos();
 
   // Aplicar valores iniciales
+  setSelectValue('miSelect', 'generaArrayInt');
   cambiarColorBoton(select.value);
   insertarDescripcion(select.value);
   generarInputs(select.value);
 }
 
 iniciar();
+
+function setSelectValue(idSelect, valor) {
+  const select = document.getElementById(idSelect);
+  if (select) {
+    select.value = valor;
+  }
+}

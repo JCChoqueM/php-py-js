@@ -39,7 +39,7 @@ function construirMensaje(datos, resultado) {
     return window[funcionNombre](datos, resultado); // Llamar a la función dinámica
   } else {
     // Si la función no existe, mostrar un mensaje indicando que la función no se encuentra
-    return `<span style="color: red;">Error: La función '${seleccion}' no está definida.</span>`;
+    return `<span style="color: red;">Error: La función 'construirMensaje_${seleccion}' no está definida.</span>`;
   }
 }
 

@@ -5,7 +5,7 @@ function generarInputs() {
     label: label,
     id: `num${index + 1}`,
     name: `num${index + 1}`,
-    placeholder: `Ingrese el ${label.toLowerCase()} que desea en el array:`,
+    placeholder: `${label.toLowerCase()}`,
   }));
 }
 
@@ -50,10 +50,10 @@ const textos = [
     inputs: [
       ...generarInputs(), // Usamos los inputs predeterminados
       {
-        label: 'Número a Buscar', // El nuevo campo extra
+        label: 'Evaluar', // El nuevo campo extra
         id: 'num4',
         name: 'num4',
-        placeholder: 'Ingrese el número que desea buscar en el array:',
+        placeholder: 'Evaluar:',
       },
     ],
   },
@@ -65,10 +65,10 @@ const textos = [
     inputs: [
       ...generarInputs(), // Usamos los inputs predeterminados
       {
-        label: 'Número a Buscar', // El nuevo campo extra
+        label: 'Buscar Número', // El nuevo campo extra
         id: 'num4',
         name: 'num4',
-        placeholder: 'Ingrese el número que desea buscar en el array:',
+        placeholder: 'Buscar:',
       },
     ],
   },
@@ -77,15 +77,7 @@ const textos = [
   {
     texto: 'volteaArrayInt',
     descripcion: 'Le da la vuelta a un array',
-    inputs: [
-      ...generarInputs(), // Usamos los inputs predeterminados
-      {
-        label: 'Número a Buscar', // El nuevo campo extra
-        id: 'num4',
-        name: 'num4',
-        placeholder: 'Ingrese el número que desea buscar en el array:',
-      },
-    ],
+    inputs: generarInputs(), // Usamos los inputs predeterminados
   },
   /* !SECTION fin - 7.-volteaArrayInt */
   /* section 8.-rotaDerechaArrayInt */
@@ -95,10 +87,10 @@ const textos = [
     inputs: [
       ...generarInputs(), // Usamos los inputs predeterminados
       {
-        label: 'Número a Buscar', // El nuevo campo extra
+        label: 'Rota a la derecha', // El nuevo campo extra
         id: 'num4',
         name: 'num4',
-        placeholder: 'Ingrese el número que desea buscar en el array:',
+        placeholder: 'Numero de veces',
       },
     ],
   },
@@ -110,10 +102,10 @@ const textos = [
     inputs: [
       ...generarInputs(), // Usamos los inputs predeterminados
       {
-        label: 'Número a Buscar', // El nuevo campo extra
+        label: 'Rota a la izquierda', // El nuevo campo extra
         id: 'num4',
         name: 'num4',
-        placeholder: 'Ingrese el número que desea buscar en el array:',
+        placeholder: 'Numero de veces:',
       },
     ],
   },
