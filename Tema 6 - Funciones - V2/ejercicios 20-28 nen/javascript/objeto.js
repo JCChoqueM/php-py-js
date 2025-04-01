@@ -52,7 +52,7 @@ const textos = [
       {
         label: 'Evaluar', // El nuevo campo extra
         id: 'num4',
-        name: 'num4',
+        name: 'evaluar',
         placeholder: 'Evaluar:',
       },
     ],
@@ -89,7 +89,7 @@ const textos = [
       {
         label: 'Rota a la derecha', // El nuevo campo extra
         id: 'num4',
-        name: 'num4',
+        name: 'rotaDerecha',
         placeholder: 'Numero de veces',
       },
     ],
@@ -104,7 +104,7 @@ const textos = [
       {
         label: 'Rota a la izquierda', // El nuevo campo extra
         id: 'num4',
-        name: 'num4',
+        name: 'rotaIzquierda',
         placeholder: 'Numero de veces:',
       },
     ],

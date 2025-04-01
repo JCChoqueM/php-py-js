@@ -102,6 +102,8 @@ select.addEventListener('change', () => {
   cambiarColorBoton(select.value);
   insertarDescripcion(select.value);
   generarInputs(select.value);
+  actualizarInputs();
+  enviarFormulario();
 });
 
 // Inicialización

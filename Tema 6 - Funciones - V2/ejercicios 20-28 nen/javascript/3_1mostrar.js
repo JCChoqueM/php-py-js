@@ -47,22 +47,31 @@ function construirMensaje(datos, resultado) {
 async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSeleccion) {
   const nombreFuncion = funcionSeleccion.name; // Obtener el nombre de la función JS
 
+  const arrayGenerado = JSON.parse(sessionStorage.getItem('arrayGenerado')) || [];
+  console.log('arraygenerado', arrayGenerado);
+  // Si todo está bien, procesamos los datos
+
+  let esVerdaderoJS = '';
+  if (funcionSeleccion === funcion_generaArrayInt) {
+    esVerdaderoJS = funcionSeleccion(...Object.values(datos));
+  } else {
+    esVerdaderoJS = funcionSeleccion(arrayGenerado);
+  }
   // Evaluar en JavaScript
-  const esVerdaderoJS = funcionSeleccion(...Object.values(datos));
-  console.log("respuestaJS:",esVerdaderoJS)
+  console.log('respuestaJS:', esVerdaderoJS);
   mostrarResultado(resultadoJS, construirMensaje(datos, esVerdaderoJS));
 
   // Evaluar en PHP con la misma función (si existe en PHP)
   try {
     const respuestaPHP = await obtenerRespuestaPHP(datos, nombreFuncion);
-    console.log(respuestaPHP)
+    console.log(respuestaPHP);
     const resultadoJSON = JSON.parse(respuestaPHP); // Convertir la respuesta JSON a objeto
 
     if (resultadoJSON.error) {
       mostrarResultado(resultadoPHP, `Error en PHP: ${resultadoJSON.error}`, true);
     } else {
-      console.log('resultadoJson:',resultadoJSON)
-      console.log("resultadoPHP:",resultadoJSON.resultado)
+      console.log('resultadoJson:', resultadoJSON);
+      console.log('resultadoPHP:', resultadoJSON.resultado);
       mostrarResultado(resultadoPHP, construirMensaje(datos, resultadoJSON.resultado));
     }
   } catch (error) {
