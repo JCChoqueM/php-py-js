@@ -17,20 +17,22 @@ function funcion_minimoArrayInt(array) {
 }
 
 /* section 2.-minimoArrayInt */
-function construirMensaje_minimoArrayInt(input1) {
-  let mensajeError = '';
-  if (Array.isArray(input1)) {
-    mensajeError = 'El valor minimo del array es: ' + minimoArrayInt(input1);
-    mensajeError += crearTabla(input1, -1, minimoArrayInt(input1));
-  } else {
-    console.error("El índice 'arrayGenerado' no es un array.");
+function minimoArrayInt(array) {
+  let minimo = array[0]; // Inicializa el mínimo con el primer valor del array
+
+  for (let i = 1; i < array.length; i++) {
+    // Empieza desde el segundo elemento
+    if (array[i] < minimo) {
+      minimo = array[i];
+    }
   }
-  return mensajeError;
+
+  return minimo;
 }
 /* !section fin - 2.-minimoArrayInt */
 
 /* SECTION 3.-maximoArrayInt */
-function maximoArrayInt(array) {
+function funcion_maximoArrayInt(array) {
   if (!Array.isArray(array) || array.length === 0) {
     throw new Error('El input no es un array válido o está vacío.');
   }
@@ -49,7 +51,7 @@ function maximoArrayInt(array) {
 /* !SECTION fin - 3.-maximoArrayInt */
 
 /* section 4.-mediaArrayInt */
-function mediaArrayInt(array) {
+function funcion_mediaArrayInt(array) {
   // Verifica si el array no está vacío
   if (!Array.isArray(array) || array.length === 0) {
     return 0; // Retorna 0 si el array no es válido o está vacío
@@ -71,7 +73,7 @@ function mediaArrayInt(array) {
 /* !section fin - 4.-mediaArrayInt */
 
 /* SECTION 5.-estaEnArrayInt */
-function estaEnArrayInt(array, numero) {
+function funcion_estaEnArrayInt(array, numero) {
   numero = parseInt(numero);
   console.log(typeof numero);
   console.log(typeof array);
@@ -84,7 +86,7 @@ function estaEnArrayInt(array, numero) {
 
 /* !SECTION fin - 5.-estaEnArrayInt */
 /* section 6.-posicionEnArrayInt */
-function posicionEnArrayInt(input1, extra) {
+function funcion_posicionEnArrayInt(input1, extra) {
   let posiciones = [];
   console.log('.......................');
   console.log(input1);
@@ -108,7 +110,7 @@ function posicionEnArrayInt(input1, extra) {
 
 /* !section fin - 6.-posicionEnArrayInt */
 /* SECTION 7.-volteaArrayInt */
-function volteaArrayInt(input1) {
+function funcion_volteaArrayInt(input1) {
   let resultado = [];
   let count = input1.length;
 
@@ -121,7 +123,7 @@ function volteaArrayInt(input1) {
 
 /* !SECTION fin - 7.-volteaArrayInt */
 /* section 8.-rotaDerechaArrayInt */
-function rotaDerechaArrayInt(input1, extra) {
+function funcion_rotaDerechaArrayInt(input1, extra) {
   if (!Array.isArray(input1) || input1.length === 0) {
     return [input1, 0]; // Retorna el array vacío y posición 0 si input1 es vacío
   }
@@ -147,7 +149,7 @@ function rotaDerechaArrayInt(input1, extra) {
 
 /* !section fin - 8.-rotaDerechaArrayInt */
 /* SECTION 9.-rotaIzquierdaArrayInt */
-function rotaIzquierdaArrayInt(input1, n) {
+function funcion_rotaIzquierdaArrayInt(input1, n) {
   let count = input1.length;
 
   // Si el array está vacío o solo tiene un elemento, no se necesita rotación
