@@ -48,7 +48,7 @@ async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSelecci
   const nombreFuncion = funcionSeleccion.name; // Obtener el nombre de la función JS
 
   const arrayGenerado = JSON.parse(sessionStorage.getItem('arrayGenerado')) || [];
-  console.log('arraygenerado', arrayGenerado);
+
   // Si todo está bien, procesamos los datos
 
   let esVerdaderoJS = '';
@@ -62,19 +62,28 @@ async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSelecci
   mostrarResultado(resultadoJS, construirMensaje(datos, esVerdaderoJS, arrayGenerado));
 
   // Evaluar en PHP con la misma función (si existe en PHP)
+  const datosCombinados = {
+    arrayGenerado, // Primero añadimos el array generado
+    ...datos, // Luego copiamos los datos del formulario
+  };
+  let respuestaPHP = null; // Inicializar respuestaPHP
   try {
-    const respuestaPHP = await obtenerRespuestaPHP(datos, nombreFuncion);
+    if (funcionSeleccion === funcion_generaArrayInt) {
+      respuestaPHP = await obtenerRespuestaPHP(datos, nombreFuncion);
+    } else {
+      respuestaPHP = await obtenerRespuestaPHP(datosCombinados, nombreFuncion);
+    }
     console.log(respuestaPHP);
     const resultadoJSON = JSON.parse(respuestaPHP); // Convertir la respuesta JSON a objeto
 
     if (resultadoJSON.error) {
       mostrarResultado(resultadoPHP, `Error en PHP: ${resultadoJSON.error}`, true);
     } else {
-      console.log('resultadoJson:', resultadoJSON);
+ 
       console.log('resultadoPHP:', resultadoJSON.resultado);
-      mostrarResultado(resultadoPHP, construirMensaje(datos, resultadoJSON.resultado));
+      mostrarResultado(resultadoPHP, construirMensaje(datos, resultadoJSON.resultado, arrayGenerado));
     }
   } catch (error) {
-    mostrarResultado(resultadoPHP, `Error en la petición: ${error.message}`, true);
+    mostrarResultado(resultadoPHP, `Error en la petición22: ${error.message}`, true);
   }
 }

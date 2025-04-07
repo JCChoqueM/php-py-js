@@ -75,7 +75,7 @@ function construirMensaje_posicionEnArrayInt(datos, resultado, arrayGenerado) {
     mensajeError += crearTabla(arrayGenerado, -1, parseInt(extra));
   } else {
     mensajeError = `El valor ${extra} no está en el array.`;
-    mensajeError += crearTabla(arrayGenerado, -1, parseInt(extra));
+    mensajeError += crearTabla(arrayGenerado, -1, -1);
   }
 
   return mensajeError;

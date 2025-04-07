@@ -90,9 +90,7 @@ function funcion_posicionEnArrayInt(array, datos) {
   let posiciones = [];
 
   extra = parseInt(datos.num4);
-  console.log(extra);
 
-  console.log('extra', extra);
   // Verifica si input1 es un array
   if (Array.isArray(array)) {
     array.forEach((valor, indice) => {
