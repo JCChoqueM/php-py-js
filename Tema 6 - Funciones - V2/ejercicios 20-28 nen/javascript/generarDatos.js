@@ -19,5 +19,5 @@ function generarDatos() {
   // Generar y actualizar el array y luego imprimirlo
   generarYActualizarArray();
   enviarFormulario();
-  imprimirArrayEnDiv(JSON.parse(sessionStorage.getItem('arrayGenerado')));
+
 }

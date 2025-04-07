@@ -7,7 +7,7 @@ function funcion_generaArrayInt(tamano, minimo, maximo) {
 }
 /* !section fin - 1.-esCapicua */
 
-function funcion_minimoArrayInt(array) {
+function funcion_minimoArrayInt(array, datos) {
   if (!Array.isArray(array) || array.length === 0) {
     console.warn('⚠ El array está vacío o no es válido.');
     return null;
@@ -17,7 +17,7 @@ function funcion_minimoArrayInt(array) {
 }
 
 /* section 2.-minimoArrayInt */
-function minimoArrayInt(array) {
+function minimoArrayInt(array, datos) {
   let minimo = array[0]; // Inicializa el mínimo con el primer valor del array
 
   for (let i = 1; i < array.length; i++) {
@@ -32,7 +32,7 @@ function minimoArrayInt(array) {
 /* !section fin - 2.-minimoArrayInt */
 
 /* SECTION 3.-maximoArrayInt */
-function funcion_maximoArrayInt(array) {
+function funcion_maximoArrayInt(array, datos) {
   if (!Array.isArray(array) || array.length === 0) {
     throw new Error('El input no es un array válido o está vacío.');
   }
@@ -51,7 +51,7 @@ function funcion_maximoArrayInt(array) {
 /* !SECTION fin - 3.-maximoArrayInt */
 
 /* section 4.-mediaArrayInt */
-function funcion_mediaArrayInt(array) {
+function funcion_mediaArrayInt(array, datos) {
   // Verifica si el array no está vacío
   if (!Array.isArray(array) || array.length === 0) {
     return 0; // Retorna 0 si el array no es válido o está vacío
@@ -73,10 +73,10 @@ function funcion_mediaArrayInt(array) {
 /* !section fin - 4.-mediaArrayInt */
 
 /* SECTION 5.-estaEnArrayInt */
-function funcion_estaEnArrayInt(array, numero) {
-  numero = parseInt(numero);
-  console.log(typeof numero);
-  console.log(typeof array);
+function funcion_estaEnArrayInt(array, datos) {
+  numero = parseInt(datos.num4);
+  console.log('numero:', numero);
+  console.log('array', array);
   // Verifica si 'array' es un array y si 'numero' está en el array
   if (array.includes(numero)) {
     return true;
@@ -86,17 +86,16 @@ function funcion_estaEnArrayInt(array, numero) {
 
 /* !SECTION fin - 5.-estaEnArrayInt */
 /* section 6.-posicionEnArrayInt */
-function funcion_posicionEnArrayInt(input1, extra) {
+function funcion_posicionEnArrayInt(array, datos) {
   let posiciones = [];
-  console.log('.......................');
-  console.log(input1);
+
+  extra = parseInt(datos.num4);
   console.log(extra);
 
-  extra = parseInt(extra);
-  console.log(['2', 4, 'hola', '4']);
+  console.log('extra', extra);
   // Verifica si input1 es un array
-  if (Array.isArray(input1)) {
-    input1.forEach((valor, indice) => {
+  if (Array.isArray(array)) {
+    array.forEach((valor, indice) => {
       if (valor === extra) {
         posiciones.push(indice);
       }
@@ -123,25 +122,25 @@ function funcion_volteaArrayInt(input1) {
 
 /* !SECTION fin - 7.-volteaArrayInt */
 /* section 8.-rotaDerechaArrayInt */
-function funcion_rotaDerechaArrayInt(input1, extra) {
-  if (!Array.isArray(input1) || input1.length === 0) {
-    return [input1, 0]; // Retorna el array vacío y posición 0 si input1 es vacío
+function funcion_rotaDerechaArrayInt(array, datos) {
+  if (!Array.isArray(array) || array.length === 0) {
+    return [array, 0]; // Retorna el array vacío y posición 0 si array es vacío
   }
 
   // Calcula el número de rotaciones necesarias
-  extra = extra % input1.length;
+  datos = datos.num4 % array.length;
 
-  // Si extra es 0, no se requiere rotación
-  if (extra === 0) {
-    return [input1, 0]; // Retorna el array original y posición 0
+  // Si datos es 0, no se requiere rotación
+  if (datos === 0) {
+    return [array, 0]; // Retorna el array original y posición 0
   }
 
-  // Extrae las partes del input1 y las combina en el orden deseado
-  const part1 = input1.slice(-extra); // Últimos extra elementos
-  const part2 = input1.slice(0, -extra); // Elementos restantes
+  // Extrae las partes del array y las combina en el orden deseado
+  const part1 = array.slice(-datos); // Últimos datos elementos
+  const part2 = array.slice(0, -datos); // Elementos restantes
 
   // Calcula la nueva posición del elemento que estaba en el índice 0
-  const nuevaPosicion = extra;
+  const nuevaPosicion = datos;
 
   // Devuelve el array rotado y la nueva posición del primer elemento original
   return [part1.concat(part2), nuevaPosicion];
@@ -149,28 +148,28 @@ function funcion_rotaDerechaArrayInt(input1, extra) {
 
 /* !section fin - 8.-rotaDerechaArrayInt */
 /* SECTION 9.-rotaIzquierdaArrayInt */
-function funcion_rotaIzquierdaArrayInt(input1, n) {
-  let count = input1.length;
+function funcion_rotaIzquierdaArrayInt(array, datos) {
+  let count = array.length;
 
   // Si el array está vacío o solo tiene un elemento, no se necesita rotación
   if (count <= 1) {
-    return [input1, 0];
+    return [array, 0];
   }
 
   // Asegúrate de que n sea un número positivo y menor que el tamaño del array
-  n = n % count;
+  datos = datos.num4 % count;
 
   // Si n es 0, no se requiere rotación
-  if (n === 0) {
-    return [input1, 0];
+  if (datos === 0) {
+    return [array, 0];
   }
 
   // Realizar la rotación a la izquierda
-  let part1 = input1.slice(0, n); // Primeros n elementos
-  let part2 = input1.slice(n); // Elementos restantes
+  let part1 = array.slice(0, datos); // Primeros n elementos
+  let part2 = array.slice(datos); // Elementos restantes
 
   // Calcula la nueva posición del elemento que estaba en el índice 0
-  let nuevaPosicion = (count - n) % count;
+  let nuevaPosicion = (count - datos) % count;
 
   // Devuelve el array rotado y la nueva posición del primer elemento original
   return [part2.concat(part1), nuevaPosicion];

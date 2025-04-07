@@ -28,7 +28,7 @@ async function obtenerRespuestaPHP(objeto, funcionPHP) {
 }
 
 // Función para construir el mensaje según el tipo de función
-function construirMensaje(datos, resultado,arrayGenerado) {
+function construirMensaje(datos, resultado, arrayGenerado) {
   const seleccion = document.getElementById('miSelect').value; // Obtener el valor seleccionado
 
   // Crear el nombre de la función dinámica
@@ -36,7 +36,7 @@ function construirMensaje(datos, resultado,arrayGenerado) {
 
   // Verificar si la función existe en el contexto global (window)
   if (typeof window[funcionNombre] === 'function') {
-    return window[funcionNombre](datos, resultado,arrayGenerado); // Llamar a la función dinámica
+    return window[funcionNombre](datos, resultado, arrayGenerado); // Llamar a la función dinámica
   } else {
     // Si la función no existe, mostrar un mensaje indicando que la función no se encuentra
     return `<span style="color: red;">Error: La función 'construirMensaje_${seleccion}' no está definida.</span>`;
@@ -55,11 +55,11 @@ async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSelecci
   if (funcionSeleccion === funcion_generaArrayInt) {
     esVerdaderoJS = funcionSeleccion(...Object.values(datos));
   } else {
-    esVerdaderoJS = funcionSeleccion(arrayGenerado);
+    esVerdaderoJS = funcionSeleccion(arrayGenerado, datos);
   }
   // Evaluar en JavaScript
   console.log('respuestaJS:', esVerdaderoJS);
-  mostrarResultado(resultadoJS, construirMensaje(datos, esVerdaderoJS,arrayGenerado));
+  mostrarResultado(resultadoJS, construirMensaje(datos, esVerdaderoJS, arrayGenerado));
 
   // Evaluar en PHP con la misma función (si existe en PHP)
   try {

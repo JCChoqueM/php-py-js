@@ -11,7 +11,14 @@ function funcion_generaArrayInt($tamano, $minimo, $maximo) {
 
     return $valores;
 }
+function funcion_minimoArrayInt($array, $datos = []) {
+    if (!is_array($array) || empty($array)) {
+        error_log('⚠ El array está vacío o no es válido.');
+        return null;
+    }
 
+    return min($array);
+}
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
