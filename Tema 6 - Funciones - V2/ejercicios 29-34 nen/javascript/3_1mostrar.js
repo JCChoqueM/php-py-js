@@ -47,7 +47,7 @@ function construirMensaje(datos, resultado, arrayGenerado) {
 async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSeleccion) {
   const nombreFuncion = funcionSeleccion.name; // Obtener el nombre de la función JS
 
-  const arrayGenerado = JSON.parse(sessionStorage.getItem('arrayGenerado')) || [];
+  const arrayGenerado = JSON.parse(sessionStorage.getItem('matrizGenerada')) || [];
 
   // Si todo está bien, procesamos los datos
 
@@ -55,7 +55,9 @@ async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSelecci
   if (funcionSeleccion === funcion_generaArrayBiInt) {
     esVerdaderoJS = funcionSeleccion(...Object.values(datos));
   } else {
+    console.log(arrayGenerado)
     esVerdaderoJS = funcionSeleccion(arrayGenerado, datos);
+
   }
   // Evaluar en JavaScript
   console.log('respuestaJS:', esVerdaderoJS);

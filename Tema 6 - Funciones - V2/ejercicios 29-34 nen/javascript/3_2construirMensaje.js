@@ -2,10 +2,9 @@
 function construirMensaje_generaArrayBiInt(datos, resultado) {
   let mensajeError = '';
   if (Array.isArray(resultado)) {
-  
     mensajeError = 'El array Generado es22:';
     mensajeError += crearTabla(resultado);
-    console.log((resultado))
+    console.log(resultado);
   } else {
     console.error("El índice 'arrayGenerado' no es un array.");
   }
@@ -14,11 +13,13 @@ function construirMensaje_generaArrayBiInt(datos, resultado) {
 /* !section fin - 1.-esCapicua */
 
 /* section 2.-minimoArrayInt */
-function construirMensaje_minimoArrayInt(datos, resultado, arrayGenerado) {
+function construirMensaje_filaDeArrayBiInt(datos, resultado, arrayGenerado) {
   let mensajeError = '';
 
-  mensajeError = 'El valor minimo del array es: ' + resultado;
-  mensajeError += crearTabla(arrayGenerado, -1, resultado);
+  mensajeError = `la fila ${datos.num5} del array :`;
+  mensajeError += crearTabla(arrayGenerado);
+  mensajeError += 'es:';
+  mensajeError += imprimirFilaEnTabla(resultado);
 
   return mensajeError;
 }

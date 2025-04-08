@@ -15,7 +15,16 @@ function funcion_generaArrayBiInt($filas, $columnas, $minimo, $maximo) {
     return $matriz;
 }
 
+function funcion_filaDeArrayBiInt($matriz, $filas, $columnas ,$minimo,$maximo,$datos) {
+    $indiceFila = (int)$datos; // Convertir a entero
 
+    // Verificar si la matriz es válida y el índice de fila está dentro del rango
+    if (!is_array($matriz) || $indiceFila < 0 || $indiceFila >= count($matriz)) {
+        return null; // índice inválido o no es una matriz válida
+    }
+
+    return $matriz[$indiceFila];
+}
 // Función para encontrar el valor mínimo en un array
 function funcion_minimoArrayInt($array)
 {

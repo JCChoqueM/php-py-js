@@ -11,18 +11,18 @@ function funcion_generaArrayBiInt(filas, columnas, minimo, maximo) {
     let fila = Array.from({ length: columnas }, () => Math.floor(Math.random() * (maximo - minimo + 1)) + minimo);
     matriz.push(fila);
   }
-console.log(matriz)
+  console.log(matriz);
   return matriz;
 }
 /* !section fin - 1.-esCapicua */
 
-function funcion_minimoArrayInt(array, datos) {
-  if (!Array.isArray(array) || array.length === 0) {
-    console.warn('⚠ El array está vacío o no es válido.');
-    return null;
+function funcion_filaDeArrayBiInt(matriz, datos) {
+  let indiceFila = parseInt(datos.num5); // Convertir a entero
+  console.log(matriz)
+  if (!Array.isArray(matriz) || indiceFila < 0 || indiceFila >= matriz.length) {
+    return null; // índice inválido o no es una matriz
   }
-
-  return Math.min(...array); // Usa Math.min con spread para simplificar
+  return matriz[indiceFila];
 }
 
 /* section 2.-minimoArrayInt */

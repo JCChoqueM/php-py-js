@@ -23,7 +23,15 @@ const textos = [
   {
     texto: 'filaDeArrayBiInt',
     descripcion: 'Devuelve la fila i-ésima del array que se pasa como parámetro.',
-    inputs: generarInputs(), // Llamar directamente sin necesidad de pasar parámetros
+    inputs: [
+      ...generarInputs(), // Usamos los inputs predeterminados
+      {
+        label: 'numero de fila', // El nuevo campo extra
+        id: 'num5',
+        name: 'num5',
+        placeholder: 'Evaluar:',
+      },
+    ],
   },
   /* !section fin - 2.-filaDeArrayBiInt */
 
