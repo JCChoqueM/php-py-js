@@ -1,9 +1,18 @@
 /* section 1.-esCapicua */
-function funcion_generaArrayInt(tamano, minimo, maximo) {
-  minimo = Number(minimo); // Asegurar que son números
+function funcion_generaArrayBiInt(filas, columnas, minimo, maximo) {
+  minimo = Number(minimo);
   maximo = Number(maximo);
-  let valores = Array.from({ length: tamano }, () => Math.floor(Math.random() * (maximo - minimo + 1)) + minimo);
-  return valores;
+  filas = Number(filas);
+  columnas = Number(columnas);
+
+  let matriz = [];
+
+  for (let i = 0; i < filas; i++) {
+    let fila = Array.from({ length: columnas }, () => Math.floor(Math.random() * (maximo - minimo + 1)) + minimo);
+    matriz.push(fila);
+  }
+console.log(matriz)
+  return matriz;
 }
 /* !section fin - 1.-esCapicua */
 

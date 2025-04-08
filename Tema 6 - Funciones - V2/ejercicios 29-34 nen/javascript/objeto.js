@@ -1,6 +1,6 @@
 // Función para generar los inputs de manera modular con campos predeterminados
 function generarInputs() {
-  const labels = ['Tamaño', 'Minimo', 'Maximo'];
+  const labels = ['Filas', 'Columnas', 'Minimo', 'Maximo'];
   return labels.map((label, index) => ({
     label: label,
     id: `num${index + 1}`,

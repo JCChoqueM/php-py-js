@@ -4,14 +4,16 @@ function generarNumeroAleatorio(min, max) {
 
 function generarDatos() {
   // Generar tamaño, mínimo y máximo de forma aleatoria
-  const tamaño = generarNumeroAleatorio(1, 10); // Tamaño aleatorio entre 1 y 10
+  const filas = generarNumeroAleatorio(1, 5); // Tamaño aleatorio entre 1 y 10
+  const columnas = generarNumeroAleatorio(1, 5); // Mínimo aleatorio entre 0 y 50
   const minimo = generarNumeroAleatorio(0, 50); // Mínimo aleatorio entre 0 y 50
   const maximo = minimo + generarNumeroAleatorio(25, 90); // Máximo aleatorio mayor que mínimo
 
   // Guardar en sessionStorage para persistencia
-  sessionStorage.setItem('num1', tamaño);
-  sessionStorage.setItem('num2', minimo);
-  sessionStorage.setItem('num3', maximo);
+  sessionStorage.setItem('num1', filas);
+  sessionStorage.setItem('num2', columnas);
+  sessionStorage.setItem('num3', minimo);
+  sessionStorage.setItem('num4', maximo);
 
   // Insertar estos valores en los inputs
   actualizarInputs();
@@ -19,5 +21,4 @@ function generarDatos() {
   // Generar y actualizar el array y luego imprimirlo
   generarYActualizarArray();
   enviarFormulario();
-
 }

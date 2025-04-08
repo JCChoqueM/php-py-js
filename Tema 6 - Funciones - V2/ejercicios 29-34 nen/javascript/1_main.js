@@ -81,9 +81,10 @@ function actualizarInputs() {
   const num1 = sessionStorage.getItem('num1');
   const num2 = sessionStorage.getItem('num2');
   const num3 = sessionStorage.getItem('num3');
+  const num4 = sessionStorage.getItem('num4');
 
   // Solo generar el array si num1, num2 y num3 ya tienen valores en sessionStorage y no estamos cambiando solo el select
-  if (num1 && num2 && num3) {
+  if (num1 && num2 && num3 && num4) {
     // Verificar si el array ya está generado para no generar uno nuevo innecesariamente
     const arrayGenerado = sessionStorage.getItem('arrayGenerado');
     if (!arrayGenerado) {
@@ -94,22 +95,28 @@ function actualizarInputs() {
 
 // ✅ Función para generar el array de números basado en los valores de num1, num2 y num3
 function generarYActualizarArray() {
-  const tamaño = parseInt(sessionStorage.getItem('num1')) || 0;
-  const minimo = parseInt(sessionStorage.getItem('num2')) || 0;
-  const maximo = parseInt(sessionStorage.getItem('num3')) || 0;
+  const filas = parseInt(sessionStorage.getItem('num1')) || 0;
+  const columnas = parseInt(sessionStorage.getItem('num2')) || 0;
+  const minimo = parseInt(sessionStorage.getItem('num3')) || 0;
+  const maximo = parseInt(sessionStorage.getItem('num4')) || 0;
 
-  // Verificar si los valores son válidos antes de generar el array
-  if (tamaño > 0 && minimo <= maximo) {
-    const arrayGenerado = Array.from({ length: tamaño }, () =>
-      Math.floor(Math.random() * (maximo - minimo + 1)) + minimo
-    );
+  // Verificar que los valores sean válidos
+  if (filas > 0 && columnas > 0 && minimo <= maximo) {
+    const matrizGenerada = [];
 
-    // Guardar el array en sessionStorage
-    sessionStorage.setItem('arrayGenerado', JSON.stringify(arrayGenerado));
-    imprimirArrayEnDiv(arrayGenerado);
+    for (let i = 0; i < filas; i++) {
+      const fila = [];
+      for (let j = 0; j < columnas; j++) {
+        fila.push(Math.floor(Math.random() * (maximo - minimo + 1)) + minimo);
+      }
+      matrizGenerada.push(fila);
+    }
+
+    // Guardar la matriz en sessionStorage
+    sessionStorage.setItem('matrizGenerada', JSON.stringify(matrizGenerada));
+   /*  imprimirArrayEnDiv(matrizGenerada); */
   } else {
-    // Si los datos no son válidos, borrar el array en sessionStorage
-    sessionStorage.removeItem('arrayGenerado');
+    sessionStorage.removeItem('matrizGenerada');
   }
 }
 
@@ -120,16 +127,13 @@ function obtenerArrayGenerado() {
 
 function imprimirArrayEnDiv(array) {
   const resultadoDiv = document.getElementById('resultadoArray');
-  if (resultadoDiv) {
-    // Limpiar el contenido actual del div
-    resultadoDiv.innerHTML = '';
+  if (!resultadoDiv) return;
 
-    // Crear un párrafo para mostrar el array
-    const parrafo = document.createElement('p');
-    parrafo.textContent = `Array generado: [${array.join(', ')}]`;
+  resultadoDiv.innerHTML = ''; // Limpiar el contenido actual
 
-    // Agregar el párrafo al div
-    resultadoDiv.appendChild(parrafo);
-  }
+  // Llamar a tu función que genera el HTML de la tabla
+  const tablaHTML = crearTabla(array);
+
+  // Insertar la tabla en el div
+  resultadoDiv.innerHTML = tablaHTML;
 }
-

@@ -1,9 +1,11 @@
 /* section 1.-esCapicua */
-function construirMensaje_generaArrayInt(datos, resultado) {
+function construirMensaje_generaArrayBiInt(datos, resultado) {
   let mensajeError = '';
   if (Array.isArray(resultado)) {
-    mensajeError = 'El array Generado es:';
-    mensajeError += crearTabla(resultado, -1, -1);
+  
+    mensajeError = 'El array Generado es22:';
+    mensajeError += crearTabla(resultado);
+    console.log((resultado))
   } else {
     console.error("El índice 'arrayGenerado' no es un array.");
   }

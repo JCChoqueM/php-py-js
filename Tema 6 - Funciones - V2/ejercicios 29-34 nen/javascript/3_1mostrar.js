@@ -52,7 +52,7 @@ async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSelecci
   // Si todo está bien, procesamos los datos
 
   let esVerdaderoJS = '';
-  if (funcionSeleccion === funcion_generaArrayInt) {
+  if (funcionSeleccion === funcion_generaArrayBiInt) {
     esVerdaderoJS = funcionSeleccion(...Object.values(datos));
   } else {
     esVerdaderoJS = funcionSeleccion(arrayGenerado, datos);
@@ -68,7 +68,7 @@ async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSelecci
   };
   let respuestaPHP = null; // Inicializar respuestaPHP
   try {
-    if (funcionSeleccion === funcion_generaArrayInt) {
+    if (funcionSeleccion === funcion_generaArrayBiInt) {
       respuestaPHP = await obtenerRespuestaPHP(datos, nombreFuncion);
     } else {
       respuestaPHP = await obtenerRespuestaPHP(datosCombinados, nombreFuncion);
@@ -84,6 +84,6 @@ async function mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSelecci
       mostrarResultado(resultadoPHP, construirMensaje(datos, resultadoJSON.resultado, arrayGenerado));
     }
   } catch (error) {
-    mostrarResultado(resultadoPHP, `Error en la petición22: ${error.message}`, true);
+    mostrarResultado(resultadoPHP, `Error en la petición212: ${error.message}`, true);
   }
 }

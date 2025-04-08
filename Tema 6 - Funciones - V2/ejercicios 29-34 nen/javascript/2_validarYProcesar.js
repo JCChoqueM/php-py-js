@@ -25,8 +25,8 @@ function validarYProcesar(datos, funcionSeleccion) {
     }
   } else {
     // Convertir a número
-    const minimo = Number(datos.num2);
-    const maximo = Number(datos.num3);
+    const minimo = Number(datos.num3);
+    const maximo = Number(datos.num4);
 
     // Validar mínimo y máximo
     switch (true) {

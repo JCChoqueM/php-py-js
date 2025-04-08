@@ -1,18 +1,20 @@
 <?php
 
 // Función para generar un array de enteros aleatorios
-function funcion_generaArrayInt($tamano, $minimo, $maximo)
-{
-    $minimo = (int) $minimo; // Asegurar que son números
-    $maximo = (int) $maximo;
-    $valores = [];
+function funcion_generaArrayBiInt($filas, $columnas, $minimo, $maximo) {
+    $matriz = array();
 
-    for ($i = 0; $i < $tamano; $i++) {
-        $valores[] = rand($minimo, $maximo);
+    for ($i = 0; $i < $filas; $i++) {
+        $fila = array();
+        for ($j = 0; $j < $columnas; $j++) {
+            $fila[] = rand($minimo, $maximo);
+        }
+        $matriz[] = $fila;
     }
 
-    return $valores;
+    return $matriz;
 }
+
 
 // Función para encontrar el valor mínimo en un array
 function funcion_minimoArrayInt($array)
