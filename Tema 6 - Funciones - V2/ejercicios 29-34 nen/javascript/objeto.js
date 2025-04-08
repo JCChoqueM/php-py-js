@@ -39,7 +39,15 @@ const textos = [
   {
     texto: 'columnaDeArrayBiInt',
     descripcion: ' Devuelve la columna j-ésima del array que se pasa como parámetro.',
-    inputs: generarInputs(), // Llamar directamente sin necesidad de pasar parámetros
+    inputs: [
+      ...generarInputs(), // Usamos los inputs predeterminados
+      {
+        label: 'numero de fila', // El nuevo campo extra
+        id: 'num5',
+        name: 'num5',
+        placeholder: 'Evaluar:',
+      },
+    ], // Llamar directamente sin necesidad de pasar parámetros
   },
   /* !SECTION fin - 3.-columnaDeArrayBiInt */
 
@@ -48,7 +56,15 @@ const textos = [
     texto: 'coordenadasEnArrayBiInt',
     descripcion:
       'Devuelve la fila y la columna (en un array con dos elementos) de la primera ocurrencia de un número dentro de un array bidimensional. Si el número no se encuentra en el array, la funcion devuelve el array {-1, -1}',
-    inputs: generarInputs(), // Llamar directamente sin necesidad de pasar parámetros
+      inputs: [
+        ...generarInputs(), // Usamos los inputs predeterminados
+        {
+          label: 'Buscar numero', // El nuevo campo extra
+          id: 'num5',
+          name: 'num5',
+          placeholder: 'Evaluar:',
+        },
+      ],
   },
   /* !section fin - 4.-coordenadasEnArrayBiInt */
 
@@ -59,9 +75,9 @@ const textos = [
     inputs: [
       ...generarInputs(), // Usamos los inputs predeterminados
       {
-        label: 'Evaluar', // El nuevo campo extra
-        id: 'num4',
-        name: 'num4',
+        label: 'numero de fila', // El nuevo campo extra
+        id: 'num5',
+        name: 'num5',
         placeholder: 'Evaluar:',
       },
     ],
@@ -75,10 +91,10 @@ const textos = [
     inputs: [
       ...generarInputs(), // Usamos los inputs predeterminados
       {
-        label: 'Buscar Número', // El nuevo campo extra
-        id: 'num4',
-        name: 'num4',
-        placeholder: 'Buscar:',
+        label: 'numero de fila', // El nuevo campo extra
+        id: 'num5',
+        name: 'num5',
+        placeholder: 'Evaluar:',
       },
     ],
   },

@@ -24,97 +24,37 @@ function construirMensaje_filaDeArrayBiInt(datos, resultado, arrayGenerado) {
   return mensajeError;
 }
 /* !section fin - 2.-minimoArrayInt */
-
-/* SECTION 3.-maximoArrayInt */
-function construirMensaje_maximoArrayInt(datos, resultado, arrayGenerado) {
+function construirMensaje_columnaDeArrayBiInt(datos, resultado, arrayGenerado) {
   let mensajeError = '';
 
-  mensajeError = 'El valor minimo del array es: ' + resultado;
-  mensajeError += crearTabla(arrayGenerado, -1, resultado);
+  mensajeError = `la fila ${datos.num5} del array :`;
+  mensajeError += crearTabla(arrayGenerado);
+  mensajeError += 'es:';
+  mensajeError += imprimirColumnaEnTabla(resultado);
 
   return mensajeError;
 }
-/* !SECTION fin - 3.-maximoArrayInt */
 
-/* section 4.-mediaArrayInt */
-function construirMensaje_mediaArrayInt(datos, resultado, arrayGenerado) {
+function construirMensaje_coordenadasEnArrayBiInt(datos, resultado, arrayGenerado) {
   let mensajeError = '';
-
-  let media = resultado;
-  let suma = arrayGenerado.reduce((a, b) => a + b, 0);
-  let cantidad = arrayGenerado.length;
-  let expresion = arrayGenerado.join(' + ') + ' / ' + cantidad + ' = ' + media;
-  mensajeError = 'La media del array es: ' + media + '<br><br>';
-  mensajeError += 'Expresión matemática utilizada: <br>' + expresion;
-  mensajeError += crearTabla(arrayGenerado, -1, -1);
-
-  return mensajeError;
-}
-/* !section fin - 4.-mediaArrayInt */
-
-/* SECTION 5.-estaEnArrayInt */
-function construirMensaje_estaEnArrayInt(datos, resultado, arrayGenerado) {
-  let mensajeError = '';
-  let extra = datos.num4;
-  if (resultado) {
-    mensajeError = `El numero ${extra} sí está en el array`;
-  } else {
-    mensajeError = `El numero ${extra} NO está en el array`;
-  }
-  mensajeError += crearTabla(arrayGenerado, -1, parseInt(extra));
-
-  return mensajeError;
-}
-/* !SECTION fin - 5.-estaEnArrayInt */
-/* section 6.-posicionEnArrayInt */
-function construirMensaje_posicionEnArrayInt(datos, resultado, arrayGenerado) {
-  let mensajeError = '';
-  let extra = datos.num4;
-
-  let posiciones = resultado;
-
-  if (posiciones.length > 0) {
-    mensajeError = `Las posiciones del valor ${extra} son: ${posiciones.join(', ')}`;
-    mensajeError += crearTabla(arrayGenerado, -1, parseInt(extra));
-  } else {
-    mensajeError = `El valor ${extra} no está en el array.`;
-    mensajeError += crearTabla(arrayGenerado, -1, -1);
+  
+  // Si no se encuentran coordenadas, mostrar mensaje alternativo
+  if (resultado.length === 0) {
+    mensajeError = `El número ${datos.num5} no se encontró en ninguna coordenada de la matriz {-1,-1} ${crearTabla(arrayGenerado)}.`;
+    return mensajeError;
   }
 
+  // Colores intercalados
+  const colores = ['#1E90FF', '#FF4500', 'brown']; 
+
+  // Formatear las coordenadas con colores alternados
+  const coordsFormateadas = resultado.map((coord, i) => {
+    const color = colores[i % colores.length]; // Alterna colores
+    return `<span style="color: ${color}; font-weight: bold;">[${coord[0]},${coord[1]}]</span>`;
+  }).join(' ');
+
+  mensajeError = `El número ${datos.num5} está en las coordenadas: ${coordsFormateadas} :`;
+  mensajeError += crearTablaResaltado(arrayGenerado, resultado);
+  
   return mensajeError;
 }
-/* !section fin - 6.-posicionEnArrayInt */
-/* SECTION 7.-volteaArrayInt */
-function construirMensaje_volteaArrayInt(datos, resultado, arrayGenerado) {
-  let mensajeError = '';
-
-  let arrayVolteado = resultado;
-  mensajeError += 'Array Original:' + crearTablaRotada(arrayGenerado, -1) + '<br>';
-  mensajeError += 'Array Volteado:' + crearTablaRotada(arrayVolteado, -1) + '<br>';
-
-  return mensajeError;
-}
-/* !SECTION fin - 7.-volteaArrayInt */
-/* section 8.-rotaDerechaArrayInt */
-function construirMensaje_rotaDerechaArrayInt(datos, resultado, arrayGenerado) {
-  let mensajeError = '';
-  let extra = datos.num4;
-
-  let [arrayRotado, nuevaPosicion] = resultado;
-  mensajeError += `Array Original:<br>${crearTablaRotada(arrayGenerado, 0)}<br>`;
-  mensajeError += `Array Rotado ${extra} veces:<br>${crearTablaRotada(arrayRotado, nuevaPosicion)}<br>`;
-
-  return mensajeError;
-}
-/* !section fin - 8.-rotaDerechaArrayInt */
-/* SECTION 9.-rotaIzquierdaArrayInt */
-function construirMensaje_rotaIzquierdaArrayInt(datos, resultado, arrayGenerado) {
-  let mensajeError = '';
-  let extra = datos.num4;
-  let [arrayRotado, nuevaPosicion] = resultado;
-  mensajeError += `Array Original:<br>${crearTablaRotada(arrayGenerado, 0)}<br>`;
-  mensajeError += `Array Rotado ${extra} veces:<br>${crearTablaRotada(arrayRotado, nuevaPosicion)}<br>`;
-
-  return mensajeError;
-}
-/* !SECTION fin - 9.-rotaIzquierdaArrayInt */

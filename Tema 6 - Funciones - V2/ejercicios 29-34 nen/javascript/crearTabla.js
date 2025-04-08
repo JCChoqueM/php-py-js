@@ -24,7 +24,6 @@ function crearTabla(matriz) {
   return html;
 }
 
-
 function imprimirFilaEnTabla(filaArray) {
   if (!Array.isArray(filaArray)) return '';
 
@@ -38,11 +37,70 @@ function imprimirFilaEnTabla(filaArray) {
   html += "</tr><tr><th style='background-color: orange;'>Fila</th>";
 
   // Valores de la fila
-  filaArray.forEach(valor => {
+  filaArray.forEach((valor) => {
     html += `<td>${valor}</td>`;
   });
 
-  html += "</tr></table>";
+  html += '</tr></table>';
 
   return html;
 }
+
+function imprimirColumnaEnTabla(columnaArray) {
+  if (!Array.isArray(columnaArray)) return '';
+
+  let html = "<table border='1' cellpadding='5'>";
+  html += "<tr><th style='background-color: #98FB98;'>Columna</th></tr>";
+
+  columnaArray.forEach((valor, i) => {
+    html += `<tr><td>${valor}</td></tr>`;
+  });
+
+  html += '</table>';
+  return html;
+}
+
+function crearTablaResaltado(matriz, coordenadasResaltadas = []) {
+  if (!Array.isArray(matriz) || matriz.length === 0) return '';
+
+  const coordsMap = new Map(); // Usamos Map para saber el orden de las coordenadas
+  coordenadasResaltadas.forEach(([f, c], index) => {
+    coordsMap.set(`${f},${c}`, index);
+  });
+
+  // Colores intercalados para los resaltados
+  const colores = ['#1E90FF', '#FF4500', 'brown']; // Dorado y Celeste
+
+  let html = "<table border='1' cellpadding='5'><tr><th></th>";
+
+  // Encabezados de columnas (verde lechuga)
+  for (let j = 0; j < matriz[0].length; j++) {
+    const columnaColor = ' style="background-color: #98FB98;"';
+    html += `<th ${columnaColor}>c${j}</th>`;
+  }
+  html += '</tr>';
+
+  // Filas con índice (naranja) y celdas resaltadas con colores intercalados
+  matriz.forEach((fila, i) => {
+    const filaColor = ' style="background-color: orange;"';
+    html += `<tr><th${filaColor}>f${i}</th>`;
+
+    fila.forEach((valor, j) => {
+      const key = `${i},${j}`;
+
+      let estilo = '';
+      if (coordsMap.has(key)) {
+        const color = colores[coordsMap.get(key) % colores.length];
+        estilo = ` style="background-color: ${color}; font-weight: bold;"`;
+      }
+
+      html += `<td${estilo}>${valor}</td>`;
+    });
+
+    html += '</tr>';
+  });
+
+  html += '</table>';
+  return html;
+}
+

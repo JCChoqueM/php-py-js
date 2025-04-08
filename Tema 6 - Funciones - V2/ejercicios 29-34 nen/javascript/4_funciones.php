@@ -1,7 +1,8 @@
 <?php
 
 // Función para generar un array de enteros aleatorios
-function funcion_generaArrayBiInt($filas, $columnas, $minimo, $maximo) {
+function funcion_generaArrayBiInt($filas, $columnas, $minimo, $maximo)
+{
     $matriz = array();
 
     for ($i = 0; $i < $filas; $i++) {
@@ -15,8 +16,9 @@ function funcion_generaArrayBiInt($filas, $columnas, $minimo, $maximo) {
     return $matriz;
 }
 
-function funcion_filaDeArrayBiInt($matriz, $filas, $columnas ,$minimo,$maximo,$datos) {
-    $indiceFila = (int)$datos; // Convertir a entero
+function funcion_filaDeArrayBiInt($matriz, $filas, $columnas, $minimo, $maximo, $numeroFila)
+{
+    $indiceFila = (int)$numeroFila; // Convertir a entero
 
     // Verificar si la matriz es válida y el índice de fila está dentro del rango
     if (!is_array($matriz) || $indiceFila < 0 || $indiceFila >= count($matriz)) {
@@ -25,131 +27,44 @@ function funcion_filaDeArrayBiInt($matriz, $filas, $columnas ,$minimo,$maximo,$d
 
     return $matriz[$indiceFila];
 }
-// Función para encontrar el valor mínimo en un array
-function funcion_minimoArrayInt($array)
-{
-    if (empty($array)) {
-        return null; // El array está vacío
-    }
-    return min($array); // Usa min() para obtener el valor mínimo
-}
+function funcion_columnaDeArrayBiInt($matriz, $filas, $columnas, $minimo, $maximo, $numeroColumna) {
+    $indiceColumna = (int)$numeroColumna;
 
-// Función para encontrar el valor máximo en un array
-function funcion_maximoArrayInt($array)
-{
-    if (empty($array)) {
-        throw new Exception('El input no es un array válido o está vacío.');
+    // Verificar si la matriz es válida
+    if (!is_array($matriz) || count($matriz) === 0 || !is_array($matriz[0])) {
+        return null;
     }
 
-    return max($array); // Usa max() para obtener el valor máximo
-}
-
-// Función para calcular la media de un array
-function funcion_mediaArrayInt($array)
-{
-    if (empty($array)) {
-        return 0; // Retorna 0 si el array está vacío
+    // Verificar que el índice esté dentro de los límites de las columnas
+    if ($indiceColumna < 0 || $indiceColumna >= count($matriz[0])) {
+        return null;
     }
 
-    $suma = array_sum($array); // Suma todos los elementos del array
-    $numeroDeElementos = count($array); // Número de elementos en el array
+    $columna = [];
 
-    return round($suma / $numeroDeElementos, 2); // Calcula la media y la redondea a 2 decimales
+    foreach ($matriz as $fila) {
+        if (isset($fila[$indiceColumna])) {
+            $columna[] = $fila[$indiceColumna];
+        } else {
+            $columna[] = null; // En caso de que alguna fila no tenga esa columna
+        }
+    }
+
+    return $columna;
 }
+function funcion_coordenadasEnArrayBiInt($matriz, $filas, $columnas, $minimo, $maximo, $numeroColumna) {
+    $coordenadas = array(); // Array para guardar las coordenadas encontradas
 
-// Función para verificar si un número está en el array
-function funcion_estaEnArrayInt($array, $numero, $minimo, $maximo, $num4)
-{
-    return in_array($num4, $array); // Verifica si 'numero' está en el array
-}
-
-// Función para encontrar todas las posiciones de un número en el array
-function funcion_posicionEnArrayInt($array, $numero, $minimo, $maximo, $num4)
-{
-    $posiciones = [];
-
-    // Convertir num4 en entero
-    $extra = (int)$num4;
-
-    // Verifica si el primer parámetro es un array
-    if (is_array($array)) {
-        // Recorre el array y encuentra las posiciones donde el valor es igual a 'extra'
-        foreach ($array as $indice => $valor) {
-            if ($valor === $extra) {
-                $posiciones[] = $indice; // Añadir la posición al array
+    // Recorrer la matriz
+    foreach ($matriz as $i => $fila) {
+        foreach ($fila as $j => $valor) {
+            if ($valor === (int) $numeroColumna) {
+                $coordenadas[] = array($i, $j); // Guardar la coordenada [fila, columna]
             }
         }
-    } else {
-        echo 'El primer parámetro no es un array.';
     }
 
-    // Retorna el array de posiciones
-    return ($posiciones);
-}
-
-// Función para voltear un array
-function funcion_volteaArrayInt($array)
-{
-    return array_reverse($array); // Devuelve el array invertido
-}
-
-// Función para rotar un array a la derecha
-
-
-// Función para rotar un array a la derecha
-function funcion_rotaDerechaArrayInt($array, $numero, $minimo, $maximo, $num4)
-{
-    // Si el array está vacío o no es un array válido, se retorna el array original con posición 0
-    if (!is_array($array) || empty($array)) {
-        return [$array, 0];
-    }
-
-    // Calcula el número de rotaciones necesarias
-    $datos = (int)$num4 % count($array);
-
-    // Si el número de rotaciones es 0, no se requiere rotación
-    if ($datos === 0) {
-        return [$array, 0];
-    }
-
-    // Extrae las partes del array y las combina en el orden deseado
-    $part1 = array_slice($array, -$datos); // Últimos 'datos' elementos
-    $part2 = array_slice($array, 0, count($array) - $datos); // Elementos restantes
-
-    // Calcula la nueva posición del primer elemento original
-    $nuevaPosicion = $datos;
-
-    // Devuelve el array rotado y la nueva posición del primer elemento original
-    return [array_merge($part1, $part2), $nuevaPosicion];
-}
-
-// Función para rotar un array a la izquierda
-function funcion_rotaIzquierdaArrayInt($array, $numero, $minimo, $maximo, $num4)
-{
-    $count = count($array);
-
-    // Si el array está vacío o solo tiene un elemento, no se necesita rotación
-    if ($count <= 1) {
-        return [$array, 0];
-    }
-
-    // Asegúrate de que 'datos' sea un número positivo y menor que el tamaño del array
-    $datos = $num4 % count($array);
-
-    // Si 'datos' es 0, no se requiere rotación
-    if ($datos === 0) {
-        return [$array, 0];
-    }
-
-    // Realizar la rotación a la izquierda
-    $part1 = array_slice($array, 0, $datos); // Primeros 'datos' elementos
-    $part2 = array_slice($array, $datos); // Elementos restantes
-
-    // Calcula la nueva posición del primer elemento original
-    $nuevaPosicion = ($count - $datos) % $count;
-
-    // Devuelve el array rotado y la nueva posición del primer elemento original
-    return [array_merge($part2, $part1), $nuevaPosicion];
+    return $coordenadas;
 }
 
 

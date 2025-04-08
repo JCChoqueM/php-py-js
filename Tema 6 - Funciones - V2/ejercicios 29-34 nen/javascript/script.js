@@ -112,7 +112,7 @@ function iniciar() {
   generarListaTextos();
 
   // Aplicar valores iniciales
-  setSelectValue('miSelect', 'filaDeArrayBiInt');
+  setSelectValue('miSelect', 'coordenadasEnArrayBiInt');
   cambiarColorBoton(select.value);
   insertarDescripcion(select.value);
   generarInputs(select.value);
