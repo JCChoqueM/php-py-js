@@ -9,15 +9,12 @@
   /* Estilo de texto en negrita para texto destacado */
 
   /* Definición de colores personalizados para cada tipo de tooltip */
-  --generaArrayInt: rgb(91, 91, 202);
-  --minimoArrayInt: rgb(202, 91, 91);
-  --maximoArrayInt: rgb(91, 202, 91);
-  --mediaArrayInt: rgb(202, 91, 202);
-  --estaEnArrayInt: rgb(91, 202, 202);
-  --posicionEnArrayInt: rgb(202, 43, 202);
-  --volteaArrayInt: rgb(202, 146, 91);
-  --rotaDerechaArrayInt: rgb(91, 202, 146);
-  --rotaIzquierdaArrayInt: rgb(146, 91, 202);
+  --generaArrayBiInt: rgb(91, 91, 202);
+  --filaDeArrayBiInt: rgb(202, 91, 91);
+  --columnaDeArrayBiInt: rgb(91, 202, 91);
+  --coordenadasEnArrayBiInt: rgb(202, 91, 202);
+  --esPuntoDeSilla: rgb(91, 202, 202);
+  --diagonal: rgb(124, 5, 243);
 }
 h1 {
   margin-top: 0;
