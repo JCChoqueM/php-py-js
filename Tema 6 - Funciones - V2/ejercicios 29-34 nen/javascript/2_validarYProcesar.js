@@ -3,6 +3,7 @@ function filtrarCamposVacios(datos) {
     .filter(([_, valor]) => valor.trim() === '')
     .map(([campo]) => campo);
 }
+
 function validarYProcesar(datos, funcionSeleccion) {
   const resultadoJS = document.querySelector('#resultadoJS');
   const resultadoPHP = document.querySelector('#resultadoPHP');
@@ -37,6 +38,30 @@ function validarYProcesar(datos, funcionSeleccion) {
         mensaje = 'El valor de "Mínimo" no puede ser mayor que "Máximo".';
         break;
       default:
+        // Si todo está bien, procesamos los datos
+        if (funcionSeleccion.name === 'funcion_diagonal') {
+          const filas = Number(datos.num5);
+          const columnas = Number(datos.num6);
+          const numFilas = Number(datos.num1); // Total de filas (datos.num1)
+          const numColumnas = Number(datos.num2); // Total de columnas (datos.num2)
+
+          // Verificar que filas y columnas estén dentro del rango de la matriz
+          let errores = [];
+          
+          if (filas < 0 || filas >= numFilas) {
+            errores.push(`La fila ${filas} está fuera del rango. Debe estar entre 0 y ${numFilas - 1}.`);
+          }
+          if (columnas < 0 || columnas >= numColumnas) {
+            errores.push(`La columna ${columnas} está fuera del rango. Debe estar entre 0 y ${numColumnas - 1}.`);
+          }
+
+          // Si hay errores en las filas o columnas, mostrarlos
+          if (errores.length > 0) {
+            mensaje = errores.join(' ');
+            break;
+          }
+        }
+
         // Si todo está bien, procesamos los datos
         mostrar_imprimir(resultadoJS, resultadoPHP, datos, funcionSeleccion);
         return;

@@ -104,3 +104,56 @@ function crearTablaResaltado(matriz, coordenadasResaltadas = []) {
   return html;
 }
 
+
+function crearTablaDiagonal(matriz, diagonales, principal) {
+  if (!Array.isArray(matriz) || matriz.length === 0) return '';
+
+  const coordsMap = new Map(); // Usamos Map para saber las coordenadas de las diagonales
+
+  // Resaltado de las coordenadas de la diagonal
+  diagonales.forEach(({ coordenada }) => {
+    coordsMap.set(`${coordenada[0]},${coordenada[1]}`, true);
+  });
+
+  // Pintar la coordenada principal de color rojo
+  const principalKey = `${principal[0]},${principal[1]}`;
+
+  let html = "<table border='1' cellpadding='5'><tr><th></th>";
+
+  // Encabezados de columnas
+  for (let j = 0; j < matriz[0].length; j++) {
+    html += `<th>c${j}</th>`;
+  }
+  html += '</tr>';
+
+  // Filas
+  matriz.forEach((fila, i) => {
+    html += `<tr><th>f${i}</th>`; // Etiqueta de fila (f0, f1, f2,...)
+
+    fila.forEach((valor, j) => {
+      const key = `${i},${j}`;
+      let estilo = '';
+
+      // Si la coordenada está en las diagonales resaltadas
+      if (coordsMap.has(key)) {
+        estilo = ` style="background-color: yellow;"`; // Color para las diagonales
+      }
+
+      // Si es la coordenada principal, pintarla de rojo
+      if (key === principalKey) {
+        estilo = ` style="background-color: red; font-weight: bold;"`; // Color rojo para la coordenada principal
+      }
+
+      html += `<td${estilo}>${valor}</td>`; // Celda con el valor de la matriz
+    });
+
+    html += '</tr>';
+  });
+
+  html += '</table>';
+  return html;
+}
+
+
+
+

@@ -56,15 +56,15 @@ const textos = [
     texto: 'coordenadasEnArrayBiInt',
     descripcion:
       'Devuelve la fila y la columna (en un array con dos elementos) de la primera ocurrencia de un número dentro de un array bidimensional. Si el número no se encuentra en el array, la funcion devuelve el array {-1, -1}',
-      inputs: [
-        ...generarInputs(), // Usamos los inputs predeterminados
-        {
-          label: 'Buscar numero', // El nuevo campo extra
-          id: 'num5',
-          name: 'num5',
-          placeholder: 'Evaluar:',
-        },
-      ],
+    inputs: [
+      ...generarInputs(), // Usamos los inputs predeterminados
+      {
+        label: 'Buscar numero', // El nuevo campo extra
+        id: 'num5',
+        name: 'num5',
+        placeholder: 'Evaluar:',
+      },
+    ],
   },
   /* !section fin - 4.-coordenadasEnArrayBiInt */
 
@@ -72,31 +72,39 @@ const textos = [
   {
     texto: 'esPuntoDeSilla',
     descripcion: 'Dice si un número es o no punto silla, es decir, mínimo en su fila y máximo en su columna.',
-    inputs: [
-      ...generarInputs(), // Usamos los inputs predeterminados
-      {
-        label: 'numero de fila', // El nuevo campo extra
-        id: 'num5',
-        name: 'num5',
-        placeholder: 'Evaluar:',
-      },
-    ],
+    inputs: generarInputs(), // Usamos los inputs predeterminados
   },
   /* !SECTION fin - 5.-esPuntoDeSilla */
   /* section 6.-diagonal */
   {
     texto: 'diagonal',
-    descripcion: `Devuelve un array que contiene una de las diagonales del array bidimensional que se pasa como parámetro. Se pasan como parámetros fila, columna y direccion. La fila y la columna determinan el número que marcará las dos posibles diagonales dentro del array. La dirección es una cadena de caracteres que puede ser "NOSE" o "NESO" .
-    La cadena "NOSE" indica que se elige la diagonal que va del NorOeste hacia el SurEste, mientras que la cadena "NESO" indica que se elige la diagonal que va del NorEste hacia el SurOeste .`,
+    descripcion: `Devuelve un array que contiene una de las diagonales del array bidimensional que se pasa como parámetro. Se pasan como parámetros fila, columna y dirección. La fila y la columna determinan el número que marcará las dos posibles diagonales dentro del array. La dirección es una cadena de caracteres que puede ser "NOSE" o "NESO". 
+    La cadena "NOSE" indica que se elige la diagonal que va del NorOeste hacia el SurEste, mientras que la cadena "NESO" indica que se elige la diagonal que va del NorEste hacia el SurOeste.`,
     inputs: [
       ...generarInputs(), // Usamos los inputs predeterminados
       {
-        label: 'numero de fila', // El nuevo campo extra
+        label: 'Número de fila',
         id: 'num5',
         name: 'num5',
-        placeholder: 'Evaluar:',
+        placeholder: 'numero de fila:',
       },
+      {
+        label: 'Número de columna',
+        id: 'num6',
+        name: 'num6',
+        placeholder: 'numero de columna:',
+      },
+      {
+        label: 'Dirección de la diagonal',
+        id: 'num7',
+        name: 'num7', 
+    
+        placeholder: 'NOSE o NESO',
+
+      },
+
     ],
-  },
+  }
+  
   /* !section fin - 6.-diagonal */
 ];

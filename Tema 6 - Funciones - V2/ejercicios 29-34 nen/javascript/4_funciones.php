@@ -27,7 +27,8 @@ function funcion_filaDeArrayBiInt($matriz, $filas, $columnas, $minimo, $maximo, 
 
     return $matriz[$indiceFila];
 }
-function funcion_columnaDeArrayBiInt($matriz, $filas, $columnas, $minimo, $maximo, $numeroColumna) {
+function funcion_columnaDeArrayBiInt($matriz, $filas, $columnas, $minimo, $maximo, $numeroColumna)
+{
     $indiceColumna = (int)$numeroColumna;
 
     // Verificar si la matriz es válida
@@ -52,7 +53,8 @@ function funcion_columnaDeArrayBiInt($matriz, $filas, $columnas, $minimo, $maxim
 
     return $columna;
 }
-function funcion_coordenadasEnArrayBiInt($matriz, $filas, $columnas, $minimo, $maximo, $numeroColumna) {
+function funcion_coordenadasEnArrayBiInt($matriz, $filas, $columnas, $minimo, $maximo, $numeroColumna)
+{
     $coordenadas = array(); // Array para guardar las coordenadas encontradas
 
     // Recorrer la matriz
@@ -66,7 +68,98 @@ function funcion_coordenadasEnArrayBiInt($matriz, $filas, $columnas, $minimo, $m
 
     return $coordenadas;
 }
+function funcion_esPuntoDeSilla($matriz)
+{
+    $puntosDeSilla = [];
 
+    for ($i = 0; $i < count($matriz); $i++) {
+        $fila = $matriz[$i];
+        $minFila = min($fila); // Encuentra el mínimo de la fila
+
+        // Buscar todas las columnas donde aparece ese mínimo
+        for ($j = 0; $j < count($fila); $j++) {
+            if ($fila[$j] === $minFila) {
+                // Verificar si es el máximo en su columna
+                $esPunto = true;
+                for ($k = 0; $k < count($matriz); $k++) {
+                    if ($matriz[$k][$j] > $minFila) {
+                        $esPunto = false;
+                        break;
+                    }
+                }
+
+                if ($esPunto) {
+                    $puntosDeSilla[] = [$i, $j];
+                }
+            }
+        }
+    }
+
+    return $puntosDeSilla;
+}
+
+function funcion_diagonal($matriz, $filas, $columnas, $minimo, $maximo, $numeroFila, $numeroColumna, $direccion)
+{
+    $diagonales = [];
+    $fila = (int) $numeroFila; // Convertir a entero
+    $columna = (int) $numeroColumna; // Convertir a entero
+    $direccion = (int) $direccion; // Convertir a entero
+
+    // Diagonal de NorOeste a SurEste (NOSE)
+    if ($direccion === 1) {
+        // Subir y hacia la izquierda (NorOeste)
+        $i = $fila;
+        $j = $columna;
+        while ($i >= 0 && $j >= 0) {
+            $diagonales[] = ['coordenada' => [$i, $j], 'valor' => $matriz[$i][$j]];
+            $i--;
+            $j--;
+        }
+
+        // Bajar y hacia la derecha (SurEste)
+        $i = $fila + 1;
+        $j = $columna + 1;
+        while ($i < count($matriz) && $j < count($matriz[0])) {
+            $diagonales[] = ['coordenada' => [$i, $j], 'valor' => $matriz[$i][$j]];
+            $i++;
+            $j++;
+        }
+    }
+
+    // Diagonal de NorEste a SurOeste (NESO)
+    else if ($direccion === 2) {
+        // Subir y hacia la derecha (NorEste)
+        $i = $fila;
+        $j = $columna;
+        while ($i >= 0 && $j < count($matriz[0])) {
+            $diagonales[] = ['coordenada' => [$i, $j], 'valor' => $matriz[$i][$j]];
+            $i--;
+            $j++;
+        }
+
+        // Bajar y hacia la izquierda (SurOeste)
+        $i = $fila + 1;
+        $j = $columna - 1;
+        while ($i < count($matriz) && $j >= 0) {
+            $diagonales[] = ['coordenada' => [$i, $j], 'valor' => $matriz[$i][$j]];
+            $i++;
+            $j--;
+        }
+    }
+
+    // Ordenar las coordenadas primero por fila y luego por columna
+    usort($diagonales, function ($a, $b) {
+        if ($a['coordenada'][0] !== $b['coordenada'][0]) {
+            return $a['coordenada'][0] - $b['coordenada'][0]; // Primero por fila
+        }
+        return $a['coordenada'][1] - $b['coordenada'][1]; // Luego por columna
+    });
+
+    // Imprimir las diagonales en el formato requerido
+
+
+    return $diagonales;
+}
 
 
 
