@@ -28,6 +28,7 @@ function validarYProcesar(datos, funcionSeleccion) {
     // Convertir a número
     const minimo = Number(datos.num3);
     const maximo = Number(datos.num4);
+    const direccion = Number(datos.num7);
 
     // Validar mínimo y máximo
     switch (true) {
@@ -38,7 +39,7 @@ function validarYProcesar(datos, funcionSeleccion) {
         mensaje = 'El valor de "Mínimo" no puede ser mayor que "Máximo".';
         break;
       default:
-        // Si todo está bien, procesamos los datos
+        // Verificar si la función seleccionada es funcion_diagonal
         if (funcionSeleccion.name === 'funcion_diagonal') {
           const filas = Number(datos.num5);
           const columnas = Number(datos.num6);
@@ -55,7 +56,12 @@ function validarYProcesar(datos, funcionSeleccion) {
             errores.push(`La columna ${columnas} está fuera del rango. Debe estar entre 0 y ${numColumnas - 1}.`);
           }
 
-          // Si hay errores en las filas o columnas, mostrarlos
+          // Verificar que datos.num7 sea 1 o 2 para funcion_diagonal
+          if (direccion !== 1 && direccion !== 2) {
+            errores.push('El valor de "Dirección" debe ser 1 NOSE o 2 NESO.');
+          }
+
+          // Si hay errores en filas, columnas o dirección, mostrarlos
           if (errores.length > 0) {
             mensaje = errores.join(' ');
             break;
