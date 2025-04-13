@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const formulario = document.querySelector('.formulario');
   if (!formulario) return;
-  formulario.addEventListener('input', manejarInput);
+  formulario.addEventListener('submit', manejarInput);
 });
 
 function manejarInput(event) {
@@ -13,7 +13,7 @@ function manejarInput(event) {
 function procesarFormulario(form) {
   const datos = obtenerDatosFormulario(form);
 
-  validarYProcesar(datos, funcionSeleccionada);
+  validarYProcesar(datos);
 }
 
 // ✅ Convierte los datos del formulario en un objeto
