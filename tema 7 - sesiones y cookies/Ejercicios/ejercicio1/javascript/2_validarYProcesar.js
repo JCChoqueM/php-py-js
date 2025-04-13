@@ -4,6 +4,7 @@ function filtrarCamposVacios(datos) {
     .map(([campo]) => campo);
 }
 function validarYProcesar(datos, funcionSeleccionada) {
+  console.log(typeof funcionSeleccionada)
   const Div_resultadoJS = document.querySelector('#resultadoJS');
   const Div_resultadoPHP = document.querySelector('#resultadoPHP');
   const camposVacios = filtrarCamposVacios(datos);
@@ -13,7 +14,7 @@ function validarYProcesar(datos, funcionSeleccionada) {
   // Si no hay campos vacíos, procesamos los datos
   if (camposVacios.length === 0) {
     
-    mostrar_imprimir(Div_resultadoJS, Div_resultadoPHP, datos);
+    mostrar_imprimir(Div_resultadoJS, Div_resultadoPHP, datos, funcionSeleccionada);
     return;
   }
 

@@ -13,7 +13,13 @@ function manejarInput(event) {
 function procesarFormulario(form) {
   const datos = obtenerDatosFormulario(form);
 
-  validarYProcesar(datos);
+  const funcionSeleccionada = numerosPrimos; /*STUB - funcion que se usara  en 4_funciones*/
+
+  if (funcionSeleccionada) {
+    validarYProcesar(datos, funcionSeleccionada);
+  } else {
+    console.warn(`⚠ No se encontró una función válida para "${seleccion}"`);
+  }
 }
 
 // ✅ Convierte los datos del formulario en un objeto
