@@ -4,7 +4,7 @@
 </p>
 <?php
   $n = $_POST['n'];
-
+var_dump($n) ;
   if (!isset($n) || ($n > 0)) {
     $_SESSION['total'] += $n;
     $_SESSION['cuentaNumeros']++;
