@@ -29,6 +29,6 @@ function generarDatos() {
 function enviarFormulario() {
   const formulario = document.querySelector('.formulario');
   if (!formulario) return;
-  console.log(procesarFormulario(formulario));
+
   procesarFormulario(formulario);
 }
