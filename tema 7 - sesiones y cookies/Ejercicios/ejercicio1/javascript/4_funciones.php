@@ -1,20 +1,36 @@
 <?php
-function numerosPrimos($limite) {
-    $limite = abs(intval($limite));
-    if ($limite < 2) return []; // No hay primos menores a 2
+function procesarEjercicio1($dato) {
+    session_start(); // Asegúrate de iniciar la sesión
 
-    $numeros = array_fill(0, $limite + 1, true);
-    $numeros[0] = $numeros[1] = false; // 0 y 1 no son primos
-
-    for ($n = 2; $n <= sqrt($limite); $n++) {
-        if ($numeros[$n]) {
-            for ($i = $n * $n; $i <= $limite; $i += $n) {
-                $numeros[$i] = false;
-            }
-        }
+    $clave = 'datosGuardados';
+    
+    if (!isset($_SESSION[$clave])) {
+        $_SESSION[$clave] = [];
     }
 
-    return array_keys(array_filter($numeros));
+    $dato = floatval($dato); // Asegurarse que sea numérico
+    $_SESSION[$clave][] = $dato;
+
+    if ($dato < 0) {
+        $positivos = array_filter($_SESSION[$clave], function($d) {
+            return $d >= 0;
+        });
+
+        $suma = array_sum($positivos);
+        $cantidad = count($positivos);
+        $promedio = $cantidad > 0 ? $suma / $cantidad : 0;
+
+        unset($_SESSION[$clave]); // Reinicia la sesión para nuevos datos
+
+        return [
+            'datos' => array_values($positivos), // Resetear índices
+            'promedio' => $promedio
+        ];
+    }
+
+    return [
+        'datos' => $_SESSION[$clave]
+    ];
 }
 
 

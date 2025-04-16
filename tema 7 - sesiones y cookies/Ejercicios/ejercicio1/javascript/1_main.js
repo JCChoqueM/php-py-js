@@ -12,7 +12,7 @@ function manejarInput(event) {
 // ✅ Procesa el formulario para evitar duplicación de código
 function procesarFormulario(form) {
   const datos = obtenerDatosFormulario(form);
-  console.log(datos);
+
 
   const funcionSeleccionada = procesarEjercicio1; /*STUB - funcion que se usara  en 4_funciones*/
 

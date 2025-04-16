@@ -1,11 +1,10 @@
+function construirMensaje(resultado) {
+  const { datos, promedio } = resultado;
+  let mensaje = 'Números ingresados: ' + datos.join(', ');
 
-function construirMensaje(datos, resultado) {
-  const numero = Number(datos.num1);
-  let mensaje = 'asdfasa';
-
-
+  if (promedio !== undefined) {
+    mensaje += `<span style="color:red"> / ${datos.length}</span> <br> <strong>Promedio:</strong> ${promedio.toFixed(2)}`;
+  }
 
   return mensaje;
 }
-
-
