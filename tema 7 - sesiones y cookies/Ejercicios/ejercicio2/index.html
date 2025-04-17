@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>PHP Sesiones y cookies ejercicio #2</title>
+    <link
+      rel="stylesheet"
+      href="styles/styles.css"
+    />
+  </head>
+  <body>
+    <h1>Ejercicio #2</h1>
+    <div class="fuente">
+      <span class="fuente__contenido fuente--">
+        Realiza un programa que vaya <span style="color: blue; font-weight: bold">pidiendo números</span> hasta que se introduzca un
+        <span style="color: red; font-weight: bold">número negativo</span> y nos diga:<br />
+        - <span style="color: #ff1a1a; font-weight: bold">Cuántos números se han introducido</span><br />
+        - <span style="color: #00c853; font-weight: bold">La media de los impares</span><br />
+        - <span style="color: #2962ff; font-weight: bold">El mayor de los pares</span><br />
+        <span style="color: red; font-weight: 600; font-style: italic"> El número negativo solo se utiliza para indicar el final </span>
+        de la introducción de datos, pero
+        <span style="color: #1d3557; text-decoration: underline dotted">no se incluye en el cómputo</span>. Usa
+        <span style="background-color: #f1fa8c; color: #6a0572; padding: 2px 6px; border-radius: 4px"> sesiones </span>.
+      </span>
+
+      <span
+        id="contenedor"
+        class="fuente__contenido fuente--"
+      >
+        <!-- Elementos de texto -->
+      </span>
+      <div
+        id="tooltip"
+        class="tooltip"
+      ></div>
+    </div>
+
+    <div
+      id="descripcionDiv"
+      class="fuente__contenido"
+    ></div>
+    <form
+      action=""
+      id="form"
+      class="formulario"
+    >
+      <div
+        id="contenedorInputs"
+        class="formulario__contenedor-inputs"
+      >
+        <label
+          for="num1"
+          class="label__letra"
+          >Ingrese un numero inicial para mostrar
+        </label>
+        <input
+          type="number"
+          id="num1"
+          name="num1"
+          placeholder="Ingrese un numero entero positivo"
+          required
+        />
+      </div>
+
+      <div class="formulario__botones">
+        <button
+          id="miBoton"
+          class="formulario__boton formulario__boton--aleatorio"
+          type="button"
+          onclick="generarDatos()"
+        >
+          Generar Numeros Aleatorios
+        </button>
+        <input
+          class="formulario__boton formulario__boton--enviar"
+          type="submit"
+          value="Enviar"
+        />
+      </div>
+    </form>
+
+    <div class="contenedor">
+      <section class="contenedor__caja contenedor__caja--js">
+        <div
+          class="caja__resultado"
+          id="resultadoJS"
+        ></div>
+      </section>
+      <section class="contenedor__caja contenedor__caja--php">
+        <div
+          class="caja__resultado"
+          id="resultadoPHP"
+        ></div>
+      </section>
+    </div>
+    <footer>
+      <!-- Pie de página -->
+      <br />Julio Cesar Choque Mamani. <br />
+    </footer>
+    <script src="javascript/3_2construirMensaje.js"></script>
+    <script src="javascript/3_1mostrar.js"></script>
+    <script src="javascript/generarDatos.js"></script>
+    <script src="javascript/crearTabla.js"></script>
+    <!--     <script src="javascript/script.js"></script> -->
+    <script src="javascript/4_funciones.js"></script>
+    <script src="javascript/2_validarYProcesar.js"></script>
+    <script src="javascript/1_main.js"></script>
+  </body>
+</html>
