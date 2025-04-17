@@ -1,9 +1,8 @@
 let clickCount = 0;
 let clickNegativo = generarClickNegativo(); // Se genera al principio
 
-function generarClickNegativo() {
-  // Número aleatorio entre 3 y 5
-  return Math.floor(Math.random() * 3) + 3;
+function generarClickNegativo(min = 4, max = 7) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function generarNumeroAleatorio(min, max) {

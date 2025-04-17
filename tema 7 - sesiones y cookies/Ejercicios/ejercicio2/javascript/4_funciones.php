@@ -1,36 +1,56 @@
 <?php
-function procesarEjercicio1($dato) {
-    session_start(); // Asegúrate de iniciar la sesión
-
+function procesarEjercicio1($dato)
+{
+    session_start();
     $clave = 'datosGuardados';
-    
-    if (!isset($_SESSION[$clave])) {
-        $_SESSION[$clave] = [];
-    }
+    $datos = isset($_SESSION[$clave]) ? $_SESSION[$clave] : [];
 
-    $dato = floatval($dato); // Asegurarse que sea numérico
-    $_SESSION[$clave][] = $dato;
+    // Agrega el nuevo dato
+    $datos[] = (int)$dato;
+    $_SESSION[$clave] = $datos; // Guarda los datos en la sesión
 
+    // Si el dato ingresado es negativo, realiza el procesamiento
     if ($dato < 0) {
-        $positivos = array_filter($_SESSION[$clave], function($d) {
+        // Filtra los positivos
+        $positivos = array_filter($datos, function ($d) {
             return $d >= 0;
         });
 
-        $suma = array_sum($positivos);
-        $cantidad = count($positivos);
-        $promedio = $cantidad > 0 ? $suma / $cantidad : 0;
+        // Cuenta los positivos
+        $contador = count($positivos);
 
-        unset($_SESSION[$clave]); // Reinicia la sesión para nuevos datos
+        // Filtra los impares
+        $impares = array_filter($positivos, function ($d) {
+            return $d % 2 !== 0;
+        });
 
+        // Calcula la media de los impares
+        $mediaImpares = count($impares) > 0 ? array_sum($impares) / count($impares) : 0;
+
+        // Filtra los pares
+        $pares = array_filter($positivos, function ($d) {
+            return $d % 2 === 0;
+        });
+
+        // Obtiene el mayor número par
+        $mayorPar = count($pares) > 0 ? max($pares) : 0;
+
+        // Reinicia los datos
+        unset($_SESSION[$clave]);
+
+        // Retorna los resultados
         return [
             'datos' => array_values($positivos), // Resetear índices
-            'promedio' => $promedio
+            'contador' => $contador,
+            'numerosImpares' => array_values($impares), // Resetear índices
+            'mediaImpares' => $mediaImpares,
+            'numerosPares' => array_values($pares), // Resetear índices
+            'mayorPar' => $mayorPar
         ];
     }
 
-    return [
-        'datos' => $_SESSION[$clave]
-    ];
+    // Si el dato no es negativo, solo retorna los datos
+    return ['datos' => $datos];
 }
 
 
