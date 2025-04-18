@@ -3,54 +3,36 @@ function procesarEjercicio1($dato)
 {
     session_start();
     $clave = 'datosGuardados';
-    $datos = isset($_SESSION[$clave]) ? $_SESSION[$clave] : [];
 
-    // Agrega el nuevo dato
-    $datos[] = (int)$dato;
-    $_SESSION[$clave] = $datos; // Guarda los datos en la sesión
+    if (!isset($_SESSION[$clave])) {
+        $_SESSION[$clave] = [];
+    }
 
-    // Si el dato ingresado es negativo, realiza el procesamiento
-    if ($dato < 0) {
-        // Filtra los positivos
-        $positivos = array_filter($datos, function ($d) {
-            return $d >= 0;
-        });
+    $dato = floatval($dato);
+    $_SESSION[$clave][] = $dato;
 
-        // Cuenta los positivos
-        $contador = count($positivos);
+    $datos = $_SESSION[$clave];
+    $sumaTotal = array_sum($datos);
 
-        // Filtra los impares
-        $impares = array_filter($positivos, function ($d) {
-            return $d % 2 !== 0;
-        });
+    if ($sumaTotal > 1000) {
+        $contador = count($datos);
+        $media = $contador > 0 ? $sumaTotal / $contador : 0;
 
-        // Calcula la media de los impares
-        $mediaImpares = count($impares) > 0 ? array_sum($impares) / count($impares) : 0;
-
-        // Filtra los pares
-        $pares = array_filter($positivos, function ($d) {
-            return $d % 2 === 0;
-        });
-
-        // Obtiene el mayor número par
-        $mayorPar = count($pares) > 0 ? max($pares) : 0;
-
-        // Reinicia los datos
+        // Limpiar la sesión
         unset($_SESSION[$clave]);
 
-        // Retorna los resultados
         return [
-            'datos' => array_values($positivos), // Resetear índices
+            'datos' => array_values($datos), // Reindexar
             'contador' => $contador,
-            'numerosImpares' => array_values($impares), // Resetear índices
-            'mediaImpares' => $mediaImpares,
-            'numerosPares' => array_values($pares), // Resetear índices
-            'mayorPar' => $mayorPar
+            'sumaTotal' => $sumaTotal,
+            'media' => $media
         ];
     }
 
-    // Si el dato no es negativo, solo retorna los datos
-    return ['datos' => $datos];
+    return [
+        'datos' => array_values($datos),
+        'sumaTotal' => $sumaTotal
+    ];
 }
 
 

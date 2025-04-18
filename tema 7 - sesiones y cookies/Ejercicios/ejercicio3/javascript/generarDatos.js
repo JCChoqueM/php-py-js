@@ -19,7 +19,7 @@ function generarDatos() {
     clickCount = 0;
     clickNegativo = generarClickNegativo(); // Elegir un nuevo click aleatorio
   } else {
-    num1.value = generarNumeroAleatorio(0, 100); // Positivo entre 0 y 100
+    num1.value = generarNumeroAleatorio(100, 200); // Positivo entre 0 y 100
   }
 
   enviarFormulario();

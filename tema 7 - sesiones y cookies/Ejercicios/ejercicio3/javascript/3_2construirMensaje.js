@@ -1,49 +1,35 @@
-// Configuración visual de colores
-const configVisual = {
-  datos: { color: 'black' },
-  contador: { color: 'red' },
-  impares: { color: 'purple' },
-  media: { color: 'purple' },
-  pares: { color: 'blue' },
-  mayorPar: { color: 'blue' },
-  mayorParValor: 'blue',
-};
+function construirMensaje(resultado) {
+  const { datos, contador, sumaTotal, media } = resultado;
 
-// Resalta un texto con color y estilo
-function resaltar(texto, color, negrita = true) {
-  return `<span style="color:${color}; ${negrita ? 'font-weight:bold;' : ''}">${texto}</span>`;
-}
+  // Paleta armónica y más variada (colores terciarios y análogos)
+  const colores = {
+    titulo: '#3b3b98',        // azul violáceo (profundo y legible)
+    numero: 'purple',        // naranja quemado
+    suma: '#d63031',          // rojo coral fuerte
+    media: '#00b894',         // verde menta
+    temporal: '#6c5ce7',      // púrpura claro
+    detalle: 'green',       // amarillo cálido
+  };
 
-// Genera una línea HTML con título + contenido
-function seccion(titulo, color, contenido) {
-  return `<br><span style="color:${color}; font-weight:bold;">${titulo}:</span> ${contenido}`;
-}
+  const resaltar = (texto, color) =>
+    `<span style="color:${color}; font-weight:bold;">${texto}</span>`;
 
-// Construye el mensaje principal usando estilos y datos
-function construirMensaje(resultado, visual = configVisual) {
-  const { datos, contador, numerosImpares, mediaImpares, numerosPares, mayorPar } = resultado;
+  let mensaje = `<div style="font-family: Arial, sans-serif;">`;
 
-  const datosColoreados = datos.map((n) => (n % 2 === 0 ? resaltar(n, visual.pares.color) : resaltar(n, visual.impares.color))).join(', ');
+  mensaje += `<span style="color:${colores.titulo}; font-size: 1.2em; font-weight:bold;">📋 Datos introducidos:</span><br> ${datos.map(n => resaltar(n, colores.numero)).join(', ')}`;
 
-  let mensaje = seccion('Números ingresados', visual.datos.color, datosColoreados);
-
-  if (contador !== undefined) {
-    const impares = numerosImpares.length
-      ? numerosImpares.map((n) => resaltar(n, visual.impares.color, false)).join(', ')
-      : 'No hay impares';
-
-    const media = numerosImpares.length ? resaltar(mediaImpares.toFixed(2), visual.media.color, false) : 'No hay impares para calcular';
-
-    const pares = numerosPares.length ? numerosPares.map((n) => resaltar(n, visual.pares.color, false)).join(', ') : 'No hay pares';
-
-    const mayor = mayorPar === 0 ? 'No hay pares para calcular' : resaltar(mayorPar, visual.mayorParValor);
-
-    mensaje += seccion('Cantidad de números introducidos', visual.contador.color, resaltar(contador, visual.contador.color, false));
-    mensaje += seccion('Números impares', visual.impares.color, impares);
-    mensaje += seccion('Media de los impares', visual.media.color, media);
-    mensaje += seccion('Números pares', visual.pares.color, pares);
-    mensaje += seccion('Mayor de los pares', visual.mayorPar.color, mayor);
+  if (sumaTotal <= 1000) {
+    mensaje += `<br><span style="color:${colores.temporal};">🔄 Suma temporal:</span> ${resaltar(sumaTotal, colores.temporal)}`;
+  } else {
+    mensaje += `<br><span style="color:${colores.suma}; font-weight:bold;">⚠️ La suma ${sumaTotal} ha  superado el límite de 1000.🤓</span>`;
   }
 
+  if (contador !== undefined) {
+    mensaje += `<br><span style="color:${colores.detalle}; font-weight:bold;">🔢 Cantidad de números introducidos:</span> ${resaltar(contador, colores.numero)}`;
+    mensaje += `<br><span style="color:${colores.suma}; font-weight:bold;">➕ Suma total:</span> ${resaltar(sumaTotal, colores.suma)}`;
+    mensaje += `<br><span style="color:${colores.media}; font-weight:bold;">📊 Media:</span> ${resaltar(media.toFixed(2), colores.media)}`;
+  }
+
+  mensaje += `</div>`;
   return mensaje;
 }
