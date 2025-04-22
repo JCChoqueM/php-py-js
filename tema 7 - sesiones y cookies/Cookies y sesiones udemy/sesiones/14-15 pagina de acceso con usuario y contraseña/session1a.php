@@ -10,7 +10,7 @@
 <body>
     <?php
     if (($_GET['error'] == "si")) {
-        echo "Usuario o contraseña incorrectos";
+        echo "Usuario o contraseña incorrectos<br>";
         echo ($_GET['error']);
     } 
     if (($_GET['error'] == "fuera")) {

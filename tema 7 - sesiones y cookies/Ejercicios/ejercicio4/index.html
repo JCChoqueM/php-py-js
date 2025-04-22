@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>PHP Sesiones y cookies ejercicio #2</title>
+    <link
+      rel="stylesheet"
+      href="styles/styles.css"
+    />
+  </head>
+  <body>
+    <h1>Ejercicio #2</h1>
+    <div class="fuente">
+      <span class="fuente__contenido fuente--">
+        Establece un control de acceso mediante nombre de usuario y contraseña para cualquiera de los programas de la relación anterior. La
+        aplicación no nos dejará continuar hasta que iniciemos sesión con un nombre de usuario y contraseña correctos.
+      </span>
+
+      <span
+        id="contenedor"
+        class="fuente__contenido fuente--"
+      >
+        <!-- Elementos de texto -->
+      </span>
+      <div
+        id="tooltip"
+        class="tooltip"
+      ></div>
+    </div>
+
+    <div
+      id="descripcionDiv"
+      class="fuente__contenido"
+    ></div>
+
+    <div class="contenedor">
+      <section class="contenedor__caja contenedor__caja--js">
+        <div
+          class="caja__resultado"
+          id="resultadoJS"
+        >
+          <form
+            action=""
+            id="form"
+            class="formulario"
+          >
+            <div
+              id="contenedorInputs"
+              class="formulario__contenedor-inputs"
+            >
+              <h2 class="formulario__titulo formulario__titulo--JS">Inicio de sesión JS</h2>
+              <label
+                for="usuarioJS"
+                class="label__letra"
+                >Ingrese Usuario
+              </label>
+              <input
+                type="text"
+                id="usuarioJS"
+                name="usuarioJS"
+                placeholder="Usuario"
+                required
+              /><br />
+              <label
+                for="claveJS"
+                class="label__letra"
+                >Ingrese contraseña
+              </label>
+              <input
+                type="password"
+                id="claveJS"
+                name="claveJS"
+                placeholder="Contraseña"
+                required
+              /><br />
+            </div>
+            <input
+              class="formulario__boton formulario__boton--enviarJS"
+              type="submit"
+              value="Enviar"
+            />
+          </form>
+        </div>
+      </section>
+      <section class="contenedor__caja contenedor__caja--php">
+        <div
+          class="caja__resultado"
+          id="resultadoPHP"
+        >
+          <form
+            action=""
+            id="form"
+            class="formulario"
+          >
+            <div
+              id="contenedorInputs"
+              class="formulario__contenedor-inputs"
+            >
+              <h2 class="formulario__titulo formulario__titulo--PHP">Inicio de sesión PHP</h2>
+              <label
+                for="usuarioPHP"
+                class="label__letra"
+                >Ingrese Usuario
+              </label>
+              <input
+                type="text"
+                id="usuarioPHP"
+                name="usuarioPHP"
+                placeholder="Usuario"
+                required
+              /><br />
+              <label
+                for="clavePHP"
+                class="label__letra"
+                >Ingrese contraseña
+              </label>
+              <input
+                type="password"
+                id="clavePHP"
+                name="clavePHP"
+                placeholder="Contraseña"
+                required
+              /><br />
+            </div>
+            <input
+              class="formulario__boton formulario__boton--enviarPHP"
+              type="submit"
+              value="Enviar"
+            />
+          </form>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <!-- Pie de página -->
+      <br />Julio Cesar Choque Mamani. <br />
+    </footer>
+    <script src="javascript/3_2construirMensaje.js"></script>
+    <script src="javascript/3_1mostrar.js"></script>
+    <script src="javascript/generarDatos.js"></script>
+    <script src="javascript/crearTabla.js"></script>
+    <!--     <script src="javascript/script.js"></script> -->
+    <script src="javascript/4_funciones.js"></script>
+    <script src="javascript/2_validarYProcesar.js"></script>
+    <script src="javascript/1_main.js"></script>
+  </body>
+</html>
