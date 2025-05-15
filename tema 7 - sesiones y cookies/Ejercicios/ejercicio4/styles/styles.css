@@ -264,3 +264,10 @@ h1 {
 .formulario__boton--enviarPHP:hover {
   background-color: #0617af;
 }
+
+.botonesSesion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
