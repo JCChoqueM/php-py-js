@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.titulo {
+    text-align: center;
+}
+
+table {
+    border: 2px solid black;
+    margin: 0px 30px;
+    width: 90%;
+}
+
+td {
+    vertical-align: top;
+    padding: 10px;
+    width: 50%;
+}
+
+img {
+    border: 1px solid #000;
+
+    border: 2px solid black;
+    margin: 20px;
+    padding: 10px;
+}
+
+.producto,
+.carrito-item {
+    margin-bottom: 20px;
+}
+
+button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.producto img {
+    width: 160px;
+    height: auto; /* Mantiene proporción */
+}
+
+/* Tamaño de imágenes en el carrito */
+.carrito-item img {
+    width: 160px;
+    height: auto;
+}
