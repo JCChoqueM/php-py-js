@@ -1,33 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>La Estilográfica</title>
-    <link rel="stylesheet" href="/css/estilo.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="css/estilo.css"
+    />
+  </head>
+  <body>
+    <!-- Barra fija de totales -->
+    <div id="barra-totales">
+      <div>
+        <span
+          id="totalJS"
+          class="total-box js"
+          >Total JS: 0 Bs.</span
+        >
+        <button onclick="vaciarCarritoJS()">🗑️ Vaciar carrito JS</button>
+      </div>
 
-<h3 class="titulo">
-    Tienda on-line <b><i><u>La Estilográfica</u></i></b>
-</h3>
+      <div>
+        <span
+          id="totalPHP"
+          class="total-box php"
+          >Total PHP: 0 Bs.</span
+        >
+        <button onclick="vaciarCarritoPHP()">🗑️ Vaciar carrito PHP</button>
+      </div>
+    </div>
 
-<table>
-    <tr>
+    <!-- Título -->
+    <h3 class="titulo">
+      Tienda on-line
+      <b
+        ><i><u>La Estilográfica</u></i></b
+      >
+    </h3>
+
+    <!-- Contenido principal -->
+    <table>
+      <tr>
         <td>
-            <h3>Productos</h3>
-            <hr>
-            <div id="productos"></div>
+          <h3>Productos</h3>
+          <hr />
+          <div class="productos-wrapper">
+            <div
+              id="productos"
+              class="productos-grid"
+            ></div>
+          </div>
         </td>
         <td>
-            <h3>Carrito</h3>
-            <hr>
-            <div id="carrito"></div>
-            <br><button onclick="vaciarCarrito()">Vaciar carrito</button>
-            <b id="total"></b>
+          <h3>Carrito JS</h3>
+          <button onclick="vaciarCarritoJS()">🗑️ Vaciar carrito JS</button>
+          <hr />
+          <div id="carritoJS"></div>
+             <button onclick="vaciarCarritoJS()">🗑️ Vaciar carrito JS</button>
         </td>
-    </tr>
-</table>
+        <td>
+          <h3>Carrito PHP</h3>
+          <button onclick="vaciarCarritoPHP()">🗑️ Vaciar carrito PHP</button>
+          <hr />
+          <div id="carritoPHP"></div>
+          <button onclick="vaciarCarritoPHP()">🗑️ Vaciar carrito PHP</button>
+        </td>
+      </tr>
+    </table>
 
-<script src="/JS/script.js"></script>
-</body>
+    <!-- Script único -->
+    <script src="js/productos.js"></script>
+    <script src="js/carritoJS.js"></script>
+    <script src="js/carritoPHP.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
