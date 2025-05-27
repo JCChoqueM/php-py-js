@@ -19,7 +19,7 @@
 
   // Comprueba nombre de usuario y contraseña
   if (isset($_POST['usuario'])) {
-    if (($_POST['usuario'] == "tux") && ($_POST['contrasena'] == "xut")) {
+    if (($_POST['usuario'] == "123") && ($_POST['contrasena'] == "123")) {
       $_SESSION['logueado'] = true;
       header("Refresh: 0; url=pagina.php?ejercicio=04", true, 303); // recarga la página
     } else {
